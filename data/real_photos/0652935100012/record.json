@@ -1,0 +1,15 @@
+{
+  "barcode": "0652935100012",
+  "product_type": "wine",
+  "product_name": "7 Deadly Zins Zinfandel",
+  "brands": "",
+  "quantity": "",
+  "source": "https://world.openfoodfacts.org/product/0652935100012",
+  "license": "CC BY-SA (Open Food Facts contributors)",
+  "images": [
+    {
+      "file": "front.jpg",
+      "source_url": "https://images.openfoodfacts.org/images/products/065/293/510/0012/front_en.5.full.jpg"
+    }
+  ]
+}

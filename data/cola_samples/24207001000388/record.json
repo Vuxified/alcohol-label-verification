@@ -1,0 +1,41 @@
+{
+  "ttb_id": "24207001000388",
+  "status": "APPROVED",
+  "serial_no": "24002L",
+  "class_type_code": "STRAIGHT BOURBON WHISKY",
+  "origin_code": "KENTUCKY",
+  "brand_name": "FOUR ROSES",
+  "fanciful_name": "SINGLE BARREL",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "08/28/2024",
+  "applicant": "DSP-KY-8 | FOUR ROSES DISTILLERY LLC | 1224 BONDS MILL RD | LAWRENCEBURG,\u00a0KY\u00a040342",
+  "source": "domestic",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 2.4,
+      "height_in": 2.9
+    },
+    {
+      "file": "02_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 2.2,
+      "height_in": 0.7
+    },
+    {
+      "file": "03_back.jpg",
+      "image_type": "Back",
+      "width_in": 2.5,
+      "height_in": 2.7
+    },
+    {
+      "file": "04_neck.jpg",
+      "image_type": "Neck",
+      "width_in": 4.4,
+      "height_in": 1.2
+    }
+  ]
+}

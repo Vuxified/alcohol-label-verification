@@ -1,0 +1,27 @@
+{
+  "id": "24011001000341",
+  "beverage_type": "spirits",
+  "brand_name": "Crown Royal",
+  "class_type": "Blended Canadian Whisky",
+  "abv": 40,
+  "abv_text": "40 ALC/VOL (80 PROOF)",
+  "proof": 80,
+  "net_contents_text": "750 ML",
+  "net_contents_ml": 750,
+  "name_address_text": "Imported to the United States by Sub Rosa Selections LLC, Washington, DC.",
+  "country_of_origin_text": "PRODUCT OF CANADA",
+  "warning": {
+    "present": true,
+    "image_file": "03_other.png",
+    "text_as_printed": "GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": ["vintage label photo, blurry and low contrast on gold background", "script font brand and class", "conflicting statements: front '75 cl' / '40% vol.' vs US sticker '750 ML' / '40 ALC/VOL (80 PROOF)'", "sticker ABV missing % sign", "sticker class 'WHISKEY' vs front 'Blended Canadian Whisky'", "front also shows foreign producer 'Joseph E. Seagram & Sons Limited, Waterloo, Ontario, Canada' and Italian text", "colon after heading appears not bold"],
+  "unreadable_fields": [],
+  "drafted_by": "draft",
+  "reviewed": false
+}

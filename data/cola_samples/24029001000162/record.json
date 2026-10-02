@@ -1,0 +1,29 @@
+{
+  "ttb_id": "24029001000162",
+  "status": "APPROVED",
+  "serial_no": "24R013",
+  "class_type_code": "STRAIGHT BOURBON WHISKY",
+  "origin_code": "KENTUCKY",
+  "brand_name": "BULLEIT",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/29/2024",
+  "applicant": "DSP-KY-16 | DIAGEO AMERICAS SUPPLY, INC. | 3860 FITZGERALD RD | LOUISVILLE,\u00a0KY\u00a040216",
+  "source": "domestic",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 9.6,
+      "height_in": 1.75
+    },
+    {
+      "file": "02_strip.jpg",
+      "image_type": "Strip",
+      "width_in": 3.82,
+      "height_in": 0.51
+    }
+  ]
+}

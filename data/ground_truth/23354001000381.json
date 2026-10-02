@@ -1,0 +1,27 @@
+{
+  "id": "23354001000381",
+  "beverage_type": "malt",
+  "brand_name": "GUINNESS",
+  "class_type": "ALE WITH TEA",
+  "abv": 4.8,
+  "abv_text": "4.8% ALC / VOL",
+  "proof": null,
+  "net_contents_text": "1 PINT",
+  "net_contents_ml": 473.18,
+  "name_address_text": "BREWED AND CANNED BY GUINNESS BREWING COMPANY, BALTIMORE, MD",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "unclear",
+    "orientation": "horizontal"
+  },
+  "hard_cases": ["white text on dark green", "condensed font where numeral 1 looks like letter I ('(1)', '1 PINT')", "all-caps warning body", "brand co-branded with OPEN GATE BREWERY", "net contents in pints not metric", "can wrap layout"],
+  "unreadable_fields": [],
+  "drafted_by": "draft",
+  "reviewed": false
+}

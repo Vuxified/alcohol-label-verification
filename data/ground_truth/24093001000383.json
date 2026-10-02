@@ -1,0 +1,34 @@
+{
+  "id": "24093001000383",
+  "beverage_type": "spirits",
+  "brand_name": "JIM BEAM",
+  "class_type": "KENTUCKY STRAIGHT BOURBON WHISKEY",
+  "abv": 43,
+  "abv_text": "43% ALC/VOL",
+  "proof": 86,
+  "net_contents_text": "750 mL",
+  "net_contents_ml": 750,
+  "name_address_text": "DISTILLED AND BOTTLED BY JAMES B. BEAM DISTILLING CO. CLERMONT · FRANKFORT · KENTUCKY · USA",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "02_back.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "cream/copper text on dark brown background",
+    "warning words hyphenated across line breaks (BE-CAUSE, CON-SUMPTION, MA-CHINERY; dehyphenated in transcription)",
+    "brand in stylized arched lettering over busy illustration",
+    "class type text overlaps decorative artwork",
+    "front and back each carry ABV/proof; net contents only on back",
+    "script signature (James B. Beam) near ABV"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "draft",
+  "reviewed": false
+}

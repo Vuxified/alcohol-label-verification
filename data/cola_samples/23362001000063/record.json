@@ -1,0 +1,21 @@
+{
+  "ttb_id": "23362001000063",
+  "status": "APPROVED",
+  "serial_no": "230019",
+  "class_type_code": "ALE",
+  "origin_code": "CALIFORNIA",
+  "brand_name": "CORONADO BREWING CO.",
+  "fanciful_name": "PALM SWAY",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/03/2024",
+  "applicant": "BR-CA-COR-1 | CORONADO BREWING COMPANY, INC. | 170 ORANGE AVE | CORONADO,\u00a0CA\u00a092118",
+  "source": "domestic",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar"
+    }
+  ]
+}

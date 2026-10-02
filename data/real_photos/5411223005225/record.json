@@ -1,0 +1,15 @@
+{
+  "barcode": "5411223005225",
+  "product_type": "malt",
+  "product_name": "Framboise Lambic Beer",
+  "brands": "Lindemans",
+  "quantity": "25 cl",
+  "source": "https://world.openfoodfacts.org/product/5411223005225",
+  "license": "CC BY-SA (Open Food Facts contributors)",
+  "images": [
+    {
+      "file": "front.jpg",
+      "source_url": "https://images.openfoodfacts.org/images/products/541/122/300/5225/front_fr.5.full.jpg"
+    }
+  ]
+}

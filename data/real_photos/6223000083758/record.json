@@ -1,0 +1,15 @@
+{
+  "barcode": "6223000083758",
+  "product_type": "malt",
+  "product_name": "BIRELL",
+  "brands": "Birell",
+  "quantity": "",
+  "source": "https://world.openfoodfacts.org/product/6223000083758",
+  "license": "CC BY-SA (Open Food Facts contributors)",
+  "images": [
+    {
+      "file": "front.jpg",
+      "source_url": "https://images.openfoodfacts.org/images/products/622/300/008/3758/front_en.3.full.jpg"
+    }
+  ]
+}

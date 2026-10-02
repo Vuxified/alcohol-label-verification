@@ -1,0 +1,27 @@
+{
+  "id": "24009001000244",
+  "beverage_type": "spirits",
+  "brand_name": "BUFFALO TRACE",
+  "class_type": "KENTUCKY STRAIGHT BOURBON WHISKEY",
+  "abv": 45,
+  "abv_text": "45% ALC/VOL (90 PROOF)",
+  "proof": 90,
+  "net_contents_text": "750ML",
+  "net_contents_ml": 750,
+  "name_address_text": "DISTILLED, AGED & BOTTLED BY BUFFALO TRACE DISTILLERY, FRANKFORT, KY",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "04_back.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BE-CAUSE OF THE RISK OF BIRTH DEFECTS. (2) CON-SUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MA-CHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": ["hyphenated line breaks inside warning words (BE-CAUSE, CON-SUMPTION, MA-CHINERY)", "script font ABV on front ('45% Alc/Vol')", "textured parchment background", "torn-edge label shapes", "printer crop marks on neck label", "separate SAZERAC BARREL SELECT curved-text medallion"],
+  "unreadable_fields": [],
+  "drafted_by": "draft",
+  "reviewed": false
+}

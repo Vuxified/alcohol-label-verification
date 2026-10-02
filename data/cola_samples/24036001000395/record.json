@@ -1,0 +1,29 @@
+{
+  "ttb_id": "24036001000395",
+  "status": "APPROVED",
+  "serial_no": "240043",
+  "class_type_code": "TABLE WHITE WINE",
+  "origin_code": "AMERICAN",
+  "brand_name": "BAREFOOT",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "02/07/2024",
+  "applicant": "BW-CA-4213 | GALLO, E. & J. GALLO WINERY | 600 YOSEMITE BLVD | MODESTO,\u00a0CA\u00a095354",
+  "source": "domestic",
+  "product_type": "wine",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 2.3,
+      "height_in": 3.56
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 3.13,
+      "height_in": 4.86
+    }
+  ]
+}

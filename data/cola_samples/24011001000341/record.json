@@ -1,0 +1,35 @@
+{
+  "ttb_id": "24011001000341",
+  "status": "APPROVED",
+  "serial_no": "240029",
+  "class_type_code": "CANADIAN WHISKY FB",
+  "origin_code": "CANADA",
+  "brand_name": "CROWN ROYAL",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/12/2024",
+  "applicant": "DC-I-21106 | Sub Rosa Selections LLC | 301 NEW YORK AVE NE | Washington,\u00a0DC\u00a020002",
+  "source": "imported",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.png",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.0,
+      "height_in": 3.0
+    },
+    {
+      "file": "02_back.png",
+      "image_type": "Back",
+      "width_in": 3.0,
+      "height_in": 3.0
+    },
+    {
+      "file": "03_other.png",
+      "image_type": "Other",
+      "width_in": 1.5,
+      "height_in": 1.5
+    }
+  ]
+}

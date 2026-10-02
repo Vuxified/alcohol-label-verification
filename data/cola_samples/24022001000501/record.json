@@ -1,0 +1,41 @@
+{
+  "ttb_id": "24022001000501",
+  "status": "APPROVED",
+  "serial_no": "24S001",
+  "class_type_code": "VODKA 80-89 PROOF FB",
+  "origin_code": "FRANCE",
+  "brand_name": "GREY GOOSE",
+  "fanciful_name": "ALTIUS",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/26/2024",
+  "applicant": "FL-I-1363 | BACARDI U.S.A., INC. | 2701 S LE JEUNE RD | CORAL GABLES,\u00a0FL\u00a033134",
+  "source": "imported",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.1,
+      "height_in": 3.31
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 2.36,
+      "height_in": 4.14
+    },
+    {
+      "file": "03_neck.jpg",
+      "image_type": "Neck",
+      "width_in": 3.4,
+      "height_in": 5.71
+    },
+    {
+      "file": "04_other.jpg",
+      "image_type": "Other",
+      "width_in": 1.98,
+      "height_in": 1.98
+    }
+  ]
+}

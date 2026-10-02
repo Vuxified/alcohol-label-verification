@@ -1,0 +1,35 @@
+{
+  "id": "24208001000178",
+  "beverage_type": "wine",
+  "brand_name": "Santa Margherita",
+  "class_type": "DRY ROSÉ WINE",
+  "abv": 12.5,
+  "abv_text": "ALC. 12.5% BY VOL.",
+  "proof": null,
+  "net_contents_text": "1.5 L",
+  "net_contents_ml": 1500,
+  "name_address_text": "BOTTLED BY SANTA MARGHERITA S.p.A. FOSSALTA DI PORTOGRUARO - ITALIA IMPORTED BY: SM USA, Inc., Miami Beach, FL",
+  "country_of_origin_text": "PRODUCT OF ITALY",
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "image file types swapped (01 is back label, 02 is front)",
+    "script font brand name",
+    "co-brand on front (& LoveShackFancy) could be mistaken for brand",
+    "front ABV and net contents in tiny vertical light-gray text on floral border",
+    "warning words hyphenated across line breaks (SUR-GEON, BEV-ERAGES, OP-ERATE; dehyphenated in transcription)",
+    "accented characters (ROSÉ)",
+    "busy floral background"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "draft",
+  "reviewed": false
+}

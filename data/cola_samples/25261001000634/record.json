@@ -1,0 +1,23 @@
+{
+  "ttb_id": "25261001000634",
+  "status": "APPROVED",
+  "serial_no": "25SA02",
+  "class_type_code": "BEER",
+  "origin_code": "MISSOURI",
+  "brand_name": "STELLA ARTOIS",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "09/23/2025",
+  "applicant": "BR-MO-20000 | Anheuser-Busch, LLC | 1 BUSCH PL | Saint Louis,\u00a0MO\u00a063118",
+  "source": "domestic",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 7.18,
+      "height_in": 5.95
+    }
+  ]
+}

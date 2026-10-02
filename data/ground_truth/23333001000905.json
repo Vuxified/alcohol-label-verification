@@ -1,0 +1,34 @@
+{
+  "id": "23333001000905",
+  "beverage_type": "spirits",
+  "brand_name": "Maker's Mark",
+  "class_type": "KENTUCKY STRAIGHT BOURBON WHISKY BARREL FINISHED WITH 10 VIRGIN OAK STAVES",
+  "abv": 45,
+  "abv_text": "ALC/VOL 45%",
+  "proof": 90,
+  "net_contents_text": "700 mL",
+  "net_contents_ml": 700,
+  "name_address_text": "DISTILLED, FINISHED AND BOTTLED BY THE MAKER'S MARK DISTILLERY, INC., STAR HILL FARM, LORETTO, KENTUCKY, U.S.A.",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "03_back.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "low-contrast tan text on white",
+    "script font ABV and proof (red handwritten numerals)",
+    "ABV split across table header and value cell",
+    "class type printed all caps with wide letterspacing",
+    "warning body all caps condensed font",
+    "print artifacts (stray marks in GENERAL, BECAUSE)"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "draft",
+  "reviewed": false
+}

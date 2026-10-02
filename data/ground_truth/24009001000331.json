@@ -1,0 +1,33 @@
+{
+  "id": "24009001000331",
+  "beverage_type": "spirits",
+  "brand_name": "Crown Royal",
+  "class_type": "SINGLE MALT CANADIAN WHISKY",
+  "abv": 45,
+  "abv_text": "45% alc./vol.",
+  "proof": null,
+  "net_contents_text": "750 mL",
+  "net_contents_ml": 750,
+  "name_address_text": "IMPORTED BY THE CROWN ROYAL COMPANY, NEW YORK, NY",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "02_back.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "unclear",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "script font brand name",
+    "light green text on white (low contrast)",
+    "front ABV/net contents dark text on dark gray panel",
+    "widely letterspaced class type",
+    "no explicit country of origin statement (only CANADIAN WHISKY)"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "draft",
+  "reviewed": false
+}

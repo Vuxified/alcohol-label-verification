@@ -1,0 +1,27 @@
+{
+  "id": "24078001000871",
+  "beverage_type": "wine",
+  "brand_name": "WINE CONNOISSEUR",
+  "class_type": "ROSÉ WINE",
+  "abv": 12,
+  "abv_text": "ALC 12% BY VOL",
+  "proof": null,
+  "net_contents_text": "BOX CONTAINING 250ML (2 X 125ML WINE SACHETS)",
+  "net_contents_ml": 250,
+  "name_address_text": "PRODUCED AND BOTTLED BY WINE CONNOISSEUR, SANTA ROSA, CA.",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.png",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": ["white text on black", "brand ambiguous: 'WINE CONNOISSEUR' logo on 02 vs 'CUPCAKE' / 'Cupcake VINEYARDS' on 01 and 03", "sachet box packaging, multi-panel sleeve", "net contents expressed as box of sachets (250ML = 2 X 125ML)", "low-resolution tiny print", "script 'Cupcake' logo", "vertical text panel (04)", "accented 'ROSÉ'"],
+  "unreadable_fields": [],
+  "drafted_by": "draft",
+  "reviewed": false
+}

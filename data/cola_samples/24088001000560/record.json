@@ -1,0 +1,29 @@
+{
+  "ttb_id": "24088001000560",
+  "status": "APPROVED",
+  "serial_no": "240021",
+  "class_type_code": "TABLE RED WINE",
+  "origin_code": "AUSTRALIA",
+  "brand_name": "19 CRIMES",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "04/04/2024",
+  "applicant": "TPWBH-CA-116 | Treasury Wine Estates Americas Company | 21468 21480, 21672 8TH STREET EAST | SONOMA,\u00a0CA\u00a095476",
+  "source": "imported",
+  "product_type": "wine",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.15,
+      "height_in": 4.8
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 3.46,
+      "height_in": 5.7
+    }
+  ]
+}

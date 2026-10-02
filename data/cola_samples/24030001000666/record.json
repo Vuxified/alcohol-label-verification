@@ -1,0 +1,29 @@
+{
+  "ttb_id": "24030001000666",
+  "status": "APPROVED",
+  "serial_no": "240029",
+  "class_type_code": "MALT BEVERAGES SPECIALITIES - FLAVORED",
+  "origin_code": "COLORADO",
+  "brand_name": "BLUE MOON",
+  "fanciful_name": "BELGIAN WHITE",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/31/2024",
+  "applicant": "BR-CO-CBC-1 | Molson Coors Beverage Company USA LLC | 300 12TH ST | GOLDEN,\u00a0CO\u00a080401",
+  "source": "domestic",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 8.28,
+      "height_in": 4.6
+    },
+    {
+      "file": "02_neck.png",
+      "image_type": "Neck",
+      "width_in": 4.6,
+      "height_in": 1.88
+    }
+  ]
+}

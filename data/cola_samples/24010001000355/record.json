@@ -1,0 +1,35 @@
+{
+  "ttb_id": "24010001000355",
+  "status": "APPROVED",
+  "serial_no": "240008",
+  "class_type_code": "COGNAC (BRANDY) FB",
+  "origin_code": "FRANCE",
+  "brand_name": "HENNESSY",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/11/2024",
+  "applicant": "NY-I-851 | MOET HENNESSY USA, INC. | 7 WTC-250 GREENWICH -35 & 36TH FLOORS ST | NEW YORK,\u00a0NY\u00a010007",
+  "source": "imported",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.17,
+      "height_in": 2.17
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 3.5,
+      "height_in": 2.17
+    },
+    {
+      "file": "03_neck.jpg",
+      "image_type": "Neck",
+      "width_in": 4.75,
+      "height_in": 4.0
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": "24009001000179",
+  "beverage_type": "malt",
+  "brand_name": "CORONADO BREWING CO.",
+  "class_type": "India Pale Ale",
+  "abv": 6.8,
+  "abv_text": "6.8% Alc/Vol",
+  "proof": null,
+  "net_contents_text": "1 Pint",
+  "net_contents_ml": 473.18,
+  "name_address_text": "Brewed & Canned by Coronado Brewing Co. Coronado, CA",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "vertical"
+  },
+  "hard_cases": ["vertical warning", "brand name in curved text inside circular logo", "fanciful name (WEEKEND VIBES) more prominent than brand", "net contents in US units only (1 Pint)", "net contents and ABV on one line", "can wrap flat layout"],
+  "unreadable_fields": [],
+  "drafted_by": "draft",
+  "reviewed": false
+}

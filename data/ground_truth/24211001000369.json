@@ -1,0 +1,27 @@
+{
+  "id": "24211001000369",
+  "beverage_type": "spirits",
+  "brand_name": "SMIRNOFF",
+  "class_type": "VODKA",
+  "abv": 45,
+  "abv_text": "45% ALC/VOL",
+  "proof": 90,
+  "net_contents_text": "750 mL",
+  "net_contents_ml": 750,
+  "name_address_text": "PRODUCED BY THE SMIRNOFF CO., NEW YORK, NY",
+  "country_of_origin_text": "MADE IN AMERICA",
+  "warning": {
+    "present": true,
+    "image_file": "03_back.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BE-CAUSE OF THE RISK OF BIRTH DEFECTS. (2) CON-SUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": ["words hyphenated across line breaks in warning ('BE-' / 'CAUSE', 'CON-' / 'SUMPTION')", "large standalone '90' on front is proof, not ABV", "ABV only on secondary front strip label (02)", "second ABV form in Serving Facts ('Alcohol by volume: 45%')", "script 'Smirnoff' logos", "white letters with drop shadow on dark striped banner", "brushed-metal texture background on strip label", "'MADE IN AMERICA' domestic origin statement"],
+  "unreadable_fields": [],
+  "drafted_by": "draft",
+  "reviewed": false
+}

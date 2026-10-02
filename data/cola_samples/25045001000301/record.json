@@ -1,0 +1,29 @@
+{
+  "ttb_id": "25045001000301",
+  "status": "APPROVED",
+  "serial_no": "25R049",
+  "class_type_code": "OTHER GIN FB",
+  "origin_code": "GREAT BRITAIN",
+  "brand_name": "TANQUERAY",
+  "fanciful_name": "RANGPUR LIME",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "03/05/2025",
+  "applicant": "NY-I-21645 | DIAGEO AMERICAS SUPPLY, INC. | 3 WORLD TRADE CENTER STE 41-C | New York,\u00a0NY\u00a010007",
+  "source": "imported",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.58,
+      "height_in": 4.41
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 3.46,
+      "height_in": 2.09
+    }
+  ]
+}

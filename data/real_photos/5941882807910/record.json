@@ -1,0 +1,15 @@
+{
+  "barcode": "5941882807910",
+  "product_type": "malt",
+  "product_name": "",
+  "brands": "Bundaberg",
+  "quantity": "375 ml",
+  "source": "https://world.openfoodfacts.org/product/5941882807910",
+  "license": "CC BY-SA (Open Food Facts contributors)",
+  "images": [
+    {
+      "file": "front.jpg",
+      "source_url": "https://images.openfoodfacts.org/images/products/594/188/280/7910/front_en.3.full.jpg"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "ttb_id": "24002001000457",
+  "status": "APPROVED",
+  "serial_no": "240002",
+  "class_type_code": "WHISKY",
+  "origin_code": "TENNESSEE",
+  "brand_name": "JACK DANIEL'S",
+  "fanciful_name": "10 YEARS OLD",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/04/2024",
+  "applicant": "DSP-TN-4 | JACK DANIEL DISTILLERY, LEM MOTLOW PROPRIETOR, BROWN-FORMAN CORPORATION | 280 LYNCHBURG HWY | LYNCHBURG,\u00a0TN\u00a037352",
+  "source": "domestic",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 5.48,
+      "height_in": 3.38
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 2.04,
+      "height_in": 3.24
+    }
+  ]
+}

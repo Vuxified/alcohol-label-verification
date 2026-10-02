@@ -1,0 +1,15 @@
+{
+  "barcode": "0072890006196",
+  "product_type": "malt",
+  "product_name": "Heineken",
+  "brands": "Heineken",
+  "quantity": "",
+  "source": "https://world.openfoodfacts.org/product/0072890006196",
+  "license": "CC BY-SA (Open Food Facts contributors)",
+  "images": [
+    {
+      "file": "front.jpg",
+      "source_url": "https://images.openfoodfacts.org/images/products/007/289/000/6196/front_en.16.full.jpg"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "id": "syn_spirits_11_none",
+  "images": [
+    {
+      "file": "front.png",
+      "image_type": "Brand (front)",
+      "width_in": 3.0,
+      "height_in": 4.5
+    },
+    {
+      "file": "back.png",
+      "image_type": "Back",
+      "width_in": 3.0,
+      "height_in": 2.58
+    }
+  ],
+  "source": {
+    "type": "synthetic",
+    "license": "generated for this project"
+  },
+  "application": {
+    "beverage_type": "spirits",
+    "brand_name": "Barn Tom",
+    "class_type": "Spiced Rum",
+    "abv": 43.0,
+    "proof": 86.0,
+    "net_contents": "750 mL",
+    "source": "imported",
+    "country_of_origin": "Scotland",
+    "name_address": "Imported by Barn Spirits LLC, Napa, CA",
+    "label_width_in": 3.0
+  },
+  "printed": {
+    "brand_name": "Barn Tom",
+    "class_type": "Spiced Rum",
+    "abv": 43.0,
+    "proof": 86.0,
+    "net_contents": "750 mL",
+    "warning_text": "GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.",
+    "warning_heading_bold": true,
+    "warning_cap_mm": 2.4
+  },
+  "expected": {
+    "overall": "pass",
+    "findings": []
+  },
+  "provenance": {
+    "base_id": "syn_spirits_11",
+    "defect": "none",
+    "seed": 7
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "barcode": "02212210",
+  "product_type": "wine",
+  "product_name": "Spatburgunder 2022 trocken franken",
+  "brands": "Hacendado, Hofling",
+  "quantity": "",
+  "source": "https://world.openfoodfacts.org/product/02212210",
+  "license": "CC BY-SA (Open Food Facts contributors)",
+  "images": [
+    {
+      "file": "front.jpg",
+      "source_url": "https://images.openfoodfacts.org/images/products/000/000/221/2210/front_it.7.full.jpg"
+    }
+  ]
+}

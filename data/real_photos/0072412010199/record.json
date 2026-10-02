@@ -1,0 +1,15 @@
+{
+  "barcode": "0072412010199",
+  "product_type": "wine",
+  "product_name": "Sherry cooking wine",
+  "brands": "",
+  "quantity": "",
+  "source": "https://world.openfoodfacts.org/product/0072412010199",
+  "license": "CC BY-SA (Open Food Facts contributors)",
+  "images": [
+    {
+      "file": "front.jpg",
+      "source_url": "https://images.openfoodfacts.org/images/products/007/241/201/0199/front_en.3.full.jpg"
+    }
+  ]
+}

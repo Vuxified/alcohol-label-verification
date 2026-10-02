@@ -1,0 +1,29 @@
+{
+  "ttb_id": "24106001000780",
+  "status": "APPROVED",
+  "serial_no": "245113",
+  "class_type_code": "TABLE RED WINE",
+  "origin_code": "CALIFORNIA",
+  "brand_name": "CUPCAKE",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "05/03/2024",
+  "applicant": "BW-CA-3654 | FRANZIA WINERY, THE WINE GROUP LLC | 17000 E STATE HIGHWAY 120 | RIPON,\u00a0CA\u00a095366",
+  "source": "domestic",
+  "product_type": "wine",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.14,
+      "height_in": 4.13
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 3.18,
+      "height_in": 3.54
+    }
+  ]
+}

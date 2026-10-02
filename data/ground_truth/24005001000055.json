@@ -1,0 +1,27 @@
+{
+  "id": "24005001000055",
+  "beverage_type": "malt",
+  "brand_name": "Coors LIGHT",
+  "class_type": "BEER",
+  "abv": 4.2,
+  "abv_text": "4.2% ALC./VOL.",
+  "proof": null,
+  "net_contents_text": "12 FL.OZ. (355mL)",
+  "net_contents_ml": 355,
+  "name_address_text": "©2024 COORS BREWING CO., GOLDEN, CO 80401",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": ["ABV only inside Serving Facts box", "tiny condensed print", "dark gray text on light gray", "script brand font", "vertical main-panel brand text", "can wrap flat layout"],
+  "unreadable_fields": [],
+  "drafted_by": "draft",
+  "reviewed": false
+}

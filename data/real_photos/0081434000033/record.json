@@ -1,0 +1,15 @@
+{
+  "barcode": "0081434000033",
+  "product_type": "wine",
+  "product_name": "Cabernet Sauvignon",
+  "brands": "Black Box",
+  "quantity": "3 l",
+  "source": "https://world.openfoodfacts.org/product/0081434000033",
+  "license": "CC BY-SA (Open Food Facts contributors)",
+  "images": [
+    {
+      "file": "front.jpg",
+      "source_url": "https://images.openfoodfacts.org/images/products/008/143/400/0033/front_en.8.full.jpg"
+    }
+  ]
+}

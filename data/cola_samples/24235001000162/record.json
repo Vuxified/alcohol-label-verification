@@ -1,0 +1,29 @@
+{
+  "ttb_id": "24235001000162",
+  "status": "APPROVED",
+  "serial_no": "24R105",
+  "class_type_code": "RUM SPECIALTIES",
+  "origin_code": "ILLINOIS",
+  "brand_name": "CAPTAIN MORGAN",
+  "fanciful_name": "CHILI LIME",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "09/04/2024",
+  "applicant": "DSP-IL-58 | DIAGEO AMERICAS SUPPLY, INC. | 24440 W 143RD ST | PLAINFIELD,\u00a0IL\u00a060544",
+  "source": "domestic",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.74,
+      "height_in": 4.75
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 2.87,
+      "height_in": 1.97
+    }
+  ]
+}

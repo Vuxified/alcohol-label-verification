@@ -1,0 +1,15 @@
+{
+  "barcode": "01833429",
+  "product_type": "malt",
+  "product_name": "Superior Light Beer",
+  "brands": "Michelob Ultra",
+  "quantity": "12 FL. OZ",
+  "source": "https://world.openfoodfacts.org/product/01833429",
+  "license": "CC BY-SA (Open Food Facts contributors)",
+  "images": [
+    {
+      "file": "front.jpg",
+      "source_url": "https://images.openfoodfacts.org/images/products/000/000/183/3429/front_en.29.full.jpg"
+    }
+  ]
+}

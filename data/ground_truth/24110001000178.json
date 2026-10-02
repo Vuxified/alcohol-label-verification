@@ -1,0 +1,27 @@
+{
+  "id": "24110001000178",
+  "beverage_type": "wine",
+  "brand_name": "APOTHIC",
+  "class_type": "CABERNET SAUVIGNON",
+  "abv": 13.9,
+  "abv_text": "ALC. 13.9% BY VOL.",
+  "proof": null,
+  "net_contents_text": "750mL",
+  "net_contents_ml": 750,
+  "name_address_text": "BOTTLED BY APOTHIC WINES, MODESTO, CA",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": ["image files mislabeled: 01 'brand front' is actually the back label, 02 'other' is the front label", "ABV inline with appellation and vintage separated by bullets", "condensed font", "vintage split around varietal on front ('20' / '22')", "no ABV on front label"],
+  "unreadable_fields": [],
+  "drafted_by": "draft",
+  "reviewed": false
+}

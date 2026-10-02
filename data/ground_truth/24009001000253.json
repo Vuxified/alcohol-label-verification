@@ -1,0 +1,27 @@
+{
+  "id": "24009001000253",
+  "beverage_type": "malt",
+  "brand_name": "SIERRA NEVADA",
+  "class_type": "LAGER WITH BLOOD ORANGE",
+  "abv": 4.9,
+  "abv_text": "4.9% ALC./VOL.",
+  "proof": null,
+  "net_contents_text": "5 GALS",
+  "net_contents_ml": 18927.06,
+  "name_address_text": "SIERRA NEVADA BREWING CO., CHICO, CA & MILLS RIVER, NC",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "03_other.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": ["keg collar (round)", "curved text (name/address around circle)", "net contents in gallons with vertical 'GALS'", "brand on decorative banner", "separate keg-safety 'ATTENTION' label could be confused with warning"],
+  "unreadable_fields": [],
+  "drafted_by": "draft",
+  "reviewed": false
+}

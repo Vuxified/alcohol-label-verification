@@ -1,0 +1,15 @@
+{
+  "barcode": "0082184090442",
+  "product_type": "spirits",
+  "product_name": "Old No. 7",
+  "brands": "Jack Daniel's, Old No. 7",
+  "quantity": "1 l",
+  "source": "https://world.openfoodfacts.org/product/0082184090442",
+  "license": "CC BY-SA (Open Food Facts contributors)",
+  "images": [
+    {
+      "file": "front.jpg",
+      "source_url": "https://images.openfoodfacts.org/images/products/008/218/409/0442/front_en.10.full.jpg"
+    }
+  ]
+}

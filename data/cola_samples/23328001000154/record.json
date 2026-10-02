@@ -1,0 +1,29 @@
+{
+  "ttb_id": "23328001000154",
+  "status": "APPROVED",
+  "serial_no": "232118",
+  "class_type_code": "STOUT",
+  "origin_code": "NIGERIA",
+  "brand_name": "GUINNESS FOREIGN EXTRA SMALL STOUT",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/08/2024",
+  "applicant": "TX-I-21831 | FOLLYJAY AFRICA STORE & LOGISTICS, FOLLYJAY AFRICA STORE & LOGISTICS LLC | 1017 ENFILAR LN | ARLINGTON,\u00a0TX\u00a076017",
+  "source": "imported",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 2.5,
+      "height_in": 3.0
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 2.5,
+      "height_in": 3.0
+    }
+  ]
+}

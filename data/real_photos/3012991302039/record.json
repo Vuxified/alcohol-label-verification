@@ -1,0 +1,15 @@
+{
+  "barcode": "3012991302039",
+  "product_type": "spirits",
+  "product_name": "Old Nick",
+  "brands": "Old Nick",
+  "quantity": "70 cl",
+  "source": "https://world.openfoodfacts.org/product/3012991302039",
+  "license": "CC BY-SA (Open Food Facts contributors)",
+  "images": [
+    {
+      "file": "front.jpg",
+      "source_url": "https://images.openfoodfacts.org/images/products/301/299/130/2039/front_fr.14.full.jpg"
+    }
+  ]
+}

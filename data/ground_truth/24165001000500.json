@@ -1,0 +1,27 @@
+{
+  "id": "24165001000500",
+  "beverage_type": "malt",
+  "brand_name": "Heineken",
+  "class_type": "MALT BEVERAGE WITH NATURAL FLAVOR",
+  "abv": 0.0,
+  "abv_text": "ALC. 0.0% BY VOL.",
+  "proof": null,
+  "net_contents_text": "11.2 FL. OZ.",
+  "net_contents_ml": 331.22,
+  "name_address_text": "BREWED AND CANNED BY HEINEKEN BROUWERIJEN B.V., AMSTERDAM, HOLLAND. IMPORTED BY HEINEKEN USA, WHITE PLAINS, NY.",
+  "country_of_origin_text": "PRODUCT OF HOLLAND.",
+  "warning": {
+    "present": false,
+    "image_file": null,
+    "text_as_printed": null,
+    "matches_required_text": null,
+    "heading_all_caps": null,
+    "heading_looks_bold": "unclear",
+    "whole_warning_bold": "unclear",
+    "orientation": "other"
+  },
+  "hard_cases": ["non-alcoholic product: no government warning, 0.0% ABV", "vertical side-panel text (net contents, address, class)", "white text on green", "tiny condensed print", "'0.0' in fanciful artwork could be confused with ABV", "net contents in US units only"],
+  "unreadable_fields": [],
+  "drafted_by": "draft",
+  "reviewed": false
+}

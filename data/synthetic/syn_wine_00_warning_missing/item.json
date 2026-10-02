@@ -1,0 +1,54 @@
+{
+  "id": "syn_wine_00_warning_missing",
+  "images": [
+    {
+      "file": "front.png",
+      "image_type": "Brand (front)",
+      "width_in": 3.5,
+      "height_in": 4.0
+    },
+    {
+      "file": "back.png",
+      "image_type": "Back",
+      "width_in": 3.5,
+      "height_in": 1.19
+    }
+  ],
+  "source": {
+    "type": "synthetic",
+    "license": "generated for this project"
+  },
+  "application": {
+    "beverage_type": "wine",
+    "brand_name": "Copper Ember",
+    "class_type": "Port",
+    "abv": 13.5,
+    "proof": null,
+    "net_contents": "187 mL",
+    "source": "imported",
+    "country_of_origin": "France",
+    "name_address": "Imported by Copper Brewing Co., Portland, OR",
+    "label_width_in": 3.5
+  },
+  "printed": {
+    "brand_name": "Copper Ember",
+    "class_type": "Port",
+    "abv": 13.5,
+    "proof": null,
+    "net_contents": "187 mL",
+    "warning_text": null,
+    "warning_heading_bold": true,
+    "warning_cap_mm": 1.4
+  },
+  "expected": {
+    "overall": "fail",
+    "findings": [
+      "WARNING_MISSING"
+    ]
+  },
+  "provenance": {
+    "base_id": "syn_wine_00",
+    "defect": "warning_missing",
+    "seed": 7
+  }
+}

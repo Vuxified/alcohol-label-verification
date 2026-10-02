@@ -1,0 +1,27 @@
+{
+  "id": "24022001000904",
+  "beverage_type": "wine",
+  "brand_name": "Josh",
+  "class_type": "Chardonnay",
+  "abv": 14.0,
+  "abv_text": "ALC 14.0% BY VOL.",
+  "proof": null,
+  "net_contents_text": null,
+  "net_contents_ml": null,
+  "name_address_text": "BLENDED & BOTTLED BY JOSEPH CARR, HOPLAND, CA",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": ["white text on dark", "script font brand name", "metallic gradient text on front", "low-contrast script varietal 'Chardonnay' on gold band", "vertical vintage year", "image files swapped (01_brand file is back label, 02_back is front)", "net contents not on label", "tiny print", "low-resolution image"],
+  "unreadable_fields": [],
+  "drafted_by": "draft",
+  "reviewed": false
+}

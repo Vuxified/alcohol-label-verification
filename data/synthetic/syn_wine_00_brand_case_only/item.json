@@ -1,0 +1,52 @@
+{
+  "id": "syn_wine_00_brand_case_only",
+  "images": [
+    {
+      "file": "front.png",
+      "image_type": "Brand (front)",
+      "width_in": 4.0,
+      "height_in": 3.5
+    },
+    {
+      "file": "back.png",
+      "image_type": "Back",
+      "width_in": 4.0,
+      "height_in": 1.58
+    }
+  ],
+  "source": {
+    "type": "synthetic",
+    "license": "generated for this project"
+  },
+  "application": {
+    "beverage_type": "wine",
+    "brand_name": "Copper Ember",
+    "class_type": "Port",
+    "abv": 13.5,
+    "proof": null,
+    "net_contents": "187 mL",
+    "source": "imported",
+    "country_of_origin": "France",
+    "name_address": "Imported by Copper Brewing Co., Portland, OR",
+    "label_width_in": 4.0
+  },
+  "printed": {
+    "brand_name": "COPPER EMBER",
+    "class_type": "Port",
+    "abv": 13.5,
+    "proof": null,
+    "net_contents": "187 mL",
+    "warning_text": "GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.",
+    "warning_heading_bold": true,
+    "warning_cap_mm": 1.4
+  },
+  "expected": {
+    "overall": "pass",
+    "findings": []
+  },
+  "provenance": {
+    "base_id": "syn_wine_00",
+    "defect": "brand_case_only",
+    "seed": 7
+  }
+}

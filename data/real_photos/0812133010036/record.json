@@ -1,0 +1,15 @@
+{
+  "barcode": "0812133010036",
+  "product_type": "wine",
+  "product_name": "Les portes de Bordeaux",
+  "brands": "",
+  "quantity": "750 ML",
+  "source": "https://world.openfoodfacts.org/product/0812133010036",
+  "license": "CC BY-SA (Open Food Facts contributors)",
+  "images": [
+    {
+      "file": "front.jpg",
+      "source_url": "https://images.openfoodfacts.org/images/products/081/213/301/0036/front_en.5.full.jpg"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "barcode": "3211209269175",
+  "product_type": "wine",
+  "product_name": "Muscat Les Ormes de Cam\u00e9ras (moelleux)",
+  "brands": "Pays d'Oc",
+  "quantity": "75 cl",
+  "source": "https://world.openfoodfacts.org/product/3211209269175",
+  "license": "CC BY-SA (Open Food Facts contributors)",
+  "images": [
+    {
+      "file": "front.jpg",
+      "source_url": "https://images.openfoodfacts.org/images/products/321/120/926/9175/front_nl.4.full.jpg"
+    }
+  ]
+}

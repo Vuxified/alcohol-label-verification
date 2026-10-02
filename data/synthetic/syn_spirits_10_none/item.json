@@ -1,0 +1,52 @@
+{
+  "id": "syn_spirits_10_none",
+  "images": [
+    {
+      "file": "front.png",
+      "image_type": "Brand (front)",
+      "width_in": 3.0,
+      "height_in": 4.5
+    },
+    {
+      "file": "back.png",
+      "image_type": "Back",
+      "width_in": 3.0,
+      "height_in": 2.38
+    }
+  ],
+  "source": {
+    "type": "synthetic",
+    "license": "generated for this project"
+  },
+  "application": {
+    "beverage_type": "spirits",
+    "brand_name": "Throw Ridge",
+    "class_type": "Blanco Tequila",
+    "abv": 46.5,
+    "proof": 93.0,
+    "net_contents": "1.75 L",
+    "source": "domestic",
+    "country_of_origin": "United States",
+    "name_address": "Distilled and bottled by Throw Distilling Co., Austin, TX",
+    "label_width_in": 3.0
+  },
+  "printed": {
+    "brand_name": "Throw Ridge",
+    "class_type": "Blanco Tequila",
+    "abv": 46.5,
+    "proof": 93.0,
+    "net_contents": "1.75 L",
+    "warning_text": "GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.",
+    "warning_heading_bold": true,
+    "warning_cap_mm": 2.4
+  },
+  "expected": {
+    "overall": "pass",
+    "findings": []
+  },
+  "provenance": {
+    "base_id": "syn_spirits_10",
+    "defect": "none",
+    "seed": 7
+  }
+}

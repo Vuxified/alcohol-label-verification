@@ -1,0 +1,27 @@
+{
+  "id": "24009001000368",
+  "beverage_type": "spirits",
+  "brand_name": "JAMESON",
+  "class_type": "IRISH WHISKEY",
+  "abv": 40,
+  "abv_text": "40% Alc./Vol.",
+  "proof": null,
+  "net_contents_text": "750 ml",
+  "net_contents_ml": 750,
+  "name_address_text": "IMPORTED BY B. FERNANDEZ & HNOS. INC., SAN JUAN, PUERTO RICO",
+  "country_of_origin_text": "PRODUCT OF IRELAND",
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1)ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": ["no space between '(1)' and 'ACCORDING' in warning", "image files mislabeled: 01 'brand front' is actually the back label, 03 'back' is the front label", "second ABV form '40% vol.' in tiny boxed text on front", "condensed small print", "dark green text on cream", "neck label text vertical"],
+  "unreadable_fields": [],
+  "drafted_by": "draft",
+  "reviewed": false
+}

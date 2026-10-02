@@ -1,0 +1,54 @@
+{
+  "id": "syn_malt_10_warning_too_small",
+  "images": [
+    {
+      "file": "front.png",
+      "image_type": "Brand (front)",
+      "width_in": 3.5,
+      "height_in": 4.0
+    },
+    {
+      "file": "back.png",
+      "image_type": "Back",
+      "width_in": 3.5,
+      "height_in": 1.42
+    }
+  ],
+  "source": {
+    "type": "synthetic",
+    "license": "generated for this project"
+  },
+  "application": {
+    "beverage_type": "malt",
+    "brand_name": "Silver Willow",
+    "class_type": "Lager",
+    "abv": 8.0,
+    "proof": null,
+    "net_contents": "12 FL. OZ.",
+    "source": "imported",
+    "country_of_origin": "Italy",
+    "name_address": "Imported by Silver Distilling Co., Asheville, NC",
+    "label_width_in": 3.5
+  },
+  "printed": {
+    "brand_name": "Silver Willow",
+    "class_type": "Lager",
+    "abv": 8.0,
+    "proof": null,
+    "net_contents": "12 FL. OZ.",
+    "warning_text": "GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.",
+    "warning_heading_bold": true,
+    "warning_cap_mm": 1.1
+  },
+  "expected": {
+    "overall": "check",
+    "findings": [
+      "WARNING_TYPE_SIZE"
+    ]
+  },
+  "provenance": {
+    "base_id": "syn_malt_10",
+    "defect": "warning_too_small",
+    "seed": 7
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "23363001000273",
+  "beverage_type": "malt",
+  "brand_name": "Budweiser",
+  "class_type": "BEER",
+  "abv": 5,
+  "abv_text": "5% ALC./VOL.",
+  "proof": null,
+  "net_contents_text": "12 FL. OZ.",
+  "net_contents_ml": 354.88,
+  "name_address_text": "ANHEUSER-BUSCH, ST. LOUIS, MO",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "vertical"
+  },
+  "hard_cases": ["vertical warning", "vertical ABV/net contents/address block", "light grey text on white (low contrast)", "condensed tiny print", "all-caps warning body", "Phillies co-branding dominates label", "can wrap layout"],
+  "unreadable_fields": [],
+  "drafted_by": "draft",
+  "reviewed": false
+}

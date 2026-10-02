@@ -1,0 +1,54 @@
+{
+  "id": "syn_spirits_06_warning_missing",
+  "images": [
+    {
+      "file": "front.png",
+      "image_type": "Brand (front)",
+      "width_in": 3.5,
+      "height_in": 4.0
+    },
+    {
+      "file": "back.png",
+      "image_type": "Back",
+      "width_in": 3.5,
+      "height_in": 0.99
+    }
+  ],
+  "source": {
+    "type": "synthetic",
+    "license": "generated for this project"
+  },
+  "application": {
+    "beverage_type": "spirits",
+    "brand_name": "Old Red",
+    "class_type": "Blanco Tequila",
+    "abv": 50.0,
+    "proof": 100.0,
+    "net_contents": "50 mL",
+    "source": "domestic",
+    "country_of_origin": "United States",
+    "name_address": "Distilled and bottled by Old Spirits LLC, Louisville, KY",
+    "label_width_in": 3.5
+  },
+  "printed": {
+    "brand_name": "Old Red",
+    "class_type": "Blanco Tequila",
+    "abv": 50.0,
+    "proof": 100.0,
+    "net_contents": "50 mL",
+    "warning_text": null,
+    "warning_heading_bold": true,
+    "warning_cap_mm": 1.4
+  },
+  "expected": {
+    "overall": "fail",
+    "findings": [
+      "WARNING_MISSING"
+    ]
+  },
+  "provenance": {
+    "base_id": "syn_spirits_06",
+    "defect": "warning_missing",
+    "seed": 7
+  }
+}

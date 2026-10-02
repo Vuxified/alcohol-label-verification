@@ -1,0 +1,54 @@
+{
+  "id": "syn_wine_01_brand_extra_word",
+  "images": [
+    {
+      "file": "front.png",
+      "image_type": "Brand (front)",
+      "width_in": 3.0,
+      "height_in": 4.5
+    },
+    {
+      "file": "back.png",
+      "image_type": "Back",
+      "width_in": 3.0,
+      "height_in": 2.38
+    }
+  ],
+  "source": {
+    "type": "synthetic",
+    "license": "generated for this project"
+  },
+  "application": {
+    "beverage_type": "wine",
+    "brand_name": "Creek Crown",
+    "class_type": "Cabernet Sauvignon",
+    "abv": 19.5,
+    "proof": null,
+    "net_contents": "1.5 L",
+    "source": "domestic",
+    "country_of_origin": "United States",
+    "name_address": "Produced and bottled by Creek Spirits LLC, Louisville, KY",
+    "label_width_in": 3.0
+  },
+  "printed": {
+    "brand_name": "Creek Crown Reserve",
+    "class_type": "Cabernet Sauvignon",
+    "abv": 19.5,
+    "proof": null,
+    "net_contents": "1.5 L",
+    "warning_text": "GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.",
+    "warning_heading_bold": true,
+    "warning_cap_mm": 2.4
+  },
+  "expected": {
+    "overall": "fail",
+    "findings": [
+      "BRAND_MISMATCH"
+    ]
+  },
+  "provenance": {
+    "base_id": "syn_wine_01",
+    "defect": "brand_extra_word",
+    "seed": 7
+  }
+}

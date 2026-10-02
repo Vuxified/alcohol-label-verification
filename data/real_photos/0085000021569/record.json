@@ -1,0 +1,15 @@
+{
+  "barcode": "0085000021569",
+  "product_type": "wine",
+  "product_name": "Malbec",
+  "brands": "Barefoot",
+  "quantity": "",
+  "source": "https://world.openfoodfacts.org/product/0085000021569",
+  "license": "CC BY-SA (Open Food Facts contributors)",
+  "images": [
+    {
+      "file": "front.jpg",
+      "source_url": "https://images.openfoodfacts.org/images/products/008/500/002/1569/front_en.7.full.jpg"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "ttb_id": "24026001000499",
+  "status": "APPROVED",
+  "serial_no": "240006",
+  "class_type_code": "DESSERT /PORT/SHERRY/(COOKING) WINE",
+  "origin_code": "CALIFORNIA",
+  "brand_name": "BERINGER BROS.",
+  "fanciful_name": "BOURBON BARREL AGED",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "02/06/2024",
+  "applicant": "BW-CA-5398 | CELLAR 360, Treasury Wine Estates Americas Company | 21468 21480, 21672 8TH STREET EAST | SONOMA,\u00a0CA\u00a095476",
+  "source": "domestic",
+  "product_type": "wine",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.38,
+      "height_in": 4.88
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 4.06,
+      "height_in": 5.05
+    }
+  ]
+}

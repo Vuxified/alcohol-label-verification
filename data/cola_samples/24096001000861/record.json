@@ -1,0 +1,23 @@
+{
+  "ttb_id": "24096001000861",
+  "status": "APPROVED",
+  "serial_no": "240138",
+  "class_type_code": "SPARKLING WINE/CHAMPAGNE",
+  "origin_code": "ITALY",
+  "brand_name": "LA MARCA DI SAN MICHELE",
+  "fanciful_name": "NUMEROSEI",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "04/11/2024",
+  "applicant": "CA-I-2216 | Kermit Lynch, Wine Merchant | 1605 SAN PABLO AVE | BERKELEY,\u00a0CA\u00a094702",
+  "source": "imported",
+  "product_type": "wine",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 6.95,
+      "height_in": 3.31
+    }
+  ]
+}

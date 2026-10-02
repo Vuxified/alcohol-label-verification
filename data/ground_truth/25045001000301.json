@@ -1,0 +1,27 @@
+{
+  "id": "25045001000301",
+  "beverage_type": "spirits",
+  "brand_name": "Tanqueray",
+  "class_type": "DISTILLED GIN",
+  "abv": 41.3,
+  "abv_text": "41.3% Alc/Vol",
+  "proof": 82.6,
+  "net_contents_text": "1.75L",
+  "net_contents_ml": 1750,
+  "name_address_text": "IMPORTED BY DIAGEO, NEW YORK, NY",
+  "country_of_origin_text": "PRODUCT OF GREAT BRITAIN",
+  "warning": {
+    "present": true,
+    "image_file": "02_back.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREG-NANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": ["word 'PREGNANCY' hyphenated across line break ('PREG-' / 'NANCY')", "net contents and ABV in tiny condensed text on gold strip", "proof only inside Serving Facts box ('(82.6 proof)')", "script 'Tanqueray' brand font", "two producer statements (Charles Tanqueray & Co. London vs importer Diageo)", "decorative border artwork"],
+  "unreadable_fields": [],
+  "drafted_by": "draft",
+  "reviewed": false
+}

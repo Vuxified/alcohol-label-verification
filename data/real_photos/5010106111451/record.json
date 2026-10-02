@@ -1,0 +1,15 @@
+{
+  "barcode": "5010106111451",
+  "product_type": "spirits",
+  "product_name": "Ballantine\u2019s Scotch Whisky",
+  "brands": "Ballantine's",
+  "quantity": "",
+  "source": "https://world.openfoodfacts.org/product/5010106111451",
+  "license": "CC BY-SA (Open Food Facts contributors)",
+  "images": [
+    {
+      "file": "front.jpg",
+      "source_url": "https://images.openfoodfacts.org/images/products/501/010/611/1451/front_en.3.full.jpg"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": "25020001000666",
+  "beverage_type": "wine",
+  "brand_name": "Santa Margherita",
+  "class_type": "SPARKLING WINE",
+  "abv": null,
+  "abv_text": "ALC. 11 - 14% BY VOL.",
+  "proof": null,
+  "net_contents_text": "CONTENTS 750ML",
+  "net_contents_ml": 750,
+  "name_address_text": "IMPORTED BY: ADVENTURES IN WINE DALY CITY, CA",
+  "country_of_origin_text": "PRODUCT OF ITALY",
+  "warning": {
+    "present": true,
+    "image_file": "03_strip.png",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": ["ABV given as a range (11 - 14%), no single value", "low-resolution blurry images", "gold script brand on black", "appellation 'VALDOBBIADENE PROSECCO SUPERIORE DOCG' could be read as class", "curved neck label", "importer name in bold mid-line"],
+  "unreadable_fields": [],
+  "drafted_by": "draft",
+  "reviewed": false
+}

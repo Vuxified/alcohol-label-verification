@@ -1,0 +1,15 @@
+{
+  "barcode": "0085000029268",
+  "product_type": "spirits",
+  "product_name": "Vodka Seltzer Pineapple",
+  "brands": "High Noon",
+  "quantity": "355 ml",
+  "source": "https://world.openfoodfacts.org/product/0085000029268",
+  "license": "CC BY-SA (Open Food Facts contributors)",
+  "images": [
+    {
+      "file": "front.jpg",
+      "source_url": "https://images.openfoodfacts.org/images/products/008/500/002/9268/front_en.5.full.jpg"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": "24107001001085",
+  "beverage_type": "malt",
+  "brand_name": "Pabst Blue Ribbon",
+  "class_type": "BEER",
+  "abv": 4.7,
+  "abv_text": "4.7% ALC/VOL",
+  "proof": null,
+  "net_contents_text": "12 FL.OZ. (355 mL)",
+  "net_contents_ml": 355,
+  "name_address_text": "PABST BREWING COMPANY, LATROBE, PA",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREG-NANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "vertical"
+  },
+  "hard_cases": ["vertical warning", "word 'PREGNANCY' hyphenated across line break ('PREG-' / 'NANCY')", "vertical side-panel text (address, net contents, ABV)", "script 'Pabst' brand font", "large '12 FLUID OUNCES' graphic on front in addition to side-panel net contents", "white text on dark blue banner (brand)"],
+  "unreadable_fields": [],
+  "drafted_by": "draft",
+  "reviewed": false
+}

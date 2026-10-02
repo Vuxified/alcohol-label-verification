@@ -1,0 +1,29 @@
+{
+  "ttb_id": "24072001000642",
+  "status": "APPROVED",
+  "serial_no": "240066",
+  "class_type_code": "DAIRY CREAM LIQUEUR/CORDIAL",
+  "origin_code": "KENTUCKY",
+  "brand_name": "BUFFALO TRACE",
+  "fanciful_name": "BOURBON CREAM",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "03/21/2024",
+  "applicant": "DSP-KY-113 | BUFFALO TRACE DISTILLERY, BUFFALO TRACE DISTILLERY, INC. | 113 GREAT BUFFALO TRACE | FRANKFORT,\u00a0KY\u00a040601",
+  "source": "domestic",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 2.25,
+      "height_in": 1.5
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 1.63,
+      "height_in": 1.51
+    }
+  ]
+}

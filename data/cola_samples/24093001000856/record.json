@@ -1,0 +1,29 @@
+{
+  "ttb_id": "24093001000856",
+  "status": "APPROVED",
+  "serial_no": "241450",
+  "class_type_code": "ROSE WINE",
+  "origin_code": "FRANCE",
+  "brand_name": "KIM CRAWFORD",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "04/09/2024",
+  "applicant": "BW-CA-4802 | WOODBRIDGE WINERY, CONSTELLATION BRANDS U.S. OPERATIONS, INC. | 5950 E WOODBRIDGE RD | ACAMPO,\u00a0CA\u00a095220",
+  "source": "imported",
+  "product_type": "wine",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 4.92,
+      "height_in": 3.31
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 4.92,
+      "height_in": 3.31
+    }
+  ]
+}

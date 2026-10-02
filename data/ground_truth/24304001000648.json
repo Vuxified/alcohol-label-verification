@@ -1,0 +1,27 @@
+{
+  "id": "24304001000648",
+  "beverage_type": "malt",
+  "brand_name": "DREKKER BREWING COMPANY",
+  "class_type": "DOUBLE INDIA PALE ALE",
+  "abv": 8.2,
+  "abv_text": "(ALC. 8.2% BY VOL.)",
+  "proof": null,
+  "net_contents_text": "Net Contents: [X] 15.5 U.S. Gallons [ ] 5.16 U.S. Gallons",
+  "net_contents_ml": 58673.88,
+  "name_address_text": "BREWED AND KEGGED BY DREKKER BREWING COMPANY 1666 1st Avenue North Fargo, ND 58102",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": ["round keg collar with curved month/day text", "white text on black band", "net contents via checkbox (15.5 U.S. Gallons checked, 5.16 unchecked)", "wide letter-spaced small-caps address font", "fanciful name 'TRULY, MADLY, DEEPLY' larger than class", "keg pressure notice block resembles warning"],
+  "unreadable_fields": [],
+  "drafted_by": "draft",
+  "reviewed": false
+}

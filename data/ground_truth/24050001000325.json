@@ -1,0 +1,27 @@
+{
+  "id": "24050001000325",
+  "beverage_type": "wine",
+  "brand_name": "WOODBRIDGE",
+  "class_type": "CHARDONNAY BLUSH",
+  "abv": 13.5,
+  "abv_text": "13.5% ALC. BY VOL.",
+  "proof": null,
+  "net_contents_text": "1.5L",
+  "net_contents_ml": 1500,
+  "name_address_text": "VINTED AND BOTTLED BY WOODBRIDGE WINERY, ACAMPO, CA.",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.png",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "yes",
+    "orientation": "horizontal"
+  },
+  "hard_cases": ["image files mislabeled: 01 'brand front' is actually the back label, 02 'back' is the front label", "low-resolution images", "class/type ambiguous: front shows 'CHARDONNAY' with red script 'BLUSH' overlay plus 'CALIFORNIA CHARDONNAY with PINOT NOIR'", "script 'BLUSH' overlay in red", "text over faint vineyard background illustration", "ABV in different font beneath net contents line"],
+  "unreadable_fields": [],
+  "drafted_by": "draft",
+  "reviewed": false
+}

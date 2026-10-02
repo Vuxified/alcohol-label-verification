@@ -1,0 +1,15 @@
+{
+  "barcode": "0018200003325",
+  "product_type": "malt",
+  "product_name": "Superior Light Beer",
+  "brands": "Michelob ULTRA",
+  "quantity": "",
+  "source": "https://world.openfoodfacts.org/product/0018200003325",
+  "license": "CC BY-SA (Open Food Facts contributors)",
+  "images": [
+    {
+      "file": "front.jpg",
+      "source_url": "https://images.openfoodfacts.org/images/products/001/820/000/3325/front_en.7.full.jpg"
+    }
+  ]
+}

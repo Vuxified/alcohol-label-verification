@@ -1,0 +1,41 @@
+{
+  "ttb_id": "25076001000406",
+  "status": "APPROVED",
+  "serial_no": "25S028",
+  "class_type_code": "VODKA - OTHER FLAVORED",
+  "origin_code": "FRANCE",
+  "brand_name": "GREY GOOSE",
+  "fanciful_name": "LA POIRE",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "03/17/2025",
+  "applicant": "FL-I-1363 | BACARDI U.S.A., INC. | 3011 PONCE DE LEON BLVD STE 900 | CORAL GABLES,\u00a0FL\u00a033134",
+  "source": "imported",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 9.4,
+      "height_in": 6.57
+    },
+    {
+      "file": "02_other.jpg",
+      "image_type": "Other",
+      "width_in": 3.78,
+      "height_in": 2.67
+    },
+    {
+      "file": "03_other.jpg",
+      "image_type": "Other",
+      "width_in": 1.14,
+      "height_in": 1.14
+    },
+    {
+      "file": "04_other.jpg",
+      "image_type": "Other",
+      "width_in": 1.04,
+      "height_in": 1.04
+    }
+  ]
+}

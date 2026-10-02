@@ -1,0 +1,27 @@
+{
+  "id": "23328001000154",
+  "beverage_type": "malt",
+  "brand_name": "GUINNESS",
+  "class_type": "STOUT",
+  "abv": 7.5,
+  "abv_text": "7.5% ALC/VOL",
+  "proof": null,
+  "net_contents_text": "325ml",
+  "net_contents_ml": 325,
+  "name_address_text": "IMPORTED BY: FOLLYJAY AFRICA STORE & LOGISTICS LLC. 1017, ENFILAR LANE, ARLINGTON, TX 76017",
+  "country_of_origin_text": "PRODUCT OF NIGERIA",
+  "warning": {
+    "present": true,
+    "image_file": "02_back.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": ["white text on dark", "all-caps warning body", "small grey ABV/net contents on front", "FOREIGN EXTRA STOUT split across two lines on front"],
+  "unreadable_fields": [],
+  "drafted_by": "draft",
+  "reviewed": false
+}

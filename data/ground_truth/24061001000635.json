@@ -1,0 +1,27 @@
+{
+  "id": "24061001000635",
+  "beverage_type": "wine",
+  "brand_name": "[ yellow tail ]",
+  "class_type": "MOSCATO",
+  "abv": 7.5,
+  "abv_text": "7.5% ALC. BY VOL.",
+  "proof": null,
+  "net_contents_text": "1.5L",
+  "net_contents_ml": 1500,
+  "name_address_text": "PRODUCED BY CASELLA FAMILY BRANDS. IMPORTED BY DEUTSCH FAMILY WINE & SPIRITS, STAMFORD, CT.",
+  "country_of_origin_text": "PRODUCT OF AUSTRALIA",
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": false,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": ["period missing after 'BIRTH DEFECTS' in warning (gap instead)", "image files appear swapped (01 'front' is the back label, 02 'back' is the front)", "brand in brackets and lowercase '[ yellow tail ]'", "light-weight ABV text next to large '1.5L' with stylized 'ℓe' mark", "country line includes region 'SOUTH EASTERN AUSTRALIA'", "slightly blurry scan"],
+  "unreadable_fields": [],
+  "drafted_by": "draft",
+  "reviewed": false
+}

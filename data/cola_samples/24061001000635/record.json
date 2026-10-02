@@ -1,0 +1,29 @@
+{
+  "ttb_id": "24061001000635",
+  "status": "APPROVED",
+  "serial_no": "241632",
+  "class_type_code": "TABLE WHITE WINE",
+  "origin_code": "AUSTRALIA",
+  "brand_name": "YELLOW TAIL",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "03/05/2024",
+  "applicant": "CT-I-21055 | Deutsch Family Wine & Spirits, W.J. Deutsch & Sons Ltd. | 201 TRESSER BLVD | Stamford,\u00a0CT\u00a006901",
+  "source": "imported",
+  "product_type": "wine",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.96,
+      "height_in": 4.52
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 3.42,
+      "height_in": 2.99
+    }
+  ]
+}

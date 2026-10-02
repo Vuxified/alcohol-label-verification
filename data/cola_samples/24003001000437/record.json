@@ -1,0 +1,29 @@
+{
+  "ttb_id": "24003001000437",
+  "status": "APPROVED",
+  "serial_no": "240003",
+  "class_type_code": "TABLE WHITE WINE",
+  "origin_code": "WASHINGTON",
+  "brand_name": "CHATEAU STE. MICHELLE",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/04/2024",
+  "applicant": "BW-WA-85 | Ste. Michelle Wine Estates LLC | ROUTE 221 ONE MILE NORTH OF PATERSON | Paterson,\u00a0WA\u00a099345",
+  "source": "domestic",
+  "product_type": "wine",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 4.25,
+      "height_in": 3.64
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 2.99,
+      "height_in": 3.54
+    }
+  ]
+}

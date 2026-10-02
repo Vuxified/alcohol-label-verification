@@ -1,0 +1,15 @@
+{
+  "barcode": "0088586601835",
+  "product_type": "wine",
+  "product_name": "Crabernet",
+  "brands": "cabernet",
+  "quantity": "1",
+  "source": "https://world.openfoodfacts.org/product/0088586601835",
+  "license": "CC BY-SA (Open Food Facts contributors)",
+  "images": [
+    {
+      "file": "front.jpg",
+      "source_url": "https://images.openfoodfacts.org/images/products/008/858/660/1835/front_en.11.full.jpg"
+    }
+  ]
+}

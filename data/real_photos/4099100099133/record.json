@@ -1,0 +1,15 @@
+{
+  "barcode": "4099100099133",
+  "product_type": "wine",
+  "product_name": "Belini",
+  "brands": "Giambelinno",
+  "quantity": "250 mL",
+  "source": "https://world.openfoodfacts.org/product/4099100099133",
+  "license": "CC BY-SA (Open Food Facts contributors)",
+  "images": [
+    {
+      "file": "front.jpg",
+      "source_url": "https://images.openfoodfacts.org/images/products/409/910/009/9133/front_en.8.full.jpg"
+    }
+  ]
+}

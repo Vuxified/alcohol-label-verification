@@ -1,0 +1,27 @@
+{
+  "id": "24030001000320",
+  "beverage_type": "malt",
+  "brand_name": "Michelob Golden LIGHT",
+  "class_type": "DRAFT BEER",
+  "abv": 4.1,
+  "abv_text": "4.1% ALC./VOL.",
+  "proof": null,
+  "net_contents_text": "12 FL. OZ.",
+  "net_contents_ml": 354.88,
+  "name_address_text": "ANHEUSER-BUSCH • BREWED IN ST. LOUIS, MO",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "vertical"
+  },
+  "hard_cases": ["vertical warning", "blue text on gold", "vertical ABV in white text on dark blue", "tiny condensed print", "script brand font ('Michelob', 'Golden')", "fanciful 'LAKE CAN' larger than brand", "can wrap flat layout"],
+  "unreadable_fields": [],
+  "drafted_by": "draft",
+  "reviewed": false
+}

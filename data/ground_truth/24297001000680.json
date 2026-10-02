@@ -1,0 +1,35 @@
+{
+  "id": "24297001000680",
+  "beverage_type": "malt",
+  "brand_name": "Corona Extra",
+  "class_type": "BEER",
+  "abv": 4.6,
+  "abv_text": "4.6% ALC/VOL.",
+  "proof": null,
+  "net_contents_text": "BEER 12 FL. OZ.",
+  "net_contents_ml": 354.88,
+  "name_address_text": "BREWED AND CANNED BY CERVECERIA MODELO, NAVA, MEXICO IMPORTED BY CROWN IMPORTS, CHICAGO, IL",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "vertical"
+  },
+  "hard_cases": [
+    "vertical warning (rotated 90 degrees)",
+    "vertical ABV and name/address block",
+    "brand in blackletter script, set vertically",
+    "can wrap with brand panel repeated twice",
+    "white text on navy band (IMPORTED BEER, net contents)",
+    "no explicit country-of-origin phrase (only MEXICO in address and IMPORTED BEER)",
+    "script 'Brewed and Canned by' text"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "draft",
+  "reviewed": false
+}

@@ -1,0 +1,15 @@
+{
+  "barcode": "4072700003649",
+  "product_type": "malt",
+  "product_name": "Franziskaner Weissbier",
+  "brands": "Franziskaner",
+  "quantity": "500 ml",
+  "source": "https://world.openfoodfacts.org/product/4072700003649",
+  "license": "CC BY-SA (Open Food Facts contributors)",
+  "images": [
+    {
+      "file": "front.jpg",
+      "source_url": "https://images.openfoodfacts.org/images/products/407/270/000/3649/front_en.67.full.jpg"
+    }
+  ]
+}

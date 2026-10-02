@@ -1,0 +1,27 @@
+{
+  "id": "24131001000034",
+  "beverage_type": "malt",
+  "brand_name": "450 North BREWING Co",
+  "class_type": "ALE WITH LEMON & CHERRY AND BLUE RASPBERRY, MARSHMALLOW, ARTIFICIAL COTTON CANDY, & VANILLA ICE CREAM FLAVORS",
+  "abv": 5.3,
+  "abv_text": "5.3% ALCOHOL BY VOLUME",
+  "proof": null,
+  "net_contents_text": "16 FLUID OUNCES",
+  "net_contents_ml": 473.18,
+  "name_address_text": "BREWED AND CANNED BY 450 NORTH BREWING COMPANY. 8111 E. 450 N., COLUMBUS, IN 47203",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.png",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "vertical"
+  },
+  "hard_cases": ["vertical warning", "white text on busy blue illustrated background", "tiny low-resolution print", "brand only as small '450 North BREWING Co' logo; fanciful 'Blue Moon SCOOP' and 'SLUSHY XL' dominate", "second class statement '1 PINT SOUR ALE' on side panel", "star graphics overlapping text", "net contents given as both '1 PINT' and '16 FLUID OUNCES'"],
+  "unreadable_fields": [],
+  "drafted_by": "draft",
+  "reviewed": false
+}

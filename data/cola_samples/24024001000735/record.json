@@ -1,0 +1,23 @@
+{
+  "ttb_id": "24024001000735",
+  "status": "APPROVED",
+  "serial_no": "24S005",
+  "class_type_code": "RUM SPECIALTIES",
+  "origin_code": "CANADA",
+  "brand_name": "BACARDI",
+  "fanciful_name": "RUM PUNCH EDC",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/26/2024",
+  "applicant": "FL-I-1363 | BACARDI U.S.A., INC. | 2701 S LE JEUNE RD | CORAL GABLES,\u00a0FL\u00a033134",
+  "source": "imported",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 7.17,
+      "height_in": 5.83
+    }
+  ]
+}

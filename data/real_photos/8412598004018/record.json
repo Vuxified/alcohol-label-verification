@@ -1,0 +1,15 @@
+{
+  "barcode": "8412598004018",
+  "product_type": "malt",
+  "product_name": "Cerveza Especial",
+  "brands": "Estrella Galicia",
+  "quantity": "",
+  "source": "https://world.openfoodfacts.org/product/8412598004018",
+  "license": "CC BY-SA (Open Food Facts contributors)",
+  "images": [
+    {
+      "file": "front.jpg",
+      "source_url": "https://images.openfoodfacts.org/images/products/841/259/800/4018/front_en.3.full.jpg"
+    }
+  ]
+}

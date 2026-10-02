@@ -1,0 +1,23 @@
+{
+  "ttb_id": "24145001000557",
+  "status": "APPROVED",
+  "serial_no": "240437",
+  "class_type_code": "BEER",
+  "origin_code": "MEXICO",
+  "brand_name": "MODELO ESPECIAL",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "05/30/2024",
+  "applicant": "IL-I-15100 | CROWN IMPORTS LLC | 131 S DEARBORN ST STE 1200 | CHICAGO,\u00a0IL\u00a060603",
+  "source": "imported",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 9.0,
+      "height_in": 7.45
+    }
+  ]
+}

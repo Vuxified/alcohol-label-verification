@@ -1,0 +1,23 @@
+{
+  "ttb_id": "23363001000259",
+  "status": "APPROVED",
+  "serial_no": "23B010",
+  "class_type_code": "BEER",
+  "origin_code": "MISSOURI",
+  "brand_name": "BUDWEISER",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/03/2024",
+  "applicant": "BR-MO-20000 | Anheuser-Busch, LLC | 1 BUSCH PL | Saint Louis,\u00a0MO\u00a063118",
+  "source": "domestic",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 8.16,
+      "height_in": 4.5
+    }
+  ]
+}

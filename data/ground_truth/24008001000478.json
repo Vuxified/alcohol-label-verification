@@ -1,0 +1,34 @@
+{
+  "id": "24008001000478",
+  "beverage_type": "malt",
+  "brand_name": "Yuengling",
+  "class_type": "PILSNER",
+  "abv": 4.7,
+  "abv_text": "4.7% ALC./VOL.",
+  "proof": null,
+  "net_contents_text": "12 FL. OZ.",
+  "net_contents_ml": 354.88,
+  "name_address_text": "BREWED UNDER SUPERVISION OF D.G. YUENGLING & SON, INC. POTTSVILLE, PA BY THE YUENGLING COMPANY, FT. WORTH, TX",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "02_neck.png",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "other"
+  },
+  "hard_cases": [
+    "script font brand name",
+    "curved rim text for ABV, net contents and name/address",
+    "tiny print",
+    "low-resolution image",
+    "warning skewed/italic and rotated on curved neck label",
+    "class type ambiguous (GOLDEN PILSNER vs REFRESHING & SMOOTH BEER)"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "draft",
+  "reviewed": false
+}

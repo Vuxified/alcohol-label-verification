@@ -1,0 +1,29 @@
+{
+  "ttb_id": "24107001001085",
+  "status": "APPROVED",
+  "serial_no": "240061",
+  "class_type_code": "BEER",
+  "origin_code": "WISCONSIN",
+  "brand_name": "PABST BLUE RIBBON",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "04/22/2024",
+  "applicant": "BR-WI-CIT-1 | City Brewing Company, LLC | 1106 S THIRD ST | LA CROSSE,\u00a0WI\u00a054601",
+  "source": "domestic",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.81,
+      "height_in": 3.06
+    },
+    {
+      "file": "02_neck.jpg",
+      "image_type": "Neck",
+      "width_in": 2.12,
+      "height_in": 1.38
+    }
+  ]
+}

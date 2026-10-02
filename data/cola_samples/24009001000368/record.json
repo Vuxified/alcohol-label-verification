@@ -1,0 +1,35 @@
+{
+  "ttb_id": "24009001000368",
+  "status": "APPROVED",
+  "serial_no": "240002",
+  "class_type_code": "IRISH WHISKY FB",
+  "origin_code": "IRELAND",
+  "brand_name": "JAMESON",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/11/2024",
+  "applicant": "PR-I-768 | B. FERNANDEZ & HNOS., INC. | 305 LUCHETTI INDUSTRIAL PARK RD 5 | BAYAMON,\u00a0PR\u00a000961",
+  "source": "imported",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 2.76,
+      "height_in": 2.5
+    },
+    {
+      "file": "02_neck.jpg",
+      "image_type": "Neck",
+      "width_in": 3.2,
+      "height_in": 1.5
+    },
+    {
+      "file": "03_back.jpg",
+      "image_type": "Back",
+      "width_in": 4.2,
+      "height_in": 4.9
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "barcode": "3080210004491",
+  "product_type": "malt",
+  "product_name": "Biere 1664,",
+  "brands": "1664, Kronenbourg",
+  "quantity": "50 cl",
+  "source": "https://world.openfoodfacts.org/product/3080210004491",
+  "license": "CC BY-SA (Open Food Facts contributors)",
+  "images": [
+    {
+      "file": "front.jpg",
+      "source_url": "https://images.openfoodfacts.org/images/products/308/021/000/4491/front_fr.17.full.jpg"
+    }
+  ]
+}

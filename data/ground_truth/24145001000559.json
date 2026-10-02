@@ -1,0 +1,27 @@
+{
+  "id": "24145001000559",
+  "beverage_type": "malt",
+  "brand_name": "Modelo Negra",
+  "class_type": "IMPORTED BEER",
+  "abv": 5.4,
+  "abv_text": "5.4% ALC/VOL.",
+  "proof": null,
+  "net_contents_text": "24 FL. OZ. (710 ml) 1 PINT 8 FL. OZ.",
+  "net_contents_ml": 710,
+  "name_address_text": "BREWED AND CANNED BY CERVECERIA MODELO, NAVA, MEXICO • IMPORTED BY CROWN IMPORTS, CHICAGO, IL",
+  "country_of_origin_text": "BREWED IN MEXICO",
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "vertical"
+  },
+  "hard_cases": ["vertical warning", "vertical ABV/name-address/net contents", "grey text on black", "tiny print", "brand split: 'Modelo' large + script 'Negra' separately", "can wrap with design repeated twice", "busy 'Raiders' patterned background"],
+  "unreadable_fields": [],
+  "drafted_by": "draft",
+  "reviewed": false
+}

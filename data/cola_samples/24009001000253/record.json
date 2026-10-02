@@ -1,0 +1,35 @@
+{
+  "ttb_id": "24009001000253",
+  "status": "APPROVED",
+  "serial_no": "240002",
+  "class_type_code": "MALT BEVERAGES SPECIALITIES - FLAVORED",
+  "origin_code": "CALIFORNIA",
+  "brand_name": "SIERRA NEVADA",
+  "fanciful_name": "SOLE D'ITALIA",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/16/2024",
+  "applicant": "BR-CA-SIE-1 | Sierra Nevada Brewing Co., SIERRA NEVADA BREWING CO. | 1075 E 20TH ST | CHICO,\u00a0CA\u00a095928",
+  "source": "domestic",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 2.25,
+      "height_in": 2.25
+    },
+    {
+      "file": "02_other.jpg",
+      "image_type": "Other",
+      "width_in": 2.5,
+      "height_in": 2.5
+    },
+    {
+      "file": "03_other.jpg",
+      "image_type": "Other",
+      "width_in": 4.5,
+      "height_in": 1.2
+    }
+  ]
+}

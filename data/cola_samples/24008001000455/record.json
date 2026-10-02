@@ -1,0 +1,23 @@
+{
+  "ttb_id": "24008001000455",
+  "status": "APPROVED",
+  "serial_no": "240008",
+  "class_type_code": "BEER",
+  "origin_code": "TEXAS",
+  "brand_name": "YUENGLING",
+  "fanciful_name": "TRADITIONAL LAGER",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/10/2024",
+  "applicant": "BR-TX-20590 | The Yuengling Company LLC | 7001 SOUTH FREEWAY | Fort Worth,\u00a0TX\u00a076134",
+  "source": "domestic",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.png",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 8.28,
+      "height_in": 4.6
+    }
+  ]
+}

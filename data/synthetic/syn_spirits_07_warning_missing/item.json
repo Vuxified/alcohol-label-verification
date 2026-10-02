@@ -1,0 +1,54 @@
+{
+  "id": "syn_spirits_07_warning_missing",
+  "images": [
+    {
+      "file": "front.png",
+      "image_type": "Brand (front)",
+      "width_in": 4.0,
+      "height_in": 3.5
+    },
+    {
+      "file": "back.png",
+      "image_type": "Back",
+      "width_in": 4.0,
+      "height_in": 1.19
+    }
+  ],
+  "source": {
+    "type": "synthetic",
+    "license": "generated for this project"
+  },
+  "application": {
+    "beverage_type": "spirits",
+    "brand_name": "Copper Willow",
+    "class_type": "Kentucky Straight Bourbon Whiskey",
+    "abv": 50.0,
+    "proof": 100.0,
+    "net_contents": "375 mL",
+    "source": "imported",
+    "country_of_origin": "Australia",
+    "name_address": "Imported by Copper Distilling Co., Bardstown, KY",
+    "label_width_in": 4.0
+  },
+  "printed": {
+    "brand_name": "Copper Willow",
+    "class_type": "Kentucky Straight Bourbon Whiskey",
+    "abv": 50.0,
+    "proof": 100.0,
+    "net_contents": "375 mL",
+    "warning_text": null,
+    "warning_heading_bold": true,
+    "warning_cap_mm": 2.4
+  },
+  "expected": {
+    "overall": "fail",
+    "findings": [
+      "WARNING_MISSING"
+    ]
+  },
+  "provenance": {
+    "base_id": "syn_spirits_07",
+    "defect": "warning_missing",
+    "seed": 7
+  }
+}

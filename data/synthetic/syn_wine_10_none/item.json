@@ -1,0 +1,52 @@
+{
+  "id": "syn_wine_10_none",
+  "images": [
+    {
+      "file": "front.png",
+      "image_type": "Brand (front)",
+      "width_in": 3.0,
+      "height_in": 4.5
+    },
+    {
+      "file": "back.png",
+      "image_type": "Back",
+      "width_in": 3.0,
+      "height_in": 1.67
+    }
+  ],
+  "source": {
+    "type": "synthetic",
+    "license": "generated for this project"
+  },
+  "application": {
+    "beverage_type": "wine",
+    "brand_name": "Ember Cedar",
+    "class_type": "Cabernet Sauvignon",
+    "abv": 12.5,
+    "proof": null,
+    "net_contents": "187 mL",
+    "source": "imported",
+    "country_of_origin": "Mexico",
+    "name_address": "Imported by Ember Spirits LLC, Denver, CO",
+    "label_width_in": 3.0
+  },
+  "printed": {
+    "brand_name": "Ember Cedar",
+    "class_type": "Cabernet Sauvignon",
+    "abv": 12.5,
+    "proof": null,
+    "net_contents": "187 mL",
+    "warning_text": "GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.",
+    "warning_heading_bold": true,
+    "warning_cap_mm": 1.4
+  },
+  "expected": {
+    "overall": "pass",
+    "findings": []
+  },
+  "provenance": {
+    "base_id": "syn_wine_10",
+    "defect": "none",
+    "seed": 7
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "barcode": "0637411000819",
+  "product_type": "wine",
+  "product_name": "Dealcoholized New Zealand Sauvignon blanc",
+  "brands": "Giesen",
+  "quantity": "0,75 l",
+  "source": "https://world.openfoodfacts.org/product/0637411000819",
+  "license": "CC BY-SA (Open Food Facts contributors)",
+  "images": [
+    {
+      "file": "front.jpg",
+      "source_url": "https://images.openfoodfacts.org/images/products/063/741/100/0819/front_en.11.full.jpg"
+    }
+  ]
+}

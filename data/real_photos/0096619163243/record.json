@@ -1,0 +1,15 @@
+{
+  "barcode": "0096619163243",
+  "product_type": "wine",
+  "product_name": "Prosecco",
+  "brands": "Kirkland",
+  "quantity": "",
+  "source": "https://world.openfoodfacts.org/product/0096619163243",
+  "license": "CC BY-SA (Open Food Facts contributors)",
+  "images": [
+    {
+      "file": "front.jpg",
+      "source_url": "https://images.openfoodfacts.org/images/products/009/661/916/3243/front_en.3.full.jpg"
+    }
+  ]
+}

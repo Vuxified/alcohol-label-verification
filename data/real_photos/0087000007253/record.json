@@ -1,0 +1,15 @@
+{
+  "barcode": "0087000007253",
+  "product_type": "spirits",
+  "product_name": "Blended Canadian Whiskey",
+  "brands": "Crown Royal",
+  "quantity": "",
+  "source": "https://world.openfoodfacts.org/product/0087000007253",
+  "license": "CC BY-SA (Open Food Facts contributors)",
+  "images": [
+    {
+      "file": "front.jpg",
+      "source_url": "https://images.openfoodfacts.org/images/products/008/700/000/7253/front_en.5.full.jpg"
+    }
+  ]
+}

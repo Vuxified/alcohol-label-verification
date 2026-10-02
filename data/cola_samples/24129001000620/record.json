@@ -1,0 +1,29 @@
+{
+  "ttb_id": "24129001000620",
+  "status": "APPROVED",
+  "serial_no": "24I451",
+  "class_type_code": "TABLE WHITE WINE",
+  "origin_code": "ITALY",
+  "brand_name": "KIM CRAWFORD",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "05/15/2024",
+  "applicant": "CA-I-3385 | THE PRISONER WINE COMPANY, TPWC, Inc. | 1178 GALLERON RD | RUTHERFORD,\u00a0CA\u00a094573",
+  "source": "imported",
+  "product_type": "wine",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.27,
+      "height_in": 2.76
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 3.94,
+      "height_in": 3.37
+    }
+  ]
+}

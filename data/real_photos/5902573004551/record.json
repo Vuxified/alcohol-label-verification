@@ -1,0 +1,15 @@
+{
+  "barcode": "5902573004551",
+  "product_type": "spirits",
+  "product_name": "W\u00f3dka Stock Prestige 0, 5L.",
+  "brands": "Stock",
+  "quantity": "500 ml",
+  "source": "https://world.openfoodfacts.org/product/5902573004551",
+  "license": "CC BY-SA (Open Food Facts contributors)",
+  "images": [
+    {
+      "file": "front.jpg",
+      "source_url": "https://images.openfoodfacts.org/images/products/590/257/300/4551/front_de.8.full.jpg"
+    }
+  ]
+}

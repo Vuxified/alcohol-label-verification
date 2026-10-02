@@ -1,0 +1,15 @@
+{
+  "barcode": "0096619639274",
+  "product_type": "spirits",
+  "product_name": "American Vodka",
+  "brands": "Kirkland Signature",
+  "quantity": "1.75 L",
+  "source": "https://world.openfoodfacts.org/product/0096619639274",
+  "license": "CC BY-SA (Open Food Facts contributors)",
+  "images": [
+    {
+      "file": "front.jpg",
+      "source_url": "https://images.openfoodfacts.org/images/products/009/661/963/9274/front_en.15.full.jpg"
+    }
+  ]
+}

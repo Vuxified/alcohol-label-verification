@@ -1,0 +1,35 @@
+{
+  "id": "24047001000673",
+  "beverage_type": "wine",
+  "brand_name": "WYNELAND ESTATES",
+  "class_type": "California Champagne",
+  "abv": 11.5,
+  "abv_text": "ALC. 11.5% BY VOL.",
+  "proof": null,
+  "net_contents_text": "NET VOLUME 750ML",
+  "net_contents_ml": 750,
+  "name_address_text": "PRODUCED AND BOTTLED BY WOODBRIDGE CHAMPAGNE CELLARS - LODI, CA",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "brand only in curved text around a seal (WYNELAND ESTATES) on image labeled back",
+    "image file types effectively swapped (01 is the text/back panel, 02 is the brand panel)",
+    "white text on black background",
+    "vertical (rotated 90 degrees) class and ABV text on brand panel",
+    "vertical address text",
+    "bottler name (WOODBRIDGE CHAMPAGNE CELLARS) differs from printed brand",
+    "ABV phrased two ways (ALC. 11.5% BY VOL. / ALCOHOL 11.5% BY VOLUME)"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "draft",
+  "reviewed": false
+}

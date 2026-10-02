@@ -1,0 +1,27 @@
+{
+  "id": "24235001000162",
+  "beverage_type": "spirits",
+  "brand_name": "Captain Morgan",
+  "class_type": "CARIBBEAN RUM WITH NATURAL FLAVORS",
+  "abv": 35,
+  "abv_text": "35% alc./vol.",
+  "proof": 70,
+  "net_contents_text": "750 mL",
+  "net_contents_ml": 750,
+  "name_address_text": "PRODUCED BY CAPTAIN MORGAN RUM CO., NEW YORK, NY",
+  "country_of_origin_text": "FINISHED AND BOTTLED IN THE UNITED STATES",
+  "warning": {
+    "present": true,
+    "image_file": "02_back.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "unclear",
+    "orientation": "horizontal"
+  },
+  "hard_cases": ["decorative blackletter-style brand font", "busy illustrated background", "fanciful 'SWEET CHILI LIME' dominant (record says 'CHILI LIME')", "front name/address lacks city; full statement on back", "red text on white for bottler statement", "heavy condensed warning font"],
+  "unreadable_fields": [],
+  "drafted_by": "draft",
+  "reviewed": false
+}

@@ -1,0 +1,54 @@
+{
+  "id": "syn_malt_03_warning_missing",
+  "images": [
+    {
+      "file": "front.png",
+      "image_type": "Brand (front)",
+      "width_in": 4.0,
+      "height_in": 3.5
+    },
+    {
+      "file": "back.png",
+      "image_type": "Back",
+      "width_in": 4.0,
+      "height_in": 1.19
+    }
+  ],
+  "source": {
+    "type": "synthetic",
+    "license": "generated for this project"
+  },
+  "application": {
+    "beverage_type": "malt",
+    "brand_name": "Creek Falcon",
+    "class_type": "Stout",
+    "abv": 6.8,
+    "proof": null,
+    "net_contents": "16 FL. OZ.",
+    "source": "imported",
+    "country_of_origin": "Germany",
+    "name_address": "Imported by Creek Spirits LLC, Louisville, KY",
+    "label_width_in": 4.0
+  },
+  "printed": {
+    "brand_name": "Creek Falcon",
+    "class_type": "Stout",
+    "abv": 6.8,
+    "proof": null,
+    "net_contents": "16 FL. OZ.",
+    "warning_text": null,
+    "warning_heading_bold": true,
+    "warning_cap_mm": 2.4
+  },
+  "expected": {
+    "overall": "fail",
+    "findings": [
+      "WARNING_MISSING"
+    ]
+  },
+  "provenance": {
+    "base_id": "syn_malt_03",
+    "defect": "warning_missing",
+    "seed": 7
+  }
+}

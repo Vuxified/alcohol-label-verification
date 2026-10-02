@@ -1,0 +1,29 @@
+{
+  "ttb_id": "25169001000935",
+  "status": "APPROVED",
+  "serial_no": "250053",
+  "class_type_code": "VODKA 80-89 PROOF",
+  "origin_code": "TEXAS",
+  "brand_name": "TITO'S HANDMADE",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "06/23/2025",
+  "applicant": "DSP-TX-57 | FIFTH GENERATION, INC. | 12101 MOORE RD | AUSTIN,\u00a0TX\u00a078719",
+  "source": "domestic",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 1.62,
+      "height_in": 2.5
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 1.62,
+      "height_in": 2.5
+    }
+  ]
+}

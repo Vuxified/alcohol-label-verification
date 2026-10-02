@@ -1,0 +1,27 @@
+{
+  "id": "24304001000568",
+  "beverage_type": "malt",
+  "brand_name": "DREKKER BREWING CO.",
+  "class_type": "ALE",
+  "abv": 8.2,
+  "abv_text": "ALC. 8.2% BY VOL",
+  "proof": null,
+  "net_contents_text": "CONTENTS 1 PINT (16 FL. OZ)",
+  "net_contents_ml": 473.18,
+  "name_address_text": "BREWED AND PACKAGED BY DREKKER BREWING COMPANY, FARGO, ND",
+  "country_of_origin_text": "PRODUCT OF THE USA",
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "vertical"
+  },
+  "hard_cases": ["vertical warning", "white text on extremely busy illustrated background", "tiny print", "ABV inside a goblet-shaped icon, rotated", "class shown both as 'ALE' (side panel) and 'DOUBLE IPA' (front)", "stylized display font for fanciful name", "mixed-case warning body"],
+  "unreadable_fields": [],
+  "drafted_by": "draft",
+  "reviewed": false
+}

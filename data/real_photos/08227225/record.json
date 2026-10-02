@@ -1,0 +1,15 @@
+{
+  "barcode": "08227225",
+  "product_type": "spirits",
+  "product_name": "Napoleon Armagnac Brandy",
+  "brands": "Delord",
+  "quantity": "750 mL",
+  "source": "https://world.openfoodfacts.org/product/08227225",
+  "license": "CC BY-SA (Open Food Facts contributors)",
+  "images": [
+    {
+      "file": "front.jpg",
+      "source_url": "https://images.openfoodfacts.org/images/products/000/000/822/7225/front_en.3.full.jpg"
+    }
+  ]
+}

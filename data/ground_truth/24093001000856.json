@@ -1,0 +1,27 @@
+{
+  "id": "24093001000856",
+  "beverage_type": "wine",
+  "brand_name": "KIM CRAWFORD",
+  "class_type": "ROSÉ WINE",
+  "abv": 12.5,
+  "abv_text": "ALC. 12.5% BY VOL.",
+  "proof": null,
+  "net_contents_text": "750ML",
+  "net_contents_ml": 750,
+  "name_address_text": "IMPORTED BY CONSTELLATION IMPORTS, RUTHERFORD, CA BOTTLED BY CONSTELLATION IMPORTS, ACAMPO, CA",
+  "country_of_origin_text": "PRODUCT OF FRANCE",
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": ["very low-contrast light pink text on white", "image files mislabeled: 01 'brand front' is actually the back label, 02 'back' is the front label", "front country statement in French ('PRODUIT DE FRANCE 2023')", "gold text on black circle (front brand)", "accented 'ROSÉ'", "net contents and ABV on one line"],
+  "unreadable_fields": [],
+  "drafted_by": "draft",
+  "reviewed": false
+}

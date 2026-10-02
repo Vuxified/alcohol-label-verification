@@ -1,0 +1,23 @@
+{
+  "ttb_id": "23354001000381",
+  "status": "APPROVED",
+  "serial_no": "23R183",
+  "class_type_code": "MALT BEVERAGES SPECIALITIES - FLAVORED",
+  "origin_code": "MARYLAND",
+  "brand_name": "GUINNESS",
+  "fanciful_name": "IRISH BREAKFAST TEA AMBER",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/03/2024",
+  "applicant": "BR-MD-20068 | Diageo Americas Supply, Inc. | 5001 WASHINGTON BLVD | Baltimore,\u00a0MD\u00a021227",
+  "source": "domestic",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 8.0,
+      "height_in": 5.0
+    }
+  ]
+}

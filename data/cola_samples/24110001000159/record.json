@@ -1,0 +1,29 @@
+{
+  "ttb_id": "24110001000159",
+  "status": "APPROVED",
+  "serial_no": "24P918",
+  "class_type_code": "IRISH WHISKY",
+  "origin_code": "IRELAND",
+  "brand_name": "JAMESON",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "04/25/2024",
+  "applicant": "NY-I-15423 | PERNOD RICARD USA, Pernod Ricard USA, LLC | 250 PARK AVE FLRS 16-17 | NEW YORK,\u00a0NY\u00a010177",
+  "source": "imported",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 4.5,
+      "height_in": 5.8
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 4.5,
+      "height_in": 5.8
+    }
+  ]
+}

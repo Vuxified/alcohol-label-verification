@@ -1,0 +1,23 @@
+{
+  "ttb_id": "24304001000648",
+  "status": "APPROVED",
+  "serial_no": "248242",
+  "class_type_code": "ALE",
+  "origin_code": "NORTH DAKOTA",
+  "brand_name": "DREKKER BREWING COMPANY",
+  "fanciful_name": "TRULY, MADLY, DEEPLY",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "10/31/2024",
+  "applicant": "BR-ND-21022 | DREKKER BREWING COMPANY LLC | 1666 FIRST AVENUE NORTH | Fargo,\u00a0ND\u00a058102",
+  "source": "domestic",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 7.0,
+      "height_in": 7.0
+    }
+  ]
+}

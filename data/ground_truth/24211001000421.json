@@ -1,0 +1,27 @@
+{
+  "id": "24211001000421",
+  "beverage_type": "spirits",
+  "brand_name": "SMIRNOFF",
+  "class_type": "VODKA",
+  "abv": 50,
+  "abv_text": "50% ALC/VOL (100 PROOF)",
+  "proof": 100,
+  "net_contents_text": "750 mL",
+  "net_contents_ml": 750,
+  "name_address_text": "PRODUCED BY THE SMIRNOFF CO., NEW YORK, NY",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "03_back.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BE-CAUSE OF THE RISK OF BIRTH DEFECTS. (2) CON-SUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": ["hyphenated line breaks inside warning words (BE-CAUSE, CON-SUMPTION)", "'100' on front is proof, not ABV", "ABV/proof only on neck/strip label with brushed-metal background", "curved brand banner on front", "script 'Smirnoff' secondary brand", "'MADE IN AMERICA' statement (domestic)"],
+  "unreadable_fields": [],
+  "drafted_by": "draft",
+  "reviewed": false
+}

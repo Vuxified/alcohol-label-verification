@@ -1,0 +1,34 @@
+{
+  "id": "24002001000458",
+  "beverage_type": "spirits",
+  "brand_name": "JACK DANIEL'S",
+  "class_type": "TENNESSEE WHISKEY",
+  "abv": 53.5,
+  "abv_text": "53.5% ALC./VOL.",
+  "proof": 107,
+  "net_contents_text": "700mL",
+  "net_contents_ml": 700,
+  "name_address_text": "DISTILLED AND BOTTLED BY JACK DANIEL DISTILLERY LYNCHBURG, TENNESSEE, USA",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "02_back.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "light/gold and cyan text on black background",
+    "curved/arched brand name",
+    "small-caps ABV text (Alc./Vol.) on front",
+    "vertical LIMITED RELEASE side text",
+    "net contents only on back, combined with ABV line",
+    "barcode placeholder (80% FPO)"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "draft",
+  "reviewed": false
+}

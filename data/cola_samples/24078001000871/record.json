@@ -1,0 +1,41 @@
+{
+  "ttb_id": "24078001000871",
+  "status": "APPROVED",
+  "serial_no": "24CUPC",
+  "class_type_code": "ROSE WINE",
+  "origin_code": "CALIFORNIA",
+  "brand_name": "WINE CONNOISSEUR",
+  "fanciful_name": "CUPCAKE VINEYARDS",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "03/28/2024",
+  "applicant": "BWN-CA-23970 | Park Street Direct of CA LLC | 980 AIRWAY CT STE B,C1,C2,D | Santa Rosa,\u00a0CA\u00a094503",
+  "source": "domestic",
+  "product_type": "wine",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.png",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 4.5,
+      "height_in": 4.5
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 3.0,
+      "height_in": 6.0
+    },
+    {
+      "file": "03_other.jpg",
+      "image_type": "Other",
+      "width_in": 5.0,
+      "height_in": 6.0
+    },
+    {
+      "file": "04_other.jpg",
+      "image_type": "Other",
+      "width_in": 1.0,
+      "height_in": 6.0
+    }
+  ]
+}

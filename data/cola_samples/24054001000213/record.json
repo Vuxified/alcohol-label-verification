@@ -1,0 +1,23 @@
+{
+  "ttb_id": "24054001000213",
+  "status": "APPROVED",
+  "serial_no": "240223",
+  "class_type_code": "BEER",
+  "origin_code": "NETHERLANDS",
+  "brand_name": "HEINEKEN SILVER",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "02/26/2024",
+  "applicant": "NY-I-1748 | HEINEKEN USA INCORPORATED | 360 HAMILTON AVE STE 1103 , PT 11TH FL & 12TH FL. | WHITE PLAINS,\u00a0NY\u00a010601",
+  "source": "imported",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 5.94,
+      "height_in": 4.72
+    }
+  ]
+}

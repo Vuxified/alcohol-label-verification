@@ -1,0 +1,35 @@
+{
+  "ttb_id": "24100001000829",
+  "status": "APPROVED",
+  "serial_no": "240658",
+  "class_type_code": "BEER",
+  "origin_code": "MEXICO",
+  "brand_name": "CORONA EXTRA",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "04/10/2024",
+  "applicant": "PR-I-767 | BALLESTER HERMANOS, INC. | WESTGATE IND. PK. RD #869 | CATANO,\u00a0PR\u00a000962",
+  "source": "imported",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 2.63,
+      "height_in": 3.44
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 3.31,
+      "height_in": 3.5
+    },
+    {
+      "file": "03_other.jpg",
+      "image_type": "Other",
+      "width_in": 1.0,
+      "height_in": 1.0
+    }
+  ]
+}

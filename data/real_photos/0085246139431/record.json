@@ -1,0 +1,15 @@
+{
+  "barcode": "0085246139431",
+  "product_type": "spirits",
+  "product_name": "Whiskey",
+  "brands": "",
+  "quantity": "",
+  "source": "https://world.openfoodfacts.org/product/0085246139431",
+  "license": "CC BY-SA (Open Food Facts contributors)",
+  "images": [
+    {
+      "file": "front.jpg",
+      "source_url": "https://images.openfoodfacts.org/images/products/008/524/613/9431/front_en.5.full.jpg"
+    }
+  ]
+}

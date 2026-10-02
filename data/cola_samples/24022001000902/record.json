@@ -1,0 +1,29 @@
+{
+  "ttb_id": "24022001000902",
+  "status": "APPROVED",
+  "serial_no": "240005",
+  "class_type_code": "DESSERT /PORT/SHERRY/(COOKING) WINE",
+  "origin_code": "CALIFORNIA",
+  "brand_name": "JOSH CELLARS",
+  "fanciful_name": "FAMILY RESERVE",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/26/2024",
+  "applicant": "BW-CA-6038 | Ray's Station, GROVE ACQUISITION, LLC | 13300 BUCKMAN DR | HOPLAND,\u00a0CA\u00a095449",
+  "source": "domestic",
+  "product_type": "wine",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 4.24,
+      "height_in": 4.4
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 3.95,
+      "height_in": 4.3
+    }
+  ]
+}

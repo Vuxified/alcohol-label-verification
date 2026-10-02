@@ -1,0 +1,27 @@
+{
+  "id": "24036001000395",
+  "beverage_type": "wine",
+  "brand_name": "BAREFOOT",
+  "class_type": "PINOT GRIGIO",
+  "abv": 12.5,
+  "abv_text": "12.5% ALC. BY VOL",
+  "proof": null,
+  "net_contents_text": "750mL",
+  "net_contents_ml": 750,
+  "name_address_text": "VINTED & BOTTLED BY BAREFOOT WINES, MODESTO, CALIFORNIA",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": ["image files mislabeled: 01 'brand front' is actually the back label, 02 'back' is the front label", "stylized 'OO' ligature in BAREFOOT logo", "net contents attached to address with no space before bullet ('750mL•')", "ABV only on front, in small condensed text at bottom edge", "brown text on pale yellow", "appellation 'AMERICAN' printed above varietal on back only"],
+  "unreadable_fields": [],
+  "drafted_by": "draft",
+  "reviewed": false
+}

@@ -1,0 +1,35 @@
+{
+  "id": "24022001000501",
+  "beverage_type": "spirits",
+  "brand_name": "GREY GOOSE",
+  "class_type": "VODKA",
+  "abv": 40,
+  "abv_text": "40% alc./vol.",
+  "proof": null,
+  "net_contents_text": "700 ml",
+  "net_contents_ml": 700,
+  "name_address_text": "IMPORTED BY GREY GOOSE IMPORTING COMPANY, CORAL GABLES, FL. BOTTLED BY BMP, 11 ROUTE DU LAUBARET, 16130 GENSAC-LA-PALLUE, FRANCE.",
+  "country_of_origin_text": "DISTILLED & BOTTLED IN FRANCE",
+  "warning": {
+    "present": true,
+    "image_file": "02_back.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "front ABV and net contents in thin pale pink text on light gradient (very low contrast)",
+    "tiny print on low-resolution back label",
+    "country of origin only in vertical text on neck label",
+    "vertical net contents on neck label",
+    "stylized O in GOOSE (goose device)",
+    "curved text on round seal image",
+    "light gray text on light background on neck"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "draft",
+  "reviewed": false
+}

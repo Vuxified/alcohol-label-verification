@@ -1,0 +1,27 @@
+{
+  "id": "24207001000388",
+  "beverage_type": "spirits",
+  "brand_name": "Four Roses",
+  "class_type": "KENTUCKY STRAIGHT BOURBON WHISKEY",
+  "abv": 50,
+  "abv_text": "50% ALC./VOL.",
+  "proof": null,
+  "net_contents_text": "750 ml",
+  "net_contents_ml": 750,
+  "name_address_text": "Distilled & Aged by Four Roses Distillery LLC, Lawrenceburg, Kentucky",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "03_back.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHIN-ERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": ["hyphenated line break inside warning word (MACHIN-ERY)", "light text on dark red", "ABV and net contents on separate small strip label (02)", "class/type in small two-line text", "warehouse/barrel codes ('SN', '46-3A', 'OBSF') could be misread as data", "vertical placeholder digits '0000000'"],
+  "unreadable_fields": [],
+  "drafted_by": "draft",
+  "reviewed": false
+}

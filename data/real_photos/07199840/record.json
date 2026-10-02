@@ -1,0 +1,15 @@
+{
+  "barcode": "07199840",
+  "product_type": "malt",
+  "product_name": "Coors Light",
+  "brands": "Coors, OLD TRAPPER",
+  "quantity": "12 fl oz (355g)",
+  "source": "https://world.openfoodfacts.org/product/07199840",
+  "license": "CC BY-SA (Open Food Facts contributors)",
+  "images": [
+    {
+      "file": "front.jpg",
+      "source_url": "https://images.openfoodfacts.org/images/products/000/000/719/9840/front_en.19.full.jpg"
+    }
+  ]
+}

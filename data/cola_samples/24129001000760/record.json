@@ -1,0 +1,35 @@
+{
+  "ttb_id": "24129001000760",
+  "status": "APPROVED",
+  "serial_no": "24MU01",
+  "class_type_code": "BEER",
+  "origin_code": "MISSOURI",
+  "brand_name": "MICHELOB ULTRA",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "05/09/2024",
+  "applicant": "BR-MO-20000 | Anheuser-Busch, LLC | 1 BUSCH PL | Saint Louis,\u00a0MO\u00a063118",
+  "source": "domestic",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 2.63,
+      "height_in": 3.4
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 2.0,
+      "height_in": 2.5
+    },
+    {
+      "file": "03_neck.jpg",
+      "image_type": "Neck",
+      "width_in": 2.04,
+      "height_in": 1.6
+    }
+  ]
+}

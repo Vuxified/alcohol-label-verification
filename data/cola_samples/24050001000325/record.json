@@ -1,0 +1,29 @@
+{
+  "ttb_id": "24050001000325",
+  "status": "APPROVED",
+  "serial_no": "241441",
+  "class_type_code": "ROSE WINE",
+  "origin_code": "CALIFORNIA",
+  "brand_name": "WOODBRIDGE",
+  "fanciful_name": "BLUSH",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "02/21/2024",
+  "applicant": "BW-CA-4802 | WOODBRIDGE WINERY, CONSTELLATION BRANDS U.S. OPERATIONS, INC. | 5950 E WOODBRIDGE RD | ACAMPO,\u00a0CA\u00a095220",
+  "source": "domestic",
+  "product_type": "wine",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.png",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.31,
+      "height_in": 3.23
+    },
+    {
+      "file": "02_back.png",
+      "image_type": "Back",
+      "width_in": 3.54,
+      "height_in": 4.57
+    }
+  ]
+}

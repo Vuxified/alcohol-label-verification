@@ -1,0 +1,9 @@
+.planning/
+.env
+.env.*
+node_modules/
+__pycache__/
+.venv/
+.DS_Store
+.playwright-mcp/
+data/augmented/

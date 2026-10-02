@@ -1,0 +1,35 @@
+{
+  "ttb_id": "24005001000090",
+  "status": "APPROVED",
+  "serial_no": "24002T",
+  "class_type_code": "MALT BEVERAGES SPECIALITIES - FLAVORED",
+  "origin_code": "CALIFORNIA",
+  "brand_name": "TWISTED TEA",
+  "fanciful_name": "LEMON LIGHT",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/09/2024",
+  "applicant": "BR-CA-21278 | The Boston Beer Company, American Craft Brewery LLC | 15801 E 1ST ST | Irwindale,\u00a0CA\u00a091706",
+  "source": "domestic",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.png",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 4.4,
+      "height_in": 3.46
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 2.25,
+      "height_in": 2.25
+    },
+    {
+      "file": "03_neck.jpg",
+      "image_type": "Neck",
+      "width_in": 4.5,
+      "height_in": 1.64
+    }
+  ]
+}

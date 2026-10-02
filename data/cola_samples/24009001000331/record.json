@@ -1,0 +1,29 @@
+{
+  "ttb_id": "24009001000331",
+  "status": "APPROVED",
+  "serial_no": "24R004",
+  "class_type_code": "CANADIAN WHISKY FB",
+  "origin_code": "CANADA",
+  "brand_name": "CROWN ROYAL",
+  "fanciful_name": "SINGLE MALT",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/10/2024",
+  "applicant": "NY-I-21645 | DIAGEO AMERICAS SUPPLY, INC. | 3 WORLD TRADE CENTER STE 41-C | New York,\u00a0NY\u00a010007",
+  "source": "imported",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 2.36,
+      "height_in": 3.6
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 2.2,
+      "height_in": 3.04
+    }
+  ]
+}

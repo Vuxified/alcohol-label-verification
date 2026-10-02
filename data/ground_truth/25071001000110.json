@@ -1,0 +1,27 @@
+{
+  "id": "25071001000110",
+  "beverage_type": "malt",
+  "brand_name": "STELLA ARTOIS",
+  "class_type": "BEER",
+  "abv": 5,
+  "abv_text": "5% ALC./VOL.",
+  "proof": null,
+  "net_contents_text": "1.59 GALLONS (6L)",
+  "net_contents_ml": 6000,
+  "name_address_text": "STELLA ARTOIS, ST. LOUIS, MO, BREWED IN THE U.S.A.",
+  "country_of_origin_text": "BREWED IN THE U.S.A.",
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "vertical"
+  },
+  "hard_cases": ["vertical warning", "wide letter-spaced justified warning", "class 'BEER' only in small print line", "'PerfectDraft' secondary brand logo", "net contents in gallons and liters", "ABV in colored badge", "curved 'ANNO 1366' text"],
+  "unreadable_fields": [],
+  "drafted_by": "draft",
+  "reviewed": false
+}

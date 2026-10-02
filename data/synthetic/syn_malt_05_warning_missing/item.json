@@ -1,0 +1,54 @@
+{
+  "id": "syn_malt_05_warning_missing",
+  "images": [
+    {
+      "file": "front.png",
+      "image_type": "Brand (front)",
+      "width_in": 3.5,
+      "height_in": 4.0
+    },
+    {
+      "file": "back.png",
+      "image_type": "Back",
+      "width_in": 3.5,
+      "height_in": 0.99
+    }
+  ],
+  "source": {
+    "type": "synthetic",
+    "license": "generated for this project"
+  },
+  "application": {
+    "beverage_type": "malt",
+    "brand_name": "Copper Anchor",
+    "class_type": "Lager",
+    "abv": 8.0,
+    "proof": null,
+    "net_contents": "24 FL. OZ.",
+    "source": "domestic",
+    "country_of_origin": "United States",
+    "name_address": "Brewed and bottled by Copper Cellars, Denver, CO",
+    "label_width_in": 3.5
+  },
+  "printed": {
+    "brand_name": "Copper Anchor",
+    "class_type": "Lager",
+    "abv": 8.0,
+    "proof": null,
+    "net_contents": "24 FL. OZ.",
+    "warning_text": null,
+    "warning_heading_bold": true,
+    "warning_cap_mm": 2.4
+  },
+  "expected": {
+    "overall": "fail",
+    "findings": [
+      "WARNING_MISSING"
+    ]
+  },
+  "provenance": {
+    "base_id": "syn_malt_05",
+    "defect": "warning_missing",
+    "seed": 7
+  }
+}

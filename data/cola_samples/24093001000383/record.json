@@ -1,0 +1,35 @@
+{
+  "ttb_id": "24093001000383",
+  "status": "APPROVED",
+  "serial_no": "240047",
+  "class_type_code": "STRAIGHT BOURBON WHISKY",
+  "origin_code": "KENTUCKY",
+  "brand_name": "JIM BEAM",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "04/12/2024",
+  "applicant": "DSP-KY-230 | JIM BEAM BRANDS CO. | 526 HAPPY HOLLOW RD | CLERMONT,\u00a0KY\u00a040110",
+  "source": "domestic",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 6.61,
+      "height_in": 3.35
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 1.71,
+      "height_in": 3.35
+    },
+    {
+      "file": "03_other.jpg",
+      "image_type": "Other",
+      "width_in": 5.16,
+      "height_in": 2.09
+    }
+  ]
+}

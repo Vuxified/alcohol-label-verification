@@ -1,0 +1,34 @@
+{
+  "id": "24010001000342",
+  "beverage_type": "malt",
+  "brand_name": "SAMUEL ADAMS",
+  "class_type": "WHEAT ALE BREWED WITH LIME, ORANGE & LEMON PEELS, GRAINS OF PARADISE, & LEMON PUREE ADDED",
+  "abv": 5.3,
+  "abv_text": "5.3% ALC./VOL.",
+  "proof": null,
+  "net_contents_text": "15.5 GALLONS (1/2 BBL)",
+  "net_contents_ml": 58673.9,
+  "name_address_text": "PRODUCED BY ©2023 THE BOSTON BEER COMPANY, SAMUELADAMS.COM, BOSTON, MA., CINCINNATI, OH., MILTON, DE., AND BREINIGSVILLE, PA",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "02_other.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "keg collar (round label)",
+    "curved name/address text around rim",
+    "ABV on same line as long class/type statement",
+    "other numbers near ABV (2.65 v/v CO2, 27004) could be misread",
+    "keg WARNING READ BEFORE TAPPING block could be confused with government warning",
+    "warning on separate image"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "draft",
+  "reviewed": false
+}

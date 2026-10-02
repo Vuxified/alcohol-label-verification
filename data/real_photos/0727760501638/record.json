@@ -1,0 +1,15 @@
+{
+  "barcode": "0727760501638",
+  "product_type": "wine",
+  "product_name": "Mionetto prosecco",
+  "brands": "",
+  "quantity": "",
+  "source": "https://world.openfoodfacts.org/product/0727760501638",
+  "license": "CC BY-SA (Open Food Facts contributors)",
+  "images": [
+    {
+      "file": "front.jpg",
+      "source_url": "https://images.openfoodfacts.org/images/products/072/776/050/1638/front_en.3.full.jpg"
+    }
+  ]
+}

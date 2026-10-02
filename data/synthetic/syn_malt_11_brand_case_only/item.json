@@ -1,0 +1,52 @@
+{
+  "id": "syn_malt_11_brand_case_only",
+  "images": [
+    {
+      "file": "front.png",
+      "image_type": "Brand (front)",
+      "width_in": 3.5,
+      "height_in": 4.0
+    },
+    {
+      "file": "back.png",
+      "image_type": "Back",
+      "width_in": 3.5,
+      "height_in": 2.21
+    }
+  ],
+  "source": {
+    "type": "synthetic",
+    "license": "generated for this project"
+  },
+  "application": {
+    "beverage_type": "malt",
+    "brand_name": "Creek Fork",
+    "class_type": "Stout",
+    "abv": 5.0,
+    "proof": null,
+    "net_contents": "16 FL. OZ.",
+    "source": "domestic",
+    "country_of_origin": "United States",
+    "name_address": "Brewed and bottled by Creek Spirits LLC, Bardstown, KY",
+    "label_width_in": 3.5
+  },
+  "printed": {
+    "brand_name": "CREEK FORK",
+    "class_type": "Stout",
+    "abv": 5.0,
+    "proof": null,
+    "net_contents": "16 FL. OZ.",
+    "warning_text": "GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.",
+    "warning_heading_bold": true,
+    "warning_cap_mm": 2.4
+  },
+  "expected": {
+    "overall": "pass",
+    "findings": []
+  },
+  "provenance": {
+    "base_id": "syn_malt_11",
+    "defect": "brand_case_only",
+    "seed": 7
+  }
+}

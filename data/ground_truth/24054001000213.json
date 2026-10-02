@@ -1,0 +1,35 @@
+{
+  "id": "24054001000213",
+  "beverage_type": "malt",
+  "brand_name": "Heineken SILVER",
+  "class_type": "LAGER BEER",
+  "abv": 4,
+  "abv_text": "4% ALC./VOL.",
+  "proof": null,
+  "net_contents_text": "CONT. 13.2 U.S. GALLONS BEER",
+  "net_contents_ml": 49967.44,
+  "name_address_text": "BREWED AND KEGGED BY HEINEKEN BROUWERIJEN B.V., AMSTERDAM, HOLLAND. IMPORTED BY HEINEKEN USA, WHITE PLAINS, N.Y.",
+  "country_of_origin_text": "PRODUCT OF HOLLAND.",
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "keg collar",
+    "white text on teal background",
+    "curved/arched name, address and country text",
+    "printer dieline dimensions (151 mm, 120 mm, 3) could be misread as label data",
+    "class type only inside curved sentence (SILVER LAGER BEER)",
+    "serving-facts numbers near ABV (12 fl. oz., 140.75) could be confused with net contents",
+    "keg WARNING, READ BEFORE TAPPING block"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "draft",
+  "reviewed": false
+}

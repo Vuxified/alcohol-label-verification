@@ -1,0 +1,27 @@
+{
+  "id": "24129001000620",
+  "beverage_type": "wine",
+  "brand_name": "KIM CRAWFORD",
+  "class_type": "PINOT GRIGIO",
+  "abv": 12.5,
+  "abv_text": "ALC. 12.5 % BY VOL.",
+  "proof": null,
+  "net_contents_text": "750ML",
+  "net_contents_ml": 750,
+  "name_address_text": "IMPORTED BY CONSTELLATION IMPORTS, RUTHERFORD, CA. BOTTLED BY RUFFINO SRL, PONTASSIEVE, ITALY.",
+  "country_of_origin_text": "PRODUCT OF ITALY",
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": ["very low-contrast pale pink text on white", "image files swapped (01_brand file is back label, 02_back is front)", "CMYK JPEG (colors shift when converted)", "space before % in ABV", "net contents and ABV on one line", "FPO placeholder barcode", "decorative tile artwork on front"],
+  "unreadable_fields": [],
+  "drafted_by": "draft",
+  "reviewed": false
+}

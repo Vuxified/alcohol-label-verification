@@ -1,0 +1,54 @@
+{
+  "id": "syn_spirits_03_abv_wrong",
+  "images": [
+    {
+      "file": "front.png",
+      "image_type": "Brand (front)",
+      "width_in": 4.0,
+      "height_in": 3.5
+    },
+    {
+      "file": "back.png",
+      "image_type": "Back",
+      "width_in": 4.0,
+      "height_in": 2.23
+    }
+  ],
+  "source": {
+    "type": "synthetic",
+    "license": "generated for this project"
+  },
+  "application": {
+    "beverage_type": "spirits",
+    "brand_name": "Silver Meadow",
+    "class_type": "Kentucky Straight Bourbon Whiskey",
+    "abv": 46.5,
+    "proof": 93.0,
+    "net_contents": "1.75 L",
+    "source": "imported",
+    "country_of_origin": "Germany",
+    "name_address": "Imported by Silver Spirits LLC, Austin, TX",
+    "label_width_in": 4.0
+  },
+  "printed": {
+    "brand_name": "Silver Meadow",
+    "class_type": "Kentucky Straight Bourbon Whiskey",
+    "abv": 47.0,
+    "proof": 94.0,
+    "net_contents": "1.75 L",
+    "warning_text": "GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.",
+    "warning_heading_bold": true,
+    "warning_cap_mm": 2.4
+  },
+  "expected": {
+    "overall": "fail",
+    "findings": [
+      "ABV_MISMATCH"
+    ]
+  },
+  "provenance": {
+    "base_id": "syn_spirits_03",
+    "defect": "abv_wrong",
+    "seed": 7
+  }
+}

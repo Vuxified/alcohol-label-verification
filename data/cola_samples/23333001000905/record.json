@@ -1,0 +1,35 @@
+{
+  "ttb_id": "23333001000905",
+  "status": "APPROVED",
+  "serial_no": "230103",
+  "class_type_code": "WHISKY SPECIALTIES",
+  "origin_code": "KENTUCKY",
+  "brand_name": "MAKER'S MARK",
+  "fanciful_name": "WOOD FINISHING SERIES",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/16/2024",
+  "applicant": "DSP-KY-44 | MAKER'S MARK DISTILLERY, INC. | 3350 BURKS SPRING RD | LORETTO,\u00a0KY\u00a040037",
+  "source": "domestic",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 2.8,
+      "height_in": 1.5
+    },
+    {
+      "file": "02_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.4,
+      "height_in": 4.3
+    },
+    {
+      "file": "03_back.jpg",
+      "image_type": "Back",
+      "width_in": 3.4,
+      "height_in": 4.3
+    }
+  ]
+}

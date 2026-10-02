@@ -1,0 +1,35 @@
+{
+  "id": "24129001000760",
+  "beverage_type": "malt",
+  "brand_name": "Michelob ULTRA",
+  "class_type": "SUPERIOR LIGHT BEER",
+  "abv": 4.2,
+  "abv_text": "4.2% ALC./VOL.",
+  "proof": null,
+  "net_contents_text": "12 FL. OZ.",
+  "net_contents_ml": 354.88,
+  "name_address_text": "ANHEUSER-BUSCH, ST. LOUIS, MO",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "02_back.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "unclear",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "brand split between script (Michelob) and block (ULTRA) type",
+    "curved rim text for name/address and net contents (tiny)",
+    "white text on blue banner for class type",
+    "fully justified warning with wide word gaps",
+    "carbs/calories numbers (2.6, 95) near ABV",
+    "vertical barcode text on back",
+    "ABV split across two lines on back (4.2% / ALC./VOL.)"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "draft",
+  "reviewed": false
+}

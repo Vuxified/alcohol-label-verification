@@ -1,0 +1,29 @@
+{
+  "ttb_id": "23353001000444",
+  "status": "APPROVED",
+  "serial_no": "23P907",
+  "class_type_code": "OTHER STRAIGHT WHISKY",
+  "origin_code": "ARIZONA",
+  "brand_name": "WOODFORD RESERVE",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/10/2024",
+  "applicant": "DSP-AR-3 | Pernod Ricard USA, Pernod Ricard USA, LLC | 7401 HIGHWAY 45 SOUTH S | Fort Smith,\u00a0AR\u00a072916",
+  "source": "domestic",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.7,
+      "height_in": 3.7
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 3.6,
+      "height_in": 3.6
+    }
+  ]
+}

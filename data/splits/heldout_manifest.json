@@ -1,0 +1,272 @@
+{
+  "cola_23333001000905": {
+    "data/cola_samples/23333001000905/01_brand_front_or_keg_collar.jpg": "40c53b9e5f9155023452908c2945828aadd2833f18ab4f513638926e80b518cf",
+    "data/cola_samples/23333001000905/02_brand_front_or_keg_collar.jpg": "4057abb5be1a641b7dc43b0fa8b66b0ddf0875babe1819f709d6682e6015e78a",
+    "data/cola_samples/23333001000905/03_back.jpg": "cf0b2d282e43f8dea21fdc54fc76198f59614e8a4fe1a9126b005aed8c773828"
+  },
+  "cola_23354001000381": {
+    "data/cola_samples/23354001000381/01_brand_front_or_keg_collar.jpg": "b24daec9b865783d19c264733fb67be30cd0cf5f99e76dbb47ec167d5ef0aaf0"
+  },
+  "cola_24003001000023": {
+    "data/cola_samples/24003001000023/01_brand_front_or_keg_collar.jpg": "71a1b276c7366dccf1c5a869558437b68a967d03c1ba8ef28e3fda7abd69ba30",
+    "data/cola_samples/24003001000023/02_neck.jpg": "87b8724924c58c6dc17d176b8535b732c021e68c4512cc15f66699aedd29c497",
+    "data/cola_samples/24003001000023/03_back.jpg": "2fbb21fa3f3a4f65e5633c41da5d4f07b32918c3313b5543e7f03e3668f31d66"
+  },
+  "cola_24003001000645": {
+    "data/cola_samples/24003001000645/01_brand_front_or_keg_collar.jpg": "99b87ee90c35b2f8b5c3efd06647d06cdb6b2d4a409b71704f652359addb634b",
+    "data/cola_samples/24003001000645/02_other.png": "373f2ad328e8843386b2538d40945330bbf3c0a35c3bde37486befad6fdcb048",
+    "data/cola_samples/24003001000645/03_other.jpg": "e2d211f74d1f385e6ed3f1f5b2c382dc761224398a86fbc8f8fb6f42ab826d88"
+  },
+  "cola_24008001000455": {
+    "data/cola_samples/24008001000455/01_brand_front_or_keg_collar.png": "d6d0b75236664c87403824a2426d3cf484fca3b2f93680d2b878f4eb98fdd886"
+  },
+  "cola_24009001000244": {
+    "data/cola_samples/24009001000244/01_brand_front_or_keg_collar.png": "afa15427b6e41ac1bbcf3e16aadc0aecf5a2e590487e71d567f4f685f793b8ec",
+    "data/cola_samples/24009001000244/02_brand_front_or_keg_collar.png": "c040ded09858f114c3cebab8ba7d91bab44fc08e2d81199131617d4070406375",
+    "data/cola_samples/24009001000244/03_other.png": "68430804b6ae67ae863daa82447f7df0208477c7dcb807ac277b62f154321ff7",
+    "data/cola_samples/24009001000244/04_back.jpg": "d1bcdb4a4dbef34ed6f96955e7f3edf4fb4a69769cf8cec8ed023b5ef813c4f9"
+  },
+  "cola_24010001000338": {
+    "data/cola_samples/24010001000338/01_brand_front_or_keg_collar.jpg": "f6d106008d8299b673533cd5f0c29783938114157c590a79138f2ea07d42e380",
+    "data/cola_samples/24010001000338/02_other.jpg": "aed80fc9867d8882cc22d02d06b56cab04c784bc52b9f829dcd7cb98a5581792"
+  },
+  "cola_24012001000381": {
+    "data/cola_samples/24012001000381/01_brand_front_or_keg_collar.jpg": "379da190f8faf9d9f61ab7fd577a2b7c068fa59fff00004ede8d144f6546b9c4",
+    "data/cola_samples/24012001000381/02_other.png": "c870c45377f381a8a8ada258afc1ec0fa406cb66a7b87954fbcae2f1015675b5"
+  },
+  "cola_24022001000902": {
+    "data/cola_samples/24022001000902/01_brand_front_or_keg_collar.jpg": "c8ec97369bffe1bf489e2d5f05e6693387c6c2050626ddb72da01a9eca36d1ad",
+    "data/cola_samples/24022001000902/02_back.jpg": "d87179c87f5c60ccb9af82a1bbe862d97edf39a43330d242dd3c00d444062d51"
+  },
+  "cola_24022001000904": {
+    "data/cola_samples/24022001000904/01_brand_front_or_keg_collar.jpg": "98be1f9d2647afcd7fa390aa1062612ff9ecdc3f2e8f3f4bb6b1826cac0b018d",
+    "data/cola_samples/24022001000904/02_back.jpg": "28feec7acb9871bb5630fb12d70aebf8843f18ae0466e640bc31d8b671d8fc0f"
+  },
+  "cola_24030001000320": {
+    "data/cola_samples/24030001000320/01_brand_front_or_keg_collar.jpg": "fffeab98439006feaffc786e1c783509f4cea2d3fe230089a2f89738694716cd"
+  },
+  "cola_24039001000607": {
+    "data/cola_samples/24039001000607/01_brand_front_or_keg_collar.jpg": "bc29ac903611d3ea90f45c7a79f833e6210a9ee2a930244eaafc70d7373e6fc1"
+  },
+  "cola_24050001000660": {
+    "data/cola_samples/24050001000660/01_brand_front_or_keg_collar.jpg": "6386b25d620007aca3c37d16680f098a6949e5bba30cba13b2b580cafb46591f",
+    "data/cola_samples/24050001000660/02_back.jpg": "00c4b8d85b8c295c4b67cc7405a05e19eb66e20bc3e0075745f2586e0b44fddd",
+    "data/cola_samples/24050001000660/03_neck.jpg": "1dc4d8df93089d4fcf2aa3fcf677223f1f6b2e20ddffbc8db5b8e797f5393d3a"
+  },
+  "cola_24061001000628": {
+    "data/cola_samples/24061001000628/01_brand_front_or_keg_collar.jpg": "eef03e15fee2b407e341f87d52e2fee5c98fd54b7d7f5b4168a9dc9599c64ec0",
+    "data/cola_samples/24061001000628/02_back.jpg": "82059c7d1213ce1d8d05279a34ca4a54dfe237df3f162fe81acc24936312b53c"
+  },
+  "cola_24072001000642": {
+    "data/cola_samples/24072001000642/01_brand_front_or_keg_collar.jpg": "b2cb7b401446cafea55e2fc8868a02d004121b937ab3b64eb2c0e61a4b741e0b",
+    "data/cola_samples/24072001000642/02_back.jpg": "44415384a9c4daaade82cc1403779571f8d976dd91432c960ef14dc7f77c7829"
+  },
+  "cola_24078001000871": {
+    "data/cola_samples/24078001000871/01_brand_front_or_keg_collar.png": "f7aa6a8b276443f480ac31d3df9555a624cdfc40c52cd321523704eb56ff538b",
+    "data/cola_samples/24078001000871/02_back.jpg": "244a354cc887d64847a3390ce8ff6e7c2aa4d9fc81382ad92e888d7c1a52ce1b",
+    "data/cola_samples/24078001000871/03_other.jpg": "ef487c0e0db9a0da9561cd9e540cb2e98336525f4e6ac9cba34b7601e9f972d6",
+    "data/cola_samples/24078001000871/04_other.jpg": "b031df6a73308e396392c32b7414403a8e1d6f49ffd1e492a0abc3b02b695b7e"
+  },
+  "cola_24096001000861": {
+    "data/cola_samples/24096001000861/01_brand_front_or_keg_collar.jpg": "302634edeb8c5ff8db268303b6e8201a5b76fed2c8a0c6e320d9afbcf72d4102"
+  },
+  "cola_24110001000159": {
+    "data/cola_samples/24110001000159/01_brand_front_or_keg_collar.jpg": "808f64ea0a14d968e8976b6ab3a8566c1fa38e1f138dc1c4a58a406c0eec4fbd",
+    "data/cola_samples/24110001000159/02_back.jpg": "29ddb3f4f793fdb8b1f5368eeca702ce6084ac08d09b2cde331d6e638fa5beb3"
+  },
+  "cola_24110001000178": {
+    "data/cola_samples/24110001000178/01_brand_front_or_keg_collar.jpg": "c98c78eebcbbec4d08d0dc9fd2637d16258d63649b84ff41d4ede8e68d082c19",
+    "data/cola_samples/24110001000178/02_other.jpg": "2c41de5c5cc81cc0eef6260813c274ee3474085254fc0d16f49f53288019066d"
+  },
+  "cola_24145001000557": {
+    "data/cola_samples/24145001000557/01_brand_front_or_keg_collar.jpg": "50cfdb81bd072119935bbfbd7568f8bfe9c86c252ae2f3fbbf5b4147de326a9c"
+  },
+  "cola_24145001000559": {
+    "data/cola_samples/24145001000559/01_brand_front_or_keg_collar.jpg": "9caea6c214eb99ddd56de3e63f7f5d28abca0116e4abe47fd129ce8e6a12a8c8"
+  },
+  "cola_24155001000862": {
+    "data/cola_samples/24155001000862/01_brand_front_or_keg_collar.jpg": "a19e1685b48b6f8321d0dac5f7c61cd5e76acc946034526eb187a706344c8dd7",
+    "data/cola_samples/24155001000862/02_other.png": "f21a5388b850e70ecd8f77947826f045918e753a46e5d0e3aaaebb81330031d8"
+  },
+  "cola_24208001000178": {
+    "data/cola_samples/24208001000178/01_brand_front_or_keg_collar.jpg": "90f561aa19caace07fc881806aceb5f37d3c4a9803a9ed22f6ffcb3baec3cdcc",
+    "data/cola_samples/24208001000178/02_back.jpg": "776a6143a57f80ac9b85e7e526fce70b0d7b574cd01ccffb3a362d49757c88a4"
+  },
+  "cola_24211001000369": {
+    "data/cola_samples/24211001000369/01_brand_front_or_keg_collar.jpg": "8b102ae60f280a56d0f05d86e24ac48a57bc3d737770512817215ad55ba3eae9",
+    "data/cola_samples/24211001000369/02_brand_front_or_keg_collar.jpg": "7e9eff3b56dfc2e0f034b96c7c3d56b58c3994c8f5c1412375523bd0401dcf25",
+    "data/cola_samples/24211001000369/03_back.jpg": "02951f1b4c16d9c4926c34dc6acac16972b7b3e023f5c1b47a43d70d602ba0be",
+    "data/cola_samples/24211001000369/04_other.png": "e516368f7add2ae2213f2921d1e72377724429f385f4e2696c6f5d4c55714f1c"
+  },
+  "cola_24304001000568": {
+    "data/cola_samples/24304001000568/01_brand_front_or_keg_collar.jpg": "b8bf823b71c80611b985fab5470ccc17da29e35456d785ceab3e6b26a8c0ad29"
+  },
+  "cola_24304001000648": {
+    "data/cola_samples/24304001000648/01_brand_front_or_keg_collar.jpg": "950be4d974549c1664d15759d0e51439747c45b208d73dc9dad2a9c068c96e34"
+  },
+  "cola_25055001000896": {
+    "data/cola_samples/25055001000896/01_brand_front_or_keg_collar.jpg": "da6496d6544c7072d2e3a7a2fb75905bb50c67983c6c95802628023199dc2093",
+    "data/cola_samples/25055001000896/02_back.jpg": "5e93ba595f7eb1d9328f8389dfee4d1c0957f977cfa2a09d112648797c4c085d",
+    "data/cola_samples/25055001000896/03_neck.jpg": "7a12bbc0c569561b7bfde9c711494b88414a18451e2a1f8bc60658049fc8b3e7"
+  },
+  "cola_25169001000935": {
+    "data/cola_samples/25169001000935/01_brand_front_or_keg_collar.jpg": "cb7d34f5c0455617e323ac917f739ede7c034113461a4907f3a74f0e615cd295",
+    "data/cola_samples/25169001000935/02_back.jpg": "caee8b46acc4af3fefbd3a8babaf246ccd5e0fc69e594ecaa2de929e2d0435a3"
+  },
+  "photo_0081434000033": {
+    "data/real_photos/0081434000033/front.jpg": "83cb1997d65918bb681492c4c945b7ad6c50feee2876127f5d5093a7260b0b36"
+  },
+  "photo_0081753050207": {
+    "data/real_photos/0081753050207/front.jpg": "ee6d5e0fcfdb0d83c34a21b6e22c62c33d740b5e8082aec6b5d0c65f7ed45bbe"
+  },
+  "photo_0082184090442": {
+    "data/real_photos/0082184090442/front.jpg": "e5de7da2deed811409b131fb0a2c7af5fba0ab226c79370826aacf523bd65529"
+  },
+  "photo_0619947000020": {
+    "data/real_photos/0619947000020/front.jpg": "e56325766513c204ba07beced5b70e7d26dcdc3042c865ad4d4c832ad8ee3f6a"
+  },
+  "photo_0652935100012": {
+    "data/real_photos/0652935100012/front.jpg": "e00407c68561d2230576fe033d503e5f221b1e47768ef0eef2a145b799f57e49"
+  },
+  "photo_0786150000052": {
+    "data/real_photos/0786150000052/front.jpg": "9bbf591b1a9ef9c749b2aa650550f756d9b4626d059eb9f3305d8061a7eac351"
+  },
+  "photo_08066446": {
+    "data/real_photos/08066446/front.jpg": "3fc25b5c82e71b9e03efc881561cc37f719c1cb9ca7a1a3cf7207f9043225707"
+  },
+  "photo_0812133010036": {
+    "data/real_photos/0812133010036/front.jpg": "07f734ebf29fd4f8c9e5f6c5f4940fd70fea18780df144f02558a8af725a2052"
+  },
+  "photo_08227225": {
+    "data/real_photos/08227225/front.jpg": "792684723698725389ee1c2d16047ddb6e43e8c66417507292ab43262aead298"
+  },
+  "photo_5010106111451": {
+    "data/real_photos/5010106111451/front.jpg": "bce06bb8e1be3b66a9a047d72c79a20e2264967a378e880735f48a4c065e329c"
+  },
+  "photo_54040014": {
+    "data/real_photos/54040014/front.jpg": "a87f7d0d5f433f7252d9f0e7c3b55578015b3eabc4b4abc7ed9cc953181e789d"
+  },
+  "photo_8412598004018": {
+    "data/real_photos/8412598004018/front.jpg": "9b22ba355e037006df9809db639f0315ee18004ba00d96cf9f76198f1e0b2c41"
+  },
+  "syn_malt_02": {
+    "data/synthetic/syn_malt_02_abv_wrong/back.png": "fd88ab3f75514f50a5389cf1409ca093443ef1523225cbace2782d21d32fb60a",
+    "data/synthetic/syn_malt_02_abv_wrong/front.png": "52a5803811aefa1f9a5de3e717e40f6ec7fe86cda4bf0918be410f56bd011669",
+    "data/synthetic/syn_malt_02_none/back.png": "9dc53c0df4d6de0c35b5ad67e938d4cc71706c9ae3a6e832fd6e92497ab95326",
+    "data/synthetic/syn_malt_02_none/front.png": "65f6f8c7ae145f3d55d37d7b55160772038d42440b82f6ad66c60d40d9cc6835",
+    "data/synthetic/syn_malt_02_warning_titlecase/back.png": "90da77188c7cbbf0450f85e41942dd5e0c93c0570d18b9abcb5db2f7638c95dd",
+    "data/synthetic/syn_malt_02_warning_titlecase/front.png": "f7f50da15402dfa7c42f2984a912423ec466f3848c02f8656305cb404562093b",
+    "data/synthetic/syn_malt_02_warning_wording/back.png": "abb7b709eec0299474a8808d7ae883e61e2d9ca31bb86621be704b1468b7b5af",
+    "data/synthetic/syn_malt_02_warning_wording/front.png": "d44094306a437fb12cf705bfe53c56b5ee3d9a181c4320ec8ea47174f1dda051"
+  },
+  "syn_malt_05": {
+    "data/synthetic/syn_malt_05_brand_case_only/back.png": "7d648b0a8ed3a95a719defadf8ac8d8b904de85de71966b6911045f17f37cde7",
+    "data/synthetic/syn_malt_05_brand_case_only/front.png": "5d565daedc87735c4e12a93295cbc38764f18393c954886997034ed588949ca8",
+    "data/synthetic/syn_malt_05_none/back.png": "2eb1064b2a7bb2bd7956fd485c09c71096285057f49bbe38386e832e865d2c1f",
+    "data/synthetic/syn_malt_05_none/front.png": "d94f642562aebfcc55921c39b0bb94360d83062e37ff3499e3f2d6749207c922",
+    "data/synthetic/syn_malt_05_warning_missing/back.png": "69d5b6bd77ac8367e537590c3f2dcf31f743dc57187b92412faf0673f1d3c692",
+    "data/synthetic/syn_malt_05_warning_missing/front.png": "cc1558d16deeb20f804cc6441783b5a106c2e72a9a00b0e5108d341d37192eac",
+    "data/synthetic/syn_malt_05_warning_titlecase/back.png": "a053fb5d0fa02b12c90e24926a630a107a0b681355fa096c54f973dba990ef5d",
+    "data/synthetic/syn_malt_05_warning_titlecase/front.png": "60d7c42012cbff1f389588a4c5288ab2ec35925284c97f7285c6b4658135941a"
+  },
+  "syn_malt_08": {
+    "data/synthetic/syn_malt_08_none/back.png": "ff4568956949f4e6e8d4d96b2bbc542a32051be20e1a7ec6132814d8152674a5",
+    "data/synthetic/syn_malt_08_none/front.png": "dae984f80e24aac827fc3093e895b8affe19f9f5f36bb94ca340f9003abb5b6f",
+    "data/synthetic/syn_malt_08_warning_missing/back.png": "06a27ed30234963887d582156bedee79724db12362712d6ebe690888c29f758f",
+    "data/synthetic/syn_malt_08_warning_missing/front.png": "1ff8034de95465ccc39b20b402b6613fe4ef21e83fcc60e4211ba306817692b1",
+    "data/synthetic/syn_malt_08_warning_titlecase/back.png": "7661c98c8349b0e99350d3c93f8836f252c6cef236a62ca35f6f2b5bb521fa94",
+    "data/synthetic/syn_malt_08_warning_titlecase/front.png": "00df487aabc2d0cc9ac67bca3d809786f8a5a388309db553b845575fdf85221b",
+    "data/synthetic/syn_malt_08_warning_too_small/back.png": "53143b119a745132c4c483f341795aa3edaa7f21c9aacb92962d83734d9555e5",
+    "data/synthetic/syn_malt_08_warning_too_small/front.png": "1ff8034de95465ccc39b20b402b6613fe4ef21e83fcc60e4211ba306817692b1"
+  },
+  "syn_malt_11": {
+    "data/synthetic/syn_malt_11_brand_case_only/back.png": "8c7b8702437e44f10940737e7c5758665696350b12c09d043845d144ddcbcbbc",
+    "data/synthetic/syn_malt_11_brand_case_only/front.png": "e8e7590dd8a9a7f1e030a0e171580ed3ddc3ad73e5ba9a2f0d551d7985b4fcb4",
+    "data/synthetic/syn_malt_11_net_metric_only/back.png": "4365eb778bca30ba2bf8beaaf5204ceca8d4cb2d7b53ccd43e9995a8439cbed8",
+    "data/synthetic/syn_malt_11_net_metric_only/front.png": "40c9355d636f26283edb4b90858265106c0cd9e078d8993d7bfc5c7c3b4b0daa",
+    "data/synthetic/syn_malt_11_none/back.png": "c4b17c166782c499365e0f3b8a5463c8ad2bf9c154ef5ca305ab020864752657",
+    "data/synthetic/syn_malt_11_none/front.png": "4040a0717bd4e26baeddd9713ab8ca6d12ede1c74dbda5d5965ac39e253c39f6",
+    "data/synthetic/syn_malt_11_warning_titlecase/back.png": "c7ad8767169ded9431087e6f6d7b59a3f79c41571ef42077a2d29b1a8b1239f1",
+    "data/synthetic/syn_malt_11_warning_titlecase/front.png": "ad26d968991e487c5658ecd6d21fcc252409b429e29317ba6fc046fce420efa1"
+  },
+  "syn_spirits_01": {
+    "data/synthetic/syn_spirits_01_brand_extra_word/back.png": "ac92f226af0999c707f9404d66b1c88d960baf9c14e29e8cbb59d16c05eafaff",
+    "data/synthetic/syn_spirits_01_brand_extra_word/front.png": "83ea96adf8dd58148a262b90265fda0e6a291b62730287d22037945cca423335",
+    "data/synthetic/syn_spirits_01_none/back.png": "36d2f96637f1cf764a50f58f8b36077a9d14d266c4b6891785dd85e517806d41",
+    "data/synthetic/syn_spirits_01_none/front.png": "2f8b04cba0af490a298afbf2fe6c288806fe60abff475b775f3273ad34e74255",
+    "data/synthetic/syn_spirits_01_proof_wrong/back.png": "ac92f226af0999c707f9404d66b1c88d960baf9c14e29e8cbb59d16c05eafaff",
+    "data/synthetic/syn_spirits_01_proof_wrong/front.png": "9ef67c1d0f89aaea6f70398c7828e73e3c566a2af3471ab264c9ce78f928d02d",
+    "data/synthetic/syn_spirits_01_warning_missing/back.png": "18b2686eac74ec5530f6ccc566e8176f910a3931a60edd1d45b1bc5f8dcbd4fd",
+    "data/synthetic/syn_spirits_01_warning_missing/front.png": "e5871b4ab940c65dec1fca2422e664707722f478ac9d47e89be1251a2d8d46a5"
+  },
+  "syn_spirits_03": {
+    "data/synthetic/syn_spirits_03_abv_wrong/back.png": "c9d7dfcf0e0989bb722805ea2169931b08efae826e3c20471aec4f054d1ef8e0",
+    "data/synthetic/syn_spirits_03_abv_wrong/front.png": "d0609dc65c9e45079d420e70c92036a1549cba0731ad7ea35c6f319250a7ba8b",
+    "data/synthetic/syn_spirits_03_class_wrong/back.png": "ff7aacc50b1ef8ba07f7447ce7fca5537e0f8ce319e85c2470f488fa851b42b8",
+    "data/synthetic/syn_spirits_03_class_wrong/front.png": "54b81cc2a442c0f3dd09e6f7809406120ae63e1467e23b231d1926c1e52a13ed",
+    "data/synthetic/syn_spirits_03_none/back.png": "c9d7dfcf0e0989bb722805ea2169931b08efae826e3c20471aec4f054d1ef8e0",
+    "data/synthetic/syn_spirits_03_none/front.png": "fc62b63a9b98dc43d574a538f03271a2ec2dfa80ef4084c880aa51fb688594c0",
+    "data/synthetic/syn_spirits_03_warning_wording/back.png": "2844d85be078fc0820c1d945f2ccb06c1eb9ae10d0e747966a1a1d687b721d2e",
+    "data/synthetic/syn_spirits_03_warning_wording/front.png": "8fa91acec5ef2ebd8182af466601f92add64f57deadb94b9173187a86c53ea10"
+  },
+  "syn_spirits_07": {
+    "data/synthetic/syn_spirits_07_net_wrong/back.png": "686f03742ceb7bb80271e42254dd80c474cec34d2e2e1b56fbc548ad99b71bee",
+    "data/synthetic/syn_spirits_07_net_wrong/front.png": "cab0e86312d88d7274a3b4e11333f0a027d0f7dcfd06a63197abb5f1dc9da909",
+    "data/synthetic/syn_spirits_07_none/back.png": "19c1407b25c162ade787afcd9dc45af7001a969faa914451ac89a69e1026db88",
+    "data/synthetic/syn_spirits_07_none/front.png": "c606df4fd3718f06325ed4423941c589094e6d36cebce88bd9815cde14fd00e9",
+    "data/synthetic/syn_spirits_07_warning_heading_not_bold/back.png": "3dec90316e6917944411f392b5bda4247a3fbca455c37a6f0ba1f21d982889a5",
+    "data/synthetic/syn_spirits_07_warning_heading_not_bold/front.png": "a02443215f80cff37bb2c8542d2194fa503b15bd4d52a3ed42942bf4ebc662a3",
+    "data/synthetic/syn_spirits_07_warning_missing/back.png": "dbc7229c89571d93f75cce7c38438598a091f1dc5c36e24f5ac0057112545783",
+    "data/synthetic/syn_spirits_07_warning_missing/front.png": "8329ed331e4c3829ef642eac38af80ba0fc2d09e7df3cf02d31b6c337ac96fbd"
+  },
+  "syn_spirits_08": {
+    "data/synthetic/syn_spirits_08_class_wrong/back.png": "6f0e4ab0f68dd8b5d8695dad06c08859c0bf118b425354acac59454baf731f71",
+    "data/synthetic/syn_spirits_08_class_wrong/front.png": "79f41213ae015ceee881ec16e535ff9cd3d94f7ae27e7d24e018c9a1ab4a29bb",
+    "data/synthetic/syn_spirits_08_net_wrong/back.png": "2f39f3031329922cadddd4890f8993186d31dc06f8ef9b97e4f7233a876767b3",
+    "data/synthetic/syn_spirits_08_net_wrong/front.png": "08f72f60426bdb7d37722f79ea88d58b7ab4677ed952511d2c5ce6335099e8ae",
+    "data/synthetic/syn_spirits_08_none/back.png": "17cd5ca6accbaffff0e97aa66d257f6a73920b119d16b63a53fb8d6e50268205",
+    "data/synthetic/syn_spirits_08_none/front.png": "63145e269e720a6de887a80457737672575037487dc131e116bb640be4f66a25",
+    "data/synthetic/syn_spirits_08_warning_wording/back.png": "c67b15939de5e16986b7f3fb8716bfdd9104db0397af4b17b5e5e0d2a6967d8a",
+    "data/synthetic/syn_spirits_08_warning_wording/front.png": "eb839a3df4f2ef559db457454a521339b1de074bddd758642299dc45a37cb650"
+  },
+  "syn_wine_00": {
+    "data/synthetic/syn_wine_00_brand_case_only/back.png": "7577d04619681c7efdc5aef7bf32e11b3e10b6f15135833ed720f4e9fd5dc243",
+    "data/synthetic/syn_wine_00_brand_case_only/front.png": "e418b7328684383e40b3ef9b7cd0f97aac6a02e8ac5cdac126df0d6cdfecf58b",
+    "data/synthetic/syn_wine_00_net_wrong/back.png": "98614e22f93fc527247079768a3f5efa870667b92fe7c6c46077d4b46a1a132a",
+    "data/synthetic/syn_wine_00_net_wrong/front.png": "996777ab42427c755187ab67424acb7164990459191407839e5d15c2fc23f8ff",
+    "data/synthetic/syn_wine_00_none/back.png": "7577d04619681c7efdc5aef7bf32e11b3e10b6f15135833ed720f4e9fd5dc243",
+    "data/synthetic/syn_wine_00_none/front.png": "7eddf52c84e370ab30c7498c082fc18c19930429fe119c981054c8a1f6d8131e",
+    "data/synthetic/syn_wine_00_warning_missing/back.png": "7e1795aa84a7aec3582590bf503daa3cd76ba1dee531c64e3d2ff54bd0552655",
+    "data/synthetic/syn_wine_00_warning_missing/front.png": "de384c35ab27d22109ee4d29b87ce2b1bb041945f24d7aa7af897191cdc993b5"
+  },
+  "syn_wine_08": {
+    "data/synthetic/syn_wine_08_abv_wrong/back.png": "2c0d35bb541a59692ae8d4ed10f2b2a7add440a1d364055205025d6418dfa33a",
+    "data/synthetic/syn_wine_08_abv_wrong/front.png": "aa424cec77ab762c2c029888a39c7ddb8ba5af0bc277c3781270cf90c37fc7c8",
+    "data/synthetic/syn_wine_08_brand_case_only/back.png": "2c0d35bb541a59692ae8d4ed10f2b2a7add440a1d364055205025d6418dfa33a",
+    "data/synthetic/syn_wine_08_brand_case_only/front.png": "f46d4af70d26d34fccb9855fcd4d61f4107b19b2c9fcb1767b848ed7375d5ff7",
+    "data/synthetic/syn_wine_08_class_wrong/back.png": "2c0d35bb541a59692ae8d4ed10f2b2a7add440a1d364055205025d6418dfa33a",
+    "data/synthetic/syn_wine_08_class_wrong/front.png": "e3939414be40ef011ee6f54fee2c46f1528dc92264ecb765df9b572d1a2f2412",
+    "data/synthetic/syn_wine_08_none/back.png": "f659cc82f9e6d3d4a6eaf8d20af40a671cb6cdf8d80c920d4369dfc07add6184",
+    "data/synthetic/syn_wine_08_none/front.png": "f05885e261a545140193183841b9aca3d97bfd626106e8f7d5c736455760679d"
+  },
+  "syn_wine_09": {
+    "data/synthetic/syn_wine_09_brand_extra_word/back.png": "876618e013c02ea450a3b1484dbc159605f1fed96914d9c85b2995e9dbd1d056",
+    "data/synthetic/syn_wine_09_brand_extra_word/front.png": "26c56fbc0ad3063c16dfe95cc28a3556d02bd39becc127fcf275871089bbe0d8",
+    "data/synthetic/syn_wine_09_net_wrong/back.png": "5b08cd84e411bac6f9fd718c927e25136c8e3babc886af84529558eb05ddf577",
+    "data/synthetic/syn_wine_09_net_wrong/front.png": "f6c135b78f00bb169661d919880b2134a0b888adc6f63a5982314f8693bf434b",
+    "data/synthetic/syn_wine_09_none/back.png": "876618e013c02ea450a3b1484dbc159605f1fed96914d9c85b2995e9dbd1d056",
+    "data/synthetic/syn_wine_09_none/front.png": "ab21e2d006e8583956f8d98598d37d4489cf531b598d575de06106dc3d9421ab",
+    "data/synthetic/syn_wine_09_warning_missing/back.png": "541fa90028a3bd07dd13d133d087da33fc54d91794ee8865e829eb257a13d0ac",
+    "data/synthetic/syn_wine_09_warning_missing/front.png": "f032b99da00318a7795ef6092d4f458c8dc6be4bba41a26e095f79b3b74c303e"
+  },
+  "syn_wine_10": {
+    "data/synthetic/syn_wine_10_abv_wrong/back.png": "f7d34fd1a7833abf8ab03c4b90bfc3fe3d6da6f98b7e04fe764490b455ee3a2f",
+    "data/synthetic/syn_wine_10_abv_wrong/front.png": "ef3453a153deea85d529f650adc8ca28303caa77379f3a5b829c6fd4ecf36f6e",
+    "data/synthetic/syn_wine_10_brand_extra_word/back.png": "76cbf23cdbf70a073723785cacf811366ae921f1fe40ac935da9a5414f3dead1",
+    "data/synthetic/syn_wine_10_brand_extra_word/front.png": "341dcefae774aabfdc06dab0d1b3923375cb55c1866fcea7233f093e671bba5b",
+    "data/synthetic/syn_wine_10_class_wrong/back.png": "f7d34fd1a7833abf8ab03c4b90bfc3fe3d6da6f98b7e04fe764490b455ee3a2f",
+    "data/synthetic/syn_wine_10_class_wrong/front.png": "7e4f9453a1f0d86b0d444ceab472b1bae0242088e437b8b1ad0f11324a33f7fc",
+    "data/synthetic/syn_wine_10_none/back.png": "f7d34fd1a7833abf8ab03c4b90bfc3fe3d6da6f98b7e04fe764490b455ee3a2f",
+    "data/synthetic/syn_wine_10_none/front.png": "bed8ff6dd9d6714bbeb657ddae8eb0ae643878020c8ffb0ac6f1bc06a21ade2a"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "ttb_id": "24005001000055",
+  "status": "APPROVED",
+  "serial_no": "240003",
+  "class_type_code": "BEER",
+  "origin_code": "COLORADO",
+  "brand_name": "COORS LIGHT",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/09/2024",
+  "applicant": "BR-CO-CBC-1 | Molson Coors Beverage Company USA LLC | 300 12TH ST | GOLDEN,\u00a0CO\u00a080401",
+  "source": "domestic",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 8.28,
+      "height_in": 4.6
+    }
+  ]
+}

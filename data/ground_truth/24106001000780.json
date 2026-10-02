@@ -1,0 +1,34 @@
+{
+  "id": "24106001000780",
+  "beverage_type": "wine",
+  "brand_name": "Cupcake",
+  "class_type": "CABERNET SAUVIGNON",
+  "abv": 13.5,
+  "abv_text": "ALC. 13.50% BY VOL.",
+  "proof": null,
+  "net_contents_text": "750ML",
+  "net_contents_ml": 750,
+  "name_address_text": "BOTTLED BY CUPCAKE VINEYARDS, LIVERMORE & RIPON, CA.",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "02_back.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "script font brand name (Cupcake)",
+    "dark blue text on bright yellow background",
+    "ABV with trailing zero (13.50%) on same line as net contents",
+    "low-resolution back label, tiny print",
+    "ABV and net contents only on back",
+    "FPO barcode placeholder"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "draft",
+  "reviewed": false
+}

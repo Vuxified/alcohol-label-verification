@@ -1,0 +1,27 @@
+{
+  "id": "24110001000159",
+  "beverage_type": "spirits",
+  "brand_name": "JAMESON",
+  "class_type": "IRISH WHISKEY",
+  "abv": 40,
+  "abv_text": "40% ALC./VOL.",
+  "proof": null,
+  "net_contents_text": "750ml",
+  "net_contents_ml": 750,
+  "name_address_text": "IMPORTED BY JOHN JAMESON IMPORT COMPANY, NEW YORK, NY.",
+  "country_of_origin_text": "PRODUCT OF MIDLETON DISTILLERY, MIDLETON, CO. CORK, IRELAND.",
+  "warning": {
+    "present": true,
+    "image_file": "02_back.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": ["white text on black", "low-resolution image", "condensed font warning", "grey low-contrast ABV and net contents on front", "dimension annotation arrows (99.0 mm, 135.9 mm) on artwork", "curved arched brand name", "fanciful 'BLACK BARREL' larger than class"],
+  "unreadable_fields": [],
+  "drafted_by": "draft",
+  "reviewed": false
+}

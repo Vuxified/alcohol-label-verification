@@ -1,0 +1,54 @@
+{
+  "id": "syn_wine_04_warning_heading_not_bold",
+  "images": [
+    {
+      "file": "front.png",
+      "image_type": "Brand (front)",
+      "width_in": 3.5,
+      "height_in": 4.0
+    },
+    {
+      "file": "back.png",
+      "image_type": "Back",
+      "width_in": 3.5,
+      "height_in": 1.38
+    }
+  ],
+  "source": {
+    "type": "synthetic",
+    "license": "generated for this project"
+  },
+  "application": {
+    "beverage_type": "wine",
+    "brand_name": "Copper Lantern",
+    "class_type": "Red Wine",
+    "abv": 12.5,
+    "proof": null,
+    "net_contents": "187 mL",
+    "source": "domestic",
+    "country_of_origin": "United States",
+    "name_address": "Produced and bottled by Copper Spirits LLC, Burlington, VT",
+    "label_width_in": 3.5
+  },
+  "printed": {
+    "brand_name": "Copper Lantern",
+    "class_type": "Red Wine",
+    "abv": 12.5,
+    "proof": null,
+    "net_contents": "187 mL",
+    "warning_text": "GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.",
+    "warning_heading_bold": false,
+    "warning_cap_mm": 1.4
+  },
+  "expected": {
+    "overall": "check",
+    "findings": [
+      "WARNING_BOLD_UNCONFIRMED"
+    ]
+  },
+  "provenance": {
+    "base_id": "syn_wine_04",
+    "defect": "warning_heading_not_bold",
+    "seed": 7
+  }
+}
