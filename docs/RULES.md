@@ -1,5 +1,7 @@
 # Verification Rules
 
+> Three rules were relaxed after testing against real TTB-approved labels. The evidence is in [FINDINGS.md](FINDINGS.md).
+
 This document is the rulebook the app follows: what it checks, how strictly, and the federal regulation behind each rule. Every rule in `app/verify/` maps to a section here, and every section has tests.
 
 Regulations are cited from Title 27 of the Code of Federal Regulations (eCFR, current as of 2026-09-01): Part 4 (wine), Part 5 (distilled spirits), Part 7 (malt beverages), Part 16 (Health Warning Statement).
@@ -97,7 +99,7 @@ Net contents not found on any label image gives **Please check**, not a fail, fo
 
 ## 5. Government Health Warning Statement
 
-Required on every alcohol beverage of 0.5% alcohol by volume or more, for all three types (Part 16). For a product declared below 0.5% (non-alcoholic), the warning and alcohol content checks are skipped. It may be on the front, back, or side label (§ 16.21), so the app searches **all images** in the application.
+Required on every alcohol beverage of 0.5% alcohol by volume or more, for all three types (Part 16). Below 0.5% a product is not an "alcoholic beverage" (27 CFR 16.10), so for a product declared below 0.5% the warning and alcohol content checks are skipped. It may be on the front, back, or side label (§ 16.21), so the app searches **all images** in the application.
 
 ### 5.1 Exact text (§ 16.21)
 

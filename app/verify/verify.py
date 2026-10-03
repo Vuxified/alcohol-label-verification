@@ -6,7 +6,7 @@ from .net_contents import check_net_contents
 from .text import match_text, words_present
 from .warning import check_warning
 
-NON_ALCOHOLIC_BELOW = 0.5  # % ABV; the Health Warning applies at 0.5% and above (27 CFR 16.21)
+NON_ALCOHOLIC_BELOW = 0.5  # % ABV; "alcoholic beverage" starts at 0.5% (27 CFR 16.10)
 
 
 def verify(app: Application, lines: list[str]) -> Report:
@@ -30,7 +30,7 @@ def verify(app: Application, lines: list[str]) -> Report:
         report.fields.append(_check_country(app.country_of_origin, lines))
     if non_alcoholic:
         report.fields.append(FieldResult("warning_text", Verdict.NOT_APPLICABLE,
-                                         "Health Warning not required below 0.5% alcohol (27 CFR 16.21)."))
+                                         "Health Warning not required below 0.5% alcohol (27 CFR 16.10)."))
     else:
         report.fields.extend(check_warning(lines))
     return report
