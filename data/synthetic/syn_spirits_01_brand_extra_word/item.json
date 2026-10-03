@@ -43,7 +43,7 @@
   "expected": {
     "overall": "fail",
     "findings": [
-      "BRAND_MISMATCH"
+      "BRAND_NAME_EXTRA_WORDS"
     ]
   },
   "provenance": {

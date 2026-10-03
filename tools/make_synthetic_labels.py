@@ -65,8 +65,8 @@ DEFECTS = {
     "abv_wrong": ("fail", "ABV_MISMATCH"),
     "proof_wrong": ("fail", "PROOF_MISMATCH"),        # spirits only
     "net_wrong": ("fail", "NET_CONTENTS_MISMATCH"),
-    "net_metric_only": ("fail", "NET_CONTENTS_UNITS"),  # malt only
-    "brand_extra_word": ("fail", "BRAND_MISMATCH"),
+    "net_metric_only": ("check", "NET_CONTENTS_UNITS"),  # malt only
+    "brand_extra_word": ("fail", "BRAND_NAME_EXTRA_WORDS"),
     "class_wrong": ("fail", "CLASS_TYPE_MISMATCH"),
     "warning_missing": ("fail", "WARNING_MISSING"),
     "warning_titlecase": ("fail", "WARNING_NOT_CAPS"),

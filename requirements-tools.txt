@@ -6,3 +6,6 @@ albumentations==2.0.8   # pinned: later versions moved to AGPL
 onnxtr[cpu]==0.9.0
 playwright
 requests
+
+# Tests
+pytest

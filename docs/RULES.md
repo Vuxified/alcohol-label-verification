@@ -89,19 +89,22 @@ Parsed and converted to milliliters: mL ×1, cL ×10, L ×1000, fl oz ×29.5735,
 | Wine | Metric required; U.S. units may be added | Authorized standards of fill: 3 L, 2.25 L, 1.8 L, 1.5 L, 1 L, 750, 720, 700, 620, 600, 568, 550, 500, 473, 375, 360, 355, 330, 300, 250, 200, 187, 180, 100, 50 mL (larger sizes: see § 4.72) | § 4.37, § 4.72(a) |
 | Malt beverage | **U.S. units required** (e.g. "12 FL. OZ."); metric may only be added | No standards of fill | § 7.70 |
 
-A size that isn't an authorized standard of fill for spirits or wine gives **Please check**. A malt beverage label with metric units only gives **Does not match**.
+A size that isn't an authorized standard of fill for spirits or wine gives **Please check**. A malt beverage label with metric units only also gives **Please check**: the U.S. statement may be molded into the container, and TTB has approved imported beer labels showing only metric (e.g. Guinness Foreign Extra Stout, "325ml").
+
+Net contents not found on any label image gives **Please check**, not a fail, for the same reason (27 CFR 5.63(b)(2), 7.63(a)(5)).
 
 ---
 
 ## 5. Government Health Warning Statement
 
-Required on every alcohol beverage of 0.5% alcohol by volume or more, for all three types (Part 16). It may be on the front, back, or side label (§ 16.21), so the app searches **all images** in the application.
+Required on every alcohol beverage of 0.5% alcohol by volume or more, for all three types (Part 16). For a product declared below 0.5% (non-alcoholic), the warning and alcohol content checks are skipped. It may be on the front, back, or side label (§ 16.21), so the app searches **all images** in the application.
 
 ### 5.1 Exact text (§ 16.21)
 
 > GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.
 
-- **Only line breaks and repeated spaces are forgiven** (labels wrap text). Every word, number, parenthesis and the colon must be present and in order.
+- **Only line breaks, repeated spaces and words hyphenated across lines are forgiven** (labels wrap text). Every word and number must be present and in order; a changed, missing or added word gives **Does not match**.
+- **Punctuation-only differences give Please check**, not Does not match. TTB has approved labels missing a single period in the statement (e.g. [ yellow tail ] Moscato, Robert Mondavi sparkling wine in our test set).
 - Differences are shown as a word-by-word comparison with changed words highlighted.
 - If the only differences are single characters the OCR read with low confidence, the result is **Please check**, not Does not match. The app shouldn't fail a label because of its own misread.
 - Not found in any readable image → **Does not match**. Not found but an image is missing or unreadable → **Please check**.
