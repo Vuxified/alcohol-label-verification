@@ -1,6 +1,6 @@
 # What Real Labels Taught Us
 
-The first version of the rules followed the regulations to the letter. Running them against real labels that TTB has **approved** showed three places where that was stricter than TTB itself. A tool that rejects approved labels would lose agents' trust immediately, so each rule was changed to **Please check**: the tool flags it and a person decides.
+The first version of the rules followed the regulations to the letter. Running them against real labels that TTB has **approved** showed three places to look at closely. Two were cases where the letter of the rule was stricter than TTB's practice; one turned out to be a real deficiency that TTB approved only with a condition. A tool that rejects approved labels would lose agents' trust immediately, so each rule was changed to **Please check**: the tool flags it and a person decides.
 
 Every case below can be verified independently: the TTB ID opens the public registry record, which shows the approved label images.
 
@@ -8,17 +8,25 @@ Registry record link pattern: `https://www.ttbonline.gov/colasonline/viewColaDet
 
 ---
 
-## 1. Beer labeled only in metric units
+## 1. Beer labeled only in metric units: a real deficiency, flagged by TTB too
 
-**The regulation.** 27 CFR 7.70: malt beverage net contents must be stated in U.S. units (e.g. "12 FL. OZ."); metric may only be added.
+**The regulation.** 27 CFR 7.70(c): "Metric measures may be used in addition to, but not in lieu of, the U.S. customary units of measurement." For a container under one pint, net contents "must be stated in fluid ounces" (7.70(a)(1)).
 
-**The approved label.** Guinness Foreign Extra Stout, imported from Nigeria. TTB ID **23328001000154**, approved 01/08/2024. Both label images state the contents only as **"325ml"** / **"325 ML"**. No fluid ounces appear anywhere on the label.
+**The approved label.** Guinness Foreign Extra Stout, imported from Nigeria. TTB ID **23328001000154**, approved 01/08/2024. Both label images state the contents only as **"325ml"** / **"325 ML"**. No fluid ounces appear anywhere.
 
 ![Guinness back label: 7.5% ALC/VOL, 325ml](evidence/guinness_325ml.png)
 
-**Why TTB can approve it.** Net contents may be "blown, embossed, or molded into the container" instead of printed on the label (27 CFR 7.63(a)(5)). The label alone can't prove a violation.
+**What TTB did.** It approved the label **with a qualification** attached to the certificate:
 
-**Rule change.** Metric-only net contents on a malt beverage label → **Please check** ("confirm the U.S. statement appears on the container"), not Does not match. The same reasoning makes "net contents not found on the label" a Please check for every beverage type.
+> "When labels are printed the net contents must include "FL" (fluid ounces) in your statement. Example 12 fl. oz. or 12 fluid ounces. See 27 CFR 7.70"
+
+Item 15 of the application ("show any information that is blown, branded, or embossed on the container (e.g., net contents)") is **empty**, so the ounces are not molded into the bottle either.
+
+**What this means.** It's a real deficiency. TTB's agent caught it and approved on the condition that it be fixed, rather than rejecting the label. That is exactly the kind of finding the tool should surface.
+
+**Rule.** Metric-only net contents on a malt beverage → **Please check**, with the reason stating the 7.70(c) requirement and that TTB conditions approval on adding fluid ounces. It is not "Matches", and it is not an outright rejection, because TTB's own practice here is approval with a qualification. Net contents not found on any label image is also **Please check**, since 27 CFR 7.63(a)(5) allows them to be molded into the container (declared in item 15).
+
+**Lesson for the dataset.** TTB's "Qualifications" field records what its agents flagged on approved labels. It is a source of real deficiencies to test against.
 
 ---
 

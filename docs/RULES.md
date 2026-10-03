@@ -91,7 +91,7 @@ Parsed and converted to milliliters: mL ×1, cL ×10, L ×1000, fl oz ×29.5735,
 | Wine | Metric required; U.S. units may be added | Authorized standards of fill: 3 L, 2.25 L, 1.8 L, 1.5 L, 1 L, 750, 720, 700, 620, 600, 568, 550, 500, 473, 375, 360, 355, 330, 300, 250, 200, 187, 180, 100, 50 mL (larger sizes: see § 4.72) | § 4.37, § 4.72(a) |
 | Malt beverage | **U.S. units required** (e.g. "12 FL. OZ."); metric may only be added | No standards of fill | § 7.70 |
 
-A size that isn't an authorized standard of fill for spirits or wine gives **Please check**. A malt beverage label with metric units only also gives **Please check**: the U.S. statement may be molded into the container, and TTB has approved imported beer labels showing only metric (e.g. Guinness Foreign Extra Stout, "325ml").
+A size that isn't an authorized standard of fill for spirits or wine gives **Please check**. A malt beverage label with metric units only also gives **Please check**, with the reason stated: it is a real deficiency under 27 CFR 7.70(c), and TTB's practice is to approve with a qualification requiring fluid ounces rather than reject (Guinness Foreign Extra Stout, "325ml", TTB ID 23328001000154; see [FINDINGS.md](FINDINGS.md)).
 
 Net contents not found on any label image gives **Please check**, not a fail, for the same reason (27 CFR 5.63(b)(2), 7.63(a)(5)).
 

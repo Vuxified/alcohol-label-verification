@@ -76,10 +76,12 @@ def check_net_contents(app: Application, lines: list[str]) -> FieldResult:
                            f'Label says "{amounts[0].text}". Application says "{app.net_contents}".',
                            code="NET_CONTENTS_MISMATCH", found=amounts[0].text)
     if app.beverage_type == "malt" and all(a.metric for a in amounts):
-        # TTB approves imports like this; the U.S. statement may be molded into the container.
+        # A real deficiency (27 CFR 7.70(c)), but TTB's practice is approval with a qualification requiring
+        # fluid ounces (e.g. TTB ID 23328001000154), unless U.S. units are molded into the container.
         return FieldResult("net_contents", Verdict.CHECK,
-                           f'Malt beverages must state net contents in U.S. units (e.g. "12 FL. OZ."); label shows only '
-                           f'"{match.text}" (27 CFR 7.70). Please confirm it appears on the container.',
+                           f'Label shows only metric ("{match.text}"). Malt beverages must state U.S. units such as '
+                           f'"12 FL. OZ."; metric may be added but not used instead (27 CFR 7.70). Unless the ounces are '
+                           f'molded into the container, approval needs a qualification to add them.',
                            code="NET_CONTENTS_UNITS", found=match.text)
     fills = {"spirits": SPIRITS_FILLS, "wine": WINE_FILLS}.get(app.beverage_type)
     if fills and not any(_same(match.ml, f) for f in fills):
