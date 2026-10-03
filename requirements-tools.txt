@@ -3,7 +3,7 @@ numpy
 pillow
 opencv-python-headless
 albumentations==2.0.8   # pinned: later versions moved to AGPL
-onnxtr[cpu]==0.9.0
+onnxtr[cpu]==0.9.0  # pinned: the dynamic-size detector shim depends on 0.9.0 internals
 playwright
 requests
 
