@@ -12,7 +12,6 @@ import argparse
 import csv
 import json
 import random
-import textwrap
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
@@ -193,15 +192,32 @@ def render_back(label, warn, rng, width_in):
     body = font("LibreFranklin[wght].ttf", cap_px(warn["cap_mm"]), 400)
     heading = font("LibreFranklin[wght].ttf", cap_px(warn["cap_mm"]), 700 if warn["heading_bold"] else 400)
     small = font("LibreFranklin[wght].ttf", cap_px(2.2), 400)
-    lines = [label["name_address"]]
+    probe = ImageDraw.Draw(Image.new("RGB", (1, 1)))
+    usable = w - 2 * margin
+
+    def text_width(line, first):
+        """Pixel width, drawing the heading in its own (possibly bold) font."""
+        if first and line.lower().startswith("government warning:"):
+            return probe.textlength(line[:len(HEADING)], font=heading) + probe.textlength(line[len(HEADING):], font=body)
+        return probe.textlength(line, font=body)
+
+    def wrap(text, measure):
+        """Greedy word wrap by measured pixel width, so no line runs past the edge."""
+        out, line = [], ""
+        for word in text.split():
+            candidate = f"{line} {word}".strip()
+            if line and measure(candidate, not out) > usable:
+                out.append(line)
+                line = word
+            else:
+                line = candidate
+        return out + ([line] if line else [])
+
+    lines = wrap(label["name_address"], lambda ln, _: probe.textlength(ln, font=small))
     if label["source"] == "imported":
         lines.append(f"Product of {label['country_of_origin']}")
     lines.append(label["net_contents"])
-
-    # Measure wrapped warning to size the canvas.
-    probe = ImageDraw.Draw(Image.new("RGB", (1, 1)))
-    chars = max(20, int((w - 2 * margin) / (probe.textlength("abcdefghij", font=body) / 10)))
-    warn_lines = textwrap.wrap(warn["text"], chars) if warn["text"] else []
+    warn_lines = wrap(warn["text"], text_width) if warn["text"] else []
     h = margin * 2 + len(lines) * int(small.size * 1.6) + len(warn_lines) * int(body.size * 1.3) + int(0.3 * DPI)
     img = Image.new("RGB", (w, h), (250, 248, 242))
     d = ImageDraw.Draw(img)
