@@ -1,0 +1,14 @@
+{
+ "model": "nvidia.nemotron-nano-12b-v2",
+ "fields": {
+  "brand_name": "APOTHIC",
+  "class_type": "RED WINE",
+  "abv_text": "ALC. 13.5% BY VOL.",
+  "net_contents_text": "750mL",
+  "name_address_text": "BOTTLED BY APOTHIC WINES, MODESTO, CA",
+  "country_of_origin_text": null,
+  "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE USE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS."
+ },
+ "raw": "```json\n{\n  \"brand_name\": \"APOTHIC\",\n  \"class_type\": \"RED WINE\",\n  \"abv_text\": \"ALC. 13.5% BY VOL.\",\n  \"net_contents_text\": \"750mL\",\n  \"name_address_text\": \"BOTTLED BY APOTHIC WINES, MODESTO, CA\",\n  \"country_of_origin_text\": null,\n  \"warning_text\": \"GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE USE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.\"\n}\n```\n",
+ "seconds": 2.82
+}

@@ -1,0 +1,14 @@
+{
+ "model": "amazon.nova-pro-v1:0",
+ "fields": {
+  "brand_name": "Smirnoff",
+  "class_type": "VODKA",
+  "abv_text": "45% ALC/VOL (90 PROOF)",
+  "net_contents_text": "750 mL",
+  "name_address_text": "PRODUCED BY THE SMIRNOFF CO., NEW YORK, NY",
+  "country_of_origin_text": "DISTILLEDIN THE U.S.A.",
+  "warning_text": "(1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS."
+ },
+ "raw": "{\"brand_name\": \"Smirnoff\", \"class_type\": \"VODKA\", \"abv_text\": \"45% ALC/VOL (90 PROOF)\", \"net_contents_text\": \"750 mL\", \"name_address_text\": \"PRODUCED BY THE SMIRNOFF CO., NEW YORK, NY\", \"country_of_origin_text\": \"DISTILLEDIN THE U.S.A.\", \"warning_text\": \"(1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.\"}",
+ "seconds": 3.11
+}

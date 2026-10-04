@@ -1,0 +1,14 @@
+{
+ "model": "amazon.nova-pro-v1:0",
+ "fields": {
+  "brand_name": "19 Crimes.",
+  "class_type": "Red Blend",
+  "abv_text": "13.5% Alc./Vol.",
+  "net_contents_text": "750 mL",
+  "name_address_text": "Imported and bottled by TWE Imports, Sonoma, CA 19 CRIMES, 97 Sturt Hwy., Nuriootpa SA 5355 Australia",
+  "country_of_origin_text": "South Eastern Australia",
+  "warning_text": "(1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems."
+ },
+ "raw": "{\"brand_name\": \"19 Crimes.\", \"class_type\": \"Red Blend\", \"abv_text\": \"13.5% Alc./Vol.\", \"net_contents_text\": \"750 mL\", \"name_address_text\": \"Imported and bottled by TWE Imports, Sonoma, CA 19 CRIMES, 97 Sturt Hwy., Nuriootpa SA 5355 Australia\", \"country_of_origin_text\": \"South Eastern Australia\", \"warning_text\": \"(1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.\"}",
+ "seconds": 2.21
+}

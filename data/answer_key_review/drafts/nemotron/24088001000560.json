@@ -1,0 +1,14 @@
+{
+ "model": "nvidia.nemotron-nano-12b-v2",
+ "fields": {
+  "brand_name": "19 Crimes",
+  "class_type": "Red Wine",
+  "abv_text": "13.5% Alc./Vol.",
+  "net_contents_text": "750 mL",
+  "name_address_text": "Imported and Bottled by TWE Imports, Sonoma, CA 19 Crimes, 97 Sturt Hwy, NURIOOTPA SA 5355 Australia",
+  "country_of_origin_text": "South Eastern Australia",
+  "warning_text": "GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS."
+ },
+ "raw": "```json\n{\n  \"brand_name\": \"19 Crimes\",\n  \"class_type\": \"Red Wine\",\n  \"abv_text\": \"13.5% Alc./Vol.\",\n  \"net_contents_text\": \"750 mL\",\n  \"name_address_text\": \"Imported and Bottled by TWE Imports, Sonoma, CA 19 Crimes, 97 Sturt Hwy, NURIOOTPA SA 5355 Australia\",\n  \"country_of_origin_text\": \"South Eastern Australia\",\n  \"warning_text\": \"GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.\"\n}\n```\n",
+ "seconds": 3.07
+}

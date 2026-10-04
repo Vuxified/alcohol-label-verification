@@ -1,0 +1,14 @@
+{
+ "model": "amazon.nova-pro-v1:0",
+ "fields": {
+  "brand_name": "Heineken",
+  "class_type": "ALCOHOL FREE",
+  "abv_text": "ALC. 0.0% BY VOL.",
+  "net_contents_text": "330 ML",
+  "name_address_text": "Heineken Brouwerijen, Stadhouderskade 78, 1072 AE Amsterdam, The Netherlands",
+  "country_of_origin_text": "HOLLAND",
+  "warning_text": "null"
+ },
+ "raw": "{\"brand_name\": \"Heineken\", \"class_type\": \"ALCOHOL FREE\", \"abv_text\": \"ALC. 0.0% BY VOL.\", \"net_contents_text\": \"330 ML\", \"name_address_text\": \"Heineken Brouwerijen, Stadhouderskade 78, 1072 AE Amsterdam, The Netherlands\", \"country_of_origin_text\": \"HOLLAND\", \"warning_text\": \"null\"}",
+ "seconds": 1.62
+}

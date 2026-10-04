@@ -1,0 +1,14 @@
+{
+ "model": "nvidia.nemotron-nano-12b-v2",
+ "fields": {
+  "brand_name": "Grey Goose",
+  "class_type": "ALTIUS VODKA",
+  "abv_text": "40% alc./vol.",
+  "net_contents_text": "700 ml",
+  "name_address_text": "Grey Goose Importing Company, Coral Gables, FL, Bottled by BMP, 11 Route du Laubaret, 16130 Gensac-la-Pallue, France",
+  "country_of_origin_text": "DISTILLED FROM PURE FRENCH WHEAT GLUTEN FREE",
+  "warning_text": "GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems."
+ },
+ "raw": "```json\n{\n  \"brand_name\": \"Grey Goose\",\n  \"class_type\": \"ALTIUS VODKA\",\n  \"abv_text\": \"40% alc./vol.\",\n  \"net_contents_text\": \"700 ml\",\n  \"name_address_text\": \"Grey Goose Importing Company, Coral Gables, FL, Bottled by BMP, 11 Route du Laubaret, 16130 Gensac-la-Pallue, France\",\n  \"country_of_origin_text\": \"DISTILLED FROM PURE FRENCH WHEAT GLUTEN FREE\",\n  \"warning_text\": \"GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.\"\n}\n```\n",
+ "seconds": 3.11
+}

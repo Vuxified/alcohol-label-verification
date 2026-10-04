@@ -1,0 +1,14 @@
+{
+ "model": "nvidia.nemotron-nano-12b-v2",
+ "fields": {
+  "brand_name": "Yuengling",
+  "class_type": "Golden Pilsner",
+  "abv_text": "4.7% ALC./VOL.",
+  "net_contents_text": "12 FL. OZ.",
+  "name_address_text": "BREWED UNDER SUPERVISION OF D.G. YUENGLING & SON, INC. POTTSVILLE, PA BY THE YUENGLING COMPANY, FT. WORTH, TX",
+  "country_of_origin_text": null,
+  "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS."
+ },
+ "raw": "```json\n{\n  \"brand_name\": \"Yuengling\",\n  \"class_type\": \"Golden Pilsner\",\n  \"abv_text\": \"4.7% ALC./VOL.\",\n  \"net_contents_text\": \"12 FL. OZ.\",\n  \"name_address_text\": \"BREWED UNDER SUPERVISION OF D.G. YUENGLING & SON, INC. POTTSVILLE, PA BY THE YUENGLING COMPANY, FT. WORTH, TX\",\n  \"country_of_origin_text\": null,\n  \"warning_text\": \"GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.\"\n}\n```\n",
+ "seconds": 2.51
+}

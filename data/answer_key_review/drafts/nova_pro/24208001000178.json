@@ -1,0 +1,14 @@
+{
+ "model": "amazon.nova-pro-v1:0",
+ "fields": {
+  "brand_name": "Santa Margherita & LOVESHACKFANCY",
+  "class_type": "DRY ROSÉ WINE",
+  "abv_text": "12.5% BY VOL.",
+  "net_contents_text": "1.5L",
+  "name_address_text": "BOTTLED BY SANTA MARGHERITA S.p.A. FOSSALTADIPORTOGRUARO - ITALIA www.santamargheritawines.com IMPORTED BY: SM USA, Inc., Miami Beach, FL",
+  "country_of_origin_text": "PRODUCT OF ITALY",
+  "warning_text": "(1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS."
+ },
+ "raw": "{\n  \"brand_name\": \"Santa Margherita & LOVESHACKFANCY\",\n  \"class_type\": \"DRY ROS\\u00c9 WINE\",\n  \"abv_text\": \"12.5% BY VOL.\",\n  \"net_contents_text\": \"1.5L\",\n  \"name_address_text\": \"BOTTLED BY SANTA MARGHERITA S.p.A. FOSSALTADIPORTOGRUARO - ITALIA www.santamargheritawines.com IMPORTED BY: SM USA, Inc., Miami Beach, FL\",\n  \"country_of_origin_text\": \"PRODUCT OF ITALY\",\n  \"warning_text\": \"(1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.\"\n}",
+ "seconds": 3.61
+}

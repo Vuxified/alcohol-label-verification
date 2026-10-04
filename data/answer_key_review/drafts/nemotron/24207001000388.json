@@ -1,0 +1,14 @@
+{
+ "model": "nvidia.nemotron-nano-12b-v2",
+ "fields": {
+  "brand_name": "FourRoses",
+  "class_type": "Kentucky Straight Bourbon Whiskey",
+  "abv_text": "50% ALC./VOL.",
+  "net_contents_text": "750 mL",
+  "name_address_text": "Distilled & Aged by Four Roses Distillery LLC, Lawrenceburg, Kentucky",
+  "country_of_origin_text": null,
+  "warning_text": "(1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS."
+ },
+ "raw": "```json\n{\n  \"brand_name\": \"FourRoses\",\n  \"class_type\": \"Kentucky Straight Bourbon Whiskey\",\n  \"abv_text\": \"50% ALC./VOL.\",\n  \"net_contents_text\": \"750 mL\",\n  \"name_address_text\": \"Distilled & Aged by Four Roses Distillery LLC, Lawrenceburg, Kentucky\",\n  \"country_of_origin_text\": null,\n  \"warning_text\": \"(1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.\"\n}\n```\n",
+ "seconds": 3.55
+}

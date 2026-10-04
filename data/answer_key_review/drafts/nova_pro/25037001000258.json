@@ -1,0 +1,14 @@
+{
+ "model": "amazon.nova-pro-v1:0",
+ "fields": {
+  "brand_name": "Tanqueray Sterling",
+  "class_type": "Imported",
+  "abv_text": "40% ALC. BY VOL (80 PROOF)",
+  "net_contents_text": "750mL",
+  "name_address_text": "CHARLES TANQUERAY & CO. LONDON ENGLAND",
+  "country_of_origin_text": "GREAT BRITAIN",
+  "warning_text": "(1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS."
+ },
+ "raw": "{\n  \"brand_name\": \"Tanqueray Sterling\",\n  \"class_type\": \"Imported\",\n  \"abv_text\": \"40% ALC. BY VOL (80 PROOF)\",\n  \"net_contents_text\": \"750mL\",\n  \"name_address_text\": \"CHARLES TANQUERAY & CO. LONDON ENGLAND\",\n  \"country_of_origin_text\": \"GREAT BRITAIN\",\n  \"warning_text\": \"(1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.\"\n}",
+ "seconds": 2.41
+}

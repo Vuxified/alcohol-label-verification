@@ -1,0 +1,14 @@
+{
+ "model": "nvidia.nemotron-nano-12b-v2",
+ "fields": {
+  "brand_name": "Budweiser",
+  "class_type": "Lager Beer",
+  "abv_text": "5% alc./vol.",
+  "net_contents_text": "12 FL OZ (355 mL)",
+  "name_address_text": "Anheuser-Busch Companies LLC, P.O. Box 4052, St. Louis, MO 63166-4052",
+  "country_of_origin_text": "BREWED IN THE UNITED STATES",
+  "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS."
+ },
+ "raw": "```json\n{\n  \"brand_name\": \"Budweiser\",\n  \"class_type\": \"Lager Beer\",\n  \"abv_text\": \"5% alc./vol.\",\n  \"net_contents_text\": \"12 FL OZ (355 mL)\",\n  \"name_address_text\": \"Anheuser-Busch Companies LLC, P.O. Box 4052, St. Louis, MO 63166-4052\",\n  \"country_of_origin_text\": \"BREWED IN THE UNITED STATES\",\n  \"warning_text\": \"GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.\"\n}\n```\n",
+ "seconds": 2.46
+}

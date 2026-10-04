@@ -1,0 +1,14 @@
+{
+ "model": "nvidia.nemotron-nano-12b-v2",
+ "fields": {
+  "brand_name": "Hennessy",
+  "class_type": "COGNAC",
+  "abv_text": "40% alc./vol.",
+  "net_contents_text": "750ml",
+  "name_address_text": "PRODUCED AND BOTTLED IN FRANCE BY JA HENNESSY & CO, 16100 COGNAC IMPORTED BY MOET HENNESSY USA, INC., NEW YORK, N.Y.",
+  "country_of_origin_text": null,
+  "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS."
+ },
+ "raw": "```json\n{\n  \"brand_name\": \"Hennessy\",\n  \"class_type\": \"COGNAC\",\n  \"abv_text\": \"40% alc./vol.\",\n  \"net_contents_text\": \"750ml\",\n  \"name_address_text\": \"PRODUCED AND BOTTLED IN FRANCE BY JA HENNESSY & CO, 16100 COGNAC IMPORTED BY MOET HENNESSY USA, INC., NEW YORK, N.Y.\",\n  \"country_of_origin_text\": null,\n  \"warning_text\": \"GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.\"\n}\n```\n",
+ "seconds": 3.64
+}

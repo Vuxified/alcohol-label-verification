@@ -1,0 +1,14 @@
+{
+ "model": "nvidia.nemotron-nano-12b-v2",
+ "fields": {
+  "brand_name": "Guinness",
+  "class_type": "Foreign Extra Stout",
+  "abv_text": "7.5% ALC/VOL",
+  "net_contents_text": "325ml",
+  "name_address_text": "Guinness Nigeria PLC. Cocoa Industries\nGuinness Road, Ogba,Ikeja, Lagos, Nigeria.",
+  "country_of_origin_text": "PRODUCT OF NIGERIA",
+  "warning_text": "(1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS."
+ },
+ "raw": "```json\n{\n  \"brand_name\": \"Guinness\",\n  \"class_type\": \"Foreign Extra Stout\",\n  \"abv_text\": \"7.5% ALC/VOL\",\n  \"net_contents_text\": \"325ml\",\n  \"name_address_text\": \"Guinness Nigeria PLC. Cocoa Industries\\nGuinness Road, Ogba,Ikeja, Lagos, Nigeria.\",\n  \"country_of_origin_text\": \"PRODUCT OF NIGERIA\",\n  \"warning_text\": \"(1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.\"\n}\n```\n",
+ "seconds": 3.55
+}

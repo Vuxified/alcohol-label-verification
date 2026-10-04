@@ -1,0 +1,14 @@
+{
+ "model": "amazon.nova-pro-v1:0",
+ "fields": {
+  "brand_name": "Corona Extra",
+  "class_type": "BEER",
+  "abv_text": "4.6% ALC./VOL.",
+  "net_contents_text": "12 FL. OZ.",
+  "name_address_text": "Brewed and Canned by CERVECERIA MODELO MEXICO",
+  "country_of_origin_text": "IMPORTED",
+  "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS."
+ },
+ "raw": "{\n  \"brand_name\": \"Corona Extra\",\n  \"class_type\": \"BEER\",\n  \"abv_text\": \"4.6% ALC./VOL.\",\n  \"net_contents_text\": \"12 FL. OZ.\",\n  \"name_address_text\": \"Brewed and Canned by CERVECERIA MODELO MEXICO\",\n  \"country_of_origin_text\": \"IMPORTED\",\n  \"warning_text\": \"GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.\"\n}",
+ "seconds": 2.93
+}

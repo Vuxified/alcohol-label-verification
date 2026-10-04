@@ -1,0 +1,14 @@
+{
+ "model": "amazon.nova-pro-v1:0",
+ "fields": {
+  "brand_name": "Tanqueray",
+  "class_type": "DISTILLED GIN",
+  "abv_text": "41.3% Alc./Vol (82.6 proof)",
+  "net_contents_text": "1.75L",
+  "name_address_text": "Charles Tanqueray & Co. 16 Great Marlborough Street, Soho, London, W1F 7HS England.",
+  "country_of_origin_text": "GREAT BRITAIN",
+  "warning_text": "(1)ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS."
+ },
+ "raw": "{\"brand_name\": \"Tanqueray\", \"class_type\": \"DISTILLED GIN\", \"abv_text\": \"41.3% Alc./Vol (82.6 proof)\", \"net_contents_text\": \"1.75L\", \"name_address_text\": \"Charles Tanqueray & Co. 16 Great Marlborough Street, Soho, London, W1F 7HS England.\", \"country_of_origin_text\": \"GREAT BRITAIN\", \"warning_text\": \"(1)ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.\"}",
+ "seconds": 2.44
+}

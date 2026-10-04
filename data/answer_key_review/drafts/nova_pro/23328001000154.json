@@ -1,0 +1,14 @@
+{
+ "model": "amazon.nova-pro-v1:0",
+ "fields": {
+  "brand_name": "GUINNESS",
+  "class_type": "FOREIGN EXTRA STOUT",
+  "abv_text": "7.5% ALC/VOL",
+  "net_contents_text": "325ml",
+  "name_address_text": "Brewed under licence by Guinness Nigeria PLC. Cocoa Industries Guinness Road, Ogba,Ikeja, Lagos, Nigeria.",
+  "country_of_origin_text": "PRODUCT OF NIGERIA",
+  "warning_text": "(1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS."
+ },
+ "raw": "{\n  \"brand_name\": \"GUINNESS\",\n  \"class_type\": \"FOREIGN EXTRA STOUT\",\n  \"abv_text\": \"7.5% ALC/VOL\",\n  \"net_contents_text\": \"325ml\",\n  \"name_address_text\": \"Brewed under licence by Guinness Nigeria PLC. Cocoa Industries Guinness Road, Ogba,Ikeja, Lagos, Nigeria.\",\n  \"country_of_origin_text\": \"PRODUCT OF NIGERIA\",\n  \"warning_text\": \"(1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.\"\n}",
+ "seconds": 2.99
+}

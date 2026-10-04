@@ -1,0 +1,6 @@
+{
+ "model": "nvidia.nemotron-nano-12b-v2",
+ "fields": {},
+ "raw": "ERROR: ValidationException: An error occurred (ValidationException) when calling the Converse operation: The model returned the following errors: {\"error\":{\"code\":\"validation_error\",\"message\":\"ErrorEvent { error: APIError { type: \\\"BadRequestError\\\", code: Some(400), message: \\\"Already borrowed\\\", param: None } }\",\"param\":null,\"type\":\"invalid_request_error\"}}",
+ "seconds": 0
+}

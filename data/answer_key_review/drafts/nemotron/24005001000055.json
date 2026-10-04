@@ -1,0 +1,14 @@
+{
+ "model": "nvidia.nemotron-nano-12b-v2",
+ "fields": {
+  "brand_name": "Coors LIGHT",
+  "class_type": "BEER",
+  "abv_text": "4.2% ALC/VOL",
+  "net_contents_text": "12 FL.OZ. (355mL)",
+  "name_address_text": "COORS BREWING CO., GOLDEN, CO 80401",
+  "country_of_origin_text": "USA",
+  "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS."
+ },
+ "raw": "```json\n{\n  \"brand_name\": \"Coors LIGHT\",\n  \"class_type\": \"BEER\",\n  \"abv_text\": \"4.2% ALC/VOL\",\n  \"net_contents_text\": \"12 FL.OZ. (355mL)\",\n  \"name_address_text\": \"COORS BREWING CO., GOLDEN, CO 80401\",\n  \"country_of_origin_text\": \"USA\",\n  \"warning_text\": \"GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.\"\n}\n```\n",
+ "seconds": 1.76
+}

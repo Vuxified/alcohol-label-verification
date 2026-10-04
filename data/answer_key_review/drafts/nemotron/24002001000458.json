@@ -1,0 +1,14 @@
+{
+ "model": "nvidia.nemotron-nano-12b-v2",
+ "fields": {
+  "brand_name": "JACK DANIEL'S",
+  "class_type": "TENNESSEE WHISKEY",
+  "abv_text": "53.5% Alc./Vol.",
+  "net_contents_text": "700mL",
+  "name_address_text": "JACK DANIEL DISTILLERY\nLYNCHBURG, TENNESSEE, USA",
+  "country_of_origin_text": "USA",
+  "warning_text": "GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS."
+ },
+ "raw": "```json\n{\n  \"brand_name\": \"JACK DANIEL'S\",\n  \"class_type\": \"TENNESSEE WHISKEY\",\n  \"abv_text\": \"53.5% Alc./Vol.\",\n  \"net_contents_text\": \"700mL\",\n  \"name_address_text\": \"JACK DANIEL DISTILLERY\\nLYNCHBURG, TENNESSEE, USA\",\n  \"country_of_origin_text\": \"USA\",\n  \"warning_text\": \"GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.\"\n}\n```\n",
+ "seconds": 3.31
+}

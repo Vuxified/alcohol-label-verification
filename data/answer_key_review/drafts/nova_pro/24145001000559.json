@@ -1,0 +1,14 @@
+{
+ "model": "amazon.nova-pro-v1:0",
+ "fields": {
+  "brand_name": "Modelo",
+  "class_type": "Cerveza",
+  "abv_text": "5.4% ALC./VOL.",
+  "net_contents_text": "12 FL. OZ. (355 mL)",
+  "name_address_text": "Modelo Mexico, S.A. de C.V.\nAv. Insurgentes Sur 1000, Col.\nDel Valle, 03100, Mexico City, Mexico",
+  "country_of_origin_text": "Mexico",
+  "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS."
+ },
+ "raw": "{\"brand_name\": \"Modelo\", \"class_type\": \"Cerveza\", \"abv_text\": \"5.4% ALC./VOL.\", \"net_contents_text\": \"12 FL. OZ. (355 mL)\", \"name_address_text\": \"Modelo Mexico, S.A. de C.V.\\nAv. Insurgentes Sur 1000, Col.\\nDel Valle, 03100, Mexico City, Mexico\", \"country_of_origin_text\": \"Mexico\", \"warning_text\": \"GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.\"}",
+ "seconds": 2.35
+}

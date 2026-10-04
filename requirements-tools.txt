@@ -6,6 +6,7 @@ albumentations==2.0.8   # pinned: later versions moved to AGPL
 onnxtr[cpu]==0.9.0  # pinned: the dynamic-size detector shim depends on 0.9.0 internals
 playwright
 requests
+boto3  # tools/draft_answer_key.py (Bedrock drafts of the answer key)
 
 # Tests
 pytest

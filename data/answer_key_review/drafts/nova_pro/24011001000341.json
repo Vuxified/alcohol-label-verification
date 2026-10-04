@@ -1,0 +1,14 @@
+{
+ "model": "amazon.nova-pro-v1:0",
+ "fields": {
+  "brand_name": "Crown Royal",
+  "class_type": "Fine De Luxe Blended Canadian Whisky",
+  "abv_text": "40% vol.",
+  "net_contents_text": "75 cl",
+  "name_address_text": "Joseph E. Seagram & Sons Limited, WATERLOO · ONTARIO · CANADA",
+  "country_of_origin_text": "PRODUCT OF CANADA",
+  "warning_text": "(1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems."
+ },
+ "raw": "{\n  \"brand_name\": \"Crown Royal\",\n  \"class_type\": \"Fine De Luxe Blended Canadian Whisky\",\n  \"abv_text\": \"40% vol.\",\n  \"net_contents_text\": \"75 cl\",\n  \"name_address_text\": \"Joseph E. Seagram & Sons Limited, WATERLOO \\u00b7 ONTARIO \\u00b7 CANADA\",\n  \"country_of_origin_text\": \"PRODUCT OF CANADA\",\n  \"warning_text\": \"(1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.\"\n}",
+ "seconds": 2.18
+}

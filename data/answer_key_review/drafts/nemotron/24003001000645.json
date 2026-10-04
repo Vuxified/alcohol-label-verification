@@ -1,0 +1,14 @@
+{
+ "model": "nvidia.nemotron-nano-12b-v2",
+ "fields": {
+  "brand_name": "SIERRA NEVADA",
+  "class_type": "ALE",
+  "abv_text": "5.8% ALC./VOL.",
+  "net_contents_text": "5 GALS",
+  "name_address_text": "SIERRA NEVADA BREWING CO., CHICO, CA & MILLS RIVER, NC",
+  "country_of_origin_text": null,
+  "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS."
+ },
+ "raw": "```json\n{\n  \"brand_name\": \"SIERRA NEVADA\",\n  \"class_type\": \"ALE\",\n  \"abv_text\": \"5.8% ALC./VOL.\",\n  \"net_contents_text\": \"5 GALS\",\n  \"name_address_text\": \"SIERRA NEVADA BREWING CO., CHICO, CA & MILLS RIVER, NC\",\n  \"country_of_origin_text\": null,\n  \"warning_text\": \"GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.\"\n}\n```\n",
+ "seconds": 2.28
+}

@@ -7,3 +7,4 @@ __pycache__/
 .DS_Store
 .playwright-mcp/
 data/augmented/
+data/registry_pool/

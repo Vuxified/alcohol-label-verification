@@ -1,0 +1,14 @@
+{
+ "model": "amazon.nova-pro-v1:0",
+ "fields": {
+  "brand_name": "TWISTED TEA",
+  "class_type": "HARD ICED TEA",
+  "abv_text": "4% ALC./VOL.",
+  "net_contents_text": "12 FL OZ.",
+  "name_address_text": "Twisted Tea Brewing Company, Cincinnati, OH. Please drink responsibly.",
+  "country_of_origin_text": "null",
+  "warning_text": "GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems."
+ },
+ "raw": "{\n  \"brand_name\": \"TWISTED TEA\",\n  \"class_type\": \"HARD ICED TEA\",\n  \"abv_text\": \"4% ALC./VOL.\",\n  \"net_contents_text\": \"12 FL OZ.\",\n  \"name_address_text\": \"Twisted Tea Brewing Company, Cincinnati, OH. Please drink responsibly.\",\n  \"country_of_origin_text\": \"null\",\n  \"warning_text\": \"GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.\"\n}",
+ "seconds": 2.65
+}

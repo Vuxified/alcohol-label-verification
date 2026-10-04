@@ -1,0 +1,14 @@
+{
+ "model": "amazon.nova-pro-v1:0",
+ "fields": {
+  "brand_name": "Pabst Blue Ribbon",
+  "class_type": "BEER",
+  "abv_text": "4.7% ALC/VOL",
+  "net_contents_text": "12 FLUID OUNCES",
+  "name_address_text": "Pabst Brewing Company, 1000 W. Juneau Ave., Milwaukee, WI 53233",
+  "country_of_origin_text": "null",
+  "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS."
+ },
+ "raw": "{\"brand_name\": \"Pabst Blue Ribbon\", \"class_type\": \"BEER\", \"abv_text\": \"4.7% ALC/VOL\", \"net_contents_text\": \"12 FLUID OUNCES\", \"name_address_text\": \"Pabst Brewing Company, 1000 W. Juneau Ave., Milwaukee, WI 53233\", \"country_of_origin_text\": \"null\", \"warning_text\": \"GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.\"}",
+ "seconds": 2.64
+}

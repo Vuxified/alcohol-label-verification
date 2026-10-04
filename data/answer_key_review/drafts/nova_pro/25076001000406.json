@@ -1,0 +1,14 @@
+{
+ "model": "amazon.nova-pro-v1:0",
+ "fields": {
+  "brand_name": "GREY GOOSE",
+  "class_type": "LA POIRE PEAR FLAVORED VODKA",
+  "abv_text": "40% alc./vol.",
+  "net_contents_text": "750 mL",
+  "name_address_text": "IMPORTED BY GREY GOOSE IMPORTING COMPANY, CORAL GABLES, FL. BOTTLED BY BMP, 11 ROUTE DO LAUBARET, 16130 GENSAC-LA-PALUHE, FRANCE.",
+  "country_of_origin_text": "FRANCE",
+  "warning_text": "GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems."
+ },
+ "raw": "{\"brand_name\": \"GREY GOOSE\", \"class_type\": \"LA POIRE PEAR FLAVORED VODKA\", \"abv_text\": \"40% alc./vol.\", \"net_contents_text\": \"750 mL\", \"name_address_text\": \"IMPORTED BY GREY GOOSE IMPORTING COMPANY, CORAL GABLES, FL. BOTTLED BY BMP, 11 ROUTE DO LAUBARET, 16130 GENSAC-LA-PALUHE, FRANCE.\", \"country_of_origin_text\": \"FRANCE\", \"warning_text\": \"GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.\"}",
+ "seconds": 2.54
+}

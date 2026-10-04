@@ -1,0 +1,14 @@
+{
+ "model": "amazon.nova-pro-v1:0",
+ "fields": {
+  "brand_name": "WYNELAND ESTATES",
+  "class_type": "California Champagne",
+  "abv_text": "ALC. 11.5% BY VOL.",
+  "net_contents_text": "NET VOLUME 750ML",
+  "name_address_text": "921 E. Harney Lane, Lodi, Ca 95240",
+  "country_of_origin_text": "null",
+  "warning_text": "(1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS."
+ },
+ "raw": "{\"brand_name\": \"WYNELAND ESTATES\", \"class_type\": \"California Champagne\", \"abv_text\": \"ALC. 11.5% BY VOL.\", \"net_contents_text\": \"NET VOLUME 750ML\", \"name_address_text\": \"921 E. Harney Lane, Lodi, Ca 95240\", \"country_of_origin_text\": \"null\", \"warning_text\": \"(1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.\"}",
+ "seconds": 2.56
+}

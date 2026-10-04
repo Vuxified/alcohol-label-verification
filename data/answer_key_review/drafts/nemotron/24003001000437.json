@@ -1,0 +1,14 @@
+{
+ "model": "nvidia.nemotron-nano-12b-v2",
+ "fields": {
+  "brand_name": "Chateau Ste Michelle",
+  "class_type": "Chardonnay",
+  "abv_text": "ALC. 12.5% BY VOL.",
+  "net_contents_text": "750ML",
+  "name_address_text": "PRODUCED & BOTTLED BY CHATEAU STE. MICHELLE, PATERSON, WA, USA",
+  "country_of_origin_text": "Certified Organic by Washington State Dept. of Agriculture",
+  "warning_text": "GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS."
+ },
+ "raw": "```json\n{\n  \"brand_name\": \"Chateau Ste Michelle\",\n  \"class_type\": \"Chardonnay\",\n  \"abv_text\": \"ALC. 12.5% BY VOL.\",\n  \"net_contents_text\": \"750ML\",\n  \"name_address_text\": \"PRODUCED & BOTTLED BY CHATEAU STE. MICHELLE, PATERSON, WA, USA\",\n  \"country_of_origin_text\": \"Certified Organic by Washington State Dept. of Agriculture\",\n  \"warning_text\": \"GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.\"\n}\n```\n",
+ "seconds": 2.83
+}

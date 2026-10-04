@@ -1,0 +1,14 @@
+{
+ "model": "nvidia.nemotron-nano-12b-v2",
+ "fields": {
+  "brand_name": "Tito's",
+  "class_type": "Handmade Vodka",
+  "abv_text": "40% ALC./VOL.",
+  "net_contents_text": "100 mL",
+  "name_address_text": "FIFTH GENERATION, INC. AUSTIN, TX",
+  "country_of_origin_text": "AUSTIN TEXAS",
+  "warning_text": "(1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS."
+ },
+ "raw": "```json\n{\n  \"brand_name\": \"Tito's\",\n  \"class_type\": \"Handmade Vodka\",\n  \"abv_text\": \"40% ALC./VOL.\",\n  \"net_contents_text\": \"100 mL\",\n  \"name_address_text\": \"FIFTH GENERATION, INC. AUSTIN, TX\",\n  \"country_of_origin_text\": \"AUSTIN TEXAS\",\n  \"warning_text\": \"(1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.\"\n}\n```\n",
+ "seconds": 1.93
+}

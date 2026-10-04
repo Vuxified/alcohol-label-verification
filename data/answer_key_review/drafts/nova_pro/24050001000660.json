@@ -1,0 +1,14 @@
+{
+ "model": "amazon.nova-pro-v1:0",
+ "fields": {
+  "brand_name": "Four Roses",
+  "class_type": "Kentucky Straight Bourbon Whiskey",
+  "abv_text": "57.1%",
+  "net_contents_text": "750ml",
+  "name_address_text": "Distilled and aged by Four Roses Distillery Lawrenceburg, Kentucky · FourRosesBourbon.com",
+  "country_of_origin_text": "null",
+  "warning_text": "(1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems."
+ },
+ "raw": "{\n  \"brand_name\": \"Four Roses\",\n  \"class_type\": \"Kentucky Straight Bourbon Whiskey\",\n  \"abv_text\": \"57.1%\",\n  \"net_contents_text\": \"750ml\",\n  \"name_address_text\": \"Distilled and aged by Four Roses Distillery Lawrenceburg, Kentucky \\u00b7 FourRosesBourbon.com\",\n  \"country_of_origin_text\": \"null\",\n  \"warning_text\": \"(1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.\"\n}",
+ "seconds": 2.12
+}

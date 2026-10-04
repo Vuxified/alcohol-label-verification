@@ -1,0 +1,14 @@
+{
+ "model": "amazon.nova-pro-v1:0",
+ "fields": {
+  "brand_name": "KENDALL-JACKSON",
+  "class_type": "Cabernet Sauvignon, Sonoma County",
+  "abv_text": "Alc. 13.5% by Vol. 100mL",
+  "net_contents_text": "null",
+  "name_address_text": "Bottled by TUBES USA, Inc. | Napa | Napa County | CA 94503 Wine by Kendall-Jackson Vineyards & Winery, Santa Rosa, CA | PRODUCT OF USA",
+  "country_of_origin_text": "null",
+  "warning_text": "GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems."
+ },
+ "raw": "{\"brand_name\": \"KENDALL-JACKSON\", \"class_type\": \"Cabernet Sauvignon, Sonoma County\", \"abv_text\": \"Alc. 13.5% by Vol. 100mL\", \"net_contents_text\": \"null\", \"name_address_text\": \"Bottled by TUBES USA, Inc. | Napa | Napa County | CA 94503 Wine by Kendall-Jackson Vineyards & Winery, Santa Rosa, CA | PRODUCT OF USA\", \"country_of_origin_text\": \"null\", \"warning_text\": \"GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.\"}",
+ "seconds": 2.23
+}

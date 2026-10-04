@@ -1,0 +1,14 @@
+{
+ "model": "nvidia.nemotron-nano-12b-v2",
+ "fields": {
+  "brand_name": "Smirnoff",
+  "class_type": "VODKA",
+  "abv_text": "50% ALC/VOL (100 PROOF)",
+  "net_contents_text": "750 mL",
+  "name_address_text": "PRODUCED BY THE SMIRNOFF CO., NEW YORK, NY",
+  "country_of_origin_text": "MADE IN AMERICA",
+  "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS."
+ },
+ "raw": "```json\n{\n  \"brand_name\": \"Smirnoff\",\n  \"class_type\": \"VODKA\",\n  \"abv_text\": \"50% ALC/VOL (100 PROOF)\",\n  \"net_contents_text\": \"750 mL\",\n  \"name_address_text\": \"PRODUCED BY THE SMIRNOFF CO., NEW YORK, NY\",\n  \"country_of_origin_text\": \"MADE IN AMERICA\",\n  \"warning_text\": \"GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.\"\n}\n```\n",
+ "seconds": 5.03
+}

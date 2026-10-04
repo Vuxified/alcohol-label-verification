@@ -1,0 +1,14 @@
+{
+ "model": "nvidia.nemotron-nano-12b-v2",
+ "fields": {
+  "brand_name": "Modelo",
+  "class_type": "CERVEZA",
+  "abv_text": "5.4% ALC/VOL.",
+  "net_contents_text": "24 FL. OZ. (710 mL)",
+  "name_address_text": "IMPORTED BY CROWN IMPORTS, CHICAGO, IL",
+  "country_of_origin_text": "BREWED IN MEXICO",
+  "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMING ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS."
+ },
+ "raw": "```json\n{\n  \"brand_name\": \"Modelo\",\n  \"class_type\": \"CERVEZA\",\n  \"abv_text\": \"5.4% ALC/VOL.\",\n  \"net_contents_text\": \"24 FL. OZ. (710 mL)\",\n  \"name_address_text\": \"IMPORTED BY CROWN IMPORTS, CHICAGO, IL\",\n  \"country_of_origin_text\": \"BREWED IN MEXICO\",\n  \"warning_text\": \"GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMING ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.\"\n}\n```\n",
+ "seconds": 2.5
+}

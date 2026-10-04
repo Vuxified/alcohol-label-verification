@@ -1,0 +1,14 @@
+{
+ "model": "amazon.nova-pro-v1:0",
+ "fields": {
+  "brand_name": "Crown Royal",
+  "class_type": "SINGLE MALT CANADIAN WHISKY",
+  "abv_text": "45% alc./vol.",
+  "net_contents_text": "750 mL",
+  "name_address_text": "IMPORTED BY THE CROWN ROYAL COMPANY, NEW YORK, NY",
+  "country_of_origin_text": "null",
+  "warning_text": "(1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS."
+ },
+ "raw": "{\"brand_name\": \"Crown Royal\", \"class_type\": \"SINGLE MALT CANADIAN WHISKY\", \"abv_text\": \"45% alc./vol.\", \"net_contents_text\": \"750 mL\", \"name_address_text\": \"IMPORTED BY THE CROWN ROYAL COMPANY, NEW YORK, NY\", \"country_of_origin_text\": \"null\", \"warning_text\": \"(1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.\"}",
+ "seconds": 2.27
+}

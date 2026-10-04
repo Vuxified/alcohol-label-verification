@@ -1,0 +1,14 @@
+{
+ "model": "nvidia.nemotron-nano-12b-v2",
+ "fields": {
+  "brand_name": "Josh Cellars Family Reserve",
+  "class_type": "Cabernet Sauvignon",
+  "abv_text": "ALC 14.5% BY VOL",
+  "net_contents_text": "750 mL",
+  "name_address_text": "JOSEPH CELLARS\nBLENDED & BOTTLED BY JOSEPH CARR, HOPLAND, CA",
+  "country_of_origin_text": "CA CRV",
+  "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS."
+ },
+ "raw": "```json\n{\n  \"brand_name\": \"Josh Cellars Family Reserve\",\n  \"class_type\": \"Cabernet Sauvignon\",\n  \"abv_text\": \"ALC 14.5% BY VOL\",\n  \"net_contents_text\": \"750 mL\",\n  \"name_address_text\": \"JOSEPH CELLARS\\nBLENDED & BOTTLED BY JOSEPH CARR, HOPLAND, CA\",\n  \"country_of_origin_text\": \"CA CRV\",\n  \"warning_text\": \"GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.\"\n}\n```\n",
+ "seconds": 2.2
+}

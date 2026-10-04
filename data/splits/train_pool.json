@@ -1,0 +1,792 @@
+[
+ {
+  "id": "25044001000979",
+  "brand": "ANTICHE CANTINE MARCHESI DI SCUDERI",
+  "product_type": "wine",
+  "nearest_heldout_hamming": 18,
+  "nearest_dev_hamming": 16,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "25051001000874",
+  "brand": "PERSPECTIVE",
+  "product_type": "wine",
+  "nearest_heldout_hamming": 12,
+  "nearest_dev_hamming": 13,
+  "accepted": false,
+  "rejected_because": [
+   "looks like a held-out image (distance 12)"
+  ]
+ },
+ {
+  "id": "25055001000804",
+  "brand": "SOTO",
+  "product_type": "wine",
+  "nearest_heldout_hamming": 21,
+  "nearest_dev_hamming": 17,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "25056001000456",
+  "brand": "WATKINSVILLE WINE",
+  "product_type": "wine",
+  "nearest_heldout_hamming": 18,
+  "nearest_dev_hamming": 20,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "25056001000852",
+  "brand": "TATTOO U",
+  "product_type": "wine",
+  "nearest_heldout_hamming": 14,
+  "nearest_dev_hamming": 14,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "25056001000986",
+  "brand": "SOTO",
+  "product_type": "wine",
+  "nearest_heldout_hamming": 15,
+  "nearest_dev_hamming": 17,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "25059001000707",
+  "brand": "FIRESTONE WALKER BREWING COMPANY",
+  "product_type": "malt",
+  "nearest_heldout_hamming": 20,
+  "nearest_dev_hamming": 18,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "25063001000205",
+  "brand": "ZUBROWKA",
+  "product_type": "spirits",
+  "nearest_heldout_hamming": 16,
+  "nearest_dev_hamming": 14,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "25063001000237",
+  "brand": "ZUBROWKA",
+  "product_type": "spirits",
+  "nearest_heldout_hamming": 16,
+  "nearest_dev_hamming": 13,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "25069001000255",
+  "brand": "RESURGENT",
+  "product_type": "spirits",
+  "nearest_heldout_hamming": 15,
+  "nearest_dev_hamming": 19,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "25105001000171",
+  "brand": "HEIST BREWERY",
+  "product_type": "malt",
+  "nearest_heldout_hamming": 14,
+  "nearest_dev_hamming": 18,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "25107001000879",
+  "brand": "RED ROAD WINES LLC",
+  "product_type": "wine",
+  "nearest_heldout_hamming": 13,
+  "nearest_dev_hamming": 18,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "25118001000107",
+  "brand": "YOUNG SOMMER WINERY",
+  "product_type": "wine",
+  "nearest_heldout_hamming": 12,
+  "nearest_dev_hamming": 19,
+  "accepted": false,
+  "rejected_because": [
+   "looks like a held-out image (distance 12)"
+  ]
+ },
+ {
+  "id": "25120001000682",
+  "brand": "VALKYRIE'S KISS MEADERY",
+  "product_type": "wine",
+  "nearest_heldout_hamming": 16,
+  "nearest_dev_hamming": 13,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "25121001000520",
+  "brand": "GREAT LAKES BAY DISTILLERY LLC",
+  "product_type": "wine",
+  "nearest_heldout_hamming": 19,
+  "nearest_dev_hamming": 21,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "25122001000541",
+  "brand": "THREE WIVES DISTILLERY",
+  "product_type": "spirits",
+  "nearest_heldout_hamming": 16,
+  "nearest_dev_hamming": 13,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "25127001000676",
+  "brand": "DUNE VALLEY DISTILLERY",
+  "product_type": "spirits",
+  "nearest_heldout_hamming": 15,
+  "nearest_dev_hamming": 13,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "25128001000584",
+  "brand": "ABADIA DE SAN QUIRCE RISERVA",
+  "product_type": "wine",
+  "nearest_heldout_hamming": 16,
+  "nearest_dev_hamming": 13,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "25129001000757",
+  "brand": "CHILTON GOSE",
+  "product_type": "malt",
+  "nearest_heldout_hamming": 21,
+  "nearest_dev_hamming": 20,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "25132001000619",
+  "brand": "MR. STACKS",
+  "product_type": "spirits",
+  "nearest_heldout_hamming": 16,
+  "nearest_dev_hamming": 15,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "25133001000272",
+  "brand": "DEBEVINO WINERY",
+  "product_type": "wine",
+  "nearest_heldout_hamming": 16,
+  "nearest_dev_hamming": 9,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "25140001001016",
+  "brand": "COLOMBAIA",
+  "product_type": "wine",
+  "nearest_heldout_hamming": 17,
+  "nearest_dev_hamming": 18,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "25143001000203",
+  "brand": "MAZZEI SIEPI",
+  "product_type": "wine",
+  "nearest_heldout_hamming": 15,
+  "nearest_dev_hamming": 8,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "25149001000861",
+  "brand": "RESERVE",
+  "product_type": "wine",
+  "nearest_heldout_hamming": 11,
+  "nearest_dev_hamming": 18,
+  "accepted": false,
+  "rejected_because": [
+   "looks like a held-out image (distance 11)"
+  ]
+ },
+ {
+  "id": "25171001000629",
+  "brand": "AMBAR ESTATE",
+  "product_type": "wine",
+  "nearest_heldout_hamming": 15,
+  "nearest_dev_hamming": 16,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "25190001000665",
+  "brand": "GAELA FINCAS",
+  "product_type": "wine",
+  "nearest_heldout_hamming": 17,
+  "nearest_dev_hamming": 14,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "25196001000509",
+  "brand": "PACIFIC COAST",
+  "product_type": "spirits",
+  "nearest_heldout_hamming": 17,
+  "nearest_dev_hamming": 14,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "25202001000584",
+  "brand": "HEIWA SHUZOU",
+  "product_type": "wine",
+  "nearest_heldout_hamming": 14,
+  "nearest_dev_hamming": 15,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "25211001000050",
+  "brand": "QUETZAL F5",
+  "product_type": "spirits",
+  "nearest_heldout_hamming": 18,
+  "nearest_dev_hamming": 15,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "25211001000052",
+  "brand": "QUETZAL F5",
+  "product_type": "spirits",
+  "nearest_heldout_hamming": 17,
+  "nearest_dev_hamming": 16,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "25212001000725",
+  "brand": "CRAFTED BY MEADS OF MIDGARD MEADERY",
+  "product_type": "wine",
+  "nearest_heldout_hamming": 15,
+  "nearest_dev_hamming": 13,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "25213001000246",
+  "brand": "UPSTATE COCKTAILS",
+  "product_type": "spirits",
+  "nearest_heldout_hamming": 16,
+  "nearest_dev_hamming": 15,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "25221001000058",
+  "brand": "KURANT",
+  "product_type": "spirits",
+  "nearest_heldout_hamming": 4,
+  "nearest_dev_hamming": 15,
+  "accepted": false,
+  "rejected_because": [
+   "looks like a held-out image (distance 4)"
+  ]
+ },
+ {
+  "id": "25226001000401",
+  "brand": "LUCCHI FAMILY WINE CELLARS",
+  "product_type": "wine",
+  "nearest_heldout_hamming": 19,
+  "nearest_dev_hamming": 18,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "25230001000505",
+  "brand": "HOP VALLEY BREWING CO.",
+  "product_type": "malt",
+  "nearest_heldout_hamming": 23,
+  "nearest_dev_hamming": 19,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "25230001000519",
+  "brand": "HOP VALLEY BREWING CO.",
+  "product_type": "malt",
+  "nearest_heldout_hamming": 19,
+  "nearest_dev_hamming": 18,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "25230001000534",
+  "brand": "HOP VALLEY BREWING CO.",
+  "product_type": "malt",
+  "nearest_heldout_hamming": 19,
+  "nearest_dev_hamming": 21,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "25231001000857",
+  "brand": "SHINE OF THE MOON",
+  "product_type": "spirits",
+  "nearest_heldout_hamming": 19,
+  "nearest_dev_hamming": 21,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "25232001000621",
+  "brand": "PULENTA ESTATE",
+  "product_type": "wine",
+  "nearest_heldout_hamming": 16,
+  "nearest_dev_hamming": 18,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "25234001000524",
+  "brand": "FLYING FISH BREWING COMPANY",
+  "product_type": "malt",
+  "nearest_heldout_hamming": 18,
+  "nearest_dev_hamming": 16,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "25268001000498",
+  "brand": "CARLOS I",
+  "product_type": "spirits",
+  "nearest_heldout_hamming": 14,
+  "nearest_dev_hamming": 14,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "25272001000707",
+  "brand": "CHERRY RIVER",
+  "product_type": "spirits",
+  "nearest_heldout_hamming": 18,
+  "nearest_dev_hamming": 15,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "25279001000254",
+  "brand": "KAWAR",
+  "product_type": "spirits",
+  "nearest_heldout_hamming": 12,
+  "nearest_dev_hamming": 11,
+  "accepted": false,
+  "rejected_because": [
+   "looks like a held-out image (distance 12)"
+  ]
+ },
+ {
+  "id": "25287001000138",
+  "brand": "JULIEN CRINQUAND",
+  "product_type": "wine",
+  "nearest_heldout_hamming": 16,
+  "nearest_dev_hamming": 13,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "25288001000293",
+  "brand": "VIN NOE",
+  "product_type": "wine",
+  "nearest_heldout_hamming": 16,
+  "nearest_dev_hamming": 13,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "25293001000020",
+  "brand": "NEREIDES COLLECTION",
+  "product_type": "wine",
+  "nearest_heldout_hamming": 13,
+  "nearest_dev_hamming": 15,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "25325001000646",
+  "brand": "2SHOT COWBOY",
+  "product_type": "spirits",
+  "nearest_heldout_hamming": 16,
+  "nearest_dev_hamming": 15,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "25344001000685",
+  "brand": "BRUDER",
+  "product_type": "malt",
+  "nearest_heldout_hamming": 19,
+  "nearest_dev_hamming": 18,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "25344001000949",
+  "brand": "BABICH WINES",
+  "product_type": "wine",
+  "nearest_heldout_hamming": 17,
+  "nearest_dev_hamming": 16,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "26029001000054",
+  "brand": "MANTICE",
+  "product_type": "wine",
+  "nearest_heldout_hamming": 15,
+  "nearest_dev_hamming": 12,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "26029001000056",
+  "brand": "MANTICE",
+  "product_type": "wine",
+  "nearest_heldout_hamming": 15,
+  "nearest_dev_hamming": 12,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "26030001000697",
+  "brand": "HOLA",
+  "product_type": "wine",
+  "nearest_heldout_hamming": 15,
+  "nearest_dev_hamming": 14,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "26035001000200",
+  "brand": "STRAWBERRY FIELDS",
+  "product_type": "malt",
+  "nearest_heldout_hamming": 11,
+  "nearest_dev_hamming": 14,
+  "accepted": false,
+  "rejected_because": [
+   "looks like a held-out image (distance 11)"
+  ]
+ },
+ {
+  "id": "26035001000267",
+  "brand": "ABSINTHIA",
+  "product_type": "spirits",
+  "nearest_heldout_hamming": 17,
+  "nearest_dev_hamming": 10,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "26043001000465",
+  "brand": "CHOZAS CARRASCAL",
+  "product_type": "wine",
+  "nearest_heldout_hamming": 17,
+  "nearest_dev_hamming": 17,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "26043001000751",
+  "brand": "STILL AUSTIN",
+  "product_type": "spirits",
+  "nearest_heldout_hamming": 16,
+  "nearest_dev_hamming": 12,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "26048001000950",
+  "brand": "MEIERSTONE VINEYARDS",
+  "product_type": "wine",
+  "nearest_heldout_hamming": 17,
+  "nearest_dev_hamming": 15,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "26048001000951",
+  "brand": "MEIERSTONE VINEYARDS",
+  "product_type": "wine",
+  "nearest_heldout_hamming": 17,
+  "nearest_dev_hamming": 15,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "26050001000785",
+  "brand": "FIRST CALL",
+  "product_type": "spirits",
+  "nearest_heldout_hamming": 21,
+  "nearest_dev_hamming": 19,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "26056001000380",
+  "brand": "ODD SIDE ALES",
+  "product_type": "malt",
+  "nearest_heldout_hamming": 16,
+  "nearest_dev_hamming": 10,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "26089001000771",
+  "brand": "EL MAYORAL DE LA HACIENDA",
+  "product_type": "spirits",
+  "nearest_heldout_hamming": 12,
+  "nearest_dev_hamming": 9,
+  "accepted": false,
+  "rejected_because": [
+   "looks like a held-out image (distance 12)"
+  ]
+ },
+ {
+  "id": "26098001000512",
+  "brand": "STEEZY",
+  "product_type": "spirits",
+  "nearest_heldout_hamming": 17,
+  "nearest_dev_hamming": 17,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "26105001000818",
+  "brand": "TAMURA \"HONMAGURO\" JUNMAI GINJO KARAKUCHI",
+  "product_type": "wine",
+  "nearest_heldout_hamming": 16,
+  "nearest_dev_hamming": 15,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "26106001000779",
+  "brand": "PRIMROSE",
+  "product_type": "wine",
+  "nearest_heldout_hamming": 20,
+  "nearest_dev_hamming": 15,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "26106001000869",
+  "brand": "COMMUNION WINES",
+  "product_type": "wine",
+  "nearest_heldout_hamming": 19,
+  "nearest_dev_hamming": 17,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "26107001000411",
+  "brand": "FLORIDA'S POINT DISTILLERY",
+  "product_type": "spirits",
+  "nearest_heldout_hamming": 18,
+  "nearest_dev_hamming": 14,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "26114001000381",
+  "brand": "10TH STREET",
+  "product_type": "spirits",
+  "nearest_heldout_hamming": 18,
+  "nearest_dev_hamming": 14,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "26119001000520",
+  "brand": "O SHOT DA ALEGRIA",
+  "product_type": "spirits",
+  "nearest_heldout_hamming": 17,
+  "nearest_dev_hamming": 16,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "26119001000839",
+  "brand": "LEANFORE ELENA CASADEI",
+  "product_type": "wine",
+  "nearest_heldout_hamming": 18,
+  "nearest_dev_hamming": 14,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "26121001000125",
+  "brand": "CASA LARGA",
+  "product_type": "wine",
+  "nearest_heldout_hamming": 14,
+  "nearest_dev_hamming": 14,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "26125001000795",
+  "brand": "TENTH WARD DISTILLING",
+  "product_type": "spirits",
+  "nearest_heldout_hamming": 19,
+  "nearest_dev_hamming": 19,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "26126001000764",
+  "brand": "NORTHERN LIBERTIES WHISKEY CO.",
+  "product_type": "spirits",
+  "nearest_heldout_hamming": 21,
+  "nearest_dev_hamming": 17,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "26127001001114",
+  "brand": "BRENTFORD",
+  "product_type": "spirits",
+  "nearest_heldout_hamming": 16,
+  "nearest_dev_hamming": 12,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "26128001000624",
+  "brand": "PANACEA MEADERY",
+  "product_type": "wine",
+  "nearest_heldout_hamming": 13,
+  "nearest_dev_hamming": 9,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "26133001000445",
+  "brand": "BIG GIRL COCKTAILS",
+  "product_type": "spirits",
+  "nearest_heldout_hamming": 13,
+  "nearest_dev_hamming": 14,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "26140001000454",
+  "brand": "DAS BIER",
+  "product_type": "malt",
+  "nearest_heldout_hamming": 19,
+  "nearest_dev_hamming": 16,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "26150001000046",
+  "brand": "THE BLUSHING MOOSE",
+  "product_type": "wine",
+  "nearest_heldout_hamming": 10,
+  "nearest_dev_hamming": 20,
+  "accepted": false,
+  "rejected_because": [
+   "looks like a held-out image (distance 10)"
+  ]
+ },
+ {
+  "id": "26155001000642",
+  "brand": "GLENORA",
+  "product_type": "wine",
+  "nearest_heldout_hamming": 17,
+  "nearest_dev_hamming": 13,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "26155001000646",
+  "brand": "GLENORA",
+  "product_type": "wine",
+  "nearest_heldout_hamming": 18,
+  "nearest_dev_hamming": 17,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "26169001000018",
+  "brand": "BOSTON HARBOR",
+  "product_type": "spirits",
+  "nearest_heldout_hamming": 16,
+  "nearest_dev_hamming": 17,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "26169001000019",
+  "brand": "PUTNAM",
+  "product_type": "spirits",
+  "nearest_heldout_hamming": 14,
+  "nearest_dev_hamming": 14,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "26169001000226",
+  "brand": "VINA KOPER",
+  "product_type": "wine",
+  "nearest_heldout_hamming": 19,
+  "nearest_dev_hamming": 19,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "26196001000079",
+  "brand": "L'OREE",
+  "product_type": "wine",
+  "nearest_heldout_hamming": 13,
+  "nearest_dev_hamming": 12,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "26196001000791",
+  "brand": "SKIN CONTACT",
+  "product_type": "wine",
+  "nearest_heldout_hamming": 15,
+  "nearest_dev_hamming": 15,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "26205001000228",
+  "brand": "CRAZY TURTLE",
+  "product_type": "malt",
+  "nearest_heldout_hamming": 19,
+  "nearest_dev_hamming": 21,
+  "accepted": true,
+  "rejected_because": []
+ },
+ {
+  "id": "26209001000785",
+  "brand": "MOTEADO",
+  "product_type": "spirits",
+  "nearest_heldout_hamming": 14,
+  "nearest_dev_hamming": 9,
+  "accepted": true,
+  "rejected_because": []
+ }
+]

@@ -1,0 +1,14 @@
+{
+ "model": "amazon.nova-pro-v1:0",
+ "fields": {
+  "brand_name": "BACARDÍ",
+  "class_type": "REAL RUM COCKTAIL",
+  "abv_text": "5%",
+  "net_contents_text": "355ml",
+  "name_address_text": "IMPORTED BY BACARDI U.S.A., INC. CORAL GABLES, FL.",
+  "country_of_origin_text": "PRODUCT OF CANADA",
+  "warning_text": "According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems."
+ },
+ "raw": "{\"brand_name\": \"BACARD\\u00cd\", \"class_type\": \"REAL RUM COCKTAIL\", \"abv_text\": \"5%\", \"net_contents_text\": \"355ml\", \"name_address_text\": \"IMPORTED BY BACARDI U.S.A., INC. CORAL GABLES, FL.\", \"country_of_origin_text\": \"PRODUCT OF CANADA\", \"warning_text\": \"According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.\"}",
+ "seconds": 2.19
+}

@@ -1,0 +1,14 @@
+{
+ "model": "nvidia.nemotron-nano-12b-v2",
+ "fields": {
+  "brand_name": "450 North Brewing Co",
+  "class_type": null,
+  "abv_text": "5.3% ALCOHOL BY VOLUME",
+  "net_contents_text": "16 FLUID OUNCES | 533 mL",
+  "name_address_text": "BREWED AND CANNED BY 450 NORTH BREWING COMPANY, 8111 E. 450 N., COLUMBUS, IN 47203",
+  "country_of_origin_text": null,
+  "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS."
+ },
+ "raw": "```json\n{\n  \"brand_name\": \"450 North Brewing Co\",\n  \"class_type\": null,\n  \"abv_text\": \"5.3% ALCOHOL BY VOLUME\",\n  \"net_contents_text\": \"16 FLUID OUNCES | 533 mL\",\n  \"name_address_text\": \"BREWED AND CANNED BY 450 NORTH BREWING COMPANY, 8111 E. 450 N., COLUMBUS, IN 47203\",\n  \"country_of_origin_text\": null,\n  \"warning_text\": \"GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.\"\n}\n```\n",
+ "seconds": 3.17
+}

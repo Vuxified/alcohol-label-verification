@@ -1,0 +1,14 @@
+{
+ "model": "nvidia.nemotron-nano-12b-v2",
+ "fields": {
+  "brand_name": "APOTHIC",
+  "class_type": "CABERNET SAUVIGNON",
+  "abv_text": "ALC. 13.9% BY VOL.",
+  "net_contents_text": "750mL",
+  "name_address_text": "BOTTLED BY APOTHIC WINES, MODESTO, CA",
+  "country_of_origin_text": "CALIFORNIA • 2022",
+  "warning_text": "(1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS."
+ },
+ "raw": "```json\n{\n  \"brand_name\": \"APOTHIC\",\n  \"class_type\": \"CABERNET SAUVIGNON\",\n  \"abv_text\": \"ALC. 13.9% BY VOL.\",\n  \"net_contents_text\": \"750mL\",\n  \"name_address_text\": \"BOTTLED BY APOTHIC WINES, MODESTO, CA\",\n  \"country_of_origin_text\": \"CALIFORNIA • 2022\",\n  \"warning_text\": \"(1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.\"\n}\n```\n",
+ "seconds": 2.31
+}

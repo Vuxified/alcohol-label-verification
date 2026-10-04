@@ -1,0 +1,14 @@
+{
+ "model": "nvidia.nemotron-nano-12b-v2",
+ "fields": {
+  "brand_name": "Maker's Mark",
+  "class_type": "Kentucky Straight Bourbon Whiskey",
+  "abv_text": "45% ALC./VOL.",
+  "net_contents_text": "1 LITER",
+  "name_address_text": "Maker's Mark Distillery, Inc., 1000 Shelbyville Road, Loretto, KY 40035, USA",
+  "country_of_origin_text": "Kentucky",
+  "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS. DISTILLED, AGED AND BOTTLED BY THE MAKER'S MARK DISTILLERY, INC., 1000 SHELBYVILLE ROAD, LORETTO, KY 40035, USA. NOT FOR UNDERAGE."
+ },
+ "raw": "```json\n{\n  \"brand_name\": \"Maker's Mark\",\n  \"class_type\": \"Kentucky Straight Bourbon Whiskey\",\n  \"abv_text\": \"45% ALC./VOL.\",\n  \"net_contents_text\": \"1 LITER\",\n  \"name_address_text\": \"Maker's Mark Distillery, Inc., 1000 Shelbyville Road, Loretto, KY 40035, USA\",\n  \"country_of_origin_text\": \"Kentucky\",\n  \"warning_text\": \"GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS. DISTILLED, AGED AND BOTTLED BY THE MAKER'S MARK DISTILLERY, INC., 1000 SHELBYVILLE ROAD, LORETTO, KY 40035, USA. NOT FOR UNDERAGE.\"\n}\n```\n",
+ "seconds": 2.72
+}

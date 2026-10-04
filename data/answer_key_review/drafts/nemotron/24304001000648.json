@@ -1,0 +1,14 @@
+{
+ "model": "nvidia.nemotron-nano-12b-v2",
+ "fields": {
+  "brand_name": "DREKKER",
+  "class_type": "DOUBLE INDIA PALE ALE",
+  "abv_text": "(ALC. 8.2% BY VOL.)",
+  "net_contents_text": "X15.5 U.S. GALLONS",
+  "name_address_text": "DREKKER BREWING COMPANY\n1666 1st Avenue North\nFargo, ND 58102",
+  "country_of_origin_text": null,
+  "warning_text": "GOVERNMENT WARNING:\n(1) ACCORDING TO THE SURGEON\nGENERAL, WOMEN SHOULD NOT\nDRINK ALCOHOLIC BEVERAGES\nDURING PREGNANCY BECAUSE OF\nTHE RISK OF BIRTH DEFECTS.\n(2) CONSUMPTION OF ALCOHOLIC\nBEVERAGES IMPAIRS YOUR ABILITY\nTO DRIVE A CAR OR OPERATE\nMACHINERY, AND MAY CAUSE\nHEALTH PROBLEMS."
+ },
+ "raw": "```json\n{\n  \"brand_name\": \"DREKKER\",\n  \"class_type\": \"DOUBLE INDIA PALE ALE\",\n  \"abv_text\": \"(ALC. 8.2% BY VOL.)\",\n  \"net_contents_text\": \"X15.5 U.S. GALLONS\",\n  \"name_address_text\": \"DREKKER BREWING COMPANY\\n1666 1st Avenue North\\nFargo, ND 58102\",\n  \"country_of_origin_text\": null,\n  \"warning_text\": \"GOVERNMENT WARNING:\\n(1) ACCORDING TO THE SURGEON\\nGENERAL, WOMEN SHOULD NOT\\nDRINK ALCOHOLIC BEVERAGES\\nDURING PREGNANCY BECAUSE OF\\nTHE RISK OF BIRTH DEFECTS.\\n(2) CONSUMPTION OF ALCOHOLIC\\nBEVERAGES IMPAIRS YOUR ABILITY\\nTO DRIVE A CAR OR OPERATE\\nMACHINERY, AND MAY CAUSE\\nHEALTH PROBLEMS.\"\n}\n```\n",
+ "seconds": 2.71
+}

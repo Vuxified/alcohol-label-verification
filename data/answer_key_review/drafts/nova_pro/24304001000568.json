@@ -1,0 +1,14 @@
+{
+ "model": "amazon.nova-pro-v1:0",
+ "fields": {
+  "brand_name": "DREKKER",
+  "class_type": "DOUBLE IPA",
+  "abv_text": "8.2%",
+  "net_contents_text": "16 FL. OZ. (473 ML)",
+  "name_address_text": "DREKKER BREWING COMPANY, FARGO, ND",
+  "country_of_origin_text": "null",
+  "warning_text": "GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems."
+ },
+ "raw": "{\"brand_name\": \"DREKKER\", \"class_type\": \"DOUBLE IPA\", \"abv_text\": \"8.2%\", \"net_contents_text\": \"16 FL. OZ. (473 ML)\", \"name_address_text\": \"DREKKER BREWING COMPANY, FARGO, ND\", \"country_of_origin_text\": \"null\", \"warning_text\": \"GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.\"}",
+ "seconds": 2.09
+}

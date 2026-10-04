@@ -1,0 +1,14 @@
+{
+ "model": "nvidia.nemotron-nano-12b-v2",
+ "fields": {
+  "brand_name": "STELLA ARTOIS",
+  "class_type": null,
+  "abv_text": "5% ALC./VOL.",
+  "net_contents_text": "1.59 GALLONS (6L)",
+  "name_address_text": "STELLA ARTOIS, ST. LOUIS, MO, BREWED IN THE U.S.A.",
+  "country_of_origin_text": null,
+  "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS. PLEASE RECYCLE"
+ },
+ "raw": "```json\n{\n  \"brand_name\": \"STELLA ARTOIS\",\n  \"class_type\": null,\n  \"abv_text\": \"5% ALC./VOL.\",\n  \"net_contents_text\": \"1.59 GALLONS (6L)\",\n  \"name_address_text\": \"STELLA ARTOIS, ST. LOUIS, MO, BREWED IN THE U.S.A.\",\n  \"country_of_origin_text\": null,\n  \"warning_text\": \"GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS. PLEASE RECYCLE\"\n}\n```\n",
+ "seconds": 2.16
+}

@@ -1,0 +1,14 @@
+{
+ "model": "amazon.nova-pro-v1:0",
+ "fields": {
+  "brand_name": "Heineken",
+  "class_type": "SILVER",
+  "abv_text": "4% ALC./VOL.",
+  "net_contents_text": "CONT. 13.2 U.S. GALLONS BEER",
+  "name_address_text": "Heineken Brouwerijen B.V., Amsterdam, Holland.",
+  "country_of_origin_text": "HOLLAND.",
+  "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS."
+ },
+ "raw": "{\n  \"brand_name\": \"Heineken\",\n  \"class_type\": \"SILVER\",\n  \"abv_text\": \"4% ALC./VOL.\",\n  \"net_contents_text\": \"CONT. 13.2 U.S. GALLONS BEER\",\n  \"name_address_text\": \"Heineken Brouwerijen B.V., Amsterdam, Holland.\",\n  \"country_of_origin_text\": \"HOLLAND.\",\n  \"warning_text\": \"GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.\"\n}",
+ "seconds": 2.51
+}

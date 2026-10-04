@@ -1,0 +1,14 @@
+{
+ "model": "amazon.nova-pro-v1:0",
+ "fields": {
+  "brand_name": "CORONADO",
+  "class_type": "Tropical India Pale Ale",
+  "abv_text": "6.5% ALC. BY VOL.",
+  "net_contents_text": "15.5 | 5.165 | 10.8 | 5.4 U.S. Gallons",
+  "name_address_text": "CORONADO BREWING CO.",
+  "country_of_origin_text": "CORONADO BREWING CO. CORONADO;CA",
+  "warning_text": "(1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS."
+ },
+ "raw": "{\n  \"brand_name\": \"CORONADO\",\n  \"class_type\": \"Tropical India Pale Ale\",\n  \"abv_text\": \"6.5% ALC. BY VOL.\",\n  \"net_contents_text\": \"15.5 | 5.165 | 10.8 | 5.4 U.S. Gallons\",\n  \"name_address_text\": \"CORONADO BREWING CO.\",\n  \"country_of_origin_text\": \"CORONADO BREWING CO. CORONADO;CA\",\n  \"warning_text\": \"(1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.\"\n}",
+ "seconds": 2.98
+}

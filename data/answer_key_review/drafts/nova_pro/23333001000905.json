@@ -1,0 +1,14 @@
+{
+ "model": "amazon.nova-pro-v1:0",
+ "fields": {
+  "brand_name": "Maker's Mark",
+  "class_type": "Kentucky Straight Bourbon Whiskey",
+  "abv_text": "45%",
+  "net_contents_text": "700 mL",
+  "name_address_text": "DISTILLERY, FINISHED AND BOTTLED BY THE MAKER'S MARK DISTILLERY, INC., STAR HILL FARM, LORETTO, KENTUCKY, U.S.A.",
+  "country_of_origin_text": "U.S.A.",
+  "warning_text": "(1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS."
+ },
+ "raw": "{\n  \"brand_name\": \"Maker's Mark\",\n  \"class_type\": \"Kentucky Straight Bourbon Whiskey\",\n  \"abv_text\": \"45%\",\n  \"net_contents_text\": \"700 mL\",\n  \"name_address_text\": \"DISTILLERY, FINISHED AND BOTTLED BY THE MAKER'S MARK DISTILLERY, INC., STAR HILL FARM, LORETTO, KENTUCKY, U.S.A.\",\n  \"country_of_origin_text\": \"U.S.A.\",\n  \"warning_text\": \"(1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.\"\n}",
+ "seconds": 2.95
+}

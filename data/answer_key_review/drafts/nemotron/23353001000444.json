@@ -1,0 +1,14 @@
+{
+ "model": "nvidia.nemotron-nano-12b-v2",
+ "fields": {
+  "brand_name": "Woodford Reserve",
+  "class_type": "Kentucky Straight Malt Whiskey",
+  "abv_text": "45.2%ALC/VOL (90.4 PROOF)",
+  "net_contents_text": "50mL",
+  "name_address_text": "PRODUCED BY THE WOODFORD RESERVE DISTILLERY VERSAILLES, KENTUCKY USA",
+  "country_of_origin_text": null,
+  "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS."
+ },
+ "raw": "```json\n{\n  \"brand_name\": \"Woodford Reserve\",\n  \"class_type\": \"Kentucky Straight Malt Whiskey\",\n  \"abv_text\": \"45.2%ALC/VOL (90.4 PROOF)\",\n  \"net_contents_text\": \"50mL\",\n  \"name_address_text\": \"PRODUCED BY THE WOODFORD RESERVE DISTILLERY VERSAILLES, KENTUCKY USA\",\n  \"country_of_origin_text\": null,\n  \"warning_text\": \"GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.\"\n}\n```\n",
+ "seconds": 2.44
+}
