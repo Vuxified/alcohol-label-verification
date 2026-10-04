@@ -39,6 +39,15 @@ def test_class_extra_words_is_check_not_fail():
     assert r.verdict == C
 
 
+@pytest.mark.parametrize("expected, label", [
+    ("Kentucky Straight Bourbon Whiskey", "KENTUCKY STRAIGHT BOURBON WHISKY"),  # § 5.143: either spelling
+    ("Irish Whisky", "Irish Whiskey"),
+    ("Whiskey", "WHISKY"),  # short: one letter is too big a share for the similarity score alone
+])
+def test_class_whisky_whiskey_spellings_match(expected, label):
+    assert match_text("class_type", expected, [label]).verdict == P
+
+
 def test_normalize():
     assert normalize("  Stone’s   THROW!! ") == "stone's throw"
 

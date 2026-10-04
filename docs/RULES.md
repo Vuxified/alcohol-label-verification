@@ -47,6 +47,11 @@ Plus a **word rule**: every word in the expected value must appear on the label,
 | Old Tom Distillery | OLD TOM DISTILLERY | Matches | Case only |
 | Old Tom | Old Tom Reserve | Does not match | Label adds a word; it could be a different product |
 | Stone's Throw | Stone Throw | Please check | Possessive dropped; may be an OCR miss or a real change |
+| Kentucky Straight Bourbon Whiskey | KENTUCKY STRAIGHT BOURBON WHISKY | Matches | Class/type only: "the word whisky may be spelled as either 'whisky' or 'whiskey'" (§ 5.143). Brand names get no such allowance. |
+
+**Allowed spelling variants (class/type only):** whisky = whiskey (§ 5.143). This list grows only when a regulation allows a variant; each entry cites its section.
+
+**Class/type code vs. class/type on the label:** the TTB registry's "Class/Type Code" (e.g. OTHER STRAIGHT WHISKY) is a filing category, not the wording the label must carry (e.g. KENTUCKY STRAIGHT MALT WHISKEY). They are never compared word for word; the label wording is checked against the application's class/type statement.
 
 **Name and address:** checks that the bottler/importer name and city/state appear, along with the function phrase where required ("Bottled by," "Imported by").
 

@@ -25,6 +25,11 @@ def normalize(text: str) -> str:
     return " ".join(text.split())
 
 
+def _class_spelling(text: str) -> str:
+    """§ 5.143: "The word whisky may be spelled as either 'whisky' or 'whiskey'." Class/type only."""
+    return re.sub(r"\bwhiskey\b", "whisky", text)
+
+
 def _windows(lines: list[str]):
     """Each line, and each run of up to MAX_LINES_JOINED consecutive lines joined."""
     for i in range(len(lines)):
@@ -40,16 +45,17 @@ def match_text(field: str, expected: str, lines: list[str], extra_words: Verdict
     appears inside a longer line ("Old Tom" inside "Old Tom Reserve"), that is a different
     value, and `extra_words` decides how serious that is.
     """
-    want = normalize(expected)
+    norm = (lambda t: _class_spelling(normalize(t))) if field == "class_type" else normalize
+    want = norm(expected)
     best_score, best_text = 0.0, None
     for window in _windows(lines):
-        score = fuzz.ratio(want, normalize(window))
+        score = fuzz.ratio(want, norm(window))
         if score > best_score:
             best_score, best_text = score, window
     if best_score >= PASS_SCORE:
         return FieldResult(field, Verdict.PASS, f'Label shows "{best_text}".', found=best_text)
 
-    contained = next((ln for ln in lines if re.search(rf"(?<!\S){re.escape(want)}(?!\S)", normalize(ln))), None)
+    contained = next((ln for ln in lines if re.search(rf"(?<!\S){re.escape(want)}(?!\S)", norm(ln))), None)
     if contained:
         return FieldResult(field, extra_words,
                            f'Label shows "{contained}", which adds words to "{expected}".',
