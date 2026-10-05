@@ -1,2 +1,12 @@
-rapidfuzz
-pytesseract
+# The app (verification rules, label reader, web pages). Versions are the ones measured and tested.
+rapidfuzz==3.14.6
+pytesseract==0.3.13         # needs the tesseract program (apt: tesseract-ocr)
+onnxtr[cpu]==0.9.0          # pinned: the dynamic-size detector shim in app/ocr/engine.py depends on 0.9.0 internals
+onnxruntime==1.30.0
+opencv-python-headless==5.0.0.93
+numpy==2.5.3
+pillow==12.3.0
+fastapi==0.142.2
+uvicorn==0.54.0
+jinja2==3.1.6
+python-multipart==0.0.32

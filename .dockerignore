@@ -1,0 +1,11 @@
+.venv
+.git
+.planning
+.codegraph
+.playwright-mcp
+.pytest_cache
+out
+data/augmented
+data/registry_pool
+**/__pycache__
+app/models

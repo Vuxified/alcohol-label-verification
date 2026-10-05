@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block title %}Results – Label Check{% endblock %}
+{% block content %}
+<p class="app-topline"><a class="usa-link" href="/">&larr; Check another label</a><span>Checked in {{ "%.1f"|format(res.seconds) }} seconds</span></p>
+<h1 id="results-heading" tabindex="-1">{{ res.form.brand_name }}: results</h1>
+
+{% set fails = counts[Verdict.FAIL] %}{% set checks = counts[Verdict.CHECK] %}{% set passes = counts[Verdict.PASS] %}
+{% if fails or checks %}
+<div class="usa-alert usa-alert--warning"><div class="usa-alert__body">
+  <h2 class="usa-alert__heading">{{ fails + checks }} {{ "item needs" if fails + checks == 1 else "items need" }} your attention</h2>
+  <p class="usa-alert__text">{{ fails }} {{ "does" if fails == 1 else "do" }} not match. {{ checks }} {{ "needs" if checks == 1 else "need" }} a closer look. {{ passes }} {{ "matches" if passes == 1 else "match" }}.</p>
+</div></div>
+{% else %}
+<div class="usa-alert usa-alert--success"><div class="usa-alert__body">
+  <h2 class="usa-alert__heading">Everything we checked matches</h2>
+  <p class="usa-alert__text">{{ passes }} items match the application.</p>
+</div></div>
+{% endif %}
+{% for note in res.notes %}<div class="usa-alert usa-alert--info usa-alert--slim"><div class="usa-alert__body"><p class="usa-alert__text">{{ note }}</p></div></div>{% endfor %}
+
+<div class="grid-row grid-gap-lg app-results">
+  <div class="tablet:grid-col-7">
+    <ol class="usa-list usa-list--unstyled app-rows">
+    {% for f in rows %}{% set icon, word, cls = copy.VERDICT[f.verdict.value] %}
+      <li class="app-row app-row--{{ f.verdict.value | replace('/', '') }}">
+        <h2 class="app-row__title"><span class="{{ cls }}">{{ icon }} {{ word }}</span> {{ copy.FIELD_NAMES.get(f.field, f.field) }}</h2>
+        <p>{{ f.reason }}</p>
+        {% if f.field in ev %}
+          <img class="app-crop" src="/results/{{ rid }}/crop/{{ f.field }}" alt="Part of image {{ ev[f.field][0] + 1 }} showing {{ (f.found or copy.FIELD_NAMES.get(f.field, f.field))|e }}">
+          <p class="app-small"><a href="#pic-{{ ev[f.field][0] }}">Show on label (image {{ ev[f.field][0] + 1 }})</a></p>
+        {% elif f.verdict.value in ('fail', 'check') %}<p class="app-small">Not located on the label.</p>{% endif %}
+      </li>
+    {% endfor %}
+    </ol>
+  </div>
+  <div class="tablet:grid-col-5">
+    <h2>Label images</h2>
+    {% for name in names %}{% set h, w = shapes[loop.index0] %}
+    <figure class="app-pic" id="pic-{{ loop.index0 }}">
+      <div class="app-pic__box">
+        <img src="/results/{{ rid }}/image/{{ loop.index0 }}" alt="Label image {{ loop.index }}: {{ name }}">
+        <svg viewBox="0 0 {{ w }} {{ h }}" preserveAspectRatio="none" aria-hidden="true">
+          {% for field, hit in ev.items() if hit[0] == loop.index0 %}{% set x0, y0, x1, y1 = hit[1] %}
+          <rect x="{{ x0 }}" y="{{ y0 }}" width="{{ x1 - x0 }}" height="{{ y1 - y0 }}" class="app-box"/>
+          {% endfor %}
+        </svg>
+      </div>
+      <figcaption>Image {{ loop.index }}: {{ name }}{% if res.reading.turns[loop.index0] %} (we turned it {{ res.reading.turns[loop.index0] }}° to read it){% endif %}</figcaption>
+    </figure>
+    {% endfor %}
+  </div>
+</div>
+
+<p><strong>{{ copy.DISCLAIMER }}</strong> {{ copy.NOT_SAVED }}</p>
+<p><a class="usa-button" href="/">Check another label</a> <button class="usa-button usa-button--outline" onclick="window.print()">Print this page</button></p>
+{% endblock %}
+{% block scripts %}<script>document.getElementById('results-heading').focus();</script>{% endblock %}

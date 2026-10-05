@@ -1,0 +1,28 @@
+/* Small additions to USWDS: 20 px base text, 44 px targets, result rows, evidence boxes. */
+body { font-size: 1.25rem; }
+.app-main { padding-top: 1.5rem; padding-bottom: 2rem; max-width: 72rem; }
+.app-nav { display: flex; gap: 1.5rem; align-items: center; padding: 1rem 0; }
+.app-nav a { font-size: 1.1rem; }
+.app-footer { font-size: 1rem; color: #565c65; padding-bottom: 2rem; }
+.app-samples { margin: 1.5rem 0; max-width: 48rem; }
+.app-sample-form { display: flex; flex-wrap: wrap; gap: .5rem; }
+.app-full { width: 100%; max-width: 30rem; min-height: 44px; margin-top: 1.5rem; }
+.app-hidden { display: none; }
+.app-topline { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+.app-rows { padding: 0; }
+.app-row { border: 1px solid #dfe1e2; border-left-width: .5rem; border-radius: .25rem; padding: .75rem 1rem; margin-bottom: .75rem; background: #fff; }
+.app-row--fail { border-left-color: #b50909; }
+.app-row--check { border-left-color: #ffbe2e; }
+.app-row--pass { border-left-color: #00a91c; }
+.app-row--na { border-left-color: #a9aeb1; }
+.app-row__title { font-size: 1.25rem; margin: 0 0 .25rem; }
+.app-row__title .usa-tag { font-size: 1rem; margin-right: .5rem; vertical-align: middle; }
+.app-crop { max-width: 100%; border: 1px solid #a9aeb1; margin-top: .25rem; }
+.app-small { font-size: 1rem; margin: .25rem 0 0; }
+.app-pic { margin: 0 0 1rem; }
+.app-pic__box { position: relative; }
+.app-pic__box img { display: block; width: 100%; border: 1px solid #a9aeb1; }
+.app-pic__box svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.app-box { fill: none; stroke: #005ea2; stroke-width: 3; vector-effect: non-scaling-stroke; }
+.app-pic figcaption { font-size: 1rem; color: #3d4551; }
+@media print { .usa-header, .app-footer, .app-nav, button, .usa-button { display: none; } }

@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Check a label against its application</h1>
+<p class="usa-intro">Add the label images and the details from the application. We read the label and tell you, item by item, whether it matches.</p>
+
+{% if errors %}
+<div class="usa-alert usa-alert--error" role="alert" id="errors" tabindex="-1">
+  <div class="usa-alert__body">
+    <h2 class="usa-alert__heading">Please fix {{ errors|length }} {{ "thing" if errors|length == 1 else "things" }}</h2>
+    <ul class="usa-list">{% for e in errors %}<li>{{ e }}</li>{% endfor %}</ul>
+  </div>
+</div>
+{% endif %}
+
+<section class="usa-summary-box app-samples" aria-labelledby="samples-heading">
+  <div class="usa-summary-box__body">
+    <h2 class="usa-summary-box__heading" id="samples-heading">Try it without uploading</h2>
+    <form method="post" action="/check" class="app-sample-form">
+      {% for key, (label, _) in copy.SAMPLES.items() %}
+      <button class="usa-button usa-button--outline" name="sample" value="{{ key }}">{{ label }}</button>
+      {% endfor %}
+    </form>
+  </div>
+</section>
+
+<form method="post" action="/check" enctype="multipart/form-data" class="usa-form usa-form--large" id="check-form">
+  <fieldset class="usa-fieldset">
+    <legend class="usa-legend usa-legend--large">1. Label images</legend>
+    <label class="usa-label" for="images">Add every side that has writing: front, back, neck.</label>
+    <span class="usa-hint" id="images-hint">JPG, PNG or WEBP, up to 10 MB each, up to 6 images.</span>
+    <input class="usa-file-input" id="images" name="images" type="file" multiple required
+           accept="image/jpeg,image/png,image/webp" aria-describedby="images-hint">
+  </fieldset>
+
+  <fieldset class="usa-fieldset">
+    <legend class="usa-legend usa-legend--large">2. Type of product</legend>
+    {% for value, label in copy.BEVERAGES.items() %}
+    <div class="usa-radio">
+      <input class="usa-radio__input" id="bev-{{ value }}" type="radio" name="beverage_type" value="{{ value }}" required
+             {% if form.beverage_type == value %}checked{% endif %}>
+      <label class="usa-radio__label" for="bev-{{ value }}">{{ label }}</label>
+    </div>
+    {% endfor %}
+  </fieldset>
+
+  <fieldset class="usa-fieldset">
+    <legend class="usa-legend usa-legend--large">3. Details from the application</legend>
+    <label class="usa-label" for="brand_name">Brand name (required)</label>
+    <input class="usa-input" id="brand_name" name="brand_name" required value="{{ form.brand_name or '' }}">
+    <label class="usa-label" for="fanciful_name">Fanciful name (if any)</label>
+    <input class="usa-input" id="fanciful_name" name="fanciful_name" value="{{ form.fanciful_name or '' }}">
+    <label class="usa-label" for="class_type">Class or type</label>
+    <span class="usa-hint" id="class-hint">For example: Kentucky Straight Bourbon Whiskey</span>
+    <input class="usa-input" id="class_type" name="class_type" aria-describedby="class-hint" value="{{ form.class_type or '' }}">
+    <label class="usa-label" for="abv">Alcohol content (% by volume)</label>
+    <span class="usa-hint" id="abv-hint">A number, like 45 or 13.5</span>
+    <input class="usa-input usa-input--small" id="abv" name="abv" inputmode="decimal" aria-describedby="abv-hint" value="{{ form.abv or '' }}">
+    <label class="usa-label" for="net_contents">Net contents</label>
+    <span class="usa-hint" id="net-hint">For example: 750 mL or 12 FL. OZ.</span>
+    <input class="usa-input usa-input--medium" id="net_contents" name="net_contents" aria-describedby="net-hint" value="{{ form.net_contents or '' }}">
+    <label class="usa-label" for="name_address">Name and address of bottler or importer</label>
+    <input class="usa-input" id="name_address" name="name_address" value="{{ form.name_address or '' }}">
+    <fieldset class="usa-fieldset">
+      <legend class="usa-legend">Where is it made?</legend>
+      <div class="usa-radio"><input class="usa-radio__input" id="src-d" type="radio" name="source" value="domestic"
+           {% if form.source != 'imported' %}checked{% endif %}><label class="usa-radio__label" for="src-d">In the U.S.</label></div>
+      <div class="usa-radio"><input class="usa-radio__input" id="src-i" type="radio" name="source" value="imported"
+           {% if form.source == 'imported' %}checked{% endif %}><label class="usa-radio__label" for="src-i">Imported</label></div>
+    </fieldset>
+    <label class="usa-label" for="country_of_origin">Country of origin (imports)</label>
+    <input class="usa-input" id="country_of_origin" name="country_of_origin" value="{{ form.country_of_origin or '' }}">
+  </fieldset>
+
+  <div class="usa-alert usa-alert--info usa-alert--slim app-hidden" id="checking" role="status">
+    <div class="usa-alert__body"><p class="usa-alert__text">Reading your label. This usually takes 2 to 4 seconds.</p></div>
+  </div>
+  <button class="usa-button usa-button--big app-full" type="submit" id="submit">Check label</button>
+</form>
+{% endblock %}
+{% block scripts %}
+<script>
+  (function () {
+    var f = document.getElementById('check-form'), b = document.getElementById('submit'), s = document.getElementById('checking');
+    f.addEventListener('submit', function () {
+      var t0 = Date.now(); s.classList.remove('app-hidden'); b.disabled = true;
+      setInterval(function () { b.textContent = 'Checking… ' + ((Date.now() - t0) / 1000).toFixed(1) + ' s'; }, 100);
+    });
+    var e = document.getElementById('errors'); if (e) e.focus();
+  })();
+</script>
+{% endblock %}

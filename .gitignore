@@ -8,3 +8,5 @@ __pycache__/
 .playwright-mcp/
 data/augmented/
 data/registry_pool/
+app/models/
+out/

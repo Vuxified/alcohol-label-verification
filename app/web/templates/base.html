@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Label Check{% endblock %}</title>
+  <script src="/static/uswds/js/uswds-init.min.js"></script>
+  <link rel="stylesheet" href="/static/uswds/css/uswds.min.css">
+  <link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+  <a class="usa-skipnav" href="#main-content">Skip to main content</a>
+  <header class="usa-header usa-header--basic">
+    <div class="usa-nav-container">
+      <div class="usa-navbar">
+        <div class="usa-logo"><em class="usa-logo__text"><a href="/" title="Label Check home">Label Check <span class="text-normal">(prototype)</span></a></em></div>
+      </div>
+      <nav class="app-nav" aria-label="Main">
+        <a href="/">Check one label</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main-content" class="grid-container app-main" tabindex="-1">
+    {% block content %}{% endblock %}
+  </main>
+  <footer class="grid-container app-footer">
+    <p>Prototype for review. Not an official U.S. Government system. Label images are read on this server only and are not stored.</p>
+  </footer>
+  <script src="/static/uswds/js/uswds.min.js"></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>
