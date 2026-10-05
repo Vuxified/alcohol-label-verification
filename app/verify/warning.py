@@ -41,7 +41,7 @@ def check_warning(lines: list[str]) -> list[FieldResult]:
     tokens = _tokens(" ".join(lines))
     start = _find_heading(tokens)
     if start is None:
-        missing = FieldResult("warning_text", Verdict.FAIL, 'The "GOVERNMENT WARNING" statement was not found.',
+        missing = FieldResult("warning_text", Verdict.CHECK, 'The "GOVERNMENT WARNING" statement was not found.',
                               code="WARNING_MISSING")
         return [missing, FieldResult("warning_caps", Verdict.NOT_APPLICABLE, "No warning found.")]
 

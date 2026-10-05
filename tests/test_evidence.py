@@ -57,9 +57,9 @@ def test_warning_not_read_but_anchor_words_seen_is_please_check():
     assert text.verdict == Verdict.CHECK and text.code == "WARNING_NOT_READ"
 
 
-def test_warning_absent_fails():
+def test_warning_absent_is_check():
     text, _ = warning_fields(reading(("onnx", "OLD TOM DISTILLERY 750 mL")))
-    assert text.verdict == Verdict.FAIL and text.code == "WARNING_MISSING"
+    assert text.verdict == Verdict.CHECK and text.code == "WARNING_MISSING"
 
 
 def test_title_case_heading_by_two_engines_fails_caps():

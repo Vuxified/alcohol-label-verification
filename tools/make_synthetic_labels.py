@@ -65,9 +65,9 @@ DEFECTS = {
     "proof_wrong": ("fail", "PROOF_MISMATCH"),        # spirits only
     "net_wrong": ("fail", "NET_CONTENTS_MISMATCH"),
     "net_metric_only": ("check", "NET_CONTENTS_UNITS"),  # malt only
-    "brand_extra_word": ("fail", "BRAND_NAME_EXTRA_WORDS"),
-    "class_wrong": ("fail", "CLASS_TYPE_MISMATCH"),
-    "warning_missing": ("fail", "WARNING_MISSING"),
+    "brand_extra_word": ("check", "BRAND_NAME_EXTRA_WORDS"),  # could be the bottler line; a person decides
+    "class_wrong": ("check", "CLASS_TYPE_MISMATCH"),          # not found is never "Does not match"
+    "warning_missing": ("check", "WARNING_MISSING"),          # may be on a side not photographed
     "warning_titlecase": ("fail", "WARNING_NOT_CAPS"),
     "warning_wording": ("fail", "WARNING_TEXT_ALTERED"),
     "warning_heading_not_bold": ("check", "WARNING_BOLD_UNCONFIRMED"),

@@ -12,10 +12,9 @@ NON_ALCOHOLIC_BELOW = 0.5  # % ABV; "alcoholic beverage" starts at 0.5% (27 CFR 
 def verify(app: Application, lines: list[str]) -> Report:
     """`lines` is all text read from every image of the application, one entry per printed line."""
     report = Report()
-    report.fields.append(match_text("brand_name", app.brand_name, lines, extra_words=Verdict.FAIL))
+    report.fields.append(match_text("brand_name", app.brand_name, lines))
     if app.class_type:
-        # Extra words in a class/type ("Kentucky" before "Straight Bourbon Whiskey") need a person's eye.
-        report.fields.append(match_text("class_type", app.class_type, lines, extra_words=Verdict.CHECK))
+        report.fields.append(match_text("class_type", app.class_type, lines))
     non_alcoholic = app.abv is not None and app.abv < NON_ALCOHOLIC_BELOW
     if non_alcoholic:
         report.fields.append(FieldResult("abv", Verdict.NOT_APPLICABLE,

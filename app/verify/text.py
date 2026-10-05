@@ -38,12 +38,13 @@ def _windows(lines: list[str]):
                 yield " ".join(lines[i:i + n])
 
 
-def match_text(field: str, expected: str, lines: list[str], extra_words: Verdict = Verdict.FAIL) -> FieldResult:
+def match_text(field: str, expected: str, lines: list[str]) -> FieldResult:
     """Find `expected` in the label lines.
 
     A label line (or a few joined lines) must match the whole value. If the value only
-    appears inside a longer line ("Old Tom" inside "Old Tom Reserve"), that is a different
-    value, and `extra_words` decides how serious that is.
+    appears inside a longer line ("Old Tom" inside "Old Tom Reserve", or inside the bottler line
+    "BOTTLED BY OLD TOM DISTILLERY"), a person decides. Not finding a value is never "Does not
+    match": it may be printed in decorative type the reader could not read (RULES.md §1).
     """
     norm = (lambda t: _class_spelling(normalize(t))) if field == "class_type" else normalize
     want = norm(expected)
@@ -57,14 +58,15 @@ def match_text(field: str, expected: str, lines: list[str], extra_words: Verdict
 
     contained = next((ln for ln in lines if re.search(rf"(?<!\S){re.escape(want)}(?!\S)", norm(ln))), None)
     if contained:
-        return FieldResult(field, extra_words,
+        return FieldResult(field, Verdict.CHECK,
                            f'Label shows "{contained}", which adds words to "{expected}".',
                            code=f"{field.upper()}_EXTRA_WORDS", found=contained)
     if best_score >= CHECK_SCORE:
         return FieldResult(field, Verdict.CHECK,
                            f'Label shows "{best_text}", which is close to "{expected}" but not the same.',
                            code=f"{field.upper()}_NEAR_MATCH", found=best_text)
-    return FieldResult(field, Verdict.FAIL, f'"{expected}" was not found on the label.',
+    return FieldResult(field, Verdict.CHECK,
+                       f'"{expected}" was not found on the label. It may be in decorative type the reader could not read.',
                        code=f"{field.upper()}_MISMATCH")
 
 

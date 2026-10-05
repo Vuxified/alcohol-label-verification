@@ -55,7 +55,7 @@ def warning_fields(reading: ApplicationReading) -> list[FieldResult]:
                                 f"{why} The warning may be printed sideways, curved or very small. Please look at the label.",
                                 code="WARNING_NOT_READ"),
                     FieldResult("warning_caps", Verdict.NOT_APPLICABLE, "Warning not read.")]
-        return [FieldResult("warning_text", Verdict.FAIL,
+        return [FieldResult("warning_text", Verdict.CHECK,
                             'The "GOVERNMENT WARNING" statement was not found on any image. If it is on another side of '
                             "the container, add a picture of that side.", code="WARNING_MISSING"),
                 FieldResult("warning_caps", Verdict.NOT_APPLICABLE, "No warning found.")]

@@ -72,6 +72,11 @@ def check_net_contents(app: Application, lines: list[str]) -> FieldResult:
                            code="NET_CONTENTS_NOT_FOUND")
     match = next((a for a in amounts if _same(a.ml, expected)), None)
     if not match:
+        if all(re.fullmatch(r"[\d.,]+\s*l", a.text, re.I) for a in amounts):
+            # A bare "L" is easily a misread I, 1 or | (e.g. "1 L" read from can noise).
+            return FieldResult("net_contents", Verdict.CHECK,
+                               f'Label may say "{amounts[0].text}". Application says "{app.net_contents}". Please look.',
+                               code="NET_CONTENTS_MISMATCH", found=amounts[0].text)
         return FieldResult("net_contents", Verdict.FAIL,
                            f'Label says "{amounts[0].text}". Application says "{app.net_contents}".',
                            code="NET_CONTENTS_MISMATCH", found=amounts[0].text)

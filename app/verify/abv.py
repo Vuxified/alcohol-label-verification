@@ -15,6 +15,7 @@ _ABV_PATTERNS = [
     re.compile(rf"\babv\s*:?\s*{_NUM}\s*%", re.I),
 ]
 _PROOF = re.compile(r"(\d{2,3}(?:\.\d{1,2})?)\s*°?\s*proof", re.I)
+MAX_PROOF = 200  # 100% alcohol
 _TABLE_WINE = re.compile(r"\b(table|light)\s+wine\b", re.I)
 _ABV_ABBREVIATION = re.compile(r"\babv\b", re.I)
 
@@ -63,7 +64,7 @@ def check_abv(app: Application, lines: list[str]) -> FieldResult:
     if app.beverage_type == "wine" and app.abv <= 14 and _TABLE_WINE.search(text):
         return FieldResult("abv", Verdict.PASS,
                            'No alcohol content on the label; allowed at 14% or less because it says "table wine" (27 CFR 4.36).')
-    return FieldResult("abv", Verdict.FAIL, f"No alcohol content found on the label. Application says {app.abv:g}%.",
+    return FieldResult("abv", Verdict.CHECK, f"No alcohol content found on the label. Application says {app.abv:g}%.",
                        code="ABV_MISSING")
 
 
@@ -79,6 +80,9 @@ def check_proof(app: Application, lines: list[str]) -> FieldResult:
     if not abvs:
         return FieldResult("proof", Verdict.CHECK, f"Proof {proofs[0]:g} shown, but no alcohol content to compare it to.",
                            code="PROOF_UNCHECKED")
+    if all(p > MAX_PROOF for p in proofs):  # a misread, e.g. "82.6" read as "826"
+        return FieldResult("proof", Verdict.CHECK, f"Proof read as {proofs[0]:g}, which is not possible. Please look.",
+                           code="PROOF_MISMATCH")
     if any(abs(p - 2 * a) < 0.15 for p in proofs for a in abvs):
         return FieldResult("proof", Verdict.PASS, f"{proofs[0]:g} Proof is twice the alcohol content.")
     return FieldResult("proof", Verdict.FAIL,

@@ -14,8 +14,9 @@ Regulations are cited from Title 27 of the Code of Federal Regulations (eCFR, cu
 2. **Plain code decides.** Every verdict comes from deterministic, tested rules. OCR only supplies the words, their positions, and how confident the reader was.
 3. **Three verdicts, and "Please check" is honest.**
    - **Matches:** the expected value was found and agrees.
-   - **Does not match:** the label clearly disagrees with the application, or a required item is clearly missing.
+   - **Does not match:** the label clearly shows a different value (a different number, or a different word read clearly).
    - **Please check:** the app can't be sure (low-confidence read, glare, missing image, or a judgment call). A person decides.
+   - **Couldn't find it is never "Does not match".** A value the reader did not find may be in decorative type, on a curved can, or on a side not photographed. That is **Please check**, with what was found. (Owner decision 2026-10-05, after the first full test wrongly failed 34 approved labels this way.)
 4. **Never stricter than TTB.** If TTB approves labels that technically stretch a rule, the app does not fail them. Those checks are advisory (§5).
 5. **Show the evidence.** Each verdict comes with the crop of the label where the value was found (or should have been) and a plain-English reason, e.g. *"Label says 45% Alc./Vol. Application says 40%."*
 6. **The agent decides.** This is an advisory tool. The compliance agent makes the determination.
@@ -37,15 +38,17 @@ Scoring (character-level similarity after normalization):
 |---|---|
 | 95–100 | Matches |
 | 85–94 | Please check |
-| below 85 | Does not match |
+| below 85 | Please check (not found) |
 
-Plus a **word rule**: every word in the expected value must appear on the label, and the label line must not add words. That catches cases a similarity score misses.
+Plus a **word rule**: if the value only appears inside a longer line, the result is **Please check**, showing that line. The longer line may be a different product ("Old Tom Reserve") or simply the bottler line ("BOTTLED BY SUTTER HOME FAMILY VINEYARDS"), which approved labels often carry next to a decorative brand.
 
 | Application | Label | Result | Why |
 |---|---|---|---|
 | Stone's Throw | STONE'S THROW | Matches | Case only |
 | Old Tom Distillery | OLD TOM DISTILLERY | Matches | Case only |
-| Old Tom | Old Tom Reserve | Does not match | Label adds a word; it could be a different product |
+| Old Tom | Old Tom Reserve | Please check | Label adds a word; it could be a different product, so a person looks |
+| Sutter Home | BOTTLED BY SUTTER HOME FAMILY VINEYARDS | Please check | Found only inside the bottler line; the brand itself may be decorative |
+| Copper Hollow | (not found) | Please check | Never Does not match: the reader may have missed decorative type |
 | Stone's Throw | Stone Throw | Please check | Possessive dropped; may be an OCR miss or a real change |
 | Kentucky Straight Bourbon Whiskey | KENTUCKY STRAIGHT BOURBON WHISKY | Matches | Class/type only: "the word whisky may be spelled as either 'whisky' or 'whiskey'" (§ 5.143). Brand names get no such allowance. |
 
@@ -77,12 +80,12 @@ Label and application values are compared **as numbers** (45, 45.0 and 45.00 are
 | Wine | Required **above 14%**. At 14% or less it may be left off **if** "table wine" or "light wine" appears | § 4.32(b)(3), § 4.36(a) |
 | Malt beverage | Required **only if** alcohol comes from added flavors or other nonbeverage ingredients (e.g. hard seltzers, flavored malt drinks). Otherwise optional | § 7.63(a)(3), § 7.65(a) |
 
-If the application gives an alcohol content and the label shows none, the result is **Does not match**. For a type where alcohol content is optional and the application leaves it blank, the check is skipped.
+If the application gives an alcohol content and none is found on the label, the result is **Please check** (§1: not found is never Does not match). For a type where alcohol content is optional and the application leaves it blank, the check is skipped.
 
 **Wine tax-class line (§ 4.36(c)):** if one of the label and application values is 14% or less and the other is above 14%, the result is **Does not match**, because those are different tax classes.
 
 ### 3.4 Proof (spirits only)
-Proof is optional (§ 5.65(b)(1)(i)). If shown, it must equal **2 × alcohol by volume** (§ 5.1): 45% with 90 Proof matches; 45% with 80 Proof does not. Parts 4 and 7 have no proof rules, so proof is ignored for wine and malt beverages.
+Proof is optional (§ 5.65(b)(1)(i)). If shown, it must equal **2 × alcohol by volume** (§ 5.1): 45% with 90 Proof matches; 45% with 80 Proof does not. A proof over 200 is impossible and means a misread (e.g. "82.6" read as "826"), so it gives **Please check**. Parts 4 and 7 have no proof rules, so proof is ignored for wine and malt beverages.
 
 ---
 
@@ -100,6 +103,8 @@ A size that isn't an authorized standard of fill for spirits or wine gives **Ple
 
 Net contents not found on any label image gives **Please check**, not a fail, for the same reason (27 CFR 5.63(b)(2), 7.63(a)(5)).
 
+A different amount that rests only on a bare letter "L" (e.g. "1 L") gives **Please check**: on curved cans the reader produces strings like "I 1 1 E 1 L" from noise. A clearly read different amount ("700 mL" for "750 mL") is **Does not match**.
+
 ---
 
 ## 5. Government Health Warning Statement
@@ -114,7 +119,7 @@ Required on every alcohol beverage of 0.5% alcohol by volume or more, for all th
 - **Punctuation-only differences give Please check**, not Does not match. TTB has approved labels missing a single period in the statement (e.g. [ yellow tail ] Moscato, Robert Mondavi sparkling wine in our test set).
 - Differences are shown as a word-by-word comparison with changed words highlighted.
 - If the only differences are single characters the OCR read with low confidence, the result is **Please check**, not Does not match. The app shouldn't fail a label because of its own misread.
-- Not found in any readable image → **Does not match**. Not found but an image is missing or unreadable → **Please check**.
+- Not found → **Please check**, asking for a picture of the side that carries it (§1: not found is never Does not match).
 
 ### 5.2 Capital letters (§ 16.22(a)(2))
 "GOVERNMENT WARNING" must be in capital letters. This is checked on the **raw** OCR text, before any normalization, so "Government Warning" in title case is caught. The app requires at least 90% of the heading's letters to read as capitals, so one ambiguous glyph doesn't cause a false fail, and shows the crop.
@@ -170,10 +175,10 @@ These need human judgment or are outside a prototype's scope; the app doesn't pr
 
 - **Each rule is a small pure function** in `app/verify/`, with unit tests for the normal case and the known traps:
   - "Government Warning" (title case) → Does not match.
-  - "Old Tom" vs "Old Tom Reserve" → Does not match; "STONE'S THROW" vs "Stone's Throw" → Matches.
+  - "Old Tom" vs "Old Tom Reserve" → Please check; "STONE'S THROW" vs "Stone's Throw" → Matches.
   - 45% + 90 Proof → Matches; 45% + 80 Proof → Does not match.
   - Wine at 13% with "table wine" and no alcohol content → Matches.
-  - Malt with metric-only net contents → Does not match.
+  - Malt with metric-only net contents → Please check.
   - Deliberately breaking any rule must make a test fail.
 - **Real labels:** about 90 approved labels from TTB's Public COLA Registry (30 each of spirits, wine, and malt beverages, domestic and imported), plus about 44 real bottle photos from Open Food Facts (CC BY-SA).
 - **Labels that should fail:** synthetic labels with known answers, covering 10 failure types (wrong alcohol content, wrong net contents, brand mismatch, class/type mismatch, missing warning, title-case warning, non-bold heading, altered warning wording, warning hard to read, type too small).

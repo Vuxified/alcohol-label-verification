@@ -21,9 +21,9 @@ def spirits(**kw):
     ("Stone's Throw", "STONE'S THROW", P),          # Dave's example: case only
     ("Stone's Throw", "STONE’S THROW", P),     # curly apostrophe
     ("Old Tom Distillery", "OLD TOM DISTILLERY", P),
-    ("Old Tom", "Old Tom Reserve", F),              # extra word = different product
+    ("Old Tom", "Old Tom Reserve", C),              # extra word: could be another product, or the bottler line
     ("Stone's Throw", "Stone Throw", C),            # possessive dropped: near match
-    ("Copper Hollow", "Juniper Ridge", F),
+    ("Copper Hollow", "Juniper Ridge", C),          # not found: the brand may be decorative type the reader missed
     ("Bacardi", "BACARDÍ", P),                      # accents ignored
 ])
 def test_brand_matching(expected, label, verdict):
@@ -35,8 +35,13 @@ def test_brand_split_across_lines():
 
 
 def test_class_extra_words_is_check_not_fail():
-    r = match_text("class_type", "Straight Bourbon Whiskey", ["Kentucky Straight Bourbon Whiskey"], extra_words=C)
+    r = match_text("class_type", "Straight Bourbon Whiskey", ["Kentucky Straight Bourbon Whiskey"])
     assert r.verdict == C
+
+
+def test_brand_inside_bottler_line_is_check():  # seen on approved labels (Chateau Ste. Michelle, Sutter Home)
+    r = match_text("brand_name", "Sutter Home", ["BOTTLED BY SUTTER HOME FAMILY VINEYARDS, CERES, CALIFORNIA"])
+    assert r.verdict == C and r.code == "BRAND_NAME_EXTRA_WORDS"
 
 
 @pytest.mark.parametrize("expected, label", [
@@ -65,8 +70,9 @@ def test_abv_mismatch():
     assert r.verdict == F and r.code == "ABV_MISMATCH"
 
 
-def test_abv_missing_on_spirits_fails():
-    assert check_abv(spirits(abv=40), ["750 mL"]).code == "ABV_MISSING"
+def test_abv_not_found_is_check():  # could not find is not the same as clearly different
+    r = check_abv(spirits(abv=40), ["750 mL"])
+    assert r.verdict == C and r.code == "ABV_MISSING"
 
 
 def test_table_wine_may_omit_abv():
@@ -74,9 +80,9 @@ def test_table_wine_may_omit_abv():
     assert check_abv(app, ["Juniper Ridge", "California Table Wine"]).verdict == P
 
 
-def test_wine_over_14_must_show_abv():
+def test_wine_over_14_must_show_abv():  # not found, so a person looks (RULES.md §1)
     app = Application("wine", "Juniper Ridge", abv=19.5)
-    assert check_abv(app, ["Juniper Ridge", "Table Wine"]).verdict == F
+    assert check_abv(app, ["Juniper Ridge", "Table Wine"]).verdict == C
 
 
 def test_abv_abbreviation_on_wine_needs_check():
@@ -92,6 +98,11 @@ def test_malt_without_declared_abv_is_not_checked():
 def test_proof_twice_abv():
     assert check_proof(spirits(abv=45), ["45% Alc./Vol. (90 Proof)"]).verdict == P
     assert check_proof(spirits(abv=45), ["45% Alc./Vol. (80 Proof)"]).code == "PROOF_MISMATCH"
+
+
+def test_impossible_proof_is_check():  # "82.6" read as "826" (TTB 25045001000301); proof cannot exceed 200
+    r = check_proof(spirits(abv=41.3), ["41.3% Alc./Vol. 826 Proof"])
+    assert r.verdict == C and r.code == "PROOF_MISMATCH"
 
 
 def test_proof_ignored_for_wine():
@@ -111,7 +122,13 @@ def test_net_contents_match_across_units():
 
 
 def test_net_contents_mismatch():
-    assert check_net_contents(spirits(net_contents="750 mL"), ["700 mL"]).code == "NET_CONTENTS_MISMATCH"
+    r = check_net_contents(spirits(net_contents="750 mL"), ["700 mL"])
+    assert r.verdict == F and r.code == "NET_CONTENTS_MISMATCH"
+
+
+def test_net_contents_bare_letter_l_is_check():  # "1 L" read from can noise like "I 1 1 E 1 L" (TTB 24008001000478)
+    r = check_net_contents(spirits(net_contents="12 FL. OZ."), ["I 1 1 E 1 L - - d"])
+    assert r.verdict == C and r.code == "NET_CONTENTS_MISMATCH"
 
 
 def test_malt_us_units_pass():
@@ -166,8 +183,9 @@ def test_warning_missing_period_is_check():  # seen on approved labels
     assert check_warning([REQUIRED.replace("birth defects.", "birth defects")])[0].code == "WARNING_PUNCTUATION"
 
 
-def test_warning_missing_fails():
-    assert check_warning(["OLD TOM", "750 mL"])[0].code == "WARNING_MISSING"
+def test_warning_not_found_is_check():
+    r = check_warning(["OLD TOM", "750 mL"])[0]
+    assert r.verdict == C and r.code == "WARNING_MISSING"
 
 
 def test_text_after_warning_is_ignored():
