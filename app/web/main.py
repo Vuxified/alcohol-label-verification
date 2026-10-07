@@ -1,21 +1,23 @@
 """The web app: check one label against its application (DESIGN.md §5). Run: uvicorn app.web.main:app
 
-Nothing is stored on disk and nothing leaves the server: images are read in memory, results are kept in memory
-for 30 minutes (at most 200), then dropped.
+Results are not kept: the results page is returned by the same request, with its pictures built in, so any copy of
+the app can answer (AWS Lambda runs several). On a laptop, images are posted with the form and read in memory.
+With UPLOAD_BUCKET set (on Lambda, whose requests are capped at 6 MB), the browser uploads each image straight to that
+private bucket with a short-lived link, and the bucket deletes it after one day.
 """
 
+import base64
 import io
 import json
 import os
+import re
 import threading
-import time
 import uuid
-from collections import OrderedDict
 from contextlib import asynccontextmanager
 from pathlib import Path
 
 from fastapi import FastAPI, Request
-from fastapi.responses import HTMLResponse, RedirectResponse, Response
+from fastapi.responses import HTMLResponse, JSONResponse, Response
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from PIL import Image
@@ -31,13 +33,13 @@ from . import copy
 
 ROOT = Path(__file__).resolve().parent
 DATA = ROOT.parent.parent / "data"
-MAX_IMAGES, MAX_MB, KEEP_S, KEEP_N = 6, 10, 30 * 60, 200
+MAX_IMAGES, MAX_MB, SHOW_SIDE = 6, 10, 1600
+BUCKET = os.environ.get("UPLOAD_BUCKET")
+UPLOAD_KEY = re.compile(r"uploads/[0-9a-f]{32}/[0-5]")
 Image.MAX_IMAGE_PIXELS = 40_000_000
 
 state = {"reader": None, "ready": False}
 slots = threading.BoundedSemaphore(int(os.environ.get("INTERACTIVE_SLOTS", "2")))
-results: "OrderedDict[str, tuple[float, object]]" = OrderedDict()
-lock = threading.Lock()
 
 
 def _start():
@@ -55,28 +57,11 @@ async def lifespan(_):
 app = FastAPI(title="Label Check", lifespan=lifespan, docs_url=None, redoc_url=None)
 app.mount("/static", StaticFiles(directory=ROOT / "static"), name="static")
 templates = Jinja2Templates(directory=ROOT / "templates")
-templates.env.globals.update(copy=copy)
-
-
-def _store(res) -> str:
-    rid = uuid.uuid4().hex
-    now = time.time()
-    with lock:
-        results[rid] = (now, res)
-        for k in [k for k, (t, _) in results.items() if now - t > KEEP_S]:
-            del results[k]
-        while len(results) > KEEP_N:
-            results.popitem(last=False)
-    return rid
-
-
-def _get(rid):
-    with lock:
-        item = results.get(rid)
-        if item and time.time() - item[0] <= KEEP_S:
-            results.move_to_end(rid)
-            return item[1]
-    return None
+templates.env.globals.update(copy=copy, upload_to_bucket=bool(BUCKET))
+s3 = None
+if BUCKET:
+    import boto3
+    s3 = boto3.client("s3")
 
 
 def _check_file(name: str, data: bytes) -> str | None:
@@ -129,6 +114,27 @@ async def readyz():
                     status_code=200 if state["ready"] else 503)
 
 
+@app.get("/upload-links")
+async def upload_links(n: int = 1):
+    """One short-lived upload link per image (only when UPLOAD_BUCKET is set)."""
+    if not BUCKET or not 1 <= n <= MAX_IMAGES:
+        return Response(status_code=404)
+    folder = uuid.uuid4().hex
+    return JSONResponse([s3.generate_presigned_post(
+        BUCKET, f"uploads/{folder}/{i}", Conditions=[["content-length-range", 1, MAX_MB * 1024 * 1024]], ExpiresIn=300)
+        for i in range(n)])
+
+
+def _uploaded(keys, names):
+    """(name, bytes) for each image the browser put in the bucket."""
+    out = []
+    for key, name in zip(keys, names):
+        if not UPLOAD_KEY.fullmatch(key):
+            continue
+        out.append((name, s3.get_object(Bucket=BUCKET, Key=key)["Body"].read()))
+    return out
+
+
 @app.post("/check")
 async def check(request: Request):
     if not state["ready"]:
@@ -141,19 +147,21 @@ async def check(request: Request):
         form = {k: (data.get(k) or "").strip() for k in ("beverage_type", "brand_name", "fanciful_name", "class_type",
                                                           "abv", "net_contents", "name_address", "source",
                                                           "country_of_origin")}
-        uploads = [f for f in data.getlist("images") if getattr(f, "filename", "")]
+        if BUCKET and data.getlist("upload_keys"):
+            received = await run_in_threadpool(_uploaded, data.getlist("upload_keys"), data.getlist("upload_names"))
+        else:
+            received = [(f.filename, await f.read()) for f in data.getlist("images") if getattr(f, "filename", "")]
         errors = []
-        if not uploads:
+        if not received:
             errors.append(copy.ERRORS["no_images"])
-        if len(uploads) > MAX_IMAGES:
-            errors.append(copy.ERRORS["too_many"].format(n=len(uploads), max=MAX_IMAGES))
+        if len(received) > MAX_IMAGES:
+            errors.append(copy.ERRORS["too_many"].format(n=len(received), max=MAX_IMAGES))
         images = []
-        for f in uploads[:MAX_IMAGES]:
-            b = await f.read()
-            problem = _check_file(f.filename, b)
+        for name, b in received[:MAX_IMAGES]:
+            problem = _check_file(name, b)
             if problem:
                 errors.append(problem)
-            images.append((f.filename, b))
+            images.append((name, b))
         if form["beverage_type"] not in copy.BEVERAGES:
             errors.append(copy.ERRORS["beverage"])
         if not form["brand_name"]:
@@ -179,7 +187,7 @@ async def check(request: Request):
     finally:
         slots.release()
     res.form = form
-    return RedirectResponse(f"/results/{_store(res)}", status_code=303)
+    return await run_in_threadpool(_results_page, request, res)
 
 
 def _evidence(res):
@@ -195,35 +203,24 @@ def _evidence(res):
     return out
 
 
-@app.get("/results/{rid}", response_class=HTMLResponse)
-async def show(request: Request, rid: str):
-    res = _get(rid)
-    if res is None:
-        return HTMLResponse('<p>These results have expired. <a href="/">Check a label</a></p>', status_code=404)
+def _data_url(img: Image.Image, fmt: str) -> str:
+    b = io.BytesIO()
+    img.save(b, fmt, **({"quality": 85} if fmt == "JPEG" else {}))
+    return f"data:image/{fmt.lower()};base64,{base64.b64encode(b.getvalue()).decode()}"
+
+
+def _results_page(request, res):
     ev = _evidence(res)
     rows = sorted(res.fields, key=lambda f: -SEVERITY[f.verdict])
     counts = {v: sum(1 for f in res.fields if f.verdict == v) for v in Verdict}
     shapes = [fr.shape[:2] for fr in res.reading.frames]
+    pics = []
+    for fr in res.reading.frames:
+        img = Image.fromarray(fr)
+        img.thumbnail((SHOW_SIDE, SHOW_SIDE))  # boxes still line up: the overlay uses the full-size coordinates
+        pics.append(_data_url(img, "JPEG"))
+    crops = {field: _data_url(Image.open(io.BytesIO(crop_png(res.reading.frames[k], box))), "PNG")
+             for field, (k, box) in ev.items()}
     return templates.TemplateResponse(request, "results.html", {
-        "rid": rid, "res": res, "rows": rows, "ev": ev, "counts": counts, "Verdict": Verdict, "shapes": shapes,
-        "names": [p.name for p in res.reading.pictures]})
-
-
-@app.get("/results/{rid}/image/{n}")
-async def image(rid: str, n: int):
-    res = _get(rid)
-    if res is None or not 0 <= n < len(res.reading.frames):
-        return Response(status_code=404)
-    b = io.BytesIO()
-    Image.fromarray(res.reading.frames[n]).save(b, "JPEG", quality=85)
-    return Response(b.getvalue(), media_type="image/jpeg")
-
-
-@app.get("/results/{rid}/crop/{field}")
-async def crop(rid: str, field: str):
-    res = _get(rid)
-    hit = _evidence(res).get(field) if res else None
-    if hit is None:
-        return Response(status_code=404)
-    k, box = hit
-    return Response(crop_png(res.reading.frames[k], box), media_type="image/png")
+        "res": res, "rows": rows, "ev": ev, "counts": counts, "Verdict": Verdict, "shapes": shapes,
+        "names": [p.name for p in res.reading.pictures], "pics": pics, "crops": crops})

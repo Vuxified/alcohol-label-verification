@@ -26,7 +26,7 @@
         <h2 class="app-row__title"><span class="{{ cls }}">{{ icon }} {{ word }}</span> {{ copy.FIELD_NAMES.get(f.field, f.field) }}</h2>
         <p>{{ f.reason }}</p>
         {% if f.field in ev %}
-          <img class="app-crop" src="/results/{{ rid }}/crop/{{ f.field }}" alt="Part of image {{ ev[f.field][0] + 1 }} showing {{ (f.found or copy.FIELD_NAMES.get(f.field, f.field))|e }}">
+          <img class="app-crop" src="{{ crops[f.field] }}" alt="Part of image {{ ev[f.field][0] + 1 }} showing {{ (f.found or copy.FIELD_NAMES.get(f.field, f.field))|e }}">
           <p class="app-small"><a href="#pic-{{ ev[f.field][0] }}">Show on label (image {{ ev[f.field][0] + 1 }})</a></p>
         {% elif f.verdict.value in ('fail', 'check') %}<p class="app-small">Not located on the label.</p>{% endif %}
       </li>
@@ -38,7 +38,7 @@
     {% for name in names %}{% set h, w = shapes[loop.index0] %}
     <figure class="app-pic" id="pic-{{ loop.index0 }}">
       <div class="app-pic__box">
-        <img src="/results/{{ rid }}/image/{{ loop.index0 }}" alt="Label image {{ loop.index }}: {{ name }}">
+        <img src="{{ pics[loop.index0] }}" alt="Label image {{ loop.index }}: {{ name }}">
         <svg viewBox="0 0 {{ w }} {{ h }}" preserveAspectRatio="none" aria-hidden="true">
           {% for field, hit in ev.items() if hit[0] == loop.index0 %}{% set x0, y0, x1, y1 = hit[1] %}
           <rect x="{{ x0 }}" y="{{ y0 }}" width="{{ x1 - x0 }}" height="{{ y1 - y0 }}" class="app-box"/>

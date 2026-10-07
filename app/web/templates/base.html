@@ -24,7 +24,7 @@
     {% block content %}{% endblock %}
   </main>
   <footer class="grid-container app-footer">
-    <p>Prototype for review. Not an official U.S. Government system. Label images are read on this server only and are not stored.</p>
+    <p>Prototype for review. Not an official U.S. Government system. {% if upload_to_bucket %}Label images are kept in private storage for one day, then deleted automatically.{% else %}Label images are read on this server only and are not stored.{% endif %}</p>
   </footer>
   <script src="/static/uswds/js/uswds.min.js"></script>
   {% block scripts %}{% endblock %}

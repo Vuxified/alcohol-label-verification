@@ -41,5 +41,5 @@ ERRORS = {
     "busy": "The checker is busy. Please try again in a minute.",
 }
 
-NOT_SAVED = "These results are not saved. They will be cleared after 30 minutes."
+NOT_SAVED = "These results are not saved. To keep them, print this page."
 DISCLAIMER = "This tool helps you review. You make the decision."
