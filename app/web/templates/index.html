@@ -90,6 +90,7 @@
     // with only the storage keys.
     f.addEventListener('submit', async function (ev) {
       ev.preventDefault(); var timer = started();
+      f.querySelectorAll('input[name=upload_keys], input[name=upload_names]').forEach(function (h) { h.remove(); });
       var input = document.getElementById('images'), files = Array.from(input.files).slice(0, 6);
       try {
         var links = await (await fetch('/upload-links?n=' + files.length)).json();
@@ -103,7 +104,8 @@
             var h = document.createElement('input'); h.type = 'hidden'; h.name = kv[0]; h.value = kv[1]; f.appendChild(h);
           });
         }));
-        input.disabled = true; f.enctype = 'application/x-www-form-urlencoded'; f.submit();
+        input.disabled = true; f.enctype = 'application/x-www-form-urlencoded';
+        HTMLFormElement.prototype.submit.call(f);  // f.submit is the button with id="submit"
       } catch (e) {
         clearInterval(timer);
         s.querySelector('p').textContent = 'The images could not be uploaded. Please check your connection and try again.';
