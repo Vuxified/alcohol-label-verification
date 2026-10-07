@@ -100,10 +100,12 @@
           body.append('file', file);
           var r = await fetch(links[i].url, { method: 'POST', body: body });
           if (!r.ok) throw new Error('upload ' + r.status);
+        }));
+        files.forEach(function (file, i) {  // in the order chosen, not the order the uploads finished
           [['upload_keys', links[i].fields.key], ['upload_names', file.name]].forEach(function (kv) {
             var h = document.createElement('input'); h.type = 'hidden'; h.name = kv[0]; h.value = kv[1]; f.appendChild(h);
           });
-        }));
+        });
         input.disabled = true; f.enctype = 'application/x-www-form-urlencoded';
         HTMLFormElement.prototype.submit.call(f);  // f.submit is the button with id="submit"
       } catch (e) {
