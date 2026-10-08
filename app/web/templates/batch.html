@@ -1,0 +1,317 @@
+{% extends "base.html" %}
+{% block title %}Check many labels – Label Check{% endblock %}
+{% block content %}
+<h1>Check many labels at once</h1>
+<p class="usa-intro">Add one ZIP file with the label images and one spreadsheet (CSV) with a row per application. We check them all and give you a results spreadsheet.</p>
+
+<section class="usa-summary-box app-samples" aria-labelledby="sample-heading">
+  <div class="usa-summary-box__body">
+    <h2 class="usa-summary-box__heading" id="sample-heading">No files handy?</h2>
+    <p><a class="usa-link" href="/static/sample-batch.zip" download>Download a sample batch</a> (22 applications; the spreadsheet is inside the ZIP), then add it below.
+       Two of its rows are broken on purpose, to show that one bad row doesn't stop the rest.</p>
+  </div>
+</section>
+
+<div id="setup">
+  <form class="usa-form usa-form--large" id="batch-form">
+    <label class="usa-label" for="zip">1. ZIP file with the label images</label>
+    <span class="usa-hint" id="zip-hint">Up to 500 applications, up to 6 images each (JPG, PNG or WEBP, up to 10 MB each).</span>
+    <input class="usa-file-input" id="zip" type="file" accept=".zip,application/zip" required aria-describedby="zip-hint">
+
+    <label class="usa-label" for="csv">2. Spreadsheet (CSV), if it isn't inside the ZIP</label>
+    <span class="usa-hint" id="csv-hint">If the ZIP contains <code>manifest.csv</code>, you can skip this.</span>
+    <input class="usa-file-input" id="csv" type="file" accept=".csv,text/csv" aria-describedby="csv-hint">
+
+    <button class="usa-button usa-button--big app-full" type="submit" id="read">Read the files</button>
+  </form>
+
+  <details class="app-columns">
+    <summary>What the spreadsheet needs</summary>
+    <p>A header row, then one row per application. Column names are not case-sensitive.</p>
+    <table class="usa-table usa-table--compact">
+      <thead><tr><th scope="col">Column</th><th scope="col">Needed?</th><th scope="col">Example</th></tr></thead>
+      <tbody>
+        <tr><td><code>application_id</code></td><td>Yes, unique</td><td>TTB-0001</td></tr>
+        <tr><td><code>image_files</code></td><td>Yes</td><td>0001_front.jpg;0001_back.jpg (file names in the ZIP, separated by ;)</td></tr>
+        <tr><td><code>beverage_type</code></td><td>Yes</td><td>spirits, wine, or malt (beer is accepted)</td></tr>
+        <tr><td><code>brand_name</code></td><td>Yes</td><td>Old Tom Distillery</td></tr>
+        <tr><td><code>class_type</code>, <code>abv</code>, <code>net_contents</code>, <code>name_address</code>, <code>fanciful_name</code></td><td>No</td><td>Kentucky Straight Bourbon Whiskey · 45 · 750 mL</td></tr>
+        <tr><td><code>source</code>, <code>country_of_origin</code></td><td>No</td><td>imported · Mexico (source defaults to domestic)</td></tr>
+      </tbody>
+    </table>
+  </details>
+</div>
+
+<div id="problems" class="app-hidden">
+  <div class="usa-alert usa-alert--warning" role="alert"><div class="usa-alert__body">
+    <h2 class="usa-alert__heading" id="problems-heading"></h2>
+    <ul class="usa-list" id="problems-list"></ul>
+  </div></div>
+</div>
+
+<div id="ready" class="app-hidden">
+  <p id="ready-text"></p>
+  <button class="usa-button usa-button--big" id="start"></button>
+  <button class="usa-button usa-button--outline" id="startover" type="button">Choose other files</button>
+</div>
+
+<div id="run" class="app-hidden">
+  <p class="app-topline"><strong id="run-title"></strong><button class="usa-button usa-button--secondary" id="cancel" type="button">Cancel batch</button></p>
+  <p id="run-progress-text"></p>
+  <progress id="bar" max="100" value="0" aria-labelledby="run-progress-text" class="app-progress"></progress>
+  <p id="run-counts"></p>
+  <p class="app-small">Keep this page open until the batch finishes. Results are not saved on the server: download the spreadsheet to keep them.</p>
+  <div role="status" class="usa-sr-only" id="announce"></div>
+  <p><button class="usa-button" id="download" type="button">Download results (CSV)</button>
+     <button class="usa-button usa-button--outline" id="print" type="button" onclick="window.print()">Print this page</button></p>
+  <fieldset class="usa-fieldset app-filter">
+    <legend class="usa-legend">Show</legend>
+    <div class="usa-radio"><input class="usa-radio__input" type="radio" name="show" id="show-attn" value="attn" checked><label class="usa-radio__label" for="show-attn">Needs attention</label></div>
+    <div class="usa-radio"><input class="usa-radio__input" type="radio" name="show" id="show-all" value="all"><label class="usa-radio__label" for="show-all">All</label></div>
+  </fieldset>
+  <table class="usa-table usa-table--borderless usa-table--stacked app-batch-table">
+    <thead><tr><th scope="col">Application</th><th scope="col">Result</th><th scope="col">Why</th></tr></thead>
+    <tbody id="rows"></tbody>
+  </table>
+</div>
+
+<p><strong>{{ copy.DISCLAIMER }}</strong></p>
+{% endblock %}
+{% block scripts %}
+<script src="/static/vendor/jszip.min.js"></script>
+<script src="/static/vendor/papaparse.min.js"></script>
+<script>
+(function () {
+  var BUCKET = {{ 'true' if upload_to_bucket else 'false' }};
+  var PARALLEL = BUCKET ? 6 : 2;              // on AWS each request gets its own copy of the checker
+  var MAX_ROWS = 500, MAX_IMAGES = 6, MAX_MB = 10;
+  var VERDICT = {{ copy.VERDICT | tojson }}, FIELD_NAMES = {{ copy.FIELD_NAMES | tojson }};
+  var WORD = { fail: 'Does not match', check: 'Please check', pass: 'Matches', 'n/a': 'Not applicable', error: 'Error' };
+  var ORDER = { fail: 0, check: 1, error: 2, pass: 3 };
+  var BEV = { spirits: 'spirits', 'distilled spirits': 'spirits', wine: 'wine', malt: 'malt', beer: 'malt', 'malt beverage': 'malt' };
+  var $ = function (id) { return document.getElementById(id); };
+  var show = function (id, on) { $(id).classList.toggle('app-hidden', !on); };
+  var esc = function (t) { return String(t == null ? '' : t).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+
+  var zip = null, entries = {}, jobs = [], results = [], cancelled = false, zipName = '', started = 0;
+
+  function decode(buf) {
+    var text;
+    try { text = new TextDecoder('utf-8', { fatal: true }).decode(buf); }
+    catch (e) { text = new TextDecoder('windows-1252').decode(buf); }   // Excel on Windows
+    return text.replace(/^﻿/, '');
+  }
+
+  function findEntry(name) {
+    var n = name.trim().replace(/\\/g, '/').replace(/^\.?\//, '').toLowerCase();
+    if (entries[n]) return entries[n];
+    var base = n.split('/').pop();                                       // allow a folder inside the ZIP
+    var hits = Object.keys(entries).filter(function (k) { return k.split('/').pop() === base; });
+    return hits.length === 1 ? entries[hits[0]] : null;
+  }
+
+  $('batch-form').addEventListener('submit', async function (ev) {
+    ev.preventDefault();
+    var problems = [];
+    show('problems', false); show('ready', false);
+    $('read').disabled = true; $('read').textContent = 'Reading…';
+    try {
+      var zf = $('zip').files[0]; zipName = zf.name;
+      zip = await JSZip.loadAsync(zf);
+      entries = {};
+      zip.forEach(function (path, e) {
+        var parts = path.split('/');
+        if (e.dir || parts[0] === '__MACOSX' || parts.some(function (p) { return p.startsWith('.'); })) return;
+        if (parts.indexOf('..') >= 0 || path.startsWith('/')) return;   // never trust paths that leave the ZIP
+        entries[path.toLowerCase()] = e;
+      });
+      var csvText;
+      if ($('csv').files[0]) csvText = decode(await $('csv').files[0].arrayBuffer());
+      else {
+        var m = findEntry('manifest.csv');
+        if (!m) throw new Error('No spreadsheet: add a CSV file, or put manifest.csv inside the ZIP.');
+        csvText = decode(await m.async('arraybuffer'));
+      }
+      var parsed = Papa.parse(csvText, { header: true, skipEmptyLines: 'greedy', transformHeader: function (h) { return h.trim().toLowerCase(); } });
+      var cols = parsed.meta.fields || [];
+      ['application_id', 'image_files', 'beverage_type', 'brand_name'].forEach(function (c) {
+        if (cols.indexOf(c) < 0) problems.push('The spreadsheet has no "' + c + '" column.');
+      });
+      if (problems.length) throw { list: problems };
+      if (parsed.data.length > MAX_ROWS) problems.push('The spreadsheet has ' + parsed.data.length + ' rows. Only the first ' + MAX_ROWS + ' will be checked.');
+      var seen = {};
+      jobs = [];
+      parsed.data.slice(0, MAX_ROWS).forEach(function (r, i) {
+        var row = i + 2, id = (r.application_id || '').trim(), bad = [];
+        var label = id || ('row ' + row);
+        if (!id) bad.push('no application_id');
+        else if (seen[id]) bad.push('application_id "' + id + '" is used twice');
+        seen[id] = true;
+        var bev = BEV[(r.beverage_type || '').trim().toLowerCase()];
+        if (!bev) bad.push('beverage_type "' + (r.beverage_type || '') + '" should be spirits, wine or malt');
+        if (!(r.brand_name || '').trim()) bad.push('no brand_name');
+        var abv = (r.abv || '').trim().replace(/%$/, '');
+        if (abv && isNaN(Number(abv))) bad.push('alcohol content "' + r.abv + '" is not a number');
+        var files = (r.image_files || '').split(';').map(function (s) { return s.trim(); }).filter(Boolean);
+        if (!files.length) bad.push('no image_files');
+        if (files.length > MAX_IMAGES) bad.push(files.length + ' images (the limit is ' + MAX_IMAGES + ')');
+        var found = [];
+        files.slice(0, MAX_IMAGES).forEach(function (f) {
+          var e = findEntry(f);
+          if (!e) bad.push('"' + f + '" is not in the ZIP');
+          else if (e._data && e._data.uncompressedSize > MAX_MB * 1024 * 1024) bad.push('"' + f + '" is over ' + MAX_MB + ' MB');
+          else found.push({ name: f.split('/').pop(), entry: e });
+        });
+        var job = { row: row, id: label, form: {
+          beverage_type: bev || '', brand_name: (r.brand_name || '').trim(), fanciful_name: (r.fanciful_name || '').trim(),
+          class_type: (r.class_type || '').trim(), abv: abv, net_contents: (r.net_contents || '').trim(),
+          name_address: (r.name_address || '').trim(), source: ((r.source || '').trim().toLowerCase() === 'imported') ? 'imported' : 'domestic',
+          country_of_origin: (r.country_of_origin || '').trim() }, files: found };
+        if (bad.length) { problems.push('Row ' + row + ' (' + label + '): ' + bad.join('; ') + '.'); job.error = bad.join('; '); }
+        jobs.push(job);
+      });
+      var good = jobs.filter(function (j) { return !j.error; }).length;
+      if (problems.length) {
+        $('problems-heading').textContent = problems.length + (problems.length === 1 ? ' problem' : ' problems') + ' found before starting';
+        $('problems-list').innerHTML = problems.map(function (p) { return '<li>' + esc(p) + '</li>'; }).join('');
+        show('problems', true);
+      }
+      $('ready-text').textContent = good + ' of ' + jobs.length + ' applications are ready to check.' + (good < jobs.length ? ' Rows with problems will be listed as errors in the results.' : '');
+      $('start').textContent = 'Start checking ' + good + (good === 1 ? ' application' : ' applications');
+      $('start').disabled = good === 0;
+      show('ready', true); show('setup', false);
+      $('start').focus();
+    } catch (e) {
+      var list = e && e.list ? e.list : [e && e.message ? e.message : 'The ZIP file could not be opened.'];
+      $('problems-heading').textContent = 'The files could not be read';
+      $('problems-list').innerHTML = list.map(function (p) { return '<li>' + esc(p) + '</li>'; }).join('');
+      show('problems', true);
+    } finally {
+      $('read').disabled = false; $('read').textContent = 'Read the files';
+    }
+  });
+
+  $('startover').addEventListener('click', function () { location.reload(); });
+
+  function sleep(ms) { return new Promise(function (r) { setTimeout(r, ms); }); }
+
+  async function checkOne(job) {
+    var blobs = await Promise.all(job.files.map(function (f) { return f.entry.async('blob'); }));
+    for (var attempt = 0; ; attempt++) {
+      try {
+        var body = new FormData();
+        Object.keys(job.form).forEach(function (k) { body.append(k, job.form[k]); });
+        if (BUCKET) {
+          var links = await (await fetch('/upload-links?n=' + blobs.length)).json();
+          await Promise.all(blobs.map(function (b, i) {
+            var up = new FormData();
+            Object.entries(links[i].fields).forEach(function (kv) { up.append(kv[0], kv[1]); });
+            up.append('file', b);
+            return fetch(links[i].url, { method: 'POST', body: up }).then(function (r) { if (!r.ok) throw new Error('upload ' + r.status); });
+          }));
+          links.forEach(function (l, i) { body.append('upload_keys', l.fields.key); body.append('upload_names', job.files[i].name); });
+        } else {
+          blobs.forEach(function (b, i) { body.append('images', b, job.files[i].name); });
+        }
+        var r = await fetch('/api/check', { method: 'POST', body: body });
+        var data = await r.json().catch(function () { return { error: 'The checker sent an unreadable answer.' }; });
+        if (r.status === 503 || r.status >= 500) throw new Error(data.error || ('status ' + r.status));
+        if (!r.ok) return { error: data.error || ('status ' + r.status) };
+        return data;
+      } catch (e) {
+        if (attempt >= 3 || cancelled) return { error: 'Could not be checked: ' + (e.message || e) + '. Try this one on the single-label page.' };
+        await sleep(2000 * Math.pow(2, attempt));                      // 2, 4, 8 s
+      }
+    }
+  }
+
+  function reasonsOf(res) {
+    if (res.error) return res.error;
+    return res.fields.filter(function (f) { return f.verdict === 'fail' || f.verdict === 'check'; })
+      .map(function (f) { return (FIELD_NAMES[f.field] || f.field) + ': ' + f.reason; }).join(' | ');
+  }
+
+  function render() {
+    var done = results.length, total = jobs.length;
+    var c = { fail: 0, check: 0, pass: 0, error: 0 };
+    results.forEach(function (x) { c[x.overall] = (c[x.overall] || 0) + 1; });
+    $('bar').value = total ? Math.round(100 * done / total) : 0;
+    var left = '';
+    if (done && done < total && !cancelled) {
+      var per = (Date.now() - started) / done / 1000;
+      var s = Math.round(per * (total - done));
+      left = ' · about ' + (s > 90 ? Math.round(s / 60) + ' minutes' : s + ' seconds') + ' left';
+    }
+    $('run-progress-text').textContent = done + ' of ' + total + ' checked' + left + (cancelled && done < total ? ' · cancelled' : '');
+    $('run-counts').innerHTML = '<span class="' + VERDICT.fail[2] + '">' + VERDICT.fail[0] + ' ' + c.fail + ' do not match</span> ' +
+      '<span class="' + VERDICT.check[2] + '">' + VERDICT.check[0] + ' ' + c.check + ' please check</span> ' +
+      '<span class="' + VERDICT.pass[2] + '">' + VERDICT.pass[0] + ' ' + c.pass + ' match</span> ' +
+      (c.error ? '<span class="usa-tag bg-base-darkest">' + c.error + ' errors</span>' : '');
+    var all = document.querySelector('input[name=show]:checked').value === 'all';
+    var rows = sorted().filter(function (x) { return all || x.overall !== 'pass'; });
+    $('rows').innerHTML = rows.map(function (x) {
+      var v = VERDICT[x.overall] || ['!', 'Error', 'usa-tag bg-base-darkest'];
+      return '<tr><th scope="row" data-label="Application">' + esc(x.id) + '</th><td data-label="Result"><span class="' + v[2] + '">' + v[0] + ' ' + esc(WORD[x.overall] || v[1]) +
+        '</span></td><td data-label="Why">' + esc(x.reasons || 'Every item checked matches.') + '</td></tr>';
+    }).join('') || '<tr><td colspan="3">' + (done ? 'Nothing needs attention so far.' : 'Starting…') + '</td></tr>';
+    if (total) {
+      var pct = Math.floor(100 * done / total), mark = [25, 50, 75].filter(function (m) { return pct >= m; }).pop();
+      if (done === total) $('announce').textContent = 'Done. ' + total + ' applications checked: ' + c.fail + ' do not match, ' + c.check + ' need a closer look.';
+      else if (mark && $('announce').dataset.mark != mark) { $('announce').dataset.mark = mark; $('announce').textContent = mark + ' percent checked.'; }
+    }
+  }
+
+  function sorted() {
+    return results.slice().sort(function (a, b) { return (ORDER[a.overall] - ORDER[b.overall]) || (a.row - b.row); });
+  }
+
+  document.querySelectorAll('input[name=show]').forEach(function (r) { r.addEventListener('change', render); });
+
+  $('start').addEventListener('click', async function () {
+    show('ready', false); show('problems', false); show('run', true);
+    $('run-title').textContent = 'Batch: ' + zipName;
+    started = Date.now(); results = [];
+    jobs.filter(function (j) { return j.error; }).forEach(function (j) {
+      results.push({ row: j.row, id: j.id, overall: 'error', reasons: j.error, fields: [], seconds: '', images: 0, error: j.error, at: new Date().toISOString() });
+    });
+    var queue = jobs.filter(function (j) { return !j.error; });
+    render();
+    async function worker() {
+      while (queue.length && !cancelled) {
+        var job = queue.shift();
+        var res = await checkOne(job);
+        results.push({ row: job.row, id: job.id, overall: res.error ? 'error' : res.overall, reasons: reasonsOf(res),
+                       fields: res.fields || [], seconds: res.seconds || '', images: job.files.length, error: res.error || '', at: new Date().toISOString() });
+        render();
+      }
+    }
+    await Promise.all(Array.from({ length: PARALLEL }, worker));
+    $('cancel').classList.add('app-hidden');
+    render();
+  });
+
+  $('cancel').addEventListener('click', function () { cancelled = true; $('cancel').disabled = true; $('cancel').textContent = 'Cancelling…'; render(); });
+
+  function cell(v) {
+    v = String(v == null ? '' : v);
+    if (/^[=+\-@\t\r]/.test(v)) v = "'" + v;                           // keep spreadsheets from running it as a formula
+    return /[",\r\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v;
+  }
+
+  $('download').addEventListener('click', function () {
+    var fields = ['brand_name', 'class_type', 'abv', 'proof', 'net_contents', 'name_address', 'country_of_origin', 'warning_text', 'warning_caps'];
+    var head = ['application_id', 'overall'].concat(fields, ['reasons', 'images_read', 'seconds', 'error', 'checked_at_utc']);
+    var lines = [head.join(',')];
+    sorted().forEach(function (x) {
+      var by = {}; x.fields.forEach(function (f) { by[f.field] = WORD[f.verdict] || f.verdict; });
+      lines.push([x.id, WORD[x.overall]].concat(fields.map(function (f) { return by[f] || ''; }),
+        [x.reasons, x.images, x.seconds, x.error, x.at]).map(cell).join(','));
+    });
+    var blob = new Blob(['﻿' + lines.join('\r\n') + '\r\n'], { type: 'text/csv;charset=utf-8' });
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob); a.download = zipName.replace(/\.zip$/i, '') + '-results.csv';
+    document.body.appendChild(a); a.click(); a.remove();
+  });
+})();
+</script>
+{% endblock %}

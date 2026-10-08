@@ -135,6 +135,57 @@ def _uploaded(keys, names):
     return out
 
 
+async def _read_request(data):
+    """The application and images from a submitted form (the page and the batch page send the same fields).
+    -> (form, images, errors)."""
+    form = {k: (data.get(k) or "").strip() for k in ("beverage_type", "brand_name", "fanciful_name", "class_type",
+                                                      "abv", "net_contents", "name_address", "source",
+                                                      "country_of_origin")}
+    if BUCKET and data.getlist("upload_keys"):
+        received = await run_in_threadpool(_uploaded, data.getlist("upload_keys"), data.getlist("upload_names"))
+    else:
+        received = [(f.filename, await f.read()) for f in data.getlist("images") if getattr(f, "filename", "")]
+    errors = []
+    if not received:
+        errors.append(copy.ERRORS["no_images"])
+    if len(received) > MAX_IMAGES:
+        errors.append(copy.ERRORS["too_many"].format(n=len(received), max=MAX_IMAGES))
+    images = []
+    for name, b in received[:MAX_IMAGES]:
+        problem = _check_file(name, b)
+        if problem:
+            errors.append(problem)
+        images.append((name, b))
+    if form["beverage_type"] not in copy.BEVERAGES:
+        errors.append(copy.ERRORS["beverage"])
+    if not form["brand_name"]:
+        errors.append(copy.ERRORS["brand"])
+    if form["abv"]:
+        try:
+            float(form["abv"].rstrip("%").strip())
+        except ValueError:
+            errors.append(copy.ERRORS["abv"])
+    return form, images, errors
+
+
+def _application(form) -> Application:
+    return Application(
+        form["beverage_type"], form["brand_name"], form.get("class_type") or None,
+        float(form["abv"].rstrip("%").strip()) if form.get("abv") else None, form.get("net_contents") or None,
+        form.get("name_address") or None, form.get("source") or "domestic", form.get("country_of_origin") or None,
+        form.get("fanciful_name") or None)
+
+
+async def _run(application, images):
+    """-> CheckResult, or None when this copy of the app is already checking its limit of labels."""
+    if not slots.acquire(blocking=False):
+        return None
+    try:
+        return await run_in_threadpool(check_application, state["reader"], application, images)
+    finally:
+        slots.release()
+
+
 @app.post("/check")
 async def check(request: Request):
     if not state["ready"]:
@@ -144,50 +195,37 @@ async def check(request: Request):
     if sample in copy.SAMPLES:
         form, images = _sample(sample)
     else:
-        form = {k: (data.get(k) or "").strip() for k in ("beverage_type", "brand_name", "fanciful_name", "class_type",
-                                                          "abv", "net_contents", "name_address", "source",
-                                                          "country_of_origin")}
-        if BUCKET and data.getlist("upload_keys"):
-            received = await run_in_threadpool(_uploaded, data.getlist("upload_keys"), data.getlist("upload_names"))
-        else:
-            received = [(f.filename, await f.read()) for f in data.getlist("images") if getattr(f, "filename", "")]
-        errors = []
-        if not received:
-            errors.append(copy.ERRORS["no_images"])
-        if len(received) > MAX_IMAGES:
-            errors.append(copy.ERRORS["too_many"].format(n=len(received), max=MAX_IMAGES))
-        images = []
-        for name, b in received[:MAX_IMAGES]:
-            problem = _check_file(name, b)
-            if problem:
-                errors.append(problem)
-            images.append((name, b))
-        if form["beverage_type"] not in copy.BEVERAGES:
-            errors.append(copy.ERRORS["beverage"])
-        if not form["brand_name"]:
-            errors.append(copy.ERRORS["brand"])
-        if form["abv"]:
-            try:
-                float(form["abv"].rstrip("%").strip())
-            except ValueError:
-                errors.append(copy.ERRORS["abv"])
+        form, images, errors = await _read_request(data)
         if errors:
             names = [n for n, _ in images]
             return _render_form(request, form, errors + ([f"Please add your images again: {', '.join(names)}."]
                                                          if names else []), 400)
-    application = Application(
-        form["beverage_type"], form["brand_name"], form.get("class_type") or None,
-        float(form["abv"].rstrip("%").strip()) if form.get("abv") else None, form.get("net_contents") or None,
-        form.get("name_address") or None, form.get("source") or "domestic", form.get("country_of_origin") or None,
-        form.get("fanciful_name") or None)
-    if not slots.acquire(blocking=False):
+    res = await _run(_application(form), images)
+    if res is None:
         return HTMLResponse(f"<p>{copy.ERRORS['busy']}</p>", status_code=503)
-    try:
-        res = await run_in_threadpool(check_application, state["reader"], application, images)
-    finally:
-        slots.release()
     res.form = form
     return await run_in_threadpool(_results_page, request, res)
+
+
+@app.post("/api/check")
+async def api_check(request: Request):
+    """One application, as JSON (used by the batch page). 503 means try again shortly."""
+    if not state["ready"]:
+        return JSONResponse({"error": "starting"}, status_code=503)
+    form, images, errors = await _read_request(await request.form())
+    if errors:
+        return JSONResponse({"error": " ".join(errors)}, status_code=400)
+    res = await _run(_application(form), images)
+    if res is None:
+        return JSONResponse({"error": "busy"}, status_code=503)
+    return {"overall": res.overall.value, "seconds": res.seconds, "notes": res.notes,
+            "fields": [{"field": f.field, "verdict": f.verdict.value, "code": f.code, "reason": f.reason}
+                       for f in res.fields]}
+
+
+@app.get("/batch", response_class=HTMLResponse)
+async def batch(request: Request):
+    return templates.TemplateResponse(request, "batch.html", {})
 
 
 def _evidence(res):
