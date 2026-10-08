@@ -6,12 +6,14 @@ Items:
   syn   generated labels with known mistakes (data/synthetic/*/item.json "expected"); a label with a mistake must
         never come back "Matches" overall (a FALSE PASS), and should name the right finding.
 Prints per-field verdict counts, every false fail and false pass, and time per application (p50 / p95 / max).
-Writes out/eval/<name>.json. The held-out (final-test) set is refused: it is run once, by the owner, on Oct 13.
+Writes out/eval/<name>.json. The held-out (final-test) set only runs with --final: once, by the owner, on Oct 13.
 
 Usage: python tools/evaluate.py --name dev1 [--set cola,syn] [--limit N] [--cpus 4]
+       python tools/evaluate.py --name final --final      # once, by the owner (checks image checksums first)
 """
 
 import argparse
+import hashlib
 import json
 import statistics
 import sys
@@ -35,11 +37,23 @@ FIELD_OF = {"ABV": "abv", "PROOF": "proof", "NET_CONTENTS": "net_contents", "BRA
 
 def field_of(code):
     return next(f for prefix, f in FIELD_OF.items() if code.startswith(prefix))
+
+
 OUT = ROOT / "out" / "eval"
 
 
 def dev_ids():
     return set(json.loads((DATA / "splits" / "split.json").read_text())["dev"])
+
+
+def heldout_ids():
+    """The final-test labels, after checking every image is byte-identical to the checksums frozen on 2026-10-02."""
+    manifest = json.loads((DATA / "splits" / "heldout_manifest.json").read_text())
+    changed = [path for files in manifest.values() for path, digest in files.items()
+               if hashlib.sha256((ROOT / path).read_bytes()).hexdigest() != digest]
+    if changed:
+        sys.exit(f"Final-test images changed since they were frozen, so the final test would not be fair: {changed[:5]}")
+    return set(json.loads((DATA / "splits" / "split.json").read_text())["heldout"])
 
 
 def cola_items(dev):
@@ -77,8 +91,15 @@ def main():
     ap.add_argument("--set", default="cola,syn")
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--cpus", type=int, default=4)
+    ap.add_argument("--final", action="store_true", help="the one-time final test on the held-out labels")
     args = ap.parse_args()
-    dev = dev_ids()
+    if args.final:
+        if (OUT / f"{args.name}.json").exists():
+            sys.exit(f"out/eval/{args.name}.json already exists: the final test is run once. Its numbers are final.")
+        dev = heldout_ids()
+        print("FINAL TEST on the held-out labels (images verified unchanged). Run once; report the numbers as they are.")
+    else:
+        dev = dev_ids()
     items = []
     if "cola" in args.set:
         items += list(cola_items(dev))
