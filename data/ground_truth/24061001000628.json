@@ -20,8 +20,16 @@
     "whole_warning_bold": "no",
     "orientation": "horizontal"
   },
-  "hard_cases": ["period after 'BIRTH DEFECTS' missing in warning (double space before '(2)')", "white text on dark charcoal", "image files mislabeled: 01 'brand front' is actually the back label, 02 'back' is the front label", "brand printed lowercase in brackets '[ yellow tail ]'", "ABV and net contents on one line with 'e' estimated sign", "jpeg artifacts / halo around text", "country of origin with region suffix '- SOUTH EASTERN AUSTRALIA'"],
+  "hard_cases": [
+    "period after 'BIRTH DEFECTS' missing in warning (double space before '(2)')",
+    "white text on dark charcoal",
+    "image files mislabeled: 01 'brand front' is actually the back label, 02 'back' is the front label",
+    "brand printed lowercase in brackets '[ yellow tail ]'",
+    "ABV and net contents on one line with 'e' estimated sign",
+    "jpeg artifacts / halo around text",
+    "country of origin with region suffix '- SOUTH EASTERN AUSTRALIA'"
+  ],
   "unreadable_fields": [],
   "drafted_by": "draft",
-  "reviewed": false
+  "reviewed": true
 }

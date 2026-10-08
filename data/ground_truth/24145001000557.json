@@ -20,8 +20,16 @@
     "whole_warning_bold": "no",
     "orientation": "vertical"
   },
-  "hard_cases": ["vertical warning", "light grey text on white (low contrast)", "vertical ABV/address block", "white net contents text on dark patterned background", "brand split: block 'Modelo' and script 'Especial'", "Raiders co-branding", "can wrap layout with duplicated panels"],
+  "hard_cases": [
+    "vertical warning",
+    "light grey text on white (low contrast)",
+    "vertical ABV/address block",
+    "white net contents text on dark patterned background",
+    "brand split: block 'Modelo' and script 'Especial'",
+    "Raiders co-branding",
+    "can wrap layout with duplicated panels"
+  ],
   "unreadable_fields": [],
   "drafted_by": "draft",
-  "reviewed": false
+  "reviewed": true
 }

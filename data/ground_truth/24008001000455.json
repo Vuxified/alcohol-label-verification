@@ -20,8 +20,17 @@
     "whole_warning_bold": "no",
     "orientation": "vertical"
   },
-  "hard_cases": ["vertical warning", "light text on dark red", "tiny print", "curved text (bottler statement and net contents follow oval)", "script font brand name", "no ABV statement", "can wrap with label repeated twice", "class ambiguous: 'TRADITIONAL LAGER' vs 'Original Amber Beer'"],
+  "hard_cases": [
+    "vertical warning",
+    "light text on dark red",
+    "tiny print",
+    "curved text (bottler statement and net contents follow oval)",
+    "script font brand name",
+    "no ABV statement",
+    "can wrap with label repeated twice",
+    "class ambiguous: 'TRADITIONAL LAGER' vs 'Original Amber Beer'"
+  ],
   "unreadable_fields": [],
   "drafted_by": "draft",
-  "reviewed": false
+  "reviewed": true
 }

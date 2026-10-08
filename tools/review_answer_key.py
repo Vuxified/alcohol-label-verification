@@ -12,7 +12,8 @@ Queues (pick one in the address bar):
     /?queue=sample&n=30&seed=20261006   a random sample of practice labels where all readings agree
     /?queue=all              everything, unreviewed first
 
-Keys: Enter = correct, save, next.  1 / 2 = take model 1 / model 2's reading for every disputed field.
+Keys: Enter = correct, save, next.  To take a model's reading, click it under that one field (there is no
+      shortcut that changes several fields at once: on 2026-10-08 one copied invented addresses into the key).
       Left / Right = back / skip.  E = edit the first field.  Esc = leave a field.
 
 Usage: python tools/review_answer_key.py   then open http://localhost:8765/?queue=heldout
@@ -105,7 +106,7 @@ PAGE = r"""<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Ans
    <button class="main" id="save">Correct &mdash; save &amp; next <kbd>Enter</kbd></button>
    <button class="sec" id="next">Skip &rarr;</button></div>
  <p id="status" style="font-size:14px"></p>
- <p style="font-size:13px;color:#555">Keys: <kbd>Enter</kbd> save &amp; next · <kbd>1</kbd>/<kbd>2</kbd> take model 1/2 for all disputed fields ·
+ <p style="font-size:13px;color:#555">Keys: <kbd>Enter</kbd> save &amp; next ·
  <kbd>&larr;</kbd>/<kbd>&rarr;</kbd> back/skip · <kbd>E</kbd> edit · <kbd>Esc</kbd> leave field · click a picture to zoom</p>
 </section></main>
 <script>
@@ -186,9 +187,6 @@ function parse(v) {
   if (v === '') return null; if (v === 'true') return true; if (v === 'false') return false;
   if (!isNaN(v) && v.trim() !== '') return Number(v); return v;
 }
-function takeModel(k) {
-  document.querySelectorAll(`.alt[data-k="${k}"]`).forEach(b => b.click());
-}
 async function save() {
   FIELDS.forEach(([k]) => cur[k] = parse($('f_' + k).value));
   cur.warning.text_as_printed = $('wtext').value.trim() || null;
@@ -215,8 +213,6 @@ document.addEventListener('keydown', e => {
   if (typing) return;
   if (e.key === 'ArrowRight') $('next').click();
   else if (e.key === 'ArrowLeft') $('prev').click();
-  else if (e.key === '1') takeModel('nemotron');
-  else if (e.key === '2') takeModel('nova_pro');
   else if (e.key === 'e' || e.key === 'E') { e.preventDefault(); $('f_brand_name').focus(); }
 });
 load();

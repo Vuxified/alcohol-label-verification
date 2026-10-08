@@ -20,8 +20,16 @@
     "whole_warning_bold": "no",
     "orientation": "vertical"
   },
-  "hard_cases": ["vertical warning", "vertical side-panel text (net contents, address)", "tiny condensed print", "curved class/type text", "script 'Light' fanciful name", "blue text on yellow", "back image is a grid of promotional photo tiles with no mandatory info"],
+  "hard_cases": [
+    "vertical warning",
+    "vertical side-panel text (net contents, address)",
+    "tiny condensed print",
+    "curved class/type text",
+    "script 'Light' fanciful name",
+    "blue text on yellow",
+    "back image is a grid of promotional photo tiles with no mandatory info"
+  ],
   "unreadable_fields": [],
   "drafted_by": "draft",
-  "reviewed": false
+  "reviewed": true
 }

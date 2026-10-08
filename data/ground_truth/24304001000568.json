@@ -20,8 +20,16 @@
     "whole_warning_bold": "no",
     "orientation": "vertical"
   },
-  "hard_cases": ["vertical warning", "white text on extremely busy illustrated background", "tiny print", "ABV inside a goblet-shaped icon, rotated", "class shown both as 'ALE' (side panel) and 'DOUBLE IPA' (front)", "stylized display font for fanciful name", "mixed-case warning body"],
+  "hard_cases": [
+    "vertical warning",
+    "white text on extremely busy illustrated background",
+    "tiny print",
+    "ABV inside a goblet-shaped icon, rotated",
+    "class shown both as 'ALE' (side panel) and 'DOUBLE IPA' (front)",
+    "stylized display font for fanciful name",
+    "mixed-case warning body"
+  ],
   "unreadable_fields": [],
   "drafted_by": "draft",
-  "reviewed": false
+  "reviewed": true
 }

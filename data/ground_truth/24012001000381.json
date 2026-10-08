@@ -20,8 +20,15 @@
     "whole_warning_bold": "no",
     "orientation": "other"
   },
-  "hard_cases": ["rotated/tilted text block (~12 degrees)", "tiny print", "wide wrap-around label", "large fanciful name 'MAN O' WAR' dominates brand", "small brand name", "02_other.png is a logo with no text"],
+  "hard_cases": [
+    "rotated/tilted text block (~12 degrees)",
+    "tiny print",
+    "wide wrap-around label",
+    "large fanciful name 'MAN O' WAR' dominates brand",
+    "small brand name",
+    "02_other.png is a logo with no text"
+  ],
   "unreadable_fields": [],
   "drafted_by": "draft",
-  "reviewed": false
+  "reviewed": true
 }
