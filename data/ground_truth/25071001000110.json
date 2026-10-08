@@ -9,7 +9,7 @@
   "net_contents_text": "1.59 GALLONS (6L)",
   "net_contents_ml": 6000,
   "name_address_text": "STELLA ARTOIS, ST. LOUIS, MO, BREWED IN THE U.S.A.",
-  "country_of_origin_text": "BREWED IN THE U.S.A.",
+  "country_of_origin_text": null,
   "warning": {
     "present": true,
     "image_file": "01_brand_front_or_keg_collar.jpg",
@@ -20,8 +20,17 @@
     "whole_warning_bold": "no",
     "orientation": "vertical"
   },
-  "hard_cases": ["vertical warning", "wide letter-spaced justified warning", "class 'BEER' only in small print line", "'PerfectDraft' secondary brand logo", "net contents in gallons and liters", "ABV in colored badge", "curved 'ANNO 1366' text"],
+  "hard_cases": [
+    "vertical warning",
+    "wide letter-spaced justified warning",
+    "class 'BEER' only in small print line",
+    "'PerfectDraft' secondary brand logo",
+    "net contents in gallons and liters",
+    "ABV in colored badge",
+    "curved 'ANNO 1366' text"
+  ],
   "unreadable_fields": [],
   "drafted_by": "draft",
-  "reviewed": false
+  "reviewed": true,
+  "reviewed_by": "AI-assisted check of every image (2026-10-08); not reviewed by the owner"
 }

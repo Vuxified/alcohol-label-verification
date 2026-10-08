@@ -6,7 +6,7 @@
   "abv": 4.6,
   "abv_text": "4.6% ALC/VOL.",
   "proof": null,
-  "net_contents_text": "BEER 12 FL. OZ.",
+  "net_contents_text": "12 FL. OZ.",
   "net_contents_ml": 354.88,
   "name_address_text": "BREWED AND CANNED BY CERVECERIA MODELO, NAVA, MEXICO IMPORTED BY CROWN IMPORTS, CHICAGO, IL",
   "country_of_origin_text": null,
@@ -31,5 +31,6 @@
   ],
   "unreadable_fields": [],
   "drafted_by": "draft",
-  "reviewed": false
+  "reviewed": true,
+  "reviewed_by": "AI-assisted check of every image (2026-10-08); not reviewed by the owner"
 }

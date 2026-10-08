@@ -1,0 +1,12 @@
+{
+  "confirmed": ["23353001000444", "23363001000273", "24003001000437", "24009001000179", "24009001000609", "24022001000501", "24026001000503", "24032001000188", "24047001000673", "24061001000635", "24093001000383", "24107001001085", "24129001000620", "24173001000688"],
+  "changes": [
+    {"id": "24297001000680", "field": "net_contents_text", "current": "BEER 12 FL. OZ.", "proposed": "12 FL. OZ.", "evidence": "01_brand_front_or_keg_collar.jpg, bottom of both front panels: 'BEER  12 FL. OZ.' - 'BEER' is the class word set beside the net contents, not part of it; side panel also reads 'PER 12 FL. OZ.'", "confidence": "medium"},
+    {"id": "25071001000110", "field": "country_of_origin_text", "current": "BREWED IN THE U.S.A.", "proposed": null, "evidence": "01_brand_front_or_keg_collar.jpg, left grey panel: 'STELLA ARTOIS, ST. LOUIS, MO, BREWED IN THE U.S.A.' - domestic product (Anheuser-Busch, Missouri; record origin_code MISSOURI), so no country of origin applies; the phrase is already kept in name_address_text", "confidence": "high"}
+  ],
+  "unsure": [
+    {"id": "24032001000188", "field": "class_type", "note": "Sheet has 'REAL RUM COCKTAIL' (printed under RUM PUNCH on front). The bottom line also prints a statement of composition: 'RUM with NATURAL FLAVORS, CERTIFIED COLORS and SPARKLING WATER'. 'REAL' reads as marketing; owner should pick which is the class/type (sheet value is printed, so not wrong)."},
+    {"id": "24047001000673", "field": "brand_name", "note": "Sheet has 'WYNELAND ESTATES' (largest name, in the seal on 02_back.jpg). TTB record lists brand 'WOODBRIDGE CHAMPAGNE CELLARS' with fanciful name 'WYNELAND ESTATES'; Woodbridge only appears in the bottler line. Visually the sheet choice is defensible; flag for owner decision."},
+    {"id": "24297001000680", "field": "country_of_origin_text", "note": "Sheet is null, but this is an import from Mexico. No 'PRODUCT OF' line is printed; the country appears only as 'BREWED AND CANNED BY CERVECERIA MODELO, NAVA, MEXICO' (side panel) and 'Brewed and Canned by CERVECERIA MODELO MEXICO' plus 'IMPORTED BEER' (front). Owner to decide whether to record e.g. 'MEXICO' or keep null."}
+  ]
+}

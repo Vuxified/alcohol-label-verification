@@ -20,8 +20,17 @@
     "whole_warning_bold": "no",
     "orientation": "other"
   },
-  "hard_cases": ["whole label image rotated a few degrees", "large red '10' overprinted on class/type text", "brand printed as 'BULLEIT BOURBON' with TM between words", "also 'FRONTIER WHISKEY' secondary designation", "proof only in Serving Facts box", "gold textured background", "tiny print"],
+  "hard_cases": [
+    "whole label image rotated a few degrees",
+    "large red '10' overprinted on class/type text",
+    "brand printed as 'BULLEIT BOURBON' with TM between words",
+    "also 'FRONTIER WHISKEY' secondary designation",
+    "proof only in Serving Facts box",
+    "gold textured background",
+    "tiny print"
+  ],
   "unreadable_fields": [],
   "drafted_by": "draft",
-  "reviewed": false
+  "reviewed": true,
+  "reviewed_by": "AI-assisted check of every image (2026-10-08); not reviewed by the owner"
 }

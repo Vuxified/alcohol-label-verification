@@ -20,8 +20,16 @@
     "whole_warning_bold": "no",
     "orientation": "vertical"
   },
-  "hard_cases": ["vertical warning", "word 'PREGNANCY' hyphenated across line break ('PREG-' / 'NANCY')", "vertical side-panel text (address, net contents, ABV)", "script 'Pabst' brand font", "large '12 FLUID OUNCES' graphic on front in addition to side-panel net contents", "white text on dark blue banner (brand)"],
+  "hard_cases": [
+    "vertical warning",
+    "word 'PREGNANCY' hyphenated across line break ('PREG-' / 'NANCY')",
+    "vertical side-panel text (address, net contents, ABV)",
+    "script 'Pabst' brand font",
+    "large '12 FLUID OUNCES' graphic on front in addition to side-panel net contents",
+    "white text on dark blue banner (brand)"
+  ],
   "unreadable_fields": [],
   "drafted_by": "draft",
-  "reviewed": false
+  "reviewed": true,
+  "reviewed_by": "AI-assisted check of every image (2026-10-08); not reviewed by the owner"
 }

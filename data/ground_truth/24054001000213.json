@@ -31,5 +31,6 @@
   ],
   "unreadable_fields": [],
   "drafted_by": "draft",
-  "reviewed": false
+  "reviewed": true,
+  "reviewed_by": "AI-assisted check of every image (2026-10-08); not reviewed by the owner"
 }

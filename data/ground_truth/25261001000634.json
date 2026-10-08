@@ -20,8 +20,17 @@
     "whole_warning_bold": "no",
     "orientation": "vertical"
   },
-  "hard_cases": ["vertical warning", "very light grey text on white (low contrast)", "vertical brand name on red cartouche", "curved brand text in secondary logo", "vertical ABV/address block", "FIFA co-branding", "can wrap layout"],
+  "hard_cases": [
+    "vertical warning",
+    "very light grey text on white (low contrast)",
+    "vertical brand name on red cartouche",
+    "curved brand text in secondary logo",
+    "vertical ABV/address block",
+    "FIFA co-branding",
+    "can wrap layout"
+  ],
   "unreadable_fields": [],
   "drafted_by": "draft",
-  "reviewed": false
+  "reviewed": true,
+  "reviewed_by": "AI-assisted check of every image (2026-10-08); not reviewed by the owner"
 }

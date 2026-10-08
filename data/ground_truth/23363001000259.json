@@ -20,8 +20,17 @@
     "whole_warning_bold": "no",
     "orientation": "vertical"
   },
-  "hard_cases": ["vertical warning", "vertical side-panel text (ABV, net contents, address)", "light gray text on white", "tiny print", "condensed font", "class shown as 'Lager Beer' on front and 'BEER' on side panel", "can wrap flat layout"],
+  "hard_cases": [
+    "vertical warning",
+    "vertical side-panel text (ABV, net contents, address)",
+    "light gray text on white",
+    "tiny print",
+    "condensed font",
+    "class shown as 'Lager Beer' on front and 'BEER' on side panel",
+    "can wrap flat layout"
+  ],
   "unreadable_fields": [],
   "drafted_by": "draft",
-  "reviewed": false
+  "reviewed": true,
+  "reviewed_by": "AI-assisted check of every image (2026-10-08); not reviewed by the owner"
 }

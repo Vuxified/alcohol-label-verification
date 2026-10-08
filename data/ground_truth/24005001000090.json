@@ -20,8 +20,17 @@
     "whole_warning_bold": "yes",
     "orientation": "vertical"
   },
-  "hard_cases": ["vertical warning", "tiny print in low-resolution image (700px wide)", "very condensed font", "vertical net contents and address", "class designation on curved text", "brand also shows 'Light' in script", "back image is promotional photo grid with no mandatory info"],
+  "hard_cases": [
+    "vertical warning",
+    "tiny print in low-resolution image (700px wide)",
+    "very condensed font",
+    "vertical net contents and address",
+    "class designation on curved text",
+    "brand also shows 'Light' in script",
+    "back image is promotional photo grid with no mandatory info"
+  ],
   "unreadable_fields": [],
   "drafted_by": "draft",
-  "reviewed": false
+  "reviewed": true,
+  "reviewed_by": "AI-assisted check of every image (2026-10-08); not reviewed by the owner"
 }

@@ -20,8 +20,16 @@
     "whole_warning_bold": "no",
     "orientation": "other"
   },
-  "hard_cases": ["light text on dark background", "whole label rotated/skewed ~5 degrees", "proof only appears inside Serving Facts box ('120.2 proof')", "ABV split across two lines ('60.1%' / 'alc./vol.')", "two class phrases: 'BOURBON FRONTIER WHISKEY' and 'KENTUCKY STRAIGHT BOURBON WHISKEY'", "tiny print"],
+  "hard_cases": [
+    "light text on dark background",
+    "whole label rotated/skewed ~5 degrees",
+    "proof only appears inside Serving Facts box ('120.2 proof')",
+    "ABV split across two lines ('60.1%' / 'alc./vol.')",
+    "two class phrases: 'BOURBON FRONTIER WHISKEY' and 'KENTUCKY STRAIGHT BOURBON WHISKEY'",
+    "tiny print"
+  ],
   "unreadable_fields": [],
   "drafted_by": "draft",
-  "reviewed": false
+  "reviewed": true,
+  "reviewed_by": "AI-assisted check of every image (2026-10-08); not reviewed by the owner"
 }

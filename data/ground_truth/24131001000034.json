@@ -20,8 +20,17 @@
     "whole_warning_bold": "no",
     "orientation": "vertical"
   },
-  "hard_cases": ["vertical warning", "white text on busy blue illustrated background", "tiny low-resolution print", "brand only as small '450 North BREWING Co' logo; fanciful 'Blue Moon SCOOP' and 'SLUSHY XL' dominate", "second class statement '1 PINT SOUR ALE' on side panel", "star graphics overlapping text", "net contents given as both '1 PINT' and '16 FLUID OUNCES'"],
+  "hard_cases": [
+    "vertical warning",
+    "white text on busy blue illustrated background",
+    "tiny low-resolution print",
+    "brand only as small '450 North BREWING Co' logo; fanciful 'Blue Moon SCOOP' and 'SLUSHY XL' dominate",
+    "second class statement '1 PINT SOUR ALE' on side panel",
+    "star graphics overlapping text",
+    "net contents given as both '1 PINT' and '16 FLUID OUNCES'"
+  ],
   "unreadable_fields": [],
   "drafted_by": "draft",
-  "reviewed": false
+  "reviewed": true,
+  "reviewed_by": "AI-assisted check of every image (2026-10-08); not reviewed by the owner"
 }

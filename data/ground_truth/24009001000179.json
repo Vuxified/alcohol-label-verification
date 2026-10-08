@@ -20,8 +20,16 @@
     "whole_warning_bold": "no",
     "orientation": "vertical"
   },
-  "hard_cases": ["vertical warning", "brand name in curved text inside circular logo", "fanciful name (WEEKEND VIBES) more prominent than brand", "net contents in US units only (1 Pint)", "net contents and ABV on one line", "can wrap flat layout"],
+  "hard_cases": [
+    "vertical warning",
+    "brand name in curved text inside circular logo",
+    "fanciful name (WEEKEND VIBES) more prominent than brand",
+    "net contents in US units only (1 Pint)",
+    "net contents and ABV on one line",
+    "can wrap flat layout"
+  ],
   "unreadable_fields": [],
   "drafted_by": "draft",
-  "reviewed": false
+  "reviewed": true,
+  "reviewed_by": "AI-assisted check of every image (2026-10-08); not reviewed by the owner"
 }

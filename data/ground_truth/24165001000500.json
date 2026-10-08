@@ -20,8 +20,16 @@
     "whole_warning_bold": "unclear",
     "orientation": "other"
   },
-  "hard_cases": ["non-alcoholic product: no government warning, 0.0% ABV", "vertical side-panel text (net contents, address, class)", "white text on green", "tiny condensed print", "'0.0' in fanciful artwork could be confused with ABV", "net contents in US units only"],
+  "hard_cases": [
+    "non-alcoholic product: no government warning, 0.0% ABV",
+    "vertical side-panel text (net contents, address, class)",
+    "white text on green",
+    "tiny condensed print",
+    "'0.0' in fanciful artwork could be confused with ABV",
+    "net contents in US units only"
+  ],
   "unreadable_fields": [],
   "drafted_by": "draft",
-  "reviewed": false
+  "reviewed": true,
+  "reviewed_by": "AI-assisted check of every image (2026-10-08); not reviewed by the owner"
 }

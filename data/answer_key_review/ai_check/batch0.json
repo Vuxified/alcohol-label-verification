@@ -1,0 +1,13 @@
+{
+  "confirmed": ["23328001000154", "23363001000259", "24003001000423", "24008001000478", "24009001000368", "24011001000341", "24026001000499", "24030001000666", "24054001000213", "24088001000560", "24106001000780", "24127001000415", "24165001000500", "24235001000162", "25045001000301"],
+  "changes": [
+    {"id": "24039001000605", "field": "country_of_origin_text", "current": "PRODUCT OF USA", "proposed": null, "evidence": "01_brand_front_or_keg_collar.jpg, lower-left text block: 'Bottled by TUBES USA, Inc. | Napa ... | Wine by Kendall-Jackson Vineyards & Winery, Santa Rosa, CA | PRODUCT OF USA'. Domestic California wine (registry origin CALIFORNIA, BW-CA permit); the rule says country_of_origin_text is for imports only, null for domestic. The words are printed, so only the field-rule makes this a change.", "confidence": "medium"}
+  ],
+  "unsure": [
+    {"id": "24235001000162", "field": "country_of_origin_text", "note": "02_back.jpg top line prints 'FINISHED AND BOTTLED IN THE UNITED STATES'. Product is domestic (DSP-IL-58, origin ILLINOIS), so by the imports-only rule this would be null; but it is a Caribbean rum finished in the US, so the statement is origin-related. Same policy question as 24039001000605; owner to decide."},
+    {"id": "24235001000162", "field": "warning.whole_warning_bold", "note": "Sheet says 'unclear'. On 02_back.jpg the heading is heavy bold and the body is a condensed regular weight; 'no' looks right, but the condensed font is dark so 'unclear' is defensible."},
+    {"id": "24030001000666", "field": "class_type", "note": "Sheet 'BELGIAN-STYLE WHEAT ALE' is printed on the front (under BELGIAN WHITE) and is fine. The side panel of 01_brand_front_or_keg_collar.jpg also prints the fuller statement 'BELGIAN-STYLE WHEAT ALE BREWED WITH CORIANDER & ORANGE PEEL' (registry: flavored malt beverage specialty). Keep unless the owner wants the full statement of composition. 'PUERTO RICO' at top right is a market mark, not origin; null is correct."},
+    {"id": "23328001000154", "field": "class_type", "note": "Sheet 'STOUT'. Front prints 'FOREIGN EXTRA' / 'STOUT' on two lines; back text says 'GUINNESS FOREIGN EXTRA STOUT'. STOUT is fine; 'FOREIGN EXTRA STOUT' would also be fair. No change proposed."},
+    {"id": "24011001000341", "field": "abv_text/net_contents_text", "note": "Sheet uses the US sticker (03_other.png: '40 ALC/VOL (80 PROOF) | 750 ML'), which is printed and correct. The original label (01) also prints '40% vol.' and '75 cl'. No change; noting both exist."}
+  ]
+}

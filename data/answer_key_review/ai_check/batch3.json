@@ -1,0 +1,9 @@
+{
+  "confirmed": ["23362001000063", "24002001000458", "24005001000090", "24009001000331", "24010001000355", "24024001000735", "24029001000591", "24036001000395", "24053001000106", "24080001000826", "24100001000829", "24110001000176", "24131001000034", "24211001000421", "25037001000258", "25261001000634"],
+  "changes": [],
+  "unsure": [
+    {"id": "24131001000034", "field": "net_contents_text", "note": "01_brand_front_or_keg_collar.png, right-side vertical strip reads '1 PINT SOUR ALE | 16 FLUID OUNCES | 5.3% ALCOHOL BY VOLUME'. Sheet has '16 FLUID OUNCES' (correct); '1 PINT' is also printed but reads as part of '1 PINT SOUR ALE'. Same volume, so no change needed unless the sheet should record both."},
+    {"id": "24005001000090", "field": "net_contents_ml", "note": "Sheet has 354.88 for '12 FL OZ' (exact conversion); the stated convention is 355. Not a label-reading error; normalize only if the sheets should use 355."},
+    {"id": "25261001000634", "field": "net_contents_ml", "note": "Sheet has 354.88 for '12 FL.OZ.' (exact conversion); the stated convention is 355. Not a label-reading error; normalize only if the sheets should use 355."}
+  ]
+}

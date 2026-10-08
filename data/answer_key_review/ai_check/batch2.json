@@ -1,0 +1,8 @@
+{
+  "confirmed": ["23354001000635", "24002001000457", "24005001000055", "24009001000253", "24010001000342", "24022001000804", "24029001000162", "24036001000390", "24050001000325", "24072001001041", "24093001000856", "24107001001089", "24129001000760", "24207001000388", "25020001000666", "25076001000406"],
+  "changes": [],
+  "unsure": [
+    {"id": "24022001000804", "field": "net_contents_text", "note": "Sheet '16 FL. OZ. 1 PINT' matches the first line; the next line on 01_brand_front_or_keg_collar.jpg (right panel) reads 'BEER • 473ml', so the metric amount is printed too. Owner may want '16 FL. OZ. 1 PINT ... 473ml'. net_contents_ml 473 is already correct."},
+    {"id": "24010001000342", "field": "class_type", "note": "Sheet uses the statement of composition 'WHEAT ALE BREWED WITH LIME, ORANGE & LEMON PEELS, GRAINS OF PARADISE, & LEMON PUREE ADDED' (printed under the name on 01_brand_front_or_keg_collar.jpg). The large 'SUMMER ALE' above it also contains the class word ALE. Both models chose 'SUMMER ALE'. The sheet's choice follows the rules, so I left it unchanged."}
+  ]
+}

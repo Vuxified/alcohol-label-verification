@@ -20,8 +20,15 @@
     "whole_warning_bold": "no",
     "orientation": "vertical"
   },
-  "hard_cases": ["vertical warning", "vertical ABV/net contents/bottler text", "light blue text on white", "condensed tiny print", "label visually identical to the other Sutter Home Chardonnay sample (24127001000415 / 24173001000688)"],
+  "hard_cases": [
+    "vertical warning",
+    "vertical ABV/net contents/bottler text",
+    "light blue text on white",
+    "condensed tiny print",
+    "label visually identical to the other Sutter Home Chardonnay sample (24127001000415 / 24173001000688)"
+  ],
   "unreadable_fields": [],
   "drafted_by": "draft",
-  "reviewed": false
+  "reviewed": true,
+  "reviewed_by": "AI-assisted check of every image (2026-10-08); not reviewed by the owner"
 }

@@ -20,8 +20,16 @@
     "whole_warning_bold": "no",
     "orientation": "vertical"
   },
-  "hard_cases": ["vertical warning", "light blue text on dark navy", "vertical net contents and bottler address", "stylized brand logo on curved banner", "ABV under 'PUERTO RICO' heading", "neck label curved"],
+  "hard_cases": [
+    "vertical warning",
+    "light blue text on dark navy",
+    "vertical net contents and bottler address",
+    "stylized brand logo on curved banner",
+    "ABV under 'PUERTO RICO' heading",
+    "neck label curved"
+  ],
   "unreadable_fields": [],
   "drafted_by": "draft",
-  "reviewed": false
+  "reviewed": true,
+  "reviewed_by": "AI-assisted check of every image (2026-10-08); not reviewed by the owner"
 }

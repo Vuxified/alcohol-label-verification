@@ -20,8 +20,17 @@
     "whole_warning_bold": "no",
     "orientation": "horizontal"
   },
-  "hard_cases": ["very low-contrast pale pink text on white", "image files swapped (01_brand file is back label, 02_back is front)", "CMYK JPEG (colors shift when converted)", "space before % in ABV", "net contents and ABV on one line", "FPO placeholder barcode", "decorative tile artwork on front"],
+  "hard_cases": [
+    "very low-contrast pale pink text on white",
+    "image files swapped (01_brand file is back label, 02_back is front)",
+    "CMYK JPEG (colors shift when converted)",
+    "space before % in ABV",
+    "net contents and ABV on one line",
+    "FPO placeholder barcode",
+    "decorative tile artwork on front"
+  ],
   "unreadable_fields": [],
   "drafted_by": "draft",
-  "reviewed": false
+  "reviewed": true,
+  "reviewed_by": "AI-assisted check of every image (2026-10-08); not reviewed by the owner"
 }

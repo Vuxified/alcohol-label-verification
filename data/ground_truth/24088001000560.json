@@ -20,8 +20,17 @@
     "whole_warning_bold": "no",
     "orientation": "horizontal"
   },
-  "hard_cases": ["image files swapped (01_brand file is back label, 02_back is front)", "white text on black", "class differs between labels: 'RED BLEND' (front) vs 'RED WINE' (back)", "brand includes trailing period '19 Crimes.'", "second address line '19 CRIMES, 97 STURT HWY., NURIOOTPA SA 5355 AUSTRALIA'", "busy illustration on front", "typewriter/distressed fonts"],
+  "hard_cases": [
+    "image files swapped (01_brand file is back label, 02_back is front)",
+    "white text on black",
+    "class differs between labels: 'RED BLEND' (front) vs 'RED WINE' (back)",
+    "brand includes trailing period '19 Crimes.'",
+    "second address line '19 CRIMES, 97 STURT HWY., NURIOOTPA SA 5355 AUSTRALIA'",
+    "busy illustration on front",
+    "typewriter/distressed fonts"
+  ],
   "unreadable_fields": [],
   "drafted_by": "draft",
-  "reviewed": false
+  "reviewed": true,
+  "reviewed_by": "AI-assisted check of every image (2026-10-08); not reviewed by the owner"
 }

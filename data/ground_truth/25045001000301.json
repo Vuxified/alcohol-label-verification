@@ -20,8 +20,16 @@
     "whole_warning_bold": "no",
     "orientation": "horizontal"
   },
-  "hard_cases": ["word 'PREGNANCY' hyphenated across line break ('PREG-' / 'NANCY')", "net contents and ABV in tiny condensed text on gold strip", "proof only inside Serving Facts box ('(82.6 proof)')", "script 'Tanqueray' brand font", "two producer statements (Charles Tanqueray & Co. London vs importer Diageo)", "decorative border artwork"],
+  "hard_cases": [
+    "word 'PREGNANCY' hyphenated across line break ('PREG-' / 'NANCY')",
+    "net contents and ABV in tiny condensed text on gold strip",
+    "proof only inside Serving Facts box ('(82.6 proof)')",
+    "script 'Tanqueray' brand font",
+    "two producer statements (Charles Tanqueray & Co. London vs importer Diageo)",
+    "decorative border artwork"
+  ],
   "unreadable_fields": [],
   "drafted_by": "draft",
-  "reviewed": false
+  "reviewed": true,
+  "reviewed_by": "AI-assisted check of every image (2026-10-08); not reviewed by the owner"
 }

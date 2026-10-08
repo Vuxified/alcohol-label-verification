@@ -20,8 +20,16 @@
     "whole_warning_bold": "no",
     "orientation": "vertical"
   },
-  "hard_cases": ["vertical warning in narrow side panel", "vertical ABV/net contents/address", "script brand 'Pabst' over block 'Blue Ribbon'", "multiple net contents forms ('16 FLUID OUNCES', 'ONE PINT', '16 FL. OZ. (473 mL)')", "condensed tiny print", "can wrap layout with duplicated front panels"],
+  "hard_cases": [
+    "vertical warning in narrow side panel",
+    "vertical ABV/net contents/address",
+    "script brand 'Pabst' over block 'Blue Ribbon'",
+    "multiple net contents forms ('16 FLUID OUNCES', 'ONE PINT', '16 FL. OZ. (473 mL)')",
+    "condensed tiny print",
+    "can wrap layout with duplicated front panels"
+  ],
   "unreadable_fields": [],
   "drafted_by": "draft",
-  "reviewed": false
+  "reviewed": true,
+  "reviewed_by": "AI-assisted check of every image (2026-10-08); not reviewed by the owner"
 }
