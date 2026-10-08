@@ -12,6 +12,7 @@ import time
 from dataclasses import dataclass, field
 
 from app.ocr.reader import ApplicationReading, Reader
+from app.quality import quality_note
 from app.verify import Application, FieldResult, Verdict, verify
 from app.verify.model import SEVERITY
 from app.verify.verify import NON_ALCOHOLIC_BELOW
@@ -103,4 +104,8 @@ def check_application(reader: Reader, app: Application, images: list[tuple[str, 
                   for f in fields]
         if any(f.verdict == Verdict.CHECK for f in fields):  # only worth saying when something wasn't confirmed
             notes.append("Some extra reading passes ran out of time; anything not found is marked Please check.")
+    if any(f.verdict == Verdict.CHECK for f in fields):  # a hint about the pictures, only when something is unsure
+        hint = quality_note(reading.pictures)
+        if hint:
+            notes.append(hint)
     return CheckResult(app, fields, reading, round(time.perf_counter() - t0, 3), notes)
