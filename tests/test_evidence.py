@@ -66,3 +66,31 @@ def test_title_case_heading_by_two_engines_fails_caps():
     tc = REQUIRED.replace("GOVERNMENT WARNING", "Government Warning")
     _, caps = warning_fields(reading(("onnx", tc), ("tess", tc)))
     assert caps.verdict == Verdict.FAIL
+
+
+# An added word must never pass as "word for word" (independent review, 2026-10-08).
+INSERTED = REQUIRED.replace("beverages impairs", "beverages does not impair")
+
+
+def test_warning_with_added_words_is_never_a_match():
+    # Please check, not Does not match: text printed beside the warning ("ALC/VOL") gets mixed into both readers'
+    # output, so two readers agreeing on an extra word is not proof (two approved labels, 2026-10-08).
+    text, _ = warning_fields(reading(("onnx", INSERTED), ("tess", INSERTED)))
+    assert text.verdict == Verdict.CHECK
+
+
+def test_warning_with_added_word_seen_by_one_engine_is_please_check():
+    text, _ = warning_fields(reading(("onnx", REQUIRED.replace("should not drink", "should never not drink"))))
+    assert text.verdict == Verdict.CHECK
+
+
+def test_warning_with_reader_noise_still_matches():  # stray marks and 1-2 letter fragments are reader noise
+    noisy = REQUIRED.replace("beverages impairs", "beverages | e impairs")
+    text, _ = warning_fields(reading(("onnx", noisy)))
+    assert text.verdict == Verdict.PASS
+
+
+def test_warning_caps_disagreement_is_please_check():
+    tc = REQUIRED.replace("GOVERNMENT WARNING", "Government Warning")
+    _, caps = warning_fields(reading(("onnx", REQUIRED), ("tess", tc)))
+    assert caps.verdict == Verdict.CHECK

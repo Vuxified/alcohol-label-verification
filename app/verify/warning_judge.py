@@ -8,6 +8,8 @@ slips but never of a changed wording:
   - Junk tokens between required words are skipped; two words glued ("MACHINERYAND") or one word split
     ("bev erages") are recognised, a glued token only if each piece passes its own word's check.
   - A required word counts as present if ANY reading has it in its place.
+  - A real word (3+ letters) between two required words is an added word: "beverages does not impair" must never
+    pass. It is "check", never "nomatch": text printed beside the warning ("ALC/VOL") gets mixed into every reading.
 Verdicts:
   "match"   every required word present and the heading read in capitals;
   "nomatch" two different engine families show the SAME different word (or the same missing word) with the
@@ -108,6 +110,7 @@ def align(reading):
         return None
     s, n = h
     slots = [s, s + 1] if n == 2 else [s, s]
+    ends = list(slots)  # last token used by each required word (a split word uses two)
     j, i = s + n, 2
     while i < len(REQ):
         hit = None
@@ -129,13 +132,28 @@ def align(reading):
                     break
         if hit is None:
             slots.append(None)
+            ends.append(None)
             i += 1
         else:
             k, m, used = hit
             slots.extend([k] * m)
+            ends.extend([k + used - 1] * m)
             i += m
             j = k + used
-    return slots, toks
+    return slots, toks, ends
+
+
+def extra_words(al):
+    """Words a reading shows between two consecutive required words: {(position, word)}. Only real words count
+    (3+ letters, letters only); stray marks and 1-2 letter fragments are reader noise."""
+    slots, toks, ends = al
+    out = set()
+    for i in range(2, len(slots) - 1):
+        a, b = ends[i], slots[i + 1]
+        if a is None or b is None or b <= a + 1:
+            continue
+        out |= {(i, t) for t in toks[a + 1:b] if t.isalpha() and len(t) >= 3}
+    return out
 
 
 def heading_caps(reading):
@@ -152,7 +170,7 @@ def heading_caps(reading):
 def slot_evidence(al, i):
     """What a reading shows where required word i should be: ("sub", token) | ("drop",) | None. Only when the two
     required words on each side are matched, in order, with nothing between them."""
-    slots, toks = al
+    slots, toks = al[0], al[1]
     ctx_l = [slots[p] for p in range(i - 2, i)]
     ctx_r = [slots[p] for p in range(i + 1, min(i + 3, len(slots)))]
     if i < 2 or len(ctx_r) < 2 or None in ctx_l or None in ctx_r:
@@ -187,10 +205,12 @@ def judge_detail(readings):
         for e in {e for _, e in ev}:
             if len({f for f, x in ev if x == e}) >= 2:
                 words_strong = True
+    extra = set().union(*(extra_words(a) for _, a in pairs))
     capf = [(f, heading_caps(t)) for f, t in readings]
     caps = [c for _, c in capf if c is not None]
     caps_strong = bool(caps) and not any(caps) and len({f for f, c in capf if c is False}) >= 2
     return {"found": True, "missing": [REQ_RAW[i] for i in missing], "words_strong": words_strong,
+            "extra": sorted({w for _, w in extra}),
             "caps": caps, "caps_strong": caps_strong}
 
 
@@ -200,7 +220,7 @@ def judge(readings):
     if not d["found"]:
         return "none", []
     caps_bad = bool(d["caps"]) and not any(d["caps"])
-    if not d["missing"] and not caps_bad:
+    if not d["missing"] and not d["extra"] and not caps_bad:
         return "match", []
-    why = list(d["missing"]) + (["<heading not in capitals>"] if caps_bad else [])
+    why = list(d["missing"]) + [f"+{w}" for w in d["extra"]] + (["<heading not in capitals>"] if caps_bad else [])
     return ("nomatch" if d["words_strong"] or d["caps_strong"] else "check"), why

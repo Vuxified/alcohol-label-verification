@@ -26,6 +26,15 @@ from app.pipeline import check_application  # noqa: E402
 from app.verify import Application, Verdict  # noqa: E402
 
 DATA = ROOT / "data"
+# The field each planted mistake belongs to: that field must never come back "Matches" (a false pass hidden by an
+# unrelated "Please check" elsewhere on the label still counts).
+FIELD_OF = {"ABV": "abv", "PROOF": "proof", "NET_CONTENTS": "net_contents", "BRAND_NAME": "brand_name",
+            "CLASS_TYPE": "class_type", "WARNING_NOT_CAPS": "warning_caps", "WARNING_BOLD": "warning_bold",
+            "WARNING_TYPE_SIZE": "warning_size", "WARNING": "warning_text"}
+
+
+def field_of(code):
+    return next(f for prefix, f in FIELD_OF.items() if code.startswith(prefix))
 OUT = ROOT / "out" / "eval"
 
 
@@ -37,8 +46,10 @@ def cola_items(dev):
     for i in sorted(x[5:] for x in dev if x.startswith("cola_")):
         rec = json.loads((DATA / "cola_samples" / i / "record.json").read_text())
         gt = json.loads((DATA / "ground_truth" / f"{i}.json").read_text())
+        imported = rec.get("source") == "imported"
         app = Application(rec["product_type"] or "spirits", gt["brand_name"], gt.get("class_type"), gt.get("abv"),
-                          gt.get("net_contents_text"), source=rec.get("source", "domestic"))
+                          gt.get("net_contents_text"), gt.get("name_address_text"), rec.get("source", "domestic"),
+                          gt.get("country_of_origin_text") if imported else None)
         images = [(im["file"], (DATA / "cola_samples" / i / im["file"]).read_bytes()) for im in rec["images"]]
         yield i, "cola", app, images, {"overall": "approved", "warning_present": gt["warning"].get("present")}
 
@@ -95,8 +106,10 @@ def main():
             for f in res.fields:
                 if f.verdict == Verdict.FAIL:
                     false_fail.append((iid, f.field, f.code, f.reason[:120]))
-        elif expected["overall"] != "pass" and res.overall == Verdict.PASS:
-            false_pass.append((iid, expected))
+        elif expected["overall"] != "pass":
+            for code in expected.get("findings", []):
+                if verdicts.get(field_of(code)) == Verdict.PASS.value:
+                    false_pass.append((iid, field_of(code), code))
         print(f"[{n}/{len(items)}] {iid} {kind} {res.overall.value} {res.seconds:.2f}s "
               f"warning={verdicts.get('warning_text')} {' '.join(res.reading.passes)}", flush=True)
     print("\n== verdicts per field (pass / check / fail / n/a)")
@@ -105,7 +118,7 @@ def main():
     print(f"\n== FALSE FAILS on approved labels: {len(false_fail)}")
     for x in false_fail:
         print("  ", *x)
-    print(f"== FALSE PASSES on labels with a mistake: {len(false_pass)}")
+    print(f"== FALSE PASSES (the mistaken field said Matches): {len(false_pass)}")
     for x in false_pass:
         print("  ", *x)
     syn = [r for r in rows if r["kind"] == "syn" and r["expected"]["overall"] != "pass"]

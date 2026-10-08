@@ -30,15 +30,15 @@ The overall verdict for an application is the worst verdict among its fields.
 Before comparing, both sides are normalized:
 - Unicode NFKC; curly quotes and dashes become plain ones; accents removed.
 - Case ignored; extra spaces and line breaks collapsed; punctuation ignored except apostrophes inside words.
-- Common OCR look-alikes (`0/O`, `1/I/l`, `5/S`, `rn/m`) are forgiven on the OCR side only.
+- Spaces between words don't count: the reader sometimes drops one ("FourRoses" for "Four Roses").
 
-Scoring (character-level similarity after normalization):
+After normalization the label must show **the same text** to match. Close is not the same: in a long name one character can be "10 Year" vs "12 Year", so anything merely similar is **Please check**, showing what was read (changed 2026-10-08 after an independent code review found that a 95% similarity score let one wrong character through).
 
-| Score | Verdict |
+| After normalization | Verdict |
 |---|---|
-| 95–100 | Matches |
-| 85–94 | Please check |
-| below 85 | Please check (not found) |
+| Same text | Matches |
+| Similar (85% or more) | Please check |
+| Not found | Please check |
 
 Plus a **word rule**: if the value only appears inside a longer line, the result is **Please check**, showing that line. The longer line may be a different product ("Old Tom Reserve") or simply the bottler line ("BOTTLED BY SUTTER HOME FAMILY VINEYARDS"), which approved labels often carry next to a decorative brand.
 
@@ -50,15 +50,19 @@ Plus a **word rule**: if the value only appears inside a longer line, the result
 | Sutter Home | BOTTLED BY SUTTER HOME FAMILY VINEYARDS | Please check | Found only inside the bottler line; the brand itself may be decorative |
 | Copper Hollow | (not found) | Please check | Never Does not match: the reader may have missed decorative type |
 | Stone's Throw | Stone Throw | Please check | Possessive dropped; may be an OCR miss or a real change |
+| Eagle Rare 10 Year Old | EAGLE RARE 12 YEAR OLD | Please check | One character differs: never assumed to be a reading slip |
+| Four Roses | FourRoses | Matches | Only a space differs |
 | Kentucky Straight Bourbon Whiskey | KENTUCKY STRAIGHT BOURBON WHISKY | Matches | Class/type only: "the word whisky may be spelled as either 'whisky' or 'whiskey'" (§ 5.143). Brand names get no such allowance. |
 
 **Allowed spelling variants (class/type only):** whisky = whiskey (§ 5.143). This list grows only when a regulation allows a variant; each entry cites its section.
 
 **Class/type code vs. class/type on the label:** the TTB registry's "Class/Type Code" (e.g. OTHER STRAIGHT WHISKY) is a filing category, not the wording the label must carry (e.g. KENTUCKY STRAIGHT MALT WHISKEY). They are never compared word for word; the label wording is checked against the application's class/type statement.
 
-**Name and address:** checks that the bottler/importer name and city/state appear, along with the function phrase where required ("Bottled by," "Imported by").
+**Name and address:** every word of the application's statement must appear on the label to match; any missing word (a different street or city, or text the reader missed) gives **Please check**, listing the missing words.
 
-**Country of origin (imports):** checks for the country named on the application, e.g. "Product of Ireland."
+**Country of origin (imports):** checks for the country named on the application, e.g. "Product of Ireland." Not found gives Please check (TTB has approved imports whose country appears only in the importer's address or on the container).
+
+**Fanciful name:** checked like the brand name when the application gives one.
 
 ---
 
@@ -91,7 +95,7 @@ Proof is optional (§ 5.65(b)(1)(i)). If shown, it must equal **2 × alcohol by 
 
 ## 4. Net contents
 
-Parsed and converted to milliliters: mL ×1, cL ×10, L ×1000, fl oz ×29.5735, pint ×473.176. Compound forms are added ("1 PINT 8 FL. OZ." = 710 mL). Label and application match if they differ by 1% or less, or by 5 mL or less.
+Parsed and converted to milliliters: mL ×1, cL ×10, L ×1000, fl oz ×29.5735, pint ×473.176. Compound forms are added ("1 PINT 8 FL. OZ." = 710 mL). Label and application match if they differ by 0.4% or 1.5 mL, whichever is larger: enough for unit conversion (12 fl oz = 354.9 mL), but 350 mL and 355 mL are different sizes. "1,750 mL" is read as 1750.
 
 | Type | Units | Container sizes | Citation |
 |---|---|---|---|
@@ -109,13 +113,13 @@ A different amount that rests only on a bare letter "L" (e.g. "1 L") gives **Ple
 
 ## 5. Government Health Warning Statement
 
-Required on every alcohol beverage of 0.5% alcohol by volume or more, for all three types (Part 16). Below 0.5% a product is not an "alcoholic beverage" (27 CFR 16.10), so for a product declared below 0.5% the warning and alcohol content checks are skipped. It may be on the front, back, or side label (§ 16.21), so the app searches **all images** in the application.
+Required on every alcohol beverage of 0.5% alcohol by volume or more, for all three types (Part 16). Below 0.5% a product is not an "alcoholic beverage" (27 CFR 16.10), so for a product declared below 0.5% the warning and alcohol content checks are skipped, unless the label itself shows 0.5% or more (a typo such as 0.4 for 40 must not switch the checks off). It may be on the front, back, or side label (§ 16.21), so the app searches **all images** in the application.
 
 ### 5.1 Exact text (§ 16.21)
 
 > GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.
 
-- **Only line breaks, repeated spaces and words hyphenated across lines are forgiven** (labels wrap text). Every word and number must be present and in order; a changed, missing or added word gives **Does not match**.
+- **Only line breaks, repeated spaces and words hyphenated across lines are forgiven** (labels wrap text). Every word and number must be present and in order, with no words added ("beverages does not impair" never passes). A changed, missing or added word gives **Does not match** when two independent readings show the same change, and **Please check** when only one does (it may be a reader slip).
 - **Punctuation-only differences give Please check**, not Does not match. TTB has approved labels missing a single period in the statement (e.g. [ yellow tail ] Moscato, Robert Mondavi sparkling wine in our test set).
 - Differences are shown as a word-by-word comparison with changed words highlighted.
 - If the only differences are single characters the OCR read with low confidence, the result is **Please check**, not Does not match. The app shouldn't fail a label because of its own misread.
@@ -126,7 +130,7 @@ Required on every alcohol beverage of 0.5% alcohol by volume or more, for all th
 
 ### 5.3 Advisory checks (Pass or Please check only, never Does not match)
 
-**Bold heading (§ 16.22(a)(2)):** "GOVERNMENT WARNING" must be bold, and the rest may not be. The app compares the stroke thickness of the heading to the rest of the statement. Clearly heavier → Pass. Otherwise → Please check. It never fails this, because:
+**Bold heading (§ 16.22(a)(2)):** "GOVERNMENT WARNING" must be bold, and the rest may not be. The app compares the stroke thickness of the heading to the rest of the statement. Clearly heavier (at least 1.2 times as thick, set on the practice labels: regular headings measured 0.98–1.18, bold ones 1.46–2.31) → Pass. Otherwise → Please check. Too small, sideways or curved to measure → not checked. If the readings disagree on whether the heading is in capitals, the capitals check is Please check. It never fails the bold check, because:
 - OCR engines can't report bold reliably.
 - TTB has approved labels where the *entire* warning is set in heavy type (for example, a Jack Daniel's back label in our test set, TTB ID 24002001000457).
 

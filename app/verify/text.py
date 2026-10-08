@@ -7,9 +7,10 @@ from rapidfuzz import fuzz
 
 from .model import FieldResult, Verdict
 
-PASS_SCORE = 95
-CHECK_SCORE = 85
+CHECK_SCORE = 85  # close enough to show as "Please check"; a match needs the same text (case, punctuation, spacing aside)
 MAX_LINES_JOINED = 3  # a value may wrap across up to 3 label lines
+# "Bottled by …", "Produced & bottled by …", "Imported by …": the name in this line is the bottler, not proof of the brand.
+_BOTTLER = re.compile(r"\b(bottled|produced|brewed|vinted|distilled|imported|blended|cellared|made|canned)\b[^.]{0,40}?\bby\b", re.I)
 
 _PUNCT_MAP = str.maketrans({"’": "'", "‘": "'", "“": '"', "”": '"',
                             "–": "-", "—": "-", " ": " "})
@@ -50,13 +51,21 @@ def match_text(field: str, expected: str, lines: list[str]) -> FieldResult:
     want = norm(expected)
     best_score, best_text = 0.0, None
     for window in _windows(lines):
-        score = fuzz.ratio(want, norm(window))
+        got = norm(window)
+        # The reader sometimes drops the space between words ("FourRoses"): spacing alone never decides.
+        if got.replace(" ", "") == want.replace(" ", ""):
+            return FieldResult(field, Verdict.PASS, f'Label shows "{window}".', found=window)
+        # Anything else is at best close: one character can be "10" vs "12" in a long name, so never a match.
+        score = max(fuzz.ratio(want, got), fuzz.ratio(want.replace(" ", ""), got.replace(" ", "")))
         if score > best_score:
             best_score, best_text = score, window
-    if best_score >= PASS_SCORE:
-        return FieldResult(field, Verdict.PASS, f'Label shows "{best_text}".', found=best_text)
 
     contained = next((ln for ln in lines if re.search(rf"(?<!\S){re.escape(want)}(?!\S)", norm(ln))), None)
+    if contained and _BOTTLER.search(contained):
+        return FieldResult(field, Verdict.CHECK,
+                           f'"{expected}" was found only in the bottler line ("{contained}"). The brand itself may be '
+                           'in decorative lettering the reader could not read; please look at the label.',
+                           code=f"{field.upper()}_EXTRA_WORDS", found=contained)
     if contained:
         return FieldResult(field, Verdict.CHECK,
                            f'Label shows "{contained}", which adds words to "{expected}".',
@@ -71,15 +80,15 @@ def match_text(field: str, expected: str, lines: list[str]) -> FieldResult:
 
 
 def words_present(field: str, expected: str, lines: list[str]) -> FieldResult:
-    """Looser check for multi-part statements (name and address): share of expected words found."""
+    """Multi-part statements (name and address): every expected word must be on the label to match. A missing word
+    may be a different street or city, or text the reader missed, so it is "Please check", never "Does not match"."""
     want = normalize(expected).split()
     have = set(normalize(" ".join(lines)).split())
-    share = sum(w in have for w in want) / len(want) if want else 1.0
-    if share >= 0.9:
+    missing = [w for w in want if w not in have]
+    if not missing:
         return FieldResult(field, Verdict.PASS, "Name and address found on the label.")
-    if share >= 0.7:
-        missing = [w for w in want if w not in have]
+    if len(missing) < len(want):
         return FieldResult(field, Verdict.CHECK, f"Some words were not found: {', '.join(missing)}.",
                            code=f"{field.upper()}_PARTIAL")
-    return FieldResult(field, Verdict.FAIL, f'"{expected}" was not found on the label.',
+    return FieldResult(field, Verdict.CHECK, f'"{expected}" was not found on the label. Please look.',
                        code=f"{field.upper()}_MISMATCH")

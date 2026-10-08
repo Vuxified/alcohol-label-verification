@@ -30,6 +30,24 @@ def test_brand_matching(expected, label, verdict):
     assert match_text("brand_name", expected, ["Some other line", label]).verdict == verdict
 
 
+def test_brand_with_space_dropped_by_reader_matches():  # "FourRoses" read for "Four Roses" (TTB 24207001000388)
+    assert match_text("brand_name", "Four Roses", ["FourRoses"]).verdict == P
+
+
+def test_brand_only_in_bottler_line_says_so():
+    r = match_text("brand_name", "Cupcake", ["BOTTLED BY CUPCAKE VINEYARDS, LIVERMORE & RIPON, CA."])
+    assert r.verdict == C and "bottler" in r.reason
+
+
+def test_space_rule_does_not_hide_extra_words():
+    assert match_text("brand_name", "Old Tom", ["OldTomReserve"]).verdict != P
+
+
+def test_one_character_difference_in_a_long_name_is_not_a_match():  # independent review, 2026-10-08
+    assert match_text("brand_name", "Eagle Rare 10 Year Old", ["EAGLE RARE 12 YEAR OLD"]).verdict == C
+    assert match_text("class_type", "Kentucky Straight Bourbon Whisky", ["KENTUCKY STRAIGHT BOURBAN WHISKY"]).verdict == C
+
+
 def test_brand_split_across_lines():
     assert match_text("brand_name", "Old Tom Distillery", ["OLD TOM", "DISTILLERY"]).verdict == P
 
@@ -211,3 +229,51 @@ def test_overall_is_worst_field():
     app = Application("spirits", "OLD TOM DISTILLERY", abv=45, net_contents="750 mL")
     lines = ["OLD TOM DISTILLERY", "40% Alc./Vol.", "750 mL", REQUIRED]
     assert verify(app, lines).overall == F
+
+
+def test_name_address_not_found_is_check():  # independent review, 2026-10-08: not found is never Does not match
+    from app.verify.text import words_present
+    r = words_present("name_address", "Bottled by Old Tom Distillery, Bardstown, KY", ["750 mL", "45% Alc./Vol."])
+    assert r.verdict == C
+
+
+# --- independent review, 2026-10-08 -------------------------------------------
+
+def test_low_declared_alcohol_still_checked_when_label_shows_more():
+    report = verify(spirits(abv=0.4), ["OLD TOM DISTILLERY", "40% Alc./Vol."])
+    assert report.get("abv").verdict == F
+    assert report.get("warning_text").verdict != NA
+
+
+def test_real_non_alcoholic_label_skips_alcohol_and_warning():
+    report = verify(Application("malt", "Heineken 0.0", abv=0.0), ["Heineken 0.0", "0.0% ALC/VOL"])
+    assert report.get("abv").verdict == NA and report.get("warning_text").verdict == NA
+
+
+def test_fanciful_name_is_checked():
+    report = verify(spirits(fanciful_name="Man O' War"), ["OLD TOM DISTILLERY", "MAN O' WAR"])
+    assert report.get("fanciful_name").verdict == P
+    report = verify(spirits(fanciful_name="Man O' War"), ["OLD TOM DISTILLERY"])
+    assert report.get("fanciful_name").verdict == C
+
+
+def test_net_contents_close_sizes_are_different():
+    assert check_net_contents(spirits(net_contents="350 mL"), ["355 mL"]).verdict == F
+    assert check_net_contents(Application("malt", "X", net_contents="12 FL. OZ."), ["355 mL"]).verdict != F
+
+
+def test_net_contents_misread_to_an_impossible_size_is_check():  # "760ml" read for 750 mL on an approved wine
+    assert check_net_contents(Application("wine", "X", net_contents="750 mL"), ["760ml"]).verdict == C
+    assert check_net_contents(spirits(net_contents="750 mL"), ["7501 ML"]).verdict == C
+    assert check_net_contents(spirits(net_contents="750 mL"), ["700 mL"]).verdict == F  # a real, legal size
+
+
+def test_net_contents_thousands_comma():
+    assert parse_amount("1,750 mL") == 1750
+
+
+def test_country_must_be_a_country_statement():
+    imp = lambda: Application("spirits", "Old Tom", source="imported", country_of_origin="Mexico")
+    assert verify(imp(), ["OLD TOM", "PRODUCT OF MEXICO"]).get("country_of_origin").verdict == P
+    assert verify(imp(), ["OLD TOM", "Hecho en Mexico", "MEXICO"]).get("country_of_origin").verdict == P
+    assert verify(imp(), ["OLD TOM", "Bottled by Old Tom Co., Santa Fe, New Mexico"]).get("country_of_origin").verdict == C

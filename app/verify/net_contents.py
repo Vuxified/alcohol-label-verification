@@ -42,7 +42,9 @@ def find_amounts(text: str) -> list[Amount]:
         for m in pattern.finditer(text):
             if any(a <= m.start() < b for a, b in taken):
                 continue
-            value = float(m.group(1).replace(",", "."))
+            num = m.group(1)
+            # "1,750" is a thousands separator; "0,75" (European style) is a decimal comma
+            value = float(num.replace(",", "") if re.fullmatch(r"\d{1,3},\d{3}", num) else num.replace(",", "."))
             found.append(Amount(value * ML_PER[unit], m.group(0).strip(), unit in ("ml", "cl", "l")))
             taken.append(m.span())
     return found
@@ -54,7 +56,8 @@ def parse_amount(text: str) -> float | None:
 
 
 def _same(a: float, b: float) -> bool:
-    return abs(a - b) <= max(5.0, 0.01 * b)
+    """Equal up to unit-conversion rounding (12 fl oz = 354.9 mL), but 350 mL and 355 mL are different sizes."""
+    return abs(a - b) <= max(1.5, 0.004 * b)
 
 
 def check_net_contents(app: Application, lines: list[str]) -> FieldResult:
@@ -71,7 +74,14 @@ def check_net_contents(app: Application, lines: list[str]) -> FieldResult:
                            "Net contents not found on the label. It may be molded into the bottle; please confirm.",
                            code="NET_CONTENTS_NOT_FOUND")
     match = next((a for a in amounts if _same(a.ml, expected)), None)
+    fills = {"spirits": SPIRITS_FILLS, "wine": WINE_FILLS}.get(app.beverage_type)
     if not match:
+        if fills and not any(_same(a.ml, f) for a in amounts for f in fills):
+            # Not a legal container size for this product: far more likely a misread ("760ml" for 750 mL).
+            return FieldResult("net_contents", Verdict.CHECK,
+                               f'Label may say "{amounts[0].text}", which is not a standard size for {app.beverage_type}. '
+                               f'Application says "{app.net_contents}". Please look.',
+                               code="NET_CONTENTS_MISMATCH", found=amounts[0].text)
         if all(re.fullmatch(r"[\d.,]+\s*l", a.text, re.I) for a in amounts):
             # A bare "L" is easily a misread I, 1 or | (e.g. "1 L" read from can noise).
             return FieldResult("net_contents", Verdict.CHECK,
@@ -88,7 +98,6 @@ def check_net_contents(app: Application, lines: list[str]) -> FieldResult:
                            f'"12 FL. OZ."; metric may be added but not used instead (27 CFR 7.70). Unless the ounces are '
                            f'molded into the container, approval needs a qualification to add them.',
                            code="NET_CONTENTS_UNITS", found=match.text)
-    fills = {"spirits": SPIRITS_FILLS, "wine": WINE_FILLS}.get(app.beverage_type)
     if fills and not any(_same(match.ml, f) for f in fills):
         return FieldResult("net_contents", Verdict.CHECK,
                            f'"{match.text}" is not an authorized container size for {app.beverage_type}.',

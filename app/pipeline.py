@@ -12,10 +12,11 @@ import time
 from dataclasses import dataclass, field
 
 from app.ocr.reader import ApplicationReading, Reader
+from app.bold import bold_field
 from app.quality import quality_note
 from app.verify import Application, FieldResult, Verdict, verify
 from app.verify.model import SEVERITY
-from app.verify.verify import NON_ALCOHOLIC_BELOW
+from app.verify.verify import is_non_alcoholic
 from app.verify.warning_judge import judge_detail
 
 ANCHORS = re.compile(r"surgeon|pregnan|machinery|consumption|impairs", re.I)
@@ -66,7 +67,11 @@ def warning_fields(reading: ApplicationReading) -> list[FieldResult]:
                             'The "GOVERNMENT WARNING" statement was not found on any image. If it is on another side of '
                             "the container, add a picture of that side.", code="WARNING_MISSING"),
                 FieldResult("warning_caps", Verdict.NOT_APPLICABLE, "No warning found.")]
-    if not d["missing"]:
+    if d["extra"] and not d["missing"]:  # never Does not match: text beside the warning can mix into every reading
+        text = FieldResult("warning_text", Verdict.CHECK,
+                           "The warning may contain added words: " + _words(d["extra"])
+                           + ". Please compare it with 27 CFR 16.21.", code="WARNING_UNCONFIRMED")
+    elif not d["missing"]:
         text = FieldResult("warning_text", Verdict.PASS, "Warning text matches 27 CFR 16.21 word for word.")
     elif d["words_strong"]:
         text = FieldResult("warning_text", Verdict.FAIL,
@@ -76,7 +81,7 @@ def warning_fields(reading: ApplicationReading) -> list[FieldResult]:
         text = FieldResult("warning_text", Verdict.CHECK,
                            "Some words of the warning could not be confirmed: " + _words(d["missing"])
                            + ". Please compare it with 27 CFR 16.21.", code="WARNING_UNCONFIRMED")
-    if not d["caps"] or any(d["caps"]):
+    if not d["caps"] or all(d["caps"]):
         caps = FieldResult("warning_caps", Verdict.PASS, '"GOVERNMENT WARNING" is in capital letters.')
     elif d["caps_strong"]:
         caps = FieldResult("warning_caps", Verdict.FAIL, '"GOVERNMENT WARNING" is not in capital letters (27 CFR 16.22).',
@@ -92,10 +97,12 @@ def check_application(reader: Reader, app: Application, images: list[tuple[str, 
     reading = reader.read(images, fields_ok=_others_ok(app))
     report = verify(app, reading.lines())
     fields = [f for f in report.fields if not f.field.startswith("warning")]
-    if app.abv is not None and app.abv < NON_ALCOHOLIC_BELOW:
+    if is_non_alcoholic(app, reading.lines()):
         fields += [f for f in report.fields if f.field.startswith("warning")]  # not required below 0.5% alcohol
     else:
         fields += warning_fields(reading)
+        if not any(f.code in ("WARNING_MISSING", "WARNING_NOT_READ") for f in fields):  # bold only if a warning was read
+            fields.append(bold_field(reading.frames, reading.frame_words))
     notes = []
     if any(t.startswith(("tesseract", "inverted")) for t in reading.dropped):
         fields = [FieldResult(f.field, Verdict.CHECK, f.reason + " Part of the label was not read in time; please check.",
