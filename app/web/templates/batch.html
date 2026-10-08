@@ -88,12 +88,12 @@
   var VERDICT = {{ copy.VERDICT | tojson }}, FIELD_NAMES = {{ copy.FIELD_NAMES | tojson }};
   var WORD = { fail: 'Does not match', check: 'Please check', pass: 'Matches', 'n/a': 'Not applicable', error: 'Error' };
   var ORDER = { fail: 0, check: 1, error: 2, pass: 3 };
-  var BEV = { spirits: 'spirits', 'distilled spirits': 'spirits', wine: 'wine', malt: 'malt', beer: 'malt', 'malt beverage': 'malt' };
+  var BEV = Object.assign(Object.create(null), { spirits: 'spirits', 'distilled spirits': 'spirits', wine: 'wine', malt: 'malt', beer: 'malt', 'malt beverage': 'malt' });
   var $ = function (id) { return document.getElementById(id); };
   var show = function (id, on) { $(id).classList.toggle('app-hidden', !on); };
   var esc = function (t) { return String(t == null ? '' : t).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
 
-  var zip = null, entries = {}, jobs = [], results = [], cancelled = false, zipName = '', started = 0;
+  var zip = null, entries = Object.create(null), jobs = [], results = [], cancelled = false, zipName = '', started = 0;
 
   function decode(buf) {
     var text;
@@ -118,7 +118,7 @@
     try {
       var zf = $('zip').files[0]; zipName = zf.name;
       zip = await JSZip.loadAsync(zf);
-      entries = {};
+      entries = Object.create(null);
       zip.forEach(function (path, e) {
         var parts = path.split('/');
         if (e.dir || parts[0] === '__MACOSX' || parts.some(function (p) { return p.startsWith('.'); })) return;
@@ -196,7 +196,9 @@
   function sleep(ms) { return new Promise(function (r) { setTimeout(r, ms); }); }
 
   async function checkOne(job) {
-    var blobs = await Promise.all(job.files.map(function (f) { return f.entry.async('blob'); }));
+    var blobs;
+    try { blobs = await Promise.all(job.files.map(function (f) { return f.entry.async('blob'); })); }
+    catch (e) { return { error: 'An image in the ZIP could not be opened (' + (e.message || e) + ').' }; }
     for (var attempt = 0; ; attempt++) {
       try {
         var body = new FormData();
@@ -215,7 +217,7 @@
         }
         var r = await fetch('/api/check', { method: 'POST', body: body });
         var data = await r.json().catch(function () { return { error: 'The checker sent an unreadable answer.' }; });
-        if (r.status === 503 || r.status >= 500) throw new Error(data.error || ('status ' + r.status));
+        if (r.status === 429 || r.status >= 500) throw new Error(data.error || ('status ' + r.status));  // busy: retry
         if (!r.ok) return { error: data.error || ('status ' + r.status) };
         return data;
       } catch (e) {
@@ -299,7 +301,7 @@
   }
 
   $('download').addEventListener('click', function () {
-    var fields = ['brand_name', 'class_type', 'abv', 'proof', 'net_contents', 'name_address', 'country_of_origin', 'warning_text', 'warning_caps'];
+    var fields = ['brand_name', 'class_type', 'abv', 'proof', 'net_contents', 'name_address', 'country_of_origin', 'warning_text', 'warning_caps', 'warning_bold'];
     var head = ['application_id', 'overall'].concat(fields, ['reasons', 'images_read', 'seconds', 'error', 'checked_at_utc']);
     var lines = [head.join(',')];
     sorted().forEach(function (x) {

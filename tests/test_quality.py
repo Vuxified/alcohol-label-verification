@@ -34,3 +34,20 @@ def test_note_lists_only_the_poor_pictures():
             SimpleNamespace(name="back.jpg", full=np.asarray(label().filter(ImageFilter.GaussianBlur(4))))]
     assert quality_note(pics).startswith("Back.jpg looks blurry.")
     assert quality_note(pics[:1]) is None
+
+
+def test_bold_heading_is_measured_thicker_than_regular_text():
+    from PIL import ImageFont
+    from app.bold import stroke_width
+    try:
+        regular = ImageFont.truetype("tools/fonts/OldStandard-Regular.ttf", 40)
+        bold = ImageFont.truetype("tools/fonts/OldStandard-Bold.ttf", 40)
+    except OSError:
+        import pytest
+        pytest.skip("test fonts not available")
+
+    def word(font):
+        img = Image.new("L", (360, 60), 255)
+        ImageDraw.Draw(img).text((5, 5), "WARNING", font=font, fill=0)
+        return np.asarray(img)
+    assert stroke_width(word(bold)) > 1.25 * stroke_width(word(regular))

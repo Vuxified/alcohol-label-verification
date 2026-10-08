@@ -127,10 +127,13 @@ async def upload_links(n: int = 1):
 
 def _uploaded(keys, names):
     """(name, bytes) for each image the browser put in the bucket."""
-    out = []
+    out, seen = [], set()
     for key, name in zip(keys, names):
-        if not UPLOAD_KEY.fullmatch(key):
+        if not UPLOAD_KEY.fullmatch(key) or key in seen:
             continue
+        if len(out) == MAX_IMAGES + 1:  # one more than allowed is enough to report "too many"; never fetch thousands
+            break
+        seen.add(key)
         out.append((name, s3.get_object(Bucket=BUCKET, Key=key)["Body"].read()))
     return out
 
@@ -162,7 +165,8 @@ async def _read_request(data):
         errors.append(copy.ERRORS["brand"])
     if form["abv"]:
         try:
-            float(form["abv"].rstrip("%").strip())
+            if not 0 <= float(form["abv"].rstrip("%").strip()) <= 95:
+                errors.append(copy.ERRORS["abv"])
         except ValueError:
             errors.append(copy.ERRORS["abv"])
     return form, images, errors
@@ -253,9 +257,10 @@ def _results_page(request, res):
     counts = {v: sum(1 for f in res.fields if f.verdict == v) for v in Verdict}
     shapes = [fr.shape[:2] for fr in res.reading.frames]
     pics = []
-    for fr in res.reading.frames:
+    side = SHOW_SIDE if len(res.reading.frames) <= 2 else 1200 if len(res.reading.frames) <= 4 else 1000
+    for fr in res.reading.frames:  # smaller pictures when there are many: Lambda responses are capped at 6 MB
         img = Image.fromarray(fr)
-        img.thumbnail((SHOW_SIDE, SHOW_SIDE))  # boxes still line up: the overlay uses the full-size coordinates
+        img.thumbnail((side, side))  # boxes still line up: the overlay uses the full-size coordinates
         pics.append(_data_url(img, "JPEG"))
     crops = {field: _data_url(Image.open(io.BytesIO(crop_png(res.reading.frames[k], box))), "PNG")
              for field, (k, box) in ev.items()}
