@@ -19,6 +19,7 @@ A TTB agent uploads a label's images and types in what the application says. Wit
    - **Does not match:** a different value read clearly (label 45%, application 40%; "may" changed to "can" in the warning, confirmed by two independent readings).
    - **Please check:** anything the app can't be sure of, with what it found. *Not finding something is never "Does not match"*: it may be in script lettering, on a curved can, or on a side that wasn't photographed.
 5. **Never stricter than TTB.** Real approved labels must not come back "Does not match". Where TTB approves labels that stretch a rule (a missing period in the warning, metric-only beer with a qualification), the app says Please check. Evidence: [`docs/FINDINGS.md`](docs/FINDINGS.md).
+6. **Other approaches** (cloud AI models, AI upscaling, bottle-photo flattening, other OCR engines) were considered; what was tried and why each was or wasn't adopted is in [`docs/ALTERNATIVES.md`](docs/ALTERNATIVES.md).
 
 ## What it checks
 
@@ -30,7 +31,7 @@ A TTB agent uploads a label's images and types in what the application says. Wit
 | Net contents | Any unit (mL, L, fl oz, pints); standard container sizes; beer must show U.S. units (§ 7.70) |
 | Health warning | Part 16: word for word, "GOVERNMENT WARNING" in capitals; sideways, tiny and wrapped text handled |
 
-Not checked by design (listed in `docs/RULES.md` §7): sulfite and color-additive statements, bold and type size (advisory checks still being built).
+Also: the fanciful name (like the brand), the "GOVERNMENT WARNING" heading in bold (measured, advisory). Not checked by design (listed in `docs/RULES.md` §7): sulfite and color-additive statements, minimum type size.
 
 ## Results so far (practice labels)
 
@@ -39,9 +40,11 @@ Measured with `tools/evaluate.py` on the practice set (the final-test set is kep
 | | Result |
 |---|---|
 | 64 real TTB-approved labels | **0** wrongly marked "Does not match" |
-| 64 generated labels with planted mistakes | **0** mistakes marked "Matches", except the two advisory checks not built yet (bold heading, type size) |
-| Health warning on approved labels | 39 confirmed word for word; the rest Please check (mostly print too small to read) |
-| Speed on AWS, warm | 1–3 s per label typical; up to about 5 s when the warning is too small to read |
+| 64 generated labels with planted mistakes | 54 named exactly; 2 reworded warnings flagged Please check; **0** checked items wrongly marked "Matches" (scored item by item). The 8 with warning print too small are not detected as such, because type size isn't checked: 5 of them came back "Matches". |
+| Health warning on approved labels | 48 of 64 confirmed word for word; the rest Please check (mostly print too small to read) |
+| Speed (laptop, 4 cores) | typical 2.3 s, slowest 4.4 s per real label; on AWS, typical 1–3 s |
+
+Measured 2026-10-08 (`out/eval_dev4.log`, not committed). Minimum type size is not checked.
 
 **Final test (held-out labels, run once on Oct 13):** _to be filled in with the numbers exactly as measured._
 
@@ -74,10 +77,10 @@ docker run --rm -p 8080:8080 label-check           # open http://localhost:8080
 ## Limitations and trade-offs
 
 - **Script logos and curved text** often can't be read; the brand or class/type then says Please check rather than guessing.
-- **Bold heading and minimum type size** are not checked yet (advisory only: TTB treats them that way in practice).
 - **Batch** needs the browser tab to stay open; results live in the page until downloaded as a spreadsheet.
 - **No COLA integration** (out of scope per the brief); the agent types the application values, or supplies them in the batch spreadsheet.
-- Prototype only: no login, and not an official U.S. Government system.
+- **Bold heading** is measured (stroke thickness) when the warning is large and straight enough; **minimum type size** is not checked (both are advisory: TTB states it does not review type size).
+- **Public prototype:** no login. Cost is capped by limiting the checker to 12 copies running at once, plus a budget alert. Not an official U.S. Government system.
 
 ## Repository map
 
