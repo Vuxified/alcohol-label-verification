@@ -43,6 +43,12 @@ def _others_ok(app: Application):
     return ok
 
 
+def _words(words: list[str], show: int = 6) -> str:
+    """The first few words, then a count, so a mostly unread warning doesn't print 30 words."""
+    shown = ", ".join(f'"{w}"' for w in words[:show])
+    return shown + (f" and {len(words) - show} more" if len(words) > show else "")
+
+
 def warning_fields(reading: ApplicationReading) -> list[FieldResult]:
     d = judge_detail(reading.warning_readings())
     if not d["found"]:
@@ -64,10 +70,10 @@ def warning_fields(reading: ApplicationReading) -> list[FieldResult]:
     elif d["words_strong"]:
         text = FieldResult("warning_text", Verdict.FAIL,
                            "Two independent readings show the warning worded differently near: "
-                           + ", ".join(f'"{w}"' for w in d["missing"]) + ".", code="WARNING_TEXT_ALTERED")
+                           + _words(d["missing"]) + ".", code="WARNING_TEXT_ALTERED")
     else:
         text = FieldResult("warning_text", Verdict.CHECK,
-                           "Some words of the warning could not be confirmed: " + ", ".join(f'"{w}"' for w in d["missing"])
+                           "Some words of the warning could not be confirmed: " + _words(d["missing"])
                            + ". Please compare it with 27 CFR 16.21.", code="WARNING_UNCONFIRMED")
     if not d["caps"] or any(d["caps"]):
         caps = FieldResult("warning_caps", Verdict.PASS, '"GOVERNMENT WARNING" is in capital letters.')
@@ -91,9 +97,10 @@ def check_application(reader: Reader, app: Application, images: list[tuple[str, 
         fields += warning_fields(reading)
     notes = []
     if any(t.startswith(("tesseract", "inverted")) for t in reading.dropped):
-        notes.append("Some extra reading passes ran out of time; anything not found is marked Please check.")
         fields = [FieldResult(f.field, Verdict.CHECK, f.reason + " Part of the label was not read in time; please check.",
                               code=f.code, found=f.found)
                   if f.verdict == Verdict.FAIL and f.code and f.code.endswith(("MISSING", "NOT_FOUND", "MISMATCH")) else f
                   for f in fields]
+        if any(f.verdict == Verdict.CHECK for f in fields):  # only worth saying when something wasn't confirmed
+            notes.append("Some extra reading passes ran out of time; anything not found is marked Please check.")
     return CheckResult(app, fields, reading, round(time.perf_counter() - t0, 3), notes)

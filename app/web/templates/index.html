@@ -86,30 +86,40 @@
       return setInterval(function () { b.textContent = 'Checking… ' + ((Date.now() - t0) / 1000).toFixed(1) + ' s'; }, 100);
     }
     {% if upload_to_bucket %}
-    // Each image goes straight to private storage (requests to the checker are capped at 6 MB), then the form is sent
-    // with only the storage keys.
-    f.addEventListener('submit', async function (ev) {
-      ev.preventDefault(); var timer = started();
-      f.querySelectorAll('input[name=upload_keys], input[name=upload_names]').forEach(function (h) { h.remove(); });
-      var input = document.getElementById('images'), files = Array.from(input.files).slice(0, 6);
-      try {
-        var links = await (await fetch('/upload-links?n=' + files.length)).json();
-        await Promise.all(files.map(async function (file, i) {
+    // Each image goes straight to private storage (requests to the checker are capped at 6 MB). Uploading starts as
+    // soon as the pictures are chosen, so it happens while the agent types; the form is then sent with only the keys.
+    var input = document.getElementById('images'), pending = null;
+    function uploadAll() {
+      var files = Array.from(input.files).slice(0, 6);
+      if (!files.length) return Promise.resolve([]);
+      return fetch('/upload-links?n=' + files.length).then(function (r) { return r.json(); }).then(function (links) {
+        return Promise.all(files.map(function (file, i) {
           var body = new FormData();
           Object.entries(links[i].fields).forEach(function (kv) { body.append(kv[0], kv[1]); });
           body.append('file', file);
-          var r = await fetch(links[i].url, { method: 'POST', body: body });
-          if (!r.ok) throw new Error('upload ' + r.status);
+          return fetch(links[i].url, { method: 'POST', body: body }).then(function (r) {
+            if (!r.ok) throw new Error('upload ' + r.status);
+            return [links[i].fields.key, file.name];
+          });
         }));
-        files.forEach(function (file, i) {  // in the order chosen, not the order the uploads finished
-          [['upload_keys', links[i].fields.key], ['upload_names', file.name]].forEach(function (kv) {
+      });
+    }
+    input.addEventListener('change', function () { pending = uploadAll(); pending.catch(function () {}); });
+    f.addEventListener('submit', async function (ev) {
+      ev.preventDefault(); var timer = started();
+      f.querySelectorAll('input[name=upload_keys], input[name=upload_names]').forEach(function (h) { h.remove(); });
+      try {
+        var done;
+        try { done = await (pending || uploadAll()); } catch (e) { done = await uploadAll(); }  // one retry
+        done.forEach(function (kn) {  // in the order chosen, not the order the uploads finished
+          [['upload_keys', kn[0]], ['upload_names', kn[1]]].forEach(function (kv) {
             var h = document.createElement('input'); h.type = 'hidden'; h.name = kv[0]; h.value = kv[1]; f.appendChild(h);
           });
         });
         input.disabled = true; f.enctype = 'application/x-www-form-urlencoded';
         HTMLFormElement.prototype.submit.call(f);  // f.submit is the button with id="submit"
       } catch (e) {
-        clearInterval(timer);
+        clearInterval(timer); pending = null;
         s.querySelector('p').textContent = 'The images could not be uploaded. Please check your connection and try again.';
         b.disabled = false; b.textContent = 'Check label';
       }

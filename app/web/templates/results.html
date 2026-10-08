@@ -28,7 +28,7 @@
         {% if f.field in ev %}
           <img class="app-crop" src="{{ crops[f.field] }}" alt="Part of image {{ ev[f.field][0] + 1 }} showing {{ (f.found or copy.FIELD_NAMES.get(f.field, f.field))|e }}">
           <p class="app-small"><a href="#pic-{{ ev[f.field][0] }}">Show on label (image {{ ev[f.field][0] + 1 }})</a></p>
-        {% elif f.verdict.value in ('fail', 'check') %}<p class="app-small">Not located on the label.</p>{% endif %}
+        {% elif f.verdict.value in ('fail', 'check') %}<p class="app-small">{% if f.found %}Read from the label, but its place on the picture could not be marked.{% else %}Not found on the label images.{% endif %}</p>{% endif %}
       </li>
     {% endfor %}
     </ol>
