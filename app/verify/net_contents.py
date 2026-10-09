@@ -17,14 +17,14 @@ WINE_FILLS = {3000, 2250, 1800, 1500, 1000, 750, 720, 700, 620, 600, 568, 550, 5
 # A whole number only: not the tail of a longer one, nor a number right after a lone digit ("7 50 ML" is not a clear
 # 50 mL: the reader split 750). The unit may be glued to what follows ("750mL40%ALC/VOL") or joined by a dash.
 _N = r"(?<![\d.,])(?<!(?<![\d.,])\d\s)(\d+(?:[.,]\d+)?)"  # "070 750mL" (a barcode before it) is fine
-_TO = r"(?:\s*|-)"  # "750 ML", "750ML", "750-ML"; not "2 - L" (noise)
+_TO = r"(?:\s*|-|\.)"  # "750 ML", "750ML", "750-ML", "750.ml"; not "2 - L" (noise)
 _END = r"(?![a-z])"
 _UNIT_PATTERNS = [
     ("fl oz", re.compile(rf"{_N}{_TO}(?:u\.?s\.?\s*)?fl(?:uid)?\.?\s*(?:oz\.?|ounces?{_END})", re.I)),
     ("pint", re.compile(rf"{_N}{_TO}(?:pints?|pts?){_END}\.?", re.I)),
     ("quart", re.compile(rf"{_N}{_TO}(?:quarts?|qts?){_END}\.?", re.I)),
     ("gal", re.compile(rf"{_N}{_TO}(?:u\.?s\.?\s*)?gal(?:lons?|\.)?{_END}", re.I)),
-    ("ml", re.compile(rf"{_N}{_TO}(?:ml|millilit(?:er|re)s?){_END}", re.I)),
+    ("ml", re.compile(rf"{_N}{_TO}(?:ml|millilit(?:er|re)s?)(?:e(?![a-z]))?{_END}", re.I)),  # "750mle": the ℮ mark
     ("cl", re.compile(rf"{_N}{_TO}(?:cl|centilit(?:er|re)s?){_END}", re.I)),
     ("l", re.compile(rf"{_N}{_TO}(?:l|ltrs?|lit(?:er|re)s?){_END}(?!\s*/)", re.I)),
 ]
@@ -42,6 +42,15 @@ class Amount:
     ml: float
     text: str
     metric: bool
+
+
+# The M of "ML" read as W or N ("750WL", "750NL"): used only to confirm the declared amount, never to find another.
+_LOOKALIKE_ML = re.compile(rf"{_N}\s*[wn]l(?![a-z])", re.I)
+
+
+def lookalike_ml(text: str, expected: float) -> str | None:
+    return next((m.group(0) for m in _LOOKALIKE_ML.finditer(text) if _same(float(m.group(1).replace(",", ".")), expected)),
+                None)
 
 
 def find_amounts(text: str) -> list[Amount]:
@@ -97,7 +106,14 @@ def check_net_contents(app: Application, lines: list[str]) -> FieldResult:
     if expected is None:
         return FieldResult("net_contents", Verdict.CHECK, f'Could not understand the application value "{app.net_contents}".',
                            code="NET_CONTENTS_UNPARSED")
-    amounts = find_amounts(" ".join(lines))
+    text = " ".join(lines)
+    amounts = find_amounts(text)
+    look = None if any(_same(a.ml, expected) for a in amounts) else lookalike_ml(text, expected)
+    other_sizes = {"spirits": SPIRITS_FILLS, "wine": WINE_FILLS}.get(app.beverage_type) or MALT_SIZES_ML
+    if look and not any(_same(a.ml, f) for a in amounts for f in other_sizes):
+        return FieldResult("net_contents", Verdict.PASS,
+                           f'Label shows "{look}" (the M of ML read as a look-alike letter), as the application says.',
+                           found=look)
     if not amounts:
         # Net contents may be blown or molded into the container instead (5.63, 7.63), so not a fail.
         return FieldResult("net_contents", Verdict.CHECK,

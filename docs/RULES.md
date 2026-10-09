@@ -134,6 +134,8 @@ A size that isn't an authorized standard of fill for spirits or wine gives **Ple
 
 Net contents not found on any label image gives **Please check**, not a fail, for the same reason (27 CFR 5.63(b)(2), 7.63(a)(5)).
 
+Read glitches seen on approved labels are forgiven: the estimated-quantity mark ℮ read as a glued letter ("750mle"), a period before the unit ("750.ml"). The M of "ML" read as W or N ("750WL") confirms the declared amount only when no other container size is on the label, and never fails one.
+
 A different amount that rests only on a bare letter "L" (e.g. "1 L") gives **Please check**: on curved cans the reader produces strings like "I 1 1 E 1 L" from noise. A clearly read different amount ("700 mL" for "750 mL") is **Does not match**.
 
 ---

@@ -489,7 +489,7 @@ for lab in ["750 ML", "750ML", "750 mL", "750 ml", "750 ML.", "750ML e", "750 mL
 add("B", NC, "750 mL", ["750", "ML"], P, "split lines")
 add("B", NC, "750 mL", ["750", "", "ML"], P, "split with blank line")
 add("B", NC, "750 mL", "750mL40%ALC/VOL", P, "glued to ABV (QUESTION: \\b fails after mL)")
-add("B", NC, "750 mL", "750 mLe", C, "estimated sign glued as letter e: not found is fine")
+add("B", NC, "750 mL", "750 mLe", P, "estimated sign (℮) read as a glued letter e (changed 2026-10-09: real labels read so)")
 add("B", NC, "750 mL", "7S0 ML", C, "5 for S")
 add("B", NC, "750 mL", "75O ML", C, "O for 0")
 add("B", NC, "750 mL", "750 MI", C, "L read as I")
