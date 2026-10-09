@@ -39,6 +39,15 @@ def _windows(lines: list[str]):
                 yield " ".join(lines[i:i + n])
 
 
+def _only_numbers_differ(want: str, got: str) -> bool:
+    """Same words in the same order, and every difference is one whole number read as another ("10" vs "12").
+    A clearly read different number is Does not match (owner decision 2026-10-09; age statements, 27 CFR 5.74);
+    anything less clear ("1O", a different word as well) stays Please check."""
+    a, b = want.split(), got.split()
+    pairs = [(x, y) for x, y in zip(a, b) if x != y]
+    return len(a) == len(b) and bool(pairs) and all(x.isdigit() and y.isdigit() for x, y in pairs)
+
+
 def match_text(field: str, expected: str, lines: list[str]) -> FieldResult:
     """Find `expected` in the label lines.
 
@@ -70,6 +79,10 @@ def match_text(field: str, expected: str, lines: list[str]) -> FieldResult:
         return FieldResult(field, Verdict.CHECK,
                            f'Label shows "{contained}", which adds words to "{expected}".',
                            code=f"{field.upper()}_EXTRA_WORDS", found=contained)
+    if best_text and _only_numbers_differ(want, norm(best_text)):
+        return FieldResult(field, Verdict.FAIL,
+                           f'Label shows "{best_text}". The number differs from "{expected}".',
+                           code=f"{field.upper()}_NUMBER_DIFFERS", found=best_text)
     if best_score >= CHECK_SCORE:
         return FieldResult(field, Verdict.CHECK,
                            f'Label shows "{best_text}", which is close to "{expected}" but not the same.',

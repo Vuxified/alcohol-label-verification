@@ -32,11 +32,12 @@ Before comparing, both sides are normalized:
 - Case ignored; extra spaces and line breaks collapsed; punctuation ignored except apostrophes inside words.
 - Spaces between words don't count: the reader sometimes drops one ("FourRoses" for "Four Roses").
 
-After normalization the label must show **the same text** to match. Close is not the same: in a long name one character can be "10 Year" vs "12 Year", so anything merely similar is **Please check**, showing what was read (changed 2026-10-08 after an independent code review found that a 95% similarity score let one wrong character through).
+After normalization the label must show **the same text** to match. Close is not the same: in a long name one character can be "10 Year" vs "12 Year", so anything merely similar is **Please check**, showing what was read (changed 2026-10-08 after an independent code review found that a 95% similarity score let one wrong character through). The exception is a **clearly read different number**: when every word is the same and the only difference is one whole number read as another ("10" vs "12"), the result is **Does not match** (owner decision 2026-10-09). The label must be identical to the approved application (§ 5.22(a)), and when the number is an age, stating more than the real age is prohibited (§ 5.74(a)(2)). Anything less clear ("1O" with a letter O, or a different word as well) stays Please check.
 
 | After normalization | Verdict |
 |---|---|
 | Same text | Matches |
+| Same words, one whole number different | Does not match |
 | Similar (85% or more) | Please check |
 | Not found | Please check |
 
@@ -50,7 +51,8 @@ Plus a **word rule**: if the value only appears inside a longer line, the result
 | Sutter Home | BOTTLED BY SUTTER HOME FAMILY VINEYARDS | Please check | Found only inside the bottler line; the brand itself may be decorative |
 | Copper Hollow | (not found) | Please check | Never Does not match: the reader may have missed decorative type |
 | Stone's Throw | Stone Throw | Please check | Possessive dropped; may be an OCR miss or a real change |
-| Eagle Rare 10 Year Old | EAGLE RARE 12 YEAR OLD | Please check | One character differs: never assumed to be a reading slip |
+| Eagle Rare 10 Year Old | EAGLE RARE 12 YEAR OLD | Does not match | A clearly read different number (§ 5.22(a), § 5.74(a)(2)) |
+| Eagle Rare 10 Year Old | EAGLE RARE 1O YEAR OLD | Please check | Letter O instead of a zero: may be a reading slip |
 | Four Roses | FourRoses | Matches | Only a space differs |
 | Kentucky Straight Bourbon Whiskey | KENTUCKY STRAIGHT BOURBON WHISKY | Matches | Class/type only: "the word whisky may be spelled as either 'whisky' or 'whiskey'" (§ 5.143). Brand names get no such allowance. |
 

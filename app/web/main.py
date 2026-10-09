@@ -272,7 +272,7 @@ def _results_page(request, res):
     plain = {}
     for f in attention:  # say a near match in plain words: "The label shows 12 where the application says 10."
         d = diffs.get(f.field)
-        if d and (f.code or "").endswith("_NEAR_MATCH"):
+        if d and (f.code or "").endswith(("_NEAR_MATCH", "_NUMBER_DIFFERS")):
             a, b = [" ".join(w for w, differs in side if differs) for side in d]
             if a and b:
                 plain[f.field] = copy.NEAR_MATCH.format(label=b, app=a)

@@ -44,8 +44,18 @@ def test_space_rule_does_not_hide_extra_words():
 
 
 def test_one_character_difference_in_a_long_name_is_not_a_match():  # independent review, 2026-10-08
-    assert match_text("brand_name", "Eagle Rare 10 Year Old", ["EAGLE RARE 12 YEAR OLD"]).verdict == C
     assert match_text("class_type", "Kentucky Straight Bourbon Whisky", ["KENTUCKY STRAIGHT BOURBAN WHISKY"]).verdict == C
+
+
+def test_a_clearly_read_different_number_does_not_match():  # owner decision, 2026-10-09
+    r = match_text("brand_name", "Eagle Rare 10 Year Old", ["EAGLE RARE 12 YEAR OLD"])
+    assert r.verdict == F and r.code == "BRAND_NAME_NUMBER_DIFFERS" and r.found == "EAGLE RARE 12 YEAR OLD"
+
+
+def test_a_number_that_is_not_clearly_read_stays_please_check():
+    assert match_text("brand_name", "Eagle Rare 10 Year Old", ["EAGLE RARE 1O YEAR OLD"]).verdict == C  # letter O
+    assert match_text("brand_name", "Eagle Rare 10 Year Old", ["EAGLE RARE 12 YEAR"]).verdict == C  # a word differs too
+    assert match_text("brand_name", "Eagle Rare 10", ["EAGLE RARE 10 12"]).verdict != F  # extra number, not a different one
 
 
 def test_brand_split_across_lines():

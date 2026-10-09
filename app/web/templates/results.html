@@ -45,7 +45,7 @@
         <figcaption>Close-up from picture {{ ev[f.field][0] + 1 }}</figcaption></figure>
       {% endif %}
       <p class="app-why">{{ plain.get(f.field) or f.reason }}</p>
-      {% if f.field in plain %}<p class="app-small">{{ copy.NEAR_MATCH_WHY }}</p>{% endif %}
+      {% if f.field in plain and f.verdict == Verdict.CHECK %}<p class="app-small">{{ copy.NEAR_MATCH_WHY }}</p>{% endif %}
       {% if f.field == "warning_text" and warning_parts %}{% set kinds = warning_parts | map(attribute=1) | list %}
       <p class="app-small">{% if "missing" in kinds %}<del>Struck out</del>: required, but not found on the label. {% endif %}{% if "label" in kinds or "extra" in kinds %}<ins>Underlined</ins>: what the label shows instead or in addition.{% endif %}</p>{% endif %}
     </section>
