@@ -10,6 +10,7 @@ slips but never of a changed wording:
   - A required word counts as present if ANY reading has it in its place.
   - A real word (3+ letters) between two required words is an added word: "beverages does not impair" must never
     pass. It is "check", never "nomatch": text printed beside the warning ("ALC/VOL") gets mixed into every reading.
+    One seen by a single reading while two other readings show that spot clean is reader noise, and is dismissed.
 Verdicts:
   "match"   every required word present and the heading read in capitals;
   "nomatch" two different engine families show the SAME different word (or the same missing word) with the
@@ -156,6 +157,13 @@ def extra_words(al):
     return out
 
 
+def clean_gaps(al):
+    """Positions where a reading shows two consecutive required words side by side, with nothing between them."""
+    slots, ends = al[0], al[2]
+    return {i for i in range(2, len(slots) - 1)
+            if ends[i] is not None and slots[i + 1] is not None and slots[i + 1] == ends[i] + 1}
+
+
 def heading_caps(reading):
     """True / False whether the heading is read in capitals; None without a heading."""
     raw = tokenize(reading)
@@ -205,7 +213,12 @@ def judge_detail(readings):
         for e in {e for _, e in ev}:
             if len({f for f, x in ev if x == e}) >= 2:
                 words_strong = True
-    extra = set().union(*(extra_words(a) for _, a in pairs))
+    # An added word seen by only one reading, where two other readings show that very spot clean, is reader noise
+    # ("thf", "kof"). A really inserted word is in most readings, so it is never dismissed this way.
+    seen = [extra_words(a) for _, a in pairs]
+    clean = [clean_gaps(a) for _, a in pairs]
+    extra = {x for x in set().union(*seen)
+             if sum(x in e for e in seen) > 1 or sum(x[0] in c for c in clean) < 2}
     capf = [(f, heading_caps(t)) for f, t in readings]
     caps = [c for _, c in capf if c is not None]
     caps_strong = bool(caps) and not any(caps) and len({f for f, c in capf if c is False}) >= 2
