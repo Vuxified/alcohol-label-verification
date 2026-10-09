@@ -22,6 +22,10 @@ _BELOW = re.compile(r"(?:less\s+than|under|below|<)\s*$", re.I)  # "LESS THAN 0.
 MAX_PROOF = 200  # 100% alcohol
 _TABLE_WINE = re.compile(r"\b(table|light)\s+wine\b", re.I)
 _ABV_ABBREVIATION = re.compile(r"\babv\b", re.I)
+# Alcohol wording near a bare percentage: "alc", "alcohol", "vol", "volume", "abv"; never "alcoholic" (the warning).
+_ALC_WORDING = re.compile(r"alc(?![a-z])|alcohol(?!ic)|abv|vol(?:ume)?(?![a-z])", re.I)
+_PERCENT = re.compile(r"(\d{1,2}(?:[.,]\d{1,2})?)\s*%")
+NEARBY = 30  # characters either side
 
 
 _TYPED_NUMBER = re.compile(r"\d+(?:[.,]\d+)?|(?<![a-z])[.,]\d+")  # ".5", but "Alc.13%" is 13
@@ -64,6 +68,21 @@ def find_abv(text: str) -> list[AbvReading]:
     return list(found.values())
 
 
+def nearby_abv(text: str, value: float) -> str | None:
+    """The application's own number with a % sign, alcohol wording within a few words ("23% 46 750 ALC/VOL",
+    "ALC30% byvol"): the text shown, or None. Used only to confirm the declared value, never to find a different one."""
+    for m in _PERCENT.finditer(text):
+        before = text[:m.start()]
+        if before[-1:].isdigit() or before[-1:] in ".," or (before[-1:].isalpha() and not before.lower().endswith("alc")):
+            continue  # the tail of a longer number, or glued to a word other than "ALC"
+        if abs(float(m.group(1).replace(",", ".")) - value) >= 0.05:
+            continue
+        window = text[max(0, m.start() - NEARBY):m.end() + NEARBY]
+        if _ALC_WORDING.search(window):
+            return window.strip()
+    return None
+
+
 def find_proof(text: str) -> list[float]:
     return [float(m.group(1)) for m in _PROOF.finditer(text)]
 
@@ -101,6 +120,10 @@ def check_abv(app: Application, lines: list[str]) -> FieldResult:
         return FieldResult("abv", Verdict.FAIL,
                            f'Label says "{shown.text}". Application says {app.abv:g}%.',
                            code="ABV_MISMATCH", found=shown.text)
+    near = nearby_abv(text, app.abv)
+    if near:
+        return FieldResult("abv", Verdict.PASS, f'Label shows {app.abv:g}% with its alcohol wording nearby: "{near}".',
+                           found=f"{app.abv:g}%")
     if app.beverage_type == "wine" and app.abv <= 14 and _TABLE_WINE.search(text):
         return FieldResult("abv", Verdict.PASS,
                            'No alcohol content on the label; allowed at 14% or less because it says "table wine" (27 CFR 4.36).')
