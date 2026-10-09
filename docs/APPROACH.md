@@ -55,6 +55,11 @@ So the app answers each item with **Matches**, **Does not match** or **Please ch
   beer sizes with a qualification. The app says Please check there ([FINDINGS.md](FINDINGS.md)).
 - **Reading limits**: script logos and very small or curved text are often unread, so those items say Please check.
   How often that happens on a grader's own labels is unknown until they try.
+- **A misread that looks like a real difference**: digit misreads that keep the number plausible are guarded
+  (only the end of a number read, "8%" for 4.8; look-alike digits, "1,8%" for 4.8). One case is not: a stray extra
+  digit ("115.5 U.S. Gallons" read for 15.5 on a keg label) still gives Does not match. Guarding it would also hide
+  real differences (45% vs 45.3%, 750 mL vs 1750 mL), so it is left as a known limit: 1 of 262 real labels in the
+  2026-10-09 run.
 - **Open judgment calls**: whether a clearly different stated country ("PRODUCT OF CANADA" for Mexico) should be Does not
   match (today Please check), and whether a street address on the application must also be on the label (city and state
   are what § 5.66 requires; today Please check).
@@ -78,6 +83,7 @@ So the app answers each item with **Matches**, **Does not match** or **Please ch
 | 144 generated labels with planted mistakes (wrong alcohol, changed warning words, title-case heading, …), from 36 label designs | Built and used (96 practice, 48 final test; split by design, so no final-test design is seen in practice) |
 | 312 photo-style copies of real labels (blur, glare, tilt, low light) and 808 rotated copies | Built; used to measure the reader, not yet in the regular scorecard |
 | 44 real bottle photos (Open Food Facts; 32 practice, 12 final test) | Collected; not yet in the regular scorecard |
-| 86 more real approved labels from the registry (43 wine, 31 spirits, 12 beer), collected 2026-10-04 | Collected; answer key not yet drafted |
-| Real approved labels with one planted change (alcohol, size, a warning word) | Planned |
-| Realistic bottle scenes generated around our exact label images (the label pixels are ours, so the right answer is known) | Planned. An earlier try showed that letting an image model draw the label itself rewrites its text, so those images can't be scored. |
+| 78 more real approved labels from the registry (collected 2026-10-04) | Built and used; answer key checked against the images with AI assistance |
+| 85 more real approved labels (40 beer, 27 spirits, 18 wine; one per brand and company), fetched 2026-10-09 | Built and used; answer keys await the owner's review |
+| 180 real approved labels with one planted change (alcohol, size, proof, a warning word changed or deleted, title-case heading, brand), in two sets (`tools/make_tampered.py`) | Built and used: no changed item came back Matches |
+| 76 photo-style pictures of 35 real labels (angles up to 45°, close-ups, cans), and 54 of generated labels; the label pixels are ours, only the scene is drawn by an image model (`tools/make_scenes.py`) | Built; the real-label set is used. Letting an image model draw the label itself rewrites its text, so those images can't be scored. |

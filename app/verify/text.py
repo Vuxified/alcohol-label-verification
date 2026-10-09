@@ -62,6 +62,19 @@ madeira vermouth cabernet merlot chardonnay pinot noir grigio gris sauvignon bla
 moscato muscat tempranillo sangiovese chianti prosecco cava""".split())
 # Digits a reader mixes up: one read as another is never assumed to be a real difference.
 _LOOKALIKE_DIGITS = {frozenset(p) for p in ("08", "17", "38", "56", "68", "14", "89", "58")}
+# For printed amounts (alcohol, size): the pairs readers actually swap in numerals, so "45%" vs "46%" still fails.
+_NUMERAL_LOOKALIKES = {frozenset(p) for p in ("08", "17", "14", "38")}
+
+
+def could_be_misread(want: str, got: str) -> bool:
+    """Digits of a number the label shows vs the application's: only the end of it was read ("50" for 750, "8" for
+    4.8), or it differs only in digits readers confuse (1/4, 0/8, ...). Such a reading is never Does not match."""
+    a, b = re.sub(r"\D", "", want).lstrip("0"), re.sub(r"\D", "", got).lstrip("0")
+    if not a or not b or a == b:
+        return False
+    if len(b) < len(a) and a.endswith(b):
+        return True
+    return len(a) == len(b) and all(x == y or frozenset((x, y)) in _NUMERAL_LOOKALIKES for x, y in zip(a, b))
 
 
 def _one_type_word_differs(want: str, got: str) -> bool:

@@ -4,6 +4,7 @@ import re
 from dataclasses import dataclass
 
 from .model import Application, FieldResult, Verdict
+from .text import could_be_misread
 
 # A whole number only: never the tail of "455" or "l2", nor a digit after "4 " ("4 5%" is not a clear 5%). A comma is
 # a decimal point on imported labels ("12,5% VOL").
@@ -91,6 +92,12 @@ def check_abv(app: Application, lines: list[str]) -> FieldResult:
         return FieldResult("abv", Verdict.PASS, f'Label says "{hit.text}".', found=hit.text)
     if readings:
         shown = readings[0]
+        if all(not re.search(r"%|percent", r.text, re.I) or could_be_misread(f"{app.abv:g}", f"{r.value:g}")
+               for r in readings):
+            # "8%" for 4.8, "1,8%" for 4.8 (look-alike digit), or "12 ALC/VOL" with no "%": not a clear reading
+            return FieldResult("abv", Verdict.CHECK,
+                               f'Label may say "{shown.text}", but the number may be only partly read. '
+                               f"Application says {app.abv:g}%. Please look.", code="ABV_UNCLEAR", found=shown.text)
         return FieldResult("abv", Verdict.FAIL,
                            f'Label says "{shown.text}". Application says {app.abv:g}%.',
                            code="ABV_MISMATCH", found=shown.text)

@@ -4,6 +4,7 @@ import re
 from dataclasses import dataclass
 
 from .model import Application, FieldResult, Verdict
+from .text import could_be_misread
 
 ML_PER = {"ml": 1, "cl": 10, "l": 1000, "fl oz": 29.5735, "pint": 473.176, "quart": 946.353, "gal": 3785.41}
 
@@ -127,6 +128,11 @@ def check_net_contents(app: Application, lines: list[str]) -> FieldResult:
             # A bare "L" is easily a misread I, 1 or | (e.g. "1 L" read from can noise).
             return FieldResult("net_contents", Verdict.CHECK,
                                f'Label may say "{amounts[0].text}". Application says "{app.net_contents}". Please look.',
+                               code="NET_CONTENTS_MISMATCH", found=amounts[0].text)
+        if all(could_be_misread(f"{expected:g}", f"{a.ml:g}") for a in amounts):  # "50ML" for 750 mL
+            return FieldResult("net_contents", Verdict.CHECK,
+                               f'Label may say "{amounts[0].text}", but the number may be only partly read. '
+                               f'Application says "{app.net_contents}". Please look.',
                                code="NET_CONTENTS_MISMATCH", found=amounts[0].text)
         return FieldResult("net_contents", Verdict.FAIL,
                            f'Label says "{amounts[0].text}". Application says "{app.net_contents}".',
