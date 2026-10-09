@@ -266,4 +266,17 @@ def _results_page(request, res):
              for field, (k, box) in ev.items()}
     return templates.TemplateResponse(request, "results.html", {
         "res": res, "rows": rows, "ev": ev, "counts": counts, "Verdict": Verdict, "shapes": shapes,
-        "names": [p.name for p in res.reading.pictures], "pics": pics, "crops": crops})
+        "names": [p.name for p in res.reading.pictures], "pics": pics, "crops": crops, "asked": _asked(res.form)})
+
+
+def _asked(form) -> dict:
+    """What the application says, per result row, shown beside what the label shows."""
+    abv = (form.get("abv") or "").rstrip("%").strip()
+    return {"brand_name": form.get("brand_name"), "fanciful_name": form.get("fanciful_name"),
+            "class_type": form.get("class_type"), "abv": f"{abv}%" if abv else None,
+            "proof": f"{2 * float(abv):g} Proof, if shown (twice the alcohol content)"
+                     if abv and form.get("beverage_type") == "spirits" else None,
+            "net_contents": form.get("net_contents"), "name_address": form.get("name_address"),
+            "country_of_origin": form.get("country_of_origin"),
+            "warning_text": "The exact wording required by 27 CFR 16.21",
+            "warning_caps": '"GOVERNMENT WARNING" in capital letters', "warning_bold": '"GOVERNMENT WARNING" in bold'}

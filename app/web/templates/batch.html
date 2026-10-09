@@ -1,19 +1,22 @@
 {% extends "base.html" %}
 {% block title %}Check many labels – Label Check{% endblock %}
 {% block content %}
-<h1>Check many labels at once</h1>
-<p class="usa-intro">Add one ZIP file with the label images and one spreadsheet (CSV) with a row per application. We check them all and give you a results spreadsheet.</p>
+<p class="app-eyebrow">Check many labels</p>
+<h1>Check a whole batch at once</h1>
+<p class="app-lede">Add one ZIP file with the label pictures and one spreadsheet (CSV) with a row per application. We check them all, show what needs attention first, and give you a results spreadsheet.</p>
 
-<section class="usa-summary-box app-samples" aria-labelledby="sample-heading">
-  <div class="usa-summary-box__body">
-    <h2 class="usa-summary-box__heading" id="sample-heading">No files handy?</h2>
+<div class="app-layout">
+<div>
+<section class="app-panel app-side" aria-labelledby="sample-heading" style="margin-bottom:1.5rem">
+  <div>
+    <h2 id="sample-heading">No files handy?</h2>
     <p><a class="usa-link" href="/static/sample-batch.zip" download>Download a sample batch</a> (22 applications; the spreadsheet is inside the ZIP), then add it below.
        Two of its rows are broken on purpose, to show that one bad row doesn't stop the rest.</p>
   </div>
 </section>
 
 <div id="setup">
-  <form class="usa-form usa-form--large" id="batch-form">
+  <form class="usa-form usa-form--large app-panel" id="batch-form" style="max-width:none">
     <label class="usa-label" for="zip">1. ZIP file with the label images</label>
     <span class="usa-hint" id="zip-hint">Up to 500 applications, up to 6 images each (JPG, PNG or WEBP, up to 10 MB each).</span>
     <input class="usa-file-input" id="zip" type="file" accept=".zip,application/zip" required aria-describedby="zip-hint">
@@ -22,7 +25,8 @@
     <span class="usa-hint" id="csv-hint">If the ZIP contains <code>manifest.csv</code>, you can skip this.</span>
     <input class="usa-file-input" id="csv" type="file" accept=".csv,text/csv" aria-describedby="csv-hint">
 
-    <button class="usa-button usa-button--big app-full" type="submit" id="read">Read the files</button>
+    <div class="app-submit"><button class="usa-button" type="submit" id="read">Read the files</button>
+      <span class="app-small">Nothing is checked until you confirm on the next step.</span></div>
   </form>
 
   <details class="app-columns">
@@ -56,10 +60,10 @@
 </div>
 
 <div id="run" class="app-hidden">
-  <p class="app-topline"><strong id="run-title"></strong><button class="usa-button usa-button--secondary" id="cancel" type="button">Cancel batch</button></p>
+  <div class="app-runbar"><h2 id="run-title" style="margin:0"></h2><button class="usa-button usa-button--secondary" id="cancel" type="button">Cancel batch</button></div>
   <p id="run-progress-text"></p>
   <progress id="bar" max="100" value="0" aria-labelledby="run-progress-text" class="app-progress"></progress>
-  <p id="run-counts"></p>
+  <div id="run-counts" class="app-counts"></div>
   <p class="app-small">Keep this page open until the batch finishes. Results are not saved on the server: download the spreadsheet to keep them.</p>
   <div role="status" class="usa-sr-only" id="announce"></div>
   <p><button class="usa-button" id="download" type="button">Download results (CSV)</button>
@@ -69,13 +73,25 @@
     <div class="usa-radio"><input class="usa-radio__input" type="radio" name="show" id="show-attn" value="attn" checked><label class="usa-radio__label" for="show-attn">Needs attention</label></div>
     <div class="usa-radio"><input class="usa-radio__input" type="radio" name="show" id="show-all" value="all"><label class="usa-radio__label" for="show-all">All</label></div>
   </fieldset>
-  <table class="usa-table usa-table--borderless usa-table--stacked app-batch-table">
+  <table class="app-table app-batch-table">
     <thead><tr><th scope="col">Application</th><th scope="col">Result</th><th scope="col">Why</th></tr></thead>
     <tbody id="rows"></tbody>
   </table>
 </div>
 
-<p><strong>{{ copy.DISCLAIMER }}</strong></p>
+<div class="app-decide"><strong>{{ copy.DISCLAIMER }}</strong></div>
+</div>
+<aside class="app-panel app-side">
+  <h2>How it works</h2>
+  <ul class="app-checklist">
+    <li>Add the ZIP and spreadsheet<small>Or one ZIP with manifest.csv inside</small></li>
+    <li>We list any problems first<small>Missing pictures, bad values</small></li>
+    <li>Several labels are checked at a time<small>About 10 seconds for 20</small></li>
+    <li>Needs-attention rows come first</li>
+    <li>Download the results spreadsheet</li>
+  </ul>
+</aside>
+</div>
 {% endblock %}
 {% block scripts %}
 <script src="/static/vendor/jszip.min.js"></script>
@@ -245,15 +261,15 @@
       left = ' · about ' + (s > 90 ? Math.round(s / 60) + ' minutes' : s + ' seconds') + ' left';
     }
     $('run-progress-text').textContent = done + ' of ' + total + ' checked' + left + (cancelled && done < total ? ' · cancelled' : '');
-    $('run-counts').innerHTML = '<span class="' + VERDICT.fail[2] + '">' + VERDICT.fail[0] + ' ' + c.fail + ' do not match</span> ' +
-      '<span class="' + VERDICT.check[2] + '">' + VERDICT.check[0] + ' ' + c.check + ' please check</span> ' +
-      '<span class="' + VERDICT.pass[2] + '">' + VERDICT.pass[0] + ' ' + c.pass + ' match</span> ' +
-      (c.error ? '<span class="usa-tag bg-base-darkest">' + c.error + ' errors</span>' : '');
+    $('run-counts').innerHTML = '<span class="app-verdict app-verdict--fail">' + VERDICT.fail[0] + ' ' + c.fail + ' do not match</span> ' +
+      '<span class="app-verdict app-verdict--check">' + VERDICT.check[0] + ' ' + c.check + ' please check</span> ' +
+      '<span class="app-verdict app-verdict--pass">' + VERDICT.pass[0] + ' ' + c.pass + ' match</span> ' +
+      (c.error ? '<span class="app-verdict app-verdict--error">' + c.error + ' errors</span>' : '');
     var all = document.querySelector('input[name=show]:checked').value === 'all';
     var rows = sorted().filter(function (x) { return all || x.overall !== 'pass'; });
     $('rows').innerHTML = rows.map(function (x) {
-      var v = VERDICT[x.overall] || ['!', 'Error', 'usa-tag bg-base-darkest'];
-      return '<tr><th scope="row" data-label="Application">' + esc(x.id) + '</th><td data-label="Result"><span class="' + v[2] + '">' + v[0] + ' ' + esc(WORD[x.overall] || v[1]) +
+      var v = VERDICT[x.overall] || ['!', 'Error'];
+      return '<tr class="is-' + x.overall + '"><th scope="row" data-label="Application">' + esc(x.id) + '</th><td data-label="Result"><span class="app-verdict app-verdict--' + x.overall + '">' + v[0] + ' ' + esc(WORD[x.overall] || v[1]) +
         '</span></td><td data-label="Why">' + esc(x.reasons || 'Every item checked matches.') + '</td></tr>';
     }).join('') || '<tr><td colspan="3">' + (done ? 'Nothing needs attention so far.' : 'Starting…') + '</td></tr>';
     if (total) {
