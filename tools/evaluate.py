@@ -107,7 +107,7 @@ def pct(xs, q):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--name", required=True)
-    ap.add_argument("--set", default="cola,syn", help="any of cola,syn,cola2,tampered,scenes,scenes_real (all but the first two: practice only)")
+    ap.add_argument("--set", default="cola,syn", help="any of cola,syn,cola2,tampered,tampered_extra,scenes,scenes_real (all but the first two: practice only)")
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--cpus", type=int, default=4)
     ap.add_argument("--final", action="store_true", help="the one-time final test on the held-out labels")
@@ -130,6 +130,8 @@ def main():
             items += list(cola_items(extra_ids(), "cola2"))
         if "tampered" in sets:
             items += list(item_dirs("tampered", "tampered"))
+        if "tampered_extra" in sets:  # made from the 78 extra labels, kept apart from reader training
+            items += list(item_dirs("tampered_extra", "tampered_x"))
         if "scenes" in sets:
             items += list(item_dirs("scenes", "scene"))
         if "scenes_real" in sets:  # real approved labels photographed in scenes: scored like approved labels
