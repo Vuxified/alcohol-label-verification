@@ -78,6 +78,10 @@ REJECTED = {
     "cola_24011001000341__warning_titlecase": "only GOVERNMENT was re-cased (WARNING stayed in capitals)",
     "cola_24107001001085__warning_titlecase": "only WARNING was re-cased (GOVERNMENT stayed in capitals)",
     "cola_24129001000620__brand_word": "closing up the line garbled the next word (lifestyle)",
+    "cola_24127001000415__brand_word": "only the small bottler line was changed (SUTTER HILL); the brand logo still "
+                                       "reads SUTTER HOME (the reader could not read the logo when it was made)",
+    "cola_24173001000688__brand_word": "only the small bottler line was changed (SUTTER HILL); the brand logo still "
+                                       "reads SUTTER HOME (the reader could not read the logo when it was made)",
     # extra set
     "cola_25212001000725__warning_titlecase": "the tail of the g in Warning was cut off (reads Warnina)",
     "cola_25293001000020__abv": "the decimal point was lost (12 2%)",

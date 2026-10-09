@@ -64,6 +64,49 @@ class _Pair:
         return [x if x[1] >= y[1] else y for x, y in zip(a, b)]
 
 
+COLUMN_GAP = 1.5  # a gap wider than this many line heights inside a line separates two columns
+
+
+def reading_order(lines: list[list[tuple]]) -> list[str]:
+    """OnnxTR's lines run straight across the picture, so a column printed beside the warning was spliced into the
+    warning's lines ("... ALCOHOLIC CHARDONNAY BEVERAGES ..."). Each line is cut at gaps wider than COLUMN_GAP line
+    heights; the pieces are stacked into columns (a piece joins the column it overlaps, just below its last piece),
+    and the columns are read one after the other, top to bottom. lines: [[(text, (x0, y0, x1, y1)), ...], ...]."""
+    def box(seg):
+        return (min(b[0] for _, b in seg), min(b[1] for _, b in seg), max(b[2] for _, b in seg), max(b[3] for _, b in seg))
+
+    segs = []
+    for ln in lines:
+        ws = sorted(ln, key=lambda w: w[1][0])
+        if not ws:
+            continue
+        h = float(np.median([b[3] - b[1] for _, b in ws]))
+        cur = [ws[0]]
+        for w in ws[1:]:
+            if w[1][0] - cur[-1][1][2] > COLUMN_GAP * h:
+                segs.append(cur)
+                cur = [w]
+            else:
+                cur.append(w)
+        segs.append(cur)
+    cols = []  # [box of the column's last piece, [pieces]]
+    for seg in sorted(segs, key=lambda s: (box(s)[1] + box(s)[3]) / 2):
+        x0, y0, x1, y1 = box(seg)
+        best = None
+        for c in cols:
+            cx0, _, cx1, cy1 = c[0]
+            overlap = min(x1, cx1) - max(x0, cx0)
+            if overlap > 0.3 * min(x1 - x0, cx1 - cx0) and y0 - cy1 < 2.5 * (y1 - y0) and (best is None or overlap > best[0]):
+                best = (overlap, c)
+        if best:
+            best[1][0] = (x0, y0, x1, y1)
+            best[1][1].append(seg)
+        else:
+            cols.append([(x0, y0, x1, y1), [seg]])
+    cols.sort(key=lambda c: box(c[1][0])[:2][::-1])
+    return [" ".join(t for t, _ in seg) for c in cols for seg in c[1]]
+
+
 @dataclass
 class Text:
     lines: list[str]
@@ -103,15 +146,17 @@ class OnnxEngine:
             doc = p([img])
         finally:
             self.q.put(p)
-        lines, words = [], []
+        rows, words = [], []
         for block in doc.pages[0].blocks:
             for ln in block.lines:
-                lines.append(" ".join(wd.value for wd in ln.words))
+                row = []
                 for wd in ln.words:
                     g = np.array(wd.geometry).reshape(-1, 2)
                     (x0, y0), (x1, y1) = g.min(0), g.max(0)
                     words.append((wd.value, float(wd.confidence), (x0 * w, y0 * h, x1 * w, y1 * h)))
-        return Text(lines, words)
+                    row.append((wd.value, (x0 * w, y0 * h, x1 * w, y1 * h)))
+                rows.append(row)
+        return Text(reading_order(rows), words)
 
     def detect(self, img: np.ndarray, det_size: int) -> list[tuple]:
         """Detector only: word boxes in pixels."""

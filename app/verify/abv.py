@@ -146,9 +146,15 @@ def check_proof(app: Application, lines: list[str]) -> FieldResult:
     if all(p > MAX_PROOF for p in proofs):  # a misread, e.g. "82.6" read as "826"
         return FieldResult("proof", Verdict.CHECK, f"Proof read as {proofs[0]:g}, which is not possible. Please look.",
                            code="PROOF_MISMATCH")
-    if any(abs(p - 2 * a) < 0.15 for p in proofs for a in abvs):
-        return FieldResult("proof", Verdict.PASS, f"{proofs[0]:g} Proof is twice the alcohol content.",
-                           found=f"{proofs[0]:g} Proof")
+    fits = [p for p in proofs if any(abs(p - 2 * a) < 0.15 for a in abvs)]
+    others = sorted({p for p in proofs if p not in fits and p <= MAX_PROOF})
+    if fits and others:  # the label contradicts itself (or one is a misread): a person decides
+        return FieldResult("proof", Verdict.CHECK,
+                           f"Label shows {fits[0]:g} Proof and also {', '.join(f'{p:g}' for p in others)} Proof.",
+                           code="PROOF_CONFLICT", found=f"{fits[0]:g} Proof")
+    if fits:
+        return FieldResult("proof", Verdict.PASS, f"{fits[0]:g} Proof is twice the alcohol content.",
+                           found=f"{fits[0]:g} Proof")
     return FieldResult("proof", Verdict.FAIL,
                        f"Label says {proofs[0]:g} Proof, but {abvs[0]:g}% alcohol is {2 * abvs[0]:g} Proof.",
                        code="PROOF_MISMATCH")

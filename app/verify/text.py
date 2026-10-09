@@ -156,9 +156,37 @@ def _address_words(text: str) -> list[str]:
     return out
 
 
+def _in_order(want: list[str], label: list[str], gap: int = 3) -> bool:
+    """The expected words appear in order, each within `gap` label words of the previous one (stray reader tokens,
+    a "|" or "®", line wraps); a word split in two ("DIST ILLERY") or two glued ("OLDTOM") still count."""
+    def at(k, j):  # -> (label words used, expected words used) when want[k] is at label[j]
+        if label[j] == want[k]:
+            return 1, 1
+        if j + 1 < len(label) and label[j] + label[j + 1] == want[k]:
+            return 2, 1
+        if k + 1 < len(want) and label[j] == want[k] + want[k + 1]:
+            return 1, 2
+        return 0, 0
+
+    for start in range(len(label)):
+        j, k = start, 0
+        while k < len(want):
+            hit = next(((jj, *at(k, jj)) for jj in range(j, min(len(label), j + (1 if k == 0 else gap + 1)))
+                        if at(k, jj)[0]), None)
+            if hit is None:
+                break
+            j, k = hit[0] + hit[1], k + hit[2]
+        if k >= len(want):
+            return True
+    return False
+
+
 def words_present(field: str, expected: str, lines: list[str]) -> FieldResult:
-    """Multi-part statements (name and address): every expected word must be on the label to match. A missing word
-    may be a different street or city, or text the reader missed, so it is "Please check", never "Does not match".
+    """Multi-part statements (name and address): every expected word must be on the label to match, each part of the
+    statement (between commas, bars, sentence ends and "by"/"for") together and in order, a few stray reader tokens
+    allowed; the parts may come in any order. Every word merely "somewhere" let a changed bottler name pass when the
+    word was also in the logo (measured: 4 in 10 planted name changes came back Matches; now about 1 in 10). A missing word may be a different street or city, or text the reader missed, so it is "Please check", never
+    "Does not match".
     A ZIP code is not required on the label (27 CFR 5.66: city and state), so a typed one is not looked for."""
     want = [w for w in _address_words(expected) if not re.fullmatch(r"\d{5}(\d{4})?", w)]
     label = _address_words(" ".join(lines))
@@ -167,8 +195,13 @@ def words_present(field: str, expected: str, lines: list[str]) -> FieldResult:
     missing = [w for k, w in enumerate(want) if w not in have
                and not (k + 1 < len(want) and w + want[k + 1] in read)       # "OLDTOM": space dropped by the reader
                and not (k > 0 and want[k - 1] + w in read)]
-    if not missing:
+    parts = [[w for w in _address_words(part) if not re.fullmatch(r"\d{5}(\d{4})?", w)]
+             for part in re.split(r"[,|;\n]|\.\s|\b(?:by|for)\b:?", expected, flags=re.I)]  # parts in any order
+    if not missing and all(_in_order(part, label) for part in parts if part):
         return FieldResult(field, Verdict.PASS, "Name and address found on the label.")
+    if not missing:  # every word is somewhere, but not together: "HOME" in the logo doesn't fix "SUTTER HILL"
+        return FieldResult(field, Verdict.CHECK, "Each word was found on the label, but not together as one statement. "
+                           "Please look at the name and address.", code=f"{field.upper()}_SCATTERED")
     if len(missing) < len(want):
         return FieldResult(field, Verdict.CHECK, f"Some words were not found: {', '.join(missing)}.",
                            code=f"{field.upper()}_PARTIAL")

@@ -70,7 +70,7 @@ Plus a **word rule**: if the value only appears inside a longer line, the result
 
 **Class/type code vs. class/type on the label:** the TTB registry's "Class/Type Code" (e.g. OTHER STRAIGHT WHISKY) is a filing category, not the wording the label must carry (e.g. KENTUCKY STRAIGHT MALT WHISKEY). They are never compared word for word; the label wording is checked against the application's class/type statement.
 
-**Name and address:** every word of the application's statement must appear on the label to match; any missing word (a different street or city, or text the reader missed) gives **Please check**, listing the missing words.
+**Name and address:** every word of the application's statement must appear on the label to match, and each part of it (split at commas, bars, sentence ends and "by"/"for") must appear **together and in order**, with at most a few stray reader marks between words; the parts may come in any order ("BARDSTOWN, KY" above "OLD TOM DISTILLERY"). Any missing word (a different street or city, or text the reader missed) gives **Please check**, listing the missing words; all words present but scattered gives Please check too. Before 2026-10-09 words merely had to be "somewhere": planting a changed word into the statement of each approved label's readings, 4 in 10 came back Matches (always when the word was also in the logo); with the order rule about 1 in 10, mostly where the changed word is printed elsewhere as its own part (the winery name in the brand logo).
 
 **Country of origin (imports):** checks for the country named on the application, e.g. "Product of Ireland." Not found gives Please check (TTB has approved imports whose country appears only in the importer's address or on the container).
 
@@ -97,6 +97,7 @@ Plus a **word rule**: if the value only appears inside a longer line, the result
   when a second, independent reader (Tesseract) reading the same spot sees the same different number. Otherwise it is
   **Please check**, and the reason shows both readings. Found on a real approved beer (TTB ID 26205001000228): the
   label prints "6.5%", the word reader read "5.5%" in its display font.
+- **Proof:** when shown it must be twice the alcohol content. Two different proofs on one label (one that fits and one that doesn't) give Please check.
 - Typed on the application, "45", "45%", "45% Alc", "45% AL", "45,0" and "45% Alc./Vol. (90 Proof)" all mean 45.
   Proof alone ("90 proof"), ranges and other numbers are refused by the form rather than guessed.
 
