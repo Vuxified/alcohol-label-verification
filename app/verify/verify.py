@@ -15,7 +15,7 @@ def is_non_alcoholic(app: Application, lines: list[str]) -> bool:
     """Declared under 0.5% and the label doesn't show 0.5% or more (a typo like 0.4 for 40 must not switch checks off)."""
     if app.abv is None or app.abv >= NON_ALCOHOLIC_BELOW:
         return False
-    return not any(r.value >= NON_ALCOHOLIC_BELOW for r in find_abv(" ".join(lines)))
+    return not any(r.value >= NON_ALCOHOLIC_BELOW and not r.below for r in find_abv(" ".join(lines)))
 
 
 def verify(app: Application, lines: list[str]) -> Report:
@@ -50,8 +50,11 @@ def _check_country(country: str, lines: list[str]) -> FieldResult:
     """The country must appear as a country statement ("Product of Mexico", "Imported from …", "Made in …") or on a
     line of its own. Inside other text it proves nothing ("Santa Fe, New Mexico"), so that is Please check."""
     want = re.escape(normalize(country))
-    stated = re.compile(rf"\b(product|produce|produced|made|brewed|distilled|bottled|imported|origin|hecho)\b"
-                        rf"[a-z ]{{0,15}}\b(of|in|from|en)\s+{want}$|^{want}$")
+    # "Product of (the) Mexico", "Brewed in Munich, Germany", "Produit de France", "Hecho en México"; other text may
+    # follow on the same line ("PRODUCT OF MEXICO 750 ML"), as the reader often joins neighbouring lines.
+    stated = re.compile(rf"\b(product|produce|produced|made|brewed|distilled|bottled|imported|origin|hecho|produit|"
+                        rf"producto|prodotto|elaborado|embotellado)\b[a-z ]{{0,15}}\b(of|in|from|en|de|di)\s+"
+                        rf"(?:the\s+)?(?:[a-z]+\s+){{0,2}}?{want}\b(?!\s+city\b)|^(?:the\s+)?{want}$")
     for line in lines:
         if stated.search(normalize(line)) and not re.search(rf"\bnew\s+{want}\b", normalize(line)):
             return FieldResult("country_of_origin", Verdict.PASS, f'Label shows "{line}".', found=line)

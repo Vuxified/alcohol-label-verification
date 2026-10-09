@@ -38,7 +38,9 @@ ERRORS = {
     "unreadable": "We couldn't open {name}. The file may be damaged. Please try exporting it again.",
     "brand": "Enter the brand name from the application.",
     "beverage": "Choose the type of product.",
-    "abv": "Enter alcohol content as a number from 0 to 95, like 45 or 13.5.",
+    "abv": "Enter alcohol content as one percentage from 0 to 95, like 45, 45% or 13.5% Alc./Vol.",
+    "net": "Enter net contents as one amount, like 750 mL, 1.75 L or 12 fl oz.",
+    "abv_proof": "Enter alcohol content as a percentage, not proof: 90 proof is 45%.",
     "busy": "The checker is busy. Please try again in a minute.",
 }
 

@@ -27,6 +27,8 @@ from app.evidence import crop_png, locate, locate_warning
 from app.ocr.reader import Reader
 from app.pipeline import check_application
 from app.verify import Application, Verdict
+from app.verify.abv import parse_typed_abv
+from app.verify.net_contents import parse_typed_net
 from app.verify.model import SEVERITY
 
 from . import copy
@@ -165,19 +167,18 @@ async def _read_request(data):
         errors.append(copy.ERRORS["beverage"])
     if not form["brand_name"]:
         errors.append(copy.ERRORS["brand"])
-    if form["abv"]:
-        try:
-            if not 0 <= float(form["abv"].rstrip("%").strip()) <= 95:
-                errors.append(copy.ERRORS["abv"])
-        except ValueError:
-            errors.append(copy.ERRORS["abv"])
+    if form["net_contents"] and form["beverage_type"] in copy.BEVERAGES \
+            and parse_typed_net(form["net_contents"], form["beverage_type"]) is None:
+        errors.append(copy.ERRORS["net"])
+    if form["abv"] and parse_typed_abv(form["abv"]) is None:
+        errors.append(copy.ERRORS["abv_proof" if "proof" in form["abv"].lower() else "abv"])
     return form, images, errors
 
 
 def _application(form) -> Application:
     return Application(
         form["beverage_type"], form["brand_name"], form.get("class_type") or None,
-        float(form["abv"].rstrip("%").strip()) if form.get("abv") else None, form.get("net_contents") or None,
+        parse_typed_abv(form["abv"]) if form.get("abv") else None, form.get("net_contents") or None,
         form.get("name_address") or None, form.get("source") or "domestic", form.get("country_of_origin") or None,
         form.get("fanciful_name") or None)
 
@@ -272,7 +273,7 @@ def _results_page(request, res):
     plain = {}
     for f in attention:  # say a near match in plain words: "The label shows 12 where the application says 10."
         d = diffs.get(f.field)
-        if d and (f.code or "").endswith(("_NEAR_MATCH", "_NUMBER_DIFFERS")):
+        if d and (f.code or "").endswith(("_NEAR_MATCH", "_NUMBER_DIFFERS", "_WORD_DIFFERS")):
             a, b = [" ".join(w for w, differs in side if differs) for side in d]
             if a and b:
                 plain[f.field] = copy.NEAR_MATCH.format(label=b, app=a)
@@ -287,7 +288,7 @@ def _results_page(request, res):
 
 def _asked(form) -> dict:
     """What the application says, per result row, shown beside what the label shows."""
-    abv = (form.get("abv") or "").rstrip("%").strip()
+    abv = f'{parse_typed_abv(form["abv"]):g}' if form.get("abv") else ""
     return {"brand_name": form.get("brand_name"), "fanciful_name": form.get("fanciful_name"),
             "class_type": form.get("class_type"), "abv": f"{abv}%" if abv else None,
             "proof": f"{2 * float(abv):g} Proof, if shown (twice the alcohol content)"

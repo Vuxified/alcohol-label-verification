@@ -31,8 +31,16 @@ Before comparing, both sides are normalized:
 - Unicode NFKC; curly quotes and dashes become plain ones; accents removed.
 - Case ignored; extra spaces and line breaks collapsed; punctuation ignored except apostrophes inside words.
 - Spaces between words don't count: the reader sometimes drops one ("FourRoses" for "Four Roses").
+- Written two ways, same meaning: "&" = "and", "St." = "Saint", "Ste." = "Sainte"; ™, ® and ℠ are ignored; a backtick,
+  prime or stray space at an apostrophe ("STONE' S") is an apostrophe. A value may wrap across up to four label lines.
+- Name and address only: a state's name = its abbreviation ("Kentucky" = "KY"), "Co." = "Company", "St." = "Street";
+  a ZIP code on the application is not looked for (§ 5.66 requires city and state); a space the reader dropped
+  ("OLDTOM") is forgiven.
+- A different number is Does not match only when no digit could be a reading slip: digits readers confuse (0/8, 1/7,
+  3/8, 5/6, 6/8, 1/4, 8/9, 5/8) stay Please check, so "10" vs "12" fails but "10" vs "18" asks a person. Every variant
+  is a case in `tests/test_edge_cases.py`.
 
-After normalization the label must show **the same text** to match. Close is not the same: in a long name one character can be "10 Year" vs "12 Year", so anything merely similar is **Please check**, showing what was read (changed 2026-10-08 after an independent code review found that a 95% similarity score let one wrong character through). The exception is a **clearly read different number**: when every word is the same and the only difference is one whole number read as another ("10" vs "12"), the result is **Does not match** (owner decision 2026-10-09). The label must be identical to the approved application (§ 5.22(a)), and when the number is an age, stating more than the real age is prohibited (§ 5.74(a)(2)). Anything less clear ("1O" with a letter O, or a different word as well) stays Please check.
+After normalization the label must show **the same text** to match. Close is not the same: in a long name one character can be "10 Year" vs "12 Year", so anything merely similar is **Please check**, showing what was read (changed 2026-10-08 after an independent code review found that a 95% similarity score let one wrong character through). The exception is a **clearly read different number**: when every word is the same and the only difference is one whole number read as another ("10" vs "12"), the result is **Does not match** (owner decision 2026-10-09). The label must be identical to the approved application (§ 5.22(a)), and when the number is an age, stating more than the real age is prohibited (§ 5.74(a)(2)). Anything less clear ("1O" with a letter O, or a different word as well) stays Please check. In the **class/type** only, one product-type word read in place of another ("RYE" for "BOURBON", "RUM" for "GIN", from a fixed list of class/type words) is also **Does not match**: it is a different product, not a reading slip. A near spelling ("BOURBAN") or a word outside the list stays Please check, and brand names never fail on a different word, because decorative lettering can be read as any word.
 
 | After normalization | Verdict |
 |---|---|
@@ -53,6 +61,8 @@ Plus a **word rule**: if the value only appears inside a longer line, the result
 | Stone's Throw | Stone Throw | Please check | Possessive dropped; may be an OCR miss or a real change |
 | Eagle Rare 10 Year Old | EAGLE RARE 12 YEAR OLD | Does not match | A clearly read different number (§ 5.22(a), § 5.74(a)(2)) |
 | Eagle Rare 10 Year Old | EAGLE RARE 1O YEAR OLD | Please check | Letter O instead of a zero: may be a reading slip |
+| Kentucky Straight Rye Whiskey | KENTUCKY STRAIGHT BOURBON WHISKEY | Does not match | Class/type: a different product type word |
+| Kentucky Straight Bourbon Whiskey | KENTUCKY STRAIGHT BOURBAN WHISKEY | Please check | Near spelling: may be a reading slip |
 | Four Roses | FourRoses | Matches | Only a space differs |
 | Kentucky Straight Bourbon Whiskey | KENTUCKY STRAIGHT BOURBON WHISKY | Matches | Class/type only: "the word whisky may be spelled as either 'whisky' or 'whiskey'" (§ 5.143). Brand names get no such allowance. |
 
@@ -74,6 +84,12 @@ Plus a **word rule**: if the value only appears inside a longer line, the result
 - "45% Alc./Vol.", "Alc. 45% by vol.", "45 percent alcohol by volume", "Alcohol by volume: 45%"
 - "alc" and "vol" may be abbreviated, with or without periods; "%" may replace "percent"; "/" may replace "by".
 - **Wine:** "ABV" is not an allowed abbreviation (TTB wine guidance). Seeing it gives **Please check**.
+- A comma is a decimal point ("12,5% VOL" on imported labels). A number glued to other characters ("455%", "l2%", "4 5%")
+  is not a clear reading, so it is not used. "LESS THAN 0.5%" is a limit, not a value: it fits any declared value below it.
+- If the label also shows a *different* clearly read alcohol content, the result is **Please check** (the label
+  contradicts itself, or one reading is wrong), never Matches.
+- Typed on the application, "45", "45%", "45% Alc", "45% AL", "45,0" and "45% Alc./Vol. (90 Proof)" all mean 45.
+  Proof alone ("90 proof"), ranges and other numbers are refused by the form rather than guessed.
 
 ### 3.2 Comparison
 Label and application values are compared **as numbers** (45, 45.0 and 45.00 are equal). They should match exactly; the regulatory tolerances (±0.3 for spirits and malt, ±1.0/±1.5 for wine) apply to the *liquid vs. the label*, not to the label vs. the application. So any difference between label and application is **Does not match**.
@@ -97,12 +113,12 @@ Proof is optional (§ 5.65(b)(1)(i)). If shown, it must equal **2 × alcohol by 
 
 ## 4. Net contents
 
-Parsed and converted to milliliters: mL ×1, cL ×10, L ×1000, fl oz ×29.5735, pint ×473.176. Compound forms are added ("1 PINT 8 FL. OZ." = 710 mL). Label and application match if they differ by 0.4% or 1.5 mL, whichever is larger: enough for unit conversion (12 fl oz = 354.9 mL), but 350 mL and 355 mL are different sizes. "1,750 mL" is read as 1750.
+Parsed and converted to milliliters: mL ×1, cL ×10, L ×1000, fl oz ×29.5735, pint (PT) ×473.176, quart (QT) ×946.353. Compound forms are added ("1 PINT 8 FL. OZ." and "1 PT. 8 FL. OZ." = 710 mL). On the application, a bare number takes the usual unit (750 or 1.75 for spirits and wine means mL or L; 12 for beer means fl oz), and "oz", "mls", "ltr", ".75 L" are understood; anything that isn't one amount is refused by the form. On the label, a number right after a lone digit ("7 50 ML", a split "750") is not a clear reading. If the label also shows another clearly different container size, the result is **Please check**; serving statements ("1.5 fl oz") and misreads of the same size ("15L" for "1.5L") don't count. Label and application match if they differ by 0.4% or 1.5 mL, whichever is larger: enough for unit conversion (12 fl oz = 354.9 mL), but 350 mL and 355 mL are different sizes. "1,750 mL" is read as 1750.
 
 | Type | Units | Container sizes | Citation |
 |---|---|---|---|
 | Distilled spirits | Metric required; U.S. units may be added | Must be an authorized standard of fill: 3.75 L, 3 L, 2 L, 1.8 L, 1.75 L, 1.5 L, 1 L, 945, 900, 750, 720, 710, 700, 570, 500, 475, 375, 355, 350, 331, 250, 200, 187, 100, 50 mL | § 5.70, § 5.203(a) |
-| Wine | Metric required; U.S. units may be added | Authorized standards of fill: 3 L, 2.25 L, 1.8 L, 1.5 L, 1 L, 750, 720, 700, 620, 600, 568, 550, 500, 473, 375, 360, 355, 330, 300, 250, 200, 187, 180, 100, 50 mL (larger sizes: see § 4.72) | § 4.37, § 4.72(a) |
+| Wine | Metric required; U.S. units may be added | Authorized standards of fill: 3 L, 2.25 L, 1.8 L, 1.5 L, 1 L, 750, 720, 700, 620, 600, 568, 550, 500, 473, 375, 360, 355, 330, 300, 250, 200, 187, 180, 100, 50 mL and any even number of liters from 4 L up (§ 4.72(b)) | § 4.37, § 4.72 |
 | Malt beverage | **U.S. units required** (e.g. "12 FL. OZ."); metric may only be added | No standards of fill | § 7.70 |
 
 A size that isn't an authorized standard of fill for spirits or wine gives **Please check**. A malt beverage label with metric units only also gives **Please check**, with the reason stated: it is a real deficiency under 27 CFR 7.70(c), and TTB's practice is to approve with a qualification requiring fluid ounces rather than reject (Guinness Foreign Extra Stout, "325ml", TTB ID 23328001000154; see [FINDINGS.md](FINDINGS.md)).

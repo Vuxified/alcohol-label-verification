@@ -287,3 +287,19 @@ def test_country_must_be_a_country_statement():
     assert verify(imp(), ["OLD TOM", "PRODUCT OF MEXICO"]).get("country_of_origin").verdict == P
     assert verify(imp(), ["OLD TOM", "Hecho en Mexico", "MEXICO"]).get("country_of_origin").verdict == P
     assert verify(imp(), ["OLD TOM", "Bottled by Old Tom Co., Santa Fe, New Mexico"]).get("country_of_origin").verdict == C
+
+
+def test_a_clearly_different_type_word_does_not_match():  # owner decision, 2026-10-09
+    r = match_text("class_type", "Kentucky Straight Rye Whiskey", ["KENTUCKY STRAIGHT BOURBON WHISKEY"])
+    assert r.verdict == F and r.code == "CLASS_TYPE_WORD_DIFFERS"
+    assert match_text("class_type", "London Dry Gin", ["LONDON DRY RUM"]).verdict == F
+
+
+def test_a_near_spelling_or_unknown_word_stays_please_check():
+    assert match_text("class_type", "Kentucky Straight Bourbon Whiskey", ["KENTUCKY STRAIGHT BOURBAN WHISKEY"]).verdict == C
+    assert match_text("class_type", "Kentucky Straight Bourbon Whiskey", ["KENTUCKY STRANGE BOURBON WHISKEY"]).verdict == C
+    assert match_text("class_type", "Bourbon Whiskey", ["RYE GIN"]).verdict != F  # two words differ: not one clear swap
+
+
+def test_brand_words_never_fail_on_a_different_word():  # decorative lettering can read as any word
+    assert match_text("brand_name", "Old Tom Distillery", ["OLD GIN DISTILLERY"]).verdict == C

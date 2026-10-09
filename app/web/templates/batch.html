@@ -31,12 +31,12 @@
 
   <details class="app-columns">
     <summary>What the spreadsheet needs</summary>
-    <p>A header row, then one row per application. Column names are not case-sensitive.</p>
+    <p>A header row, then one row per application. Column names are not case-sensitive, and common names work too ("Brand Name", "Application ID", "Images").</p>
     <table class="usa-table usa-table--compact">
       <thead><tr><th scope="col">Column</th><th scope="col">Needed?</th><th scope="col">Example</th></tr></thead>
       <tbody>
         <tr><td><code>application_id</code></td><td>Yes, unique</td><td>TTB-0001</td></tr>
-        <tr><td><code>image_files</code></td><td>Yes</td><td>0001_front.jpg;0001_back.jpg (file names in the ZIP, separated by ;)</td></tr>
+        <tr><td><code>image_files</code></td><td>No, if the pictures are named after the application</td><td>0001_front.jpg;0001_back.jpg (file names in the ZIP, separated by ; or ,). Left out: every picture whose name starts with the application_id, like TTB-0001_front.jpg</td></tr>
         <tr><td><code>beverage_type</code></td><td>Yes</td><td>spirits, wine, or malt (beer is accepted)</td></tr>
         <tr><td><code>brand_name</code></td><td>Yes</td><td>Old Tom Distillery</td></tr>
         <tr><td><code>class_type</code>, <code>abv</code>, <code>net_contents</code>, <code>name_address</code>, <code>fanciful_name</code></td><td>No</td><td>Kentucky Straight Bourbon Whiskey · 45 · 750 mL</td></tr>
@@ -96,6 +96,7 @@
 {% block scripts %}
 <script src="/static/vendor/jszip.min.js"></script>
 <script src="/static/vendor/papaparse.min.js"></script>
+<script src="/static/batch-read.js"></script>
 <script>
 (function () {
   var BUCKET = {{ 'true' if upload_to_bucket else 'false' }};
@@ -104,7 +105,6 @@
   var VERDICT = {{ copy.VERDICT | tojson }}, FIELD_NAMES = {{ copy.FIELD_NAMES | tojson }};
   var WORD = { fail: 'Does not match', check: 'Please check', pass: 'Matches', 'n/a': 'Not applicable', error: 'Error' };
   var ORDER = { fail: 0, check: 1, error: 2, pass: 3 };
-  var BEV = Object.assign(Object.create(null), { spirits: 'spirits', 'distilled spirits': 'spirits', wine: 'wine', malt: 'malt', beer: 'malt', 'malt beverage': 'malt' });
   var $ = function (id) { return document.getElementById(id); };
   var ico = function (v) { return VERDICT[v] ? '<svg class="app-ico" aria-hidden="true"><use href="#' + VERDICT[v][0] + '"/></svg>' : ''; };
   var show = function (id, on) { $(id).classList.toggle('app-hidden', !on); };
@@ -112,20 +112,6 @@
 
   var zip = null, entries = Object.create(null), jobs = [], results = [], cancelled = false, zipName = '', started = 0;
 
-  function decode(buf) {
-    var text;
-    try { text = new TextDecoder('utf-8', { fatal: true }).decode(buf); }
-    catch (e) { text = new TextDecoder('windows-1252').decode(buf); }   // Excel on Windows
-    return text.replace(/^﻿/, '');
-  }
-
-  function findEntry(name) {
-    var n = name.trim().replace(/\\/g, '/').replace(/^\.?\//, '').toLowerCase();
-    if (entries[n]) return entries[n];
-    var base = n.split('/').pop();                                       // allow a folder inside the ZIP
-    var hits = Object.keys(entries).filter(function (k) { return k.split('/').pop() === base; });
-    return hits.length === 1 ? entries[hits[0]] : null;
-  }
 
   $('batch-form').addEventListener('submit', async function (ev) {
     ev.preventDefault();
@@ -135,58 +121,19 @@
     try {
       var zf = $('zip').files[0]; zipName = zf.name;
       zip = await JSZip.loadAsync(zf);
-      entries = Object.create(null);
-      zip.forEach(function (path, e) {
-        var parts = path.split('/');
-        if (e.dir || parts[0] === '__MACOSX' || parts.some(function (p) { return p.startsWith('.'); })) return;
-        if (parts.indexOf('..') >= 0 || path.startsWith('/')) return;   // never trust paths that leave the ZIP
-        entries[path.toLowerCase()] = e;
-      });
+      var items = [];
+      zip.forEach(function (path, e) { items.push({ path: path, dir: e.dir, entry: e }); });
+      entries = BatchRead.entriesOf(items);
       var csvText;
-      if ($('csv').files[0]) csvText = decode(await $('csv').files[0].arrayBuffer());
+      if ($('csv').files[0]) csvText = BatchRead.decode(await $('csv').files[0].arrayBuffer());
       else {
-        var m = findEntry('manifest.csv');
-        if (!m) throw new Error('No spreadsheet: add a CSV file, or put manifest.csv inside the ZIP.');
-        csvText = decode(await m.async('arraybuffer'));
+        var m = BatchRead.csvIn(entries);
+        if (!m) throw new Error('No spreadsheet: add a CSV file, or put one CSV file (such as manifest.csv) inside the ZIP.');
+        csvText = BatchRead.decode(await m.async('arraybuffer'));
       }
-      var parsed = Papa.parse(csvText, { header: true, skipEmptyLines: 'greedy', transformHeader: function (h) { return h.trim().toLowerCase(); } });
-      var cols = parsed.meta.fields || [];
-      ['application_id', 'image_files', 'beverage_type', 'brand_name'].forEach(function (c) {
-        if (cols.indexOf(c) < 0) problems.push('The spreadsheet has no "' + c + '" column.');
-      });
-      if (problems.length) throw { list: problems };
-      if (parsed.data.length > MAX_ROWS) problems.push('The spreadsheet has ' + parsed.data.length + ' rows. Only the first ' + MAX_ROWS + ' will be checked.');
-      var seen = {};
-      jobs = [];
-      parsed.data.slice(0, MAX_ROWS).forEach(function (r, i) {
-        var row = i + 2, id = (r.application_id || '').trim(), bad = [];
-        var label = id || ('row ' + row);
-        if (!id) bad.push('no application_id');
-        else if (seen[id]) bad.push('application_id "' + id + '" is used twice');
-        seen[id] = true;
-        var bev = BEV[(r.beverage_type || '').trim().toLowerCase()];
-        if (!bev) bad.push('beverage_type "' + (r.beverage_type || '') + '" should be spirits, wine or malt');
-        if (!(r.brand_name || '').trim()) bad.push('no brand_name');
-        var abv = (r.abv || '').trim().replace(/%$/, '');
-        if (abv && isNaN(Number(abv))) bad.push('alcohol content "' + r.abv + '" is not a number');
-        var files = (r.image_files || '').split(';').map(function (s) { return s.trim(); }).filter(Boolean);
-        if (!files.length) bad.push('no image_files');
-        if (files.length > MAX_IMAGES) bad.push(files.length + ' images (the limit is ' + MAX_IMAGES + ')');
-        var found = [];
-        files.slice(0, MAX_IMAGES).forEach(function (f) {
-          var e = findEntry(f);
-          if (!e) bad.push('"' + f + '" is not in the ZIP');
-          else if (e._data && e._data.uncompressedSize > MAX_MB * 1024 * 1024) bad.push('"' + f + '" is over ' + MAX_MB + ' MB');
-          else found.push({ name: f.split('/').pop(), entry: e });
-        });
-        var job = { row: row, id: label, form: {
-          beverage_type: bev || '', brand_name: (r.brand_name || '').trim(), fanciful_name: (r.fanciful_name || '').trim(),
-          class_type: (r.class_type || '').trim(), abv: abv, net_contents: (r.net_contents || '').trim(),
-          name_address: (r.name_address || '').trim(), source: ((r.source || '').trim().toLowerCase() === 'imported') ? 'imported' : 'domestic',
-          country_of_origin: (r.country_of_origin || '').trim() }, files: found };
-        if (bad.length) { problems.push('Row ' + row + ' (' + label + '): ' + bad.join('; ') + '.'); job.error = bad.join('; '); }
-        jobs.push(job);
-      });
+      var read = BatchRead.rows(csvText, entries, { rows: MAX_ROWS, images: MAX_IMAGES, mb: MAX_MB });
+      if (read.fatal) throw { list: read.fatal };
+      jobs = read.jobs; problems = read.problems;
       var good = jobs.filter(function (j) { return !j.error; }).length;
       if (problems.length) {
         $('problems-heading').textContent = problems.length + (problems.length === 1 ? ' problem' : ' problems') + ' found before starting';

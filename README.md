@@ -20,6 +20,7 @@ A TTB agent uploads a label's images and types in what the application says. Wit
    - **Please check:** anything the app can't be sure of, with what it found. *Not finding something is never "Does not match"*: it may be in script lettering, on a curved can, or on a side that wasn't photographed.
 5. **Never stricter than TTB.** Real approved labels must not come back "Does not match". Where TTB approves labels that stretch a rule (a missing period in the warning, metric-only beer with a qualification), the app says Please check. Evidence: [`docs/FINDINGS.md`](docs/FINDINGS.md).
 6. **Other approaches** (cloud AI models, AI upscaling, bottle-photo flattening, other OCR engines) were considered; what was tried and why each was or wasn't adopted is in [`docs/ALTERNATIVES.md`](docs/ALTERNATIVES.md).
+7. **Why it is built this way**, the assumptions where the brief leaves gaps (for example, the application details are typed in or come from a spreadsheet, standing in for COLA), the open unknowns and the test data: [`docs/APPROACH.md`](docs/APPROACH.md).
 
 ## What it checks
 

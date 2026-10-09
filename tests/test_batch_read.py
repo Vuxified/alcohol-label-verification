@@ -1,0 +1,163 @@
+"""Batch reading (app/web/static/batch-read.js), run in a real browser: spreadsheets from Excel or Numbers, ZIPs from
+different tools, and pictures paired with applications by the file names listed, or by being named after the
+application."""
+
+from pathlib import Path
+
+import pytest
+
+playwright = pytest.importorskip("playwright.sync_api")
+STATIC = Path(__file__).resolve().parents[1] / "app" / "web" / "static"
+HEAD = "application_id,image_files,beverage_type,brand_name\n"
+
+
+@pytest.fixture(scope="module")
+def page():
+    with playwright.sync_playwright() as p:
+        browser = p.chromium.launch()
+        pg = browser.new_page()
+        pg.add_script_tag(path=str(STATIC / "vendor" / "papaparse.min.js"))
+        pg.add_script_tag(path=str(STATIC / "batch-read.js"))
+        yield pg
+        browser.close()
+
+
+def read(page, csv, paths, as_bytes=None):
+    """Run the batch reader on a spreadsheet and ZIP paths -> {jobs: [...], problems: [...]} or {fatal: [...]}."""
+    return page.evaluate("""([csv, paths, bytes]) => {
+        const items = paths.map(p => ({ path: p, dir: p.endsWith('/'), entry: { name: p } }));
+        const entries = BatchRead.entriesOf(items);
+        const text = bytes ? BatchRead.decode(new Uint8Array(bytes).buffer) : csv;
+        const r = BatchRead.rows(text, entries, { rows: 500, images: 6, mb: 10 });
+        if (r.jobs) r.jobs = r.jobs.map(j => ({ id: j.id, error: j.error || '', files: j.files.map(f => f.entry.name),
+                                                 form: j.form, pairedBy: j.pairedBy }));
+        return r;
+    }""", [csv, paths, as_bytes])
+
+
+def one(page, csv, paths, **kw):
+    r = read(page, csv, paths, **kw)
+    assert "fatal" not in r, r
+    return r["jobs"][0]
+
+
+def test_listed_files_in_any_order(page):
+    j = one(page, HEAD + "A1,back.jpg;front.jpg,spirits,Old Tom\n", ["front.jpg", "back.jpg"])
+    assert j["files"] == ["back.jpg", "front.jpg"] and not j["error"]
+
+
+@pytest.mark.parametrize("paths", [["Batch/front.jpg"], ["./front.jpg"], ["FRONT.JPG"], ["front.jpeg"],
+                                   ["batch/x/front.jpg", "__MACOSX/batch/._front.jpg", ".DS_Store"]])
+def test_file_found_wherever_and_however_the_zip_names_it(page, paths):
+    j = one(page, HEAD + "A1,front.jpg,spirits,Old Tom\n", paths)
+    assert not j["error"] and len(j["files"]) == 1, j
+
+
+def test_dot_slash_zip_does_not_look_empty(page):  # some ZIP tools write every name as "./name"
+    j = one(page, HEAD + "A1,a.jpg;b.jpg,spirits,Old Tom\n", ["./a.jpg", "./b.jpg"])
+    assert j["files"] == ["./a.jpg", "./b.jpg"]
+
+
+def test_same_name_in_two_folders_says_so(page):
+    j = one(page, HEAD + "A1,0001.jpg,spirits,Old Tom\n", ["front/0001.jpg", "back/0001.jpg"])
+    assert "more than one folder" in j["error"]
+
+
+def test_missing_file_is_named(page):
+    j = one(page, HEAD + "A1,nope.jpg,spirits,Old Tom\n", ["front.jpg"])
+    assert '"nope.jpg" is not in the ZIP' in j["error"]
+
+
+@pytest.mark.parametrize("cell", ['"a.jpg, b.jpg"', "a.jpg|b.jpg", '"a.jpg\nb.jpg"', "a.jpg;b.jpg;", " a.jpg ; b.jpg "])
+def test_image_list_separators(page, cell):
+    j = one(page, HEAD + f"A1,{cell},spirits,Old Tom\n", ["a.jpg", "b.jpg"])
+    assert j["files"] == ["a.jpg", "b.jpg"], j
+
+
+def test_pictures_named_after_the_application_need_no_list(page):
+    csv = "application_id,beverage_type,brand_name\nTTB-1,spirits,Old Tom\nTTB-10,wine,Red Hill\n"
+    r = read(page, csv, ["TTB-1_front.jpg", "TTB-1_back.jpg", "TTB-10_front.jpg", "TTB-100.jpg", "notes.txt"])
+    a, b = r["jobs"]
+    assert a["files"] == ["TTB-1_back.jpg", "TTB-1_front.jpg"] and a["pairedBy"] == "file name"  # not TTB-10's
+    assert b["files"] == ["TTB-10_front.jpg"]
+
+
+def test_blank_list_falls_back_to_file_names(page):
+    j = one(page, HEAD + "A7,,spirits,Old Tom\n", ["a7-front.png"])
+    assert j["files"] == ["a7-front.png"]
+
+
+def test_no_pictures_at_all_is_a_row_problem_not_a_stop(page):
+    r = read(page, "application_id,beverage_type,brand_name\nA1,spirits,Old Tom\n", ["other.jpg"])
+    assert 'no pictures named after "A1"' in r["jobs"][0]["error"]
+
+
+@pytest.mark.parametrize("head", ["Application ID,Image Files,Beverage Type,Brand Name",
+                                  "APPLICATION_ID,IMAGE_FILES,BEVERAGE_TYPE,BRAND_NAME",
+                                  " application_id , image_files , beverage_type , brand_name ",
+                                  "application-id,images,beverage,brand", '"Application ID","Images","Beverage","Brand"'])
+def test_header_spellings(page, head):
+    j = one(page, head + "\nA1,a.jpg,spirits,Old Tom\n", ["a.jpg"])
+    assert j["form"]["brand_name"] == "Old Tom" and not j["error"], j
+
+
+def test_missing_required_column_stops_with_its_name(page):
+    r = read(page, "application_id,image_files,beverage_type\nA1,a.jpg,spirits\n", ["a.jpg"])
+    assert r["fatal"] == ['The spreadsheet has no "brand_name" column.']
+
+
+@pytest.mark.parametrize("csv", [HEAD + "A1,a.jpg,spirits,Old Tom\r\n", HEAD.replace(",", "\t") + "A1\ta.jpg\tspirits\tOld Tom\n",
+                                 HEAD.replace(",", ";") + "A1;a.jpg;spirits;Old Tom\n", HEAD + "\n,,,\n   \nA1,a.jpg,spirits,Old Tom\n\n",
+                                 HEAD + "A1,a.jpg,spirits,Old Tom,extra,columns\n"])
+def test_excel_and_numbers_exports(page, csv):
+    r = read(page, csv, ["a.jpg"])
+    assert len(r["jobs"]) == 1 and r["jobs"][0]["form"]["brand_name"] == "Old Tom", r
+
+
+def test_byte_order_marks_and_windows_encoding(page):
+    utf8 = list(("﻿" + HEAD + "A1,a.jpg,wine,Château Montelena\n").encode("utf-8"))
+    utf16 = list(b"\xff\xfe" + (HEAD + "A1,a.jpg,wine,Château Montelena\n").encode("utf-16-le"))
+    cp1252 = list((HEAD + "A1,a.jpg,wine,Château Montelena\n").encode("cp1252"))
+    for b in (utf8, utf16, cp1252):
+        assert one(page, "", ["a.jpg"], as_bytes=b)["form"]["brand_name"] == "Château Montelena"
+
+
+def test_duplicate_id_is_flagged(page):
+    r = read(page, HEAD + "A1,a.jpg,spirits,Old Tom\nA1,a.jpg,spirits,Old Tom\n", ["a.jpg"])
+    assert not r["jobs"][0]["error"] and "used twice" in r["jobs"][1]["error"]
+
+
+@pytest.mark.parametrize("bev, want", [("Spirits ", "spirits"), ("Distilled Spirits", "spirits"), ("spirit", "spirits"),
+                                       ("BEER", "malt"), ("Malt Beverages", "malt"), ("ale", "malt"), ("Wine", "wine")])
+def test_beverage_type_words(page, bev, want):
+    assert one(page, HEAD + f"A1,a.jpg,{bev},Old Tom\n", ["a.jpg"])["form"]["beverage_type"] == want
+
+
+def test_unknown_beverage_type_is_a_row_problem(page):
+    assert "should be spirits, wine or malt" in one(page, HEAD + "A1,a.jpg,whiskey,Old Tom\n", ["a.jpg"])["error"]
+
+
+@pytest.mark.parametrize("src, country, want", [("", "Mexico", "imported"), ("import", "Mexico", "imported"),
+                                                ("Imported", "", "imported"), ("", "", "domestic"),
+                                                ("", "United States", "domestic"), ("domestic", "", "domestic")])
+def test_imported_when_a_country_is_given(page, src, country, want):
+    csv = "application_id,image_files,beverage_type,brand_name,source,country_of_origin\n"
+    assert one(page, csv + f"A1,a.jpg,wine,Old Tom,{src},{country}\n", ["a.jpg"])["form"]["source"] == want
+
+
+def test_unknown_source_is_a_row_problem(page):
+    csv = "application_id,image_files,beverage_type,brand_name,source\nA1,a.jpg,wine,Old Tom,maybe\n"
+    assert 'source "maybe"' in one(page, csv, ["a.jpg"])["error"]
+
+
+def test_paths_that_leave_the_zip_are_ignored(page):
+    j = one(page, HEAD + "A1,a.jpg,spirits,Old Tom\n", ["../a.jpg", "/a.jpg"])
+    assert "not in the ZIP" in j["error"]
+
+
+def test_spreadsheet_inside_the_zip(page):
+    assert page.evaluate("""() => {
+        const e = BatchRead.entriesOf([{ path: 'x/Applications.CSV', entry: 1 }, { path: 'a.jpg', entry: 2 }]);
+        const two = BatchRead.entriesOf([{ path: 'a.csv', entry: 1 }, { path: 'b.csv', entry: 2 }, { path: 'manifest.csv', entry: 3 }]);
+        return [BatchRead.csvIn(e), BatchRead.csvIn(two)];
+    }""") == [1, 3]
