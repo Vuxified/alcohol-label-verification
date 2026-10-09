@@ -84,7 +84,8 @@ def check_proof(app: Application, lines: list[str]) -> FieldResult:
         return FieldResult("proof", Verdict.CHECK, f"Proof read as {proofs[0]:g}, which is not possible. Please look.",
                            code="PROOF_MISMATCH")
     if any(abs(p - 2 * a) < 0.15 for p in proofs for a in abvs):
-        return FieldResult("proof", Verdict.PASS, f"{proofs[0]:g} Proof is twice the alcohol content.")
+        return FieldResult("proof", Verdict.PASS, f"{proofs[0]:g} Proof is twice the alcohol content.",
+                           found=f"{proofs[0]:g} Proof")
     return FieldResult("proof", Verdict.FAIL,
                        f"Label says {proofs[0]:g} Proof, but {abvs[0]:g}% alcohol is {2 * abvs[0]:g} Proof.",
                        code="PROOF_MISMATCH")

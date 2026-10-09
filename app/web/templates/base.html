@@ -11,23 +11,28 @@
 </head>
 <body>
   <a class="usa-skipnav" href="#main-content">Skip to main content</a>
-  <header class="usa-header usa-header--basic">
-    <div class="usa-nav-container">
-      <div class="usa-navbar">
-        <div class="usa-logo"><em class="usa-logo__text"><a href="/" title="Label Check home">Label Check <span class="text-normal">(prototype)</span></a></em></div>
-      </div>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-pass" viewBox="0 0 20 20"><path d="M4.5 10.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-check" viewBox="0 0 20 20"><circle cx="10" cy="10" r="7.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 6v4.6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="10" cy="13.8" r="1.25" fill="currentColor"/></symbol>
+    <symbol id="i-fail" viewBox="0 0 20 20"><path d="M5.5 5.5l9 9M14.5 5.5l-9 9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+    <symbol id="i-na" viewBox="0 0 20 20"><path d="M5.5 10h9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+  </svg>
+  {% set path = request.url.path if request else "/" %}
+  <header class="app-header">
+    <div class="app-header__inner">
+      <a class="app-brand" href="/"><span class="app-brand__name">Label Check</span><span class="app-brand__tag">Prototype</span></a>
       <nav class="app-nav" aria-label="Main">
-        <a href="/">Check one label</a>
-        <a href="/batch">Check many labels</a>
+        <a href="/" {% if path in ("/", "/check") %}aria-current="page"{% endif %}>Check one label</a>
+        <a href="/batch" {% if path.startswith("/batch") %}aria-current="page"{% endif %}>Check many labels</a>
       </nav>
     </div>
   </header>
-  <main id="main-content" class="grid-container app-main" tabindex="-1">
+  <main id="main-content" class="app-main" tabindex="-1">
     {% block content %}{% endblock %}
   </main>
-  <footer class="grid-container app-footer">
-    <p>Prototype for review. Not an official U.S. Government system. {% if upload_to_bucket %}Label images are kept in private storage for one day, then deleted automatically.{% else %}Label images are read on this server only and are not stored.{% endif %}</p>
-  </footer>
+  <footer class="app-footer"><div class="app-footer__inner">
+    <p>Prototype for review. Not an official U.S. Government system. It compares label images with the application, item by item; the agent makes every decision. {% if upload_to_bucket %}Label images are kept in private storage for one day, then deleted automatically.{% else %}Label images are read on this server only and are not stored.{% endif %}</p>
+  </div></footer>
   <script src="/static/uswds/js/uswds.min.js"></script>
   {% block scripts %}{% endblock %}
 </body>

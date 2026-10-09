@@ -30,6 +30,7 @@ from app.verify import Application, Verdict
 from app.verify.model import SEVERITY
 
 from . import copy
+from .marks import differing_words, warning_marks
 
 ROOT = Path(__file__).resolve().parent
 DATA = ROOT.parent.parent / "data"
@@ -37,6 +38,7 @@ MAX_IMAGES, MAX_MB, SHOW_SIDE = 6, 10, 1600
 BUCKET = os.environ.get("UPLOAD_BUCKET")
 UPLOAD_KEY = re.compile(r"uploads/[0-9a-f]{32}/[0-5]")
 Image.MAX_IMAGE_PIXELS = 40_000_000
+TEXT_FIELDS = ("brand_name", "fanciful_name", "class_type", "name_address", "country_of_origin")  # words get marked
 
 state = {"reader": None, "ready": False}
 slots = threading.BoundedSemaphore(int(os.environ.get("INTERACTIVE_SLOTS", "2")))
@@ -264,6 +266,33 @@ def _results_page(request, res):
         pics.append(_data_url(img, "JPEG"))
     crops = {field: _data_url(Image.open(io.BytesIO(crop_png(res.reading.frames[k], box))), "PNG")
              for field, (k, box) in ev.items()}
+    asked = _asked(res.form)
+    attention = [f for f in rows if f.verdict in (Verdict.FAIL, Verdict.CHECK)]
+    diffs = {f.field: differing_words(asked.get(f.field), f.found) for f in attention if f.field in TEXT_FIELDS}
+    plain = {}
+    for f in attention:  # say a near match in plain words: "The label shows 12 where the application says 10."
+        d = diffs.get(f.field)
+        if d and (f.code or "").endswith("_NEAR_MATCH"):
+            a, b = [" ".join(w for w, differs in side if differs) for side in d]
+            if a and b:
+                plain[f.field] = copy.NEAR_MATCH.format(label=b, app=a)
+    warning = next((f for f in attention if f.field == "warning_text" and f.code != "WARNING_MISSING"), None)
     return templates.TemplateResponse(request, "results.html", {
         "res": res, "rows": rows, "ev": ev, "counts": counts, "Verdict": Verdict, "shapes": shapes,
-        "names": [p.name for p in res.reading.pictures], "pics": pics, "crops": crops})
+        "names": [p.name for p in res.reading.pictures], "pics": pics, "crops": crops, "asked": asked,
+        "attention": attention, "matched": [f for f in rows if f not in attention], "diffs": diffs, "plain": plain,
+        "warning_parts": warning_marks(res.reading.warning_readings()) if warning else None})
+
+
+
+def _asked(form) -> dict:
+    """What the application says, per result row, shown beside what the label shows."""
+    abv = (form.get("abv") or "").rstrip("%").strip()
+    return {"brand_name": form.get("brand_name"), "fanciful_name": form.get("fanciful_name"),
+            "class_type": form.get("class_type"), "abv": f"{abv}%" if abv else None,
+            "proof": f"{2 * float(abv):g} Proof, if shown (twice the alcohol content)"
+                     if abv and form.get("beverage_type") == "spirits" else None,
+            "net_contents": form.get("net_contents"), "name_address": form.get("name_address"),
+            "country_of_origin": form.get("country_of_origin"),
+            "warning_text": "The exact wording required by 27 CFR 16.21",
+            "warning_caps": '"GOVERNMENT WARNING" in capital letters', "warning_bold": '"GOVERNMENT WARNING" in bold'}
