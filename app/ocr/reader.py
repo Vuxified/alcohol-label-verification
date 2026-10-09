@@ -213,6 +213,11 @@ class Reader:
                 add(f"sideways-hi:{k}", "warning", 0, lambda img: self._limited(self.threads, sideways.side_read,
                                                                                self.eng, img), arrs[k],
                     meta=(k, None, (0, 0), arrs[k].shape[:2]))
+            for k, a in enumerate(arrs):  # a narrow sideways strip at a side edge (cans, wraps), read bottom to top:
+                for side, (strip, off) in zip(("right", "left"), sideways.edge_strips(a)):  # 10 of 11 found that way
+                    turned = np.ascontiguousarray(np.rot90(strip, 3))
+                    add(f"edge-{side}:{k}", "warning", 0, self._onnx, turned,
+                        min(2048, max(32, max(turned.shape[:2]) // 32 * 32)), meta=(k, 3, off, strip.shape[:2]))
             for k, m in enumerate(mains):
                 if self._limited(self.threads, sideways.upside_down, self.eng, arrs[k], m.words):
                     add(f"flip180:{k}", "warning", 0, self._onnx, np.ascontiguousarray(np.rot90(arrs[k], 2)),

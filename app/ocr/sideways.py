@@ -56,6 +56,16 @@ def tall_strip(img, words, margin=0.15):
     return img[Y0:int(min(H, y1 + margin * H)), X0:int(min(W, x1 + margin * W))], (X0, Y0)
 
 
+def edge_strips(img, share=0.18):
+    """The right and left edges of a wide label, where cans and wraps often print the warning sideways in letters too
+    small to find in the whole picture. -> [(strip, (x0, y0))]; none for a tall picture."""
+    H, W = img.shape[:2]
+    if W <= H:
+        return []
+    s = max(1, int(W * share))
+    return [(img[:, W - s:], (W - s, 0)), (img[:, :s], (0, 0))]
+
+
 def strip_vote(eng: OnnxEngine, img, words, maxn=16):
     """k (1 or 3) that turns the sideways strip upright, or None with fewer than 5 usable tall boxes."""
     tall = sorted(_tall(words), key=lambda b: -(b[3] - b[1]))[:maxn]
