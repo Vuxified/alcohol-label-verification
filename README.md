@@ -12,11 +12,11 @@ A TTB agent uploads a label's images and types in what the application says. Wit
 ## How it works, in one minute
 
 1. **Verify, don't extract.** The application already says what the label should contain, so the app searches the label for those values instead of guessing what the label means.
-2. **Reading the label:** local text recognition (OnnxTR, with Tesseract as a second reader). Nothing is sent to an outside AI service, so it can run behind an agency firewall: the container was tested with networking switched off.
+2. **Reading the label:** local text recognition (OnnxTR, with Tesseract as an independent second reader). Every word is read by two word readers, the stock one and one fine-tuned on label words, and the more confident reading is kept ([how it was trained and measured](docs/APPROACH.md#reader-training)). Nothing is sent to an outside AI service, so it can run behind an agency firewall: the container was tested with networking switched off.
 3. **Deciding:** small, tested rules in plain code (`app/verify/`), each citing its regulation in [`docs/RULES.md`](docs/RULES.md). No AI model decides a verdict.
 4. **Three answers, chosen to be honest:**
    - **Matches:** obviously the same ("STONE'S THROW" vs "Stone's Throw").
-   - **Does not match:** a different value read clearly (label 45%, application 40%; "may" changed to "can" in the warning, confirmed by two independent readings).
+   - **Does not match:** a different value read clearly and confirmed by a second, independent reading (label 45%, application 40%; "may" changed to "can" in the warning).
    - **Please check:** anything the app can't be sure of, with what it found. *Not finding something is never "Does not match"*: it may be in script lettering, on a curved can, or on a side that wasn't photographed.
 5. **Never stricter than TTB.** Real approved labels must not come back "Does not match". Where TTB approves labels that stretch a rule (a missing period in the warning, metric-only beer with a qualification), the app says Please check. Evidence: [`docs/FINDINGS.md`](docs/FINDINGS.md).
 6. **Other approaches** (cloud AI models, AI upscaling, bottle-photo flattening, other OCR engines) were considered; what was tried and why each was or wasn't adopted is in [`docs/ALTERNATIVES.md`](docs/ALTERNATIVES.md).
@@ -31,21 +31,24 @@ A TTB agent uploads a label's images and types in what the application says. Wit
 | Proof (spirits) | Must be twice the alcohol content when shown (optional) |
 | Net contents | Any unit (mL, L, fl oz, pints); standard container sizes; beer must show U.S. units (§ 7.70) |
 | Health warning | Part 16: word for word, "GOVERNMENT WARNING" in capitals; sideways, tiny and wrapped text handled |
+| Warning type size | § 16.22: measured when the label height is given (form field or batch column `label_height`); advisory |
 
-Also: the fanciful name (like the brand), the "GOVERNMENT WARNING" heading in bold (measured, advisory). Not checked by design (listed in `docs/RULES.md` §7): sulfite and color-additive statements, minimum type size.
+Also: the fanciful name (like the brand), the "GOVERNMENT WARNING" heading in bold (measured, advisory). Not checked by design (listed in `docs/RULES.md` §7): sulfite and color-additive statements, characters per inch.
 
 ## Results so far (practice labels)
 
-Measured with `tools/evaluate.py` on the practice set (the final-test set is kept apart and run once):
+Measured with `tools/evaluate.py` on the practice sets (the final-test set is kept apart and run once). Three numbers matter: **wrong answers** (must be 0), **mistakes caught**, and **items confirmed automatically** (the rest are Please check, for the agent).
 
-| | Result |
-|---|---|
-| 64 real TTB-approved labels | **0** wrongly marked "Does not match" |
-| 64 generated labels with planted mistakes | 54 named exactly; 2 reworded warnings flagged Please check; **0** checked items wrongly marked "Matches" (scored item by item). The 8 with warning print too small are not detected as such, because type size isn't checked: 5 of them came back "Matches". |
-| Health warning on approved labels | 48 of 64 confirmed word for word; the rest Please check (mostly print too small to read) |
-| Speed (laptop, 4 cores) | typical 2.3 s, slowest 4.4 s per real label; on AWS, typical 1–3 s |
+| Practice set | Wrong answers | Mistakes caught | Items confirmed |
+|---|---|---|---|
+| 227 real TTB-approved labels (64 + 78 + 85, from the registry) | **0** "Does not match" | – | 75% / 70% / 68% |
+| 180 real approved labels with one planted change (alcohol, size, proof, a warning word, title-case heading, brand) | **0** changed items "Matches" | **180 of 180** flagged; 161 named exactly | 67% / 61% |
+| 96 generated labels, 64 with planted mistakes | **0** "Matches" on a mistake | **64 of 64** flagged; 61 named exactly | 93% |
+| 76 photo-style pictures of 35 real labels (angles, close-ups, cans) | **0** "Does not match" | – | 27% (photos are hard; most items say Please check) |
 
-Measured 2026-10-08 (`out/eval_dev4.log`, not committed). Minimum type size is not checked.
+- Health warning confirmed word for word on approved labels: 51 of 64, 49 of 78, 44 of 85. One approved label really prints the warning differently from 27 CFR 16.21 (`docs/FINDINGS.md`); it is reported apart.
+- Speed (laptop, 4 cores): typical 1.5–1.9 s, slowest 3.6 s per label.
+- Measured 2026-10-09 (`out/eval_full4.log`, not committed). The answer keys of the 85 newest labels were drafted with AI assistance and are being reviewed by the author.
 
 **Final test (held-out labels, run once on Oct 13):** _to be filled in with the numbers exactly as measured._
 
@@ -57,7 +60,7 @@ Measured 2026-10-08 (`out/eval_dev4.log`, not committed). Minimum type size is n
 python3.12 -m venv .venv
 .venv/bin/pip install -r requirements.txt onnx
 .venv/bin/python tools/make_dynamic_det.py         # one-time: fetch the reading models, make the detector size-flexible
-.venv/bin/pytest                                   # 210 rule tests
+.venv/bin/pytest                                   # 1,033 tests
 .venv/bin/uvicorn app.web.main:app --port 8000     # open http://localhost:8000
 ```
 
@@ -80,7 +83,7 @@ docker run --rm -p 8080:8080 label-check           # open http://localhost:8080
 - **Script logos and curved text** often can't be read; the brand or class/type then says Please check rather than guessing.
 - **Batch** needs the browser tab to stay open; results live in the page until downloaded as a spreadsheet.
 - **No COLA integration** (out of scope per the brief); the agent types the application values, or supplies them in the batch spreadsheet.
-- **Bold heading** is measured (stroke thickness) when the warning is large and straight enough; **minimum type size** is not checked (both are advisory: TTB states it does not review type size).
+- **Bold heading** is measured (stroke thickness) when the warning is large and straight enough; **type size** is measured when the label height is given, and only answers when the picture settles it (most approved labels print right at the minimum, so it often says "not confirmed"). Both are advisory: TTB states it does not review type size.
 - **Public prototype:** no login. Cost is capped by limiting the checker to 12 copies running at once, plus a budget alert. Not an official U.S. Government system.
 
 ## Repository map
@@ -93,6 +96,6 @@ docker run --rm -p 8080:8080 label-check           # open http://localhost:8080
 | `app/web/` | FastAPI pages (USWDS design system, self-hosted), single label and batch |
 | `docs/` | Rules with citations, findings from real labels, requirements traceability |
 | `data/` | Real approved labels (TTB Public COLA Registry), generated labels with known mistakes, answer key, frozen practice/final split |
-| `tools/` | Data collection, label generator, answer-key review screen, evaluation, sample batch |
+| `tools/` | Data collection, label generator, answer-key review screen, evaluation, sample batch, word-reader training |
 
 Built with the help of AI coding tools; every rule, number and claim here was checked against the code, the regulations or a measurement.
