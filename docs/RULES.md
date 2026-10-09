@@ -88,6 +88,10 @@ Plus a **word rule**: if the value only appears inside a longer line, the result
   is not a clear reading, so it is not used. "LESS THAN 0.5%" is a limit, not a value: it fits any declared value below it.
 - If the label also shows a *different* clearly read alcohol content, the result is **Please check** (the label
   contradicts itself, or one reading is wrong), never Matches.
+- **Two readings for Does not match (alcohol content and net contents).** A different number is Does not match only
+  when a second, independent reader (Tesseract) reading the same spot sees the same different number. Otherwise it is
+  **Please check**, and the reason shows both readings. Found on a real approved beer (TTB ID 26205001000228): the
+  label prints "6.5%", the word reader read "5.5%" in its display font.
 - Typed on the application, "45", "45%", "45% Alc", "45% AL", "45,0" and "45% Alc./Vol. (90 Proof)" all mean 45.
   Proof alone ("90 proof"), ranges and other numbers are refused by the form rather than guessed.
 

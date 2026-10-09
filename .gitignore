@@ -12,3 +12,4 @@ app/models/
 out/
 data/tampered/
 data/tampered_extra/
+.venv-train/

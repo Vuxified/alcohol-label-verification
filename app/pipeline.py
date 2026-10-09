@@ -4,18 +4,25 @@ The rules in app/verify stay pure and take text lines. The warning is judged acr
 (warning_judge.py) instead of one joined text. Two safety rules from RULES.md §1 apply on top:
   - A reading problem never becomes "Does not match": a warning that could not be found while the label shows
     signs of it (anchor words, a pass that ran out of time) is "Please check".
-  - "Does not match" for the warning wording needs two different engines showing the same change.
+  - "Does not match" for the warning wording needs two different engines showing the same change, and so does a
+    different alcohol content or net contents: Tesseract re-reads that spot (confirm_differences).
 """
 
 import re
 import time
 from dataclasses import dataclass, field
 
+import cv2
+
+from app.evidence import locate
+from app.ocr.engine import tesseract
 from app.ocr.reader import ApplicationReading, Reader
 from app.bold import bold_field
 from app.quality import quality_note
 from app.verify import Application, FieldResult, Verdict, verify
+from app.verify.abv import check_abv
 from app.verify.model import SEVERITY
+from app.verify.net_contents import check_net_contents
 from app.verify.verify import is_non_alcoholic
 from app.verify.warning_judge import judge_detail
 
@@ -92,11 +99,42 @@ def warning_fields(reading: ApplicationReading) -> list[FieldResult]:
     return [text, caps]
 
 
+def _second_reader(crop):
+    return tesseract(crop, 7)
+
+
+def confirm_differences(fields, frames, frame_words, app: Application, read=_second_reader) -> list[FieldResult]:
+    """A different alcohol content or net contents stays "Does not match" only when Tesseract, reading the same spot
+    on its own, sees the same different number; otherwise "Please check" (one misread digit must not fail a label)."""
+    out = []
+    for f in fields:
+        if f.verdict != Verdict.FAIL or f.field not in ("abv", "net_contents"):
+            out.append(f)
+            continue
+        spot = locate(f.found, frame_words)
+        seen = ""
+        if spot:
+            k, (x0, y0, x1, y1) = spot
+            h = y1 - y0
+            crop = frames[k][max(0, int(y0 - 0.4 * h)):int(y1 + 0.4 * h), max(0, int(x0 - h)):int(x1 + h)]
+            s = max(1.0, 64 / max(1, crop.shape[0]))  # small print enlarged, as Tesseract reads best near 30 px letters
+            seen = read(cv2.resize(crop, None, fx=s, fy=s, interpolation=cv2.INTER_CUBIC)).strip()
+            again = (check_abv if f.field == "abv" else check_net_contents)(app, [seen])
+            if again.verdict == Verdict.FAIL and re.sub(r"\D", "", again.found or "") == re.sub(r"\D", "", f.found):
+                out.append(f)
+                continue
+        why = (f'A second reading of that spot saw "{seen}", so the difference is not confirmed.' if seen
+               else "A second reading of that spot could not confirm it.")
+        out.append(FieldResult(f.field, Verdict.CHECK, f"{f.reason} {why} Please look.", code=f.code, found=f.found))
+    return out
+
+
 def check_application(reader: Reader, app: Application, images: list[tuple[str, bytes]]) -> CheckResult:
     t0 = time.perf_counter()
     reading = reader.read(images, fields_ok=_others_ok(app))
     report = verify(app, reading.lines())
-    fields = [f for f in report.fields if not f.field.startswith("warning")]
+    fields = confirm_differences([f for f in report.fields if not f.field.startswith("warning")],
+                                 reading.frames, reading.frame_words, app)
     if is_non_alcoholic(app, reading.lines()):
         fields += [f for f in report.fields if f.field.startswith("warning")]  # not required below 0.5% alcohol
     else:

@@ -6,6 +6,7 @@ image is detected at its own shape with a 768-px long side (READER-OPTIONS.md: 2
 of the image that was read).
 """
 
+import os
 import queue
 import shutil
 from dataclasses import dataclass
@@ -15,11 +16,14 @@ import numpy as np
 import onnxruntime as ort
 import onnxtr.models.engine as _engine
 import pytesseract
-from onnxtr.models import EngineConfig, crop_orientation_predictor, ocr_predictor
-from onnxtr.models import detection
+from onnxtr.models import EngineConfig, crop_orientation_predictor, ocr_predictor, recognition_predictor
+from onnxtr.models import detection, recognition
 
 MODEL = Path(__file__).resolve().parent.parent / "models" / "db_mobilenet_v3_large_dyn.onnx"
 RECOGNIZER = "crnn_mobilenet_v3_small"
+# A second word reader, trained on label words (tools/train_reader.py, docs/APPROACH.md). LABEL_WORD_MODEL="" runs the
+# stock reader alone (for comparison runs), or names another trained file.
+WORDS = os.environ.get("LABEL_WORD_MODEL", str(Path(__file__).with_name("words_labels.onnx")))
 
 Word = tuple  # (text: str, conf: float, box: (x0, y0, x1, y1))
 
@@ -48,6 +52,18 @@ def _config(threads):
     return EngineConfig(providers=["CPUExecutionProvider"], session_options=opts)
 
 
+class _Pair:
+    """Two word readers on every word: the reading of whichever is more confident is kept (the stock reader stays
+    right on ordinary type, the trained one on the display fonts labels use)."""
+
+    def __init__(self, stock, trained):
+        self.stock, self.trained = stock, trained
+
+    def __call__(self, crops, **kwargs):
+        a, b = self.stock(crops, **kwargs), self.trained(crops, **kwargs)
+        return [x if x[1] >= y[1] else y for x, y in zip(a, b)]
+
+
 @dataclass
 class Text:
     lines: list[str]
@@ -63,8 +79,15 @@ class OnnxEngine:
         for _ in range(pool):
             cfg = _config(threads)
             det = detection.db_mobilenet_v3_large(model_path=str(MODEL), engine_cfg=cfg)
-            self.q.put(ocr_predictor(det_arch=det, reco_arch=RECOGNIZER, det_engine_cfg=cfg, reco_engine_cfg=cfg,
-                                     clf_engine_cfg=cfg, assume_straight_pages=True, detect_orientation=False))
+            p = ocr_predictor(det_arch=det, reco_arch=RECOGNIZER, det_engine_cfg=cfg, reco_engine_cfg=cfg,
+                              clf_engine_cfg=cfg, assume_straight_pages=True, detect_orientation=False)
+            if WORDS:
+                if not Path(WORDS).exists():
+                    raise FileNotFoundError(f"{WORDS} is missing; make it with tools/train_reader.py")
+                trained = recognition_predictor(recognition.crnn_mobilenet_v3_small(model_path=WORDS, engine_cfg=cfg),
+                                                engine_cfg=cfg)
+                p.reco_predictor = _Pair(p.reco_predictor, trained)
+            self.q.put(p)
         self.orientation = crop_orientation_predictor(engine_cfg=_config(threads))
 
     def read(self, img: np.ndarray, det_size: int = 768) -> Text:

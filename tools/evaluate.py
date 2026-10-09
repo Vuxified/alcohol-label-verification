@@ -56,9 +56,9 @@ def heldout_ids():
     return set(json.loads((DATA / "splits" / "split.json").read_text())["heldout"])
 
 
-def extra_ids():
-    """78 more approved labels from the registry, answer key checked against the images (practice only)."""
-    return set(json.loads((DATA / "splits" / "practice_extra.json").read_text())["dev"])
+def extra_ids(name="practice_extra"):
+    """More approved labels from the registry, answer key checked against the images (practice only)."""
+    return set(json.loads((DATA / "splits" / f"{name}.json").read_text())["dev"])
 
 
 def cola_items(dev, kind="cola"):
@@ -128,6 +128,8 @@ def main():
     if not args.final:
         if "cola2" in sets:
             items += list(cola_items(extra_ids(), "cola2"))
+        if "cola3" in sets:  # 85 fetched 2026-10-09; answer keys await the owner's review
+            items += list(cola_items(extra_ids("practice_extra2"), "cola3"))
         if "tampered" in sets:
             items += list(item_dirs("tampered", "tampered"))
         if "tampered_extra" in sets:  # made from the 78 extra labels, kept apart from reader training
@@ -154,7 +156,7 @@ def main():
                "passes": res.reading.passes, "dropped": res.reading.dropped, "turns": res.reading.turns,
                "expected": expected}
         rows.append(row)
-        if kind in ("cola", "cola2", "scene_real"):
+        if kind in ("cola", "cola2", "cola3", "scene_real"):
             for f in res.fields:
                 if f.verdict == Verdict.FAIL and f.field == "warning_text" and expected["warning_misprinted"]:
                     misprints.append((iid, f.reason[:120]))  # TTB approved it, but the printed warning really differs
@@ -183,7 +185,7 @@ def main():
         print(f"== without the {len(twins)} final-test labels that have a twin in practice: "
               f"FALSE FAILS {sum(x[0] not in twins for x in false_fail)}, FALSE PASSES {len(false_pass)}, "
               f"real labels {sum(r['kind'] == 'cola' and r['id'] not in twins for r in rows)}")
-    for kind in sorted({r["kind"] for r in rows} - {"cola", "cola2", "scene_real"}):
+    for kind in sorted({r["kind"] for r in rows} - {"cola", "cola2", "cola3", "scene_real"}):
         planted = [r for r in rows if r["kind"] == kind and r["expected"]["overall"] != "pass"]
         named = sum(1 for r in planted if any(f["code"] in r["expected"].get("findings", []) for f in r["fields"]))
         print(f"== mistakes named correctly ({kind}): {named}/{len(planted)}")
