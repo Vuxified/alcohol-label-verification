@@ -10,15 +10,15 @@ FIELD_NAMES = {
     "name_address": "Name and address",
     "country_of_origin": "Country of origin",
     "warning_text": "Health warning wording",
-    "warning_caps": "Health warning capital letters",
-    "warning_bold": "Health warning heading in bold",
+    "warning_caps": "Warning heading in capitals",
+    "warning_bold": "Warning heading in bold",
 }
 
 VERDICT = {
-    "fail": ("✖", "Does not match", "usa-tag bg-secondary-dark"),
-    "check": ("?", "Please check", "usa-tag bg-gold text-ink"),
-    "pass": ("✔", "Matches", "usa-tag bg-green"),
-    "n/a": ("–", "Not checked", "usa-tag bg-base-light text-ink"),
+    "fail": ("i-fail", "Does not match"),  # (icon in base.html, word)
+    "check": ("i-check", "Please check"),
+    "pass": ("i-pass", "Matches"),
+    "n/a": ("i-na", "Not checked"),
 }
 
 BEVERAGES = {"spirits": "Distilled spirits", "wine": "Wine", "malt": "Beer or malt beverage"}
@@ -44,3 +44,6 @@ ERRORS = {
 
 NOT_SAVED = "These results are not saved. To keep them, print this page."
 DISCLAIMER = "This tool helps you review. You make the decision."
+NEAR_MATCH = "The label shows {label} where the application says {app}. The rest is the same."
+NEAR_MATCH_WHY = ("This is Please check, not Does not match, because one misread letter or digit can look like this. "
+                  "Use the close-up to decide.")

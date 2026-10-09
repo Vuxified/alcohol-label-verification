@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
-<p class="app-eyebrow">Check one label</p>
+<p class="app-kicker">Check one label</p>
 <h1>Does the label match its application?</h1>
-<p class="app-lede">Add the label pictures and copy a few details from the application. In a few seconds you'll see each item side by side: what the application says, what the label shows, and whether they match.</p>
+<p class="app-lede">Add the label pictures and copy a few details from the application. In a few seconds you'll see what the application says next to what the label shows, with anything that needs a closer look listed first.</p>
 
 {% if errors %}
 <div class="usa-alert usa-alert--error" role="alert" id="errors" tabindex="-1">
@@ -14,7 +14,7 @@
 {% endif %}
 
 <div class="app-layout">
-<form method="post" action="/check" enctype="multipart/form-data" class="usa-form usa-form--large app-panel" id="check-form" style="max-width:none">
+<form method="post" action="/check" enctype="multipart/form-data" class="usa-form usa-form--large" id="check-form" style="max-width:none">
   <fieldset class="app-step">
     <legend><span class="app-step__num" aria-hidden="true">1</span>Label pictures</legend>
     <label class="usa-label" for="images">Every side that has writing: front, back, neck</label>
@@ -93,7 +93,7 @@
 </form>
 
 <aside>
-  <section class="app-panel app-side" aria-labelledby="samples-heading">
+  <section class="app-side" aria-labelledby="samples-heading">
     <h2 id="samples-heading">Try it without uploading</h2>
     <form method="post" action="/check">
       {% for key, (label, _) in copy.SAMPLES.items() %}
@@ -102,7 +102,7 @@
     </form>
     <p class="app-small">Made-up labels created for this prototype.</p>
   </section>
-  <section class="app-panel app-side" aria-labelledby="checks-heading">
+  <section class="app-side" aria-labelledby="checks-heading">
     <h2 id="checks-heading">What we check</h2>
     <ul class="app-checklist">
       <li>Brand name and fanciful name<small>Capitals and punctuation don't matter</small></li>

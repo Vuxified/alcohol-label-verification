@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 {% block title %}Check many labels – Label Check{% endblock %}
 {% block content %}
-<p class="app-eyebrow">Check many labels</p>
+<p class="app-kicker">Check many labels</p>
 <h1>Check a whole batch at once</h1>
 <p class="app-lede">Add one ZIP file with the label pictures and one spreadsheet (CSV) with a row per application. We check them all, show what needs attention first, and give you a results spreadsheet.</p>
 
 <div class="app-layout">
 <div>
-<section class="app-panel app-side" aria-labelledby="sample-heading" style="margin-bottom:1.5rem">
+<section class="app-intro-note" aria-labelledby="sample-heading">
   <div>
     <h2 id="sample-heading">No files handy?</h2>
     <p><a class="usa-link" href="/static/sample-batch.zip" download>Download a sample batch</a> (22 applications; the spreadsheet is inside the ZIP), then add it below.
@@ -16,7 +16,7 @@
 </section>
 
 <div id="setup">
-  <form class="usa-form usa-form--large app-panel" id="batch-form" style="max-width:none">
+  <form class="usa-form usa-form--large" id="batch-form" style="max-width:none">
     <label class="usa-label" for="zip">1. ZIP file with the label images</label>
     <span class="usa-hint" id="zip-hint">Up to 500 applications, up to 6 images each (JPG, PNG or WEBP, up to 10 MB each).</span>
     <input class="usa-file-input" id="zip" type="file" accept=".zip,application/zip" required aria-describedby="zip-hint">
@@ -79,9 +79,9 @@
   </table>
 </div>
 
-<div class="app-decide"><strong>{{ copy.DISCLAIMER }}</strong></div>
+<p class="app-decide"><strong>{{ copy.DISCLAIMER }}</strong></p>
 </div>
-<aside class="app-panel app-side">
+<aside class="app-side">
   <h2>How it works</h2>
   <ul class="app-checklist">
     <li>Add the ZIP and spreadsheet<small>Or one ZIP with manifest.csv inside</small></li>
@@ -106,6 +106,7 @@
   var ORDER = { fail: 0, check: 1, error: 2, pass: 3 };
   var BEV = Object.assign(Object.create(null), { spirits: 'spirits', 'distilled spirits': 'spirits', wine: 'wine', malt: 'malt', beer: 'malt', 'malt beverage': 'malt' });
   var $ = function (id) { return document.getElementById(id); };
+  var ico = function (v) { return VERDICT[v] ? '<svg class="app-ico" aria-hidden="true"><use href="#' + VERDICT[v][0] + '"/></svg>' : ''; };
   var show = function (id, on) { $(id).classList.toggle('app-hidden', !on); };
   var esc = function (t) { return String(t == null ? '' : t).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
 
@@ -261,15 +262,14 @@
       left = ' · about ' + (s > 90 ? Math.round(s / 60) + ' minutes' : s + ' seconds') + ' left';
     }
     $('run-progress-text').textContent = done + ' of ' + total + ' checked' + left + (cancelled && done < total ? ' · cancelled' : '');
-    $('run-counts').innerHTML = '<span class="app-verdict app-verdict--fail">' + VERDICT.fail[0] + ' ' + c.fail + ' do not match</span> ' +
-      '<span class="app-verdict app-verdict--check">' + VERDICT.check[0] + ' ' + c.check + ' please check</span> ' +
-      '<span class="app-verdict app-verdict--pass">' + VERDICT.pass[0] + ' ' + c.pass + ' match</span> ' +
+    $('run-counts').innerHTML = '<span class="app-verdict app-verdict--fail">' + ico('fail') + c.fail + ' do not match</span> ' +
+      '<span class="app-verdict app-verdict--check">' + ico('check') + c.check + ' please check</span> ' +
+      '<span class="app-verdict app-verdict--pass">' + ico('pass') + c.pass + ' match</span> ' +
       (c.error ? '<span class="app-verdict app-verdict--error">' + c.error + ' errors</span>' : '');
     var all = document.querySelector('input[name=show]:checked').value === 'all';
     var rows = sorted().filter(function (x) { return all || x.overall !== 'pass'; });
     $('rows').innerHTML = rows.map(function (x) {
-      var v = VERDICT[x.overall] || ['!', 'Error'];
-      return '<tr class="is-' + x.overall + '"><th scope="row" data-label="Application">' + esc(x.id) + '</th><td data-label="Result"><span class="app-verdict app-verdict--' + x.overall + '">' + v[0] + ' ' + esc(WORD[x.overall] || v[1]) +
+      return '<tr class="is-' + x.overall + '"><th scope="row" data-label="Application">' + esc(x.id) + '</th><td data-label="Result"><span class="app-verdict app-verdict--' + x.overall + '">' + ico(x.overall) + esc(WORD[x.overall] || 'Error') +
         '</span></td><td data-label="Why">' + esc(x.reasons || 'Every item checked matches.') + '</td></tr>';
     }).join('') || '<tr><td colspan="3">' + (done ? 'Nothing needs attention so far.' : 'Starting…') + '</td></tr>';
     if (total) {

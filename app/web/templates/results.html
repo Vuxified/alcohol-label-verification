@@ -1,79 +1,126 @@
 {% extends "base.html" %}
 {% block title %}Results – Label Check{% endblock %}
+{% macro tag(value) %}{% set icon, word = copy.VERDICT[value] %}<span class="app-verdict app-verdict--{{ value | replace('/', '') }}"><svg class="app-ico" aria-hidden="true"><use href="#{{ icon }}"/></svg>{{ word }}</span>{% endmacro %}
+{% macro words(parts) %}{% for w, differs in parts %}{% if differs %}<span class="app-diff">{{ w }}</span>{% else %}{{ w }}{% endif %}{{ " " if not loop.last }}{% endfor %}{% endmacro %}
 {% block content %}
-{% set fails = counts[Verdict.FAIL] %}{% set checks = counts[Verdict.CHECK] %}{% set passes = counts[Verdict.PASS] %}
-<div class="app-result-head">
-  <div>
-    <p class="app-eyebrow">Results for</p>
-    <h1 id="results-heading" tabindex="-1">{{ res.form.brand_name }}</h1>
-  </div>
-  <div class="app-meta">Checked in {{ "%.1f"|format(res.seconds) }} seconds<br><a href="/">Check another label</a></div>
+{% set name = copy.FIELD_NAMES %}
+{% set passes = counts[Verdict.PASS] %}{% set fails = counts[Verdict.FAIL] %}
+<div class="app-title">
+  <div><p class="app-kicker">Results</p><h1>{{ res.form.brand_name }}</h1></div>
+  <p class="app-meta">Checked in {{ "%.1f"|format(res.seconds) }} seconds &nbsp;·&nbsp; <a href="/">Check another label</a></p>
 </div>
 
-<div class="app-summary" role="group" aria-label="Summary">
-  <div class="app-tally app-tally--fail {{ 'app-tally--zero' if not fails }}"><div class="app-tally__n">{{ fails }}</div><div class="app-tally__label">Do not match</div></div>
-  <div class="app-tally app-tally--check {{ 'app-tally--zero' if not checks }}"><div class="app-tally__n">{{ checks }}</div><div class="app-tally__label">Please check</div></div>
-  <div class="app-tally app-tally--pass {{ 'app-tally--zero' if not passes }}"><div class="app-tally__n">{{ passes }}</div><div class="app-tally__label">Match</div></div>
+<div class="app-verdict-line" id="results-heading" tabindex="-1" role="status">
+  {% if not attention %}
+  <p class="app-verdict-line__main"><span class="app-dot app-dot--pass" aria-hidden="true"></span>Every item we checked matches the application.</p>
+  <p class="app-verdict-line__sub">{{ passes }} {{ "item" if passes == 1 else "items" }} checked. You make the decision.</p>
+  {% elif attention|length == 1 %}
+  <p class="app-verdict-line__main"><span class="app-dot app-dot--{{ 'fail' if fails else 'check' }}" aria-hidden="true"></span>One item needs your attention: the {{ name.get(attention[0].field, attention[0].field) | lower }}.</p>
+  <p class="app-verdict-line__sub">{% if passes %}The other {{ passes }} {{ "item matches" if passes == 1 else "items match" }} the application.{% endif %}</p>
+  {% else %}
+  <p class="app-verdict-line__main"><span class="app-dot app-dot--{{ 'fail' if fails else 'check' }}" aria-hidden="true"></span>{{ attention|length }} items need your attention.</p>
+  <p class="app-verdict-line__sub">{% for f in attention %}{{ name.get(f.field, f.field) if loop.first else name.get(f.field, f.field) | lower }}{{ ", " if loop.revindex > 2 else " and " if loop.revindex == 2 }}{% endfor %}.{% if passes %} The other {{ passes }} {{ "item matches" if passes == 1 else "items match" }}.{% endif %}</p>
+  {% endif %}
+  {% for note in res.notes %}<p class="app-note">{{ note }}</p>{% endfor %}
 </div>
-{% if fails or checks %}
-<p class="app-headline">{{ fails + checks }} {{ "item needs" if fails + checks == 1 else "items need" }} your attention. They are listed first.</p>
-{% else %}
-<p class="app-headline app-headline--ok">Every item we checked matches the application.</p>
-{% endif %}
-{% for note in res.notes %}<p class="app-note">{{ note }}</p>{% endfor %}
 
 <div class="app-layout">
   <div>
-    <table class="app-table app-results-table">
-      <caption class="usa-sr-only">Each item: what the application says, what the label shows, and the result</caption>
-      <colgroup><col><col class="c-app"><col class="c-label"><col class="c-result"></colgroup>
-      <thead><tr><th scope="col">Item</th><th scope="col">Application says</th><th scope="col">Label shows</th><th scope="col">Result</th></tr></thead>
-      <tbody>
-      {% for f in rows %}{% set icon, word, _ = copy.VERDICT[f.verdict.value] %}{% set v = f.verdict.value | replace('/', '') %}
-        <tr class="is-{{ v }}">
-          <th scope="row">{{ copy.FIELD_NAMES.get(f.field, f.field) }}</th>
-          <td data-label="Application says" class="app-value {{ 'app-value--empty' if not asked.get(f.field) }}">{{ asked.get(f.field) or "Not given" }}</td>
-          <td data-label="Label shows">
-            {% if f.field in ev %}
-              {% if f.found and not f.field.startswith('warning') %}<span class="app-value">{{ f.found }}</span>{% endif %}
-              <img class="app-crop" src="{{ crops[f.field] }}" alt="Part of picture {{ ev[f.field][0] + 1 }} showing {{ (f.found or copy.FIELD_NAMES.get(f.field, f.field))|e }}">
-              <a class="app-show" href="#pic-{{ ev[f.field][0] }}">See it on picture {{ ev[f.field][0] + 1 }}</a>
-            {% elif f.found %}<span class="app-value">{{ f.found }}</span>
-              <p class="app-small">Read from the label; its place on the picture could not be marked.</p>
-            {% elif f.verdict.value in ('fail', 'check') and not (f.field.startswith('warning') and f.code != 'WARNING_MISSING') %}<span class="app-value app-value--empty">Not found on the pictures</span>
-            {% else %}<span class="app-value app-value--empty">—</span>{% endif %}
-          </td>
-          <td data-label="Result">
-            <span class="app-verdict app-verdict--{{ v }}"><span aria-hidden="true">{{ icon }}</span> {{ word }}</span>
-            {% if f.verdict.value != 'pass' %}<p class="app-why">{{ f.reason }}</p>{% endif %}
-          </td>
-        </tr>
-      {% endfor %}
-      </tbody>
-    </table>
-    <div class="app-decide"><strong>{{ copy.DISCLAIMER }}</strong> {{ copy.NOT_SAVED }}</div>
+    {% for f in attention %}{% set d = diffs.get(f.field) %}
+    <section class="app-issue" data-pick="{{ f.field }}" tabindex="0" aria-labelledby="h-{{ f.field }}">
+      <div class="app-issue__head"><h2 id="h-{{ f.field }}">{{ name.get(f.field, f.field) }}</h2>{{ tag(f.verdict.value) }}</div>
+      {% if f.field == "warning_text" and warning_parts %}
+      <p class="app-kicker">The required wording (27 CFR 16.21), with what the label shows marked</p>
+      <p class="app-legal">{% for t, kind in warning_parts %}{% if kind == "missing" %}<del>{{ t }}</del>{% elif kind %} <ins>{{ t }}</ins>{% elif loop.index <= 3 %}<b>{{ t }}</b>{% else %}{{ t }}{% endif %}{% endfor %}</p>
+      {% elif not f.field.startswith("warning") %}
+      <dl class="app-pair">
+        <div><dt>Application says</dt>
+          {% if d %}<dd>{{ words(d[0]) }}</dd>{% elif asked.get(f.field) %}<dd>{{ asked[f.field] }}</dd>{% else %}<dd class="app-pair__empty">Not given</dd>{% endif %}</div>
+        <div><dt>Label shows</dt>
+          {% if d %}<dd>{{ words(d[1]) }}</dd>{% elif f.found %}<dd>{{ f.found }}</dd>{% else %}<dd class="app-pair__empty">Not found on the pictures</dd>{% endif %}</div>
+      </dl>
+      {% endif %}
+      {% if f.field in ev %}
+      <figure class="app-evidence"><img src="{{ crops[f.field] }}" alt="Close-up of picture {{ ev[f.field][0] + 1 }} showing {{ (f.found or name.get(f.field, f.field))|e }}">
+        <figcaption>Close-up from picture {{ ev[f.field][0] + 1 }}</figcaption></figure>
+      {% endif %}
+      <p class="app-why">{{ plain.get(f.field) or f.reason }}</p>
+      {% if f.field in plain %}<p class="app-small">{{ copy.NEAR_MATCH_WHY }}</p>{% endif %}
+      {% if f.field == "warning_text" and warning_parts %}{% set kinds = warning_parts | map(attribute=1) | list %}
+      <p class="app-small">{% if "missing" in kinds %}<del>Struck out</del>: required, but not found on the label. {% endif %}{% if "label" in kinds or "extra" in kinds %}<ins>Underlined</ins>: what the label shows instead or in addition.{% endif %}</p>{% endif %}
+    </section>
+    {% endfor %}
+
+    {% if matched %}
+    <details class="app-ok" {% if not attention %}open{% endif %}>
+      <summary><h2>{{ passes }} {{ "item matches" if passes == 1 else "items match" }}{% if matched|length > passes %}, {{ matched|length - passes }} not checked{% endif %}</h2>
+        {% set short = [] %}{% for f in matched %}{% set n = "health warning" if f.field.startswith("warning") else name.get(f.field, f.field) | lower %}{% if n not in short %}{% set _ = short.append(n) %}{% endif %}{% endfor %}
+        <span class="app-ok__names">{{ (short | join(", ")) | capitalize }}</span>
+        <span class="app-ok__toggle"><span class="app-ok__show">Show</span><span class="app-ok__hide">Hide</span></span></summary>
+      <table>
+        <colgroup><col class="c-item"><col class="c-app"><col><col class="c-res"></colgroup>
+        <thead><tr><th scope="col">Item</th><th scope="col" class="app-col-app">Application says</th><th scope="col">Label shows</th><th scope="col" class="app-r">Result</th></tr></thead>
+        <tbody>
+        {% for f in matched %}
+          <tr {% if f.field in ev %}data-pick="{{ f.field }}" tabindex="0"{% endif %}>
+            <th scope="row">{{ name.get(f.field, f.field) }}</th>
+            <td class="app-col-app">{{ asked.get(f.field) or "Not given" }}</td>
+            <td>{{ f.found if f.found and not f.field.startswith("warning") else f.reason }}</td>
+            <td class="app-r">{{ tag(f.verdict.value) }}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </details>
+    {% endif %}
+
     <div class="app-actions">
       <a class="usa-button" href="/">Check another label</a>
-      <button class="usa-button usa-button--outline" onclick="window.print()">Print this page</button>
+      <button class="app-linkbutton" type="button" onclick="window.print()">Print this page</button>
     </div>
+    <p class="app-decide"><strong>{{ copy.DISCLAIMER }}</strong> {{ copy.NOT_SAVED }}</p>
   </div>
 
-  <aside class="app-pics app-sticky">
-    <h2>Label pictures</h2>
-    {% for name in names %}{% set h, w = shapes[loop.index0] %}
-    <figure class="app-pic" id="pic-{{ loop.index0 }}">
+  <aside class="app-pics app-sticky" aria-label="Label pictures">
+    {% for pic_name in names %}{% set h, w = shapes[loop.index0] %}{% set k = loop.index0 %}
+    <figure class="app-pic" id="pic-{{ k }}">
+      <h2>Picture {{ loop.index }} of {{ names|length }}</h2>
       <div class="app-pic__box">
-        <img src="{{ pics[loop.index0] }}" alt="Label picture {{ loop.index }}: {{ name }}">
+        <img src="{{ pics[k] }}" alt="Label picture {{ loop.index }}: {{ pic_name }}">
         <svg viewBox="0 0 {{ w }} {{ h }}" preserveAspectRatio="none" aria-hidden="true">
-          {% for field, hit in ev.items() if hit[0] == loop.index0 %}{% set x0, y0, x1, y1 = hit[1] %}
-          <rect x="{{ x0 }}" y="{{ y0 }}" width="{{ x1 - x0 }}" height="{{ y1 - y0 }}" class="app-box"/>
+          {% for f in rows if f.field in ev and ev[f.field][0] == k %}{% set x0, y0, x1, y1 = ev[f.field][1] %}
+          <rect x="{{ x0 }}" y="{{ y0 }}" width="{{ x1 - x0 }}" height="{{ y1 - y0 }}" rx="4" class="app-box is-{{ f.verdict.value | replace('/', '') }}" data-f="{{ f.field }}"/>
           {% endfor %}
         </svg>
       </div>
-      <figcaption>Picture {{ loop.index }}: {{ name }}{% if res.reading.turns[loop.index0] %} (we turned it {{ res.reading.turns[loop.index0] }}° to read it){% endif %}</figcaption>
+      <figcaption>{{ pic_name }}{% if res.reading.turns[k] %} (turned {{ res.reading.turns[k] }}° to read it){% endif %}</figcaption>
     </figure>
     {% endfor %}
+    <p class="app-small">Select an item to see where it is on the label.</p>
   </aside>
 </div>
 {% endblock %}
-{% block scripts %}<script>document.getElementById('results-heading').focus();</script>{% endblock %}
+{% block scripts %}
+<script>
+(function () {
+  var picks = document.querySelectorAll('[data-pick]');
+  function pick(field, scroll) {
+    picks.forEach(function (el) { el.classList.toggle('is-picked', el.dataset.pick === field); });
+    var hit = null;
+    document.querySelectorAll('.app-box').forEach(function (r) {
+      var on = r.dataset.f === field; r.classList.toggle('is-picked', on); if (on && !hit) hit = r;
+    });
+    if (scroll && hit) hit.closest('.app-pic').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+  picks.forEach(function (el) {
+    el.addEventListener('click', function (e) { if (!e.target.closest('a, button, summary')) pick(el.dataset.pick, true); });
+    el.addEventListener('keydown', function (e) {
+      if ((e.key === 'Enter' || e.key === ' ') && e.target === el) { e.preventDefault(); pick(el.dataset.pick, true); }
+    });
+  });
+  if (picks.length) pick(picks[0].dataset.pick, false);
+  window.addEventListener('beforeprint', function () { document.querySelectorAll('details').forEach(function (d) { d.open = true; }); });
+  document.getElementById('results-heading').focus();
+})();
+</script>
+{% endblock %}
