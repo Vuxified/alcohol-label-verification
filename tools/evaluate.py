@@ -56,7 +56,12 @@ def heldout_ids():
     return set(json.loads((DATA / "splits" / "split.json").read_text())["heldout"])
 
 
-def cola_items(dev):
+def extra_ids():
+    """78 more approved labels from the registry, answer key checked against the images (practice only)."""
+    return set(json.loads((DATA / "splits" / "practice_extra.json").read_text())["dev"])
+
+
+def cola_items(dev, kind="cola"):
     for i in sorted(x[5:] for x in dev if x.startswith("cola_")):
         rec = json.loads((DATA / "cola_samples" / i / "record.json").read_text())
         gt = json.loads((DATA / "ground_truth" / f"{i}.json").read_text())
@@ -65,7 +70,8 @@ def cola_items(dev):
                           gt.get("net_contents_text"), gt.get("name_address_text"), rec.get("source", "domestic"),
                           gt.get("country_of_origin_text") if imported else None)
         images = [(im["file"], (DATA / "cola_samples" / i / im["file"]).read_bytes()) for im in rec["images"]]
-        yield i, "cola", app, images, {"overall": "approved", "warning_present": gt["warning"].get("present")}
+        yield i, kind, app, images, {"overall": "approved", "warning_present": gt["warning"].get("present"),
+                                     "warning_misprinted": gt["warning"].get("matches_required_text") is False}
 
 
 def syn_items(dev):
@@ -80,6 +86,19 @@ def syn_items(dev):
         yield d.name, "syn", app, images, it["expected"]
 
 
+def item_dirs(folder, kind):
+    """Generated test sets in the synthetic format (built from practice labels only): tampered real labels, scenes."""
+    root = DATA / folder
+    for d in sorted(root.iterdir()) if root.exists() else []:
+        if (d / "item.json").exists():
+            it = json.loads((d / "item.json").read_text())
+            a = it["application"]
+            app = Application(a["beverage_type"], a["brand_name"], a.get("class_type"), a.get("abv"),
+                              a.get("net_contents"), a.get("name_address"), a.get("source", "domestic"),
+                              a.get("country_of_origin"))
+            yield d.name, kind, app, [(im["file"], (d / im["file"]).read_bytes()) for im in it["images"]], it["expected"]
+
+
 def pct(xs, q):
     xs = sorted(xs)
     return xs[max(0, int(round(q * len(xs))) - 1)] if xs else 0.0
@@ -88,7 +107,7 @@ def pct(xs, q):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--name", required=True)
-    ap.add_argument("--set", default="cola,syn")
+    ap.add_argument("--set", default="cola,syn", help="any of cola,syn,cola2,tampered,scenes,scenes_real (all but the first two: practice only)")
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--cpus", type=int, default=4)
     ap.add_argument("--final", action="store_true", help="the one-time final test on the held-out labels")
@@ -100,17 +119,27 @@ def main():
         print("FINAL TEST on the held-out labels (images verified unchanged). Run once; report the numbers as they are.")
     else:
         dev = dev_ids()
+    sets = set(args.set.split(","))
     items = []
-    if "cola" in args.set:
+    if "cola" in sets:
         items += list(cola_items(dev))
-    if "syn" in args.set:
+    if "syn" in sets:
         items += list(syn_items(dev))
+    if not args.final:
+        if "cola2" in sets:
+            items += list(cola_items(extra_ids(), "cola2"))
+        if "tampered" in sets:
+            items += list(item_dirs("tampered", "tampered"))
+        if "scenes" in sets:
+            items += list(item_dirs("scenes", "scene"))
+        if "scenes_real" in sets:  # real approved labels photographed in scenes: scored like approved labels
+            items += list(item_dirs("scenes_real", "scene_real"))
     if args.limit:
         items = items[:args.limit]
     reader = Reader(cpus=args.cpus)
     reader.warm_up()
     rows, counts, times = [], defaultdict(Counter), defaultdict(list)
-    false_fail, false_pass = [], []
+    false_fail, false_pass, misprints = [], [], []
     for n, (iid, kind, app, images, expected) in enumerate(items, 1):
         res = check_application(reader, app, images)
         verdicts = {f.field: f.verdict.value for f in res.fields}
@@ -123,9 +152,11 @@ def main():
                "passes": res.reading.passes, "dropped": res.reading.dropped, "turns": res.reading.turns,
                "expected": expected}
         rows.append(row)
-        if kind == "cola":
+        if kind in ("cola", "cola2", "scene_real"):
             for f in res.fields:
-                if f.verdict == Verdict.FAIL:
+                if f.verdict == Verdict.FAIL and f.field == "warning_text" and expected["warning_misprinted"]:
+                    misprints.append((iid, f.reason[:120]))  # TTB approved it, but the printed warning really differs
+                elif f.verdict == Verdict.FAIL:
                     false_fail.append((iid, f.field, f.code, f.reason[:120]))
         elif expected["overall"] != "pass":
             for code in expected.get("findings", []):
@@ -139,16 +170,25 @@ def main():
     print(f"\n== FALSE FAILS on approved labels: {len(false_fail)}")
     for x in false_fail:
         print("  ", *x)
+    print(f"== approved labels whose printed warning really differs from 27 CFR 16.21, flagged: {len(misprints)}")
+    for x in misprints:
+        print("  ", *x)
     print(f"== FALSE PASSES (the mistaken field said Matches): {len(false_pass)}")
     for x in false_pass:
         print("  ", *x)
-    syn = [r for r in rows if r["kind"] == "syn" and r["expected"]["overall"] != "pass"]
-    named = sum(1 for r in syn if any(f["code"] in r["expected"].get("findings", []) for f in r["fields"]))
-    print(f"== mistakes named correctly: {named}/{len(syn)}")
+    if args.final:  # six final-test labels have a near-identical twin in practice: report without them too
+        twins = set(json.loads((DATA / "splits" / "heldout_twins.json").read_text())["heldout"])
+        print(f"== without the {len(twins)} final-test labels that have a twin in practice: "
+              f"FALSE FAILS {sum(x[0] not in twins for x in false_fail)}, FALSE PASSES {len(false_pass)}, "
+              f"real labels {sum(r['kind'] == 'cola' and r['id'] not in twins for r in rows)}")
+    for kind in sorted({r["kind"] for r in rows} - {"cola", "cola2", "scene_real"}):
+        planted = [r for r in rows if r["kind"] == kind and r["expected"]["overall"] != "pass"]
+        named = sum(1 for r in planted if any(f["code"] in r["expected"].get("findings", []) for f in r["fields"]))
+        print(f"== mistakes named correctly ({kind}): {named}/{len(planted)}")
     for kind, ts in times.items():
         print(f"== time {kind}: p50 {statistics.median(ts):.2f}s  p95 {pct(ts, .95):.2f}s  max {max(ts):.2f}s  (n={len(ts)})")
     OUT.mkdir(parents=True, exist_ok=True)
-    (OUT / f"{args.name}.json").write_text(json.dumps({"rows": rows, "false_fail": false_fail, "false_pass": false_pass,
+    (OUT / f"{args.name}.json").write_text(json.dumps({"rows": rows, "false_fail": false_fail, "false_pass": false_pass, "misprints": misprints,
                                                        "when": time.strftime("%Y-%m-%d %H:%M")}, indent=1))
 
 

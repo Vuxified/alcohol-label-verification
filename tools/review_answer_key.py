@@ -10,6 +10,7 @@ Queues (pick one in the address bar):
     /?queue=heldout          all final-test labels (review every one)
     /?queue=disputed         practice labels where the readings disagree (review every one)
     /?queue=sample&n=30&seed=20261006   a random sample of practice labels where all readings agree
+    /?queue=extra2           the second batch of extra practice labels (data/splits/practice_extra2.json)
     /?queue=all              everything, unreviewed first
 
 Keys: Enter = correct, save, next.  To take a model's reading, click it under that one field (there is no
@@ -34,6 +35,7 @@ from app.verify.warning import REQUIRED  # noqa: E402
 TRUTH = ROOT / "data" / "ground_truth"
 COLA = ROOT / "data" / "cola_samples"
 SPLIT = ROOT / "data" / "splits" / "split.json"
+EXTRA2 = ROOT / "data" / "splits" / "practice_extra2.json"
 REVIEW = ROOT / "data" / "answer_key_review"
 CROSS = REVIEW / "crosscheck.json"
 LOG = REVIEW / "review_log.json"
@@ -62,6 +64,8 @@ def queue(name, n=30, seed=20261006):
         out = [i for i in ids if i in heldout]
     elif name == "disputed":
         out = [i for i in dev if cross.get(i, {}).get("disputed")]
+    elif name == "extra2":
+        out = [x[5:] for x in load(EXTRA2, {}).get("dev", []) if x[5:] in ids]
     elif name == "sample":
         agreed = [i for i in dev if i in cross and not cross[i]["disputed"]]
         out = sorted(random.Random(seed).sample(agreed, min(n, len(agreed))))
@@ -134,7 +138,8 @@ async function load() {
   const q = params.get('queue') || 'heldout';
   ids = await (await fetch('/api/items?' + params.toString())).json();
   const NAMES = {heldout: 'Final exam labels', disputed: 'Practice labels: computers disagreed',
-                 sample: 'Practice labels: computers agreed (quick look)', all: 'All labels'};
+                 sample: 'Practice labels: computers agreed (quick look)',
+                 extra2: 'Extra practice labels, batch 2', all: 'All labels'};
   $('q').textContent = `${NAMES[q] || q} (${ids.length}) · all from the TTB website`;
   if (!ids.length) { $('which').textContent = 'Nothing in this queue.'; return; }
   show();

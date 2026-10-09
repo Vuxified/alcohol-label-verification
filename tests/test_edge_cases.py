@@ -670,6 +670,13 @@ add("B", NC, "750 mL", ["750 mL", ".750mL"], P, "the same size read twice, once 
 add("B", NC, "12 fl oz", ["12 FL.OZ.", "2 FL.OZ."], P, "a fragment of the same size is not a container size", bev="malt")
 add("B", NC, "12 fl oz", ["12 FL. OZ.", "2 - L"], P, "can noise read as '2 - L' is not a size (TTB 23363001000273)", bev="malt")
 add("B", NC, "12 fl oz", ["2 - L"], C, "only noise: never Does not match", bev="malt")
+add("B", AB, "48.5", ["48.5% ALC./VOL.", "48.59% ALC"], P, "a second reading of the same number with a stray digit is not a contradiction (Jack Daniel's 24002001000457)")
+add("B", AB, "45", ["45% ALC/VOL", "45.1% ALC/VOL"], P, "readings 0.1 apart: the same statement read twice")
+add("B", AB, "45", ["45% ALC/VOL", "46% ALC/VOL"], C, "a whole point apart is a real contradiction")
+add("A", NC, "1 PT, 3.2 FL. OZ.", "1 PT. 3.2 FL. OZ.", P, "compound with a comma, as printed (TTB 25230001000505)", bev="malt")
+add("A", NC, "19.2 FLUID OUNCES", "19.2 FL OZ", P, "fluid ounces spelled out", bev="malt")
+add("B", NC, "19.2 fl oz", "19.2 FLUID OUNCES", P, "fluid ounces spelled out on the label", bev="malt")
+add("A", NC, "750mL 1 PINT 9.4 FL", "750 mL", P, "both units typed, 'oz' left off after a pint (TTB 26056001000380)", bev="wine")
 add("A", NC, "15.5 GALLONS (1/2 BBL)", "15.5 GALLONS", P, "keg size with a note in brackets", bev="malt")
 
 

@@ -7,7 +7,7 @@ from app.verify.abv import parse_typed_abv
 
 @pytest.mark.parametrize("typed", ["45", "45%", "45 %", " 45 ", "45.0", "45,0", "45% Alc", "45% AL", "45% alc/vol",
                                    "45% Alc./Vol.", "45 % ALC/VOL", "45 percent", "45% ABV", "ABV 45%", "Alc. 45% by vol",
-                                   "45% alcohol by volume", "45 alc", "45%.", "45%%"])
+                                   "45% alcohol by volume", "45 alc", "45%.", "45%%", "Alc.45%Vol.", "ALC.45% BY VOL"])
 def test_typed_alcohol_written_many_ways_is_45(typed):
     assert parse_typed_abv(typed) == 45.0
 

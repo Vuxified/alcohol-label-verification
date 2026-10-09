@@ -1,0 +1,4 @@
+{
+  "note": "Final-test labels whose artwork is near-identical to a practice label (TTB approved the same image under two IDs; found 2026-10-09 with a 16x16 average-hash distance <= 12). The split is frozen, so the final test reports its numbers with and without these.",
+  "heldout": ["24010001000338", "24003001000645", "24061001000628", "24039001000607", "24003001000023", "24211001000369"]
+}

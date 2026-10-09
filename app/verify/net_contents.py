@@ -19,7 +19,7 @@ _N = r"(?<![\d.,])(?<!(?<![\d.,])\d\s)(\d+(?:[.,]\d+)?)"  # "070 750mL" (a barco
 _TO = r"(?:\s*|-)"  # "750 ML", "750ML", "750-ML"; not "2 - L" (noise)
 _END = r"(?![a-z])"
 _UNIT_PATTERNS = [
-    ("fl oz", re.compile(rf"{_N}{_TO}(?:u\.?s\.?\s*)?fl\.?\s*oz\.?", re.I)),
+    ("fl oz", re.compile(rf"{_N}{_TO}(?:u\.?s\.?\s*)?fl(?:uid)?\.?\s*(?:oz\.?|ounces?{_END})", re.I)),
     ("pint", re.compile(rf"{_N}{_TO}(?:pints?|pts?){_END}\.?", re.I)),
     ("quart", re.compile(rf"{_N}{_TO}(?:quarts?|qts?){_END}\.?", re.I)),
     ("gal", re.compile(rf"{_N}{_TO}(?:u\.?s\.?\s*)?gal(?:lons?|\.)?{_END}", re.I)),
@@ -27,7 +27,8 @@ _UNIT_PATTERNS = [
     ("cl", re.compile(rf"{_N}{_TO}(?:cl|centilit(?:er|re)s?){_END}", re.I)),
     ("l", re.compile(rf"{_N}{_TO}(?:l|ltrs?|lit(?:er|re)s?){_END}(?!\s*/)", re.I)),
 ]
-_COMPOUND = re.compile(r"(\d+)\s*(?:pints?|pts?)\.?\s*(\d+(?:\.\d+)?)\s*fl\.?\s*oz", re.I)
+# "1 PINT 8 FL. OZ.", "1 PT, 3.2 FL. OZ.", "1 PINT 9.4 FL" (after a pint, "fl" can only be fluid ounces)
+_COMPOUND = re.compile(r"(\d+)\s*(?:pints?|pts?)\.?[\s,]*(\d+(?:\.\d+)?)\s*fl(?:uid)?\.?(?:\s*(?:oz|ounces?))?", re.I)
 
 
 # Common malt beverage containers (fluid ounces), used only to tell a second container size from other numbers.

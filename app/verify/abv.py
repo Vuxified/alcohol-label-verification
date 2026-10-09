@@ -23,7 +23,7 @@ _TABLE_WINE = re.compile(r"\b(table|light)\s+wine\b", re.I)
 _ABV_ABBREVIATION = re.compile(r"\babv\b", re.I)
 
 
-_TYPED_NUMBER = re.compile(r"\d+(?:[.,]\d+)?|[.,]\d+")
+_TYPED_NUMBER = re.compile(r"\d+(?:[.,]\d+)?|(?<![a-z])[.,]\d+")  # ".5", but "Alc.13%" is 13
 _TYPED_WORDS = re.compile(r"per\s*cent|pct|alcohol|alc|al|abv|by|volume|vol|%|[./:,()\s]")
 _TYPED_PROOF = re.compile(r"(\d+(?:[.,]\d+)?)\s*°?\s*proof", re.I)
 
@@ -77,7 +77,8 @@ def check_abv(app: Application, lines: list[str]) -> FieldResult:
         return FieldResult("abv", Verdict.NOT_APPLICABLE, "No alcohol content declared; not checked.")
 
     matching = [r for r in readings if abs(r.value - app.abv) < 0.05 or (r.below and app.abv < r.value)]
-    others = sorted({r.value for r in readings if r not in matching and not r.below})
+    others = sorted({r.value for r in readings if r not in matching and not r.below
+                     and all(abs(r.value - m.value) > 0.15 for m in matching)})  # "48.59" beside "48.5%" is a misread
     if matching and others:  # the label contradicts itself (or one of the readings is a misread): a person decides
         return FieldResult("abv", Verdict.CHECK,
                            f'Label shows "{matching[0].text}" and also {", ".join(f"{v:g}%" for v in others)}. '
