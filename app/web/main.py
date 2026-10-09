@@ -93,7 +93,8 @@ def _sample(key):
     form = {"beverage_type": a["beverage_type"], "brand_name": a["brand_name"], "class_type": a.get("class_type") or "",
             "abv": "" if a.get("abv") is None else f"{a['abv']:g}", "net_contents": a.get("net_contents") or "",
             "name_address": a.get("name_address") or "", "source": a.get("source", "domestic"),
-            "country_of_origin": a.get("country_of_origin") or ""}
+            "country_of_origin": a.get("country_of_origin") or "",
+            "label_height": next((f"{im['height_in']:g}" for im in it["images"] if "back" in im["file"]), "")}
     images = [(im["file"], (item / im["file"]).read_bytes()) for im in it["images"]]
     return form, images
 

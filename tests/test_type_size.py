@@ -108,3 +108,9 @@ def test_form_takes_the_label_height():
     form = {"beverage_type": "wine", "brand_name": "Old Tom", "abv": "", "label_height": "4.5 in"}
     assert _application(form).label_height_in == 4.5
     assert _application({**form, "label_height": ""}).label_height_in is None
+
+
+def test_samples_give_the_label_height():
+    from app.web.main import _sample
+    form, _ = _sample("match")
+    assert form["label_height"] and float(form["label_height"]) > 0
