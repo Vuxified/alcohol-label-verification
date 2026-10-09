@@ -59,6 +59,11 @@
         <span class="usa-hint" id="net-hint">For example: 750 mL or 12 FL. OZ.</span>
         <input class="usa-input" id="net_contents" name="net_contents" aria-describedby="net-hint" value="{{ form.net_contents or '' }}">
       </div>
+      <div>
+        <label class="usa-label" for="label_height">Label height in inches (optional)</label>
+        <span class="usa-hint" id="height-hint">Of the label with the health warning, from the application's Actual Dimensions. Lets us check the warning's type size.</span>
+        <input class="usa-input" id="label_height" name="label_height" inputmode="decimal" aria-describedby="height-hint" value="{{ form.label_height or '' }}">
+      </div>
       <div class="app-wide">
         <label class="usa-label" for="fanciful_name">Fanciful name (if any)</label>
         <input class="usa-input" id="fanciful_name" name="fanciful_name" value="{{ form.fanciful_name or '' }}">

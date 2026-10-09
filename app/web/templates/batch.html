@@ -41,6 +41,7 @@
         <tr><td><code>brand_name</code></td><td>Yes</td><td>Old Tom Distillery</td></tr>
         <tr><td><code>class_type</code>, <code>abv</code>, <code>net_contents</code>, <code>name_address</code>, <code>fanciful_name</code></td><td>No</td><td>Kentucky Straight Bourbon Whiskey · 45 · 750 mL</td></tr>
         <tr><td><code>source</code>, <code>country_of_origin</code></td><td>No</td><td>imported · Mexico (source defaults to domestic)</td></tr>
+        <tr><td><code>label_height</code></td><td>No</td><td>3.5 (inches, the label with the health warning; lets the warning's type size be checked)</td></tr>
       </tbody>
     </table>
   </details>
@@ -264,7 +265,7 @@
   }
 
   $('download').addEventListener('click', function () {
-    var fields = ['brand_name', 'class_type', 'abv', 'proof', 'net_contents', 'name_address', 'country_of_origin', 'warning_text', 'warning_caps', 'warning_bold'];
+    var fields = ['brand_name', 'class_type', 'abv', 'proof', 'net_contents', 'name_address', 'country_of_origin', 'warning_text', 'warning_caps', 'warning_bold', 'warning_size'];
     var head = ['application_id', 'overall'].concat(fields, ['reasons', 'images_read', 'seconds', 'error', 'checked_at_utc']);
     var lines = [head.join(',')];
     sorted().forEach(function (x) {

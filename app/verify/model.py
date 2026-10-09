@@ -28,6 +28,7 @@ class Application:
     source: str = "domestic"            # "domestic" or "imported"
     country_of_origin: str | None = None
     fanciful_name: str | None = None
+    label_height_in: float | None = None  # the warning label's real height, for the type-size check
 
     def __post_init__(self):
         if self.beverage_type not in BEVERAGE_TYPES:

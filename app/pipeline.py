@@ -18,6 +18,7 @@ from app.evidence import locate
 from app.ocr.engine import tesseract
 from app.ocr.reader import ApplicationReading, Reader
 from app.bold import bold_field
+from app.typesize import size_field
 from app.quality import quality_note
 from app.verify import Application, FieldResult, Verdict, verify
 from app.verify.abv import check_abv
@@ -141,6 +142,7 @@ def check_application(reader: Reader, app: Application, images: list[tuple[str, 
         fields += warning_fields(reading)
         if not any(f.code in ("WARNING_MISSING", "WARNING_NOT_READ") for f in fields):  # bold only if a warning was read
             fields.append(bold_field(reading.frames, reading.frame_words))
+            fields.append(size_field(reading.frames, reading.frame_words, app))
     notes = []
     if any(t.startswith(("tesseract", "inverted")) for t in reading.dropped):
         fields = [FieldResult(f.field, Verdict.CHECK, f.reason + " Part of the label was not read in time; please check.",

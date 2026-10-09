@@ -61,6 +61,15 @@ def extra_ids(name="practice_extra"):
     return set(json.loads((DATA / "splits" / f"{name}.json").read_text())["dev"])
 
 
+def label_height(images, warning_file=None):
+    """The real height (inches) of the label carrying the warning, from the COLA's "Actual Dimensions"; None for
+    photos, whose pictures don't show the label edge to edge."""
+    sized = [im for im in images if im.get("height_in")]
+    hit = (next((im for im in sized if im["file"] == warning_file), None)
+           or next((im for im in sized if "back" in im["file"].lower()), None))
+    return hit["height_in"] if hit else None
+
+
 def cola_items(dev, kind="cola"):
     for i in sorted(x[5:] for x in dev if x.startswith("cola_")):
         rec = json.loads((DATA / "cola_samples" / i / "record.json").read_text())
@@ -68,7 +77,8 @@ def cola_items(dev, kind="cola"):
         imported = rec.get("source") == "imported"
         app = Application(rec["product_type"] or "spirits", gt["brand_name"], gt.get("class_type"), gt.get("abv"),
                           gt.get("net_contents_text"), gt.get("name_address_text"), rec.get("source", "domestic"),
-                          gt.get("country_of_origin_text") if imported else None)
+                          gt.get("country_of_origin_text") if imported else None,
+                          label_height_in=label_height(rec["images"], gt["warning"].get("image_file")))
         images = [(im["file"], (DATA / "cola_samples" / i / im["file"]).read_bytes()) for im in rec["images"]]
         yield i, kind, app, images, {"overall": "approved", "warning_present": gt["warning"].get("present"),
                                      "warning_misprinted": gt["warning"].get("matches_required_text") is False}
@@ -81,7 +91,8 @@ def syn_items(dev):
         it = json.loads((d / "item.json").read_text())
         a = it["application"]
         app = Application(a["beverage_type"], a["brand_name"], a.get("class_type"), a.get("abv"), a.get("net_contents"),
-                          a.get("name_address"), a.get("source", "domestic"), a.get("country_of_origin"))
+                          a.get("name_address"), a.get("source", "domestic"), a.get("country_of_origin"),
+                          label_height_in=label_height(it["images"]))
         images = [(im["file"], (d / im["file"]).read_bytes()) for im in it["images"]]
         yield d.name, "syn", app, images, it["expected"]
 
@@ -93,9 +104,12 @@ def item_dirs(folder, kind):
         if (d / "item.json").exists():
             it = json.loads((d / "item.json").read_text())
             a = it["application"]
+            base = (it.get("provenance") or {}).get("base_id", "")[5:]
+            gt = DATA / "ground_truth" / f"{base}.json"
+            warning_file = json.loads(gt.read_text())["warning"].get("image_file") if base and gt.exists() else None
             app = Application(a["beverage_type"], a["brand_name"], a.get("class_type"), a.get("abv"),
                               a.get("net_contents"), a.get("name_address"), a.get("source", "domestic"),
-                              a.get("country_of_origin"))
+                              a.get("country_of_origin"), label_height_in=label_height(it["images"], warning_file))
             yield d.name, kind, app, [(im["file"], (d / im["file"]).read_bytes()) for im in it["images"]], it["expected"]
 
 

@@ -164,7 +164,12 @@ Required on every alcohol beverage of 0.5% alcohol by volume or more, for all th
 | Over 237 mL, up to 3 L | 2 mm | 25 |
 | Over 3 L | 3 mm | 12 |
 
-When the label's real size is known (COLA applications list "Actual Dimensions" for every image), the app converts pixels to millimeters and estimates the capital-letter height of the warning. Too small → Please check. Unknown size (e.g. a phone photo) → "type size not checked."
+The agent can give the **label height** (inches, from the COLA's "Actual Dimensions" for the label with the warning; form field and batch column `label_height`). The app then converts pixels to millimeters (picture height ÷ label height) and measures the ink height of the capitals in "GOVERNMENT WARNING". The rule sets a minimum *type size*; capital letters are about 70% of the type size in most fonts, so the check answers only where both readings of the rule agree:
+- capitals at least 1.05 × the minimum → **Matches** (large enough even if the minimum means letter height);
+- capitals under 0.65 × the minimum → **Please check** (too small even as type size);
+- in between → **Not checked**, with the measured size shown. On approved labels most warnings are printed right at the minimum (cola2: 24 Matches, 3 Please check, 43 not checked).
+
+No label height, no net contents, or a photo (which doesn't show the label edge to edge) → "type size not checked." Characters per inch are not checked.
 
 This stays advisory because TTB itself states on every approved COLA:
 

@@ -15,6 +15,7 @@ var BatchRead = (function () {
     name_address: ['name_address', 'name_and_address', 'bottler', 'address'],
     source: ['source', 'domestic_or_imported'],
     country_of_origin: ['country_of_origin', 'country', 'origin'],
+    label_height: ['label_height', 'label_height_in', 'label_height_inches', 'height', 'height_in', 'height_inches'],
   };
   var BEV = {
     spirits: 'spirits', spirit: 'spirits', 'distilled spirits': 'spirits', 'distilled spirit': 'spirits', liquor: 'spirits',
@@ -107,6 +108,8 @@ var BatchRead = (function () {
       if (!get(r, 'brand_name')) bad.push('no brand_name');
       var abv = get(r, 'abv');               // the server reads "45", "45%" or "45% Alc./Vol."
       if (abv && !/\d/.test(abv)) bad.push('alcohol content "' + abv + '" has no number');
+      var height = get(r, 'label_height');  // inches; the server reads "4", "4.5 in" or '4.5"'
+      if (height && !/\d/.test(height)) bad.push('label height "' + height + '" has no number');
       var src = get(r, 'source').toLowerCase(), country = get(r, 'country_of_origin');
       var imported = /^(imported|import|foreign)$/.test(src) || (!src && country && !/^(us|usa|u\.s\.a?\.?|united states( of america)?)$/i.test(country));
       if (src && !imported && !/^(domestic|us|usa|u\.s\.)$/.test(src)) bad.push('source "' + get(r, 'source') + '" should be domestic or imported');
@@ -124,7 +127,7 @@ var BatchRead = (function () {
       var job = { row: row, id: label, pairedBy: listed.length ? 'spreadsheet' : 'file name', files: found, form: {
         beverage_type: bev || '', brand_name: get(r, 'brand_name'), fanciful_name: get(r, 'fanciful_name'),
         class_type: get(r, 'class_type'), abv: abv, net_contents: get(r, 'net_contents'), name_address: get(r, 'name_address'),
-        source: imported ? 'imported' : 'domestic', country_of_origin: country } };
+        source: imported ? 'imported' : 'domestic', country_of_origin: country, label_height: height } };
       if (bad.length) { problems.push('Row ' + row + ' (' + label + '): ' + bad.join('; ') + '.'); job.error = bad.join('; '); }
       jobs.push(job);
     });

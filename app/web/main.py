@@ -26,6 +26,7 @@ from starlette.concurrency import run_in_threadpool
 from app.evidence import crop_png, locate, locate_warning
 from app.ocr.reader import Reader
 from app.pipeline import check_application
+from app.typesize import parse_label_height
 from app.verify import Application, Verdict
 from app.verify.abv import parse_typed_abv
 from app.verify.net_contents import parse_typed_net
@@ -147,7 +148,7 @@ async def _read_request(data):
     -> (form, images, errors)."""
     form = {k: (data.get(k) or "").strip() for k in ("beverage_type", "brand_name", "fanciful_name", "class_type",
                                                       "abv", "net_contents", "name_address", "source",
-                                                      "country_of_origin")}
+                                                      "country_of_origin", "label_height")}
     if BUCKET and data.getlist("upload_keys"):
         received = await run_in_threadpool(_uploaded, data.getlist("upload_keys"), data.getlist("upload_names"))
     else:
@@ -172,6 +173,8 @@ async def _read_request(data):
         errors.append(copy.ERRORS["net"])
     if form["abv"] and parse_typed_abv(form["abv"]) is None:
         errors.append(copy.ERRORS["abv_proof" if "proof" in form["abv"].lower() else "abv"])
+    if form["label_height"] and parse_label_height(form["label_height"]) is None:
+        errors.append(copy.ERRORS["height"])
     return form, images, errors
 
 
@@ -180,7 +183,7 @@ def _application(form) -> Application:
         form["beverage_type"], form["brand_name"], form.get("class_type") or None,
         parse_typed_abv(form["abv"]) if form.get("abv") else None, form.get("net_contents") or None,
         form.get("name_address") or None, form.get("source") or "domestic", form.get("country_of_origin") or None,
-        form.get("fanciful_name") or None)
+        form.get("fanciful_name") or None, parse_label_height(form.get("label_height")))
 
 
 async def _run(application, images):
@@ -296,4 +299,5 @@ def _asked(form) -> dict:
             "net_contents": form.get("net_contents"), "name_address": form.get("name_address"),
             "country_of_origin": form.get("country_of_origin"),
             "warning_text": "The exact wording required by 27 CFR 16.21",
-            "warning_caps": '"GOVERNMENT WARNING" in capital letters', "warning_bold": '"GOVERNMENT WARNING" in bold'}
+            "warning_caps": '"GOVERNMENT WARNING" in capital letters', "warning_bold": '"GOVERNMENT WARNING" in bold',
+            "warning_size": "Warning letters at least the minimum height for the container (27 CFR 16.22)"}

@@ -161,3 +161,15 @@ def test_spreadsheet_inside_the_zip(page):
         const two = BatchRead.entriesOf([{ path: 'a.csv', entry: 1 }, { path: 'b.csv', entry: 2 }, { path: 'manifest.csv', entry: 3 }]);
         return [BatchRead.csvIn(e), BatchRead.csvIn(two)];
     }""") == [1, 3]
+
+
+@pytest.mark.parametrize("head", ["label_height", "Label Height", "label_height_in", "Height (inches)", "label height inches"])
+def test_label_height_column(page, head):
+    csv = f"application_id,image_files,beverage_type,brand_name,{head}\nA1,a.jpg,wine,Old Tom,4.5 in\n"
+    j = one(page, csv, ["a.jpg"])
+    assert j["form"]["label_height"] == "4.5 in" and not j["error"], j
+
+
+def test_label_height_without_a_number_is_a_row_problem(page):
+    csv = "application_id,image_files,beverage_type,brand_name,label_height\nA1,a.jpg,wine,Old Tom,tall\n"
+    assert 'label height "tall"' in one(page, csv, ["a.jpg"])["error"]
