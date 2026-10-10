@@ -26,6 +26,7 @@ sys.path.insert(0, str(ROOT))
 from app.ocr.reader import Reader  # noqa: E402
 from app.pipeline import check_application  # noqa: E402
 from app.verify import Application, Verdict  # noqa: E402
+from tools.gate import shipped_code, shipped_code_changed  # noqa: E402
 
 DATA = ROOT / "data"
 # The field each planted mistake belongs to: that field must never come back "Matches" (a false pass hidden by an
@@ -154,6 +155,7 @@ def main():
             items += list(item_dirs("scenes_real", "scene_real"))
     if args.limit:
         items = items[:args.limit]
+    code, changed = shipped_code(), shipped_code_changed()  # which version of the app this run measures (tools/gate.py)
     reader = Reader(cpus=args.cpus)
     reader.warm_up()
     rows, counts, times = [], defaultdict(Counter), defaultdict(list)
@@ -207,7 +209,8 @@ def main():
         print(f"== time {kind}: p50 {statistics.median(ts):.2f}s  p95 {pct(ts, .95):.2f}s  max {max(ts):.2f}s  (n={len(ts)})")
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / f"{args.name}.json").write_text(json.dumps({"rows": rows, "false_fail": false_fail, "false_pass": false_pass, "misprints": misprints,
-                                                       "when": time.strftime("%Y-%m-%d %H:%M")}, indent=1))
+                                                       "when": time.strftime("%Y-%m-%d %H:%M"), "code": code,
+                                                       "code_changed": changed, "limit": args.limit}, indent=1))
 
 
 if __name__ == "__main__":
