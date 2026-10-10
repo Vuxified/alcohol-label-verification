@@ -2,6 +2,14 @@
 {% block title %}Results – Label Check{% endblock %}
 {% macro tag(value, code=None) %}{% set icon, word = copy.VERDICT[value] %}{% if code == ON_LABEL %}{% set word = copy.ON_LABEL %}{% endif %}<span class="app-verdict app-verdict--{{ value | replace('/', '') }}"><svg class="app-ico" aria-hidden="true"><use href="#{{ icon }}"/></svg>{{ word }}</span>{% endmacro %}
 {% macro words(parts) %}{% for w, differs in parts %}{% if differs %}<span class="app-diff">{{ w }}</span>{% else %}{{ w }}{% endif %}{{ " " if not loop.last }}{% endfor %}{% endmacro %}
+{% macro disagree(f) %}<details class="app-disagree" data-field="{{ copy.FIELD_NAMES.get(f.field, f.field) }}">
+  <summary>I disagree</summary>
+  <fieldset class="usa-fieldset app-disagree__body"><legend class="usa-sr-only">Why do you disagree about the {{ copy.FIELD_NAMES.get(f.field, f.field) | lower }}?</legend>
+    {% for t in copy.DISAGREE %}<div class="usa-radio"><input class="usa-radio__input" type="radio" id="d-{{ f.field }}-{{ loop.index }}" name="d-{{ f.field }}" value="{{ t }}"><label class="usa-radio__label" for="d-{{ f.field }}-{{ loop.index }}">{{ t }}</label></div>{% endfor %}
+    <label class="usa-label" for="dn-{{ f.field }}">Note (optional)</label>
+    <textarea class="usa-textarea" id="dn-{{ f.field }}" rows="2" maxlength="500"></textarea>
+  </fieldset>
+</details><p class="app-disagree__saved" aria-live="polite"></p>{% endmacro %}
 {% block content %}
 {% set name = copy.FIELD_NAMES %}
 {% set passes = counts[Verdict.PASS] %}{% set fails = counts[Verdict.FAIL] %}
@@ -51,6 +59,7 @@
       {% endif %}
       <p class="app-why">{{ plain.get(f.field) or f.reason }}</p>
       {% if f.field in plain and f.verdict == Verdict.CHECK %}<p class="app-small">{{ copy.NEAR_MATCH_WHY }}</p>{% endif %}
+      {{ disagree(f) }}
       {% if f.field == "warning_text" and warning_parts %}{% set kinds = warning_parts | map(attribute=1) | list %}
       <p class="app-small">{% if "missing" in kinds %}<del>Struck out</del>: required, but not found on the label. {% endif %}{% if "label" in kinds or "extra" in kinds %}<ins>Underlined</ins>: what the label shows instead or in addition.{% endif %}</p>{% endif %}
     </section>
@@ -71,7 +80,7 @@
             <th scope="row">{{ name.get(f.field, f.field) }}</th>
             <td class="app-col-app">{{ asked.get(f.field) or "Not given" }}</td>
             <td>{{ f.found if f.found and not f.field.startswith("warning") else f.reason }}</td>
-            <td class="app-r">{{ tag(f.verdict.value, f.code) }}</td>
+            <td class="app-r">{{ tag(f.verdict.value, f.code) }}{{ disagree(f) }}</td>
           </tr>
         {% endfor %}
         </tbody>
@@ -124,7 +133,18 @@
     });
   });
   if (picks.length) pick(picks[0].dataset.pick, false);
-  window.addEventListener('beforeprint', function () { document.querySelectorAll('details').forEach(function (d) { d.open = true; }); });
+  window.addEventListener('beforeprint', function () { document.querySelectorAll('details:not(.app-disagree)').forEach(function (d) { d.open = true; }); });
+  // "I disagree": kept in the page only (printed with the results; nothing is sent or stored).
+  document.querySelectorAll('.app-disagree').forEach(function (d) {
+    var saved = d.nextElementSibling;
+    function update() {
+      var why = d.querySelector('input:checked'), note = d.querySelector('textarea').value.trim();
+      saved.textContent = why || note ? 'You disagree' + (why ? ': ' + why.value : '') + '.' + (note ? ' Note: ' + note : '') : '';
+      d.classList.toggle('has-note', !!(why || note));
+    }
+    d.addEventListener('change', update); d.addEventListener('input', update);
+    d.addEventListener('click', function (e) { e.stopPropagation(); });  // not a pick of the row
+  });
   document.getElementById('results-heading').focus();
 })();
 </script>

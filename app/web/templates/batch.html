@@ -78,6 +78,18 @@
     <thead><tr><th scope="col">Application</th><th scope="col">Result</th><th scope="col">Why</th></tr></thead>
     <tbody id="rows"></tbody>
   </table>
+  <dialog id="note-dialog" class="app-dialog" aria-labelledby="note-title">
+    <form method="dialog">
+      <h2 id="note-title">I disagree</h2>
+      <fieldset class="usa-fieldset"><legend class="usa-sr-only">Why</legend>
+        {% for t in copy.DISAGREE %}<div class="usa-radio"><input class="usa-radio__input" type="radio" name="why" id="why-{{ loop.index }}" value="{{ t }}"><label class="usa-radio__label" for="why-{{ loop.index }}">{{ t }}</label></div>{% endfor %}
+      </fieldset>
+      <label class="usa-label" for="note-text">Note (optional)</label>
+      <textarea class="usa-textarea" id="note-text" rows="3" maxlength="500"></textarea>
+      <p class="app-small">Kept in this page and in the downloaded spreadsheet only.</p>
+      <p><button class="usa-button" value="save">Save note</button> <button class="usa-button usa-button--outline" value="cancel" formnovalidate>Cancel</button></p>
+    </form>
+  </dialog>
 </div>
 
 <p class="app-decide"><strong>{{ copy.DISCLAIMER }}</strong></p>
@@ -251,7 +263,9 @@
     var rows = sorted().filter(function (x) { return all || x.overall !== 'pass'; });
     $('rows').innerHTML = rows.map(function (x) {
       return '<tr class="is-' + x.overall + '"><th scope="row" data-label="Application">' + esc(x.id) + '</th><td data-label="Result"><span class="app-verdict app-verdict--' + x.overall + '">' + ico(x.overall) + esc(WORD[x.overall] || 'Error') +
-        '</span></td><td data-label="Why">' + esc(x.reasons || 'Every item checked matches.') + '</td></tr>';
+        '</span></td><td data-label="Why">' + esc(x.reasons || 'Every item checked matches.') +
+        (x.note ? '<p class="app-disagree__saved">You disagree: ' + esc(x.note) + '</p>' : '') +
+        '<button class="app-linkbutton app-note-btn" type="button" data-row="' + x.row + '">' + (x.note ? 'Edit note' : 'I disagree') + '</button></td></tr>';
     }).join('') || '<tr><td colspan="3">' + (done ? 'Nothing needs attention so far.' : 'Starting…') + '</td></tr>';
     if (total) {
       var pct = Math.floor(100 * done / total), mark = [25, 50, 75].filter(function (m) { return pct >= m; }).pop();
@@ -265,6 +279,24 @@
   }
 
   document.querySelectorAll('input[name=show]').forEach(function (r) { r.addEventListener('change', render); });
+
+  // "I disagree" on a row: a reason and a note, kept with the results (shown, printed, and in the spreadsheet).
+  var noteFor = null, dlg = $('note-dialog');
+  $('rows').addEventListener('click', function (e) {
+    var btn = e.target.closest('.app-note-btn'); if (!btn) return;
+    noteFor = results.filter(function (x) { return String(x.row) === btn.dataset.row; })[0];
+    dlg.querySelectorAll('input[name=why]').forEach(function (r) { r.checked = noteFor.why === r.value; });
+    $('note-text').value = noteFor.noteText || '';
+    $('note-title').textContent = 'I disagree: ' + noteFor.id;
+    dlg.showModal();
+  });
+  dlg.addEventListener('close', function () {
+    if (dlg.returnValue !== 'save' || !noteFor) return;
+    var why = dlg.querySelector('input[name=why]:checked');
+    noteFor.why = why ? why.value : ''; noteFor.noteText = $('note-text').value.trim();
+    noteFor.note = [noteFor.why, noteFor.noteText].filter(Boolean).join('. ');
+    render();
+  });
 
   $('start').addEventListener('click', async function () {
     show('ready', false); show('problems', false); show('run', true);
@@ -300,12 +332,12 @@
 
   $('download').addEventListener('click', function () {
     var fields = ['brand_name', 'class_type', 'abv', 'proof', 'net_contents', 'name_address', 'country_of_origin', 'warning_text', 'warning_caps', 'warning_bold', 'warning_size', 'abv_minimum', 'bonded', 'wine_terms', 'malt_terms'];
-    var head = ['application_id', 'overall'].concat(fields, ['reasons', 'images_read', 'pictures_paired_by', 'seconds', 'error', 'checked_at_utc']);
+    var head = ['application_id', 'overall'].concat(fields, ['reasons', 'agent_note', 'images_read', 'pictures_paired_by', 'seconds', 'error', 'checked_at_utc']);
     var lines = [head.join(',')];
     sorted().forEach(function (x) {
       var by = {}; x.fields.forEach(function (f) { by[f.field] = WORD[f.verdict] || f.verdict; });
       lines.push([x.id, WORD[x.overall]].concat(fields.map(function (f) { return by[f] || ''; }),
-        [x.reasons, x.images, x.paired || '', x.seconds, x.error, x.at]).map(cell).join(','));
+        [x.reasons, x.note || '', x.images, x.paired || '', x.seconds, x.error, x.at]).map(cell).join(','));
     });
     var blob = new Blob(['﻿' + lines.join('\r\n') + '\r\n'], { type: 'text/csv;charset=utf-8' });
     var a = document.createElement('a');

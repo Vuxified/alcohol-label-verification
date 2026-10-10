@@ -25,6 +25,8 @@ VERDICT = {
     "pass": ("i-pass", "Matches"),
     "n/a": ("i-na", "Not checked"),
 }
+DISAGREE = ("The label is right; the app is wrong", "The app misread the label",
+            "The application value was typed wrong", "Something else")  # "I disagree" choices on each result
 ON_LABEL = "On the label"  # picture-only: a required statement was found (nothing to compare it with)
 
 BEVERAGES = {"spirits": "Distilled spirits", "wine": "Wine", "malt": "Beer or malt beverage"}
