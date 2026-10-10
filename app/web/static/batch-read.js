@@ -185,7 +185,7 @@ var BatchRead = (function () {
       owner[i] = [owner[i - 1], owner[i + 1]].filter(function (j) { return j && scores[open.indexOf(j)] >= 1; })[0] || null;
     });
     readings.forEach(function (r, i) {
-      if (owner[i]) owner[i].files.push({ name: base(zipKey(r.entry.name || r.key)) === base(r.key) ? (r.entry.name || r.key).split("/").pop() : base(r.key), entry: r.entry, read: true });
+      if (owner[i]) owner[i].files.push({ name: (r.entry.name || r.key).split('/').pop(), entry: r.entry, read: true });
       else unpaired.push(r.entry.name);
     });
     open.forEach(function (j) {
