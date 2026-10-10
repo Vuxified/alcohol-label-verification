@@ -5,7 +5,7 @@ A TTB agent uploads a label's images and types in what the application says. Wit
 **Try it:** https://3jirlgdkpcw55t54gz32ggdnbq0yfrjp.lambda-url.us-east-1.on.aws/
 - No files needed: press **Try a label that matches** or **Try a label with a problem**.
 - Batch: open **Check many labels**, download the sample batch (22 applications, 2 broken on purpose) and add it.
-- No application? Add pictures only and leave the details blank: the app looks for every statement the rules require (alcohol content, net contents, bottler, class, country for imports) and says **On the label** or **Please check**. **Fill in from the label** reads the pictures and fills the blank boxes for the agent to confirm.
+- No application? Add pictures only and leave the details blank: the app looks for every statement the rules require (alcohol content, net contents, bottler, class, country for imports) and says **On the label** or **Please check**. **Fill in from the label** reads the pictures and fills the blank boxes (not the brand, usually a logo) for the agent to confirm.
 - The first visit after a quiet period takes about 6 seconds while the checker starts.
 
 ---

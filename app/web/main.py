@@ -31,7 +31,7 @@ from app.verify import Application, Verdict
 from app.verify.abv import parse_typed_abv
 from app.verify.net_contents import parse_typed_net
 from app.verify.model import SEVERITY
-from app.verify.presence import ON_LABEL, brand_guess, read_values
+from app.verify.presence import ON_LABEL, read_values
 
 from . import copy
 from .marks import differing_words, warning_marks
@@ -251,9 +251,8 @@ async def api_read(request: Request):
         slots.release()
     kind = form["beverage_type"] if form["beverage_type"] in copy.BEVERAGES else None
     values = read_values(reading.lines(), kind)
-    brand = brand_guess(reading.frame_words)
     text = " ".join(reading.lines())[:4000]  # the batch page pairs leftover pictures by what they say
-    return values | ({"brand_name": brand} if brand else {}) | {"text": text}
+    return values | {"text": text}
 
 
 @app.get("/batch", response_class=HTMLResponse)

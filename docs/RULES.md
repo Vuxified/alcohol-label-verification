@@ -213,7 +213,9 @@ With the brand left blank, nothing is compared. The app instead looks for each s
 
 "On the label" is shown instead of "Matches": the statement is there, but nothing was compared with an application. **Never Does not match** in this mode. The warning, proof and type-size rules work as usual (type size uses the net contents found on the label).
 
-"Fill in from the label" uses the same findings (plus the largest line on the first picture as the brand) to fill the blank boxes of the form, each marked for the agent to check against the application.
+"Fill in from the label" uses the same findings to fill the blank boxes of the form, each marked for the agent to check against the application. Measured on 142 approved labels against the answer key: alcohol content filled right 103 times, wrong 3; net contents right 115, wrong 15; bottler line right 88, wrong 19; class line right 91, wrong 44. The brand is not filled in: it is usually a logo, and the largest line read was the brand only 24 times.
+
+Pictures only on the same 142 approved labels: 0 Does not match; found on the label: class 135, net contents 126, bottler 107, alcohol content 106 (9 more are beer, where it is optional); the rest Please check.
 
 ---
 

@@ -41,7 +41,7 @@
     <p class="usa-hint">Copy these as they appear on the application; blank items are not compared. Leave the brand blank to check the pictures alone: we then look for each statement the rules require.</p>
     <div class="app-fill">
       <button class="usa-button usa-button--outline" type="button" id="fill" disabled>Fill in from the label</button>
-      <span class="app-small" id="fill-status" role="status">Add pictures first. We read them and fill in the blank boxes for you to check.</span>
+      <span class="app-small" id="fill-status" role="status">Add pictures first. We read them and fill in the blank boxes (except the brand, usually a logo) for you to check.</span>
     </div>
     <div class="app-fields">
       <div class="app-wide">
@@ -195,7 +195,7 @@
         var r = await fetch('/api/read', { method: 'POST', body: body }), v = await r.json();
         if (!r.ok) throw new Error(v.error === 'busy' || v.error === 'starting' ? 'The checker is busy. Please try again in a moment.' : v.error);
         var filled = [];
-        ['brand_name', 'class_type', 'abv', 'net_contents', 'name_address', 'country_of_origin'].forEach(function (k) {
+        ['class_type', 'abv', 'net_contents', 'name_address', 'country_of_origin'].forEach(function (k) {
           var box = document.getElementById(k);
           if (v[k] && !box.value) {
             box.value = v[k]; box.classList.add('app-filled'); filled.push(box.labels[0].textContent);

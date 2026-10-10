@@ -4,7 +4,8 @@ the rules require on the label instead (mandatory label information: 27 CFR 4.32
   Please check   a required statement was not found, or the label shows two different values;
   Not checked    the statement is not required for this product.
 Never Does not match: there is no application value to compare with.
-read_values() turns the same findings into suggested form values ("read from the label, please confirm").
+read_values() turns the same findings into suggested form values ("read from the label, please confirm"). The brand is
+not suggested: it is usually a logo, and on 142 approved labels the largest line read was the brand only 24 times.
 """
 
 import re
@@ -178,15 +179,3 @@ def read_values(lines, kind=None) -> dict:
         out["source"] = "imported"
     return {k: v for k, v in out.items() if v}
 
-
-def brand_guess(frame_words):
-    """The largest line of print on the first picture (usually the brand), or None. Only a suggestion."""
-    words = [w for w in (frame_words[0] if frame_words else []) if any(c.isalpha() for c in w[0])]
-    if not words:
-        return None
-    h = lambda w: w[2][3] - w[2][1]
-    mid = lambda w: (w[2][1] + w[2][3]) / 2
-    top = max(words, key=h)
-    line = sorted((w for w in words if abs(mid(w) - mid(top)) < 0.5 * h(top) and h(w) >= 0.6 * h(top)),
-                  key=lambda w: w[2][0])
-    return " ".join(w[0] for w in line)

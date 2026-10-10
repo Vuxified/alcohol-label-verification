@@ -31,7 +31,7 @@ def test_fill_in_from_the_label(client):
     assert v["beverage_type"] == "spirits"
     assert v["abv"] == "50" and v["net_contents"].replace(" ", "").lower() == "750ml"
     assert "gin" in v["class_type"].lower()
-    assert "lantern" in v["brand_name"].lower()
+    assert "brand_name" not in v  # brands are mostly logos: the agent types it
     assert "bottled by" in v["name_address"].lower()
 
 

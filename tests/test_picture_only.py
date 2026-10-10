@@ -104,15 +104,6 @@ def test_with_a_brand_typed_blank_items_stay_not_checked():
     assert r["abv"].verdict == Verdict.NOT_APPLICABLE or r["abv"].code == "ABV_NOT_DECLARED"
 
 
-def test_brand_guess_is_the_largest_line_of_the_first_picture():
-    from app.verify.presence import brand_guess
-    words = [[("KENTUCKY", 0.9, (10, 200, 120, 220)), ("OLD", 0.9, (10, 50, 90, 110)), ("LANTERN", 0.9, (100, 52, 300, 112)),
-              ("750", 0.9, (10, 300, 40, 315))],
-             [("GOVERNMENT", 0.9, (0, 0, 900, 200))]]
-    assert brand_guess(words) == "OLD LANTERN"
-    assert brand_guess([[]]) is None
-
-
 def test_an_address_split_after_a_comma_is_joined():
     v = read_values(["BOTTLED BY LANTERN CO., LOUISVILLE,", "KY", "750 ML"])
     assert v["name_address"] == "BOTTLED BY LANTERN CO., LOUISVILLE, KY"
