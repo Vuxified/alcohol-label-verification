@@ -10,6 +10,16 @@ A TTB agent uploads a label's images and types in what the application says. Wit
 
 ---
 
+## A five-minute tour
+
+1. **Try a label with a problem.** The heading is "Government Warning" in title case: **Does not match**, with a close-up of the spot and the rule (27 CFR 16.22). Press **I disagree** to see how an agent records a different view; it prints with the page.
+2. **Your own label:** add the front and back pictures, choose the product type, press **Fill in from the label**: alcohol, net contents, class and bottler are filled in and highlighted for you to check. Type the brand, change one value (say alcohol 45 to 40), press **Check label**: alcohol content **Does not match**, everything else **Matches**.
+3. **Pictures only:** the same pictures with every box blank. The app looks for each statement the rules require and says **On the label** or **Please check**; it never says Does not match without an application to compare.
+4. **Batch:** on **Check many labels**, add the sample batch (22 applications, 2 broken on purpose). Rows that need attention come first; download the results spreadsheet. Pictures that aren't named after an application are read and paired by what they say; anything unclear is listed for you.
+5. **Why trust it:** [`docs/RULES.md`](docs/RULES.md) lists every rule with its citation, and what a picture cannot settle. No version goes live unless a full practice run of that exact code has **0 wrong answers** (see Deployment).
+
+---
+
 ## How it works, in one minute
 
 1. **Verify, don't extract.** The application already says what the label should contain, so the app searches the label for those values instead of guessing what the label means.
@@ -51,6 +61,7 @@ Measured with `tools/evaluate.py` on the practice sets (the final-test set is ke
 
 - Health warning confirmed word for word on approved labels: 51 of 64, 63 of 78, 55 of 85. One approved label really prints the warning differently from 27 CFR 16.21 (`docs/FINDINGS.md`); it is reported apart.
 - Speed (laptop, 4 cores): typical 1.5–1.9 s, slowest 3.8 s per label.
+- Pictures only, on 142 approved labels: 0 Does not match; class found on 135, net contents 126, bottler 107, alcohol content 106 (+9 beer, where it is optional). "Fill in from the label" filled alcohol right 103 times (wrong 3) and net contents right 115 (wrong 15); it does not guess the brand (usually a logo).
 - The new label rules (class minimums, bottled in bond, table wine, low/no-alcohol wording) said Please check on 0 of the 227 approved labels.
 - Measured 2026-10-10 (`out/eval_g3_rules.log`, not committed); the same run is the one the safety gate approved for the live version. The answer keys of the 85 newest labels were drafted with AI assistance and are being reviewed by the author.
 
@@ -64,7 +75,7 @@ Measured with `tools/evaluate.py` on the practice sets (the final-test set is ke
 python3.12 -m venv .venv
 .venv/bin/pip install -r requirements.txt onnx
 .venv/bin/python tools/make_dynamic_det.py         # one-time: fetch the reading models, make the detector size-flexible
-.venv/bin/pytest                                   # 1,119 tests
+.venv/bin/pytest                                   # 1,129 tests
 .venv/bin/uvicorn app.web.main:app --port 8000     # open http://localhost:8000
 ```
 
