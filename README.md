@@ -44,14 +44,15 @@ Measured with `tools/evaluate.py` on the practice sets (the final-test set is ke
 
 | Practice set | Wrong answers | Mistakes caught | Items confirmed |
 |---|---|---|---|
-| 227 real TTB-approved labels (64 + 78 + 85, from the registry) | **0** "Does not match" | – | 75% / 70% / 68% |
-| 180 real approved labels with one planted change (alcohol, size, proof, a warning word, title-case heading, brand) | **0** changed items "Matches" | **180 of 180** flagged; 161 named exactly | 67% / 61% |
+| 227 real TTB-approved labels (64 + 78 + 85, from the registry) | **0** "Does not match" | – | 76% / 75% / 71% |
+| 178 real approved labels with one planted change (alcohol, size, proof, a warning word, title-case heading, brand) | **0** changed items "Matches" | **178 of 178** flagged; 158 named exactly | 68% / 66% |
 | 96 generated labels, 64 with planted mistakes | **0** "Matches" on a mistake | **64 of 64** flagged; 61 named exactly | 93% |
-| 76 photo-style pictures of 35 real labels (angles, close-ups, cans) | **0** "Does not match" | – | 27% (photos are hard; most items say Please check) |
+| 76 photo-style pictures of 35 real labels (angles, close-ups, cans) | **0** "Does not match" | – | 30% (photos are hard; most items say Please check) |
 
-- Health warning confirmed word for word on approved labels: 51 of 64, 49 of 78, 44 of 85. One approved label really prints the warning differently from 27 CFR 16.21 (`docs/FINDINGS.md`); it is reported apart.
-- Speed (laptop, 4 cores): typical 1.5–1.9 s, slowest 3.6 s per label.
-- Measured 2026-10-09 (`out/eval_full4.log`, not committed). The answer keys of the 85 newest labels were drafted with AI assistance and are being reviewed by the author.
+- Health warning confirmed word for word on approved labels: 51 of 64, 63 of 78, 55 of 85. One approved label really prints the warning differently from 27 CFR 16.21 (`docs/FINDINGS.md`); it is reported apart.
+- Speed (laptop, 4 cores): typical 1.5–1.9 s, slowest 3.8 s per label.
+- The new label rules (class minimums, bottled in bond, table wine, low/no-alcohol wording) said Please check on 0 of the 227 approved labels.
+- Measured 2026-10-10 (`out/eval_g3_rules.log`, not committed); the same run is the one the safety gate approved for the live version. The answer keys of the 85 newest labels were drafted with AI assistance and are being reviewed by the author.
 
 **Final test (held-out labels, run once on Oct 13):** _to be filled in with the numbers exactly as measured._
 
@@ -63,7 +64,7 @@ Measured with `tools/evaluate.py` on the practice sets (the final-test set is ke
 python3.12 -m venv .venv
 .venv/bin/pip install -r requirements.txt onnx
 .venv/bin/python tools/make_dynamic_det.py         # one-time: fetch the reading models, make the detector size-flexible
-.venv/bin/pytest                                   # 1,033 tests
+.venv/bin/pytest                                   # 1,119 tests
 .venv/bin/uvicorn app.web.main:app --port 8000     # open http://localhost:8000
 ```
 
