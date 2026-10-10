@@ -44,6 +44,7 @@ DATA = ROOT / "data"
 OUT = DATA / "scenes"
 RAW = ROOT / "out" / "scenes_raw"
 MODEL = "us.stability.stable-image-inpaint-v1:0"
+HARD = False   # --final: harder photos (glare more often, a coloured light, never a straight-on shot)
 PRICE_LOW, PRICE_HIGH = 0.04, 0.08    # USD per inpaint image; Bedrock's price list does not show this model, so a range
 W, H = 1536, 2048
 
@@ -221,7 +222,11 @@ def camera(img, rng):
     r2 = ((xx - w / 2) / (w / 2)) ** 2 + ((yy - h / 2) / (h / 2)) ** 2
     f *= (1 - rng.uniform(0.10, 0.25) * np.clip(r2, 0, 1.5))[..., None]
     effects = ["vignette"]
-    if rng.random() < 0.35:
+    if HARD and rng.random() < 0.6:   # bar or shop lighting: a warm, cool or green cast over the whole picture
+        tint = rng.choice([(1.12, 1.0, 0.82), (0.85, 0.95, 1.15), (0.92, 1.1, 0.9)])
+        f *= np.float32(tint)
+        effects.append("tint")
+    if rng.random() < (0.6 if HARD else 0.35):
         m = np.zeros((h, w), np.float32)
         c = (int(rng.uniform(0.3, 0.7) * w), int(rng.uniform(0.3, 0.7) * h))
         ax = (int(rng.uniform(0.04, 0.09) * w), int(rng.uniform(0.03, 0.07) * h))
@@ -373,7 +378,7 @@ def hard_camera(img, label_alpha, rng):
     """OUR geometric camera: perspective (turned up to ~45 degrees), rotation, then a crop that keeps the label whole.
     Returns (image, label alpha in the new frame, description)."""
     h, w = img.shape[:2]
-    mode = rng.choices(["straight", "rotate", "perspective", "rotate+perspective"], [2, 3, 3, 2])[0]
+    mode = rng.choices(["straight", "rotate", "perspective", "rotate+perspective"], [0 if HARD else 2, 3, 3, 2])[0]
     m = np.eye(3)
     desc = {"mode": mode}
     if "perspective" in mode:
@@ -600,6 +605,96 @@ def main_real(args):
     print(f"kept {len(report['items'])}, dropped {len(report['dropped'])}, calls {bed.calls if bed else 0}")
 
 
+# --final (added 2026-10-10): the same scenes for the final-test labels (data/splits/split.json "heldout" minus the six
+# with a twin in practice), with HARD photos, into data/scenes_real_final/; and the planted-change final-test labels
+# (data/tampered_final, tools/make_tampered.py --set final), one per label, into data/scenes_tampered_final/. Nothing
+# is dropped and the reader is never run on them: tools/evaluate.py --final runs them once, with the final test.
+def main_final(args):
+    global HARD
+    HARD = True
+    RAW.mkdir(parents=True, exist_ok=True)
+    bed = None if args.no_model else Bedrock(args.max_calls)
+    split = json.loads((DATA / "splits" / "split.json").read_text())
+    twins = set(json.loads((DATA / "splits" / "heldout_twins.json").read_text())["heldout"])
+    ids = sorted(x[5:] for x in split["heldout"] if x.startswith("cola_") and x[5:] not in twins | REAL_SKIP)
+    sources = []   # (output folder, item name, folder with the pictures, picture list, beverage type, item fields)
+    for i in ids:
+        rec = json.loads((DATA / "cola_samples" / i / "record.json").read_text())
+        gt = json.loads((DATA / "ground_truth" / f"{i}.json").read_text())
+        sources.append((DATA / "scenes_real_final", f"{i}__scene0", DATA / "cola_samples" / i, rec["images"],
+                        rec["product_type"] or "spirits",
+                        {"application": real_application(rec, gt), "printed": real_printed(gt),
+                         "expected": {"overall": "approved", "findings": [],
+                                      "warning_misprinted": not gt["warning"].get("matches_required_text", True),
+                                      "warning_present": gt["warning"].get("present")},
+                         "base_item": f"cola_{i}"}))
+    tampered = sorted(d for d in (DATA / "tampered_final").iterdir() if d.is_dir())
+    by_label = {}
+    for d in tampered:   # one planted change per label, the kinds taken in turn
+        by_label.setdefault(d.name.split("__")[0], []).append(d)
+    for n, (base, ds) in enumerate(sorted(by_label.items())):
+        d = ds[n % len(ds)]
+        it = json.loads((d / "item.json").read_text())
+        sources.append((DATA / "scenes_tampered_final", f"{d.name}__scene0", d, it["images"],
+                        it["application"]["beverage_type"],
+                        {"application": it["application"], "printed": it["printed"], "expected": it["expected"],
+                         "base_item": d.name}))
+    for out in {s_[0] for s_ in sources}:
+        shutil.rmtree(out, ignore_errors=True)
+        out.mkdir(parents=True)
+    report = {"model": None if args.no_model else MODEL, "items": [], "failed": []}
+    sheets = {}
+    for n, (out, name, folder, pics, btype, fields) in enumerate(sources):
+        rng = random.Random(f"final-{name}")
+        images, recs = [], []
+        try:
+            k = 0
+            for im in pics:
+                label = load_rgb(folder / im["file"])
+                extra = " seen from the back" if "back" in im["image_type"].lower() else ""
+                lw = label.shape[1]
+                parts = [(0, lw, "")] if lw / label.shape[0] < 1.4 else \
+                    [(0, int(0.6 * lw), " (left part)"), (int(0.4 * lw), lw, " (right part)")]
+                for a, b, part in parts:
+                    k += 1
+                    final, r = real_scene(np.ascontiguousarray(label[:, a:b]), btype, f"final_{name}_{k}", rng, bed, extra)
+                    r["source_image"] = im["file"] + (f" columns {a}-{b}" if part else "")
+                    images.append((f"scene_{k}.jpg", final, {**im, "image_type": im["image_type"] + part}))
+                    recs.append(r)
+        except Exception as e:  # noqa: BLE001  (a refused or failed call: the item is not made, and counted)
+            report["failed"].append({"id": name, "why": f"model call failed: {str(e)[:150]}"})
+            print(f"[{n + 1}/{len(sources)}] {name} model error {e}", flush=True)
+            continue
+        if not all(r["label_pixels_identical_before_camera_effects"] and r["label_pixels_identical_after_our_geometry"]
+                   for r in recs):
+            raise SystemExit(f"{name}: label area changed; stopping")
+        dest = out / name
+        dest.mkdir()
+        for fname, final, _ in images:
+            Image.fromarray(final).save(dest / fname, quality=90)
+        item = {"id": name, "images": [{"file": f, "image_type": im["image_type"]} for f, _, im in images],
+                "source": {"type": "real label scene (final test)",
+                           "license": "public COLA registry label artwork; scene generated for this project"},
+                "application": fields["application"], "printed": fields["printed"], "expected": fields["expected"],
+                "provenance": {"base_item": fields["base_item"], "model": "composite" if args.no_model else MODEL,
+                               "prompt": [r["prompt"] for r in recs], "seed": [r["seed"] for r in recs]}}
+        (dest / "item.json").write_text(json.dumps(item, indent=2, ensure_ascii=False))
+        report["items"].append({"id": name, "set": out.name, "base_item": fields["base_item"], "pictures": recs})
+        for (f, _, _), r in zip(images, recs):
+            cam = r["camera"]
+            sheets.setdefault(out, []).append((f"{name[:14]} {f}", dest / f, f"{btype} {cam['mode']} {cam['framing']} "
+                                               + " ".join(r["camera_effects"])))
+        print(f"[{n + 1}/{len(sources)}] {name} ok {len(images)} pictures", flush=True)
+    if bed:
+        report.update(calls_this_run=bed.calls, est_cost_usd_this_run=[round(bed.calls * PRICE_LOW, 2),
+                                                                         round(bed.calls * PRICE_HIGH, 2)])
+    for out, sheet in sheets.items():
+        (out / "_report.json").write_text(json.dumps({**report, "items": [x for x in report["items"]
+                                                                          if x["set"] == out.name]}, indent=1))
+        contact_sheet(sheet, out / "_contact_sheet.jpg")
+    print(f"made {len(report['items'])}, failed {len(report['failed'])}, calls {bed.calls if bed else 0}")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--count", type=int, default=54, help="scenes to make before dropping unreadable ones")
@@ -608,7 +703,10 @@ def main():
     ap.add_argument("--reroll", default="", help="comma-separated scene ids to make again with the next seed")
     ap.add_argument("--no-model", action="store_true", help="composite only: our drawn bottle, no model call")
     ap.add_argument("--real", action="store_true", help="real approved labels (practice_extra) into data/scenes_real")
+    ap.add_argument("--final", action="store_true", help="the final-test labels and their planted changes (see main_final)")
     args = ap.parse_args()
+    if args.final:
+        return main_final(args)
     if args.real:
         return main_real(args)
     picked = choose(args.count)

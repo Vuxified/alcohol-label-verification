@@ -66,6 +66,7 @@ Measured with `tools/evaluate.py` on the practice sets (the final-test set is ke
 - Measured 2026-10-10 (`out/eval_g3_rules.log`, not committed); the same run is the one the safety gate approved for the live version. The answer keys of the 85 newest labels were drafted with AI assistance and are being reviewed by the author.
 
 **Final test (held-out labels, run once on Oct 13):** _to be filled in with the numbers exactly as measured._
+It has 138 items the app was never run on before: 28 real approved labels and 24 generated labels with planted mistakes (frozen Oct 2), plus, built from those same 28 labels on Oct 10 and frozen the same way: 46 with one planted change, 20 photo-style pictures (harder than the practice photos: never straight-on, more glare, coloured light) and 20 photo-style pictures with a planted change. The six real labels with a near-identical twin in practice were left out of the Oct 10 sets. `tools/evaluate.py --final` checks every file against its frozen checksum and runs only once.
 
 **How the answer key was made:** label values were drafted with AI tools and cross-checked by two independent vision models. The author reviewed every final-test label by hand against its images; the practice labels were checked against every image with AI assistance. Each answer sheet in `data/ground_truth/` records who reviewed it. In that review, the vision models' disagreements were almost always the models' own errors (invented addresses and container sizes), which is why the app never lets a model decide.
 

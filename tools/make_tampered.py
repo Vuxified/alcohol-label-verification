@@ -1,7 +1,7 @@
 """Plant one realistic mistake on real TTB-approved label artwork, so the app is tested on real labels, not only ours.
 
-Source: the practice labels only (the "cola_*" ids in data/splits/split.json "dev"); the held-out labels are never
-opened. For each label the app's own reader finds the text to change (word boxes from Reader.read, plus a sharper
+Source: the practice labels (the "cola_*" ids in data/splits/split.json "dev"); the held-out labels only with
+--set final (below). For each label the app's own reader finds the text to change (word boxes from Reader.read, plus a sharper
 1536-px pass of the same engine for small type). The old characters are painted out from the surrounding background
 (cv2 inpaint) and the new ones drawn at the same height and colour: a glyph copied from elsewhere on the same label
 when that character is there (it is then the label's own font), otherwise rendered in the closest-looking font
@@ -23,10 +23,15 @@ The second set (--set extra) is built the same way from the 78 extra practice la
 data/splits/practice_extra.json and written to data/tampered_extra/: the 64 original practice labels may later be used
 to train the reader, and then only the extra set stays a fair test.
 
+The final-test set (--set final, added 2026-10-10) is built the same way from the final-test labels in
+data/splits/split.json "heldout" (minus the six with a twin in practice) and written to data/tampered_final/. The app
+is NOT run on it: only the reader checks that the planted text is printed and the original gone, and no verdict is
+computed, printed or saved. tools/evaluate.py --final runs it once, with the other final-test labels.
+
 Every kept item's preview.png was looked at; the few with a visible flaw are listed in REJECTED below and are replaced
 by spare items of the same kind (--reselect redoes only that choice, from the staged items in out/).
 
-Usage: python tools/make_tampered.py [--set dev|extra] [--target 100] [--only 24009001000331,...] [--cpus 4]
+Usage: python tools/make_tampered.py [--set dev|extra|final] [--target 100] [--only 24009001000331,...] [--cpus 4]
        python tools/make_tampered.py --set dev --reselect     # re-pick the kept items after a review
 """
 
@@ -91,6 +96,19 @@ REJECTED = {
     "cola_25344001000949__warning_word": "a stray colon was left after the closed-up line",
     "cola_26169001000018__warning_word": "the closed-up line ends in a doubled full stop",
     "cola_26196001000791__net": "the new 2 is visibly heavier than the other digits",
+    # final set (2026-10-10)
+    "cola_23354001000381__abv": "the second alcohol statement lost its decimal point (38% beside 3.8%)",
+    "cola_23354001000381__warning_delete": "the BREWERY logo was pasted over the warning",
+    "cola_24022001000902__warning_titlecase": "WOMEN on the next line became WEN",
+    "cola_24022001000904__warning_titlecase": "WOMEN SHOULD NOT on the next line was smeared",
+    "cola_24110001000159__warning_word": "the new word sits in a visible grey box",
+    "cola_24208001000178__brand_word": "the rest of the line (S.p.A.) was smeared",
+    "cola_25055001000896__warning_delete": "IMPAIRS YOUR ABILITY on the next line was smeared",
+    "cola_25169001000935__warning_titlecase": "only WARNING was re-cased (GOVERNMENT stayed in capitals)",
+    "cola_24078001000871__warning_word": "the new word is in visibly smaller letters",
+    "cola_24304001000648__warning_word": "the new word is visibly heavier than the line",
+    "cola_24304001000648__warning_delete": "a grey smudge is left where the word was",
+    "cola_24022001000902__warning_delete": "a grey box is left after the closed-up line",
 }
 DESCENDERS = set("gjpqy,;")
 MIN_FONT_IOU = 0.5   # a drawn word must overlap the original's ink this well in the chosen font, or it is skipped
@@ -1110,7 +1128,7 @@ def check_spare(row, folder, reader):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--set", default="dev", choices=["dev", "extra"])
+    ap.add_argument("--set", default="dev", choices=["dev", "extra", "final"])
     ap.add_argument("--target", type=int, default=0, help="items to keep (default 100 for dev, 80 for extra)")
     ap.add_argument("--only", default="")
     ap.add_argument("--changes", default=",".join(CHANGES))
@@ -1120,12 +1138,18 @@ def main():
     split = json.loads((DATA / "splits" / "split.json").read_text())
     held = set(split["heldout"])
     global OUT
+    final = args.set == "final"
     if args.set == "extra":
         pool = json.loads((DATA / "splits" / "practice_extra.json").read_text())["dev"]
         OUT = DATA / "tampered_extra"
+    elif final:  # the final-test labels without a twin in practice; the app's verdicts are never computed on them
+        twins = set(json.loads((DATA / "splits" / "heldout_twins.json").read_text())["heldout"])
+        pool = [x for x in split["heldout"] if x[5:] not in twins]
+        held = set()
+        OUT = DATA / "tampered_final"
     else:
         pool = split["dev"]
-    args.target = args.target or (80 if args.set == "extra" else 100)
+    args.target = args.target or {"extra": 80, "final": 50}.get(args.set, 100)
     ids = sorted(x[5:] for x in pool if x.startswith("cola_") and x not in held)
     if args.only:
         ids = [i for i in ids if i in args.only.split(",")]
@@ -1155,15 +1179,19 @@ def main():
                 skipped.append({"id": iid, "why": f"edit failed: {type(e).__name__}: {e}"})
                 continue
             new_images = [(p.name, encode(p) if p.changed else p.data) for p in pics]
-            res = check_application(reader, app, new_images)
-            why = verify_reading(check, gt, app, res.reading)
-            verdicts = {f.field: [f.verdict.value, f.code] for f in res.fields}
+            if final:
+                why = verify_reading(check, gt, app, reader.read(new_images))
+                verdicts, overall, said = {}, "not run (final test)", "ok"
+            else:
+                res = check_application(reader, app, new_images)
+                why = verify_reading(check, gt, app, res.reading)
+                verdicts = {f.field: [f.verdict.value, f.code] for f in res.fields}
+                overall = res.overall.value
+                said = f"ok, app says {overall} {[(k, v) for k, v in verdicts.items() if v[0] != 'pass']}"
             row = {"id": iid, "base": lid, "change": change, "type": app.beverage_type, "from": frm, "to": to,
-                   "expected": expected, "app_overall": res.overall.value, "app_fields": verdicts,
+                   "expected": expected, "app_overall": overall, "app_fields": verdicts,
                    "edited": [p.name for p in pics if p.changed]}
-            print(f"[{n}/{len(ids)}] {iid}: {frm!r} -> {to!r} " + (f"DROPPED ({why})" if why else
-                  f"ok, app says {res.overall.value} {[(k, v) for k, v in verdicts.items() if v[0] != 'pass']}"),
-                  flush=True)
+            print(f"[{n}/{len(ids)}] {iid}: {frm!r} -> {to!r} " + (f"DROPPED ({why})" if why else said), flush=True)
             if why:
                 row["why"] = why
                 dropped.append(row)
