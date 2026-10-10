@@ -13,6 +13,10 @@ FIELD_NAMES = {
     "warning_caps": "Warning heading in capitals",
     "warning_bold": "Warning heading in bold",
     "warning_size": "Warning type size",
+    "abv_minimum": "Minimum alcohol for the class",
+    "bonded": "Bottled in bond",
+    "wine_terms": "Wine alcohol range",
+    "malt_terms": "Low or no alcohol wording",
 }
 
 VERDICT = {

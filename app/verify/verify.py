@@ -5,6 +5,7 @@ import re
 from .abv import check_abv, check_proof, find_abv
 from .model import Application, FieldResult, Report, Verdict
 from .net_contents import check_net_contents
+from .label_rules import label_rules
 from .presence import abv_present, bottler_present, class_present, country_present, net_present
 from .text import match_text, normalize, words_present
 from .warning import check_warning
@@ -39,6 +40,7 @@ def verify(app: Application, lines: list[str]) -> Report:
     else:
         report.fields.append(abv_present(kind, lines) if alone and app.abv is None else check_abv(app, lines))
         report.fields.append(check_proof(app, lines))
+    report.fields.extend(label_rules(app, lines))
     report.fields.append(net_present(kind, lines) if alone and not app.net_contents else check_net_contents(app, lines))
     if app.name_address:
         report.fields.append(words_present("name_address", app.name_address, lines))

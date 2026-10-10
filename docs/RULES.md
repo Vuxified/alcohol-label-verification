@@ -199,13 +199,62 @@ Handled automatically: phone rotation (EXIF), white or gold text on dark backgro
 
 ---
 
+## 6a. Pictures only (no application values)
+
+With the brand left blank, nothing is compared. The app instead looks for each statement the rules require on the label (mandatory label information: § 4.32 wine, § 5.63 spirits, § 7.63 malt beverages) for every item left blank:
+
+| Item | On the label | Please check | Not checked |
+|---|---|---|---|
+| Class or type | a class or type word (bourbon, vodka, Cabernet Sauvignon, red wine, ale, lager…) | none found | |
+| Alcohol content | one alcohol content | spirits without one (§ 5.65); wine without one and without "table wine"/"light wine" (§ 4.36); two different values | beer without one (§ 7.65: optional federally) |
+| Net contents | a size, standard for the product | none found; wine or spirits size that is not a standard fill (§ 4.72, § 5.203) | |
+| Name and address | a "Bottled by", "Produced by", "Brewed by", "Imported by"… statement | none found | |
+| Country of origin (imports) | "Product of …", "Made in …", "Imported from …" a country | none found | |
+
+"On the label" is shown instead of "Matches": the statement is there, but nothing was compared with an application. **Never Does not match** in this mode. The warning, proof and type-size rules work as usual (type size uses the net contents found on the label).
+
+"Fill in from the label" uses the same findings (plus the largest line on the first picture as the brand) to fill the blank boxes of the form, each marked for the agent to check against the application.
+
+---
+
+## 6b. Rules a label must follow on its own
+
+Checked from the label text, whether or not application values are given (`app/verify/label_rules.py`). Citations checked against the eCFR text of 2026-10-07. A broken rule is **Please check** with the rule quoted, never Does not match (the number may be misread, and the agent decides). A rule that does not apply adds no line; one that applies and is met shows Matches.
+
+| Check | Rule | Source |
+|---|---|---|
+| Minimum alcohol for the class | Vodka, whisky (bourbon, rye, Scotch…), gin, brandy, rum, tequila and mezcal: at least 40% (80 proof). Flavored versions: at least 30% (60 proof). Liqueurs, creams, cocktails and mixed drinks ("vodka soda", "gin & tonic") have no class minimum and are skipped. | § 5.142, 5.143, 5.144, 5.145, 5.147, 5.148, 5.151 |
+| Bottled in bond | Exactly 50% alcohol (100 proof). | § 5.88(a)(6) |
+| Wine alcohol range | "Table wine" / "light wine" only at 14% or less; wine labeling rules cover 7% to 24%. | § 4.21(a)(5), 4.36(a), 4.6 |
+| Low or no alcohol wording (beer) | "Low alcohol" / "reduced alcohol" only under 2.5%; "non-alcoholic" only with "contains less than 0.5 percent (or .5%) alcohol by volume"; "alcohol free" only with no alcohol. | § 7.65(d), (e), (f) |
+
+The class comes from the application when given, otherwise from the label. The alcohol content is the one the label shows (the application's when the label shows none); when the label shows two different values, these rules are skipped (the alcohol content row already asks for a check).
+
+### The rule inventory: what a picture can and cannot settle
+
+| Rule | Status |
+|---|---|
+| Brand, class/type, alcohol content, net contents, name and address, country of origin | Compared with the application, or looked for on the label (§ 6a) |
+| Health warning: wording, capitals, bold heading, type size | Checked (§ 5) |
+| Proof equals twice the alcohol content | Checked (§ 3.4) |
+| Class minimums, bottled in bond, table wine, low/no-alcohol words | Checked (this section) |
+| Standards of fill (wine, spirits) | Checked (§ 4, § 6a) |
+| "ABV" on wine | Please check (§ 4.36(b)(1) lists the allowed abbreviations; "ABV" is not one) |
+| Whisky aged under 4 years must state its age (§ 5.74(b)) | Needs a person: the picture cannot show how old the whisky is |
+| "Contains sulfites" (wine § 4.32(e), spirits § 5.63(c)(7), beer § 7.63(b)(3)), FD&C Yellow No. 5, cochineal/carmine, aspartame ("PHENYLKETONURICS: CONTAINS PHENYLALANINE", spirits and beer only) | Needs a person: required only if the product contains them, which the picture cannot show |
+| Whether the product really is what the class says (standards of identity) | Needs a person (lab analysis, formula) |
+| "Same field of vision" for brand, class and alcohol on spirits (§ 5.63(a)) | Not checked: needs the physical container |
+| Country of origin marking | A Customs rule (19 CFR 134.11; TTB points to it in § 5.69, 7.69); compared or looked for, as above |
+
+---
+
 ## 7. What the app does not check (by design)
 
 These need human judgment or are outside a prototype's scope; the app doesn't pretend otherwise:
 - Contrasting background, and "separate and apart" placement of the warning.
 - Spirits "same field of vision" (brand, class/type and alcohol content visible together, § 5.63(a)).
 - Standards of identity (whether a product actually qualifies as "bourbon," etc.).
-- Wine appellation, varietal and vintage percentages; age statements; state of distillation; coloring, sulfite, Yellow No. 5, cochineal and aspartame disclosures. *(Candidates for a later version: they're text-presence checks that fit the same engine.)*
+- Wine appellation, varietal and vintage percentages; age statements; state of distillation; coloring, sulfite, Yellow No. 5, cochineal and aspartame disclosures: whether they are needed depends on facts a picture cannot show (§ 6b lists them).
 - State-level labeling rules.
 
 ---

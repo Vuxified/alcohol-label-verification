@@ -322,4 +322,6 @@ def _asked(form) -> dict:
             "country_of_origin": form.get("country_of_origin"),
             "warning_text": "The exact wording required by 27 CFR 16.21",
             "warning_caps": '"GOVERNMENT WARNING" in capital letters', "warning_bold": '"GOVERNMENT WARNING" in bold',
-            "warning_size": "Warning letters at least the minimum height for the container (27 CFR 16.22)"}
+            "warning_size": "Warning letters at least the minimum height for the container (27 CFR 16.22)",
+            "abv_minimum": "The rule for the class (27 CFR 5.142-5.151)", "bonded": "50% alcohol, 100 proof (27 CFR 5.88)",
+            "wine_terms": "The rules for wine (27 CFR 4.6, 4.21, 4.36)", "malt_terms": "The rules for these words (27 CFR 7.65)"}
