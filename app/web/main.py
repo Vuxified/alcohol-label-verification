@@ -252,7 +252,8 @@ async def api_read(request: Request):
     kind = form["beverage_type"] if form["beverage_type"] in copy.BEVERAGES else None
     values = read_values(reading.lines(), kind)
     brand = brand_guess(reading.frame_words)
-    return values | ({"brand_name": brand} if brand else {})
+    text = " ".join(reading.lines())[:4000]  # the batch page pairs leftover pictures by what they say
+    return values | ({"brand_name": brand} if brand else {}) | {"text": text}
 
 
 @app.get("/batch", response_class=HTMLResponse)

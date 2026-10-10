@@ -115,6 +115,7 @@ var BatchRead = (function () {
       if (src && !imported && !/^(domestic|us|usa|u\.s\.)$/.test(src)) bad.push('source "' + get(r, 'source') + '" should be domestic or imported');
       var listed = get(r, 'image_files').split(/[;,|\n]/).map(function (s) { return s.trim(); }).filter(Boolean);
       var names = listed.length ? listed : (id ? filesNamed(entries, id) : []);
+      var others = bad.slice();  // the row's problems apart from having no pictures
       if (!names.length) bad.push(col.image_files ? 'no image_files, and no pictures named after "' + label + '"' : 'no pictures named after "' + label + '" in the ZIP');
       if (names.length > limits.images) bad.push(names.length + ' images (the limit is ' + limits.images + ')');
       var found = [];
@@ -128,11 +129,72 @@ var BatchRead = (function () {
         beverage_type: bev || '', brand_name: get(r, 'brand_name'), fanciful_name: get(r, 'fanciful_name'),
         class_type: get(r, 'class_type'), abv: abv, net_contents: get(r, 'net_contents'), name_address: get(r, 'name_address'),
         source: imported ? 'imported' : 'domestic', country_of_origin: country, label_height: height } };
+      if (!names.length) { job.unpaired = true; job.others = others; }  // may still be paired by reading (pair)
       if (bad.length) { problems.push('Row ' + row + ' (' + label + '): ' + bad.join('; ') + '.'); job.error = bad.join('; '); }
       jobs.push(job);
     });
     return { jobs: jobs, problems: problems };
   }
 
-  return { decode: decode, entriesOf: entriesOf, findEntry: findEntry, filesNamed: filesNamed, csvIn: csvIn, rows: rows, header: header };
+  // Pictures in the ZIP that no row claims (by listing them or by their name).
+  function leftovers(entries, jobs) {
+    var used = new Set();
+    jobs.forEach(function (j) { j.files.forEach(function (f) { used.add(f.entry); }); });
+    return Object.keys(entries).filter(function (k) { return IMAGE.test(k) && !used.has(entries[k]); }).sort();
+  }
+
+  function words(t) { return ' ' + String(t || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim() + ' '; }
+  function amount(t) {  // "750 mL" -> "750ml", "12 FL. OZ." -> "12oz"
+    var m = String(t || '').toLowerCase().replace(/,/g, '.').match(/(\d+(?:\.\d+)?)\s*(ml|l|lit|fl\.?\s*oz|oz)/);
+    return m ? parseFloat(m[1]) + m[2].replace(/fl\.?\s*/, '').replace('lit', 'l') : '';
+  }
+
+  // The bottler's name from the spreadsheet: "Bottled by Lantern Distilling Co., Louisville, KY" -> "lantern distilling co"
+  function bottler(t) {
+    var first = String(t || '').split(',')[0].replace(/^.*\b(?:by|for)\b:?/i, '');
+    var w = words(first).trim();
+    return w.split(' ').length >= 2 ? w : '';
+  }
+
+  // Leftover pictures, each read by the checker ({key, entry, values: {text, abv, net_contents}}), given to the rows
+  // without pictures. Evidence: brand or bottler name found as whole words 2, alcohol equal 1, net contents equal 1,
+  // a different alcohol or net contents -1 (contradicts). A picture goes to a row with 2 or more and no other row as
+  // high, and only one row's name on it (a gift pack is unclear). A picture with less (a back label with only the size)
+  // joins the row of the picture before it in file-name order (else after it), if it agrees with that row (1 or more)
+  // and shows no row's name. Anything else is listed for the agent, never guessed.
+  function pair(jobs, readings) {
+    var open = jobs.filter(function (j) { return j.unpaired; }), unpaired = [], owner = [], named = [];
+    var scored = readings.map(function (r, i) {
+      var text = words(r.values.text);
+      named[i] = 0;
+      return open.map(function (j) {
+        var s = 0, names = [words(j.form.brand_name).trim(), bottler(j.form.name_address)];
+        if (names.some(function (n) { return n.length > 1 && text.indexOf(' ' + n + ' ') >= 0; })) { s += 2; named[i]++; }
+        if (j.form.abv && r.values.abv) s += Math.abs(parseFloat(j.form.abv) - parseFloat(r.values.abv)) < 0.05 ? 1 : -1;
+        if (j.form.net_contents && r.values.net_contents) s += amount(j.form.net_contents) === amount(r.values.net_contents) ? 1 : -1;
+        return s;
+      });
+    });
+    scored.forEach(function (scores, i) {
+      var best = Math.max.apply(null, scores.concat([0]));
+      var winners = open.filter(function (j, k) { return scores[k] === best; });
+      owner[i] = best >= 2 && winners.length === 1 && named[i] <= 1 ? winners[0] : null;
+    });
+    scored.forEach(function (scores, i) {  // back labels: join the picture before (else after) if they agree
+      if (owner[i] || named[i]) return;
+      owner[i] = [owner[i - 1], owner[i + 1]].filter(function (j) { return j && scores[open.indexOf(j)] >= 1; })[0] || null;
+    });
+    readings.forEach(function (r, i) {
+      if (owner[i]) owner[i].files.push({ name: base(zipKey(r.entry.name || r.key)) === base(r.key) ? (r.entry.name || r.key).split("/").pop() : base(r.key), entry: r.entry, read: true });
+      else unpaired.push(r.entry.name);
+    });
+    open.forEach(function (j) {
+      var msg = j.files.length ? [] : ["Couldn't pair any pictures with this application"];
+      if (j.files.length) j.pairedBy = 'reading the label';
+      j.error = msg.concat(j.others).join('; ') || undefined;
+    });
+    return { unpaired: unpaired };
+  }
+
+  return { leftovers: leftovers, pair: pair, decode: decode, entriesOf: entriesOf, findEntry: findEntry, filesNamed: filesNamed, csvIn: csvIn, rows: rows, header: header };
 })();

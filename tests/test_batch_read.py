@@ -173,3 +173,86 @@ def test_label_height_column(page, head):
 def test_label_height_without_a_number_is_a_row_problem(page):
     csv = "application_id,image_files,beverage_type,brand_name,label_height\nA1,a.jpg,wine,Old Tom,tall\n"
     assert 'label height "tall"' in one(page, csv, ["a.jpg"])["error"]
+
+
+# Pairing by reading the label: pictures not named in the spreadsheet or after an application are read, and given to
+# an application only when one is a clear winner (brand found, or both alcohol and net contents equal); anything
+# unclear is listed for the agent instead of guessed.
+def pair(page, csv, paths, readings):
+    return page.evaluate("""([csv, paths, readings]) => {
+        const items = paths.map(p => ({ path: p, dir: false, entry: { name: p } }));
+        const entries = BatchRead.entriesOf(items);
+        const r = BatchRead.rows(csv, entries, { rows: 500, images: 6, mb: 10 });
+        const left = BatchRead.leftovers(entries, r.jobs);
+        const out = BatchRead.pair(r.jobs, left.map(k => ({ key: k, entry: entries[k], values: readings[k] || {} })));
+        return { left: left, unpaired: out.unpaired, jobs: r.jobs.map(j => ({ id: j.id, error: j.error || '',
+                 files: j.files.map(f => f.entry.name), pairedBy: j.pairedBy })) };
+    }""", [csv, paths, readings])
+
+
+PAIR_CSV = ("application_id,beverage_type,brand_name,abv,net_contents\n"
+            "A1,spirits,Old Tom,45,750 mL\nA2,wine,Red Hill,13.5,750 mL\nA3,malt,River Bend,5,12 FL OZ\n")
+
+
+def test_leftover_pictures_are_the_ones_no_row_claims(page):
+    r = pair(page, "application_id,beverage_type,brand_name\nA1,spirits,Old Tom\nB2,wine,Red Hill\n",
+             ["A1_front.jpg", "IMG_1.jpg", "notes.txt"], {})
+    assert r["left"] == ["img_1.jpg"]
+
+
+def test_pictures_paired_by_what_they_say(page):
+    r = pair(page, PAIR_CSV, ["IMG_1.jpg", "IMG_2.jpg", "IMG_3.jpg", "IMG_4.jpg"], {
+        "img_1.jpg": {"text": "OLD TOM DISTILLERY KENTUCKY BOURBON", "abv": "45"},
+        "img_2.jpg": {"text": "GOVERNMENT WARNING ... 45% ALC/VOL 750 ML", "abv": "45", "net_contents": "750 ML"},
+        "img_3.jpg": {"text": "RED HILL CABERNET", "abv": "13.5"},
+        "img_4.jpg": {"text": "RIVER BEND IPA 12 FL OZ", "net_contents": "12 FL OZ"}})
+    a1, a2, a3 = r["jobs"]
+    assert a1["files"] == ["IMG_1.jpg", "IMG_2.jpg"] and a1["pairedBy"] == "reading the label" and not a1["error"]
+    assert a2["files"] == ["IMG_3.jpg"] and a3["files"] == ["IMG_4.jpg"]
+    assert r["unpaired"] == []
+
+
+def test_unclear_pictures_are_listed_not_guessed(page):
+    r = pair(page, PAIR_CSV, ["IMG_1.jpg", "IMG_2.jpg"], {
+        "img_1.jpg": {"text": "750 ML"},                                        # A1 and A2 both say 750 mL
+        "img_2.jpg": {"text": "OLD TOM and RED HILL gift pack", "abv": "45"}})  # two brands
+    assert r["unpaired"] == ["IMG_1.jpg", "IMG_2.jpg"]
+    assert all("Couldn't pair" in j["error"] for j in r["jobs"])
+
+
+def test_brand_must_be_whole_words(page):
+    r = pair(page, "application_id,beverage_type,brand_name\nA1,malt,Ale\n", ["IMG_1.jpg"],
+             {"img_1.jpg": {"text": "PALE LAGER"}})
+    assert r["unpaired"] == ["IMG_1.jpg"]
+
+
+def test_rows_with_their_own_pictures_are_left_alone(page):
+    r = pair(page, PAIR_CSV.replace("A1,", "A1_x,"), ["A1_x_front.jpg", "IMG_1.jpg"],
+             {"img_1.jpg": {"text": "OLD TOM", "abv": "45", "net_contents": "750 ML"}})
+    assert r["jobs"][0]["files"] == ["A1_x_front.jpg"] and r["jobs"][0]["pairedBy"] == "file name"
+    assert r["unpaired"] == ["IMG_1.jpg"]  # A1_x already has its pictures; nobody else matches
+
+
+def test_a_back_label_joins_its_neighbour_when_it_agrees(page):
+    # front named the brand; the back right after it shows only the same net contents (and no other brand)
+    r = pair(page, PAIR_CSV, ["IMG_1.jpg", "IMG_2.jpg", "IMG_3.jpg"], {
+        "img_1.jpg": {"text": "OLD TOM BOURBON", "abv": "45"},
+        "img_2.jpg": {"text": "GOVERNMENT WARNING 750 ML", "net_contents": "750 ML"},
+        "img_3.jpg": {"text": "RED HILL CABERNET 13.5%", "abv": "13.5"}})
+    assert r["jobs"][0]["files"] == ["IMG_1.jpg", "IMG_2.jpg"]
+    assert r["jobs"][1]["files"] == ["IMG_3.jpg"]
+
+
+def test_a_neighbour_that_disagrees_or_shows_nothing_is_not_joined(page):
+    r = pair(page, PAIR_CSV, ["IMG_1.jpg", "IMG_2.jpg", "IMG_3.jpg"], {
+        "img_1.jpg": {"text": "OLD TOM BOURBON", "abv": "45"},
+        "img_2.jpg": {"text": "GOVERNMENT WARNING 1.75 L", "net_contents": "1.75 L"},   # a different size
+        "img_3.jpg": {"text": "GOVERNMENT WARNING"}})                                     # nothing to agree with
+    assert r["jobs"][0]["files"] == ["IMG_1.jpg"]
+    assert r["unpaired"] == ["IMG_2.jpg", "IMG_3.jpg"]
+
+
+def test_bottler_name_from_the_spreadsheet_pairs(page):
+    csv = "application_id,beverage_type,brand_name,name_address\nA1,spirits,Old Tom,\"Bottled by Lantern Distilling Co., Louisville, KY\"\nA2,wine,Red Hill,\n"
+    r = pair(page, csv, ["IMG_9.jpg"], {"img_9.jpg": {"text": "DISTILLED AND BOTTLED BY LANTERN DISTILLING CO LOUISVILLE KY"}})
+    assert r["jobs"][0]["files"] == ["IMG_9.jpg"]

@@ -36,7 +36,7 @@
       <thead><tr><th scope="col">Column</th><th scope="col">Needed?</th><th scope="col">Example</th></tr></thead>
       <tbody>
         <tr><td><code>application_id</code></td><td>Yes, unique</td><td>TTB-0001</td></tr>
-        <tr><td><code>image_files</code></td><td>No, if the pictures are named after the application</td><td>0001_front.jpg;0001_back.jpg (file names in the ZIP, separated by ; or ,). Left out: every picture whose name starts with the application_id, like TTB-0001_front.jpg</td></tr>
+        <tr><td><code>image_files</code></td><td>No, if the pictures are named after the application</td><td>0001_front.jpg;0001_back.jpg (file names in the ZIP, separated by ; or ,). Left out: every picture whose name starts with the application_id, like TTB-0001_front.jpg. Pictures named neither way are read and paired with an application when there is one clear match by brand, alcohol and net contents; anything unclear is listed for you, never guessed</td></tr>
         <tr><td><code>beverage_type</code></td><td>Yes</td><td>spirits, wine, or malt (beer is accepted)</td></tr>
         <tr><td><code>brand_name</code></td><td>Yes</td><td>Old Tom Distillery</td></tr>
         <tr><td><code>class_type</code>, <code>abv</code>, <code>net_contents</code>, <code>name_address</code>, <code>fanciful_name</code></td><td>No</td><td>Kentucky Straight Bourbon Whiskey · 45 · 750 mL</td></tr>
@@ -135,6 +135,23 @@
       var read = BatchRead.rows(csvText, entries, { rows: MAX_ROWS, images: MAX_IMAGES, mb: MAX_MB });
       if (read.fatal) throw { list: read.fatal };
       jobs = read.jobs; problems = read.problems;
+      var left = BatchRead.leftovers(entries, jobs);
+      if (left.length && jobs.some(function (j) { return j.unpaired; })) {  // pair the other pictures by reading them
+        var readings = [], todo = left.slice(), n = 0;
+        $('read').textContent = 'Reading ' + left.length + ' unnamed pictures to pair them…';
+        await Promise.all(Array.from({ length: PARALLEL }, async function () {
+          while (todo.length) {
+            var k = todo.shift(), values = await readPicture(entries[k], k.split('/').pop());
+            readings.push({ key: k, entry: entries[k], values: values || {} });
+            $('read').textContent = 'Reading unnamed pictures to pair them: ' + (++n) + ' of ' + left.length + '…';
+          }
+        }));
+        readings.sort(function (a, b) { return a.key < b.key ? -1 : 1; });
+        var paired = BatchRead.pair(jobs, readings);
+        problems = jobs.filter(function (j) { return j.error; }).map(function (j) { return 'Row ' + j.row + ' (' + j.id + '): ' + j.error + '.'; });
+        if (paired.unpaired.length) problems.push("Couldn't pair " + paired.unpaired.length + (paired.unpaired.length === 1 ? ' picture' : ' pictures') +
+          ' with an application (no clear match by brand, alcohol and net contents): ' + paired.unpaired.join(', ') + '.');
+      }
       var good = jobs.filter(function (j) { return !j.error; }).length;
       if (problems.length) {
         $('problems-heading').textContent = problems.length + (problems.length === 1 ? ' problem' : ' problems') + ' found before starting';
@@ -160,27 +177,43 @@
 
   function sleep(ms) { return new Promise(function (r) { setTimeout(r, ms); }); }
 
+  async function send(url, form, blobs, names) {  // -> fetch response; images go through the bucket on AWS
+    var body = new FormData();
+    Object.keys(form).forEach(function (k) { body.append(k, form[k]); });
+    if (BUCKET) {
+      var links = await (await fetch('/upload-links?n=' + blobs.length)).json();
+      await Promise.all(blobs.map(function (b, i) {
+        var up = new FormData();
+        Object.entries(links[i].fields).forEach(function (kv) { up.append(kv[0], kv[1]); });
+        up.append('file', b);
+        return fetch(links[i].url, { method: 'POST', body: up }).then(function (r) { if (!r.ok) throw new Error('upload ' + r.status); });
+      }));
+      links.forEach(function (l, i) { body.append('upload_keys', l.fields.key); body.append('upload_names', names[i]); });
+    } else {
+      blobs.forEach(function (b, i) { body.append('images', b, names[i]); });
+    }
+    return fetch(url, { method: 'POST', body: body });
+  }
+
+  async function readPicture(entry, name) {  // what one picture says, or null (it then stays unpaired)
+    for (var attempt = 0; attempt < 4; attempt++) {
+      try {
+        var r = await send('/api/read', {}, [await entry.async('blob')], [name]);
+        if (r.ok) return await r.json();
+        if (r.status !== 503 && r.status !== 429) return null;
+      } catch (e) { /* network: try again */ }
+      await sleep(2000 * Math.pow(2, attempt));
+    }
+    return null;
+  }
+
   async function checkOne(job) {
     var blobs;
     try { blobs = await Promise.all(job.files.map(function (f) { return f.entry.async('blob'); })); }
     catch (e) { return { error: 'An image in the ZIP could not be opened (' + (e.message || e) + ').' }; }
     for (var attempt = 0; ; attempt++) {
       try {
-        var body = new FormData();
-        Object.keys(job.form).forEach(function (k) { body.append(k, job.form[k]); });
-        if (BUCKET) {
-          var links = await (await fetch('/upload-links?n=' + blobs.length)).json();
-          await Promise.all(blobs.map(function (b, i) {
-            var up = new FormData();
-            Object.entries(links[i].fields).forEach(function (kv) { up.append(kv[0], kv[1]); });
-            up.append('file', b);
-            return fetch(links[i].url, { method: 'POST', body: up }).then(function (r) { if (!r.ok) throw new Error('upload ' + r.status); });
-          }));
-          links.forEach(function (l, i) { body.append('upload_keys', l.fields.key); body.append('upload_names', job.files[i].name); });
-        } else {
-          blobs.forEach(function (b, i) { body.append('images', b, job.files[i].name); });
-        }
-        var r = await fetch('/api/check', { method: 'POST', body: body });
+        var r = await send('/api/check', job.form, blobs, job.files.map(function (f) { return f.name; }));
         var data = await r.json().catch(function () { return { error: 'The checker sent an unreadable answer.' }; });
         if (r.status === 429 || r.status >= 500) throw new Error(data.error || ('status ' + r.status));  // busy: retry
         if (!r.ok) return { error: data.error || ('status ' + r.status) };
@@ -246,7 +279,8 @@
       while (queue.length && !cancelled) {
         var job = queue.shift();
         var res = await checkOne(job);
-        results.push({ row: job.row, id: job.id, overall: res.error ? 'error' : res.overall, reasons: reasonsOf(res),
+        var how = job.pairedBy === 'reading the label' ? 'Pictures paired by reading the label (' + job.files.map(function (f) { return f.name; }).join(', ') + '); please confirm they belong to this application. ' : '';
+        results.push({ row: job.row, id: job.id, overall: res.error ? 'error' : res.overall, reasons: how + reasonsOf(res), paired: job.pairedBy,
                        fields: res.fields || [], seconds: res.seconds || '', images: job.files.length, error: res.error || '', at: new Date().toISOString() });
         render();
       }
@@ -266,12 +300,12 @@
 
   $('download').addEventListener('click', function () {
     var fields = ['brand_name', 'class_type', 'abv', 'proof', 'net_contents', 'name_address', 'country_of_origin', 'warning_text', 'warning_caps', 'warning_bold', 'warning_size', 'abv_minimum', 'bonded', 'wine_terms', 'malt_terms'];
-    var head = ['application_id', 'overall'].concat(fields, ['reasons', 'images_read', 'seconds', 'error', 'checked_at_utc']);
+    var head = ['application_id', 'overall'].concat(fields, ['reasons', 'images_read', 'pictures_paired_by', 'seconds', 'error', 'checked_at_utc']);
     var lines = [head.join(',')];
     sorted().forEach(function (x) {
       var by = {}; x.fields.forEach(function (f) { by[f.field] = WORD[f.verdict] || f.verdict; });
       lines.push([x.id, WORD[x.overall]].concat(fields.map(function (f) { return by[f] || ''; }),
-        [x.reasons, x.images, x.seconds, x.error, x.at]).map(cell).join(','));
+        [x.reasons, x.images, x.paired || '', x.seconds, x.error, x.at]).map(cell).join(','));
     });
     var blob = new Blob(['﻿' + lines.join('\r\n') + '\r\n'], { type: 'text/csv;charset=utf-8' });
     var a = document.createElement('a');
