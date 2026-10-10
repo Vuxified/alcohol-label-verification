@@ -47,7 +47,7 @@ ERRORS = {
     "beverage": "Choose the type of product.",
     "abv": "Enter alcohol content as one percentage from 0 to 95, like 45, 45% or 13.5% Alc./Vol.",
     "net": "Enter net contents as one amount, like 750 mL, 1.75 L or 12 fl oz.",
-    "height": "Enter the label height in inches, like 4 or 3.5.",
+    "height": "Enter the label height in inches (0.5 to 24), like 4 or 3.5.",
     "abv_proof": "Enter alcohol content as a percentage, not proof: 90 proof is 45%.",
     "busy": "The checker is busy. Please try again in a minute.",
 }

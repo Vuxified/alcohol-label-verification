@@ -155,7 +155,7 @@ def check_application(reader: Reader, app: Application, images: list[tuple[str, 
         if any(f.verdict == Verdict.CHECK for f in fields):  # only worth saying when something wasn't confirmed
             notes.append("Some extra reading passes ran out of time; anything not found is marked Please check.")
     if any(f.verdict == Verdict.CHECK for f in fields):  # a hint about the pictures, only when something is unsure
-        hint = quality_note(reading.pictures)
+        hint = quality_note(reading.pictures, reading.frame_words)
         if hint:
             notes.append(hint)
     return CheckResult(app, fields, reading, round(time.perf_counter() - t0, 3), notes)

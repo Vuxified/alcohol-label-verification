@@ -36,6 +36,23 @@ def test_note_lists_only_the_poor_pictures():
     assert quality_note(pics[:1]) is None
 
 
+def test_note_keeps_the_file_name_as_written():
+    pics = [SimpleNamespace(name="IMG_1.JPG", full=np.asarray(label().filter(ImageFilter.GaussianBlur(4))))]
+    assert quality_note(pics).startswith("IMG_1.JPG looks blurry.")
+
+
+def test_a_picture_with_no_writing_is_named_not_called_blurry():
+    blank = SimpleNamespace(name="blank.png", full=np.full((900, 1200, 3), 255, np.uint8))
+    note = quality_note([blank], [[]])
+    assert note.startswith("No writing was found on blank.png") and "blurry" not in note
+
+
+def test_label_height_must_be_a_real_label_size():
+    from app.typesize import parse_label_height
+    assert parse_label_height("999") is None and parse_label_height("0.1") is None
+    assert parse_label_height("0.5") == 0.5 and parse_label_height("24") == 24
+
+
 def test_bold_heading_is_measured_thicker_than_regular_text():
     from PIL import ImageFont
     from app.bold import stroke_width

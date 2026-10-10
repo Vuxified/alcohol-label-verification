@@ -32,12 +32,12 @@ def min_height_mm(ml: float) -> int:
 
 
 def parse_label_height(text: str | None) -> float | None:
-    """What the agent typed as the label's height -> inches, or None ("4", "4.5 in", '5"', "4,5")."""
+    """What the agent typed as the label's height -> inches, or None ("4", "4.5 in", '5"', "4,5"; 0.5 to 24)."""
     m = re.fullmatch(r"(\d+(?:[.,]\d+)?)\s*(?:in|inch|inches|\"|”)?\.?", (text or "").strip().lower())
     if not m:
         return None
     v = float(m.group(1).replace(",", "."))
-    return v if v > 0 else None
+    return v if 0.5 <= v <= 24 else None  # a real label: half an inch to two feet
 
 
 def _upper(t: str) -> str:

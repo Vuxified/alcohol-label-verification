@@ -32,10 +32,17 @@ def picture_problems(name: str, rgb: np.ndarray) -> list[str]:
     return problems
 
 
-def quality_note(pictures) -> str | None:
-    """One sentence naming the pictures that are likely too poor to read, or None."""
-    problems = [p for pic in pictures for p in picture_problems(pic.name, pic.full)]
-    if not problems:
-        return None
-    return ("; ".join(problems).capitalize() + ". A sharper or larger picture may clear the items marked "
-            "Please check.")
+def quality_note(pictures, frame_words=None) -> str | None:
+    """One sentence naming the pictures that are likely too poor to read, or None. A picture where no writing was
+    read at all (frame_words empty) is named as such: it may not be a label picture."""
+    words = frame_words if frame_words is not None else [[1]] * len(pictures)
+    empty = [pic.name for pic, w in zip(pictures, words) if not w]
+    problems = [p for pic, w in zip(pictures, words) if w for p in picture_problems(pic.name, pic.full)]
+    notes = []
+    if empty:
+        notes.append(f"No writing was found on {', '.join(empty)}. Is it a picture of the label?")
+    if problems:
+        text = "; ".join(problems)
+        notes.append(text[:1].upper() + text[1:] + ". A sharper or larger picture may clear the items marked "
+                     "Please check.")
+    return " ".join(notes) or None
