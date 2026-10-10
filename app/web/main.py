@@ -31,6 +31,7 @@ from app.verify import Application, Verdict
 from app.verify.abv import parse_typed_abv
 from app.verify.net_contents import parse_typed_net
 from app.verify.model import SEVERITY
+from app.verify.presence import ON_LABEL, brand_guess, read_values
 
 from . import copy
 from .marks import differing_words, warning_marks
@@ -167,8 +168,6 @@ async def _read_request(data):
         images.append((name, b))
     if form["beverage_type"] not in copy.BEVERAGES:
         errors.append(copy.ERRORS["beverage"])
-    if not form["brand_name"]:
-        errors.append(copy.ERRORS["brand"])
     if form["net_contents"] and form["beverage_type"] in copy.BEVERAGES \
             and parse_typed_net(form["net_contents"], form["beverage_type"]) is None:
         errors.append(copy.ERRORS["net"])
@@ -234,6 +233,28 @@ async def api_check(request: Request):
                        for f in res.fields]}
 
 
+@app.post("/api/read")
+async def api_read(request: Request):
+    """Values read from the label pictures, to fill in the blank boxes of the form ("Fill in from the label").
+    Suggestions only: the agent checks each one against the application."""
+    if not state["ready"]:
+        return JSONResponse({"error": "starting"}, status_code=503)
+    form, images, errors = await _read_request(await request.form())
+    errors = [e for e in errors if e != copy.ERRORS["beverage"]]
+    if errors:
+        return JSONResponse({"error": " ".join(errors)}, status_code=400)
+    if not slots.acquire(blocking=False):
+        return JSONResponse({"error": "busy"}, status_code=503)
+    try:
+        reading = await run_in_threadpool(state["reader"].read, images)
+    finally:
+        slots.release()
+    kind = form["beverage_type"] if form["beverage_type"] in copy.BEVERAGES else None
+    values = read_values(reading.lines(), kind)
+    brand = brand_guess(reading.frame_words)
+    return values | ({"brand_name": brand} if brand else {})
+
+
 @app.get("/batch", response_class=HTMLResponse)
 async def batch(request: Request):
     return templates.TemplateResponse(request, "batch.html", {})
@@ -283,7 +304,7 @@ def _results_page(request, res):
                 plain[f.field] = copy.NEAR_MATCH.format(label=b, app=a)
     warning = next((f for f in attention if f.field == "warning_text" and f.code != "WARNING_MISSING"), None)
     return templates.TemplateResponse(request, "results.html", {
-        "res": res, "rows": rows, "ev": ev, "counts": counts, "Verdict": Verdict, "shapes": shapes,
+        "res": res, "rows": rows, "ev": ev, "counts": counts, "alone": not res.form.get("brand_name"), "ON_LABEL": ON_LABEL, "Verdict": Verdict, "shapes": shapes,
         "names": [p.name for p in res.reading.pictures], "pics": pics, "crops": crops, "asked": asked,
         "attention": attention, "matched": [f for f in rows if f not in attention], "diffs": diffs, "plain": plain,
         "warning_parts": warning_marks(res.reading.warning_readings()) if warning else None})

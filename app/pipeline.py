@@ -10,7 +10,7 @@ The rules in app/verify stay pure and take text lines. The warning is judged acr
 
 import re
 import time
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 
 import cv2
 
@@ -24,6 +24,7 @@ from app.verify import Application, FieldResult, Verdict, verify
 from app.verify.abv import check_abv
 from app.verify.model import SEVERITY
 from app.verify.net_contents import check_net_contents
+from app.verify.presence import ON_LABEL
 from app.verify.verify import is_non_alcoholic
 from app.verify.warning_judge import judge_detail
 
@@ -142,7 +143,9 @@ def check_application(reader: Reader, app: Application, images: list[tuple[str, 
         fields += warning_fields(reading)
         if not any(f.code in ("WARNING_MISSING", "WARNING_NOT_READ") for f in fields):  # bold only if a warning was read
             fields.append(bold_field(reading.frames, reading.frame_words))
-            fields.append(size_field(reading.frames, reading.frame_words, app))
+            net = next((f.found for f in fields if f.field == "net_contents" and f.code == ON_LABEL), None)
+            fields.append(size_field(reading.frames, reading.frame_words,
+                                     replace(app, net_contents=net) if net and not app.net_contents else app))
     notes = []
     if any(t.startswith(("tesseract", "inverted")) for t in reading.dropped):
         fields = [FieldResult(f.field, Verdict.CHECK, f.reason + " Part of the label was not read in time; please check.",

@@ -21,6 +21,7 @@ VERDICT = {
     "pass": ("i-pass", "Matches"),
     "n/a": ("i-na", "Not checked"),
 }
+ON_LABEL = "On the label"  # picture-only: a required statement was found (nothing to compare it with)
 
 BEVERAGES = {"spirits": "Distilled spirits", "wine": "Wine", "malt": "Beer or malt beverage"}
 
@@ -37,7 +38,6 @@ ERRORS = {
     "heic": "{name} is an iPhone photo format we can't read yet. On the iPhone, choose Export, then JPG.",
     "bad_type": "{name} is not a JPG, PNG or WEBP image.",
     "unreadable": "We couldn't open {name}. The file may be damaged. Please try exporting it again.",
-    "brand": "Enter the brand name from the application.",
     "beverage": "Choose the type of product.",
     "abv": "Enter alcohol content as one percentage from 0 to 95, like 45, 45% or 13.5% Alc./Vol.",
     "net": "Enter net contents as one amount, like 750 mL, 1.75 L or 12 fl oz.",

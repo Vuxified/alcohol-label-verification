@@ -2,7 +2,7 @@
 {% block content %}
 <p class="app-kicker">Check one label</p>
 <h1>Does the label match its application?</h1>
-<p class="app-lede">Add the label pictures and copy a few details from the application. In a few seconds you'll see what the application says next to what the label shows, with anything that needs a closer look listed first.</p>
+<p class="app-lede">Add the label pictures and copy a few details from the application. In a few seconds you'll see what the application says next to what the label shows, with anything that needs a closer look listed first. No application yet? Leave the details blank and we check that the label shows everything the rules require.</p>
 
 {% if errors %}
 <div class="usa-alert usa-alert--error" role="alert" id="errors" tabindex="-1">
@@ -38,11 +38,15 @@
 
   <fieldset class="app-step">
     <legend><span class="app-step__num" aria-hidden="true">3</span>From the application</legend>
-    <p class="usa-hint">Copy these as they appear on the application. Only the brand name is required; blank items are not checked.</p>
+    <p class="usa-hint">Copy these as they appear on the application; blank items are not compared. Leave the brand blank to check the pictures alone: we then look for each statement the rules require.</p>
+    <div class="app-fill">
+      <button class="usa-button usa-button--outline" type="button" id="fill" disabled>Fill in from the label</button>
+      <span class="app-small" id="fill-status" role="status">Add pictures first. We read them and fill in the blank boxes for you to check.</span>
+    </div>
     <div class="app-fields">
       <div class="app-wide">
-        <label class="usa-label" for="brand_name">Brand name (required)</label>
-        <input class="usa-input" id="brand_name" name="brand_name" required value="{{ form.brand_name or '' }}">
+        <label class="usa-label" for="brand_name">Brand name</label>
+        <input class="usa-input" id="brand_name" name="brand_name" value="{{ form.brand_name or '' }}">
       </div>
       <div class="app-wide">
         <label class="usa-label" for="class_type">Class or type</label>
@@ -171,6 +175,45 @@
     {% else %}
     f.addEventListener('submit', started);
     {% endif %}
+    // "Fill in from the label": read the pictures and put what was found in the blank boxes, each marked for the
+    // agent to check against the application. Boxes the agent already filled are never changed.
+    var fill = document.getElementById('fill'), fillStatus = document.getElementById('fill-status'),
+        pictures = document.getElementById('images');
+    pictures.addEventListener('change', function () { fill.disabled = !pictures.files.length; });
+    fill.addEventListener('click', async function () {
+      fill.disabled = true; fillStatus.textContent = 'Reading the label…';
+      var body = new FormData(), bev = f.querySelector('input[name=beverage_type]:checked');
+      if (bev) body.append('beverage_type', bev.value);
+      try {
+        {% if upload_to_bucket %}
+        var done; try { done = await (pending || uploadAll()); } catch (e) { done = await (pending = uploadAll()); }
+        done.forEach(function (kn) { body.append('upload_keys', kn[0]); body.append('upload_names', kn[1]); });
+        {% else %}
+        Array.from(pictures.files).slice(0, 6).forEach(function (file) { body.append('images', file); });
+        {% endif %}
+        var r = await fetch('/api/read', { method: 'POST', body: body }), v = await r.json();
+        if (!r.ok) throw new Error(v.error === 'busy' || v.error === 'starting' ? 'The checker is busy. Please try again in a moment.' : v.error);
+        var filled = [];
+        ['brand_name', 'class_type', 'abv', 'net_contents', 'name_address', 'country_of_origin'].forEach(function (k) {
+          var box = document.getElementById(k);
+          if (v[k] && !box.value) {
+            box.value = v[k]; box.classList.add('app-filled'); filled.push(box.labels[0].textContent);
+            box.addEventListener('input', function () { box.classList.remove('app-filled'); }, { once: true });
+          }
+        });
+        [['beverage_type', 'bev-'], ['source', 'src-']].forEach(function (kv) {
+          var chosen = f.querySelector('input[name=' + kv[0] + ']:checked');
+          var pick = v[kv[0]] && document.getElementById(kv[1] + (kv[0] === 'source' ? v.source.charAt(0) : v[kv[0]]));
+          if (pick && (!chosen || kv[0] === 'source')) pick.checked = true;
+        });
+        fillStatus.textContent = filled.length
+          ? 'Filled in from the label: ' + filled.join(', ') + '. Please check each one against the application.'
+          : 'Nothing new was found to fill in.';
+      } catch (e) {
+        fillStatus.textContent = e.message && !/fetch|upload/i.test(e.message) ? e.message : 'The label could not be read. Please try again.';
+      }
+      fill.disabled = !pictures.files.length;
+    });
     var e = document.getElementById('errors'); if (e) e.focus();
   })();
 </script>

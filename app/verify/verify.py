@@ -5,6 +5,7 @@ import re
 from .abv import check_abv, check_proof, find_abv
 from .model import Application, FieldResult, Report, Verdict
 from .net_contents import check_net_contents
+from .presence import abv_present, bottler_present, class_present, country_present, net_present
 from .text import match_text, normalize, words_present
 from .warning import check_warning
 
@@ -21,23 +22,32 @@ def is_non_alcoholic(app: Application, lines: list[str]) -> bool:
 def verify(app: Application, lines: list[str]) -> Report:
     """`lines` is all text read from every image of the application, one entry per printed line."""
     report = Report()
-    report.fields.append(match_text("brand_name", app.brand_name, lines))
+    kind = app.beverage_type
+    alone = not app.brand_name  # picture only: blank items are looked for on the label (presence.py), not skipped
+    report.fields.append(match_text("brand_name", app.brand_name, lines) if app.brand_name else FieldResult(
+        "brand_name", Verdict.NOT_APPLICABLE, "Not given on the application, so not compared."))
     if app.fanciful_name:
         report.fields.append(match_text("fanciful_name", app.fanciful_name, lines))
     if app.class_type:
         report.fields.append(match_text("class_type", app.class_type, lines))
+    elif alone:
+        report.fields.append(class_present(kind, lines))
     non_alcoholic = is_non_alcoholic(app, lines)
     if non_alcoholic:
         report.fields.append(FieldResult("abv", Verdict.NOT_APPLICABLE,
                                          f"Declared {app.abv:g}% (non-alcoholic); alcohol content rules not checked."))
     else:
-        report.fields.append(check_abv(app, lines))
+        report.fields.append(abv_present(kind, lines) if alone and app.abv is None else check_abv(app, lines))
         report.fields.append(check_proof(app, lines))
-    report.fields.append(check_net_contents(app, lines))
+    report.fields.append(net_present(kind, lines) if alone and not app.net_contents else check_net_contents(app, lines))
     if app.name_address:
         report.fields.append(words_present("name_address", app.name_address, lines))
+    elif alone:
+        report.fields.append(bottler_present(kind, lines))
     if app.source == "imported" and app.country_of_origin:
         report.fields.append(_check_country(app.country_of_origin, lines))
+    elif app.source == "imported" and alone:
+        report.fields.append(country_present(lines))
     if non_alcoholic:
         report.fields.append(FieldResult("warning_text", Verdict.NOT_APPLICABLE,
                                          "Health Warning not required below 0.5% alcohol (27 CFR 16.10)."))

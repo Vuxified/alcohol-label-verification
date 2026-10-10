@@ -26,6 +26,9 @@ a:hover { color: var(--accent-hover); text-decoration-thickness: 2px; }
 .usa-sr-only { position: absolute; left: -999em; }
 .app-hidden { display: none !important; }
 .app-small { font-size: .95rem; color: var(--ink-3); margin: .35rem 0 0; }
+.app-fill { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1rem; margin: .75rem 0 .25rem; }
+.app-fill .usa-button { margin: 0; }
+.app-filled { background: var(--check-wash); border-color: var(--check-mark); }
 .app-ico { width: 1em; height: 1em; flex: none; vertical-align: -.14em; }
 
 /* ---------- header ---------- */

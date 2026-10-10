@@ -1,26 +1,31 @@
 {% extends "base.html" %}
 {% block title %}Results – Label Check{% endblock %}
-{% macro tag(value) %}{% set icon, word = copy.VERDICT[value] %}<span class="app-verdict app-verdict--{{ value | replace('/', '') }}"><svg class="app-ico" aria-hidden="true"><use href="#{{ icon }}"/></svg>{{ word }}</span>{% endmacro %}
+{% macro tag(value, code=None) %}{% set icon, word = copy.VERDICT[value] %}{% if code == ON_LABEL %}{% set word = copy.ON_LABEL %}{% endif %}<span class="app-verdict app-verdict--{{ value | replace('/', '') }}"><svg class="app-ico" aria-hidden="true"><use href="#{{ icon }}"/></svg>{{ word }}</span>{% endmacro %}
 {% macro words(parts) %}{% for w, differs in parts %}{% if differs %}<span class="app-diff">{{ w }}</span>{% else %}{{ w }}{% endif %}{{ " " if not loop.last }}{% endfor %}{% endmacro %}
 {% block content %}
 {% set name = copy.FIELD_NAMES %}
 {% set passes = counts[Verdict.PASS] %}{% set fails = counts[Verdict.FAIL] %}
 <div class="app-title">
-  <div><p class="app-kicker">Results</p><h1>{{ res.form.brand_name }}</h1></div>
+  <div><p class="app-kicker">Results</p><h1>{{ res.form.brand_name or "Label pictures only" }}</h1></div>
   <p class="app-meta">Checked in {{ "%.1f"|format(res.seconds) }} seconds &nbsp;·&nbsp; <a href="/">Check another label</a></p>
 </div>
 
 <div class="app-verdict-line" id="results-heading" tabindex="-1" role="status">
-  {% if not attention %}
+  {% set others = ("item looks right" if passes == 1 else "items look right") if alone else ("item matches" if passes == 1 else "items match") %}
+  {% if not attention and alone %}
+  <p class="app-verdict-line__main"><span class="app-dot app-dot--pass" aria-hidden="true"></span>Every required statement we looked for is on the label.</p>
+  <p class="app-verdict-line__sub">{{ passes }} {{ "item" if passes == 1 else "items" }} checked. Nothing was compared with an application. You make the decision.</p>
+  {% elif not attention %}
   <p class="app-verdict-line__main"><span class="app-dot app-dot--pass" aria-hidden="true"></span>Every item we checked matches the application.</p>
   <p class="app-verdict-line__sub">{{ passes }} {{ "item" if passes == 1 else "items" }} checked. You make the decision.</p>
   {% elif attention|length == 1 %}
   <p class="app-verdict-line__main"><span class="app-dot app-dot--{{ 'fail' if fails else 'check' }}" aria-hidden="true"></span>One item needs your attention: the {{ name.get(attention[0].field, attention[0].field) | lower }}.</p>
-  <p class="app-verdict-line__sub">{% if passes %}The other {{ passes }} {{ "item matches" if passes == 1 else "items match" }} the application.{% endif %}</p>
+  <p class="app-verdict-line__sub">{% if passes %}The other {{ passes }} {{ others }}{{ "" if alone else " the application" }}.{% endif %}</p>
   {% else %}
   <p class="app-verdict-line__main"><span class="app-dot app-dot--{{ 'fail' if fails else 'check' }}" aria-hidden="true"></span>{{ attention|length }} items need your attention.</p>
-  <p class="app-verdict-line__sub">{% for f in attention %}{{ name.get(f.field, f.field) if loop.first else name.get(f.field, f.field) | lower }}{{ ", " if loop.revindex > 2 else " and " if loop.revindex == 2 }}{% endfor %}.{% if passes %} The other {{ passes }} {{ "item matches" if passes == 1 else "items match" }}.{% endif %}</p>
+  <p class="app-verdict-line__sub">{% for f in attention %}{{ name.get(f.field, f.field) if loop.first else name.get(f.field, f.field) | lower }}{{ ", " if loop.revindex > 2 else " and " if loop.revindex == 2 }}{% endfor %}.{% if passes %} The other {{ passes }} {{ others }}.{% endif %}</p>
   {% endif %}
+  {% if alone %}<p class="app-note">Pictures only: no brand was given, so nothing was compared. We looked for each statement the rules require. To compare with an application, type its details on the form.</p>{% endif %}
   {% for note in res.notes %}<p class="app-note">{{ note }}</p>{% endfor %}
 </div>
 
@@ -28,7 +33,7 @@
   <div>
     {% for f in attention %}{% set d = diffs.get(f.field) %}
     <section class="app-issue" data-pick="{{ f.field }}" tabindex="0" aria-labelledby="h-{{ f.field }}">
-      <div class="app-issue__head"><h2 id="h-{{ f.field }}">{{ name.get(f.field, f.field) }}</h2>{{ tag(f.verdict.value) }}</div>
+      <div class="app-issue__head"><h2 id="h-{{ f.field }}">{{ name.get(f.field, f.field) }}</h2>{{ tag(f.verdict.value, f.code) }}</div>
       {% if f.field == "warning_text" and warning_parts %}
       <p class="app-kicker">The required wording (27 CFR 16.21), with what the label shows marked</p>
       <p class="app-legal">{% for t, kind in warning_parts %}{% if kind == "missing" %}<del>{{ t }}</del>{% elif kind %} <ins>{{ t }}</ins>{% elif loop.index <= 3 %}<b>{{ t }}</b>{% else %}{{ t }}{% endif %}{% endfor %}</p>
@@ -53,7 +58,7 @@
 
     {% if matched %}
     <details class="app-ok" {% if not attention %}open{% endif %}>
-      <summary><h2>{{ passes }} {{ "item matches" if passes == 1 else "items match" }}{% if matched|length > passes %}, {{ matched|length - passes }} not checked{% endif %}</h2>
+      <summary><h2>{{ passes }} {{ others }}{% if matched|length > passes %}, {{ matched|length - passes }} not checked{% endif %}</h2>
         {% set short = [] %}{% for f in matched %}{% set n = "health warning" if f.field.startswith("warning") else name.get(f.field, f.field) | lower %}{% if n not in short %}{% set _ = short.append(n) %}{% endif %}{% endfor %}
         <span class="app-ok__names">{{ (short | join(", ")) | capitalize }}</span>
         <span class="app-ok__toggle"><span class="app-ok__show">Show</span><span class="app-ok__hide">Hide</span></span></summary>
@@ -66,7 +71,7 @@
             <th scope="row">{{ name.get(f.field, f.field) }}</th>
             <td class="app-col-app">{{ asked.get(f.field) or "Not given" }}</td>
             <td>{{ f.found if f.found and not f.field.startswith("warning") else f.reason }}</td>
-            <td class="app-r">{{ tag(f.verdict.value) }}</td>
+            <td class="app-r">{{ tag(f.verdict.value, f.code) }}</td>
           </tr>
         {% endfor %}
         </tbody>
