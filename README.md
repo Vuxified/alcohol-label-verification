@@ -5,6 +5,7 @@ A TTB agent uploads a label's images and types in what the application says. Wit
 **Try it:** https://3jirlgdkpcw55t54gz32ggdnbq0yfrjp.lambda-url.us-east-1.on.aws/
 - No files needed: press **Try a label that matches** or **Try a label with a problem**.
 - Batch: open **Check many labels**, download the sample batch (22 applications, 2 broken on purpose) and add it.
+- No application? Add pictures only and leave the details blank: the app looks for every statement the rules require (alcohol content, net contents, bottler, class, country for imports) and says **On the label** or **Please check**. **Fill in from the label** reads the pictures and fills the blank boxes for the agent to confirm.
 - The first visit after a quiet period takes about 6 seconds while the checker starts.
 
 ---
@@ -32,8 +33,10 @@ A TTB agent uploads a label's images and types in what the application says. Wit
 | Net contents | Any unit (mL, L, fl oz, pints); standard container sizes; beer must show U.S. units (§ 7.70) |
 | Health warning | Part 16: word for word, "GOVERNMENT WARNING" in capitals; sideways, tiny and wrapped text handled |
 | Warning type size | § 16.22: measured when the label height is given (form field or batch column `label_height`); advisory |
+| Label rules | Minimum alcohol for the class (vodka, whisky, gin, brandy, rum, tequila 40%; flavored 30%; §§ 5.142–5.151), bottled in bond = 100 proof (§ 5.88), "table wine" only at 14% or less (§ 4.21), "low alcohol", "non-alcoholic", "alcohol free" wording on beer (§ 7.65); Please check with the rule quoted |
+| Pictures only | With no brand given: each required statement looked for on the label (§§ 4.32, 5.63, 7.63); "On the label" or Please check, never Does not match |
 
-Also: the fanciful name (like the brand), the "GOVERNMENT WARNING" heading in bold (measured, advisory). Not checked by design (listed in `docs/RULES.md` §7): sulfite and color-additive statements, characters per inch.
+Also: the fanciful name (like the brand), the "GOVERNMENT WARNING" heading in bold (measured, advisory). Not checked by design: whether sulfite, color-additive or age statements are needed (they depend on facts a picture cannot show), characters per inch. The full rule inventory, checked or not and why, is in [`docs/RULES.md`](docs/RULES.md) §6b.
 
 ## Results so far (practice labels)
 
@@ -72,6 +75,12 @@ docker run --rm -p 8080:8080 label-check           # open http://localhost:8080
 ```
 
 ## Deployment
+
+**Safety gate.** A version goes live only through `tools/deploy.sh`, which stops at the first failure:
+1. all tests, including one that switches the network off and checks a label (`tests/test_offline.py`);
+2. `tools/gate.py`: a full practice run of exactly the code being shipped, with **0 wrong "Does not match" on approved labels, 0 wrong "Matches" on planted mistakes, every planted mistake flagged**, and 95% of labels within 5 seconds;
+3. the container is built from the committed code, started **with networking switched off**, and must answer both sample labels correctly;
+4. only then is the live site switched, and checked again.
 
 - **AWS Lambda** (container image, arm64, 10 GB / 6 vCPU) behind a function URL; it costs nothing while idle and about $0.0005 per label checked.
 - **Uploads** go from the browser straight to a private S3 bucket (Lambda requests are capped at 6 MB) and are **deleted automatically after one day**. Results are not stored: they are returned with the page.

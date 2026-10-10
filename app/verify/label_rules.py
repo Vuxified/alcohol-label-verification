@@ -3,8 +3,8 @@ of 2026-10-07. A broken rule is Please check with the rule quoted: the agent dec
 become a refusal. A rule that does not apply to the label adds nothing; one that applies and is met is Matches.
 
   abv_minimum  spirits classes are bottled at 40% or more (vodka 5.142, whisky 5.143, gin 5.144, brandy 5.145,
-               rum 5.147, agave spirits 5.148); flavored spirits at 30% or more (5.151). Liqueurs, cocktails and
-               mixed drinks have no class minimum, so they are skipped.
+               rum 5.147, agave spirits 5.148); flavored spirits at 30% or more (5.151). Only for a plain class line
+               at 20% or more: liqueurs, specialties and mixed drinks have no class minimum.
   bonded       "Bottled in bond" means bottled at exactly 50% (100 proof) (5.88(a)(6)).
   wine_terms   "Table wine" / "light wine" only at 14% or less (4.21(a)(5), 4.36(a)); Part 4 covers wine of 7% to
                24% (4.6).
@@ -26,9 +26,17 @@ CLASSES = (  # (pattern, name, section)
     (r"tequila|mezcal", "agave spirits (tequila, mezcal)", "5.148"),
 )
 _CLASS = re.compile(r"\b(?:" + "|".join(p for p, _, _ in CLASSES) + r")\b", re.I)
-# Words that make it a liqueur, cocktail or mixed drink: no class minimum applies.
-_MIXED = re.compile(r"\b(?:liqueur|cordial|cream|creme|cocktail|soda|seltzer|tonic|lemonade|tea|punch|mix|mixer|"
-                    r"margarita|mule|spritz|sour|smash|cooler|schnapps|specialty|and|made\s+with|ready)\b|&", re.I)
+# The class line must be a class name and nothing else ("Kentucky Straight Bourbon Whiskey", "London Dry Gin",
+# "Cherry Flavored Vodka"): any other word ("coffee meets premium vodka", "whiskey with sugar", "vodka soda") makes it a
+# specialty, liqueur or mixed drink, which has no class minimum.
+_PLAIN = re.compile(r"(?:\b(?:vodka|whiske?y|bourbon|scotch|gin|brandy|cognac|armagnac|rum|ron|tequila|mezcal|"
+                    r"straight|kentucky|tennessee|rye|wheat|corn|malt|single|blended|irish|canadian|american|japanese|"
+                    r"london|dry|old|tom|aged|years?|reserve|silver|gold|white|dark|black|anejo|añejo|reposado|blanco|"
+                    r"plata|joven|extra|xo|vs|vsop|v\.s\.o\.p|napoleon|fine|apple|grape|pot|still|small|batch|barrel|"
+                    r"cask|strength|double|triple|distilled|from|grain|potato|cane|agave|de|bottled|in|bond|"
+                    r"flavou?red|natural|flavou?rs?|cherry|vanilla|cinnamon|honey|lemon|lime|orange|citrus|peach|"
+                    r"raspberry|strawberry|coconut|pineapple|mango|spiced|with)\b|[\s\d%.,\-/()'’])+", re.I)
+SPECIALTY_BELOW = 20  # under this a spirits class name is a ready-to-drink or specialty product, not a short spirit
 _FLAVORED = re.compile(r"\bflavou?r", re.I)
 _BOND = re.compile(r"\bbottled[\s-]+in[\s-]+bond\b", re.I)
 _TABLE = re.compile(r"\b(table|light)\s+wine\b", re.I)
@@ -51,8 +59,12 @@ def _check(field, rule, why):
 
 
 def abv_minimum(app, lines, abv):
-    text = app.class_type or next((ln for ln in lines if _CLASS.search(ln)), None)
-    if not text or abv is None or not _CLASS.search(text) or _MIXED.search(text):
+    """From the label's own class line: the application's class is a broad registry code ("VODKA" is also used for
+    vodka-based specialties), so it is not used here."""
+    text = next((ln for ln in lines if _CLASS.search(ln)), None)
+    if not text or abv is None or abv < SPECIALTY_BELOW or not _PLAIN.fullmatch(text):
+        return None
+    if re.search(r"\bwith\b", text, re.I) and not _FLAVORED.search(text):  # "whiskey with sugar": a specialty
         return None
     word = _CLASS.search(text).group(0)
     name, sec = next((n, s) for p, n, s in CLASSES if re.fullmatch(p, word, re.I))

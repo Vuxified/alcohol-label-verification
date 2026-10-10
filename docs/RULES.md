@@ -223,12 +223,12 @@ Checked from the label text, whether or not application values are given (`app/v
 
 | Check | Rule | Source |
 |---|---|---|
-| Minimum alcohol for the class | Vodka, whisky (bourbon, rye, Scotch…), gin, brandy, rum, tequila and mezcal: at least 40% (80 proof). Flavored versions: at least 30% (60 proof). Liqueurs, creams, cocktails and mixed drinks ("vodka soda", "gin & tonic") have no class minimum and are skipped. | § 5.142, 5.143, 5.144, 5.145, 5.147, 5.148, 5.151 |
+| Minimum alcohol for the class | Vodka, whisky (bourbon, rye, Scotch…), gin, brandy, rum, tequila and mezcal: at least 40% (80 proof). Flavored versions: at least 30% (60 proof). Checked only when the label's class line is a class name and nothing else ("Kentucky Straight Bourbon Whiskey", "Cherry Flavored Vodka") and the label shows 20% or more: liqueurs, specialties and mixed drinks ("coffee meets premium vodka", "whiskey with sugar", "vodka soda") have no class minimum. The application's class is not used for this, because registry class codes are broad (a 12% vodka-based coffee drink is filed as "VODKA"; found on an approved label). | § 5.142, 5.143, 5.144, 5.145, 5.147, 5.148, 5.151 |
 | Bottled in bond | Exactly 50% alcohol (100 proof). | § 5.88(a)(6) |
 | Wine alcohol range | "Table wine" / "light wine" only at 14% or less; wine labeling rules cover 7% to 24%. | § 4.21(a)(5), 4.36(a), 4.6 |
 | Low or no alcohol wording (beer) | "Low alcohol" / "reduced alcohol" only under 2.5%; "non-alcoholic" only with "contains less than 0.5 percent (or .5%) alcohol by volume"; "alcohol free" only with no alcohol. | § 7.65(d), (e), (f) |
 
-The class comes from the application when given, otherwise from the label. The alcohol content is the one the label shows (the application's when the label shows none); when the label shows two different values, these rules are skipped (the alcohol content row already asks for a check).
+The alcohol content is the one the label shows (the application's when the label shows none); when the label shows two different values, these rules are skipped (the alcohol content row already asks for a check).
 
 ### The rule inventory: what a picture can and cannot settle
 

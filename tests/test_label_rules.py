@@ -40,9 +40,16 @@ def test_liqueurs_cocktails_and_mixed_drinks_have_no_class_minimum():
         assert "abv_minimum" not in run("spirits", lines), lines
 
 
-def test_the_application_class_is_used_when_given():
-    r = run("spirits", ["SILVER", "35% ALC/VOL"], class_type="Vodka")
-    assert r["abv_minimum"].verdict == Verdict.CHECK
+def test_only_the_label_class_line_counts():
+    # the application's class is a broad registry code: a 12% coffee drink filed as "VODKA" (cola2 25213001000246)
+    assert "abv_minimum" not in run("spirits", ["SILVER", "35% ALC/VOL"], class_type="Vodka")
+
+
+def test_specialty_products_seen_on_approved_labels_are_skipped():
+    for lines in (["RICH COFFEE MEETS PREMIUM VODKA", "12% ALC/VOL"],                     # cola2 25213001000246
+                  ["Straight Bourbon Whiskey With Sugar", "21% ALC/VOL"],                # cola2 25231001000857
+                  ["PREMIUM VODKA", "12% ALC/VOL"]):                                     # under 20%: ready to drink
+        assert "abv_minimum" not in run("spirits", lines), lines
 
 
 def test_unclear_alcohol_content_adds_nothing():
