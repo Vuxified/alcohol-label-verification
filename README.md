@@ -107,7 +107,7 @@ docker run --rm -p 8080:8080 label-check           # open http://localhost:8080
 - **No COLA integration** (out of scope per the brief); the agent types the application values, or supplies them in the batch spreadsheet.
 - **Bold heading** is measured (stroke thickness) when the warning is large and straight enough; **type size** is measured when the label height is given, and only answers when the picture settles it (most approved labels print right at the minimum, so it often says "not confirmed"). Both are advisory: TTB states it does not review type size.
 - **"I disagree"** on every result (single page and batch): a reason and a note, shown with the results, printed, and in the batch spreadsheet (`agent_note`). Nothing is stored on the server. In production these notes would go to a reviewer, who turns each real miss into a rule fix with a test, or a reading lesson for the next reader training, released only through the safety gate.
-- **Public prototype:** no login. Cost is capped by limiting the checker to 12 copies running at once, plus a budget alert. Not an official U.S. Government system.
+- **Public prototype:** no login. Cost is capped by limiting the checker to 12 copies running at once, plus a budget alert.
 
 ## Repository map
 

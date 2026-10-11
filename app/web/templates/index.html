@@ -96,7 +96,7 @@
     <div class="usa-alert__body"><p class="usa-alert__text">Reading your label. This usually takes 2 to 4 seconds.</p></div>
   </div>
   <div class="app-submit">
-    <button class="usa-button" type="submit" id="submit">Check label</button>
+    <button class="usa-button app-go" type="submit" id="submit" style="view-transition-name: app-hero">Check label</button>
     <span class="app-small">Results appear on the next page.</span>
   </div>
 </form>
@@ -214,6 +214,10 @@
         fillStatus.textContent = e.message && !/fetch|upload/i.test(e.message) ? e.message : 'The label could not be read. Please try again.';
       }
       fill.disabled = !pictures.files.length;
+    });
+    // The pressed button is the one that grows into the result.
+    document.querySelectorAll('aside button[name=sample]').forEach(function (sb) {
+      sb.addEventListener('click', function () { b.style.viewTransitionName = 'none'; sb.style.viewTransitionName = 'app-hero'; });
     });
     var e = document.getElementById('errors'); if (e) e.focus();
   })();
