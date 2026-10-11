@@ -50,3 +50,11 @@ def test_check_with_pictures_only(client):
 def test_beverage_type_is_still_needed_to_check(client):
     page = client.post("/check", data={}, files=files())
     assert page.status_code == 400
+
+
+def test_stylesheet_link_changes_with_the_file(client):
+    # Browsers keep an old stylesheet; the link carries the file's fingerprint so a new look is fetched at once.
+    import hashlib
+    from pathlib import Path
+    css = (Path(__file__).resolve().parent.parent / "app/web/static/app.css").read_bytes()
+    assert f'/static/app.css?v={hashlib.sha256(css).hexdigest()[:10]}' in client.get("/").text

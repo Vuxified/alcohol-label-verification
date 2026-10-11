@@ -7,6 +7,7 @@ private bucket with a short-lived link, and the bucket deletes it after one day.
 """
 
 import base64
+import hashlib
 import io
 import json
 import os
@@ -64,6 +65,8 @@ app = FastAPI(title="Label Check", lifespan=lifespan, docs_url=None, redoc_url=N
 app.mount("/static", StaticFiles(directory=ROOT / "static"), name="static")
 templates = Jinja2Templates(directory=ROOT / "templates")
 templates.env.globals.update(copy=copy, upload_to_bucket=bool(BUCKET))
+# The stylesheet link carries the file's fingerprint, so browsers fetch a new look instead of a kept old copy.
+templates.env.globals["css_version"] = hashlib.sha256((ROOT / "static" / "app.css").read_bytes()).hexdigest()[:10]
 s3 = None
 if BUCKET:
     import boto3
