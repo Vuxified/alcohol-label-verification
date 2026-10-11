@@ -188,12 +188,13 @@ async function show() {
   $('status').textContent = '';
 }
 $('wtext').oninput = () => $('wdiff').innerHTML = diff($('wtext').value);
-function parse(v) {
+function parse(v, numeric) {  // only number fields become numbers: a brand like "51" stays text
   if (v === '') return null; if (v === 'true') return true; if (v === 'false') return false;
-  if (!isNaN(v) && v.trim() !== '') return Number(v); return v;
+  if (numeric && !isNaN(v) && v.trim() !== '') return Number(v); return v;
 }
+const NUMERIC = ['abv', 'proof', 'net_contents_ml'];
 async function save() {
-  FIELDS.forEach(([k]) => cur[k] = parse($('f_' + k).value));
+  FIELDS.forEach(([k]) => cur[k] = parse($('f_' + k).value, NUMERIC.includes(k)));
   cur.warning.text_as_printed = $('wtext').value.trim() || null;
   WFIELDS.forEach(k => cur.warning[k] = parse($('w_' + k).value));
   const before = JSON.parse(orig);
