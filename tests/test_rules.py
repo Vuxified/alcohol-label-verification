@@ -304,6 +304,9 @@ def test_a_second_country_on_the_label_is_for_a_person():
     r = verify(app, ["OLD TOM", "PRODUCT OF MEXICO", "BOTTLED IN SPAIN"]).get("country_of_origin")
     assert r.verdict == C and r.code == "COUNTRY_SEVERAL" and "BOTTLED IN SPAIN" in r.reason
     assert verify(app, ["OLD TOM", "PRODUCT OF MEXICO", "HECHO EN MEXICO"]).get("country_of_origin").verdict == P
+    typed_as_printed = Application("spirits", "Old Tom", source="imported", country_of_origin="Product of Ireland")
+    assert verify(typed_as_printed, ["OLD TOM", "PRODUCT OF IRELAND"]).get("country_of_origin").verdict == P
+    assert verify(typed_as_printed, ["PRODUCT OF IRELAND", "BOTTLED IN ENGLAND"]).get("country_of_origin").verdict == C
     scotch = Application("spirits", "Old Tom", source="imported", country_of_origin="Scotland")
     assert verify(scotch, ["DISTILLED AND BOTTLED IN SCOTLAND"]).get("country_of_origin").verdict == P
 

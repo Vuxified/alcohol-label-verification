@@ -6,7 +6,7 @@ from .abv import check_abv, check_proof, find_abv
 from .model import Application, FieldResult, Report, Verdict
 from .net_contents import check_net_contents
 from .label_rules import label_rules
-from .presence import _COUNTRY, ON_LABEL, abv_present, bottler_present, class_present, country_present, net_present
+from .presence import _COUNTRY, COUNTRIES, ON_LABEL, abv_present, bottler_present, class_present, country_present, net_present
 from .text import match_text, normalize, words_present
 from .warning import check_warning
 
@@ -91,8 +91,12 @@ def _check_country(country: str, lines: list[str]) -> FieldResult:
                         rf"(?:the\s+)?(?:[a-z]+\s+){{0,2}}?{want}\b(?!\s+city\b)|^(?:the\s+)?{want}$")
     for line in lines:
         if stated.search(normalize(line)) and not re.search(rf"\bnew\s+{want}\b", normalize(line)):
+            # Typed as the label prints it ("Product of Ireland"): the country named inside is not "another" one.
+            typed = " ".join(names)
+            ours = names | {n for c in COUNTRIES if re.search(rf"\b{re.escape(normalize(c))}\b", typed)
+                            for n in _country_names(c)}
             other = next((ln for ln in lines for m in _COUNTRY.finditer(ln)
-                          if not _country_names(m.group(1)) & names), None)
+                          if not _country_names(m.group(1)) & ours), None)
             if other:
                 return FieldResult("country_of_origin", Verdict.CHECK,
                                    f'Label shows "{line}", but also "{other}". Please confirm the country of origin.',
