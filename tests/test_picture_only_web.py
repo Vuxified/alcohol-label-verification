@@ -58,3 +58,15 @@ def test_stylesheet_link_changes_with_the_file(client):
     from pathlib import Path
     css = (Path(__file__).resolve().parent.parent / "app/web/static/app.css").read_bytes()
     assert f'/static/app.css?v={hashlib.sha256(css).hexdigest()[:10]}' in client.get("/").text
+
+
+def test_pictures_up_to_20_mb_are_taken():
+    # Phone photos can be large; up to 20 MB each is accepted, anything bigger gets a plain message.
+    import io
+    import numpy as np
+    from PIL import Image
+    from app.web.main import _check_file
+    big = io.BytesIO()
+    Image.fromarray(np.random.default_rng(0).integers(0, 256, (2500, 2500, 3), dtype=np.uint8)).save(big, "PNG")
+    assert 15 * 1024 * 1024 < len(big.getvalue()) < 20 * 1024 * 1024 and _check_file("big.png", big.getvalue()) is None
+    assert "The limit is 20 MB" in _check_file("huge.png", b"\0" * (20 * 1024 * 1024 + 1))

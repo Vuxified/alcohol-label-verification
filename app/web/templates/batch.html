@@ -18,7 +18,7 @@
 <div id="setup">
   <form class="usa-form usa-form--large" id="batch-form" style="max-width:none">
     <label class="usa-label" for="zip">1. ZIP file with the label images</label>
-    <span class="usa-hint" id="zip-hint">Up to 500 applications per batch; each can have up to 6 pictures (front, back, neck…). JPG, PNG or WEBP, up to 10 MB each. Any file names.</span>
+    <span class="usa-hint" id="zip-hint">Up to 500 applications per batch; each can have up to 6 pictures (front, back, neck…). JPG, PNG or WEBP, up to 20 MB each. Any file names.</span>
     <input class="usa-file-input" id="zip" type="file" accept=".zip,application/zip" required aria-describedby="zip-hint">
 
     <label class="usa-label" for="csv">2. Spreadsheet (CSV), if it isn't inside the ZIP</label>
@@ -120,7 +120,7 @@
 (function () {
   var BUCKET = {{ 'true' if upload_to_bucket else 'false' }};
   var PARALLEL = BUCKET ? 6 : 2;              // on AWS each request gets its own copy of the checker
-  var MAX_ROWS = 500, MAX_IMAGES = 6, MAX_MB = 10;
+  var MAX_ROWS = 500, MAX_IMAGES = 6, MAX_MB = 20;
   var VERDICT = {{ copy.VERDICT | tojson }}, FIELD_NAMES = {{ copy.FIELD_NAMES | tojson }};
   var WORD = { fail: 'Does not match', check: 'Please check', pass: 'Matches', 'n/a': 'Not applicable', error: 'Error' };
   var ORDER = { fail: 0, check: 1, error: 2, pass: 3 };

@@ -39,7 +39,7 @@ from .marks import differing_words, warning_marks
 
 ROOT = Path(__file__).resolve().parent
 DATA = ROOT.parent.parent / "data"
-MAX_IMAGES, MAX_MB, SHOW_SIDE = 6, 10, 1600
+MAX_IMAGES, MAX_MB, SHOW_SIDE = 6, 20, 1600
 BUCKET = os.environ.get("UPLOAD_BUCKET")
 UPLOAD_KEY = re.compile(r"uploads/[0-9a-f]{32}/[0-5]")
 Image.MAX_IMAGE_PIXELS = 40_000_000
