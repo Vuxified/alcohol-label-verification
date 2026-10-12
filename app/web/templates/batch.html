@@ -337,7 +337,7 @@
   }
 
   $('download').addEventListener('click', function () {
-    var fields = ['brand_name', 'class_type', 'abv', 'proof', 'net_contents', 'name_address', 'country_of_origin', 'warning_text', 'warning_caps', 'warning_bold', 'warning_size', 'abv_minimum', 'bonded', 'wine_terms', 'malt_terms'];
+    var fields = ['brand_name', 'class_type', 'abv', 'proof', 'net_contents', 'name_address', 'country_of_origin', 'importer', 'warning_text', 'warning_caps', 'warning_bold', 'warning_size', 'abv_minimum', 'bonded', 'wine_terms', 'malt_terms'];
     var head = ['application_id', 'overall'].concat(fields, ['reasons', 'agent_note', 'images_read', 'pictures_paired_by', 'seconds', 'error', 'checked_at_utc']);
     var lines = [head.join(',')];
     sorted().forEach(function (x) {

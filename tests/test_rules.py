@@ -289,6 +289,36 @@ def test_country_must_be_a_country_statement():
     assert verify(imp(), ["OLD TOM", "Bottled by Old Tom Co., Santa Fe, New Mexico"]).get("country_of_origin").verdict == C
 
 
+def test_country_in_its_own_language():
+    app = lambda c: Application("wine", "Old Tom", source="imported", country_of_origin=c)
+    assert verify(app("Italy"), ["OLD TOM", "PRODOTTO IN ITALIA"]).get("country_of_origin").verdict == P
+    assert verify(app("Spain"), ["OLD TOM", "PRODUCTO DE ESPAÑA"]).get("country_of_origin").verdict == P
+    assert verify(app("Germany"), ["OLD TOM", "PRODUCT OF DEUTSCHLAND"]).get("country_of_origin").verdict == P
+    assert verify(app("Italia"), ["OLD TOM", "PRODUCT OF ITALY"]).get("country_of_origin").verdict == P
+    # Scotland is not a name for the United Kingdom here: a person judges that.
+    assert verify(app("United Kingdom"), ["OLD TOM", "PRODUCT OF SCOTLAND"]).get("country_of_origin").verdict == C
+
+
+def test_a_second_country_on_the_label_is_for_a_person():
+    app = Application("spirits", "Old Tom", source="imported", country_of_origin="Mexico")
+    r = verify(app, ["OLD TOM", "PRODUCT OF MEXICO", "BOTTLED IN SPAIN"]).get("country_of_origin")
+    assert r.verdict == C and r.code == "COUNTRY_SEVERAL" and "BOTTLED IN SPAIN" in r.reason
+    assert verify(app, ["OLD TOM", "PRODUCT OF MEXICO", "HECHO EN MEXICO"]).get("country_of_origin").verdict == P
+    scotch = Application("spirits", "Old Tom", source="imported", country_of_origin="Scotland")
+    assert verify(scotch, ["DISTILLED AND BOTTLED IN SCOTLAND"]).get("country_of_origin").verdict == P
+
+
+def test_imports_need_an_importer_statement():
+    imp = lambda kind="spirits": Application(kind, "Old Tom", source="imported", country_of_origin="Mexico")
+    found = verify(imp(), ["OLD TOM", "PRODUCT OF MEXICO", "IMPORTED BY OLD TOM IMPORTS, NEW YORK, NY"]).get("importer")
+    assert found.verdict == P and found.code == "ON_LABEL" and "IMPORTED BY" in found.found
+    assert verify(imp(), ["OLD TOM", "PRODUCT OF MEXICO", "Exclusively imported", "by Old Tom Imports, NY"]).get("importer").verdict == P
+    missing = verify(imp("wine"), ["OLD TOM", "PRODUCT OF MEXICO", "BOTTLED BY OLD TOM CO., MEXICO CITY"]).get("importer")
+    assert missing.verdict == C and missing.code == "IMPORTER_NOT_FOUND" and "4.35" in missing.reason
+    domestic = verify(Application("spirits", "Old Tom"), ["OLD TOM", "BOTTLED BY OLD TOM, BARDSTOWN, KY"])
+    assert all(f.field != "importer" for f in domestic.fields)
+
+
 def test_a_clearly_different_type_word_does_not_match():  # owner decision, 2026-10-09
     r = match_text("class_type", "Kentucky Straight Rye Whiskey", ["KENTUCKY STRAIGHT BOURBON WHISKEY"])
     assert r.verdict == F and r.code == "CLASS_TYPE_WORD_DIFFERS"

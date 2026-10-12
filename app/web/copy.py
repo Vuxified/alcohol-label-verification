@@ -12,6 +12,7 @@ FIELD_NAMES = {
     "net_contents": "Net contents",
     "name_address": "Name and address",
     "country_of_origin": "Country of origin",
+    "importer": "Importer statement",
     "warning_text": "Health warning wording",
     "warning_caps": "Warning heading in capitals",
     "warning_bold": "Warning heading in bold",
@@ -43,6 +44,7 @@ RULES = {
     "net_contents": {"spirits": "5.70", "wine": "4.37", "malt": "7.70"},
     "name_address": {"spirits": "5.66", "wine": "4.35", "malt": "7.66"},
     "country_of_origin": {"spirits": "5.69", "malt": "7.69"},
+    "importer": {"spirits": "5.68", "wine": "4.35", "malt": "7.68"},
     "warning_text": {"*": "16.21"}, "warning_caps": {"*": "16.22"}, "warning_bold": {"*": "16.22"},
     "warning_size": {"*": "16.22"}, "bonded": {"spirits": "5.88"}, "wine_terms": {"wine": "4.21"}, "malt_terms": {"malt": "7.65"},
 }
