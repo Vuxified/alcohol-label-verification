@@ -18,7 +18,7 @@
 <div id="setup">
   <form class="usa-form usa-form--large" id="batch-form" style="max-width:none">
     <label class="usa-label" for="zip">1. ZIP file with the label images</label>
-    <span class="usa-hint" id="zip-hint">Up to 500 applications, up to 6 images each (JPG, PNG or WEBP, up to 10 MB each).</span>
+    <span class="usa-hint" id="zip-hint">Up to 500 applications per batch; each can have up to 6 pictures (front, back, neck…). JPG, PNG or WEBP, up to 10 MB each. Any file names.</span>
     <input class="usa-file-input" id="zip" type="file" accept=".zip,application/zip" required aria-describedby="zip-hint">
 
     <label class="usa-label" for="csv">2. Spreadsheet (CSV), if it isn't inside the ZIP</label>
@@ -29,6 +29,12 @@
       <span class="app-small">Nothing is checked until you confirm on the next step.</span></div>
   </form>
 
+  <section class="app-columns" aria-labelledby="pics-heading">
+    <h2 id="pics-heading">Pictures can have any file names</h2>
+    <p>We read each picture and match it to its spreadsheet row by brand, alcohol and net contents. A picture is matched only when one row clearly fits; any we can't match for sure are listed for you to match by hand, never guessed.</p>
+    <p class="app-small"><strong>Tip:</strong> name pictures after the application (<code>TTB-0001_front.jpg</code>) and they're always matched, with no reading needed.</p>
+  </section>
+
   <details class="app-columns">
     <summary>What the spreadsheet needs</summary>
     <p>A header row, then one row per application. Column names are not case-sensitive, and common names work too ("Brand Name", "Application ID", "Images").</p>
@@ -36,7 +42,6 @@
       <thead><tr><th scope="col">Column</th><th scope="col">Needed?</th><th scope="col">Example</th></tr></thead>
       <tbody>
         <tr><td><code>application_id</code></td><td>Yes, unique</td><td>TTB-0001</td></tr>
-        <tr><td><code>image_files</code></td><td>No, if the pictures are named after the application</td><td>0001_front.jpg;0001_back.jpg (file names in the ZIP, separated by ; or ,). Left out: every picture whose name starts with the application_id, like TTB-0001_front.jpg. Pictures named neither way are read and paired with an application when there is one clear match by brand, alcohol and net contents; anything unclear is listed for you, never guessed</td></tr>
         <tr><td><code>beverage_type</code></td><td>Yes</td><td>spirits, wine, or malt (beer is accepted)</td></tr>
         <tr><td><code>brand_name</code></td><td>Yes</td><td>Old Tom Distillery</td></tr>
         <tr><td><code>class_type</code>, <code>abv</code>, <code>net_contents</code>, <code>name_address</code>, <code>fanciful_name</code></td><td>No</td><td>Kentucky Straight Bourbon Whiskey · 45 · 750 mL</td></tr>
@@ -44,6 +49,7 @@
         <tr><td><code>label_height</code></td><td>No</td><td>3.5 (inches, the label with the health warning; lets the warning's type size be checked)</td></tr>
       </tbody>
     </table>
+    <p class="app-small"><strong>Advanced:</strong> to choose the pictures for a row yourself, add an <code>image_files</code> column listing its file names, separated by ; (<code>0001_front.jpg;0001_back.jpg</code>).</p>
   </details>
 </div>
 
@@ -97,7 +103,7 @@
 <aside class="app-side">
   <h2>How it works</h2>
   <ul class="app-checklist">
-    <li>Add the ZIP and spreadsheet<small>Or one ZIP with manifest.csv inside</small></li>
+    <li>Add the ZIP and spreadsheet<small>Any picture names; or one ZIP with manifest.csv inside</small></li>
     <li>We list any problems first<small>Missing pictures, bad values</small></li>
     <li>Several labels are checked at a time<small>About 10 seconds for 20</small></li>
     <li>Needs-attention rows come first</li>
