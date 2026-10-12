@@ -128,6 +128,12 @@ def match_text(field: str, expected: str, lines: list[str]) -> FieldResult:
         return FieldResult(field, Verdict.CHECK,
                            f'Label shows "{best_text}", which is close to "{expected}" but not the same.',
                            code=f"{field.upper()}_NEAR_MATCH", found=best_text)
+    # The words may be there across a line break ("KENTUCKY STRAIGHT BOURBON" / "WHISKEY" for "Bourbon Whiskey").
+    across = min((w for w in _windows(lines) if not _BOTTLER.search(w)
+                  and re.search(rf"(?<!\S){re.escape(want)}(?!\S)", norm(w))), key=len, default=None)
+    if across:
+        return FieldResult(field, Verdict.CHECK, f'Label shows "{across}", which adds words to "{expected}".',
+                           code=f"{field.upper()}_EXTRA_WORDS", found=across)
     return FieldResult(field, Verdict.CHECK,
                        f'"{expected}" was not found on the label. It may be in decorative type the reader could not read.',
                        code=f"{field.upper()}_MISMATCH")

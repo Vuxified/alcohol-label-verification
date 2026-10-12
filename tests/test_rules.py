@@ -319,6 +319,11 @@ def test_imports_need_an_importer_statement():
     assert all(f.field != "importer" for f in domestic.fields)
 
 
+def test_shorter_class_across_a_line_break_says_what_the_label_shows():
+    r = match_text("class_type", "Bourbon Whiskey", ["OLD TOM", "KENTUCKY STRAIGHT BOURBON", "WHISKEY"])
+    assert r.verdict == C and r.code == "CLASS_TYPE_EXTRA_WORDS" and r.found == "KENTUCKY STRAIGHT BOURBON WHISKEY"
+
+
 def test_a_clearly_different_type_word_does_not_match():  # owner decision, 2026-10-09
     r = match_text("class_type", "Kentucky Straight Rye Whiskey", ["KENTUCKY STRAIGHT BOURBON WHISKEY"])
     assert r.verdict == F and r.code == "CLASS_TYPE_WORD_DIFFERS"
