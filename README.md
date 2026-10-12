@@ -1,11 +1,11 @@
 # Label Check: alcohol label verification prototype
 
-A TTB agent uploads a label's images and types in what the application says. Within about 5 seconds the app answers, item by item, **Matches**, **Does not match** or **Please check**, and shows where on the label each answer came from. A batch page checks hundreds of applications at once. **The agent decides; the app never approves a label.**
+A TTB agent uploads a label's images and types in what the application says. Within about 5 seconds the app answers, item by item, **Matches**, **Does not match** or **Please check**, and shows where on the label each answer came from and which rule applies (each row names its 27 CFR section, linked to eCFR). A batch page checks hundreds of applications at once. **The agent decides; the app never approves a label.**
 
 **Try it:** https://3jirlgdkpcw55t54gz32ggdnbq0yfrjp.lambda-url.us-east-1.on.aws/
 - No files needed: press **Try a label that matches** or **Try a label with a problem**.
 - Batch: open **Check many labels**, download the sample batch (22 applications, 2 broken on purpose) and add it.
-- No application? Add pictures only and leave the details blank: the app looks for every statement the rules require (alcohol content, net contents, bottler, class, country for imports) and says **On the label** or **Please check**. **Fill in from the label** reads the pictures and fills the blank boxes (not the brand, usually a logo) for the agent to confirm.
+- No application? Add pictures only and leave the details blank: the app looks for every statement the rules require (alcohol content, net contents, bottler, class, country for imports) and says **On the label** or **Please check**. As soon as pictures are added, the app reads them and shows what the label says under each box ("On the label: 45%"); the boxes stay for the application's values, so a label is never compared with its own reading.
 - The first visit after a quiet period takes about 6 seconds while the checker starts.
 
 ---
@@ -13,7 +13,7 @@ A TTB agent uploads a label's images and types in what the application says. Wit
 ## A five-minute tour
 
 1. **Try a label with a problem.** The heading is "Government Warning" in title case: **Does not match**, with a close-up of the spot and the rule (27 CFR 16.22). Press **I disagree** to see how an agent records a different view; it prints with the page.
-2. **Your own label:** add the front and back pictures, choose the product type, press **Fill in from the label**: alcohol, net contents, class and bottler are filled in and highlighted for you to check. Type the brand, change one value (say alcohol 45 to 40), press **Check label**: alcohol content **Does not match**, everything else **Matches**.
+2. **Your own label:** add the front and back pictures, and the app reads them at once: alcohol, net contents, class and bottler appear under their boxes, and the product type is chosen. Type the application's values (try alcohol 40 where the label says 45) and the brand, press **Check label**: alcohol content **Does not match**, everything else **Matches**.
 3. **Pictures only:** the same pictures with every box blank. The app looks for each statement the rules require and says **On the label** or **Please check**; it never says Does not match without an application to compare.
 4. **Batch:** on **Check many labels**, add the sample batch (22 applications, 2 broken on purpose). Rows that need attention come first; download the results spreadsheet. Pictures that aren't named after an application are read and paired by what they say; anything unclear is listed for you.
 5. **Why trust it:** [`docs/RULES.md`](docs/RULES.md) lists every rule with its citation, and what a picture cannot settle. No version goes live unless a full practice run of that exact code has **0 wrong answers** (see Deployment).
@@ -61,7 +61,7 @@ Measured with `tools/evaluate.py` on the practice sets (the final-test set is ke
 
 - Health warning confirmed word for word on approved labels: 51 of 64, 63 of 78, 55 of 85. One approved label really prints the warning differently from 27 CFR 16.21 (`docs/FINDINGS.md`); it is reported apart.
 - Speed (laptop, 4 cores): typical 1.5–1.9 s, slowest 3.8 s per label.
-- Pictures only, on 142 approved labels: 0 Does not match; class found on 135, net contents 126, bottler 107, alcohol content 106 (+9 beer, where it is optional). "Fill in from the label" filled alcohol right 103 times (wrong 3) and net contents right 115 (wrong 15); it does not guess the brand (usually a logo).
+- Pictures only, on 142 approved labels: 0 Does not match; class found on 135, net contents 126, bottler 107, alcohol content 106 (+9 beer, where it is optional). Reading on upload showed alcohol right 103 times (wrong 3) and net contents right 115 (wrong 15); it does not guess the brand (usually a logo).
 - The new label rules (class minimums, bottled in bond, table wine, low/no-alcohol wording) said Please check on 0 of the 227 approved labels.
 - Measured 2026-10-10 (`out/eval_g3_rules.log`, not committed); the same run is the one the safety gate approved for the live version. The answer keys of the 85 newest labels were drafted with AI assistance and are being reviewed by the author.
 

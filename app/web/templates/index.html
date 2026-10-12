@@ -39,10 +39,7 @@
   <fieldset class="app-step">
     <legend><span class="app-step__num" aria-hidden="true">3</span>From the application</legend>
     <p class="usa-hint">Copy these as they appear on the application; blank items are not compared. Leave the brand blank to check the pictures alone: we then look for each statement the rules require.</p>
-    <div class="app-fill">
-      <button class="usa-button usa-button--outline" type="button" id="fill" disabled>Fill in from the label</button>
-      <span class="app-small" id="fill-status" role="status">Add pictures first. We read them and fill in the blank boxes (except the brand, usually a logo) for you to check.</span>
-    </div>
+    <p class="app-fill" id="fill-status" role="status">When you add pictures, we read them right away and show what the label says under each box. Type what the application says; the label's reading is never used in its place.</p>
     <div class="app-fields">
       <div class="app-wide">
         <label class="usa-label" for="brand_name">Brand name</label>
@@ -52,16 +49,19 @@
         <label class="usa-label" for="class_type">Class or type</label>
         <span class="usa-hint" id="class-hint">For example: Kentucky Straight Bourbon Whiskey</span>
         <input class="usa-input" id="class_type" name="class_type" aria-describedby="class-hint" value="{{ form.class_type or '' }}">
+        <p class="app-seen app-hidden" id="seen-class_type"></p>
       </div>
       <div>
         <label class="usa-label" for="abv">Alcohol content (% by volume)</label>
         <span class="usa-hint" id="abv-hint">A number, like 45 or 13.5</span>
         <input class="usa-input" id="abv" name="abv" inputmode="decimal" aria-describedby="abv-hint" value="{{ form.abv or '' }}">
+        <p class="app-seen app-hidden" id="seen-abv"></p>
       </div>
       <div>
         <label class="usa-label" for="net_contents">Net contents</label>
         <span class="usa-hint" id="net-hint">For example: 750 mL or 12 FL. OZ.</span>
         <input class="usa-input" id="net_contents" name="net_contents" aria-describedby="net-hint" value="{{ form.net_contents or '' }}">
+        <p class="app-seen app-hidden" id="seen-net_contents"></p>
       </div>
       <div>
         <label class="usa-label" for="label_height">Label height in inches (optional)</label>
@@ -75,6 +75,7 @@
       <div class="app-wide">
         <label class="usa-label" for="name_address">Name and address of bottler or importer</label>
         <input class="usa-input" id="name_address" name="name_address" value="{{ form.name_address or '' }}">
+        <p class="app-seen app-hidden" id="seen-name_address"></p>
       </div>
       <fieldset class="usa-fieldset app-wide">
         <legend class="usa-legend">Where is it made?</legend>
@@ -88,6 +89,7 @@
       <div class="app-wide">
         <label class="usa-label" for="country_of_origin">Country of origin (imports only)</label>
         <input class="usa-input" id="country_of_origin" name="country_of_origin" value="{{ form.country_of_origin or '' }}">
+        <p class="app-seen app-hidden" id="seen-country_of_origin"></p>
       </div>
     </div>
   </fieldset>
@@ -176,13 +178,23 @@
     {% else %}
     f.addEventListener('submit', started);
     {% endif %}
-    // "Fill in from the label": read the pictures and put what was found in the blank boxes, each marked for the
-    // agent to check against the application. Boxes the agent already filled are never changed.
-    var fill = document.getElementById('fill'), fillStatus = document.getElementById('fill-status'),
-        pictures = document.getElementById('images');
-    pictures.addEventListener('change', function () { fill.disabled = !pictures.files.length; });
-    fill.addEventListener('click', async function () {
-      fill.disabled = true; fillStatus.textContent = 'Reading the label…';
+    // As soon as pictures are chosen, read them and show what the label says under each box. The boxes stay the
+    // application's: the agent types those, so a label is never compared with its own reading.
+    var fillStatus = document.getElementById('fill-status'), pictures = document.getElementById('images'), reads = 0;
+    var READ = ['class_type', 'abv', 'net_contents', 'name_address', 'country_of_origin'];
+    function showSeen(v) {
+      READ.forEach(function (k) {
+        var p = document.getElementById('seen-' + k);
+        p.textContent = ''; p.classList.toggle('app-hidden', !v);
+        if (!v) return;
+        p.append(v[k] ? 'On the label: ' : 'Not found on the label');
+        if (v[k]) { var b = document.createElement('b'); b.textContent = v[k] + (k === 'abv' ? '%' : ''); p.append(b); }
+      });
+    }
+    async function readLabel() {
+      var mine = ++reads; showSeen(null);
+      if (!pictures.files.length) return;
+      fillStatus.textContent = 'Reading the label…';
       var body = new FormData(), bev = f.querySelector('input[name=beverage_type]:checked');
       if (bev) body.append('beverage_type', bev.value);
       try {
@@ -193,28 +205,21 @@
         Array.from(pictures.files).slice(0, 6).forEach(function (file) { body.append('images', file); });
         {% endif %}
         var r = await fetch('/api/read', { method: 'POST', body: body }), v = await r.json();
-        if (!r.ok) throw new Error(v.error === 'busy' || v.error === 'starting' ? 'The checker is busy. Please try again in a moment.' : v.error);
-        var filled = [];
-        ['class_type', 'abv', 'net_contents', 'name_address', 'country_of_origin'].forEach(function (k) {
-          var box = document.getElementById(k);
-          if (v[k] && !box.value) {
-            box.value = v[k]; box.classList.add('app-filled'); filled.push(box.labels[0].textContent);
-            box.addEventListener('input', function () { box.classList.remove('app-filled'); }, { once: true });
-          }
-        });
+        if (mine !== reads) return;  // other pictures were chosen meanwhile
+        if (!r.ok) throw new Error(v.error === 'busy' || v.error === 'starting' ? 'The checker is busy, so the label was not read ahead. You can still check it.' : v.error);
+        showSeen(v);
         [['beverage_type', 'bev-'], ['source', 'src-']].forEach(function (kv) {
           var chosen = f.querySelector('input[name=' + kv[0] + ']:checked');
           var pick = v[kv[0]] && document.getElementById(kv[1] + (kv[0] === 'source' ? v.source.charAt(0) : v[kv[0]]));
           if (pick && (!chosen || kv[0] === 'source')) pick.checked = true;
         });
-        fillStatus.textContent = filled.length
-          ? 'Filled in from the label: ' + filled.join(', ') + '. Please check each one against the application.'
-          : 'Nothing new was found to fill in.';
+        fillStatus.textContent = 'Read from the label: shown under each box. Type what the application says in the boxes, then check.';
       } catch (e) {
-        fillStatus.textContent = e.message && !/fetch|upload/i.test(e.message) ? e.message : 'The label could not be read. Please try again.';
+        if (mine !== reads) return;
+        fillStatus.textContent = e.message && !/fetch|upload/i.test(e.message) ? e.message : 'The label could not be read ahead. You can still check it.';
       }
-      fill.disabled = !pictures.files.length;
-    });
+    }
+    pictures.addEventListener('change', readLabel);
     // The pressed button is the one that grows into the result.
     document.querySelectorAll('aside button[name=sample]').forEach(function (sb) {
       sb.addEventListener('click', function () { b.style.viewTransitionName = 'none'; sb.style.viewTransitionName = 'app-hero'; });

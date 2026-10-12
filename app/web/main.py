@@ -238,7 +238,7 @@ async def api_check(request: Request):
 
 @app.post("/api/read")
 async def api_read(request: Request):
-    """Values read from the label pictures, to fill in the blank boxes of the form ("Fill in from the label").
+    """Values read from the label pictures, shown under the boxes of the form as soon as pictures are added.
     Suggestions only: the agent checks each one against the application."""
     if not state["ready"]:
         return JSONResponse({"error": "starting"}, status_code=503)

@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block title %}Results – Label Check{% endblock %}
 {% macro tag(value, code=None) %}{% set icon, word = copy.VERDICT[value] %}{% if code == ON_LABEL %}{% set word = copy.ON_LABEL %}{% endif %}<span class="app-verdict app-verdict--{{ value | replace('/', '') }}"><svg class="app-ico" aria-hidden="true"><use href="#{{ icon }}"/></svg>{{ word }}</span>{% endmacro %}
+{% macro cite(f) %}{% set sec = copy.rule(f.field, res.form.beverage_type, f.reason) %}{% if sec %}<a class="app-cite" href="https://www.ecfr.gov/current/title-27/section-{{ sec }}" target="_blank" rel="noopener">27 CFR {{ sec }}</a>{% endif %}{% endmacro %}
 {% macro words(parts) %}{% for w, differs in parts %}{% if differs %}<span class="app-diff">{{ w }}</span>{% else %}{{ w }}{% endif %}{{ " " if not loop.last }}{% endfor %}{% endmacro %}
 {% macro disagree(f) %}<details class="app-disagree" data-field="{{ copy.FIELD_NAMES.get(f.field, f.field) }}">
   <summary>I disagree</summary>
@@ -41,7 +42,7 @@
   <div>
     {% for f in attention %}{% set d = diffs.get(f.field) %}
     <section class="app-issue" data-pick="{{ f.field }}" tabindex="0" aria-labelledby="h-{{ f.field }}">
-      <div class="app-issue__head"><h2 id="h-{{ f.field }}">{{ name.get(f.field, f.field) }}</h2>{{ tag(f.verdict.value, f.code) }}</div>
+      <div class="app-issue__head"><div><h2 id="h-{{ f.field }}">{{ name.get(f.field, f.field) }}</h2>{{ cite(f) }}</div>{{ tag(f.verdict.value, f.code) }}</div>
       {% if f.field == "warning_text" and warning_parts %}
       <p class="app-kicker">The required wording (27 CFR 16.21), with what the label shows marked</p>
       <p class="app-legal">{% for t, kind in warning_parts %}{% if kind == "missing" %}<del>{{ t }}</del>{% elif kind %} <ins>{{ t }}</ins>{% elif loop.index <= 3 %}<b>{{ t }}</b>{% else %}{{ t }}{% endif %}{% endfor %}</p>
@@ -77,7 +78,7 @@
         <tbody>
         {% for f in matched %}
           <tr {% if f.field in ev %}data-pick="{{ f.field }}" tabindex="0"{% endif %}>
-            <th scope="row">{{ name.get(f.field, f.field) }}</th>
+            <th scope="row">{{ name.get(f.field, f.field) }}{{ cite(f) }}</th>
             <td class="app-col-app">{{ asked.get(f.field) or "Not given" }}</td>
             <td>{{ f.found if f.found and not f.field.startswith("warning") else f.reason }}</td>
             <td class="app-r">{{ tag(f.verdict.value, f.code) }}{{ disagree(f) }}</td>

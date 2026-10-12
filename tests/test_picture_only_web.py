@@ -1,4 +1,4 @@
-"""Picture-only on the web: the form works without a brand, "Fill in from the label" returns suggested values, and a
+"""Picture-only on the web: the form works without a brand, reading on upload returns what the label says, and a
 picture-only result says "On the label", never "Matches"."""
 
 import time
@@ -70,3 +70,18 @@ def test_pictures_up_to_20_mb_are_taken():
     Image.fromarray(np.random.default_rng(0).integers(0, 256, (2500, 2500, 3), dtype=np.uint8)).save(big, "PNG")
     assert 15 * 1024 * 1024 < len(big.getvalue()) < 20 * 1024 * 1024 and _check_file("big.png", big.getvalue()) is None
     assert "The limit is 20 MB" in _check_file("huge.png", b"\0" * (20 * 1024 * 1024 + 1))
+
+
+def test_every_result_row_names_its_rule(client):
+    # Spirits: each row cites its 27 CFR section and links to it on eCFR.
+    page = client.post("/check", data={"sample": "match"}).text
+    for sec in ("5.64", "5.141", "5.65", "5.70", "5.66", "16.21", "16.22"):
+        assert f'href="https://www.ecfr.gov/current/title-27/section-{sec}"' in page, sec
+
+
+def test_rule_follows_the_product_type():
+    from app.web import copy
+    assert [copy.rule("brand_name", b) for b in ("spirits", "wine", "malt")] == ["5.64", "4.33", "7.64"]
+    assert copy.rule("warning_caps", "wine") == "16.22"
+    assert copy.rule("abv_minimum", "spirits", "45% meets the 40% minimum for gin (27 CFR 5.144).") == "5.144"
+    assert copy.rule("abv_minimum", "spirits", "no citation here") is None

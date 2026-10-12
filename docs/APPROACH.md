@@ -78,7 +78,7 @@ So the app answers each item with **Matches**, **Does not match** or **Please ch
 | Batch reading (`tests/test_batch_read.py`, in a browser) | Excel/Numbers exports, encodings, header spellings, ZIP layouts, file-name pairing, the label-height column | 53 |
 | Safety rules (`test_second_reading.py`, `test_warning_noise.py`, `test_word_pair.py`) | A different number needs a second reader; warning noise vs real inserted words; two word readers | 15 |
 | Type size (`tests/test_type_size.py`) | Letter height measured on labels drawn at a known size; the three outcomes; the form | 28 |
-| Pictures only (`tests/test_picture_only.py`, `test_picture_only_web.py`) | Blank items looked for on the label; never Does not match; "Fill in from the label" on the real reader | 22 |
+| Pictures only (`tests/test_picture_only.py`, `test_picture_only_web.py`) | Blank items looked for on the label; never Does not match; reading on upload on the real reader | 22 |
 | Label rules (`tests/test_label_rules.py`) | Class minimums, bottled in bond, table wine, low/no-alcohol wording, each with its section; liqueurs and mixed drinks skipped | 15 |
 | Safety gate and no network (`tests/test_gate.py`, `tests/test_offline.py`) | The gate refuses a run of other code, a partial run, any wrong answer, an unflagged mistake, slow labels; the reader starts and checks a label with every network call failing | 11 |
 | Whole pipeline (`tools/evaluate.py`) | Every wrong "Does not match" on real approved labels and every planted mistake that slipped through; items confirmed; timing | 538 practice items (227 real labels, 180 tampered, 96 generated, 35 labels in photo scenes) |

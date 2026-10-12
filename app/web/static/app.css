@@ -36,10 +36,9 @@ a:hover { color: var(--accent-hover); text-decoration-thickness: 2px; }
 .usa-sr-only { position: absolute; left: -999em; }
 .app-hidden { display: none !important; }
 .app-small { font-size: .95rem; color: var(--ink-3); margin: .35rem 0 0; }
-.app-fill { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1rem; margin: .75rem 0 .25rem; }
-.app-fill .usa-button { margin: 0; }
-.app-filled { background: var(--check-wash) !important; border-color: var(--check-mark) !important; animation: app-glow 1.2s var(--ease); }
-@keyframes app-glow { from { box-shadow: 0 0 0 6px rgba(217, 151, 44, .35); } to { box-shadow: 0 0 0 0 rgba(217, 151, 44, 0); } }
+.app-fill { font-size: .95rem; color: var(--ink-2); margin: .75rem 0 .25rem; padding: .6rem .85rem; background: var(--wash); border-radius: 4px; }
+.app-seen { font-size: .95rem; color: var(--ink-3); margin: .35rem 0 0; animation: app-fade .3s ease-out both; }
+.app-seen b { color: var(--ink); font-weight: 600; margin-left: .25rem; }
 .app-ico { width: 1em; height: 1em; flex: none; vertical-align: -.14em; }
 
 /* ---------- header ---------- */
@@ -184,6 +183,8 @@ a:hover { color: var(--accent-hover); text-decoration-thickness: 2px; }
 .app-issue.is-picked { border-color: var(--accent); box-shadow: inset 3px 0 0 var(--accent); }
 .app-issue__head { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1.1rem; }
 .app-issue__head h2 { font-family: var(--serif); font-size: 1.3rem; font-weight: 700; }
+.app-cite { display: block; margin-top: .2rem; font-size: .8125rem; font-weight: 400; color: var(--ink-3); text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 2px; }
+.app-cite:hover { color: var(--accent); text-decoration-color: currentColor; }
 .app-pair { display: grid; grid-template-columns: 1fr 1fr; margin: 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
 .app-pair > div { padding: 1rem 1.5rem 1.1rem 0; min-width: 0; }
 .app-pair > div + div { padding: 1rem 0 1.1rem 1.5rem; border-left: 1px solid var(--rule); }

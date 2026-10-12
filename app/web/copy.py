@@ -1,5 +1,8 @@
 """Every word the agent reads on screen, in one place (DESIGN.md §5.3), so the wording can be reviewed at once."""
 
+import re
+
+
 FIELD_NAMES = {
     "brand_name": "Brand name",
     "fanciful_name": "Fanciful name",
@@ -28,6 +31,31 @@ VERDICT = {
 DISAGREE = ("The label is right; the app is wrong", "The app misread the label",
             "The application value was typed wrong", "Something else")  # "I disagree" choices on each result
 ON_LABEL = "On the label"  # picture-only: a required statement was found (nothing to compare it with)
+
+# The rule behind each result row, by product type (27 CFR parts 4 wine, 5 spirits, 7 malt; 16 the health warning).
+# A row not listed here keeps the citation already in its reason ("meets the 40% minimum for gin (27 CFR 5.144)").
+RULES = {
+    "brand_name": {"spirits": "5.64", "wine": "4.33", "malt": "7.64"},
+    "fanciful_name": {"spirits": "5.1", "malt": "7.1"},  # defined there; wine has no definition of its own
+    "class_type": {"spirits": "5.141", "wine": "4.34", "malt": "7.141"},
+    "abv": {"spirits": "5.65", "wine": "4.36", "malt": "7.65"},
+    "proof": {"spirits": "5.65"},
+    "net_contents": {"spirits": "5.70", "wine": "4.37", "malt": "7.70"},
+    "name_address": {"spirits": "5.66", "wine": "4.35", "malt": "7.66"},
+    "country_of_origin": {"spirits": "5.69", "malt": "7.69"},
+    "warning_text": {"*": "16.21"}, "warning_caps": {"*": "16.22"}, "warning_bold": {"*": "16.22"},
+    "warning_size": {"*": "16.22"}, "bonded": {"spirits": "5.88"}, "wine_terms": {"wine": "4.21"}, "malt_terms": {"malt": "7.65"},
+}
+
+
+def rule(field: str, beverage: str, reason: str = "") -> str | None:
+    """-> "5.64" (the 27 CFR section for this row), or None when there is none to show."""
+    by_type = RULES.get(field, {})
+    if sec := by_type.get(beverage) or by_type.get("*"):
+        return sec
+    m = re.search(r"27 CFR (\d+\.\d+)", reason or "")
+    return m.group(1) if m else None
+
 
 BEVERAGES = {"spirits": "Distilled spirits", "wine": "Wine", "malt": "Beer or malt beverage"}
 
