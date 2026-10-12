@@ -6,7 +6,7 @@ Items:
   syn   generated labels with known mistakes (data/synthetic/*/item.json "expected"); a label with a mistake must
         never come back "Matches" overall (a FALSE PASS), and should name the right finding.
 Prints per-field verdict counts, every false fail and false pass, and time per application (p50 / p95 / max).
-Writes out/eval/<name>.json. The held-out (final-test) set only runs with --final: once, by the owner, on Oct 13.
+Writes out/eval/<name>.json. The held-out (final-test) set only runs with --final, once (run 2026-10-12 on the live version ef13fdb).
 Since 2026-10-10 the final test also has planted changes on its real labels (data/tampered_final), photos of its real
 labels (data/scenes_real_final) and photos of planted changes (data/scenes_tampered_final), frozen in
 data/splits/heldout_manifest_extra.json; the app was never run on them before the final test.

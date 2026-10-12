@@ -54,19 +54,33 @@ Measured with `tools/evaluate.py` on the practice sets (the final-test set is ke
 
 | Practice set | Wrong answers | Mistakes caught | Items confirmed |
 |---|---|---|---|
-| 227 real TTB-approved labels (64 + 78 + 85, from the registry) | **0** "Does not match" | – | 76% / 75% / 71% |
-| 178 real approved labels with one planted change (alcohol, size, proof, a warning word, title-case heading, brand) | **0** changed items "Matches" | **178 of 178** flagged; 158 named exactly | 68% / 66% |
+| 227 real TTB-approved labels (64 + 78 + 85, from the registry) | **0** "Does not match" | – | 77% / 75% / 71% |
+| 178 real approved labels with one planted change (alcohol, size, proof, a warning word, title-case heading, brand) | **0** changed items "Matches" | **178 of 178** flagged; 158 named exactly | 68% / 68% |
 | 96 generated labels, 64 with planted mistakes | **0** "Matches" on a mistake | **64 of 64** flagged; 61 named exactly | 93% |
 | 76 photo-style pictures of 35 real labels (angles, close-ups, cans) | **0** "Does not match" | – | 30% (photos are hard; most items say Please check) |
 
 - Health warning confirmed word for word on approved labels: 51 of 64, 63 of 78, 55 of 85. One approved label really prints the warning differently from 27 CFR 16.21 (`docs/FINDINGS.md`); it is reported apart.
-- Speed (laptop, 4 cores): typical 1.5–1.9 s, slowest 3.8 s per label.
+- Speed (laptop, 4 cores): typical 1.6–2.1 s, slowest 4.3 s per label (5.1 s for a photo).
 - Pictures only, on 142 approved labels: 0 Does not match; class found on 135, net contents 126, bottler 107, alcohol content 106 (+9 beer, where it is optional). Reading on upload showed alcohol right 103 times (wrong 3) and net contents right 115 (wrong 15); it does not guess the brand (usually a logo).
 - The new label rules (class minimums, bottled in bond, table wine, low/no-alcohol wording) said Please check on 0 of the 227 approved labels.
-- Measured 2026-10-10 (`out/eval_g3_rules.log`, not committed); the same run is the one the safety gate approved for the live version. The answer keys of the 85 newest labels were drafted with AI assistance and are being reviewed by the author.
+- Measured 2026-10-12 (`out/eval_g8_country.log`, not committed); the same run is the one the safety gate approved for the live version. The answer keys of the 85 newest labels were drafted with AI assistance and reviewed by the author.
 
-**Final test (held-out labels, run once on Oct 13):** _to be filled in with the numbers exactly as measured._
-It has 138 items the app was never run on before: 28 real approved labels and 24 generated labels with planted mistakes (frozen Oct 2), plus, built from those same 28 labels on Oct 10 and frozen the same way: 46 with one planted change, 20 photo-style pictures (harder than the practice photos: never straight-on, more glare, coloured light) and 20 photo-style pictures with a planted change. The six real labels with a near-identical twin in practice were left out of the Oct 10 sets. `tools/evaluate.py --final` checks every file against its frozen checksum and runs only once.
+**Final test (held-out labels, run once, 2026-10-12, on the live version ef13fdb):** numbers exactly as measured (`out/eval_final.log`, not committed).
+
+| Final-test set | Wrong answers | Mistakes caught | Items confirmed |
+|---|---|---|---|
+| 28 real TTB-approved labels | **0** "Does not match" | – | 77% |
+| 46 of them with one planted change | **0** changed items "Matches" | **46 of 46** flagged; 39 named exactly | 75% |
+| 48 generated labels, 32 with planted mistakes | **0** "Matches" on a mistake | **32 of 32** flagged; 29 named exactly | 94% |
+| 22 photo-style pictures of real labels | **0** "Does not match" | – | 16% |
+| 18 photo-style pictures with a planted change | **0** changed items "Matches" | **18 of 18** flagged; 6 named exactly | 19% |
+
+- Without the six real labels that have a near-identical twin in practice: still 0 wrong answers either way.
+- Health warning confirmed word for word on 19 of 28 approved labels; the rest Please check.
+- Speed: typical 0.7–2.6 s, slowest 4.5 s per label (a photo).
+- The harder photos (never straight-on, glare, coloured light) are where the app is weakest: it stays safe (no wrong answers) but leaves most items to the agent.
+
+It has 162 items the app was never run on before: 28 real approved labels and 48 generated labels, 32 of them with planted mistakes (frozen Oct 2), plus, built from those same 28 labels on Oct 10 and frozen the same way: 46 with one planted change, 22 photo-style pictures (harder than the practice photos: never straight-on, more glare, coloured light) and 18 photo-style pictures with a planted change. The six real labels with a near-identical twin in practice were left out of the Oct 10 sets. `tools/evaluate.py --final` checks every file against its frozen checksum and runs only once.
 
 **How the answer key was made:** label values were drafted with AI tools and cross-checked by two independent vision models. The author reviewed every final-test label by hand against its images; the practice labels were checked against every image with AI assistance. Each answer sheet in `data/ground_truth/` records who reviewed it. In that review, the vision models' disagreements were almost always the models' own errors (invented addresses and container sizes), which is why the app never lets a model decide.
 

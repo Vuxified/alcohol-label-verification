@@ -82,7 +82,7 @@ So the app answers each item with **Matches**, **Does not match** or **Please ch
 | Label rules (`tests/test_label_rules.py`) | Class minimums, bottled in bond, table wine, low/no-alcohol wording, each with its section; liqueurs and mixed drinks skipped | 15 |
 | Safety gate and no network (`tests/test_gate.py`, `tests/test_offline.py`) | The gate refuses a run of other code, a partial run, any wrong answer, an unflagged mistake, slow labels; the reader starts and checks a label with every network call failing | 11 |
 | Whole pipeline (`tools/evaluate.py`) | Every wrong "Does not match" on real approved labels and every planted mistake that slipped through; items confirmed; timing | 538 practice items (227 real labels, 180 tampered, 96 generated, 35 labels in photo scenes) |
-| Final test (`--final`) | The same, once, on labels kept apart from all tuning | 28 real + 48 generated, run on Oct 13 |
+| Final test (`--final`) | The same, once, on labels kept apart from all tuning | 28 real + 48 generated + 86 built from the 28 (162 items), run once on 2026-10-12: 0 wrong answers, every planted mistake flagged (README) |
 
 ## Test data
 
