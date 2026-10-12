@@ -1,0 +1,34 @@
+{
+  "id": "24003001000208",
+  "beverage_type": "spirits",
+  "brand_name": "HIGH NOON",
+  "class_type": "GIN",
+  "abv": 4.5,
+  "abv_text": "4.5% ALC. by VOLUME",
+  "proof": null,
+  "net_contents_text": "355 ML",
+  "net_contents_ml": 355,
+  "name_address_text": "HIGH NOON SPIRITS COMPANY WWW.HIGHNOONSPIRITS.COM 1 (855) 592-8482",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "vertical"
+  },
+  "hard_cases": [
+    "printer's can-wrap proof with litho/type limit and overlap dimension marks",
+    "fanciful 'LONG DRINK CRANBERRY' split across the panel",
+    "statement of composition mixes script ('with', 'and', 'by') and caps",
+    "warning printed vertically, white condensed text on light blue; later lines letter-spaced",
+    "nutrition line ('AVERAGE ANALYSIS PER 12 FL. OZ.') could be confused with net contents"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

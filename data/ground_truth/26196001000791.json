@@ -1,0 +1,35 @@
+{
+  "id": "26196001000791",
+  "beverage_type": "wine",
+  "brand_name": "SKIN CONTACT",
+  "class_type": "50% Chenin Blanc, 50% Cortese",
+  "abv": 13.4,
+  "abv_text": "13.4% Alc. By Vol",
+  "proof": null,
+  "net_contents_text": "750 ML",
+  "net_contents_ml": 750,
+  "name_address_text": "PRODUCED AND BOTTLED BY: MATT CRUTCHFIELD WINES FORESTVILLE, CA",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "02_back.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "unclear",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "low-resolution front image (509 px wide); ABV in tiny print",
+    "class/type is a varietal blend in italics ('50% Chenin Blanc, 50% Cortese'); no generic 'white wine' statement",
+    "letter-spaced brand 'SKIN CONTACT'",
+    "producer name 'MATT CRUTCHFIELD WINES' differs from brand",
+    "warning heading in a serif face, body in very condensed caps; heading weight hard to judge",
+    "appellation 'Clarksburg AVA' in italics"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); not reviewed by the owner"
+}

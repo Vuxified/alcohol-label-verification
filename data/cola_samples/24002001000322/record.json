@@ -1,0 +1,23 @@
+{
+  "ttb_id": "24002001000322",
+  "status": "APPROVED",
+  "serial_no": "24KAGJ",
+  "class_type_code": "SAKE - IMPORTED",
+  "origin_code": "JAPAN",
+  "brand_name": "KARASU",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/04/2024",
+  "applicant": "FL-I-15882 | WINE TWIST, WINE COUNTRY INTERNATIONAL INC. | 1620 W OAKLAND PARK BLVD SUITE 404 | OAKLAND PARK,\u00a0FL\u00a033311",
+  "source": "imported",
+  "product_type": "wine",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 6.4,
+      "height_in": 3.52
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "24002001000548",
+  "beverage_type": "malt",
+  "brand_name": "WANING ECHOES",
+  "class_type": "AMERICAN STOUT",
+  "abv": 6.7,
+  "abv_text": "6.7% ALC/VOL",
+  "proof": null,
+  "net_contents_text": "16 FLUID OZ (1PT)",
+  "net_contents_ml": 473.18,
+  "name_address_text": "Von Ebert Brewing, 1000 E. 19th Ave, Eugene, OR 97403",
+  "country_of_origin_text": "USA",
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.png",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "unclear",
+    "whole_warning_bold": "unclear",
+    "orientation": "vertical"
+  },
+  "hard_cases": [
+    "can wrap with front panel printed twice",
+    "warning and bottler line run vertically (rotated 90 degrees) along the right edge",
+    "tiny, low-resolution warning text (910 px wide image)",
+    "warning followed directly by deposit text 'OR DEPOSIT 10¢' on the same line",
+    "brewery name 'Von Ebert Brewing' in script logo competes with the brand 'WANING ECHOES'",
+    "'I' glyphs rendered in a contrasting style inside words"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

@@ -1,0 +1,23 @@
+{
+  "ttb_id": "25231001000857",
+  "status": "APPROVED",
+  "serial_no": "250013",
+  "class_type_code": "WHISKY SPECIALTIES",
+  "origin_code": "MISSOURI",
+  "brand_name": "SHINE OF THE MOON",
+  "fanciful_name": "SWEET & SMOOTH",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "09/18/2025",
+  "applicant": "DSP-MO-20047 | Advanced Innovative Bottling, AI Bottling, LLC | 932 N 4TH ST | Clinton,\u00a0MO\u00a064735",
+  "source": "domestic",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 2.25,
+      "height_in": 5.25
+    }
+  ]
+}

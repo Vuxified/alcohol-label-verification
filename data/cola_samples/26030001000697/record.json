@@ -1,0 +1,29 @@
+{
+  "ttb_id": "26030001000697",
+  "status": "APPROVED",
+  "serial_no": "26HSOS",
+  "class_type_code": "SPARKLING WINE/CHAMPAGNE",
+  "origin_code": "SPAIN",
+  "brand_name": "HOLA",
+  "fanciful_name": "MEDITERRANEO ORANGE SPRITZ",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "03/17/2026",
+  "applicant": "AR-I-21004 | The Triton Collection, Inc | 26221 GOODSON RD | Roland ,\u00a0AR\u00a072135",
+  "source": "imported",
+  "product_type": "wine",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 8.3,
+      "height_in": 3.36
+    },
+    {
+      "file": "02_neck.jpg",
+      "image_type": "Neck",
+      "width_in": 4.0,
+      "height_in": 2.63
+    }
+  ]
+}

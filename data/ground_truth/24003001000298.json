@@ -1,0 +1,37 @@
+{
+  "id": "24003001000298",
+  "beverage_type": "malt",
+  "brand_name": "MR. DEMPSEY",
+  "class_type": "OATMEAL STOUT",
+  "abv": 5.2,
+  "abv_text": "5.2% ALCOHOL BY VOLUME",
+  "proof": null,
+  "net_contents_text": "16 FL.OZ. | 1 PINT",
+  "net_contents_ml": 473.18,
+  "name_address_text": "BREWED & CANNED AT: 4057 ASBURY AVE, TINTON FALLS, NJ 07753",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.png",
+    "text_as_printed": "GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "unclear",
+    "whole_warning_bold": "unclear",
+    "orientation": "vertical"
+  },
+  "hard_cases": [
+    "can wrap layout",
+    "vertical warning and address in tiny print at right edge",
+    "warning body in mixed case, semi-bold white on black; heading weight similar to body",
+    "brewery logo 'TWIN Lights BREWING' more prominent than brand",
+    "decorative Halloween display font for brand",
+    "'LEGENDS OF THE DEMPSEY HOUSE' series text could be mistaken for brand",
+    "name/address statement gives only an address after 'BREWED & CANNED AT:' (no company name in the statement; Twin Lights from logo)",
+    "net contents given twice (16 FL.OZ. and 1 PINT) on one line with ABV"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

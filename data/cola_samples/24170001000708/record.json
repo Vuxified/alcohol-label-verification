@@ -1,0 +1,23 @@
+{
+  "ttb_id": "24170001000708",
+  "status": "APPROVED",
+  "serial_no": "240089",
+  "class_type_code": "MALT LIQUOR",
+  "origin_code": "TENNESSEE",
+  "brand_name": "ST. IDES",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "06/25/2024",
+  "applicant": "BR-TN-BLU-15000 | BLUES CITY BREWERY, LLC | 5151 E RAINES RD | MEMPHIS,\u00a0TN\u00a038118",
+  "source": "domestic",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 8.17,
+      "height_in": 5.93
+    }
+  ]
+}

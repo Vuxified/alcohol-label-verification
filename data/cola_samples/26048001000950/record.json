@@ -1,0 +1,29 @@
+{
+  "ttb_id": "26048001000950",
+  "status": "APPROVED",
+  "serial_no": "26MSTN",
+  "class_type_code": "DESSERT /PORT/SHERRY/(COOKING) WINE",
+  "origin_code": "TEXAS",
+  "brand_name": "MEIERSTONE VINEYARDS",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "03/27/2026",
+  "applicant": "BWN-TX-21554 | Pebble Rock Cellars, Adin Wines, LLC | 343 MIRACLE MILE UNIT D&F | Stonewall,\u00a0TX\u00a078671",
+  "source": "domestic",
+  "product_type": "wine",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.5,
+      "height_in": 4.8
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 3.0,
+      "height_in": 4.0
+    }
+  ]
+}

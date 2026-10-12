@@ -1,0 +1,38 @@
+{
+  "id": "25056001000852",
+  "beverage_type": "wine",
+  "brand_name": "TATTOO U",
+  "class_type": "SEMILLON (55%) SAUVIGNON BLANC (45%)",
+  "abv": 12.5,
+  "abv_text": "12.5% ALC/VOL",
+  "proof": null,
+  "net_contents_text": "3 L",
+  "net_contents_ml": 3000,
+  "name_address_text": "Produced by: Blue Hills Management, Adelaide, SA, Australia Imported by: American Spirits Exchange, Bridgeport, PA",
+  "country_of_origin_text": "PRODUCT OF AUSTRALIA",
+  "warning": {
+    "present": true,
+    "image_file": "02_back.png",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": null,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "unclear",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "boxed wine (3 L bag-in-box) printed as flat carton dielines across 4 images",
+    "white small print on teal, low resolution",
+    "blue dieline strokes run through the warning and the PRODUCT OF AUSTRALIA line",
+    "class/type is a varietal blend with percentages, no 'white wine' wording",
+    "'4 X 75CL BOTTLES' equivalence statement could be read as net contents",
+    "percent figures (55%, 45%) next to varietals could be read as alcohol content",
+    "comma after 'MACHINERY' in the warning is covered by a blue dieline; transcribed as the legal text but not confirmed"
+  ],
+  "unreadable_fields": [
+    "warning_text"
+  ],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); not reviewed by the owner"
+}

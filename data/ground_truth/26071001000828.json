@@ -1,0 +1,35 @@
+{
+  "id": "26071001000828",
+  "beverage_type": "spirits",
+  "brand_name": "WYLAND",
+  "class_type": "VODKA",
+  "abv": 40,
+  "abv_text": "40% ALC./VOL.",
+  "proof": 80,
+  "net_contents_text": "750ML",
+  "net_contents_ml": 750,
+  "name_address_text": "Distributed by Daytoon, Inc., Wrightsville Beach, NC Bottled by Daytoon Distributors North Las Vegas, NV",
+  "country_of_origin_text": "USA",
+  "warning": {
+    "present": true,
+    "image_file": "02_back.png",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "painted artwork background behind all text",
+    "decorative hand-lettered brand 'WYLAND©' and fanciful 'BING CHERRY VODKA'",
+    "back label also carries a second brand 'BLUE SHARK' at the top",
+    "ABV, proof and net contents in one small line at the bottom of the front",
+    "white warning text over a busy blue-green background",
+    "italic small bottler line"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

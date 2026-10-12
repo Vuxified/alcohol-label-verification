@@ -1,0 +1,36 @@
+{
+  "id": "26029001000408",
+  "beverage_type": "malt",
+  "brand_name": "HOWDY BEER",
+  "class_type": "AMERICAN LAGER",
+  "abv": 4.5,
+  "abv_text": "4.5% ALC. BY VOL.",
+  "proof": null,
+  "net_contents_text": "NET CONTENTS: 5.16 US GAL (19.5 L) / 15.5 US GAL (58.6 L)",
+  "net_contents_ml": null,
+  "name_address_text": "PRODUCED AND PACKED BY HOWDY BEER CO. DENVER CO",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "unclear",
+    "whole_warning_bold": "unclear",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "keg collar (round label) with month/day date ring",
+    "two net contents options with empty radio circles, neither marked; no single mL value",
+    "brand/class line 'HOWDY AMERICAN LAGER' in wide slab display font; logo reads 'HOWDY BEER'; class taken as AMERICAN LAGER from the brand line",
+    "white condensed text on black band; warning heading weight close to body",
+    "separate keg ATTENTION block could be confused with the government warning",
+    "magenta line crosses the end of 'DEFECTS.'",
+    "name/address in letter-spaced slab caps, white on black"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

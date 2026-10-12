@@ -1,0 +1,29 @@
+{
+  "ttb_id": "25143001000203",
+  "status": "APPROVED",
+  "serial_no": "25FW31",
+  "class_type_code": "DESSERT /PORT/SHERRY/(COOKING) WINE",
+  "origin_code": "ITALY",
+  "brand_name": "MAZZEI SIEPI",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "08/12/2025",
+  "applicant": "CA-I-3933 | St. Supery Estate Vineyards & Winery, ST. SUPERY, INC. | 8440 ST. HELENA HWY | RUTHERFORD,\u00a0CA\u00a094573",
+  "source": "imported",
+  "product_type": "wine",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.png",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 4.13,
+      "height_in": 4.79
+    },
+    {
+      "file": "02_back.png",
+      "image_type": "Back",
+      "width_in": 3.35,
+      "height_in": 4.33
+    }
+  ]
+}

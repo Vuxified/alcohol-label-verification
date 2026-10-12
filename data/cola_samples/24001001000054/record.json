@@ -1,0 +1,29 @@
+{
+  "ttb_id": "24001001000054",
+  "status": "APPROVED",
+  "serial_no": "24CSMA",
+  "class_type_code": "FRUIT FLAVORED LIQUEURS",
+  "origin_code": "INDIANA",
+  "brand_name": "CRAFTED SPIRITS BY ARKADIUS",
+  "fanciful_name": "MALINOWKA",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/04/2024",
+  "applicant": "DSP-IN-21101 | Indiana Natural Infusions LLC | 287 WESTMEADOW PL | Lowell,\u00a0IN\u00a046356",
+  "source": "domestic",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.3,
+      "height_in": 3.5
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 1.2,
+      "height_in": 2.0
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "24008001000022",
+  "beverage_type": "wine",
+  "brand_name": "GRIGIO",
+  "class_type": "AMERICAN WHITE WINE",
+  "abv": 11.9,
+  "abv_text": "Alc. 11.9% By Vol.",
+  "proof": null,
+  "net_contents_text": "200 ml",
+  "net_contents_ml": 200,
+  "name_address_text": "Produced by Amigoni Urban Winery in Kansas City, MO Canned by Amigoni Urban Winery in Peru, IL",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "unclear",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "brand only as a small script logo ('Amigoni urban winery kansas city') and in the producer line; fanciful 'GRIGIO' and the 'KC' crest dominate",
+    "varietal 'PINOT GRIGIO' on the front panel; class 'AMERICAN WHITE WINE' in small type on the back",
+    "low-resolution image (957x510); warning in small light-teal condensed type",
+    "heading weight close to the body text",
+    "net contents small at the far right ('200 ml')",
+    "applicant (August Hill Winery / River Valley Vineyard) differs from the name on the label"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

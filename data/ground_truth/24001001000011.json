@@ -1,0 +1,34 @@
+{
+  "id": "24001001000011",
+  "beverage_type": "wine",
+  "brand_name": "COOPER RIDGE",
+  "class_type": "Family Estate Winery",
+  "abv": 13,
+  "abv_text": "Alc. 13% by Vol.",
+  "proof": null,
+  "net_contents_text": "750 ml",
+  "net_contents_ml": 750,
+  "name_address_text": "Grown, Produced & Bottled by Cooper Ridge Vineyard 1389 Old Garden Valley Road, Roseburg, Oregon",
+  "country_of_origin_text": "USA",
+  "warning": {
+    "present": true,
+    "image_file": "02_back.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "class shown as varietal 'MALBEC' (registry class TABLE RED WINE); vintage 2022 and appellation 'UMPQUA VALLEY, OREGON' on front",
+    "ABV and net contents only on back label, small type sharing one line",
+    "gold text on dark brown",
+    "'FAMILY ESTATE WINERY' and 'FOX HOLLOW VINEYARD' sub-lines near brand",
+    "bottler name 'Cooper Ridge Vineyard' differs slightly from brand 'COOPER RIDGE'"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

@@ -1,0 +1,35 @@
+{
+  "id": "25213001000246",
+  "beverage_type": "spirits",
+  "brand_name": "UPSTATE COCKTAILS",
+  "class_type": null,
+  "abv": 12,
+  "abv_text": "12% ALC./VOL.",
+  "proof": null,
+  "net_contents_text": "200 ML",
+  "net_contents_ml": 200,
+  "name_address_text": "PRODUCED AND CANNED BY SAUVAGE BEVERAGES CHARLOTTEVILLE, NY",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "vertical"
+  },
+  "hard_cases": [
+    "brand split by a line 'BY SAUVAGE DISTILLERY' between 'UPSTATE' and 'COCKTAILS'",
+    "light tan text on near-black",
+    "warning rotated 90 degrees in tiny condensed type next to the barcode",
+    "no explicit class/type statement: only fanciful 'ESPRESSO MARTINI' and 'made with UPSTATE VODKA'",
+    "ABV with stacked 'ALC./VOL.' superscript next to '200 ML'",
+    "vertical text 'MADE WITH' between columns"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); not reviewed by the owner"
+}

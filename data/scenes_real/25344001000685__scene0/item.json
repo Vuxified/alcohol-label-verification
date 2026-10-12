@@ -1,0 +1,58 @@
+{
+  "id": "25344001000685__scene0",
+  "images": [
+    {
+      "file": "scene_1.jpg",
+      "image_type": "Brand (front) or keg collar (left part)"
+    },
+    {
+      "file": "scene_2.jpg",
+      "image_type": "Brand (front) or keg collar (right part)"
+    }
+  ],
+  "source": {
+    "type": "real label scene",
+    "license": "public COLA registry label artwork; scene generated for this project"
+  },
+  "application": {
+    "beverage_type": "malt",
+    "brand_name": "Bruder",
+    "class_type": "PLUM FLAVORED BEER",
+    "abv": 10.7,
+    "proof": null,
+    "net_contents": "11.2 FL OZ (330 mL)",
+    "source": "imported",
+    "country_of_origin": "PRODUCT OF COLOMBIA",
+    "name_address": "PRODUCED BY: COMPAÑÍA CERVECERA BRUDER DE COLOMBIA S.A.S. CRA. 13 NO. 3 - 66 SUR TUNJA, BOYACÁ IMPORTED BY: MGL IMPORT & EXPORT, INC. MEDLEY, FL 33178",
+    "label_width_in": 5.04
+  },
+  "printed": {
+    "brand_name": "Bruder",
+    "class_type": "PLUM FLAVORED BEER",
+    "abv": 10.7,
+    "proof": null,
+    "net_contents": "11.2 FL OZ (330 mL)",
+    "warning_text": "GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.",
+    "warning_heading_bold": "yes",
+    "warning_orientation": "horizontal",
+    "warning_image": "01_brand_front_or_keg_collar.jpg"
+  },
+  "expected": {
+    "overall": "approved",
+    "findings": [],
+    "warning_misprinted": false,
+    "warning_present": true
+  },
+  "provenance": {
+    "base_item": "cola_25344001000685",
+    "model": "us.stability.stable-image-inpaint-v1:0",
+    "prompt": [
+      "realistic phone photo of a single aluminium drink can held in a person's hand in front of a kitchen, photographed with a phone, the can is already in the picture, sharp focus on the can, shallow depth of field",
+      "realistic phone photo of a single aluminium drink can standing on a rustic kitchen table by a window, soft daylight, the can is already in the picture, sharp focus on the can, shallow depth of field"
+    ],
+    "seed": [
+      740555230,
+      3946737415
+    ]
+  }
+}

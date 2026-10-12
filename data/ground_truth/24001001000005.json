@@ -1,0 +1,36 @@
+{
+  "id": "24001001000005",
+  "beverage_type": "wine",
+  "brand_name": "VIGNOBLE REVEILLE",
+  "class_type": "RED WINE",
+  "abv": 14,
+  "abv_text": "Alc. 14% by vol.",
+  "proof": null,
+  "net_contents_text": "750 ml",
+  "net_contents_ml": 750,
+  "name_address_text": "IMPORTED BY MISE WOBURN·MASSACHUSETTS·01801",
+  "country_of_origin_text": "PRODUC OF FRANCE",
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "country statement misspelled on the US label: 'PRODUC OF FRANCE' (missing T); French label says 'PRODUIT DE FRANCE'",
+    "brand stylised 'ReVeiLLe' with mixed-case letterforms under letter-spaced 'VIGNOBLE'; 02 (French artwork) shows 'domaine REVEILLE' instead",
+    "image 01 is the US strip label with all mandatory info; 02 is French-language artwork with vertical text",
+    "importer name 'MISE' in huge ornamental filled letters",
+    "fanciful/varietal 'SAUVAGES ; GRENACHE' and appellation 'IGP COTES CATALANES' above class 'RED WINE'",
+    "French label repeats ABV as 'ALC.14%' and net as '750 ML.' vertically",
+    "warning split onto separate paragraphs with full justification"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

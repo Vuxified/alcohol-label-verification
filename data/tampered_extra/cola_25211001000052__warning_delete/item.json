@@ -1,0 +1,59 @@
+{
+  "id": "cola_25211001000052__warning_delete",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.png",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.4,
+      "height_in": 5.9
+    },
+    {
+      "file": "02_back.png",
+      "image_type": "Back",
+      "width_in": 3.4,
+      "height_in": 5.9
+    }
+  ],
+  "source": {
+    "type": "tampered",
+    "license": "TTB Public COLA Registry image (public record), with one change planted for testing by tools/make_tampered.py",
+    "ttb_id": "25211001000052",
+    "edited_images": [
+      "02_back.png"
+    ]
+  },
+  "application": {
+    "beverage_type": "spirits",
+    "brand_name": "QUETZAL f5",
+    "class_type": "TEQUILA WITH NATURAL FLAVOR AND ARTIFICIAL COLORS",
+    "abv": 5,
+    "proof": null,
+    "net_contents": "355 ml",
+    "source": "imported",
+    "country_of_origin": "PRODUCT OF MÉXICO",
+    "name_address": "PRODUCED BY: DPK GLOBAL SAPI DE CV Av. Manuel J. Clouthier No. 263. Col. Tangamanga, San Luis Potosí SLP. México. CP 78269 IMPORTED BY: GL TRADING SOLUTIONS LLC. MIAMI, FL",
+    "label_width_in": 3.4
+  },
+  "printed": {
+    "brand_name": "QUETZAL f5",
+    "class_type": "TEQUILA WITH NATURAL FLAVOR AND ARTIFICIAL COLORS",
+    "abv": 5,
+    "proof": null,
+    "net_contents": "355 ml",
+    "warning_text": "GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverage during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverage impairs your ability to drive a car or operate machinery, and may cause health problems.",
+    "warning_heading_bold": false,
+    "warning_cap_mm": null
+  },
+  "expected": {
+    "overall": "fail",
+    "findings": [
+      "WARNING_TEXT_ALTERED"
+    ]
+  },
+  "provenance": {
+    "base_id": "cola_25211001000052",
+    "change": "warning_delete",
+    "from": "not",
+    "to": ""
+  }
+}

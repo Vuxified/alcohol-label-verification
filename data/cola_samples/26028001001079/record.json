@@ -1,0 +1,23 @@
+{
+  "ttb_id": "26028001001079",
+  "status": "APPROVED",
+  "serial_no": "260129",
+  "class_type_code": "BEER",
+  "origin_code": "MISSOURI",
+  "brand_name": "EXTRA COASTAL",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "02/05/2026",
+  "applicant": "BR-MO-21109 | City Barrel Brewing Company, Coolship Holdings, LLC | 1740 HOLMES ST | Kansas City,\u00a0MO\u00a064108",
+  "source": "domestic",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 8.1,
+      "height_in": 3.6
+    }
+  ]
+}

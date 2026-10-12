@@ -1,0 +1,36 @@
+{
+  "id": "25230001000519",
+  "beverage_type": "malt",
+  "brand_name": "HOP VALLEY BREWING CO.",
+  "class_type": "HAZY INDIA PALE ALE",
+  "abv": 7,
+  "abv_text": "ALC 7% BY VOL.",
+  "proof": null,
+  "net_contents_text": "12 FL OZ",
+  "net_contents_ml": 354.88,
+  "name_address_text": "HOP VALLEY BREWING CO.® PORTLAND, OREGON",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "vertical"
+  },
+  "hard_cases": [
+    "brand in a shield logo; fanciful 'Viva HOP VEGAS' in neon-outline lettering dominates",
+    "busy patterned black background",
+    "warning and address rotated 90 degrees on the side panel",
+    "class/type given as 'HAZY IPA' (large) and 'HAZY INDIA PALE ALE' (small)",
+    "large '7%' without 'ALC/VOL' at top, full 'ALC 7% BY VOL.' only in centre panel",
+    "'BREWED IN OREGON' next to net contents",
+    "can artwork shown flat (two front panels)"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); not reviewed by the owner"
+}

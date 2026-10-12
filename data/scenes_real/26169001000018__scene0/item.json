@@ -1,0 +1,58 @@
+{
+  "id": "26169001000018__scene0",
+  "images": [
+    {
+      "file": "scene_1.jpg",
+      "image_type": "Brand (front) or keg collar"
+    },
+    {
+      "file": "scene_2.jpg",
+      "image_type": "Back"
+    }
+  ],
+  "source": {
+    "type": "real label scene",
+    "license": "public COLA registry label artwork; scene generated for this project"
+  },
+  "application": {
+    "beverage_type": "spirits",
+    "brand_name": "Boston Harbor",
+    "class_type": "COFFEE LIQUEUR",
+    "abv": 23,
+    "proof": 46,
+    "net_contents": "750 MILLILITERS",
+    "source": "domestic",
+    "country_of_origin": null,
+    "name_address": "PRODUCED AND BOTTLED BY EKS VENTURES, INC. D/B/A BOSTON HARBOR DISTILLERY 12R ERICSSON STREET BOSTON, MASSACHUSETTS 02122",
+    "label_width_in": 3.5
+  },
+  "printed": {
+    "brand_name": "Boston Harbor",
+    "class_type": "COFFEE LIQUEUR",
+    "abv": 23,
+    "proof": 46,
+    "net_contents": "750 MILLILITERS",
+    "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOL-IC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "warning_heading_bold": "yes",
+    "warning_orientation": "horizontal",
+    "warning_image": "02_back.jpg"
+  },
+  "expected": {
+    "overall": "approved",
+    "findings": [],
+    "warning_misprinted": false,
+    "warning_present": true
+  },
+  "provenance": {
+    "base_item": "cola_26169001000018",
+    "model": "us.stability.stable-image-inpaint-v1:0",
+    "prompt": [
+      "realistic phone photo of a single glass spirits bottle standing on a liquor store shelf, other plain bottles blurred around it, bright store lighting, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+      "realistic phone photo of a single clear glass whiskey bottle with amber whiskey inside standing on a wire shelf inside an open beverage cooler in a convenience store, cold white light, other bottles behind it, the whole bottle visible, paper label on the bottle seen from the back, sharp focus on the label, shallow depth of field"
+    ],
+    "seed": [
+      611539967,
+      1201221391
+    ]
+  }
+}

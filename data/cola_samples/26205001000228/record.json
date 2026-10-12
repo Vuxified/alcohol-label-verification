@@ -1,0 +1,23 @@
+{
+  "ttb_id": "26205001000228",
+  "status": "APPROVED",
+  "serial_no": "262149",
+  "class_type_code": "ALE",
+  "origin_code": "FLORIDA",
+  "brand_name": "CRAZY TURTLE",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "08/28/2026",
+  "applicant": "BR-FL-21634 | Clearwater Brewing Company, CW BREWCO LLC | 1700 N FORT HARRISON AVE | Clearwater,\u00a0FL\u00a033755",
+  "source": "domestic",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 8.0,
+      "height_in": 5.0
+    }
+  ]
+}

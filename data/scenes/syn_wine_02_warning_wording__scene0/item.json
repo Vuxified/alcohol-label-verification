@@ -1,0 +1,53 @@
+{
+  "id": "syn_wine_02_warning_wording__scene0",
+  "images": [
+    {
+      "file": "scene.jpg",
+      "image_type": "Brand (front)"
+    },
+    {
+      "file": "back.png",
+      "image_type": "Back",
+      "width_in": 4.0,
+      "height_in": 1.28
+    }
+  ],
+  "source": {
+    "type": "synthetic scene",
+    "license": "generated for this project"
+  },
+  "application": {
+    "beverage_type": "wine",
+    "brand_name": "Iron Silver",
+    "class_type": "Port",
+    "abv": 13.0,
+    "proof": null,
+    "net_contents": "187 mL",
+    "source": "domestic",
+    "country_of_origin": "United States",
+    "name_address": "Produced and bottled by Iron Brewing Co., Burlington, VT",
+    "label_width_in": 4.0
+  },
+  "printed": {
+    "brand_name": "Iron Silver",
+    "class_type": "Port",
+    "abv": 13.0,
+    "proof": null,
+    "net_contents": "187 mL",
+    "warning_text": "GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.",
+    "warning_heading_bold": true,
+    "warning_cap_mm": 1.4
+  },
+  "expected": {
+    "overall": "fail",
+    "findings": [
+      "WARNING_TEXT_ALTERED"
+    ]
+  },
+  "provenance": {
+    "base_item": "syn_wine_02_warning_wording",
+    "model": "us.stability.stable-image-inpaint-v1:0",
+    "prompt": "realistic phone photo of a single dark glass red wine bottle standing on a dark wooden bar counter in a dimly lit cocktail bar, warm bokeh lights in the background, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+    "seed": 1540188875
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "ttb_id": "25122001000541",
+  "status": "APPROVED",
+  "serial_no": "250003",
+  "class_type_code": "OTHER SPECIALTIES & PROPRIETARIES",
+  "origin_code": "VIRGINIA",
+  "brand_name": "THREE WIVES DISTILLERY",
+  "fanciful_name": "VIRGINIA MAPLE WHISKY",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "06/13/2025",
+  "applicant": "DSP-VA-20130 | Three Wives Distillery, Three Wives Distillery LLC | 927 BARLEY LN | Winchester,\u00a0VA\u00a022602",
+  "source": "domestic",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.0,
+      "height_in": 3.88
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 3.0,
+      "height_in": 3.88
+    }
+  ]
+}

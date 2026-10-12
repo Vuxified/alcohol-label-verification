@@ -1,0 +1,29 @@
+{
+  "ttb_id": "24001001000005",
+  "status": "APPROVED",
+  "serial_no": "24DRGB",
+  "class_type_code": "TABLE RED WINE",
+  "origin_code": "FRANCE",
+  "brand_name": "VIGNOBLE REVEILLE",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/02/2024",
+  "applicant": "MA-I-21006 | Mise, Inc. | 165 -D NEW BOSTON ST | WOBURN,\u00a0MA\u00a001801",
+  "source": "imported",
+  "product_type": "wine",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 2.0,
+      "height_in": 3.0
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 2.0,
+      "height_in": 3.0
+    }
+  ]
+}

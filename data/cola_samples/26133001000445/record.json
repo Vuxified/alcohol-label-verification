@@ -1,0 +1,29 @@
+{
+  "ttb_id": "26133001000445",
+  "status": "APPROVED",
+  "serial_no": "260005",
+  "class_type_code": "OTHER TEQUILA-BASED COCKTAILS (UNDER 48 PROOF)",
+  "origin_code": "GEORGIA",
+  "brand_name": "BIG GIRL COCKTAILS",
+  "fanciful_name": "LIME MARGARITA",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "06/17/2026",
+  "applicant": "DSP-GA-20038 | Distillery of Modern Art, DOMA Ventures, Inc. | 2197 IRVINDALE DR | Chamblee,\u00a0GA\u00a030341",
+  "source": "domestic",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 5.0,
+      "height_in": 5.0
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 5.0,
+      "height_in": 3.0
+    }
+  ]
+}

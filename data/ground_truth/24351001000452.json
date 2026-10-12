@@ -1,0 +1,34 @@
+{
+  "id": "24351001000452",
+  "beverage_type": "malt",
+  "brand_name": "2 ROW BREWING",
+  "class_type": "MALT LIQUOR",
+  "abv": 9.2,
+  "abv_text": "ALC. 9.2% BY VOL",
+  "proof": null,
+  "net_contents_text": "1 PINT | 473ML",
+  "net_contents_ml": 473,
+  "name_address_text": "Brewed and Bottled by 2 Row Brewing LLC., Midvale, UT",
+  "country_of_origin_text": "USA",
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "vertical"
+  },
+  "hard_cases": [
+    "can wrap shown as two panels",
+    "warning printed vertically over busy illustration, white text with orange outline",
+    "bottler statement printed vertically on the right panel",
+    "brand stylized '2ROW BREWING'; registry brand '2 ROW BREWING LLC'",
+    "fanciful name 'HOUSE Party' in neon-style lettering larger than class"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

@@ -1,0 +1,35 @@
+{
+  "id": "26062001000676",
+  "beverage_type": "spirits",
+  "brand_name": "SOPLICA",
+  "class_type": "Apricot",
+  "abv": 26,
+  "abv_text": "26% ALC./VOL.",
+  "proof": null,
+  "net_contents_text": "500 ml",
+  "net_contents_ml": 500,
+  "name_address_text": "Produced by: CEDC International sp. z o.o., ul. Kowanowska 48, 64-600 Oborniki, Poland. Imported by Cracovia Brands, INC., Franklin Park, IL 60131",
+  "country_of_origin_text": "Product of Poland",
+  "warning": {
+    "present": true,
+    "image_file": "02_back.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "class/type statement in small serif caps on an ornate gold banner on the front",
+    "ABV and net contents printed on both front (gold banner) and back with different spacing ('26% ALC./VOL.' vs '26 % ALC. / VOL.')",
+    "fanciful 'APRICOT' / 'Apricot' differs in case between front and back",
+    "light grey text on white on back label, warning in a box",
+    "country of origin in script on front ('Product of Poland') and caps on back",
+    "no proof statement"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

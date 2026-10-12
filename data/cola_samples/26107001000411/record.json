@@ -1,0 +1,23 @@
+{
+  "ttb_id": "26107001000411",
+  "status": "APPROVED",
+  "serial_no": "26K119",
+  "class_type_code": "VODKA SPECIALTIES",
+  "origin_code": "FLORIDA",
+  "brand_name": "FLORIDA'S POINT DISTILLERY",
+  "fanciful_name": "ESPRESSO",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "05/26/2026",
+  "applicant": "DSP-FL-20074 | The Point Distillery, LLC, The Point Distillery, LLC | 11807 LITTLE RD | New Port Richey,\u00a0FL\u00a034654",
+  "source": "domestic",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 2.25,
+      "height_in": 2.0
+    }
+  ]
+}

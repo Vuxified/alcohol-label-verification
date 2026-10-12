@@ -1,0 +1,35 @@
+{
+  "id": "26121001000125",
+  "beverage_type": "wine",
+  "brand_name": "CASA LARGA",
+  "class_type": "WHITE WINE",
+  "abv": 10.5,
+  "abv_text": "ALC. 10.5% by VOL.",
+  "proof": null,
+  "net_contents_text": "750 ML",
+  "net_contents_ml": 750,
+  "name_address_text": "GROWN, PRODUCED AND BOTTLED BY CASA LARGA VINEYARDS, INC. FAIRPORT, NEW YORK",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "vertical"
+  },
+  "hard_cases": [
+    "warning printed vertically along the right edge",
+    "name/address printed vertically along the left edge (opposite direction)",
+    "busy purple/blue sports artwork behind text",
+    "co-branding 'FLOWER CITY UNION' logos dominate the label",
+    "fanciful 'LILAC HILL' above class 'WHITE WINE'; appellation 'FINGER LAKES' below",
+    "'CONTAINS SULFITES.' runs on directly after the warning"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); not reviewed by the owner"
+}

@@ -1,0 +1,58 @@
+{
+  "id": "26205001000228__scene0",
+  "images": [
+    {
+      "file": "scene_1.jpg",
+      "image_type": "Brand (front) or keg collar (left part)"
+    },
+    {
+      "file": "scene_2.jpg",
+      "image_type": "Brand (front) or keg collar (right part)"
+    }
+  ],
+  "source": {
+    "type": "real label scene",
+    "license": "public COLA registry label artwork; scene generated for this project"
+  },
+  "application": {
+    "beverage_type": "malt",
+    "brand_name": "Crazy Turtle",
+    "class_type": "HAZY INDIA PALE ALE",
+    "abv": 6.5,
+    "proof": null,
+    "net_contents": "16 FL OZ ONE PINT (473ML)",
+    "source": "domestic",
+    "country_of_origin": null,
+    "name_address": "Brewed and Canned by Clearwater Brewing Company 1700 N. Fort Harrison Ave., Clearwater, FL",
+    "label_width_in": 8.0
+  },
+  "printed": {
+    "brand_name": "Crazy Turtle",
+    "class_type": "HAZY INDIA PALE ALE",
+    "abv": 6.5,
+    "proof": null,
+    "net_contents": "16 FL OZ ONE PINT (473ML)",
+    "warning_text": "GOVERNMENT WARNING: (1) According to the Surgeon General, woman should not drink alcoholic beverages durring pregnancy because of the risks of birth defects. (2) Consumption of alcoholic beverages impairs your ability to operate machinery, and may cause health problems",
+    "warning_heading_bold": "yes",
+    "warning_orientation": "vertical",
+    "warning_image": "01_brand_front_or_keg_collar.jpg"
+  },
+  "expected": {
+    "overall": "approved",
+    "findings": [],
+    "warning_misprinted": true,
+    "warning_present": true
+  },
+  "provenance": {
+    "base_item": "cola_26205001000228",
+    "model": "us.stability.stable-image-inpaint-v1:0",
+    "prompt": [
+      "realistic phone photo of a single aluminium drink can standing on a rustic kitchen table by a window, soft daylight, the can is already in the picture, sharp focus on the can, shallow depth of field",
+      "realistic phone photo of a single aluminium drink can standing on a wire shelf inside an open beverage cooler in a convenience store, cold white light, other bottles behind it, the can is already in the picture, sharp focus on the can, shallow depth of field"
+    ],
+    "seed": [
+      2903726682,
+      726080123
+    ]
+  }
+}

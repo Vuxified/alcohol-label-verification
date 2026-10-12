@@ -1,0 +1,23 @@
+{
+  "ttb_id": "25055001000804",
+  "status": "APPROVED",
+  "serial_no": "25JUNN",
+  "class_type_code": "SAKE - IMPORTED",
+  "origin_code": "JAPAN",
+  "brand_name": "SOTO",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "04/09/2025",
+  "applicant": "FL-I-15704 | PARK STREET IMPORTS LLC | 1000 BRICKELL AVE STE 215 | MIAMI,\u00a0FL\u00a033131",
+  "source": "imported",
+  "product_type": "wine",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 7.0,
+      "height_in": 4.0
+    }
+  ]
+}

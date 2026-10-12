@@ -1,0 +1,23 @@
+{
+  "ttb_id": "25171001000629",
+  "status": "APPROVED",
+  "serial_no": "250015",
+  "class_type_code": "TABLE WHITE WINE",
+  "origin_code": "OREGON",
+  "brand_name": "AMBAR ESTATE",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "09/19/2025",
+  "applicant": "BWN-OR-21557 | Vinovate Wine Services, WHCC2A, LLC | 13747 NE WORDEN HILL RD | Newberg,\u00a0OR\u00a097132",
+  "source": "domestic",
+  "product_type": "wine",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 10.5,
+      "height_in": 3.12
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "ttb_id": "26029001000178",
+  "status": "APPROVED",
+  "serial_no": "260001",
+  "class_type_code": "BEER",
+  "origin_code": "GEORGIA",
+  "brand_name": "DUNKEL",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/30/2026",
+  "applicant": "BR-GA-20072 | Halfway Crooks Beer, Second Language, LLC | 60 GEORGIA AVE | Atlanta,\u00a0GA\u00a030312",
+  "source": "domestic",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.png",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 5.0,
+      "height_in": 5.0
+    }
+  ]
+}

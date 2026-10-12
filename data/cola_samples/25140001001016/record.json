@@ -1,0 +1,29 @@
+{
+  "ttb_id": "25140001001016",
+  "status": "APPROVED",
+  "serial_no": "250514",
+  "class_type_code": "TABLE RED WINE",
+  "origin_code": "ITALY",
+  "brand_name": "COLOMBAIA",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "08/12/2025",
+  "applicant": "GA-I-21162 | Final Port Imports LLC | 1064 UNION CENTER DR STE B10 | Alpharetta,\u00a0GA\u00a030004",
+  "source": "imported",
+  "product_type": "wine",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.png",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.54,
+      "height_in": 1.97
+    },
+    {
+      "file": "02_back.png",
+      "image_type": "Back",
+      "width_in": 4.33,
+      "height_in": 4.33
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "id": "cola_26106001000869__abv",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.png",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.0,
+      "height_in": 3.0
+    }
+  ],
+  "source": {
+    "type": "tampered",
+    "license": "TTB Public COLA Registry image (public record), with one change planted for testing by tools/make_tampered.py",
+    "ttb_id": "26106001000869",
+    "edited_images": [
+      "01_brand_front_or_keg_collar.png"
+    ]
+  },
+  "application": {
+    "beverage_type": "wine",
+    "brand_name": "communion wines",
+    "class_type": "SPARKLING ROSÉ WINE",
+    "abv": 11.5,
+    "proof": null,
+    "net_contents": "500 ML",
+    "source": "domestic",
+    "country_of_origin": null,
+    "name_address": "Bottled by Communion Wines at 474-478 Fayette Street, Hammond, IN 46320",
+    "label_width_in": 3.0
+  },
+  "printed": {
+    "brand_name": "communion wines",
+    "class_type": "SPARKLING ROSÉ WINE",
+    "abv": 10.5,
+    "proof": null,
+    "net_contents": "500 ML",
+    "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "warning_heading_bold": true,
+    "warning_cap_mm": null
+  },
+  "expected": {
+    "overall": "fail",
+    "findings": [
+      "ABV_MISMATCH"
+    ]
+  },
+  "provenance": {
+    "base_id": "cola_26106001000869",
+    "change": "abv",
+    "from": "11.5% ALC. BY VOL.",
+    "to": "10.5% ALC. BY VOL."
+  }
+}

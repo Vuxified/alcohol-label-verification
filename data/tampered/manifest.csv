@@ -1,0 +1,101 @@
+id,beverage_type,base_id,change,from,to,expected,finding,app_overall
+cola_23328001000154__abv,malt,cola_23328001000154,abv,7.5% ALC/VOL,5.5% ALC/VOL,fail,ABV_MISMATCH,check
+cola_23328001000154__net,malt,cola_23328001000154,net,325ml,323ml,fail,NET_CONTENTS_MISMATCH,check
+cola_23353001000444__brand_word,spirits,cola_23353001000444,brand_word,WOODFORD RESERVE,WOODFORD RESERVA,check,BRAND_NAME_NEAR_MATCH,check
+cola_23353001000444__net,spirits,cola_23353001000444,net,50mL,52mL,check,NET_CONTENTS_MISMATCH,check
+cola_23353001000444__warning_titlecase,spirits,cola_23353001000444,warning_titlecase,GOVERNMENT WARNING,Government Warning,fail,WARNING_NOT_CAPS,check
+cola_23354001000635__warning_delete,spirits,cola_23354001000635,warning_delete,not,,fail,WARNING_TEXT_ALTERED,fail
+cola_23362001000063__abv,malt,cola_23362001000063,abv,6.5% ALC. by VOL.,7.5% ALC. by VOL.,fail,ABV_MISMATCH,fail
+cola_23363001000273__warning_titlecase,malt,cola_23363001000273,warning_titlecase,GOVERNMENT WARNING,Government Warning,fail,WARNING_NOT_CAPS,check
+cola_24002001000457__abv,spirits,cola_24002001000457,abv,48.5% ALC./VOL.,47.5% ALC./VOL.,fail,ABV_MISMATCH PROOF_MISMATCH,check
+cola_24002001000457__proof,spirits,cola_24002001000457,proof,97 PROOF,99 PROOF,fail,PROOF_MISMATCH,check
+cola_24002001000458__proof,spirits,cola_24002001000458,proof,107 PROOF,103 PROOF,fail,PROOF_MISMATCH,fail
+cola_24002001000458__warning_word,spirits,cola_24002001000458,warning_word,impairs,affects,fail,WARNING_TEXT_ALTERED,fail
+cola_24003001000423__abv,wine,cola_24003001000423,abv,ALC. 14.0% BY VOL.,ALC. 15.0% BY VOL.,fail,ABV_MISMATCH,check
+cola_24003001000423__net,wine,cola_24003001000423,net,750ML,720ML,fail,NET_CONTENTS_MISMATCH,check
+cola_24003001000437__net,wine,cola_24003001000437,net,750ML,720ML,fail,NET_CONTENTS_MISMATCH,check
+cola_24003001000437__warning_word,wine,cola_24003001000437,warning_word,should,must,fail,WARNING_TEXT_ALTERED,fail
+cola_24005001000055__warning_delete,malt,cola_24005001000055,warning_delete,alcoholic,,fail,WARNING_TEXT_ALTERED,fail
+cola_24005001000055__warning_word,malt,cola_24005001000055,warning_word,impairs,affects,fail,WARNING_TEXT_ALTERED,fail
+cola_24009001000179__abv,malt,cola_24009001000179,abv,6.8% Alc/Vol,7.8% Alc/Vol,fail,ABV_MISMATCH,check
+cola_24009001000253__warning_delete,malt,cola_24009001000253,warning_delete,alcoholic,,fail,WARNING_TEXT_ALTERED,check
+cola_24009001000253__warning_titlecase,malt,cola_24009001000253,warning_titlecase,GOVERNMENT WARNING,Government Warning,fail,WARNING_NOT_CAPS,fail
+cola_24009001000331__abv,spirits,cola_24009001000331,abv,45% alc./vol.,44% alc./vol.,fail,ABV_MISMATCH,check
+cola_24009001000331__brand_word,spirits,cola_24009001000331,brand_word,Crown Royal,Crown Regal,check,BRAND_NAME_MISMATCH,check
+cola_24009001000368__warning_delete,spirits,cola_24009001000368,warning_delete,birth,,fail,WARNING_TEXT_ALTERED,check
+cola_24009001000368__warning_titlecase,spirits,cola_24009001000368,warning_titlecase,GOVERNMENT WARNING,Government Warning,fail,WARNING_NOT_CAPS,check
+cola_24010001000342__warning_delete,malt,cola_24010001000342,warning_delete,alcoholic,,fail,WARNING_TEXT_ALTERED,fail
+cola_24010001000342__warning_word,malt,cola_24010001000342,warning_word,should,must,fail,WARNING_TEXT_ALTERED,fail
+cola_24010001000355__net,spirits,cola_24010001000355,net,750ml,720ml,fail,NET_CONTENTS_MISMATCH,check
+cola_24010001000355__warning_delete,spirits,cola_24010001000355,warning_delete,not,,fail,WARNING_TEXT_ALTERED,check
+cola_24011001000341__warning_delete,spirits,cola_24011001000341,warning_delete,health,,fail,WARNING_TEXT_ALTERED,check
+cola_24022001000501__warning_titlecase,spirits,cola_24022001000501,warning_titlecase,GOVERNMENT WARNING,Government Warning,fail,WARNING_NOT_CAPS,fail
+cola_24022001000501__warning_word,spirits,cola_24022001000501,warning_word,should,must,fail,WARNING_TEXT_ALTERED,check
+cola_24022001000804__warning_delete,malt,cola_24022001000804,warning_delete,alcoholic,,fail,WARNING_TEXT_ALTERED,fail
+cola_24022001000804__warning_word,malt,cola_24022001000804,warning_word,impairs,affects,fail,WARNING_TEXT_ALTERED,fail
+cola_24024001000735__abv,spirits,cola_24024001000735,abv,5.9% alc./vol.,4.9% alc./vol.,fail,ABV_MISMATCH,check
+cola_24024001000735__warning_word,spirits,cola_24024001000735,warning_word,may,can,fail,WARNING_TEXT_ALTERED,check
+cola_24026001000499__abv,wine,cola_24026001000499,abv,14.5% ALC./VOL.,15.5% ALC./VOL.,fail,ABV_MISMATCH,check
+cola_24026001000499__net,wine,cola_24026001000499,net,750 ML,720 ML,fail,NET_CONTENTS_MISMATCH,check
+cola_24026001000503__net,wine,cola_24026001000503,net,750 ML,720 ML,fail,NET_CONTENTS_MISMATCH,check
+cola_24026001000503__warning_titlecase,wine,cola_24026001000503,warning_titlecase,GOVERNMENT WARNING,Government Warning,fail,WARNING_NOT_CAPS,fail
+cola_24029001000162__abv,spirits,cola_24029001000162,abv,45.6% alc./vol.,44.6% alc./vol.,fail,ABV_MISMATCH PROOF_MISMATCH,fail
+cola_24029001000162__net,spirits,cola_24029001000162,net,750 mL,720 mL,fail,NET_CONTENTS_MISMATCH,check
+cola_24029001000591__abv,spirits,cola_24029001000591,abv,45.2% ALC / VOL.,44.2% ALC / VOL.,fail,ABV_MISMATCH PROOF_MISMATCH,check
+cola_24029001000591__proof,spirits,cola_24029001000591,proof,90.4 PROOF,92.4 PROOF,fail,PROOF_MISMATCH,check
+cola_24032001000188__warning_titlecase,spirits,cola_24032001000188,warning_titlecase,GOVERNMENT WARNING,Government Warning,fail,WARNING_NOT_CAPS,fail
+cola_24032001000188__warning_word,spirits,cola_24032001000188,warning_word,may,can,fail,WARNING_TEXT_ALTERED,fail
+cola_24036001000390__warning_delete,wine,cola_24036001000390,warning_delete,alcoholic,,fail,WARNING_TEXT_ALTERED,fail
+cola_24036001000390__warning_word,wine,cola_24036001000390,warning_word,should,must,fail,WARNING_TEXT_ALTERED,fail
+cola_24036001000395__abv,wine,cola_24036001000395,abv,12.5% ALC. BY VOL,11.5% ALC. BY VOL,fail,ABV_MISMATCH,check
+cola_24036001000395__net,wine,cola_24036001000395,net,750mL,720mL,fail,NET_CONTENTS_MISMATCH,fail
+cola_24039001000605__warning_titlecase,wine,cola_24039001000605,warning_titlecase,GOVERNMENT WARNING,Government Warning,fail,WARNING_NOT_CAPS,fail
+cola_24039001000605__warning_word,wine,cola_24039001000605,warning_word,should,must,fail,WARNING_TEXT_ALTERED,check
+cola_24047001000673__abv,wine,cola_24047001000673,abv,ALC. 11.5% BY VOL.,ALC. 10.5% BY VOL.,fail,ABV_MISMATCH,check
+cola_24047001000673__net,wine,cola_24047001000673,net,NET VOLUME 750ML,NET VOLUME 720ML,fail,NET_CONTENTS_MISMATCH,check
+cola_24050001000325__warning_delete,wine,cola_24050001000325,warning_delete,not,,fail,WARNING_TEXT_ALTERED,fail
+cola_24050001000325__warning_word,wine,cola_24050001000325,warning_word,impairs,affects,fail,WARNING_TEXT_ALTERED,fail
+cola_24053001000106__brand_word,wine,cola_24053001000106,brand_word,ROBERT MONDAVI WINERY,ROBERT MONDAVI CELLARS,check,BRAND_NAME_MISMATCH,check
+cola_24053001000106__net,wine,cola_24053001000106,net,750mL,720mL,fail,NET_CONTENTS_MISMATCH,fail
+cola_24054001000213__brand_word,malt,cola_24054001000213,brand_word,Heineken SILVER,Heineken GOLDEN,check,BRAND_NAME_MISMATCH,check
+cola_24054001000213__warning_titlecase,malt,cola_24054001000213,warning_titlecase,GOVERNMENT WARNING,Government Warning,fail,WARNING_NOT_CAPS,fail
+cola_24061001000635__warning_delete,wine,cola_24061001000635,warning_delete,birth,,fail,WARNING_TEXT_ALTERED,check
+cola_24061001000635__warning_titlecase,wine,cola_24061001000635,warning_titlecase,GOVERNMENT WARNING,Government Warning,fail,WARNING_NOT_CAPS,check
+cola_24072001001041__brand_word,wine,cola_24072001001041,brand_word,ROBERT MONDAVI WINERY,ROBERT MONDAVI CELLARS,check,BRAND_NAME_MISMATCH,check
+cola_24072001001041__warning_word,wine,cola_24072001001041,warning_word,may,can,fail,WARNING_TEXT_ALTERED,fail
+cola_24080001000826__warning_delete,wine,cola_24080001000826,warning_delete,not,,fail,WARNING_TEXT_ALTERED,fail
+cola_24080001000826__warning_titlecase,wine,cola_24080001000826,warning_titlecase,GOVERNMENT WARNING,Government Warning,fail,WARNING_NOT_CAPS,fail
+cola_24088001000560__brand_number,wine,cola_24088001000560,brand_number,19 Crimes.,17 Crimes.,fail,BRAND_NAME_NUMBER_DIFFERS,fail
+cola_24088001000560__net,wine,cola_24088001000560,net,750 ML,720 ML,fail,NET_CONTENTS_MISMATCH,check
+cola_24093001000383__abv,spirits,cola_24093001000383,abv,43% ALC/VOL,44% ALC/VOL,fail,ABV_MISMATCH PROOF_MISMATCH,check
+cola_24093001000383__proof,spirits,cola_24093001000383,proof,86 PROOF,87 PROOF,fail,PROOF_MISMATCH,check
+cola_24093001000856__brand_word,wine,cola_24093001000856,brand_word,KIM CRAWFORD,KIM CRANFORD,check,BRAND_NAME_NEAR_MATCH,check
+cola_24093001000856__warning_titlecase,wine,cola_24093001000856,warning_titlecase,GOVERNMENT WARNING,Government Warning,fail,WARNING_NOT_CAPS,fail
+cola_24100001000829__abv,malt,cola_24100001000829,abv,Alc. 4.5% Vol.,Alc. 5.5% Vol.,fail,ABV_MISMATCH,fail
+cola_24100001000829__warning_titlecase,malt,cola_24100001000829,warning_titlecase,GOVERNMENT WARNING,Government Warning,fail,WARNING_NOT_CAPS,check
+cola_24106001000780__net,wine,cola_24106001000780,net,750ML,720ML,fail,NET_CONTENTS_MISMATCH,fail
+cola_24106001000780__warning_word,wine,cola_24106001000780,warning_word,may,can,fail,WARNING_TEXT_ALTERED,check
+cola_24107001001085__warning_delete,malt,cola_24107001001085,warning_delete,birth,,fail,WARNING_TEXT_ALTERED,check
+cola_24107001001085__warning_word,malt,cola_24107001001085,warning_word,should,must,fail,WARNING_TEXT_ALTERED,fail
+cola_24110001000176__abv,wine,cola_24110001000176,abv,ALC. 13.5% BY VOL.,ALC. 12.5% BY VOL.,fail,ABV_MISMATCH,check
+cola_24110001000176__warning_delete,wine,cola_24110001000176,warning_delete,not,,fail,WARNING_TEXT_ALTERED,fail
+cola_24127001000415__brand_word,wine,cola_24127001000415,brand_word,SUTTER HOME,SUTTER HILL,check,BRAND_NAME_MISMATCH,check
+cola_24127001000415__net,wine,cola_24127001000415,net,187ML,180ML,fail,NET_CONTENTS_MISMATCH,fail
+cola_24129001000620__net,wine,cola_24129001000620,net,750ML,720ML,fail,NET_CONTENTS_MISMATCH,fail
+cola_24129001000620__warning_titlecase,wine,cola_24129001000620,warning_titlecase,GOVERNMENT WARNING,Government Warning,fail,WARNING_NOT_CAPS,check
+cola_24129001000760__warning_titlecase,malt,cola_24129001000760,warning_titlecase,GOVERNMENT WARNING,Government Warning,fail,WARNING_NOT_CAPS,fail
+cola_24173001000688__abv,wine,cola_24173001000688,abv,ALC. 13.5% BY VOL.,ALC. 11.5% BY VOL.,fail,ABV_MISMATCH,check
+cola_24173001000688__brand_word,wine,cola_24173001000688,brand_word,SUTTER HOME,SUTTER HILL,check,BRAND_NAME_MISMATCH,check
+cola_24207001000388__abv,spirits,cola_24207001000388,abv,50% ALC./VOL.,51% ALC./VOL.,fail,ABV_MISMATCH,check
+cola_24211001000421__net,spirits,cola_24211001000421,net,750 mL,720 mL,fail,NET_CONTENTS_MISMATCH,check
+cola_24211001000421__proof,spirits,cola_24211001000421,proof,100 PROOF,101 PROOF,fail,PROOF_MISMATCH,fail
+cola_24235001000162__brand_word,spirits,cola_24235001000162,brand_word,Captain Morgan,Captain Morris,check,BRAND_NAME_MISMATCH,check
+cola_24235001000162__proof,spirits,cola_24235001000162,proof,70 PROOF,71 PROOF,fail,PROOF_MISMATCH,fail
+cola_24297001000680__warning_word,malt,cola_24297001000680,warning_word,should,must,fail,WARNING_TEXT_ALTERED,fail
+cola_25020001000666__warning_delete,wine,cola_25020001000666,warning_delete,alcoholic,,fail,WARNING_TEXT_ALTERED,fail
+cola_25037001000258__net,spirits,cola_25037001000258,net,750mL,720mL,fail,NET_CONTENTS_MISMATCH,fail
+cola_25045001000301__warning_word,spirits,cola_25045001000301,warning_word,should,must,fail,WARNING_TEXT_ALTERED,check
+cola_25071001000110__brand_word,malt,cola_25071001000110,brand_word,STELLA ARTOIS,STELLA AURORA,check,BRAND_NAME_MISMATCH,check
+cola_25076001000406__warning_titlecase,spirits,cola_25076001000406,warning_titlecase,GOVERNMENT WARNING,Government Warning,fail,WARNING_NOT_CAPS,check
+cola_25261001000634__brand_word,malt,cola_25261001000634,brand_word,STELLA ARTOIS,STELLA AURORA,check,BRAND_NAME_MISMATCH,check
+cola_25261001000634__warning_delete,malt,cola_25261001000634,warning_delete,not,,fail,WARNING_TEXT_ALTERED,fail

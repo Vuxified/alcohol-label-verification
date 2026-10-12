@@ -1,0 +1,35 @@
+{
+  "id": "26029001000056",
+  "beverage_type": "wine",
+  "brand_name": "Mantice",
+  "class_type": "Vermouth",
+  "abv": 18,
+  "abv_text": "18% alc/vol",
+  "proof": null,
+  "net_contents_text": "750 ml ℮",
+  "net_contents_ml": 750,
+  "name_address_text": "Produced and bottled by Fermenthinks s.r.l., Via Vicchio e Paterno 15, 50012 Bagno a Ripoli (FI) on behalf of Mantice Spirits by Nicolò Briganti, Rimini (RN). Imported by: Hootananny Wines Madison, CT 06443",
+  "country_of_origin_text": "PRODUCT OF ITALY.",
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGE DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": false,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "approved label whose warning deviates from the legal text: 'ALCOHOLIC BEVERAGE' (singular), no comma after 'MACHINERY'",
+    "image files swapped: 01 'brand front' is the back text panel, 02 'back' is the brand panel",
+    "brand 'Mantice' in blackletter on a gold banner",
+    "script italic ABV and net contents with e-mark",
+    "class 'Vermouth' in script; also 'BIANCO' and 'ABRACADABRA Vermouth Bianco'",
+    "near-twin of 26029001000054 (Rosso), which also misspells CONSUPTION"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); not reviewed by the owner"
+}

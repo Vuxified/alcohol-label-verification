@@ -1,0 +1,59 @@
+{
+  "id": "cola_25190001000665__warning_delete",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.png",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.54,
+      "height_in": 3.54
+    },
+    {
+      "file": "02_back.png",
+      "image_type": "Back",
+      "width_in": 2.36,
+      "height_in": 3.0
+    }
+  ],
+  "source": {
+    "type": "tampered",
+    "license": "TTB Public COLA Registry image (public record), with one change planted for testing by tools/make_tampered.py",
+    "ttb_id": "25190001000665",
+    "edited_images": [
+      "02_back.png"
+    ]
+  },
+  "application": {
+    "beverage_type": "wine",
+    "brand_name": "GAELA FINCAS",
+    "class_type": "Table Wine",
+    "abv": 13,
+    "proof": null,
+    "net_contents": "750ml.",
+    "source": "imported",
+    "country_of_origin": "Product of Spain",
+    "name_address": "ELABORADO Y EMBOTELLADO POR REN 40899 - LU QUIROGA - LUGO - ESPAÑA - PRODUCT OF SPAIN Imported by Loga Imports LLC, Cypress, Texas",
+    "label_width_in": 3.54
+  },
+  "printed": {
+    "brand_name": "GAELA FINCAS",
+    "class_type": "Table Wine",
+    "abv": 13,
+    "proof": null,
+    "net_contents": "750ml.",
+    "warning_text": "GOVERNMENT WARNING:(1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.",
+    "warning_heading_bold": true,
+    "warning_cap_mm": null
+  },
+  "expected": {
+    "overall": "fail",
+    "findings": [
+      "WARNING_TEXT_ALTERED"
+    ]
+  },
+  "provenance": {
+    "base_id": "cola_25190001000665",
+    "change": "warning_delete",
+    "from": "alcoholic",
+    "to": ""
+  }
+}

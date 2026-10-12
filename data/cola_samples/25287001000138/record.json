@@ -1,0 +1,29 @@
+{
+  "ttb_id": "25287001000138",
+  "status": "APPROVED",
+  "serial_no": "250053",
+  "class_type_code": "TABLE WHITE WINE",
+  "origin_code": "FRANCE",
+  "brand_name": "JULIEN CRINQUAND",
+  "fanciful_name": "LA CUVEE DU D'JOPIN",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "12/23/2025",
+  "applicant": "CA-I-15182 | BEAUNE IMPORTS, LE POIL INC | 1179 ARCH ST | BERKELEY,\u00a0CA\u00a094708",
+  "source": "imported",
+  "product_type": "wine",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 4.35,
+      "height_in": 5.75
+    },
+    {
+      "file": "02_other.jpg",
+      "image_type": "Other",
+      "width_in": 3.94,
+      "height_in": 3.94
+    }
+  ]
+}

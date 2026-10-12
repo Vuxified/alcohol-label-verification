@@ -1,0 +1,35 @@
+{
+  "ttb_id": "24008001000938",
+  "status": "APPROVED",
+  "serial_no": "24AE42",
+  "class_type_code": "MEZCAL FB",
+  "origin_code": "MEXICO",
+  "brand_name": "ARBITRARIO",
+  "fanciful_name": "ESPADIN",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/11/2024",
+  "applicant": "SC-I-21100 | Mexican Distillates Global Inc | 22548 WHYTE HARDEE BLVD | Hardeeville,\u00a0SC\u00a029927",
+  "source": "imported",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.03,
+      "height_in": 6.69
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 3.66,
+      "height_in": 6.3
+    },
+    {
+      "file": "03_neck.jpg",
+      "image_type": "Neck",
+      "width_in": 4.02,
+      "height_in": 1.17
+    }
+  ]
+}

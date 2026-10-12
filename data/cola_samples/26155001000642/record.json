@@ -1,0 +1,29 @@
+{
+  "ttb_id": "26155001000642",
+  "status": "APPROVED",
+  "serial_no": "263348",
+  "class_type_code": "CARBONATED WINE",
+  "origin_code": "NEW YORK",
+  "brand_name": "GLENORA",
+  "fanciful_name": "RASPBERRY DAZZLE",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "08/03/2026",
+  "applicant": "BW-NY-896 | MARTIN'S HONEY FARM AND MEADERY, LLC | 2981 AUBURN RD | SENECA FALLS,\u00a0NY\u00a013148",
+  "source": "domestic",
+  "product_type": "wine",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.5,
+      "height_in": 2.5
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 3.5,
+      "height_in": 2.5
+    }
+  ]
+}

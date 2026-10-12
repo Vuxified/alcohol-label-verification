@@ -1,0 +1,65 @@
+{
+  "id": "cola_26126001000764__warning_word",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.png",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 2.95,
+      "height_in": 4.79
+    },
+    {
+      "file": "02_other.png",
+      "image_type": "Other",
+      "width_in": 2.82,
+      "height_in": 3.47
+    },
+    {
+      "file": "03_back.png",
+      "image_type": "Back",
+      "width_in": 2.82,
+      "height_in": 3.47
+    }
+  ],
+  "source": {
+    "type": "tampered",
+    "license": "TTB Public COLA Registry image (public record), with one change planted for testing by tools/make_tampered.py",
+    "ttb_id": "26126001000764",
+    "edited_images": [
+      "03_back.png"
+    ]
+  },
+  "application": {
+    "beverage_type": "spirits",
+    "brand_name": "NORTHERN LIBERTIES WHISKEY Co",
+    "class_type": "STRAIGHT BOURBON WHISKEY FINISHED IN PORT WINE BARRLES WITH AMBURANA & OAK STAVES",
+    "abv": 55.5,
+    "proof": 111,
+    "net_contents": "750mL",
+    "source": "domestic",
+    "country_of_origin": null,
+    "name_address": "PRODUCED AND BOTTLED BY NORTHERN ROW 111 W. MCMICKEN AVE. CINCINNATI, OH",
+    "label_width_in": 2.95
+  },
+  "printed": {
+    "brand_name": "NORTHERN LIBERTIES WHISKEY Co",
+    "class_type": "STRAIGHT BOURBON WHISKEY FINISHED IN PORT WINE BARRLES WITH AMBURANA & OAK STAVES",
+    "abv": 55.5,
+    "proof": 111,
+    "net_contents": "750mL",
+    "warning_text": "GOVERNMENT WARNING: (1) According to the Surgeon general, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.",
+    "warning_heading_bold": true,
+    "warning_cap_mm": null
+  },
+  "expected": {
+    "overall": "fail",
+    "findings": [
+      "WARNING_TEXT_ALTERED"
+    ]
+  },
+  "provenance": {
+    "base_id": "cola_26126001000764",
+    "change": "warning_word",
+    "from": "impairs",
+    "to": "affects"
+  }
+}

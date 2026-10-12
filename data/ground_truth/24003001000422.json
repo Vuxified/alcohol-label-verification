@@ -1,0 +1,35 @@
+{
+  "id": "24003001000422",
+  "beverage_type": "wine",
+  "brand_name": "Sangria di Fiori",
+  "class_type": "Floral Infused Sangria",
+  "abv": 12.5,
+  "abv_text": "12.5% alc by vol",
+  "proof": null,
+  "net_contents_text": "750ml",
+  "net_contents_ml": 750,
+  "name_address_text": "Produced & Bottled By FOLINO ESTATE WINERY Kutztown, PA",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE OTHER MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": false,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "warning misprints: missing period after 'BIRTH DEFECTS' and extra word 'OTHER' ('OPERATE OTHER MACHINERY')",
+    "'CONTAINS SULFITES' runs on directly after the warning",
+    "image labelled 'front' is the tall info panel; image labelled 'back' is the oval artwork",
+    "script display name 'Sangria di Fiori' / 'Strawberry Hibiscus' more prominent than the winery brand",
+    "brand appears only in the bottler statement ('FOLINO ESTATE WINERY')",
+    "class, ABV and net in italic serif; low-contrast pink floral background"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

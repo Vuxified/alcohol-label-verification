@@ -1,0 +1,23 @@
+{
+  "ttb_id": "24002001000084",
+  "status": "APPROVED",
+  "serial_no": "240001",
+  "class_type_code": "ALE",
+  "origin_code": "NEW HAMPSHIRE",
+  "brand_name": "TRANQUILITY",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/04/2024",
+  "applicant": "BR-NH-BRA-15000 | BRANCH AND BLADE BREWING COMPANY, INC. | 17 BRADCO ST UNIT 3 | KEENE,\u00a0NH\u00a003431",
+  "source": "domestic",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.png",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 7.5,
+      "height_in": 4.75
+    }
+  ]
+}

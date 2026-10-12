@@ -1,0 +1,81 @@
+id,beverage_type,base_id,change,from,to,expected,finding,app_overall
+cola_25044001000979__abv,wine,cola_25044001000979,abv,Alc. 14% By Vol.,Alc. 13% By Vol.,fail,ABV_MISMATCH,fail
+cola_25044001000979__warning_word,wine,cola_25044001000979,warning_word,should,must,fail,WARNING_TEXT_ALTERED,fail
+cola_25055001000804__abv,wine,cola_25055001000804,abv,14% ALC./VOL.,13% ALC./VOL.,fail,ABV_MISMATCH,fail
+cola_25055001000804__warning_word,wine,cola_25055001000804,warning_word,impairs,affects,fail,WARNING_TEXT_ALTERED,check
+cola_25056001000456__abv,wine,cola_25056001000456,abv,Alcohol 10.5% by volume,Alcohol 11.5% by volume,fail,ABV_MISMATCH,fail
+cola_25056001000456__warning_delete,wine,cola_25056001000456,warning_delete,alcoholic,,fail,WARNING_TEXT_ALTERED,fail
+cola_25056001000852__net,wine,cola_25056001000852,net,3 L,1 L,check,NET_CONTENTS_MISMATCH,check
+cola_25056001000852__warning_titlecase,wine,cola_25056001000852,warning_titlecase,GOVERNMENT WARNING,Government Warning,fail,WARNING_NOT_CAPS,check
+cola_25056001000986__warning_delete,wine,cola_25056001000986,warning_delete,health,,fail,WARNING_TEXT_ALTERED,check
+cola_25056001000986__warning_titlecase,wine,cola_25056001000986,warning_titlecase,GOVERNMENT WARNING,Government Warning,fail,WARNING_NOT_CAPS,fail
+cola_25059001000707__abv,malt,cola_25059001000707,abv,5% ALC /VOL,4% ALC /VOL,fail,ABV_MISMATCH,fail
+cola_25063001000205__net,spirits,cola_25063001000205,net,1 L,2 L,check,NET_CONTENTS_MISMATCH,check
+cola_25063001000205__warning_word,spirits,cola_25063001000205,warning_word,should,must,fail,WARNING_TEXT_ALTERED,check
+cola_25063001000237__warning_delete,spirits,cola_25063001000237,warning_delete,not,,fail,WARNING_TEXT_ALTERED,check
+cola_25063001000237__warning_word,spirits,cola_25063001000237,warning_word,may,can,fail,WARNING_TEXT_ALTERED,fail
+cola_25069001000255__net,spirits,cola_25069001000255,net,750ML,720ML,fail,NET_CONTENTS_MISMATCH,fail
+cola_25069001000255__warning_delete,spirits,cola_25069001000255,warning_delete,health,,fail,WARNING_TEXT_ALTERED,check
+cola_25105001000171__abv,malt,cola_25105001000171,abv,7.5% Alc/Vol,5.5% Alc/Vol,fail,ABV_MISMATCH,fail
+cola_25107001000879__net,wine,cola_25107001000879,net,750 mL,720 mL,fail,NET_CONTENTS_MISMATCH,fail
+cola_25107001000879__warning_titlecase,wine,cola_25107001000879,warning_titlecase,GOVERNMENT WARNING,Government Warning,fail,WARNING_NOT_CAPS,fail
+cola_25120001000682__net,wine,cola_25120001000682,net,750 ML,720 ML,fail,NET_CONTENTS_MISMATCH,check
+cola_25122001000541__net,spirits,cola_25122001000541,net,750ML,720ML,fail,NET_CONTENTS_MISMATCH,fail
+cola_25122001000541__warning_word,spirits,cola_25122001000541,warning_word,impairs,affects,fail,WARNING_TEXT_ALTERED,fail
+cola_25127001000676__warning_delete,spirits,cola_25127001000676,warning_delete,alcoholic,,fail,WARNING_TEXT_ALTERED,check
+cola_25127001000676__warning_titlecase,spirits,cola_25127001000676,warning_titlecase,GOVERNMENT WARNING,Government Warning,fail,WARNING_NOT_CAPS,fail
+cola_25128001000584__warning_titlecase,wine,cola_25128001000584,warning_titlecase,GOVERNMENT WARNING,Government Warning,fail,WARNING_NOT_CAPS,fail
+cola_25128001000584__warning_word,wine,cola_25128001000584,warning_word,impairs,affects,fail,WARNING_TEXT_ALTERED,fail
+cola_25129001000757__warning_word,malt,cola_25129001000757,warning_word,impairs,affects,fail,WARNING_TEXT_ALTERED,check
+cola_25140001001016__net,wine,cola_25140001001016,net,750 ml.,720 ml.,fail,NET_CONTENTS_MISMATCH,check
+cola_25140001001016__warning_word,wine,cola_25140001001016,warning_word,may,can,fail,WARNING_TEXT_ALTERED,check
+cola_25143001000203__warning_titlecase,wine,cola_25143001000203,warning_titlecase,GOVERNMENT WARNING,Government Warning,fail,WARNING_NOT_CAPS,check
+cola_25171001000629__abv,wine,cola_25171001000629,abv,ALC 13.0% BY VOL,ALC 11.0% BY VOL,fail,ABV_MISMATCH,fail
+cola_25171001000629__warning_titlecase,wine,cola_25171001000629,warning_titlecase,GOVERNMENT WARNING,Government Warning,fail,WARNING_NOT_CAPS,fail
+cola_25190001000665__warning_delete,wine,cola_25190001000665,warning_delete,alcoholic,,fail,WARNING_TEXT_ALTERED,check
+cola_25196001000509__abv,spirits,cola_25196001000509,abv,40% ALC/VOL,41% ALC/VOL,fail,ABV_MISMATCH,fail
+cola_25202001000584__abv,wine,cola_25202001000584,abv,11% ALC by VOL,10% ALC by VOL,fail,ABV_MISMATCH,fail
+cola_25202001000584__net,wine,cola_25202001000584,net,330ml,300ml,fail,NET_CONTENTS_MISMATCH,fail
+cola_25211001000050__warning_word,spirits,cola_25211001000050,warning_word,may,can,fail,WARNING_TEXT_ALTERED,fail
+cola_25211001000052__warning_delete,spirits,cola_25211001000052,warning_delete,not,,fail,WARNING_TEXT_ALTERED,fail
+cola_25212001000725__abv,wine,cola_25212001000725,abv,Alcohol 8.5% by Volume,Alcohol 7.5% by Volume,fail,ABV_MISMATCH,fail
+cola_25226001000401__abv,wine,cola_25226001000401,abv,11% Alc. by Vol.,10% Alc. by Vol.,fail,ABV_MISMATCH,fail
+cola_25230001000519__net,malt,cola_25230001000519,net,12 FL OZ,16 FL OZ,fail,NET_CONTENTS_MISMATCH,fail
+cola_25232001000621__warning_word,wine,cola_25232001000621,warning_word,impairs,affects,fail,WARNING_TEXT_ALTERED,fail
+cola_25234001000524__warning_titlecase,malt,cola_25234001000524,warning_titlecase,GOVERNMENT WARNING,Government Warning,fail,WARNING_NOT_CAPS,check
+cola_25268001000498__warning_delete,spirits,cola_25268001000498,warning_delete,health,,fail,WARNING_TEXT_ALTERED,check
+cola_25272001000707__abv,spirits,cola_25272001000707,abv,7% alc./vol.,5% alc./vol.,fail,ABV_MISMATCH,check
+cola_25287001000138__warning_word,wine,cola_25287001000138,warning_word,may,can,fail,WARNING_TEXT_ALTERED,fail
+cola_25288001000293__warning_delete,wine,cola_25288001000293,warning_delete,health,,fail,WARNING_TEXT_ALTERED,check
+cola_25293001000020__warning_delete,wine,cola_25293001000020,warning_delete,health,,fail,WARNING_TEXT_ALTERED,check
+cola_25344001000685__warning_titlecase,malt,cola_25344001000685,warning_titlecase,GOVERNMENT WARNING,Government Warning,fail,WARNING_NOT_CAPS,fail
+cola_26029001000054__warning_word,wine,cola_26029001000054,warning_word,may,can,fail,WARNING_TEXT_ALTERED,fail
+cola_26029001000056__warning_delete,wine,cola_26029001000056,warning_delete,birth,,fail,WARNING_TEXT_ALTERED,check
+cola_26043001000465__warning_titlecase,wine,cola_26043001000465,warning_titlecase,GOVERNMENT WARNING,Government Warning,fail,WARNING_NOT_CAPS,check
+cola_26043001000751__warning_delete,spirits,cola_26043001000751,warning_delete,birth,,fail,WARNING_TEXT_ALTERED,fail
+cola_26048001000950__abv,wine,cola_26048001000950,abv,ALC. 14.7% BY VOL.,ALC. 15.7% BY VOL.,fail,ABV_MISMATCH,check
+cola_26048001000951__net,wine,cola_26048001000951,net,750 ML,720 ML,fail,NET_CONTENTS_MISMATCH,check
+cola_26050001000785__warning_delete,spirits,cola_26050001000785,warning_delete,health,,fail,WARNING_TEXT_ALTERED,check
+cola_26098001000512__warning_word,spirits,cola_26098001000512,warning_word,should,must,fail,WARNING_TEXT_ALTERED,fail
+cola_26105001000818__net,wine,cola_26105001000818,net,720ml,700ml,fail,NET_CONTENTS_MISMATCH,check
+cola_26106001000779__warning_titlecase,wine,cola_26106001000779,warning_titlecase,GOVERNMENT WARNING,Government Warning,fail,WARNING_NOT_CAPS,fail
+cola_26106001000869__abv,wine,cola_26106001000869,abv,11.5% ALC. BY VOL.,10.5% ALC. BY VOL.,fail,ABV_MISMATCH,fail
+cola_26107001000411__warning_word,spirits,cola_26107001000411,warning_word,impairs,affects,fail,WARNING_TEXT_ALTERED,fail
+cola_26114001000381__net,spirits,cola_26114001000381,net,50ML,52ML,check,NET_CONTENTS_MISMATCH,check
+cola_26119001000520__warning_titlecase,spirits,cola_26119001000520,warning_titlecase,GOVERNMENT WARNING,Government Warning,fail,WARNING_NOT_CAPS,fail
+cola_26119001000839__abv,wine,cola_26119001000839,abv,Alc. by 12% Vol.,Alc. by 11% Vol.,fail,ABV_MISMATCH,fail
+cola_26121001000125__net,wine,cola_26121001000125,net,750 ML,720 ML,fail,NET_CONTENTS_MISMATCH,fail
+cola_26125001000795__abv,spirits,cola_26125001000795,abv,ALC. 7.5% BY VOL.,ALC. 5.5% BY VOL.,fail,ABV_MISMATCH,fail
+cola_26126001000764__warning_word,spirits,cola_26126001000764,warning_word,impairs,affects,fail,WARNING_TEXT_ALTERED,check
+cola_26127001001114__net,spirits,cola_26127001001114,net,750 ML,720 ML,fail,NET_CONTENTS_MISMATCH,fail
+cola_26128001000624__warning_delete,wine,cola_26128001000624,warning_delete,health,,fail,WARNING_TEXT_ALTERED,check
+cola_26133001000445__warning_titlecase,spirits,cola_26133001000445,warning_titlecase,GOVERNMENT WARNING,Government Warning,fail,WARNING_NOT_CAPS,fail
+cola_26140001000454__abv,malt,cola_26140001000454,abv,5% ALC/VOL,4% ALC/VOL,fail,ABV_MISMATCH,fail
+cola_26155001000642__warning_titlecase,wine,cola_26155001000642,warning_titlecase,GOVERNMENT WARNING,Government Warning,fail,WARNING_NOT_CAPS,fail
+cola_26155001000646__net,wine,cola_26155001000646,net,750 ML,720 ML,fail,NET_CONTENTS_MISMATCH,fail
+cola_26169001000018__warning_delete,spirits,cola_26169001000018,warning_delete,not,,fail,WARNING_TEXT_ALTERED,fail
+cola_26169001000019__proof,spirits,cola_26169001000019,proof,70 PROOF,71 PROOF,fail,PROOF_MISMATCH,fail
+cola_26169001000226__net,wine,cola_26169001000226,net,750 ml,720 ml,fail,NET_CONTENTS_MISMATCH,fail
+cola_26196001000079__warning_word,wine,cola_26196001000079,warning_word,may,can,fail,WARNING_TEXT_ALTERED,fail
+cola_26196001000791__warning_delete,wine,cola_26196001000791,warning_delete,not,,fail,WARNING_TEXT_ALTERED,fail
+cola_26209001000785__warning_titlecase,spirits,cola_26209001000785,warning_titlecase,GOVERNMENT WARNING,Government Warning,fail,WARNING_NOT_CAPS,check

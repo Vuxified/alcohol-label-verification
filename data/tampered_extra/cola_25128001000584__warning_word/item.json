@@ -1,0 +1,59 @@
+{
+  "id": "cola_25128001000584__warning_word",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.png",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.4,
+      "height_in": 4.3
+    },
+    {
+      "file": "02_back.png",
+      "image_type": "Back",
+      "width_in": 3.15,
+      "height_in": 2.75
+    }
+  ],
+  "source": {
+    "type": "tampered",
+    "license": "TTB Public COLA Registry image (public record), with one change planted for testing by tools/make_tampered.py",
+    "ttb_id": "25128001000584",
+    "edited_images": [
+      "02_back.png"
+    ]
+  },
+  "application": {
+    "beverage_type": "wine",
+    "brand_name": "Abadía de SAN QUIRCE",
+    "class_type": "RED WINE",
+    "abv": 14.5,
+    "proof": null,
+    "net_contents": "750 ml.",
+    "source": "imported",
+    "country_of_origin": "Product of Spain",
+    "name_address": "EMBOTELLADO EN LA PROPIEDAD BODEGAS ABADÍA SAN QUIRCE, S.L. GUMIEL DE IZAN - ESPAÑA - R.E.Nº 8070-BU IMPORTED BY:ATLANTA IMPROVEMENT COMPANY, DORAVILLE, GA 30340",
+    "label_width_in": 3.4
+  },
+  "printed": {
+    "brand_name": "Abadía de SAN QUIRCE",
+    "class_type": "RED WINE",
+    "abv": 14.5,
+    "proof": null,
+    "net_contents": "750 ml.",
+    "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "warning_heading_bold": true,
+    "warning_cap_mm": null
+  },
+  "expected": {
+    "overall": "fail",
+    "findings": [
+      "WARNING_TEXT_ALTERED"
+    ]
+  },
+  "provenance": {
+    "base_id": "cola_25128001000584",
+    "change": "warning_word",
+    "from": "impairs",
+    "to": "affects"
+  }
+}

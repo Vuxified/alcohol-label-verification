@@ -1,0 +1,23 @@
+{
+  "ttb_id": "26125001000795",
+  "status": "APPROVED",
+  "serial_no": "260008",
+  "class_type_code": "VODKA SPECIALTIES",
+  "origin_code": "MARYLAND",
+  "brand_name": "TENTH WARD DISTILLING",
+  "fanciful_name": "PEACH CLEMENTINE LEMONADE ICED TEA",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "06/17/2026",
+  "applicant": "DSP-MD-20037 | Fordham Lee Distillery, LLC | 13 S CHURCH ST | Middletown,\u00a0MD\u00a021769",
+  "source": "domestic",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 6.5,
+      "height_in": 4.55
+    }
+  ]
+}

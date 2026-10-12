@@ -1,0 +1,29 @@
+{
+  "ttb_id": "24009001000010",
+  "status": "APPROVED",
+  "serial_no": "24C002",
+  "class_type_code": "BEER",
+  "origin_code": "UKRAINE",
+  "brand_name": "OPILLIA",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/19/2024",
+  "applicant": "IL-I-21276 | LEA FOODS INC | 1111 KIRK ST | ELK GROVE VILLAGE,\u00a0IL\u00a060007",
+  "source": "imported",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 8.19,
+      "height_in": 6.32
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 2.2,
+      "height_in": 1.2
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "ttb_id": "26119001000520",
+  "status": "APPROVED",
+  "serial_no": "260001",
+  "class_type_code": "OTHER SPECIALTIES & PROPRIETARIES",
+  "origin_code": "BRAZIL",
+  "brand_name": "O SHOT DA ALEGRIA",
+  "fanciful_name": "ABACAXIZINHO WITH MINT",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "08/03/2026",
+  "applicant": "GA-I-21219 | VIEIRA IMPORTS LLC | 1212 RIDGESIDE DR NW | ACWORTH,\u00a0GA\u00a030102",
+  "source": "imported",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.png",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 10.72,
+      "height_in": 8.84
+    }
+  ]
+}

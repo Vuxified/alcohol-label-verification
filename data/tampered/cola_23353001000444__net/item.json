@@ -1,0 +1,59 @@
+{
+  "id": "cola_23353001000444__net",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.7,
+      "height_in": 3.7
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 3.6,
+      "height_in": 3.6
+    }
+  ],
+  "source": {
+    "type": "tampered",
+    "license": "TTB Public COLA Registry image (public record), with one change planted for testing by tools/make_tampered.py",
+    "ttb_id": "23353001000444",
+    "edited_images": [
+      "01_brand_front_or_keg_collar.jpg"
+    ]
+  },
+  "application": {
+    "beverage_type": "spirits",
+    "brand_name": "WOODFORD RESERVE",
+    "class_type": "KENTUCKY STRAIGHT MALT WHISKEY",
+    "abv": 45.2,
+    "proof": 90.4,
+    "net_contents": "50mL",
+    "source": "domestic",
+    "country_of_origin": null,
+    "name_address": "PRODUCED BY THE WOODFORD RESERVE DISTILLERY VERSAILLES, KENTUCKY USA",
+    "label_width_in": 3.7
+  },
+  "printed": {
+    "brand_name": "WOODFORD RESERVE",
+    "class_type": "KENTUCKY STRAIGHT MALT WHISKEY",
+    "abv": 45.2,
+    "proof": 90.4,
+    "net_contents": "52mL",
+    "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "warning_heading_bold": true,
+    "warning_cap_mm": null
+  },
+  "expected": {
+    "overall": "check",
+    "findings": [
+      "NET_CONTENTS_MISMATCH"
+    ]
+  },
+  "provenance": {
+    "base_id": "cola_23353001000444",
+    "change": "net",
+    "from": "50mL",
+    "to": "52mL"
+  }
+}

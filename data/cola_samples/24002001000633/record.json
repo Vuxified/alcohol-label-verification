@@ -1,0 +1,29 @@
+{
+  "ttb_id": "24002001000633",
+  "status": "APPROVED",
+  "serial_no": "240001",
+  "class_type_code": "RUM SPECIALTIES",
+  "origin_code": "PUERTO RICO",
+  "brand_name": "PAPA PEDRO",
+  "fanciful_name": "MARICAO",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/12/2024",
+  "applicant": "PR-S-20025 | PAPA PEDRO INC | 15 PEDRO ALBIZU CAMPOS AVE | MARICAO,\u00a0PR\u00a000606",
+  "source": "domestic",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.0,
+      "height_in": 4.0
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 3.0,
+      "height_in": 4.0
+    }
+  ]
+}

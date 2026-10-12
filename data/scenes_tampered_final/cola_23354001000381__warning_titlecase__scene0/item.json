@@ -1,0 +1,57 @@
+{
+  "id": "cola_23354001000381__warning_titlecase__scene0",
+  "images": [
+    {
+      "file": "scene_1.jpg",
+      "image_type": "Brand (front) or keg collar (left part)"
+    },
+    {
+      "file": "scene_2.jpg",
+      "image_type": "Brand (front) or keg collar (right part)"
+    }
+  ],
+  "source": {
+    "type": "real label scene (final test)",
+    "license": "public COLA registry label artwork; scene generated for this project"
+  },
+  "application": {
+    "beverage_type": "malt",
+    "brand_name": "GUINNESS",
+    "class_type": "ALE WITH TEA",
+    "abv": 4.8,
+    "proof": null,
+    "net_contents": "1 PINT",
+    "source": "domestic",
+    "country_of_origin": null,
+    "name_address": "BREWED AND CANNED BY GUINNESS BREWING COMPANY, BALTIMORE, MD",
+    "label_width_in": 8.0
+  },
+  "printed": {
+    "brand_name": "GUINNESS",
+    "class_type": "ALE WITH TEA",
+    "abv": 4.8,
+    "proof": null,
+    "net_contents": "1 PINT",
+    "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "warning_heading_bold": true,
+    "warning_cap_mm": null
+  },
+  "expected": {
+    "overall": "fail",
+    "findings": [
+      "WARNING_NOT_CAPS"
+    ]
+  },
+  "provenance": {
+    "base_item": "cola_23354001000381__warning_titlecase",
+    "model": "us.stability.stable-image-inpaint-v1:0",
+    "prompt": [
+      "realistic phone photo of a single brown glass beer bottle held in a person's hand in front of a kitchen, photographed with a phone, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+      "realistic phone photo of a single brown glass beer bottle standing on a liquor store shelf, other plain bottles blurred around it, bright store lighting, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field"
+    ],
+    "seed": [
+      1019856590,
+      1545313272
+    ]
+  }
+}

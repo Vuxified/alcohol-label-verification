@@ -1,0 +1,23 @@
+{
+  "ttb_id": "24351001000452",
+  "status": "APPROVED",
+  "serial_no": "24C020",
+  "class_type_code": "MALT LIQUOR",
+  "origin_code": "UTAH",
+  "brand_name": "2 ROW BREWING LLC",
+  "fanciful_name": "HOUSE PARTY MALT LIQUOR",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "12/19/2024",
+  "applicant": "BR-UT-20052 | 2 Row Brewing, 2 Row Brewing, LLC | 73 W 7200 S | Midvale,\u00a0UT\u00a084047",
+  "source": "domestic",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 8.0,
+      "height_in": 5.0
+    }
+  ]
+}

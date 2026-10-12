@@ -1,0 +1,29 @@
+{
+  "ttb_id": "26043001000465",
+  "status": "APPROVED",
+  "serial_no": "26CCBL",
+  "class_type_code": "TABLE WHITE WINE",
+  "origin_code": "SPAIN",
+  "brand_name": "CHOZAS CARRASCAL",
+  "fanciful_name": "LAS DOS CES BLANCO",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "03/27/2026",
+  "applicant": "DE-I-21038 | Wine for the World, Inc. | 8 THE GREEN STE 6841 | Dover,\u00a0DE\u00a019901",
+  "source": "imported",
+  "product_type": "wine",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.png",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 6.69,
+      "height_in": 8.29
+    },
+    {
+      "file": "02_back.png",
+      "image_type": "Back",
+      "width_in": 10.24,
+      "height_in": 6.2
+    }
+  ]
+}

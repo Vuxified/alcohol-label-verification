@@ -1,0 +1,36 @@
+{
+  "id": "24002001000082",
+  "beverage_type": "malt",
+  "brand_name": "CAHABA BREWING CO",
+  "class_type": "Tropical Sour Berliner Weisse Ale",
+  "abv": null,
+  "abv_text": null,
+  "proof": null,
+  "net_contents_text": "5.2 GAL | 15.5 GAL",
+  "net_contents_ml": null,
+  "name_address_text": "CAHABA BREWING CO BIRMINGHAM, AL",
+  "country_of_origin_text": "USA",
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "round keg collar with month and day dial around the rim",
+    "two net contents sizes (5.2 GAL / 15.5 GAL) with tick boxes, so no single mL value",
+    "no ABV on the label",
+    "'CO' printed small and rotated after 'BREWING'",
+    "second ATTENTION - READ BEFORE TAPPING keg-pressure block could be confused with the government warning",
+    "white text on dark navy",
+    "'PRODUCT OF THE USA' set in a small circle"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

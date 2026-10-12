@@ -1,0 +1,29 @@
+{
+  "ttb_id": "24001001000011",
+  "status": "APPROVED",
+  "serial_no": "24MBEC",
+  "class_type_code": "TABLE RED WINE",
+  "origin_code": "OREGON",
+  "brand_name": "COOPER RIDGE",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/02/2024",
+  "applicant": "BWN-OR-15313 | Cooper Ridge Vineyard, S.P. Wilson Enterprises, Inc. | 1389 OLD GARDEN VALLEY RD | Roseburg,\u00a0OR\u00a097471",
+  "source": "domestic",
+  "product_type": "wine",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.0,
+      "height_in": 4.0
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 3.0,
+      "height_in": 4.0
+    }
+  ]
+}

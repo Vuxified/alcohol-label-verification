@@ -1,0 +1,35 @@
+{
+  "id": "25140001001016",
+  "beverage_type": "wine",
+  "brand_name": "COLOMBAIA",
+  "class_type": "RED ITALIAN WINE",
+  "abv": 13.5,
+  "abv_text": "Alc.13,5 % by Vol.",
+  "proof": null,
+  "net_contents_text": "750 ml.",
+  "net_contents_ml": 750,
+  "name_address_text": "Grown produced and bottled by COLOMBAIA Imported by FINAL PORT IMPORTS Alpharetta GA 30004",
+  "country_of_origin_text": "Product of Italy",
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.png",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "image files swapped (01 'brand front' is the back label with all mandatory text; 02 'back' is the blue front)",
+    "decimal comma in ABV ('13,5 %') with a space before %; front shows '75 cle' and '13,5% alc./vol.' sideways in Italian",
+    "Italian statements printed vertically on the blue front ('PRODOTTO IN ITALIA', 'Rosso Toscana')",
+    "warning heading letter-spaced; last warning line touches a rule line",
+    "country inside a line 'Toscana I. G. T. - Product of Italy'",
+    "class 'RED ITALIAN WINE 2020' with vintage on the same line; 'Rosso Toscana' could be read as class"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); not reviewed by the owner"
+}

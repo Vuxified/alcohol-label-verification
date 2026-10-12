@@ -1,0 +1,36 @@
+{
+  "id": "26072001000005",
+  "beverage_type": "spirits",
+  "brand_name": "REDACTED DEATH",
+  "class_type": "SPIRITS DISTILLED",
+  "abv": 40,
+  "abv_text": "40% ALC. BY VOL.",
+  "proof": 80,
+  "net_contents_text": "375ML",
+  "net_contents_ml": 375,
+  "name_address_text": "DISTILLED AND BOTTLED BY MOSES LAKE DISTILLERY, MOSES LAKE, WA",
+  "country_of_origin_text": "USA",
+  "warning": {
+    "present": true,
+    "image_file": "02_back.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "unclear",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "'QUILTER'S' printed small above 'REDACTED DEATH'; registry brand omits it",
+    "distressed red/white display brand",
+    "ABV, proof and net in one line ('40% ALC. BY VOL. (80 PROOF) 375ML')",
+    "fanciful 'YOU'RE WELCOME.' in brackets",
+    "white condensed text on dark background",
+    "dimension tabs (3\"W, 4\"H, 2.5\"W, 3.5\"H) on the proofs",
+    "collaboration brewery mentioned (IRON HORSE BREWERY)"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

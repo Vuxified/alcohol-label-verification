@@ -1,0 +1,34 @@
+{
+  "id": "24002001000026",
+  "beverage_type": "malt",
+  "brand_name": "BELLEFLOWER BREWING",
+  "class_type": "Double Dry Hopped India Pale Ale",
+  "abv": 6.8,
+  "abv_text": "6.8% alc. by vol.",
+  "proof": null,
+  "net_contents_text": "1 pint",
+  "net_contents_ml": 473.18,
+  "name_address_text": "Brewed and packaged with love by Belleflower Brewing Co. in Portland, Maine",
+  "country_of_origin_text": "USA",
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "vertical"
+  },
+  "hard_cases": [
+    "brand set in an arc around the artwork ('BELLEFLOWER' / 'BREWING'); registry brand is 'BELLEFLOWER BREWING CO.' - 'CO.' appears only in the bottler line",
+    "fanciful name 'FINCH & THISTLE' in small type at the bottom",
+    "warning printed vertically (rotated 90 degrees) in condensed type at the right edge",
+    "class, ABV and net contents in one small line on the side panel",
+    "light text on dark background"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

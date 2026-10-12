@@ -1,0 +1,23 @@
+{
+  "ttb_id": "26035001000267",
+  "status": "APPROVED",
+  "serial_no": "260010",
+  "class_type_code": "OTHER SPECIALTIES & PROPRIETARIES",
+  "origin_code": "CALIFORNIA",
+  "brand_name": "ABSINTHIA",
+  "fanciful_name": "THE GREEN FAIRY",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "03/17/2026",
+  "applicant": "DSP-CA-15097 | Corning & Company Distillers, LLC, Corning & Company Distillers, LLC | 5535 STATE FARM DR | ROHNERT PARK,\u00a0CA\u00a094928",
+  "source": "domestic",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.png",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 10.0,
+      "height_in": 4.0
+    }
+  ]
+}

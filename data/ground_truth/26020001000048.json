@@ -1,0 +1,40 @@
+{
+  "id": "26020001000048",
+  "beverage_type": "malt",
+  "brand_name": "Schnuck",
+  "class_type": "Marzen Lager",
+  "abv": 5.3,
+  "abv_text": "5.3% Alcohol by Volume",
+  "proof": null,
+  "net_contents_text": "NET CONTENTS: 15.5 U.S. Gallons / 5.1 U.S. Gallons",
+  "net_contents_ml": null,
+  "name_address_text": "MOBA Brewing Co. 9600 Ploof Rd Leland, NC 28451",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1)ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "photo of a stock KegCollar.com keg collar, low resolution (480x640)",
+    "brand, class, ABV, net contents and brewer name/address are all handwritten in marker",
+    "handwritten brand reads 'Schnuck' followed by a mark that could be an 'i' or a colon (registry 'SCHNUCKI')",
+    "handwritten 'Lelanz'-looking city is Leland",
+    "both net contents boxes carry pen strokes and the second has '5.1' written in - which size is claimed is unclear",
+    "no space after '(1)' in the printed warning",
+    "umlaut omitted ('Marzen')"
+  ],
+  "unreadable_fields": [
+    "brand_name",
+    "net_contents_text",
+    "net_contents_ml"
+  ],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

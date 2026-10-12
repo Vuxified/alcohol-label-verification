@@ -1,0 +1,53 @@
+{
+  "id": "cola_25272001000707__abv",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 8.0,
+      "height_in": 7.0
+    }
+  ],
+  "source": {
+    "type": "tampered",
+    "license": "TTB Public COLA Registry image (public record), with one change planted for testing by tools/make_tampered.py",
+    "ttb_id": "25272001000707",
+    "edited_images": [
+      "01_brand_front_or_keg_collar.jpg"
+    ]
+  },
+  "application": {
+    "beverage_type": "spirits",
+    "brand_name": "CHERRY RIVER",
+    "class_type": "RUM WITH NATURAL FLAVORS, ARTIFICIAL COLORS, AND FD&C YELLOW #5",
+    "abv": 7,
+    "proof": null,
+    "net_contents": "355 mL",
+    "source": "imported",
+    "country_of_origin": "PRODUCT OF CANADA",
+    "name_address": "PRODUCED BY : DISTILLERIE CHERRY RIVER, 120 RUE DES PINS, MAGOG, QUÉBEC, J1X 2H9. IMPORTED BY: MIDDLETON WHITE SELECTIONS OAKLAND PARK, FL 33311",
+    "label_width_in": 8.0
+  },
+  "printed": {
+    "brand_name": "CHERRY RIVER",
+    "class_type": "RUM WITH NATURAL FLAVORS, ARTIFICIAL COLORS, AND FD&C YELLOW #5",
+    "abv": 5.0,
+    "proof": null,
+    "net_contents": "355 mL",
+    "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "warning_heading_bold": true,
+    "warning_cap_mm": null
+  },
+  "expected": {
+    "overall": "fail",
+    "findings": [
+      "ABV_MISMATCH"
+    ]
+  },
+  "provenance": {
+    "base_id": "cola_25272001000707",
+    "change": "abv",
+    "from": "7% alc./vol.",
+    "to": "5% alc./vol."
+  }
+}

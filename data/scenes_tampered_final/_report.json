@@ -1,0 +1,1362 @@
+{
+ "model": "us.stability.stable-image-inpaint-v1:0",
+ "items": [
+  {
+   "id": "cola_23333001000905__net__scene0",
+   "set": "scenes_tampered_final",
+   "base_item": "cola_23333001000905__net",
+   "pictures": [
+    {
+     "container": "bottle",
+     "scene": "bar",
+     "prompt": "realistic phone photo of a single clear glass vodka bottle standing on a dark wooden bar counter in a dimly lit cocktail bar, warm bokeh lights in the background, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+     "seed": 1890750285,
+     "half_angle": 27.6,
+     "camera": {
+      "mode": "rotate+perspective",
+      "yaw_deg": 36.6,
+      "rotation_deg": 29.2,
+      "framing": "wide"
+     },
+     "label_pixels_identical_before_camera_effects": true,
+     "label_pixels_identical_after_our_geometry": true,
+     "camera_effects": [
+      "vignette",
+      "tint",
+      "glare",
+      "blur0.9",
+      "grain"
+     ],
+     "size": [
+      818,
+      1023
+     ],
+     "source_image": "01_brand_front_or_keg_collar.jpg columns 0-1009"
+    },
+    {
+     "container": "bottle",
+     "scene": "shelf",
+     "prompt": "realistic phone photo of a single clear glass whiskey bottle with amber whiskey inside standing on a liquor store shelf, other plain bottles blurred around it, bright store lighting, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+     "seed": 3868746026,
+     "half_angle": 29.8,
+     "camera": {
+      "mode": "rotate+perspective",
+      "yaw_deg": 32.4,
+      "rotation_deg": -22.1,
+      "framing": "edge"
+     },
+     "label_pixels_identical_before_camera_effects": true,
+     "label_pixels_identical_after_our_geometry": true,
+     "camera_effects": [
+      "vignette",
+      "glare",
+      "blur0.9",
+      "grain"
+     ],
+     "size": [
+      983,
+      1027
+     ],
+     "source_image": "01_brand_front_or_keg_collar.jpg columns 673-1683"
+    },
+    {
+     "container": "bottle",
+     "scene": "shelf",
+     "prompt": "realistic phone photo of a single clear glass whiskey bottle with amber whiskey inside standing on a liquor store shelf, other plain bottles blurred around it, bright store lighting, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+     "seed": 624674801,
+     "half_angle": 27.7,
+     "camera": {
+      "mode": "perspective",
+      "yaw_deg": 42.2,
+      "framing": "wide"
+     },
+     "label_pixels_identical_before_camera_effects": true,
+     "label_pixels_identical_after_our_geometry": true,
+     "camera_effects": [
+      "vignette",
+      "grain"
+     ],
+     "size": [
+      834,
+      1446
+     ],
+     "source_image": "02_brand_front_or_keg_collar.jpg"
+    },
+    {
+     "container": "bottle",
+     "scene": "cooler",
+     "prompt": "realistic phone photo of a single glass spirits bottle standing on a wire shelf inside an open beverage cooler in a convenience store, cold white light, other bottles behind it, the whole bottle visible, paper label on the bottle seen from the back, sharp focus on the label, shallow depth of field",
+     "seed": 1806547585,
+     "half_angle": 25.7,
+     "camera": {
+      "mode": "rotate",
+      "rotation_deg": -20.9,
+      "framing": "wide"
+     },
+     "label_pixels_identical_before_camera_effects": true,
+     "label_pixels_identical_after_our_geometry": true,
+     "camera_effects": [
+      "vignette",
+      "tint",
+      "glare",
+      "grain"
+     ],
+     "size": [
+      974,
+      1695
+     ],
+     "source_image": "03_back.jpg"
+    }
+   ]
+  },
+  {
+   "id": "cola_23354001000381__warning_titlecase__scene0",
+   "set": "scenes_tampered_final",
+   "base_item": "cola_23354001000381__warning_titlecase",
+   "pictures": [
+    {
+     "container": "bottle",
+     "scene": "hand",
+     "prompt": "realistic phone photo of a single brown glass beer bottle held in a person's hand in front of a kitchen, photographed with a phone, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+     "seed": 1019856590,
+     "half_angle": 30.8,
+     "camera": {
+      "mode": "rotate+perspective",
+      "yaw_deg": 25.1,
+      "rotation_deg": 12.1,
+      "framing": "wide"
+     },
+     "label_pixels_identical_before_camera_effects": true,
+     "label_pixels_identical_after_our_geometry": true,
+     "camera_effects": [
+      "vignette",
+      "blur0.6",
+      "grain"
+     ],
+     "size": [
+      931,
+      1399
+     ],
+     "source_image": "01_brand_front_or_keg_collar.jpg columns 0-765"
+    },
+    {
+     "container": "bottle",
+     "scene": "shelf",
+     "prompt": "realistic phone photo of a single brown glass beer bottle standing on a liquor store shelf, other plain bottles blurred around it, bright store lighting, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+     "seed": 1545313272,
+     "half_angle": 31.4,
+     "camera": {
+      "mode": "rotate",
+      "rotation_deg": -23.4,
+      "framing": "wide"
+     },
+     "label_pixels_identical_before_camera_effects": true,
+     "label_pixels_identical_after_our_geometry": true,
+     "camera_effects": [
+      "vignette",
+      "tint",
+      "grain"
+     ],
+     "size": [
+      898,
+      1764
+     ],
+     "source_image": "01_brand_front_or_keg_collar.jpg columns 510-1275"
+    }
+   ]
+  },
+  {
+   "id": "cola_24009001000244__warning_delete__scene0",
+   "set": "scenes_tampered_final",
+   "base_item": "cola_24009001000244__warning_delete",
+   "pictures": [
+    {
+     "container": "bottle",
+     "scene": "cooler",
+     "prompt": "realistic phone photo of a single glass spirits bottle standing on a wire shelf inside an open beverage cooler in a convenience store, cold white light, other bottles behind it, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+     "seed": 1957133101,
+     "half_angle": 48.2,
+     "camera": {
+      "mode": "rotate+perspective",
+      "yaw_deg": 41.7,
+      "rotation_deg": -25.6,
+      "framing": "wide"
+     },
+     "label_pixels_identical_before_camera_effects": true,
+     "label_pixels_identical_after_our_geometry": true,
+     "camera_effects": [
+      "vignette",
+      "glare",
+      "blur0.9",
+      "grain"
+     ],
+     "size": [
+      815,
+      935
+     ],
+     "source_image": "01_brand_front_or_keg_collar.png columns 0-386"
+    },
+    {
+     "container": "bottle",
+     "scene": "cooler",
+     "prompt": "realistic phone photo of a single glass spirits bottle standing on a wire shelf inside an open beverage cooler in a convenience store, cold white light, other bottles behind it, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+     "seed": 3932058136,
+     "half_angle": 48.4,
+     "camera": {
+      "mode": "rotate+perspective",
+      "yaw_deg": 34.9,
+      "rotation_deg": 22.2,
+      "framing": "wide"
+     },
+     "label_pixels_identical_before_camera_effects": true,
+     "label_pixels_identical_after_our_geometry": true,
+     "camera_effects": [
+      "vignette",
+      "blur0.9",
+      "grain"
+     ],
+     "size": [
+      827,
+      1286
+     ],
+     "source_image": "01_brand_front_or_keg_collar.png columns 257-644"
+    },
+    {
+     "container": "bottle",
+     "scene": "bar",
+     "prompt": "realistic phone photo of a single glass spirits bottle standing on a dark wooden bar counter in a dimly lit cocktail bar, warm bokeh lights in the background, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+     "seed": 2862513006,
+     "half_angle": 26.0,
+     "camera": {
+      "mode": "perspective",
+      "yaw_deg": 43.6,
+      "framing": "closeup"
+     },
+     "label_pixels_identical_before_camera_effects": true,
+     "label_pixels_identical_after_our_geometry": true,
+     "camera_effects": [
+      "vignette",
+      "tint",
+      "glare",
+      "grain"
+     ],
+     "size": [
+      458,
+      481
+     ],
+     "source_image": "02_brand_front_or_keg_collar.png columns 0-435"
+    },
+    {
+     "container": "bottle",
+     "scene": "table",
+     "prompt": "realistic phone photo of a single clear glass vodka bottle standing on a rustic kitchen table by a window, soft daylight, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+     "seed": 1832174498,
+     "half_angle": 28.6,
+     "camera": {
+      "mode": "perspective",
+      "yaw_deg": 41.1,
+      "framing": "closeup"
+     },
+     "label_pixels_identical_before_camera_effects": true,
+     "label_pixels_identical_after_our_geometry": true,
+     "camera_effects": [
+      "vignette",
+      "tint",
+      "grain"
+     ],
+     "size": [
+      466,
+      474
+     ],
+     "source_image": "02_brand_front_or_keg_collar.png columns 290-726"
+    },
+    {
+     "container": "bottle",
+     "scene": "shelf",
+     "prompt": "realistic phone photo of a single clear glass whiskey bottle with amber whiskey inside standing on a liquor store shelf, other plain bottles blurred around it, bright store lighting, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+     "seed": 1037869566,
+     "half_angle": 32.9,
+     "camera": {
+      "mode": "rotate+perspective",
+      "yaw_deg": 27.7,
+      "rotation_deg": -19.0,
+      "framing": "wide"
+     },
+     "label_pixels_identical_before_camera_effects": true,
+     "label_pixels_identical_after_our_geometry": true,
+     "camera_effects": [
+      "vignette",
+      "tint",
+      "grain"
+     ],
+     "size": [
+      817,
+      1399
+     ],
+     "source_image": "03_other.png"
+    },
+    {
+     "container": "bottle",
+     "scene": "hand",
+     "prompt": "realistic phone photo of a single clear glass vodka bottle held in a person's hand in front of a kitchen, photographed with a phone, the whole bottle visible, paper label on the bottle seen from the back, sharp focus on the label, shallow depth of field",
+     "seed": 3670864888,
+     "half_angle": 29.5,
+     "camera": {
+      "mode": "rotate",
+      "rotation_deg": 23.7,
+      "framing": "closeup"
+     },
+     "label_pixels_identical_before_camera_effects": true,
+     "label_pixels_identical_after_our_geometry": true,
+     "camera_effects": [
+      "vignette",
+      "glare",
+      "blur0.6",
+      "grain"
+     ],
+     "size": [
+      822,
+      799
+     ],
+     "source_image": "04_back.jpg"
+    }
+   ]
+  },
+  {
+   "id": "cola_24012001000381__abv__scene0",
+   "set": "scenes_tampered_final",
+   "base_item": "cola_24012001000381__abv",
+   "pictures": [
+    {
+     "container": "bottle",
+     "scene": "hand",
+     "prompt": "realistic phone photo of a single clear glass whiskey bottle with amber whiskey inside held in a person's hand in front of a kitchen, photographed with a phone, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+     "seed": 3238726552,
+     "half_angle": 49.3,
+     "camera": {
+      "mode": "rotate+perspective",
+      "yaw_deg": 31.6,
+      "rotation_deg": 20.1,
+      "framing": "wide"
+     },
+     "label_pixels_identical_before_camera_effects": true,
+     "label_pixels_identical_after_our_geometry": true,
+     "camera_effects": [
+      "vignette",
+      "tint",
+      "grain"
+     ],
+     "size": [
+      932,
+      1208
+     ],
+     "source_image": "01_brand_front_or_keg_collar.jpg columns 0-2283"
+    },
+    {
+     "container": "bottle",
+     "scene": "table",
+     "prompt": "realistic phone photo of a single clear glass whiskey bottle with amber whiskey inside standing on a rustic kitchen table by a window, soft daylight, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+     "seed": 2806296900,
+     "half_angle": 38.7,
+     "camera": {
+      "mode": "perspective",
+      "yaw_deg": 32.9,
+      "framing": "wide"
+     },
+     "label_pixels_identical_before_camera_effects": true,
+     "label_pixels_identical_after_our_geometry": true,
+     "camera_effects": [
+      "vignette",
+      "glare",
+      "blur0.6",
+      "grain"
+     ],
+     "size": [
+      1002,
+      1069
+     ],
+     "source_image": "01_brand_front_or_keg_collar.jpg columns 1522-3805"
+    },
+    {
+     "container": "bottle",
+     "scene": "bar",
+     "prompt": "realistic phone photo of a single clear glass whiskey bottle with amber whiskey inside standing on a dark wooden bar counter in a dimly lit cocktail bar, warm bokeh lights in the background, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+     "seed": 1274393147,
+     "half_angle": 30.0,
+     "camera": {
+      "mode": "rotate",
+      "rotation_deg": 22.2,
+      "framing": "wide"
+     },
+     "label_pixels_identical_before_camera_effects": true,
+     "label_pixels_identical_after_our_geometry": true,
+     "camera_effects": [
+      "vignette",
+      "tint",
+      "grain"
+     ],
+     "size": [
+      945,
+      1683
+     ],
+     "source_image": "02_other.png"
+    }
+   ]
+  },
+  {
+   "id": "cola_24022001000902__abv__scene0",
+   "set": "scenes_tampered_final",
+   "base_item": "cola_24022001000902__abv",
+   "pictures": [
+    {
+     "container": "bottle",
+     "scene": "shelf",
+     "prompt": "realistic phone photo of a single dark green glass wine bottle standing on a liquor store shelf, other plain bottles blurred around it, bright store lighting, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+     "seed": 1906060898,
+     "half_angle": 27.7,
+     "camera": {
+      "mode": "rotate",
+      "rotation_deg": 24.2,
+      "framing": "wide"
+     },
+     "label_pixels_identical_before_camera_effects": true,
+     "label_pixels_identical_after_our_geometry": true,
+     "camera_effects": [
+      "vignette",
+      "grain"
+     ],
+     "size": [
+      913,
+      1677
+     ],
+     "source_image": "01_brand_front_or_keg_collar.jpg"
+    },
+    {
+     "container": "bottle",
+     "scene": "bar",
+     "prompt": "realistic phone photo of a single clear glass white wine bottle standing on a dark wooden bar counter in a dimly lit cocktail bar, warm bokeh lights in the background, the whole bottle visible, paper label on the bottle seen from the back, sharp focus on the label, shallow depth of field",
+     "seed": 2393928898,
+     "half_angle": 37.6,
+     "camera": {
+      "mode": "perspective",
+      "yaw_deg": 31.1,
+      "framing": "closeup"
+     },
+     "label_pixels_identical_before_camera_effects": true,
+     "label_pixels_identical_after_our_geometry": true,
+     "camera_effects": [
+      "vignette",
+      "glare",
+      "blur0.6",
+      "grain"
+     ],
+     "size": [
+      548,
+      701
+     ],
+     "source_image": "02_back.jpg"
+    }
+   ]
+  },
+  {
+   "id": "cola_24022001000904__warning_word__scene0",
+   "set": "scenes_tampered_final",
+   "base_item": "cola_24022001000904__warning_word",
+   "pictures": [
+    {
+     "container": "bottle",
+     "scene": "hand",
+     "prompt": "realistic phone photo of a single dark glass red wine bottle held in a person's hand in front of a kitchen, photographed with a phone, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+     "seed": 2151176120,
+     "half_angle": 30.6,
+     "camera": {
+      "mode": "perspective",
+      "yaw_deg": 38.5,
+      "framing": "closeup"
+     },
+     "label_pixels_identical_before_camera_effects": true,
+     "label_pixels_identical_after_our_geometry": true,
+     "camera_effects": [
+      "vignette",
+      "tint",
+      "grain"
+     ],
+     "size": [
+      527,
+      598
+     ],
+     "source_image": "01_brand_front_or_keg_collar.jpg"
+    },
+    {
+     "container": "bottle",
+     "scene": "table",
+     "prompt": "realistic phone photo of a single dark green glass wine bottle standing on a rustic kitchen table by a window, soft daylight, the whole bottle visible, paper label on the bottle seen from the back, sharp focus on the label, shallow depth of field",
+     "seed": 3039812753,
+     "half_angle": 32.0,
+     "camera": {
+      "mode": "rotate",
+      "rotation_deg": -24.4,
+      "framing": "wide"
+     },
+     "label_pixels_identical_before_camera_effects": true,
+     "label_pixels_identical_after_our_geometry": true,
+     "camera_effects": [
+      "vignette",
+      "glare",
+      "grain"
+     ],
+     "size": [
+      987,
+      1509
+     ],
+     "source_image": "02_back.jpg"
+    }
+   ]
+  },
+  {
+   "id": "cola_24030001000320__net__scene0",
+   "set": "scenes_tampered_final",
+   "base_item": "cola_24030001000320__net",
+   "pictures": [
+    {
+     "container": "bottle",
+     "scene": "cooler",
+     "prompt": "realistic phone photo of a single brown glass beer bottle standing on a wire shelf inside an open beverage cooler in a convenience store, cold white light, other bottles behind it, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+     "seed": 1893237835,
+     "half_angle": 30.0,
+     "camera": {
+      "mode": "perspective",
+      "yaw_deg": 42.2,
+      "framing": "closeup"
+     },
+     "label_pixels_identical_before_camera_effects": true,
+     "label_pixels_identical_after_our_geometry": true,
+     "camera_effects": [
+      "vignette",
+      "glare",
+      "blur0.9",
+      "grain"
+     ],
+     "size": [
+      475,
+      599
+     ],
+     "source_image": "01_brand_front_or_keg_collar.jpg columns 0-1472"
+    },
+    {
+     "container": "bottle",
+     "scene": "cooler",
+     "prompt": "realistic phone photo of a single brown glass beer bottle standing on a wire shelf inside an open beverage cooler in a convenience store, cold white light, other bottles behind it, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+     "seed": 225849780,
+     "half_angle": 29.8,
+     "camera": {
+      "mode": "rotate",
+      "rotation_deg": 12.5,
+      "framing": "closeup"
+     },
+     "label_pixels_identical_before_camera_effects": true,
+     "label_pixels_identical_after_our_geometry": true,
+     "camera_effects": [
+      "vignette",
+      "grain"
+     ],
+     "size": [
+      730,
+      716
+     ],
+     "source_image": "01_brand_front_or_keg_collar.jpg columns 981-2454"
+    }
+   ]
+  },
+  {
+   "id": "cola_24050001000660__net__scene0",
+   "set": "scenes_tampered_final",
+   "base_item": "cola_24050001000660__net",
+   "pictures": [
+    {
+     "container": "bottle",
+     "scene": "table",
+     "prompt": "realistic phone photo of a single glass spirits bottle standing on a rustic kitchen table by a window, soft daylight, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+     "seed": 49627379,
+     "half_angle": 33.0,
+     "camera": {
+      "mode": "rotate+perspective",
+      "yaw_deg": 41.3,
+      "rotation_deg": 26.5,
+      "framing": "edge"
+     },
+     "label_pixels_identical_before_camera_effects": true,
+     "label_pixels_identical_after_our_geometry": true,
+     "camera_effects": [
+      "vignette",
+      "tint",
+      "glare",
+      "blur0.6",
+      "grain"
+     ],
+     "size": [
+      660,
+      1245
+     ],
+     "source_image": "01_brand_front_or_keg_collar.jpg"
+    },
+    {
+     "container": "bottle",
+     "scene": "bar",
+     "prompt": "realistic phone photo of a single clear glass whiskey bottle with amber whiskey inside standing on a dark wooden bar counter in a dimly lit cocktail bar, warm bokeh lights in the background, the whole bottle visible, paper label on the bottle seen from the back, sharp focus on the label, shallow depth of field",
+     "seed": 2127159284,
+     "half_angle": 26.9,
+     "camera": {
+      "mode": "rotate+perspective",
+      "yaw_deg": 32.1,
+      "rotation_deg": 16.8,
+      "framing": "closeup"
+     },
+     "label_pixels_identical_before_camera_effects": true,
+     "label_pixels_identical_after_our_geometry": true,
+     "camera_effects": [
+      "vignette",
+      "tint",
+      "glare",
+      "blur0.9",
+      "grain"
+     ],
+     "size": [
+      739,
+      939
+     ],
+     "source_image": "02_back.jpg"
+    },
+    {
+     "container": "bottle",
+     "scene": "table",
+     "prompt": "realistic phone photo of a single clear glass whiskey bottle with amber whiskey inside standing on a rustic kitchen table by a window, soft daylight, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+     "seed": 2127973640,
+     "half_angle": 36.6,
+     "camera": {
+      "mode": "perspective",
+      "yaw_deg": 42.1,
+      "framing": "edge"
+     },
+     "label_pixels_identical_before_camera_effects": true,
+     "label_pixels_identical_after_our_geometry": true,
+     "camera_effects": [
+      "vignette",
+      "tint",
+      "blur0.9",
+      "grain"
+     ],
+     "size": [
+      440,
+      986
+     ],
+     "source_image": "03_neck.jpg"
+    }
+   ]
+  },
+  {
+   "id": "cola_24072001000642__warning_delete__scene0",
+   "set": "scenes_tampered_final",
+   "base_item": "cola_24072001000642__warning_delete",
+   "pictures": [
+    {
+     "container": "bottle",
+     "scene": "bar",
+     "prompt": "realistic phone photo of a single glass spirits bottle standing on a dark wooden bar counter in a dimly lit cocktail bar, warm bokeh lights in the background, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+     "seed": 1762656258,
+     "half_angle": 25.0,
+     "camera": {
+      "mode": "perspective",
+      "yaw_deg": 35.8,
+      "framing": "wide"
+     },
+     "label_pixels_identical_before_camera_effects": true,
+     "label_pixels_identical_after_our_geometry": true,
+     "camera_effects": [
+      "vignette",
+      "tint",
+      "glare",
+      "blur0.6",
+      "grain"
+     ],
+     "size": [
+      958,
+      1320
+     ],
+     "source_image": "01_brand_front_or_keg_collar.jpg columns 0-442"
+    },
+    {
+     "container": "bottle",
+     "scene": "shelf",
+     "prompt": "realistic phone photo of a single glass spirits bottle standing on a liquor store shelf, other plain bottles blurred around it, bright store lighting, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+     "seed": 2094267890,
+     "half_angle": 28.3,
+     "camera": {
+      "mode": "perspective",
+      "yaw_deg": 44.1,
+      "framing": "closeup"
+     },
+     "label_pixels_identical_before_camera_effects": true,
+     "label_pixels_identical_after_our_geometry": true,
+     "camera_effects": [
+      "vignette",
+      "tint",
+      "grain"
+     ],
+     "size": [
+      457,
+      661
+     ],
+     "source_image": "01_brand_front_or_keg_collar.jpg columns 295-738"
+    },
+    {
+     "container": "bottle",
+     "scene": "cooler",
+     "prompt": "realistic phone photo of a single clear glass whiskey bottle with amber whiskey inside standing on a wire shelf inside an open beverage cooler in a convenience store, cold white light, other bottles behind it, the whole bottle visible, paper label on the bottle seen from the back, sharp focus on the label, shallow depth of field",
+     "seed": 3169733930,
+     "half_angle": 35.0,
+     "camera": {
+      "mode": "perspective",
+      "yaw_deg": 34.2,
+      "framing": "edge"
+     },
+     "label_pixels_identical_before_camera_effects": true,
+     "label_pixels_identical_after_our_geometry": true,
+     "camera_effects": [
+      "vignette",
+      "tint",
+      "glare",
+      "blur0.6",
+      "grain"
+     ],
+     "size": [
+      1028,
+      1172
+     ],
+     "source_image": "02_back.jpg"
+    }
+   ]
+  },
+  {
+   "id": "cola_24078001000871__warning_delete__scene0",
+   "set": "scenes_tampered_final",
+   "base_item": "cola_24078001000871__warning_delete",
+   "pictures": [
+    {
+     "container": "bottle",
+     "scene": "bar",
+     "prompt": "realistic phone photo of a single clear glass white wine bottle standing on a dark wooden bar counter in a dimly lit cocktail bar, warm bokeh lights in the background, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+     "seed": 2986718662,
+     "half_angle": 27.7,
+     "camera": {
+      "mode": "rotate+perspective",
+      "yaw_deg": 37.8,
+      "rotation_deg": -12.7,
+      "framing": "edge"
+     },
+     "label_pixels_identical_before_camera_effects": true,
+     "label_pixels_identical_after_our_geometry": true,
+     "camera_effects": [
+      "vignette",
+      "glare",
+      "blur0.9",
+      "grain"
+     ],
+     "size": [
+      1021,
+      887
+     ],
+     "source_image": "01_brand_front_or_keg_collar.png"
+    },
+    {
+     "container": "bottle",
+     "scene": "shelf",
+     "prompt": "realistic phone photo of a single dark glass red wine bottle standing on a liquor store shelf, other plain bottles blurred around it, bright store lighting, the whole bottle visible, paper label on the bottle seen from the back, sharp focus on the label, shallow depth of field",
+     "seed": 2696469797,
+     "half_angle": 27.7,
+     "camera": {
+      "mode": "rotate",
+      "rotation_deg": -13.3,
+      "framing": "edge"
+     },
+     "label_pixels_identical_before_camera_effects": true,
+     "label_pixels_identical_after_our_geometry": true,
+     "camera_effects": [
+      "vignette",
+      "tint",
+      "glare",
+      "blur0.9",
+      "grain"
+     ],
+     "size": [
+      732,
+      1921
+     ],
+     "source_image": "02_back.jpg"
+    },
+    {
+     "container": "bottle",
+     "scene": "bar",
+     "prompt": "realistic phone photo of a single dark glass red wine bottle standing on a dark wooden bar counter in a dimly lit cocktail bar, warm bokeh lights in the background, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+     "seed": 1996251225,
+     "half_angle": 34.5,
+     "camera": {
+      "mode": "perspective",
+      "yaw_deg": 26.5,
+      "framing": "edge"
+     },
+     "label_pixels_identical_before_camera_effects": true,
+     "label_pixels_identical_after_our_geometry": true,
+     "camera_effects": [
+      "vignette",
+      "tint",
+      "glare",
+      "blur0.9",
+      "grain"
+     ],
+     "size": [
+      566,
+      1211
+     ],
+     "source_image": "03_other.jpg"
+    },
+    {
+     "container": "bottle",
+     "scene": "cooler",
+     "prompt": "realistic phone photo of a single clear glass white wine bottle standing on a wire shelf inside an open beverage cooler in a convenience store, cold white light, other bottles behind it, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+     "seed": 72202537,
+     "half_angle": 32.5,
+     "camera": {
+      "mode": "rotate",
+      "rotation_deg": -24.7,
+      "framing": "closeup"
+     },
+     "label_pixels_identical_before_camera_effects": true,
+     "label_pixels_identical_after_our_geometry": true,
+     "camera_effects": [
+      "vignette",
+      "tint",
+      "glare",
+      "grain"
+     ],
+     "size": [
+      578,
+      977
+     ],
+     "source_image": "04_other.jpg"
+    }
+   ]
+  },
+  {
+   "id": "cola_24096001000861__warning_titlecase__scene0",
+   "set": "scenes_tampered_final",
+   "base_item": "cola_24096001000861__warning_titlecase",
+   "pictures": [
+    {
+     "container": "bottle",
+     "scene": "cooler",
+     "prompt": "realistic phone photo of a single clear glass white wine bottle standing on a wire shelf inside an open beverage cooler in a convenience store, cold white light, other bottles behind it, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+     "seed": 381667849,
+     "half_angle": 25.9,
+     "camera": {
+      "mode": "rotate",
+      "rotation_deg": 12.6,
+      "framing": "wide"
+     },
+     "label_pixels_identical_before_camera_effects": true,
+     "label_pixels_identical_after_our_geometry": true,
+     "camera_effects": [
+      "vignette",
+      "tint",
+      "grain"
+     ],
+     "size": [
+      964,
+      1154
+     ],
+     "source_image": "01_brand_front_or_keg_collar.jpg columns 0-1273"
+    },
+    {
+     "container": "bottle",
+     "scene": "cooler",
+     "prompt": "realistic phone photo of a single dark green glass wine bottle standing on a wire shelf inside an open beverage cooler in a convenience store, cold white light, other bottles behind it, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+     "seed": 2024359721,
+     "half_angle": 34.2,
+     "camera": {
+      "mode": "perspective",
+      "yaw_deg": 40.2,
+      "framing": "closeup"
+     },
+     "label_pixels_identical_before_camera_effects": true,
+     "label_pixels_identical_after_our_geometry": true,
+     "camera_effects": [
+      "vignette",
+      "tint",
+      "grain"
+     ],
+     "size": [
+      484,
+      464
+     ],
+     "source_image": "01_brand_front_or_keg_collar.jpg columns 849-2123"
+    }
+   ]
+  },
+  {
+   "id": "cola_24110001000159__warning_delete__scene0",
+   "set": "scenes_tampered_final",
+   "base_item": "cola_24110001000159__warning_delete",
+   "pictures": [
+    {
+     "container": "bottle",
+     "scene": "table",
+     "prompt": "realistic phone photo of a single clear glass vodka bottle standing on a rustic kitchen table by a window, soft daylight, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+     "seed": 3111627972,
+     "half_angle": 30.8,
+     "camera": {
+      "mode": "rotate+perspective",
+      "yaw_deg": 36.8,
+      "rotation_deg": -18.7,
+      "framing": "closeup"
+     },
+     "label_pixels_identical_before_camera_effects": true,
+     "label_pixels_identical_after_our_geometry": true,
+     "camera_effects": [
+      "vignette",
+      "tint",
+      "glare",
+      "blur0.9",
+      "grain"
+     ],
+     "size": [
+      748,
+      956
+     ],
+     "source_image": "01_brand_front_or_keg_collar.jpg"
+    },
+    {
+     "container": "bottle",
+     "scene": "table",
+     "prompt": "realistic phone photo of a single clear glass vodka bottle standing on a rustic kitchen table by a window, soft daylight, the whole bottle visible, paper label on the bottle seen from the back, sharp focus on the label, shallow depth of field",
+     "seed": 824565067,
+     "half_angle": 28.0,
+     "camera": {
+      "mode": "rotate+perspective",
+      "yaw_deg": 33.7,
+      "rotation_deg": 26.7,
+      "framing": "closeup"
+     },
+     "label_pixels_identical_before_camera_effects": true,
+     "label_pixels_identical_after_our_geometry": true,
+     "camera_effects": [
+      "vignette",
+      "tint",
+      "blur0.9",
+      "grain"
+     ],
+     "size": [
+      854,
+      928
+     ],
+     "source_image": "02_back.jpg"
+    }
+   ]
+  },
+  {
+   "id": "cola_24110001000178__warning_delete__scene0",
+   "set": "scenes_tampered_final",
+   "base_item": "cola_24110001000178__warning_delete",
+   "pictures": [
+    {
+     "container": "bottle",
+     "scene": "cooler",
+     "prompt": "realistic phone photo of a single dark glass red wine bottle standing on a wire shelf inside an open beverage cooler in a convenience store, cold white light, other bottles behind it, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+     "seed": 622150860,
+     "half_angle": 25.1,
+     "camera": {
+      "mode": "rotate",
+      "rotation_deg": -14.9,
+      "framing": "wide"
+     },
+     "label_pixels_identical_before_camera_effects": true,
+     "label_pixels_identical_after_our_geometry": true,
+     "camera_effects": [
+      "vignette",
+      "glare",
+      "blur0.9",
+      "grain"
+     ],
+     "size": [
+      773,
+      1911
+     ],
+     "source_image": "01_brand_front_or_keg_collar.jpg"
+    },
+    {
+     "container": "bottle",
+     "scene": "cooler",
+     "prompt": "realistic phone photo of a single dark glass red wine bottle standing on a wire shelf inside an open beverage cooler in a convenience store, cold white light, other bottles behind it, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+     "seed": 1528802188,
+     "half_angle": 34.0,
+     "camera": {
+      "mode": "rotate+perspective",
+      "yaw_deg": 30.5,
+      "rotation_deg": -16.6,
+      "framing": "wide"
+     },
+     "label_pixels_identical_before_camera_effects": true,
+     "label_pixels_identical_after_our_geometry": true,
+     "camera_effects": [
+      "vignette",
+      "glare",
+      "blur0.9",
+      "grain"
+     ],
+     "size": [
+      624,
+      1785
+     ],
+     "source_image": "02_other.jpg"
+    }
+   ]
+  },
+  {
+   "id": "cola_24155001000862__proof__scene0",
+   "set": "scenes_tampered_final",
+   "base_item": "cola_24155001000862__proof",
+   "pictures": [
+    {
+     "container": "bottle",
+     "scene": "table",
+     "prompt": "realistic phone photo of a single clear glass whiskey bottle with amber whiskey inside standing on a rustic kitchen table by a window, soft daylight, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+     "seed": 436544727,
+     "half_angle": 32.3,
+     "camera": {
+      "mode": "rotate",
+      "rotation_deg": 10.7,
+      "framing": "wide"
+     },
+     "label_pixels_identical_before_camera_effects": true,
+     "label_pixels_identical_after_our_geometry": true,
+     "camera_effects": [
+      "vignette",
+      "tint",
+      "glare",
+      "blur0.6",
+      "grain"
+     ],
+     "size": [
+      1089,
+      1664
+     ],
+     "source_image": "01_brand_front_or_keg_collar.jpg columns 0-1191"
+    },
+    {
+     "container": "bottle",
+     "scene": "bar",
+     "prompt": "realistic phone photo of a single clear glass vodka bottle standing on a dark wooden bar counter in a dimly lit cocktail bar, warm bokeh lights in the background, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+     "seed": 3839678511,
+     "half_angle": 26.0,
+     "camera": {
+      "mode": "perspective",
+      "yaw_deg": 34.2,
+      "framing": "closeup"
+     },
+     "label_pixels_identical_before_camera_effects": true,
+     "label_pixels_identical_after_our_geometry": true,
+     "camera_effects": [
+      "vignette",
+      "tint",
+      "glare",
+      "blur0.6",
+      "grain"
+     ],
+     "size": [
+      535,
+      732
+     ],
+     "source_image": "01_brand_front_or_keg_collar.jpg columns 794-1985"
+    },
+    {
+     "container": "bottle",
+     "scene": "cooler",
+     "prompt": "realistic phone photo of a single clear glass whiskey bottle with amber whiskey inside standing on a wire shelf inside an open beverage cooler in a convenience store, cold white light, other bottles behind it, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+     "seed": 1842835513,
+     "half_angle": 27.7,
+     "camera": {
+      "mode": "rotate",
+      "rotation_deg": 14.1,
+      "framing": "wide"
+     },
+     "label_pixels_identical_before_camera_effects": true,
+     "label_pixels_identical_after_our_geometry": true,
+     "camera_effects": [
+      "vignette",
+      "grain"
+     ],
+     "size": [
+      965,
+      1697
+     ],
+     "source_image": "02_other.png"
+    }
+   ]
+  },
+  {
+   "id": "cola_24208001000178__warning_word__scene0",
+   "set": "scenes_tampered_final",
+   "base_item": "cola_24208001000178__warning_word",
+   "pictures": [
+    {
+     "container": "bottle",
+     "scene": "table",
+     "prompt": "realistic phone photo of a single clear glass white wine bottle standing on a rustic kitchen table by a window, soft daylight, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+     "seed": 3937927257,
+     "half_angle": 27.7,
+     "camera": {
+      "mode": "rotate",
+      "rotation_deg": 12.3,
+      "framing": "wide"
+     },
+     "label_pixels_identical_before_camera_effects": true,
+     "label_pixels_identical_after_our_geometry": true,
+     "camera_effects": [
+      "vignette",
+      "tint",
+      "glare",
+      "grain"
+     ],
+     "size": [
+      819,
+      1912
+     ],
+     "source_image": "01_brand_front_or_keg_collar.jpg"
+    },
+    {
+     "container": "bottle",
+     "scene": "cooler",
+     "prompt": "realistic phone photo of a single dark glass red wine bottle standing on a wire shelf inside an open beverage cooler in a convenience store, cold white light, other bottles behind it, the whole bottle visible, paper label on the bottle seen from the back, sharp focus on the label, shallow depth of field",
+     "seed": 2633547689,
+     "half_angle": 26.3,
+     "camera": {
+      "mode": "rotate",
+      "rotation_deg": -24.3,
+      "framing": "closeup"
+     },
+     "label_pixels_identical_before_camera_effects": true,
+     "label_pixels_identical_after_our_geometry": true,
+     "camera_effects": [
+      "vignette",
+      "tint",
+      "grain"
+     ],
+     "size": [
+      958,
+      1019
+     ],
+     "source_image": "02_back.jpg"
+    }
+   ]
+  },
+  {
+   "id": "cola_24304001000648__warning_titlecase__scene0",
+   "set": "scenes_tampered_final",
+   "base_item": "cola_24304001000648__warning_titlecase",
+   "pictures": [
+    {
+     "container": "can",
+     "scene": "shelf",
+     "prompt": "realistic phone photo of a single aluminium drink can standing on a liquor store shelf, other plain bottles blurred around it, bright store lighting, the can is already in the picture, sharp focus on the can, shallow depth of field",
+     "seed": 2107942822,
+     "half_angle": 40,
+     "camera": {
+      "mode": "rotate",
+      "rotation_deg": -12.2,
+      "framing": "edge"
+     },
+     "label_pixels_identical_before_camera_effects": true,
+     "label_pixels_identical_after_our_geometry": true,
+     "camera_effects": [
+      "vignette",
+      "tint",
+      "blur0.9",
+      "grain"
+     ],
+     "size": [
+      769,
+      1518
+     ],
+     "source_image": "01_brand_front_or_keg_collar.jpg"
+    }
+   ]
+  },
+  {
+   "id": "cola_25055001000896__abv__scene0",
+   "set": "scenes_tampered_final",
+   "base_item": "cola_25055001000896__abv",
+   "pictures": [
+    {
+     "container": "bottle",
+     "scene": "bar",
+     "prompt": "realistic phone photo of a single dark green glass wine bottle standing on a dark wooden bar counter in a dimly lit cocktail bar, warm bokeh lights in the background, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+     "seed": 590868288,
+     "half_angle": 28.4,
+     "camera": {
+      "mode": "rotate",
+      "rotation_deg": 20.3,
+      "framing": "wide"
+     },
+     "label_pixels_identical_before_camera_effects": true,
+     "label_pixels_identical_after_our_geometry": true,
+     "camera_effects": [
+      "vignette",
+      "glare",
+      "grain"
+     ],
+     "size": [
+      1056,
+      1471
+     ],
+     "source_image": "01_brand_front_or_keg_collar.jpg"
+    },
+    {
+     "container": "bottle",
+     "scene": "cooler",
+     "prompt": "realistic phone photo of a single clear glass white wine bottle standing on a wire shelf inside an open beverage cooler in a convenience store, cold white light, other bottles behind it, the whole bottle visible, paper label on the bottle seen from the back, sharp focus on the label, shallow depth of field",
+     "seed": 765431841,
+     "half_angle": 31.0,
+     "camera": {
+      "mode": "perspective",
+      "yaw_deg": 37.8,
+      "framing": "closeup"
+     },
+     "label_pixels_identical_before_camera_effects": true,
+     "label_pixels_identical_after_our_geometry": true,
+     "camera_effects": [
+      "vignette",
+      "glare",
+      "grain"
+     ],
+     "size": [
+      513,
+      583
+     ],
+     "source_image": "02_back.jpg"
+    },
+    {
+     "container": "bottle",
+     "scene": "hand",
+     "prompt": "realistic phone photo of a single clear glass white wine bottle held in a person's hand in front of a kitchen, photographed with a phone, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+     "seed": 2766396847,
+     "half_angle": 47.9,
+     "camera": {
+      "mode": "perspective",
+      "yaw_deg": 40.0,
+      "framing": "wide"
+     },
+     "label_pixels_identical_before_camera_effects": true,
+     "label_pixels_identical_after_our_geometry": true,
+     "camera_effects": [
+      "vignette",
+      "tint",
+      "blur0.9",
+      "grain"
+     ],
+     "size": [
+      936,
+      917
+     ],
+     "source_image": "03_neck.jpg columns 0-760"
+    },
+    {
+     "container": "bottle",
+     "scene": "shelf",
+     "prompt": "realistic phone photo of a single dark glass red wine bottle standing on a liquor store shelf, other plain bottles blurred around it, bright store lighting, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+     "seed": 1715289532,
+     "half_angle": 48.1,
+     "camera": {
+      "mode": "perspective",
+      "yaw_deg": 40.3,
+      "framing": "closeup"
+     },
+     "label_pixels_identical_before_camera_effects": true,
+     "label_pixels_identical_after_our_geometry": true,
+     "camera_effects": [
+      "vignette",
+      "blur0.6",
+      "grain"
+     ],
+     "size": [
+      701,
+      480
+     ],
+     "source_image": "03_neck.jpg columns 506-1267"
+    }
+   ]
+  },
+  {
+   "id": "cola_25169001000935__proof__scene0",
+   "set": "scenes_tampered_final",
+   "base_item": "cola_25169001000935__proof",
+   "pictures": [
+    {
+     "container": "bottle",
+     "scene": "table",
+     "prompt": "realistic phone photo of a single clear glass whiskey bottle with amber whiskey inside standing on a rustic kitchen table by a window, soft daylight, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+     "seed": 2873289708,
+     "half_angle": 28.6,
+     "camera": {
+      "mode": "rotate",
+      "rotation_deg": -20.1,
+      "framing": "wide"
+     },
+     "label_pixels_identical_before_camera_effects": true,
+     "label_pixels_identical_after_our_geometry": true,
+     "camera_effects": [
+      "vignette",
+      "tint",
+      "glare",
+      "blur0.9",
+      "grain"
+     ],
+     "size": [
+      954,
+      1808
+     ],
+     "source_image": "01_brand_front_or_keg_collar.jpg"
+    },
+    {
+     "container": "bottle",
+     "scene": "table",
+     "prompt": "realistic phone photo of a single clear glass whiskey bottle with amber whiskey inside standing on a rustic kitchen table by a window, soft daylight, the whole bottle visible, paper label on the bottle seen from the back, sharp focus on the label, shallow depth of field",
+     "seed": 1892108824,
+     "half_angle": 29.6,
+     "camera": {
+      "mode": "perspective",
+      "yaw_deg": 32.7,
+      "framing": "wide"
+     },
+     "label_pixels_identical_before_camera_effects": true,
+     "label_pixels_identical_after_our_geometry": true,
+     "camera_effects": [
+      "vignette",
+      "tint",
+      "blur0.6",
+      "grain"
+     ],
+     "size": [
+      960,
+      1733
+     ],
+     "source_image": "02_back.jpg"
+    }
+   ]
+  }
+ ],
+ "failed": [],
+ "calls_this_run": 104,
+ "est_cost_usd_this_run": [
+  4.16,
+  8.32
+ ]
+}

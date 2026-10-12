@@ -1,0 +1,64 @@
+{
+  "id": "26196001000791__scene0",
+  "images": [
+    {
+      "file": "scene_1.jpg",
+      "image_type": "Brand (front) or keg collar (left part)"
+    },
+    {
+      "file": "scene_2.jpg",
+      "image_type": "Brand (front) or keg collar (right part)"
+    },
+    {
+      "file": "scene_3.jpg",
+      "image_type": "Back"
+    }
+  ],
+  "source": {
+    "type": "real label scene",
+    "license": "public COLA registry label artwork; scene generated for this project"
+  },
+  "application": {
+    "beverage_type": "wine",
+    "brand_name": "SKIN CONTACT",
+    "class_type": "50% Chenin Blanc, 50% Cortese",
+    "abv": 13.4,
+    "proof": null,
+    "net_contents": "750 ML",
+    "source": "domestic",
+    "country_of_origin": null,
+    "name_address": "PRODUCED AND BOTTLED BY: MATT CRUTCHFIELD WINES FORESTVILLE, CA",
+    "label_width_in": 3.75
+  },
+  "printed": {
+    "brand_name": "SKIN CONTACT",
+    "class_type": "50% Chenin Blanc, 50% Cortese",
+    "abv": 13.4,
+    "proof": null,
+    "net_contents": "750 ML",
+    "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "warning_heading_bold": "unclear",
+    "warning_orientation": "horizontal",
+    "warning_image": "02_back.jpg"
+  },
+  "expected": {
+    "overall": "approved",
+    "findings": [],
+    "warning_misprinted": false,
+    "warning_present": true
+  },
+  "provenance": {
+    "base_item": "cola_26196001000791",
+    "model": "us.stability.stable-image-inpaint-v1:0",
+    "prompt": [
+      "realistic phone photo of a single clear glass white wine bottle standing on a dark wooden bar counter in a dimly lit cocktail bar, warm bokeh lights in the background, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+      "realistic phone photo of a single clear glass white wine bottle standing on a dark wooden bar counter in a dimly lit cocktail bar, warm bokeh lights in the background, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+      "realistic phone photo of a single clear glass white wine bottle held in a person's hand in front of a kitchen, photographed with a phone, the whole bottle visible, paper label on the bottle seen from the back, sharp focus on the label, shallow depth of field"
+    ],
+    "seed": [
+      1315369882,
+      3848203678,
+      3201210904
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "id": "24002001000400",
+  "beverage_type": "spirits",
+  "brand_name": "Die the Wolf",
+  "class_type": "BLUEBERRY EAU DE VIE",
+  "abv": 40,
+  "abv_text": "alcohol 40% by volume",
+  "proof": null,
+  "net_contents_text": "375 ml",
+  "net_contents_ml": 375,
+  "name_address_text": "Produced and bottled by Die The Wolf in Forest Grove , Oregon.",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "02_back.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "vertical"
+  },
+  "hard_cases": [
+    "brand 'Die the Wolf' stacked on three lines with a tiny 'the' (registry: 'DIE THE WOLF')",
+    "class 'blueberry brandy' in lowercase on the bottom line together with net contents and ABV; 'BLUEBERRY EAU DE VIE' is the fanciful name in a pill",
+    "warning rotated 90 degrees in a narrow justified box beside a UPC placeholder",
+    "warning words hyphenated across line breaks (BEVERAG-ES, CONSUMP-TION; dehyphenated in transcription)",
+    "light periwinkle text on white",
+    "no proof statement"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

@@ -1,0 +1,29 @@
+{
+  "ttb_id": "26105001000818",
+  "status": "APPROVED",
+  "serial_no": "26HONM",
+  "class_type_code": "SAKE - IMPORTED",
+  "origin_code": "JAPAN",
+  "brand_name": "TAMURA \"HONMAGURO\" JUNMAI GINJO KARAKUCHI",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "05/26/2026",
+  "applicant": "OR-I-21196 | Namazake Paul Imports, Namazake Paul Imports LLC | 109 SE SALMON ST | Portland,\u00a0OR\u00a097214",
+  "source": "imported",
+  "product_type": "wine",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 5.0,
+      "height_in": 4.0
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 5.5,
+      "height_in": 4.0
+    }
+  ]
+}

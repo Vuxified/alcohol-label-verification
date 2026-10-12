@@ -1,0 +1,29 @@
+{
+  "ttb_id": "24003001000718",
+  "status": "APPROVED",
+  "serial_no": "249192",
+  "class_type_code": "COFFEE (CAFE) LIQUEUR",
+  "origin_code": "FLORIDA",
+  "brand_name": "J.F. HADEN'S",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/05/2024",
+  "applicant": "DSP-FL-20122 | Tropical Distillery LLC | 2141 NW 10TH AVE | Miami,\u00a0FL\u00a033127",
+  "source": "domestic",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 4.0,
+      "height_in": 8.0
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 4.0,
+      "height_in": 7.9
+    }
+  ]
+}

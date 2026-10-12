@@ -1,0 +1,37 @@
+{
+  "id": "24004001000258",
+  "beverage_type": "malt",
+  "brand_name": "KINGZTON",
+  "class_type": "LAGER",
+  "abv": 4.8,
+  "abv_text": "4.8 % alc./vol.",
+  "proof": null,
+  "net_contents_text": "Net 11.2 fl.oz- 330mL ℮",
+  "net_contents_ml": 330,
+  "name_address_text": "IMPORTED INTO THE US BY: INTERNATIONAL DISTILLERS & VINTERS, EVERETT, WA 98203 USA; BREWED AND BOTTLED BY/BRASS ET MIS EN BOUTEILLE PAR: RJ RUMS & SPIRITS LTD 7 Pechon Street, Kingston, Jamaica",
+  "country_of_origin_text": "PRODUCT OF JAMAICA",
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": false,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "warning misprint: comma missing after 'MACHINERY' ('OPERATE MACHINERY AND MAY CAUSE')",
+    "very low-resolution image (359x526 px); small print is blurry",
+    "fanciful 'BORN IN JAMAICA' and 'CRAFT BREWED' flank brand",
+    "brand 'KINGZTON' with oversized Z",
+    "net contents line mixes fl oz, mL and the ℮ estimated sign",
+    "bilingual English/French text (BEER / BIÈRE, PRODUIT DE JAMAÏQUE)",
+    "state deposit/refund text inside warning panel",
+    "neck label repeats brand, LAGER, BORN IN JAMAICA"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

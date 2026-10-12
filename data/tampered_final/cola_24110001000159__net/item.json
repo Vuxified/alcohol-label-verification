@@ -1,0 +1,60 @@
+{
+  "id": "cola_24110001000159__net",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 4.5,
+      "height_in": 5.8
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 4.5,
+      "height_in": 5.8
+    }
+  ],
+  "source": {
+    "type": "tampered",
+    "license": "TTB Public COLA Registry image (public record), with one change planted for testing by tools/make_tampered.py",
+    "ttb_id": "24110001000159",
+    "edited_images": [
+      "01_brand_front_or_keg_collar.jpg",
+      "02_back.jpg"
+    ]
+  },
+  "application": {
+    "beverage_type": "spirits",
+    "brand_name": "JAMESON",
+    "class_type": "IRISH WHISKEY",
+    "abv": 40,
+    "proof": null,
+    "net_contents": "750ml",
+    "source": "imported",
+    "country_of_origin": "PRODUCT OF MIDLETON DISTILLERY, MIDLETON, CO. CORK, IRELAND.",
+    "name_address": "IMPORTED BY JOHN JAMESON IMPORT COMPANY, NEW YORK, NY.",
+    "label_width_in": 4.5
+  },
+  "printed": {
+    "brand_name": "JAMESON",
+    "class_type": "IRISH WHISKEY",
+    "abv": 40,
+    "proof": null,
+    "net_contents": "720ml",
+    "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "warning_heading_bold": true,
+    "warning_cap_mm": null
+  },
+  "expected": {
+    "overall": "fail",
+    "findings": [
+      "NET_CONTENTS_MISMATCH"
+    ]
+  },
+  "provenance": {
+    "base_id": "cola_24110001000159",
+    "change": "net",
+    "from": "750ml",
+    "to": "720ml"
+  }
+}

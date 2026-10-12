@@ -1,0 +1,23 @@
+{
+  "ttb_id": "24008001000223",
+  "status": "APPROVED",
+  "serial_no": "240001",
+  "class_type_code": "BEER",
+  "origin_code": "GERMANY",
+  "brand_name": "DAB",
+  "fanciful_name": "EXPORT",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/10/2024",
+  "applicant": "CT-I-331 | Radeberger Gruppe USA, BINDING BRAUEREI USA INC. | 383 MAIN AVE STE 440 | NORWALK,\u00a0CT\u00a006851",
+  "source": "imported",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 8.19,
+      "height_in": 6.31
+    }
+  ]
+}

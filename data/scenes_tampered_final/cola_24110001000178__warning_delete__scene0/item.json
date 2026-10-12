@@ -1,0 +1,57 @@
+{
+  "id": "cola_24110001000178__warning_delete__scene0",
+  "images": [
+    {
+      "file": "scene_1.jpg",
+      "image_type": "Brand (front) or keg collar"
+    },
+    {
+      "file": "scene_2.jpg",
+      "image_type": "Other"
+    }
+  ],
+  "source": {
+    "type": "real label scene (final test)",
+    "license": "public COLA registry label artwork; scene generated for this project"
+  },
+  "application": {
+    "beverage_type": "wine",
+    "brand_name": "APOTHIC",
+    "class_type": "CABERNET SAUVIGNON",
+    "abv": 13.9,
+    "proof": null,
+    "net_contents": "750mL",
+    "source": "domestic",
+    "country_of_origin": null,
+    "name_address": "BOTTLED BY APOTHIC WINES, MODESTO, CA",
+    "label_width_in": 2.56
+  },
+  "printed": {
+    "brand_name": "APOTHIC",
+    "class_type": "CABERNET SAUVIGNON",
+    "abv": 13.9,
+    "proof": null,
+    "net_contents": "750mL",
+    "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "warning_heading_bold": true,
+    "warning_cap_mm": null
+  },
+  "expected": {
+    "overall": "fail",
+    "findings": [
+      "WARNING_TEXT_ALTERED"
+    ]
+  },
+  "provenance": {
+    "base_item": "cola_24110001000178__warning_delete",
+    "model": "us.stability.stable-image-inpaint-v1:0",
+    "prompt": [
+      "realistic phone photo of a single dark glass red wine bottle standing on a wire shelf inside an open beverage cooler in a convenience store, cold white light, other bottles behind it, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+      "realistic phone photo of a single dark glass red wine bottle standing on a wire shelf inside an open beverage cooler in a convenience store, cold white light, other bottles behind it, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field"
+    ],
+    "seed": [
+      622150860,
+      1528802188
+    ]
+  }
+}

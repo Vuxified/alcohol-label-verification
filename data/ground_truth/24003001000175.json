@@ -1,0 +1,37 @@
+{
+  "id": "24003001000175",
+  "beverage_type": "malt",
+  "brand_name": "Köstritzer",
+  "class_type": "Black Lager Beer",
+  "abv": 4.8,
+  "abv_text": "Alc. 4.8% by vol.",
+  "proof": null,
+  "net_contents_text": "50 L e–",
+  "net_contents_ml": 49967.44,
+  "name_address_text": "Köstritzer Schwarzbierbrauerei GmbH · 07586 Bad Köstritz · Germany",
+  "country_of_origin_text": "PRODUCT OF GERMANY",
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "other"
+  },
+  "hard_cases": [
+    "round keg collar; every text block is set at a different rotation (warning about 60 degrees, US panel upside down at about 120 degrees, keg-pressure warning upside down)",
+    "brand in blackletter script with umlaut ('Köstritzer'); registry brand had been garbled and was corrected to KÖSTRITZER",
+    "two net contents statements: '50 L ℮' on the front and 'NET CONTENT: 13.2 GAL' on the US panel (net_contents_ml uses 13.2 US gal; 50 L = 50000 mL)",
+    "ABV printed twice: 'Alk. 4,8% vol. · alc. 4,8% vol.' (decimal comma) and 'Alc. 4.8% by vol.'",
+    "stray '· FL' after the ABV on the US panel",
+    "'SCHWARZBIER' printed under the brand; class/type taken from the US panel ('Black Lager Beer')",
+    "second 'WARNING · ATTENTION' keg-pressure block could be confused with the government warning",
+    "multilingual ingredient and brewer text (German brewer: Köstritzer Schwarzbierbrauerei, 07586 Bad Köstritz / Germany)"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

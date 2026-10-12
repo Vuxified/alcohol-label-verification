@@ -1,0 +1,23 @@
+{
+  "ttb_id": "26027001000808",
+  "status": "APPROVED",
+  "serial_no": "260004",
+  "class_type_code": "BEER",
+  "origin_code": "TENNESSEE",
+  "brand_name": "BLACK ABBEY BREWING CO.",
+  "fanciful_name": "ORIGINAL LAGER",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/28/2026",
+  "applicant": "BR-TN-21247 | Jackalope Brewing Company, Tacoma and Hoyt, LLC | 429 HOUSTON ST STE B | NASHVILLE,\u00a0TN\u00a037203",
+  "source": "domestic",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 7.5,
+      "height_in": 3.6
+    }
+  ]
+}

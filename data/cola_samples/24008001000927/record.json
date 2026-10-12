@@ -1,0 +1,29 @@
+{
+  "ttb_id": "24008001000927",
+  "status": "APPROVED",
+  "serial_no": "247266",
+  "class_type_code": "TEQUILA FB",
+  "origin_code": "MEXICO",
+  "brand_name": "AMNA",
+  "fanciful_name": "BLANCO",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/09/2024",
+  "applicant": "CA-I-22288 | Aman Spirits, Gerardo Madrigal | 722 HOEFNER AVE | Los Angeles,\u00a0CA\u00a090022",
+  "source": "imported",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.png",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 2.44,
+      "height_in": 3.5
+    },
+    {
+      "file": "02_back.png",
+      "image_type": "Back",
+      "width_in": 4.06,
+      "height_in": 0.87
+    }
+  ]
+}

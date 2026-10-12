@@ -1,0 +1,36 @@
+{
+  "id": "26027001000808",
+  "beverage_type": "malt",
+  "brand_name": "BLACK ABBEY BREWING CO.",
+  "class_type": "LAGER",
+  "abv": 4.9,
+  "abv_text": "4.9% ALC. BY VOL.",
+  "proof": null,
+  "net_contents_text": "CONTAINS 12 FL.OZ.",
+  "net_contents_ml": 354.88,
+  "name_address_text": "Brewed and canned in Nashville, Tennessee by Jackalope Brewing Company",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.",
+    "matches_required_text": false,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "warning item marker printed as a plain vertical stroke '(I)' with no flag, unlike the flagged '1' elsewhere on the label; reads as letter I (or l), not numeral 1, so recorded as not matching; owner should confirm",
+    "can wrap layout with narrow side panels",
+    "brand is the oval brewery logo 'BLACK ABBEY BREWING CO.' with text curved around it; 'Original LAGER' is the large fanciful/class text",
+    "class also given as script 'German-style Lagerbier' and 'AMERICAN CRAFT BEER'",
+    "ABV printed twice in different styles ('4.9% alc. by vol.' script on ribbon and '4.9% ALC. BY VOL.')",
+    "name/address statement names a different brewer (Jackalope Brewing Company) than the brand",
+    "narrow centered warning column with many line breaks"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

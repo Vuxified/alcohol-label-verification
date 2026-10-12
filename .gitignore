@@ -10,6 +10,4 @@ data/augmented/
 data/registry_pool/
 app/models/
 out/
-data/tampered/
-data/tampered_extra/
 .venv-train/

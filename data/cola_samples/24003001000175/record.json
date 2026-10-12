@@ -1,0 +1,23 @@
+{
+  "ttb_id": "24003001000175",
+  "status": "APPROVED",
+  "serial_no": "242455",
+  "class_type_code": "BEER",
+  "origin_code": "GERMANY",
+  "brand_name": "K\u00d6STRITZER",
+  "fanciful_name": "SCHWARZBIER",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/05/2024",
+  "applicant": "MA-I-15123 | GLOBAL BEER NETWORK, WIN-IT-TOO INC. | 30 LOG BRIDGE RD BLDG 300 U | MIDDLETON,\u00a0MA\u00a001949",
+  "source": "imported",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 5.3,
+      "height_in": 5.3
+    }
+  ]
+}

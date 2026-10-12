@@ -1,0 +1,29 @@
+{
+  "ttb_id": "24002001000400",
+  "status": "APPROVED",
+  "serial_no": "248000",
+  "class_type_code": "OTHER FRUIT BRANDY",
+  "origin_code": "OREGON",
+  "brand_name": "DIE THE WOLF",
+  "fanciful_name": "BLUEBERRY EAU DE VIE",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/25/2024",
+  "applicant": "DSP-OR-20119 | Die The Wolf, Die The Wolf LLC | 1835 19TH AVE | Forest Grove,\u00a0OR\u00a097116",
+  "source": "domestic",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.5,
+      "height_in": 3.25
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 3.0,
+      "height_in": 3.25
+    }
+  ]
+}

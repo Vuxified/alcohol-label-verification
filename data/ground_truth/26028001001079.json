@@ -1,0 +1,35 @@
+{
+  "id": "26028001001079",
+  "beverage_type": "malt",
+  "brand_name": "EXTRA COASTAL",
+  "class_type": "NZ PILSNER",
+  "abv": 5.2,
+  "abv_text": "5.2% alc/vol",
+  "proof": null,
+  "net_contents_text": "12 fl oz",
+  "net_contents_ml": 354.88,
+  "name_address_text": "City Barrel Brewing Co. | KCMO | Product of the USA",
+  "country_of_origin_text": "Product of the USA",
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcohol during pregnancy because of the risk to birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.",
+    "matches_required_text": false,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "yes",
+    "orientation": "vertical"
+  },
+  "hard_cases": [
+    "warning misprint: 'risk to birth defects' instead of 'risk of birth defects'",
+    "'alcoholic' split across lines as 'alcohol' / 'ic' with no hyphen",
+    "warning printed vertically",
+    "class appears as 'NZ PILSNER' (oval) and 'NZ STYLE PILSNER' (side panel)",
+    "ABV/net repeated in curved oval text ('12 fl oz | 5.2% ALC/VOL')",
+    "'Product of the USA' on a domestic label"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

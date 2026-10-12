@@ -1,0 +1,58 @@
+{
+  "id": "26125001000795__scene0",
+  "images": [
+    {
+      "file": "scene_1.jpg",
+      "image_type": "Brand (front) or keg collar (left part)"
+    },
+    {
+      "file": "scene_2.jpg",
+      "image_type": "Brand (front) or keg collar (right part)"
+    }
+  ],
+  "source": {
+    "type": "real label scene",
+    "license": "public COLA registry label artwork; scene generated for this project"
+  },
+  "application": {
+    "beverage_type": "spirits",
+    "brand_name": "TENTH WARD DISTILLING",
+    "class_type": "MADE WITH VODKA, PEACH, CLEMENTINE, LEMON, AND BLACK TEA",
+    "abv": 7.5,
+    "proof": null,
+    "net_contents": "250ML",
+    "source": "domestic",
+    "country_of_origin": null,
+    "name_address": "PRODUCED & CANNED BY TENTH WARD DISTILLING COMPANY FREDERICK, MARYLAND",
+    "label_width_in": 6.5
+  },
+  "printed": {
+    "brand_name": "TENTH WARD DISTILLING",
+    "class_type": "MADE WITH VODKA, PEACH, CLEMENTINE, LEMON, AND BLACK TEA",
+    "abv": 7.5,
+    "proof": null,
+    "net_contents": "250ML",
+    "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "warning_heading_bold": "yes",
+    "warning_orientation": "vertical",
+    "warning_image": "01_brand_front_or_keg_collar.jpg"
+  },
+  "expected": {
+    "overall": "approved",
+    "findings": [],
+    "warning_misprinted": false,
+    "warning_present": true
+  },
+  "provenance": {
+    "base_item": "cola_26125001000795",
+    "model": "us.stability.stable-image-inpaint-v1:0",
+    "prompt": [
+      "realistic phone photo of a single clear glass vodka bottle held in a person's hand in front of a kitchen, photographed with a phone, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+      "realistic phone photo of a single glass spirits bottle standing on a dark wooden bar counter in a dimly lit cocktail bar, warm bokeh lights in the background, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field"
+    ],
+    "seed": [
+      881500412,
+      3975861446
+    ]
+  }
+}

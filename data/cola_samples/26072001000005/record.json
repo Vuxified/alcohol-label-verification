@@ -1,0 +1,29 @@
+{
+  "ttb_id": "26072001000005",
+  "status": "APPROVED",
+  "serial_no": "260001",
+  "class_type_code": "OTHER SPECIALTIES & PROPRIETARIES",
+  "origin_code": "WASHINGTON",
+  "brand_name": "REDACTED DEATH",
+  "fanciful_name": "YOU'RE WELCOME",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "05/27/2026",
+  "applicant": "DSP-WA-21161 | Moses Lake Distillery LLC | 1096 ROAD L4 SE UNIT C11 | Moses Lake,\u00a0WA\u00a098837",
+  "source": "domestic",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.0,
+      "height_in": 4.0
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 2.5,
+      "height_in": 3.5
+    }
+  ]
+}

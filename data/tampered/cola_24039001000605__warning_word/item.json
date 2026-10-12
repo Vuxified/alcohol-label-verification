@@ -1,0 +1,53 @@
+{
+  "id": "cola_24039001000605__warning_word",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 4.22,
+      "height_in": 3.48
+    }
+  ],
+  "source": {
+    "type": "tampered",
+    "license": "TTB Public COLA Registry image (public record), with one change planted for testing by tools/make_tampered.py",
+    "ttb_id": "24039001000605",
+    "edited_images": [
+      "01_brand_front_or_keg_collar.jpg"
+    ]
+  },
+  "application": {
+    "beverage_type": "wine",
+    "brand_name": "KENDALL-JACKSON",
+    "class_type": "Cabernet Sauvignon",
+    "abv": 13.5,
+    "proof": null,
+    "net_contents": "100mL",
+    "source": "domestic",
+    "country_of_origin": null,
+    "name_address": "Bottled by TUBES USA, Inc. | Napa | Napa County | CA 94503",
+    "label_width_in": 4.22
+  },
+  "printed": {
+    "brand_name": "KENDALL-JACKSON",
+    "class_type": "Cabernet Sauvignon",
+    "abv": 13.5,
+    "proof": null,
+    "net_contents": "100mL",
+    "warning_text": "GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.",
+    "warning_heading_bold": true,
+    "warning_cap_mm": null
+  },
+  "expected": {
+    "overall": "fail",
+    "findings": [
+      "WARNING_TEXT_ALTERED"
+    ]
+  },
+  "provenance": {
+    "base_id": "cola_24039001000605",
+    "change": "warning_word",
+    "from": "should",
+    "to": "must"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "ttb_id": "24064001000924",
+  "status": "APPROVED",
+  "serial_no": "240039",
+  "class_type_code": "MALT LIQUOR",
+  "origin_code": "WISCONSIN",
+  "brand_name": "COUNTRY CLUB",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "03/25/2024",
+  "applicant": "BR-WI-CIT-1 | City Brewing Company, LLC | 1106 S THIRD ST | LA CROSSE,\u00a0WI\u00a054601",
+  "source": "domestic",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 8.17,
+      "height_in": 5.93
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "ttb_id": "26169001000226",
+  "status": "APPROVED",
+  "serial_no": "263512",
+  "class_type_code": "ROSE WINE",
+  "origin_code": "SLOVENIA",
+  "brand_name": "VINA KOPER",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "08/03/2026",
+  "applicant": "CA-I-21631 | Histria LLC | 16801 S CENTRAL AVE | Carson,\u00a0CA\u00a090746",
+  "source": "imported",
+  "product_type": "wine",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 4.45,
+      "height_in": 7.2
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 4.45,
+      "height_in": 7.2
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "ttb_id": "26080001000010",
+  "status": "APPROVED",
+  "serial_no": "263206",
+  "class_type_code": "VODKA 80-89 PROOF",
+  "origin_code": "NORTH CAROLINA",
+  "brand_name": "POLISHED RICE",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "05/19/2026",
+  "applicant": "DSP-NC-21061 | Bogue Sound Distillery, Bogue Sound Distillery, Inc. | 108 BOGUE COMMERCIAL CT | Bogue,\u00a0NC\u00a028570",
+  "source": "domestic",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 5.91,
+      "height_in": 3.33
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 3.15,
+      "height_in": 3.35
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "24003001000501",
+  "beverage_type": "malt",
+  "brand_name": "MUKONA",
+  "class_type": "MILK STOUT",
+  "abv": 4.2,
+  "abv_text": "ALC. 4.2% BY VOL",
+  "proof": null,
+  "net_contents_text": "1 PT. 0.9 FL.OZ",
+  "net_contents_ml": 499.79,
+  "name_address_text": "Brewed and bottled by: Umanpivo LLC, Uman 20301, Ukraine. Imported by: Doyna Ltd, 801 East Linden Ave, Linden, New Jersey 07036, USA.",
+  "country_of_origin_text": "Product of Ukraine.",
+  "warning": {
+    "present": true,
+    "image_file": "03_back.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "front brand is in Cyrillic ('МИКОЛА'); Latin 'MYKHOLA' only on neck and back",
+    "registry brand 'MYKHOLA MILK STOUT' includes the class; label brand is 'MYKHOLA'",
+    "net contents in pints + fl oz ('1 PT. 0.9 FL.OZ' front, '1 PT. 0.9. FL.OZ' back)",
+    "'BREWED IN UKRAINE' and 'ORIGINAL RECIPE FROM UKRAINE' curved text on front",
+    "deposit/refund text next to ABV on back",
+    "full-justified condensed warning with wide word gaps"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

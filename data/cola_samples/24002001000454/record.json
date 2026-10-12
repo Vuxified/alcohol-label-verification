@@ -1,0 +1,29 @@
+{
+  "ttb_id": "24002001000454",
+  "status": "APPROVED",
+  "serial_no": "240001",
+  "class_type_code": "OTHER RUM GOLD FB",
+  "origin_code": "BRAZIL",
+  "brand_name": "CACHACA 51",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/03/2024",
+  "applicant": "LA-I-244 | SAZERAC COMPANY, INC. | 101 MAGAZINE ST | NEW ORLEANS,\u00a0LA\u00a070130",
+  "source": "imported",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.png",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 4.13,
+      "height_in": 5.81
+    },
+    {
+      "file": "02_back.png",
+      "image_type": "Back",
+      "width_in": 2.83,
+      "height_in": 4.33
+    }
+  ]
+}

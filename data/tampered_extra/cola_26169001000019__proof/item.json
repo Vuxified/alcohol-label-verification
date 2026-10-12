@@ -1,0 +1,59 @@
+{
+  "id": "cola_26169001000019__proof",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 11.5,
+      "height_in": 4.25
+    },
+    {
+      "file": "02_neck.jpg",
+      "image_type": "Neck",
+      "width_in": 1.0,
+      "height_in": 2.25
+    }
+  ],
+  "source": {
+    "type": "tampered",
+    "license": "TTB Public COLA Registry image (public record), with one change planted for testing by tools/make_tampered.py",
+    "ttb_id": "26169001000019",
+    "edited_images": [
+      "01_brand_front_or_keg_collar.jpg"
+    ]
+  },
+  "application": {
+    "beverage_type": "spirits",
+    "brand_name": "PUTNAM",
+    "class_type": "OLD FASHIONED",
+    "abv": 35,
+    "proof": 70,
+    "net_contents": "750ml",
+    "source": "domestic",
+    "country_of_origin": null,
+    "name_address": "PRODUCED AND BOTTLED BY EKS VENTURES, INC. D/B/A BOSTON HARBOR DISTILLERY 12R ERICSSON STREET BOSTON MASSACHUSETTS 02122",
+    "label_width_in": 11.5
+  },
+  "printed": {
+    "brand_name": "PUTNAM",
+    "class_type": "OLD FASHIONED",
+    "abv": 35,
+    "proof": 71.0,
+    "net_contents": "750ml",
+    "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "warning_heading_bold": false,
+    "warning_cap_mm": null
+  },
+  "expected": {
+    "overall": "fail",
+    "findings": [
+      "PROOF_MISMATCH"
+    ]
+  },
+  "provenance": {
+    "base_id": "cola_26169001000019",
+    "change": "proof",
+    "from": "70 PROOF",
+    "to": "71 PROOF"
+  }
+}

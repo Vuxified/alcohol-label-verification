@@ -1,0 +1,29 @@
+{
+  "ttb_id": "24005001000370",
+  "status": "APPROVED",
+  "serial_no": "247466",
+  "class_type_code": "OTHER IMPORTED WHISKY FB",
+  "origin_code": "JAPAN",
+  "brand_name": "KANOSUKE",
+  "fanciful_name": "DOUBLE DISTILLERY",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/10/2024",
+  "applicant": "CA-I-4310 | USA WINE WEST, LLC | 3030 BRIDGEWAY SUITE 127 | SAUSALITO,\u00a0CA\u00a094965",
+  "source": "imported",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 4.5,
+      "height_in": 4.1
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 3.2,
+      "height_in": 4.5
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "ttb_id": "24011001000635",
+  "status": "APPROVED",
+  "serial_no": "240001",
+  "class_type_code": "STRAIGHT WHISKY",
+  "origin_code": "GEORGIA",
+  "brand_name": "SHORTBARREL",
+  "fanciful_name": "AGED 9 YEARS",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/12/2024",
+  "applicant": "DSP-GA-20116 | Shortbarrel, Shortbarrel LLC | 6325 MCDONOUGH DR STE A | Norcross,\u00a0GA\u00a030093",
+  "source": "domestic",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.png",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.75,
+      "height_in": 4.0
+    },
+    {
+      "file": "02_back.png",
+      "image_type": "Back",
+      "width_in": 3.45,
+      "height_in": 2.78
+    },
+    {
+      "file": "03_strip.png",
+      "image_type": "Strip",
+      "width_in": 1.12,
+      "height_in": 5.7
+    }
+  ]
+}

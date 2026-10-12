@@ -1,0 +1,35 @@
+{
+  "ttb_id": "26209001000785",
+  "status": "APPROVED",
+  "serial_no": "266540",
+  "class_type_code": "MEZCAL FB",
+  "origin_code": "MEXICO",
+  "brand_name": "MOTEADO",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "08/28/2026",
+  "applicant": "CA-I-23139 | Monarka Spirits LLC | 4200 HARBOR VIEW AVE | Oakland,\u00a0CA\u00a094619",
+  "source": "imported",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.png",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 2.51,
+      "height_in": 3.19
+    },
+    {
+      "file": "02_brand_front_or_keg_collar.png",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 2.24,
+      "height_in": 1.28
+    },
+    {
+      "file": "03_back.png",
+      "image_type": "Back",
+      "width_in": 1.77,
+      "height_in": 2.6
+    }
+  ]
+}

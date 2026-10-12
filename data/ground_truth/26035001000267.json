@@ -1,0 +1,36 @@
+{
+  "id": "26035001000267",
+  "beverage_type": "spirits",
+  "brand_name": "ABSINTHIA",
+  "class_type": "ABSINTHE VERTE",
+  "abv": 55,
+  "abv_text": "55% Alc/Vol",
+  "proof": null,
+  "net_contents_text": "750 ml",
+  "net_contents_ml": 750,
+  "name_address_text": "Produced & Bottled by Old Alker Distillery New Orleans, LA for Absinthia Bottled Spirits New Orleans, LA",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.png",
+    "text_as_printed": "GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.",
+    "matches_required_text": null,
+    "heading_all_caps": true,
+    "heading_looks_bold": "unclear",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "low-resolution image (775 px wide): warning letters about 6 px tall",
+    "warning over a faint botanical drawing on parchment texture",
+    "ABV and net contents twice: '750 ml | 55% Alc/Vol' (side panel) and '750 ML 55% ALC/VOL' (front, gold small caps on dark)",
+    "also 'Spirit Distilled from Grapes with Herbs' as a statement of composition",
+    "fanciful 'The Green Fairy' in script"
+  ],
+  "unreadable_fields": [
+    "warning_text"
+  ],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); not reviewed by the owner"
+}

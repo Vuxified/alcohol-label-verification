@@ -1,0 +1,29 @@
+{
+  "ttb_id": "26077001000623",
+  "status": "APPROVED",
+  "serial_no": "260107",
+  "class_type_code": "SPARKLING WINE/CHAMPAGNE",
+  "origin_code": "SPAIN",
+  "brand_name": "MIQUEL PONS",
+  "fanciful_name": "RESERVA BRUT",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "04/17/2026",
+  "applicant": "CA-I-16142 | WINE BRIDGE IMPORTS, INC | 2050 LYNDELL TER SUITE 230 | DAVIS,\u00a0CA\u00a095616",
+  "source": "imported",
+  "product_type": "wine",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.png",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.54,
+      "height_in": 2.36
+    },
+    {
+      "file": "02_back.png",
+      "image_type": "Back",
+      "width_in": 5.12,
+      "height_in": 2.95
+    }
+  ]
+}

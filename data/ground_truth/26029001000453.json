@@ -1,0 +1,34 @@
+{
+  "id": "26029001000453",
+  "beverage_type": "malt",
+  "brand_name": "PANTERA",
+  "class_type": "LAGER",
+  "abv": 4.5,
+  "abv_text": "4.5% ALC/VOL",
+  "proof": null,
+  "net_contents_text": "12 FL.OZ.",
+  "net_contents_ml": 354.88,
+  "name_address_text": "PANTHER ISLAND BREWING | BREWED IN FORT WORTH, TX",
+  "country_of_origin_text": "USA",
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.png",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE. A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "vertical"
+  },
+  "hard_cases": [
+    "brand split: small 'ISLA' in a banner over large 'PANTERA', under the 'PANTHER ISLAND BREWING' logo",
+    "front panel printed twice on the can wrap",
+    "warning and name/address rotated 90 degrees in very small type beside barcode",
+    "ABV and net contents stacked in two lines ('4.5% / ALC/VOL', '12 / FL.OZ.')",
+    "'BREWED & CANNED IN PANTHER ISLAND' seal is a slogan, not the address"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

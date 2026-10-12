@@ -1,0 +1,36 @@
+{
+  "id": "26030001000501",
+  "beverage_type": "malt",
+  "brand_name": "IC LIGHT",
+  "class_type": "Premium Light Beer",
+  "abv": 4.2,
+  "abv_text": "4.2% ALC/VOL.",
+  "proof": null,
+  "net_contents_text": "12 Fl Oz (355mL)",
+  "net_contents_ml": 355,
+  "name_address_text": "Pittsburgh Brewing Company • Creighton, PA",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "vertical"
+  },
+  "hard_cases": [
+    "warning, bottler line, class/type and nutrition panel all rotated 90 degrees (side panels read in opposite directions)",
+    "ABV appears only at the end of the rotated 'AVERAGE ANALYSIS' nutrition text",
+    "class/type 'Premium Light Beer' in small caps",
+    "stylised 'IC' logo with diamond ornaments",
+    "gold text on black; condensed narrow warning font with justified wide gaps on the last line",
+    "state deposit text near the ABV",
+    "neck label (02) carries only the slogan 'Let's Raise Another!'"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

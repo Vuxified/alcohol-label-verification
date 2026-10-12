@@ -1,0 +1,69 @@
+{
+  "id": "cola_23333001000905__net__scene0",
+  "images": [
+    {
+      "file": "scene_1.jpg",
+      "image_type": "Brand (front) or keg collar (left part)"
+    },
+    {
+      "file": "scene_2.jpg",
+      "image_type": "Brand (front) or keg collar (right part)"
+    },
+    {
+      "file": "scene_3.jpg",
+      "image_type": "Brand (front) or keg collar"
+    },
+    {
+      "file": "scene_4.jpg",
+      "image_type": "Back"
+    }
+  ],
+  "source": {
+    "type": "real label scene (final test)",
+    "license": "public COLA registry label artwork; scene generated for this project"
+  },
+  "application": {
+    "beverage_type": "spirits",
+    "brand_name": "Maker's Mark",
+    "class_type": "KENTUCKY STRAIGHT BOURBON WHISKY BARREL FINISHED WITH 10 VIRGIN OAK STAVES",
+    "abv": 45,
+    "proof": 90,
+    "net_contents": "700 mL",
+    "source": "domestic",
+    "country_of_origin": null,
+    "name_address": "DISTILLED, FINISHED AND BOTTLED BY THE MAKER'S MARK DISTILLERY, INC., STAR HILL FARM, LORETTO, KENTUCKY, U.S.A.",
+    "label_width_in": 2.8
+  },
+  "printed": {
+    "brand_name": "Maker's Mark",
+    "class_type": "KENTUCKY STRAIGHT BOURBON WHISKY BARREL FINISHED WITH 10 VIRGIN OAK STAVES",
+    "abv": 45,
+    "proof": 90,
+    "net_contents": "710 mL",
+    "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "warning_heading_bold": true,
+    "warning_cap_mm": null
+  },
+  "expected": {
+    "overall": "fail",
+    "findings": [
+      "NET_CONTENTS_MISMATCH"
+    ]
+  },
+  "provenance": {
+    "base_item": "cola_23333001000905__net",
+    "model": "us.stability.stable-image-inpaint-v1:0",
+    "prompt": [
+      "realistic phone photo of a single clear glass vodka bottle standing on a dark wooden bar counter in a dimly lit cocktail bar, warm bokeh lights in the background, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+      "realistic phone photo of a single clear glass whiskey bottle with amber whiskey inside standing on a liquor store shelf, other plain bottles blurred around it, bright store lighting, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+      "realistic phone photo of a single clear glass whiskey bottle with amber whiskey inside standing on a liquor store shelf, other plain bottles blurred around it, bright store lighting, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+      "realistic phone photo of a single glass spirits bottle standing on a wire shelf inside an open beverage cooler in a convenience store, cold white light, other bottles behind it, the whole bottle visible, paper label on the bottle seen from the back, sharp focus on the label, shallow depth of field"
+    ],
+    "seed": [
+      1890750285,
+      3868746026,
+      624674801,
+      1806547585
+    ]
+  }
+}

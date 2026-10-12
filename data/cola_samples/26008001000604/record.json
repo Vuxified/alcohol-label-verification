@@ -1,0 +1,23 @@
+{
+  "ttb_id": "26008001000604",
+  "status": "APPROVED",
+  "serial_no": "262502",
+  "class_type_code": "BEER",
+  "origin_code": "TEXAS",
+  "brand_name": "BEACH BALL BREWING",
+  "fanciful_name": "NAUTI AMERICAN LAGER BEER",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "02/05/2026",
+  "applicant": "BR-TX-20684 | Beach Ball Brewing, Beach Ball Brewing LLC | 936 WALDRON RD UNIT D | Corpus Christi,\u00a0TX\u00a078418",
+  "source": "domestic",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 7.0,
+      "height_in": 7.0
+    }
+  ]
+}

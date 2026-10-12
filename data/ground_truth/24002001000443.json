@@ -1,0 +1,35 @@
+{
+  "id": "24002001000443",
+  "beverage_type": "malt",
+  "brand_name": "HARDER DAY",
+  "class_type": "MALT LIQUOR",
+  "abv": 7.2,
+  "abv_text": "7.2% ALC/VOL",
+  "proof": null,
+  "net_contents_text": "19.2 FL. OZ",
+  "net_contents_ml": 567.81,
+  "name_address_text": "BREWED & CANNED BY STEEPLEJACK BREWING CO. IN PORTLAND, OR.",
+  "country_of_origin_text": "USA",
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "no",
+    "whole_warning_bold": "no",
+    "orientation": "vertical"
+  },
+  "hard_cases": [
+    "brand printed with no space as 'HARDERDAY' ('HARDER' bold, 'DAY' light weight)",
+    "warning runs vertically along the right edge, gold on black",
+    "warning heading not bold, same weight as body",
+    "justified warning with wide word gaps",
+    "brewery name 'Steeplejack Brewing' differs from the brand",
+    "ABV and net contents on one line separated by a bullet"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

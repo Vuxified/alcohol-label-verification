@@ -1,0 +1,35 @@
+{
+  "id": "24002001000146",
+  "beverage_type": "spirits",
+  "brand_name": "DOWN ISLAND SPIRITS",
+  "class_type": "RUM",
+  "abv": 67,
+  "abv_text": "67% ALC. BY VOL.",
+  "proof": null,
+  "net_contents_text": "700 ML",
+  "net_contents_ml": 700,
+  "name_address_text": "IMPORTED BY DOWN ISLAND SPIRITS BOTTLED BY INDIAN RIVER DISTILLERY VERO BEACH, FL",
+  "country_of_origin_text": "PRODUCT OF JAMAICA",
+  "warning": {
+    "present": true,
+    "image_file": "02_back.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "registry brand 'DOWN ISLAND SPIRITS JAMAICA'; label shows 'DOWN ISLAND Spirits' with 'Spirits' in script",
+    "class 'RUM' with 'Distilled in JAMAICA' in mixed fonts",
+    "handwritten cask number '434818-10'",
+    "importer/bottler statement in narrow stacked column",
+    "printer crop marks around both labels",
+    "proof not stated"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

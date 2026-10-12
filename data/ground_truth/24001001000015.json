@@ -1,0 +1,36 @@
+{
+  "id": "24001001000015",
+  "beverage_type": "wine",
+  "brand_name": "DOMAINE DE MONTREDON",
+  "class_type": "Carignan, Pays d'Oc",
+  "abv": 13.5,
+  "abv_text": "ALC. 13.5% BY VOL.",
+  "proof": null,
+  "net_contents_text": "750 ML",
+  "net_contents_ml": 750,
+  "name_address_text": "IMPORTED BY SOUR GRAPES WINE ASHERVILLE NC · MIS EN BOUTEILLE AU DOMAINE PAR SAS RJ À F-34120 CASTELNAU DE GUERS",
+  "country_of_origin_text": "PRODUIT DE FRANCE",
+  "warning": {
+    "present": true,
+    "image_file": "02_back.jpg",
+    "text_as_printed": "GOVERNMENT WARNING : (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "space before colon in heading ('WARNING :'); colon not bold",
+    "varietal 'Carignan' and 'Pays d'Oc IGP' on front; 'RED WINE' only on back",
+    "importer city misspelled on label ('ASHERVILLE NC')",
+    "French text with accents (Géographique, Protégée, À)",
+    "front country statement in French ('Produit de France'); 'PRODUCT OF FRANCE' on back",
+    "vertical sulfite statements in several languages on front edges",
+    "ABV and net contents only on back"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

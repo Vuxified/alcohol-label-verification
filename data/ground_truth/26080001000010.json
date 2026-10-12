@@ -1,0 +1,34 @@
+{
+  "id": "26080001000010",
+  "beverage_type": "spirits",
+  "brand_name": "POLISHED RICE",
+  "class_type": "Vodka",
+  "abv": 40,
+  "abv_text": "40% ALC./VOL.",
+  "proof": null,
+  "net_contents_text": "750ML",
+  "net_contents_ml": 750,
+  "name_address_text": "PRODUCED BY POLISHED RICE IN BOGUE, NC",
+  "country_of_origin_text": "USA",
+  "warning": {
+    "present": true,
+    "image_file": "02_back.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "very wide letter-spaced display brand",
+    "ABV and net contents in one small monospace line ('750ML 40% ALC./VOL.')",
+    "producer named as 'POLISHED RICE', not the registry applicant (Bogue Sound Distillery)",
+    "'Made in the U.S.' only in marketing prose; no country statement",
+    "proof not stated"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

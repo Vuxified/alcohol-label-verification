@@ -1,0 +1,23 @@
+{
+  "ttb_id": "24002001000026",
+  "status": "APPROVED",
+  "serial_no": "240056",
+  "class_type_code": "ALE",
+  "origin_code": "MAINE",
+  "brand_name": "BELLEFLOWER BREWING CO.",
+  "fanciful_name": "FINCH & THISTLE",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/04/2024",
+  "applicant": "BR-ME-21156 | Belleflower Brewing Company, LLC | 66 COVE ST | Portland,\u00a0ME\u00a004101",
+  "source": "domestic",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 8.0,
+      "height_in": 5.0
+    }
+  ]
+}

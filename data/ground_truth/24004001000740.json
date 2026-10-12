@@ -1,0 +1,35 @@
+{
+  "id": "24004001000740",
+  "beverage_type": "wine",
+  "brand_name": "KEEPER'S CUT MEADERY",
+  "class_type": "Riesling",
+  "abv": 12.5,
+  "abv_text": "Alc. 12.5% by Vol.",
+  "proof": null,
+  "net_contents_text": "750ML",
+  "net_contents_ml": 750,
+  "name_address_text": "Produced & Bottled by: Keeper's Cut Meadery in Marion, NC",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.png",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "unclear",
+    "orientation": "vertical"
+  },
+  "hard_cases": [
+    "warning, net contents (750ML) and CONTAINS SULFITES printed vertically on the left panel",
+    "white text on black background, low-resolution image (832px wide)",
+    "brand in small caps with curly apostrophe (KEEPER’S CUT); 'MEADERY' on its own line",
+    "class is varietal 'Riesling' in gold script with appellation 'American' below; registry class is TABLE WHITE WINE",
+    "ABV in small print at bottom of front panel",
+    "name/address on right back panel in small type"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

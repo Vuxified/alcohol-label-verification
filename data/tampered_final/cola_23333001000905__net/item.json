@@ -1,0 +1,65 @@
+{
+  "id": "cola_23333001000905__net",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 2.8,
+      "height_in": 1.5
+    },
+    {
+      "file": "02_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.4,
+      "height_in": 4.3
+    },
+    {
+      "file": "03_back.jpg",
+      "image_type": "Back",
+      "width_in": 3.4,
+      "height_in": 4.3
+    }
+  ],
+  "source": {
+    "type": "tampered",
+    "license": "TTB Public COLA Registry image (public record), with one change planted for testing by tools/make_tampered.py",
+    "ttb_id": "23333001000905",
+    "edited_images": [
+      "02_brand_front_or_keg_collar.jpg"
+    ]
+  },
+  "application": {
+    "beverage_type": "spirits",
+    "brand_name": "Maker's Mark",
+    "class_type": "KENTUCKY STRAIGHT BOURBON WHISKY BARREL FINISHED WITH 10 VIRGIN OAK STAVES",
+    "abv": 45,
+    "proof": 90,
+    "net_contents": "700 mL",
+    "source": "domestic",
+    "country_of_origin": null,
+    "name_address": "DISTILLED, FINISHED AND BOTTLED BY THE MAKER'S MARK DISTILLERY, INC., STAR HILL FARM, LORETTO, KENTUCKY, U.S.A.",
+    "label_width_in": 2.8
+  },
+  "printed": {
+    "brand_name": "Maker's Mark",
+    "class_type": "KENTUCKY STRAIGHT BOURBON WHISKY BARREL FINISHED WITH 10 VIRGIN OAK STAVES",
+    "abv": 45,
+    "proof": 90,
+    "net_contents": "710 mL",
+    "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "warning_heading_bold": true,
+    "warning_cap_mm": null
+  },
+  "expected": {
+    "overall": "fail",
+    "findings": [
+      "NET_CONTENTS_MISMATCH"
+    ]
+  },
+  "provenance": {
+    "base_id": "cola_23333001000905",
+    "change": "net",
+    "from": "700 mL",
+    "to": "710 mL"
+  }
+}

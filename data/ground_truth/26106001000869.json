@@ -1,0 +1,36 @@
+{
+  "id": "26106001000869",
+  "beverage_type": "wine",
+  "brand_name": "communion wines",
+  "class_type": "SPARKLING ROSÉ WINE",
+  "abv": 11.5,
+  "abv_text": "11.5% ALC. BY VOL.",
+  "proof": null,
+  "net_contents_text": "500 ML",
+  "net_contents_ml": 500,
+  "name_address_text": "Bottled by Communion Wines at 474-478 Fayette Street, Hammond, IN 46320",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.png",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "brand in thin lowercase letters with both 'o's of 'communion' drawn as globes; 'w i n e s' widely spaced",
+    "bottler line in very thin light grey type",
+    "warning set with tight letter and word spacing (words nearly touching)",
+    "class 'SPARKLING ROSÉ WINE 2023' with accent and vintage on the same line",
+    "varietal percentages (83% CABERNET FRANC ...) near ABV",
+    "500 mL bottle size",
+    "origin code says Michigan; bottler address is in Indiana"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); not reviewed by the owner"
+}

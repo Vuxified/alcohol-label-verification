@@ -1,0 +1,29 @@
+{
+  "ttb_id": "25063001000237",
+  "status": "APPROVED",
+  "serial_no": "25TBCO",
+  "class_type_code": "VODKA - OTHER FLAVORED",
+  "origin_code": "POLAND",
+  "brand_name": "ZUBROWKA",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "04/22/2025",
+  "applicant": "FL-I-15704 | PARK STREET IMPORTS LLC | 1000 BRICKELL AVE STE 215 | MIAMI,\u00a0FL\u00a033131",
+  "source": "imported",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.0,
+      "height_in": 5.0
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 13.1,
+      "height_in": 8.8
+    }
+  ]
+}

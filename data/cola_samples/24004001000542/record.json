@@ -1,0 +1,23 @@
+{
+  "ttb_id": "24004001000542",
+  "status": "APPROVED",
+  "serial_no": "24ALC1",
+  "class_type_code": "BEER",
+  "origin_code": "ESTONIA",
+  "brand_name": "A LE COQ",
+  "fanciful_name": "PREMIUM",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/12/2024",
+  "applicant": "CA-I-21508 | LIME VENTURES, INC. | 1021 DETROIT AVE | Concord,\u00a0CA\u00a094518",
+  "source": "imported",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 5.0,
+      "height_in": 5.0
+    }
+  ]
+}

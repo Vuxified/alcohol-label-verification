@@ -1,0 +1,51 @@
+{
+  "id": "cola_23362001000063__abv",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar"
+    }
+  ],
+  "source": {
+    "type": "tampered",
+    "license": "TTB Public COLA Registry image (public record), with one change planted for testing by tools/make_tampered.py",
+    "ttb_id": "23362001000063",
+    "edited_images": [
+      "01_brand_front_or_keg_collar.jpg"
+    ]
+  },
+  "application": {
+    "beverage_type": "malt",
+    "brand_name": "CORONADO BREWING CO.",
+    "class_type": "Tropical India Pale Ale",
+    "abv": 6.5,
+    "proof": null,
+    "net_contents": "Net Contents: 15.5 | 5.165 | 10.8 | 5.4 U.S. Gallons",
+    "source": "domestic",
+    "country_of_origin": null,
+    "name_address": "CORONADO BREWING CO. CORONADO, CA",
+    "label_width_in": null
+  },
+  "printed": {
+    "brand_name": "CORONADO BREWING CO.",
+    "class_type": "Tropical India Pale Ale",
+    "abv": 7.5,
+    "proof": null,
+    "net_contents": "Net Contents: 15.5 | 5.165 | 10.8 | 5.4 U.S. Gallons",
+    "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "warning_heading_bold": true,
+    "warning_cap_mm": null
+  },
+  "expected": {
+    "overall": "fail",
+    "findings": [
+      "ABV_MISMATCH"
+    ]
+  },
+  "provenance": {
+    "base_id": "cola_23362001000063",
+    "change": "abv",
+    "from": "6.5% ALC. by VOL.",
+    "to": "7.5% ALC. by VOL."
+  }
+}

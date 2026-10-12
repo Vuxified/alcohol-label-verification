@@ -1,0 +1,35 @@
+{
+  "ttb_id": "24010001000366",
+  "status": "APPROVED",
+  "serial_no": "240001",
+  "class_type_code": "OTHER IMPORTED WHISKY FB",
+  "origin_code": "SPAIN",
+  "brand_name": "NOMAD",
+  "fanciful_name": "SINGLE MALT",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/11/2024",
+  "applicant": "IL-I-899 | VIN DIVINO LTD. | 1525 W HOMER ST 3RD FLOOR | CHICAGO,\u00a0IL\u00a060642",
+  "source": "imported",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.3,
+      "height_in": 7.0
+    },
+    {
+      "file": "02_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 4.4,
+      "height_in": 3.0
+    },
+    {
+      "file": "03_back.jpg",
+      "image_type": "Back",
+      "width_in": 4.4,
+      "height_in": 3.0
+    }
+  ]
+}

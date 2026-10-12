@@ -1,0 +1,29 @@
+{
+  "ttb_id": "26086001000583",
+  "status": "APPROVED",
+  "serial_no": "26DFSS",
+  "class_type_code": "SPARKLING WINE/CHAMPAGNE",
+  "origin_code": "FRANCE",
+  "brand_name": "DOMAINES VINET",
+  "fanciful_name": "MALECO",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "04/21/2026",
+  "applicant": "VA-I-21031 | Free Run Wine Merchants LLC | 1715 RHOADMILLER ST | Richmond,\u00a0VA\u00a023220",
+  "source": "imported",
+  "product_type": "wine",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.0,
+      "height_in": 4.0
+    },
+    {
+      "file": "02_other.png",
+      "image_type": "Other",
+      "width_in": 4.0,
+      "height_in": 5.0
+    }
+  ]
+}

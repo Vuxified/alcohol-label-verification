@@ -1,0 +1,23 @@
+{
+  "ttb_id": "24001001000057",
+  "status": "APPROVED",
+  "serial_no": "240728",
+  "class_type_code": "ALE",
+  "origin_code": "VIRGINIA",
+  "brand_name": "THE VEIL BREWING CO.",
+  "fanciful_name": "DADDY'S HOME",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/04/2024",
+  "applicant": "BR-VA-20110 | The Veil Brewing Company, LLC | 1301 ROSENEATH RD | Richmond,\u00a0VA\u00a023230",
+  "source": "domestic",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 6.0,
+      "height_in": 6.0
+    }
+  ]
+}

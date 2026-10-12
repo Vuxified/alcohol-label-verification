@@ -1,0 +1,23 @@
+{
+  "ttb_id": "26029001000408",
+  "status": "APPROVED",
+  "serial_no": "260113",
+  "class_type_code": "BEER",
+  "origin_code": "COLORADO",
+  "brand_name": "HOWDY AMERICAN LAGER",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/30/2026",
+  "applicant": "BR-CO-21120 | Denver Beer Co Production, LLC | 4455 JASON ST | Denver,\u00a0CO\u00a080211",
+  "source": "domestic",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 6.0,
+      "height_in": 7.0
+    }
+  ]
+}

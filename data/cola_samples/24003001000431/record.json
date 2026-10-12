@@ -1,0 +1,23 @@
+{
+  "ttb_id": "24003001000431",
+  "status": "APPROVED",
+  "serial_no": "24STOW",
+  "class_type_code": "STOUT",
+  "origin_code": "NEW YORK",
+  "brand_name": "STOWAWAY",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/05/2024",
+  "applicant": "BR-NY-21139 | Destination Unknown Beer Company, Destination Unknown Beer Company Inc | 1 S CHICAGO AVE UNIT C | Bay Shore,\u00a0NY\u00a011706",
+  "source": "domestic",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 8.0,
+      "height_in": 5.0
+    }
+  ]
+}

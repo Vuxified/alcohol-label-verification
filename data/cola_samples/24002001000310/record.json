@@ -1,0 +1,29 @@
+{
+  "ttb_id": "24002001000310",
+  "status": "APPROVED",
+  "serial_no": "240076",
+  "class_type_code": "RUM SPECIALTIES",
+  "origin_code": "FLORIDA",
+  "brand_name": "WICKED DOLPHIN",
+  "fanciful_name": "COLD BREW COFFEE",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/04/2024",
+  "applicant": "DSP-FL-20001 | Cape Spirits Inc. | 131 SW 3RD PL SW | Cape Coral,\u00a0FL\u00a033991",
+  "source": "domestic",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.png",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.5,
+      "height_in": 4.5
+    },
+    {
+      "file": "02_back.png",
+      "image_type": "Back",
+      "width_in": 3.5,
+      "height_in": 4.5
+    }
+  ]
+}

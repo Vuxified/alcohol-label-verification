@@ -1,0 +1,36 @@
+{
+  "id": "25287001000138",
+  "beverage_type": "wine",
+  "brand_name": "JULIEN CRINQUAND",
+  "class_type": "CHARDONNAY",
+  "abv": null,
+  "abv_text": "ALC 11-14% VOL",
+  "proof": null,
+  "net_contents_text": "750ML",
+  "net_contents_ml": 750,
+  "name_address_text": "IMPORTED BY BEAUNE IMPORTS BERKELEY CA 94708 Produced & Bottled by JULIEN CRINQUAND 39600 Les Arsures, France",
+  "country_of_origin_text": "PRODUCT OF FRANCE",
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING : (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "ABV on US back label is a range ('ALC 11-14% VOL'); French front label says '13,2%' - two different statements",
+    "net contents given as '750ML' (back) and '75 cl' (front)",
+    "brand is the producer name, printed in the 'Produced & Bottled by' line ('JULIEN CRINQUAND') and as 'Julien CRINQUAND' on front",
+    "importer 'BEAUNE IMPORTS' logo is the most prominent text on the back",
+    "low-resolution back image (416x551)",
+    "white text on red front label; French-language statements",
+    "class also stated as 'WHITE WINE'; 'ARBOIS Appellation Controllée'"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); not reviewed by the owner"
+}

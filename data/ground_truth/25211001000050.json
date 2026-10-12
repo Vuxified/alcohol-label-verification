@@ -1,0 +1,37 @@
+{
+  "id": "25211001000050",
+  "beverage_type": "spirits",
+  "brand_name": "QUETZAL f5",
+  "class_type": "TEQUILA WITH ARTIFICIAL FLAVOR AND CARAMEL COLOR",
+  "abv": 5,
+  "abv_text": "ALCOHOL CONTENT 5% ALC. BY VOL.",
+  "proof": null,
+  "net_contents_text": "355 ml",
+  "net_contents_ml": 355,
+  "name_address_text": "PRODUCED BY: DPK GLOBAL SAPI DE CV Av. Manuel J. Clouthier No. 263. Col. Tangamanga, San Luis Potosí SLP. México. CP 78269 IMPORTED BY: GL TRADING SOLUTIONS LLC. MIAMI, FL",
+  "country_of_origin_text": "PRODUCT OF MÉXICO",
+  "warning": {
+    "present": true,
+    "image_file": "02_back.png",
+    "text_as_printed": "GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverage during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverage impairs your ability to drive a car or operate machinery, and may cause health problems.",
+    "matches_required_text": false,
+    "heading_all_caps": true,
+    "heading_looks_bold": "unclear",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "warning says 'alcoholic beverage' (singular) twice instead of 'beverages'",
+    "warning heading in same condensed face as body, not clearly bold",
+    "logo brand 'QUETZAL f5' with small-caps serif and large 'f5'",
+    "fanciful 'Tamarindo' in script dominates front",
+    "class/type in small serif across a busy yellow splash",
+    "double spaces in class/type line",
+    "accented 'MÉXICO' in country statement",
+    "'MADE WITH REAL TEQUILA' badge in curved text"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); not reviewed by the owner"
+}

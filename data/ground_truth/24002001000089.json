@@ -1,0 +1,35 @@
+{
+  "id": "24002001000089",
+  "beverage_type": "malt",
+  "brand_name": "Echoes",
+  "class_type": "Double India Pale Ale",
+  "abv": 8,
+  "abv_text": "8% ALC/VOL",
+  "proof": null,
+  "net_contents_text": null,
+  "net_contents_ml": 473.18,
+  "name_address_text": "FOAM BREWERS, 12345 MAIN STREET, CITY, STATE, ZIP CODE",
+  "country_of_origin_text": "USA",
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.png",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "vertical"
+  },
+  "hard_cases": [
+    "warning printed vertically (rotated 90 degrees) in light blue over dense line art",
+    "class/type 'Double India Pale Ale' and '8% ALC/VOL' in hand-lettered script, curved and rotated along the right edge",
+    "net contents 'ONE PINT' in hand-lettered script; no fl oz or ml figure",
+    "no 'brewed by' wording: 'Foam Brewers' logo and 'Hinesburg, Vermont' in a hand-lettered strip are separate",
+    "brand 'Echoes' in white on black glass silhouette; registry has 'ECHOES' (case only)",
+    "'@SM YARDLEY' artist credit near logo"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

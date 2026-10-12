@@ -1,0 +1,33 @@
+{
+  "id": "24003001000431",
+  "beverage_type": "malt",
+  "brand_name": "DUBOCO",
+  "class_type": "STOUT",
+  "abv": 7.6,
+  "abv_text": "7.6% ABV",
+  "proof": null,
+  "net_contents_text": "12 FL. OZ.",
+  "net_contents_ml": 354.88,
+  "name_address_text": "BREWED & CANNED IN BAY SHORE, NY 11706 BY DESTINATION UNKNOWN BEER COMPANY",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "vertical"
+  },
+  "hard_cases": [
+    "very large vertical 'DUBCO®' house mark competes with the brand 'STOWAWAY'",
+    "white text on black with speckle texture",
+    "warning and bottler line printed vertically in tiny type at the right edge",
+    "warning body in sentence case"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

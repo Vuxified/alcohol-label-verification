@@ -1,0 +1,36 @@
+{
+  "id": "26209001000785",
+  "beverage_type": "spirits",
+  "brand_name": "MOTEADO",
+  "class_type": "MEZCAL ARTESANAL",
+  "abv": 48,
+  "abv_text": "Alc./Vol. 48%",
+  "proof": null,
+  "net_contents_text": "750 ml",
+  "net_contents_ml": 750,
+  "name_address_text": "Bottled by: Productos Michoacanos de Calidad S. de R.L de C.V. Camino Real # 7, C.P. 58414, Coeneo, Michoacán, México. RFC: PMC170626K54 Imported by: Monarka Spirits LLC; Oakland, CA",
+  "country_of_origin_text": "HECHO EN MÉXICO",
+  "warning": {
+    "present": true,
+    "image_file": "03_back.png",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "unclear",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "butterfly-shaped die-cut label; 01 is a printer's proof with 'SIDE A. Front', 'SIDE B.' and dimension marks (8.1 cms, 6.37 cms)",
+    "decorative display brand 'MOTEADO' in magenta",
+    "country statement only in Spanish, curved inside a seal ('HECHO EN MÉXICO')",
+    "ABV in a small table cell with 'Alc./Vol.' set diagonally above '48%'",
+    "low-resolution 02 and 03 images",
+    "warning heading letter-spaced, weight close to body; '(1)' and '(2)' bold",
+    "Spanish terms (Joven / Reserva Especial, Denominación de Origen Protegida)"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); not reviewed by the owner"
+}

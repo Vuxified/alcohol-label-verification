@@ -1,0 +1,37 @@
+{
+  "id": "24009001000010",
+  "beverage_type": "malt",
+  "brand_name": "Opillia",
+  "class_type": "LAGER BEER",
+  "abv": 4.2,
+  "abv_text": "ALC. 4.2% BY VOL.",
+  "proof": null,
+  "net_contents_text": "0.5 L",
+  "net_contents_ml": 500,
+  "name_address_text": "Imported by: LEA FOODS INC, ELK GROVE VILLAGE, IL 60007, USA",
+  "country_of_origin_text": "Product of Ukraine.",
+  "warning": {
+    "present": true,
+    "image_file": "02_back.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "can wrap with Ukrainian (Cyrillic) mandatory text printed vertically on the can; US statements only on separate back sticker (02)",
+    "script brand 'Opillia' with fanciful 'KORYFEI' and 'EXPORT' more prominent",
+    "class appears as 'lager beer' on front and 'LAGER BEER. PASTEURIZED' on back",
+    "ABV in several forms: '4.2%vol' (can), '4,2% vol.' with decimal comma and 'ALC. 4.2% BY VOL.' (sticker)",
+    "net contents in several forms: '500 ml e', '0,5 L', '16.9 FL. OZ.' and odd '1 pint.9 FL.OZ.'; mL taken from printed metric 500",
+    "warning heading on its own centered line; '(1)' and '(2)' brackets look square",
+    "manufacturer line (OPILLIA BREWERY, Ternopil) could be taken as the US name/address; the importer is the US statement",
+    "bottle deposit line (CA REDEMPTION VALUE ...) near ABV"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

@@ -1,0 +1,23 @@
+{
+  "ttb_id": "24002001000045",
+  "status": "APPROVED",
+  "serial_no": "240465",
+  "class_type_code": "ALE",
+  "origin_code": "FLORIDA",
+  "brand_name": "ENGAL",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/11/2024",
+  "applicant": "BR-FL-21311 | RockPit Brewing, RockPit Brewing LLC | 10 W ILLIANA ST | Orlando,\u00a0FL\u00a032806",
+  "source": "domestic",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.png",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 7.0,
+      "height_in": 7.0
+    }
+  ]
+}

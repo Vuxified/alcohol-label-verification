@@ -1,0 +1,70 @@
+{
+  "id": "26043001000751__scene0",
+  "images": [
+    {
+      "file": "scene_1.jpg",
+      "image_type": "Brand (front) or keg collar"
+    },
+    {
+      "file": "scene_2.jpg",
+      "image_type": "Neck (left part)"
+    },
+    {
+      "file": "scene_3.jpg",
+      "image_type": "Neck (right part)"
+    },
+    {
+      "file": "scene_4.jpg",
+      "image_type": "Back"
+    }
+  ],
+  "source": {
+    "type": "real label scene",
+    "license": "public COLA registry label artwork; scene generated for this project"
+  },
+  "application": {
+    "beverage_type": "spirits",
+    "brand_name": "STILL AUSTIN",
+    "class_type": "STRAIGHT BOURBON WHISKEY FINISHED IN CALVADOS BARRELS",
+    "abv": 53,
+    "proof": 106,
+    "net_contents": "750 ML",
+    "source": "domestic",
+    "country_of_origin": null,
+    "name_address": "DISTILLED BY STILL AUSTIN WHISKEY CO. AUSTIN, TEXAS, USA",
+    "label_width_in": 3.55
+  },
+  "printed": {
+    "brand_name": "STILL AUSTIN",
+    "class_type": "STRAIGHT BOURBON WHISKEY FINISHED IN CALVADOS BARRELS",
+    "abv": 53,
+    "proof": 106,
+    "net_contents": "750 ML",
+    "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "warning_heading_bold": "yes",
+    "warning_orientation": "horizontal",
+    "warning_image": "03_back.jpg"
+  },
+  "expected": {
+    "overall": "approved",
+    "findings": [],
+    "warning_misprinted": false,
+    "warning_present": true
+  },
+  "provenance": {
+    "base_item": "cola_26043001000751",
+    "model": "us.stability.stable-image-inpaint-v1:0",
+    "prompt": [
+      "realistic phone photo of a single clear glass whiskey bottle with amber whiskey inside standing on a rustic kitchen table by a window, soft daylight, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+      "realistic phone photo of a single clear glass vodka bottle standing on a wire shelf inside an open beverage cooler in a convenience store, cold white light, other bottles behind it, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+      "realistic phone photo of a single clear glass whiskey bottle with amber whiskey inside standing on a liquor store shelf, other plain bottles blurred around it, bright store lighting, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+      "realistic phone photo of a single glass spirits bottle standing on a liquor store shelf, other plain bottles blurred around it, bright store lighting, the whole bottle visible, paper label on the bottle seen from the back, sharp focus on the label, shallow depth of field"
+    ],
+    "seed": [
+      314570440,
+      3955677530,
+      3495013606,
+      1842844387
+    ]
+  }
+}

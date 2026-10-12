@@ -1,0 +1,23 @@
+{
+  "ttb_id": "24003001000208",
+  "status": "APPROVED",
+  "serial_no": "240001",
+  "class_type_code": "GIN SPECIALTIES",
+  "origin_code": "CALIFORNIA",
+  "brand_name": "HIGH NOON",
+  "fanciful_name": "LONG DRINK CRANBERRY",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/04/2024",
+  "applicant": "DSP-CA-73 | E & J GALLO WINERY, E. & J. GALLO WINERY | 600 YOSEMITE BLVD | MODESTO,\u00a0CA\u00a095354",
+  "source": "domestic",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 8.6,
+      "height_in": 6.9
+    }
+  ]
+}

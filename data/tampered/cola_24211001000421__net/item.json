@@ -1,0 +1,71 @@
+{
+  "id": "cola_24211001000421__net",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.77,
+      "height_in": 4.52
+    },
+    {
+      "file": "02_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.45,
+      "height_in": 0.89
+    },
+    {
+      "file": "03_back.jpg",
+      "image_type": "Back",
+      "width_in": 1.57,
+      "height_in": 3.94
+    },
+    {
+      "file": "04_other.png",
+      "image_type": "Other",
+      "width_in": 3.7,
+      "height_in": 4.78
+    }
+  ],
+  "source": {
+    "type": "tampered",
+    "license": "TTB Public COLA Registry image (public record), with one change planted for testing by tools/make_tampered.py",
+    "ttb_id": "24211001000421",
+    "edited_images": [
+      "03_back.jpg"
+    ]
+  },
+  "application": {
+    "beverage_type": "spirits",
+    "brand_name": "SMIRNOFF",
+    "class_type": "VODKA",
+    "abv": 50,
+    "proof": 100,
+    "net_contents": "750 mL",
+    "source": "domestic",
+    "country_of_origin": null,
+    "name_address": "PRODUCED BY THE SMIRNOFF CO., NEW YORK, NY",
+    "label_width_in": 3.77
+  },
+  "printed": {
+    "brand_name": "SMIRNOFF",
+    "class_type": "VODKA",
+    "abv": 50,
+    "proof": 100,
+    "net_contents": "720 mL",
+    "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BE-CAUSE OF THE RISK OF BIRTH DEFECTS. (2) CON-SUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "warning_heading_bold": true,
+    "warning_cap_mm": null
+  },
+  "expected": {
+    "overall": "fail",
+    "findings": [
+      "NET_CONTENTS_MISMATCH"
+    ]
+  },
+  "provenance": {
+    "base_id": "cola_24211001000421",
+    "change": "net",
+    "from": "750 mL",
+    "to": "720 mL"
+  }
+}

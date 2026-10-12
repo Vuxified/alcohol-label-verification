@@ -1,0 +1,35 @@
+{
+  "id": "26056001000380",
+  "beverage_type": "malt",
+  "brand_name": "ODD SIDE ALES",
+  "class_type": "Blackberry Sour Ale",
+  "abv": 6,
+  "abv_text": "6% ALC/VOL",
+  "proof": null,
+  "net_contents_text": "750mL 1 PINT 9.4 FL",
+  "net_contents_ml": 750,
+  "name_address_text": "BREWED AND BOTTLED BY ODD SIDE ALES GRAND HAVEN, MICHIGAN",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "vertical"
+  },
+  "hard_cases": [
+    "warning rotated 90 degrees in a narrow side column, tiny condensed type",
+    "front brand shows 'ODD SIDE' only; full 'ODD SIDE ALES' in the bottler block and right-edge line",
+    "US net contents printed as '1 PINT 9.4 FL' (no 'OZ')",
+    "second, rotated bottler line on the right edge: 'BREWED AND PACKAGED BY - ODD SIDE ALES - GRAND HAVEN, MI 49417'",
+    "fanciful 'VELVET STATIC' dominates",
+    "light tan text on black; deposit line above warning"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); not reviewed by the owner"
+}

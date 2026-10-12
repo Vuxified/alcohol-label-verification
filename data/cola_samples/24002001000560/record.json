@@ -1,0 +1,29 @@
+{
+  "ttb_id": "24002001000560",
+  "status": "APPROVED",
+  "serial_no": "240102",
+  "class_type_code": "TABLE FLAVORED WINE",
+  "origin_code": "MEXICO",
+  "brand_name": "TEPACHE SAZ\u00d3N",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/08/2024",
+  "applicant": "WA-I-21012 | Back Bar Project, LLC | 9401 AURORA AVE N STE D020 | Seattle,\u00a0WA\u00a098103",
+  "source": "imported",
+  "product_type": "wine",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.png",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 9.25,
+      "height_in": 5.3
+    },
+    {
+      "file": "02_other.png",
+      "image_type": "Other",
+      "width_in": 0.8,
+      "height_in": 0.8
+    }
+  ]
+}

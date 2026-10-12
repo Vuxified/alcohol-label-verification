@@ -1,0 +1,35 @@
+{
+  "id": "25105001000171",
+  "beverage_type": "malt",
+  "brand_name": "HEIST BREWERY",
+  "class_type": "Oatmeal Stout WITH COFFEE AND MAPLE SYRUP.",
+  "abv": 7.5,
+  "abv_text": "7.5% Alc/Vol",
+  "proof": null,
+  "net_contents_text": "16oz. / 1 pint",
+  "net_contents_ml": 473.18,
+  "name_address_text": "Brewed and canned by Heist Brewery Charlotte, NC",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "no",
+    "whole_warning_bold": "no",
+    "orientation": "vertical"
+  },
+  "hard_cases": [
+    "light grey text on dark textured background",
+    "warning printed vertically (reads bottom to top), heading not bold",
+    "fanciful name 'MAPLE JUNKIE' over a faded overprinted word dominates; brand 'HEIST BREWERY' under an 'HB' logo",
+    "class/type split: 'Oatmeal Stout' then 'WITH COFFEE AND MAPLE SYRUP.' in another font and colour",
+    "net contents '16oz. / 1 pint' (no 'fl')",
+    "'Alc/Vol' in a small dark box next to '7.5%'"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); not reviewed by the owner"
+}

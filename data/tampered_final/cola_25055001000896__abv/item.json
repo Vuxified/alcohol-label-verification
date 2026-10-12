@@ -1,0 +1,65 @@
+{
+  "id": "cola_25055001000896__abv",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 2.95,
+      "height_in": 2.68
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 2.95,
+      "height_in": 2.68
+    },
+    {
+      "file": "03_neck.jpg",
+      "image_type": "Neck",
+      "width_in": 4.13,
+      "height_in": 1.04
+    }
+  ],
+  "source": {
+    "type": "tampered",
+    "license": "TTB Public COLA Registry image (public record), with one change planted for testing by tools/make_tampered.py",
+    "ttb_id": "25055001000896",
+    "edited_images": [
+      "02_back.jpg"
+    ]
+  },
+  "application": {
+    "beverage_type": "wine",
+    "brand_name": "LAMARCA",
+    "class_type": "SPARKLING WINE",
+    "abv": 11.5,
+    "proof": null,
+    "net_contents": "750 mL",
+    "source": "imported",
+    "country_of_origin": "PRODUCT OF ITALY",
+    "name_address": "DISTRIBUTED AND IMPORTED BY LA MARCA USA, HEALDSBURG, CALIFORNIA",
+    "label_width_in": 2.95
+  },
+  "printed": {
+    "brand_name": "LAMARCA",
+    "class_type": "SPARKLING WINE",
+    "abv": 10.5,
+    "proof": null,
+    "net_contents": "750 mL",
+    "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "warning_heading_bold": true,
+    "warning_cap_mm": null
+  },
+  "expected": {
+    "overall": "fail",
+    "findings": [
+      "ABV_MISMATCH"
+    ]
+  },
+  "provenance": {
+    "base_id": "cola_25055001000896",
+    "change": "abv",
+    "from": "ALC. 11.5% BY VOL.",
+    "to": "ALC. 10.5% BY VOL."
+  }
+}

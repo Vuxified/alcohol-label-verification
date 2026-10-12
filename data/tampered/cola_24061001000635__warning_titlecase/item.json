@@ -1,0 +1,59 @@
+{
+  "id": "cola_24061001000635__warning_titlecase",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.96,
+      "height_in": 4.52
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 3.42,
+      "height_in": 2.99
+    }
+  ],
+  "source": {
+    "type": "tampered",
+    "license": "TTB Public COLA Registry image (public record), with one change planted for testing by tools/make_tampered.py",
+    "ttb_id": "24061001000635",
+    "edited_images": [
+      "01_brand_front_or_keg_collar.jpg"
+    ]
+  },
+  "application": {
+    "beverage_type": "wine",
+    "brand_name": "[ yellow tail ]",
+    "class_type": "MOSCATO",
+    "abv": 7.5,
+    "proof": null,
+    "net_contents": "1.5L",
+    "source": "imported",
+    "country_of_origin": "PRODUCT OF AUSTRALIA",
+    "name_address": "PRODUCED BY CASELLA FAMILY BRANDS. IMPORTED BY DEUTSCH FAMILY WINE & SPIRITS, STAMFORD, CT.",
+    "label_width_in": 3.96
+  },
+  "printed": {
+    "brand_name": "[ yellow tail ]",
+    "class_type": "MOSCATO",
+    "abv": 7.5,
+    "proof": null,
+    "net_contents": "1.5L",
+    "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "warning_heading_bold": true,
+    "warning_cap_mm": null
+  },
+  "expected": {
+    "overall": "fail",
+    "findings": [
+      "WARNING_NOT_CAPS"
+    ]
+  },
+  "provenance": {
+    "base_id": "cola_24061001000635",
+    "change": "warning_titlecase",
+    "from": "GOVERNMENT WARNING",
+    "to": "Government Warning"
+  }
+}

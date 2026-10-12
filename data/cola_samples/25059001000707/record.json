@@ -1,0 +1,23 @@
+{
+  "ttb_id": "25059001000707",
+  "status": "APPROVED",
+  "serial_no": "25F241",
+  "class_type_code": "MALT BEVERAGES SPECIALITIES - FLAVORED",
+  "origin_code": "CALIFORNIA",
+  "brand_name": "FIRESTONE WALKER BREWING COMPANY",
+  "fanciful_name": "805 CHELADA",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "04/09/2025",
+  "applicant": "BR-CA-20654 | Firestone Walker Brewing Company, Firestone Walker, Inc. | 1400 RAMADA DR | Paso Robles,\u00a0CA\u00a093446",
+  "source": "domestic",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 8.99,
+      "height_in": 7.14
+    }
+  ]
+}

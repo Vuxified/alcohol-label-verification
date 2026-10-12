@@ -1,0 +1,23 @@
+{
+  "ttb_id": "26119001000839",
+  "status": "APPROVED",
+  "serial_no": "264293",
+  "class_type_code": "TABLE WHITE WINE",
+  "origin_code": "ITALY",
+  "brand_name": "LEANFORE ELENA CASADEI",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "06/17/2026",
+  "applicant": "NY-I-15108 | Domenico Valentino, DVM IMPORTING CO., INC. | 16 S MT. EBO RD STE A, ROOM 4 | Brewster,\u00a0NY\u00a010509",
+  "source": "imported",
+  "product_type": "wine",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 9.84,
+      "height_in": 3.15
+    }
+  ]
+}

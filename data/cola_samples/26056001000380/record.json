@@ -1,0 +1,23 @@
+{
+  "ttb_id": "26056001000380",
+  "status": "APPROVED",
+  "serial_no": "260344",
+  "class_type_code": "MALT BEVERAGES SPECIALITIES - FLAVORED",
+  "origin_code": "MICHIGAN",
+  "brand_name": "ODD SIDE ALES",
+  "fanciful_name": "VELVET STATIC",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "03/27/2026",
+  "applicant": "BR-MI-21015 | ODD SIDE ALES, NAKED TREE CELLARS LLC | 1810 INDUSTRIAL DR STE D,E,F | GRAND HAVEN,\u00a0MI\u00a049417",
+  "source": "domestic",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 6.0,
+      "height_in": 4.0
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "id": "cola_24009001000179__abv",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar"
+    }
+  ],
+  "source": {
+    "type": "tampered",
+    "license": "TTB Public COLA Registry image (public record), with one change planted for testing by tools/make_tampered.py",
+    "ttb_id": "24009001000179",
+    "edited_images": [
+      "01_brand_front_or_keg_collar.jpg"
+    ]
+  },
+  "application": {
+    "beverage_type": "malt",
+    "brand_name": "CORONADO BREWING CO.",
+    "class_type": "India Pale Ale",
+    "abv": 6.8,
+    "proof": null,
+    "net_contents": "1 Pint",
+    "source": "domestic",
+    "country_of_origin": null,
+    "name_address": "Brewed & Canned by Coronado Brewing Co. Coronado, CA",
+    "label_width_in": null
+  },
+  "printed": {
+    "brand_name": "CORONADO BREWING CO.",
+    "class_type": "India Pale Ale",
+    "abv": 7.8,
+    "proof": null,
+    "net_contents": "1 Pint",
+    "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "warning_heading_bold": true,
+    "warning_cap_mm": null
+  },
+  "expected": {
+    "overall": "fail",
+    "findings": [
+      "ABV_MISMATCH"
+    ]
+  },
+  "provenance": {
+    "base_id": "cola_24009001000179",
+    "change": "abv",
+    "from": "6.8% Alc/Vol",
+    "to": "7.8% Alc/Vol"
+  }
+}

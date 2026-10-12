@@ -1,0 +1,35 @@
+{
+  "id": "26029001000178",
+  "beverage_type": "malt",
+  "brand_name": "HALFWAY CROOKS BEER",
+  "class_type": "LAGER",
+  "abv": 4.8,
+  "abv_text": "4.8 % ALC./VOL",
+  "proof": null,
+  "net_contents_text": "15.5 GALLONS",
+  "net_contents_ml": 58673.88,
+  "name_address_text": "BREWED BY: HALFWAY CROOKS BEER 60 GEORGIA AV. S.E. ATLANTA GA. 30312",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.png",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "vertical"
+  },
+  "hard_cases": [
+    "round keg collar laid out as a form: 'CONTROL DATA' box with NAME \"Dunkel\" (in quotes), STYLE 'German-style Dunkel' and ABV '4.8' in filled fields",
+    "class chosen by a filled radio button (ALE / LAGER, LAGER selected); class_type recorded as 'LAGER', style line reads 'German-style Dunkel'",
+    "net contents chosen by a filled radio button among 5.16 / 7.75 / 13.21 / 15.5 gallons (15.5 selected)",
+    "warning and keg tapping notice rotated 90 degrees; bottler/address block rotated the other way",
+    "brewery 'HALFWAY CROOKS BEER' is more prominent than the brand name",
+    "monospace typewriter font for the form values; 'AIR PRESSURE HEALTHY' repeated around the rim"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

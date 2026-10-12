@@ -1,0 +1,53 @@
+{
+  "id": "cola_25107001000879__net",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 5.5,
+      "height_in": 3.5
+    }
+  ],
+  "source": {
+    "type": "tampered",
+    "license": "TTB Public COLA Registry image (public record), with one change planted for testing by tools/make_tampered.py",
+    "ttb_id": "25107001000879",
+    "edited_images": [
+      "01_brand_front_or_keg_collar.jpg"
+    ]
+  },
+  "application": {
+    "beverage_type": "wine",
+    "brand_name": "Red Road Wines LLC",
+    "class_type": "ROSE WINE",
+    "abv": 11,
+    "proof": null,
+    "net_contents": "750 mL",
+    "source": "domestic",
+    "country_of_origin": null,
+    "name_address": "Bottled by Red Road Wines LLC - Naples, TX",
+    "label_width_in": 5.5
+  },
+  "printed": {
+    "brand_name": "Red Road Wines LLC",
+    "class_type": "ROSE WINE",
+    "abv": 11,
+    "proof": null,
+    "net_contents": "720 mL",
+    "warning_text": "GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.",
+    "warning_heading_bold": true,
+    "warning_cap_mm": null
+  },
+  "expected": {
+    "overall": "fail",
+    "findings": [
+      "NET_CONTENTS_MISMATCH"
+    ]
+  },
+  "provenance": {
+    "base_id": "cola_25107001000879",
+    "change": "net",
+    "from": "750 mL",
+    "to": "720 mL"
+  }
+}

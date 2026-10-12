@@ -1,0 +1,35 @@
+{
+  "id": "25059001000707",
+  "beverage_type": "malt",
+  "brand_name": "FIRESTONE WALKER BREWING COMPANY",
+  "class_type": "BEER WITH NATURAL FLAVORS",
+  "abv": 5,
+  "abv_text": "5% ALC /VOL",
+  "proof": null,
+  "net_contents_text": "24 FL. OZ.",
+  "net_contents_ml": 709.76,
+  "name_address_text": "FIRESTONE WALKER BREWING COMPANY, PASO ROBLES, CA",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "no",
+    "whole_warning_bold": "no",
+    "orientation": "vertical"
+  },
+  "hard_cases": [
+    "brand 'FIRESTONE WALKER BREWING COMPANY' in arched small serif above a large '805' logo; 'CHELADA' and 'SALTED CHILI LIME' dominate",
+    "all mandatory text in a vertical side panel (warning, ABV, net contents, address) in thin condensed grey type on dark red",
+    "net contents stated three ways: '24oz', '(710ML) | 1 PINT 8 FL. OZ.' and '24 FL. OZ.'",
+    "ABV also as '5% ABV' on both panels",
+    "warning heading not bold (same weight as body)",
+    "class statement continues 'COLORED WITH PURPLE CARROT AND CERTIFIED COLOR'"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); not reviewed by the owner"
+}

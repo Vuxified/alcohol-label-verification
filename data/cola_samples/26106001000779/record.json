@@ -1,0 +1,23 @@
+{
+  "ttb_id": "26106001000779",
+  "status": "APPROVED",
+  "serial_no": "2624RB",
+  "class_type_code": "DESSERT /PORT/SHERRY/(COOKING) WINE",
+  "origin_code": "CALIFORNIA",
+  "brand_name": "PRIMROSE",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "05/26/2026",
+  "applicant": "BWN-CA-23142 | FABLEIST WINE CO, The Fableist Wine Company | 5036 S EL POMAR RD | TEMPLETON,\u00a0CA\u00a093465",
+  "source": "domestic",
+  "product_type": "wine",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.png",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 8.9,
+      "height_in": 6.6
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "ttb_id": "24002001000241",
+  "status": "APPROVED",
+  "serial_no": "240102",
+  "class_type_code": "TABLE FLAVORED WINE",
+  "origin_code": "OHIO",
+  "brand_name": "ELSAAN WINERY",
+  "fanciful_name": "BO DANCERS RAZ",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/04/2024",
+  "applicant": "BWN-OH-21379 | Elsaan Winery, LLC | 33174 USR 36 | Warsaw,\u00a0OH\u00a043844",
+  "source": "domestic",
+  "product_type": "wine",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.png",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 6.0,
+      "height_in": 4.75
+    }
+  ]
+}

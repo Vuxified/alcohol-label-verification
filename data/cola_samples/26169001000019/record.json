@@ -1,0 +1,29 @@
+{
+  "ttb_id": "26169001000019",
+  "status": "APPROVED",
+  "serial_no": "260109",
+  "class_type_code": "WHISKY OLD FASHIONED (48 PROOF UP)",
+  "origin_code": "MASSACHUSETTS",
+  "brand_name": "PUTNAM",
+  "fanciful_name": "MAPLE OLD FASHIONED",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "08/03/2026",
+  "applicant": "DSP-MA-21097 | Boston Harbor Distillery, EKS Ventures Inc. | 12 R ERICSSON ST | Boston,\u00a0MA\u00a002122",
+  "source": "domestic",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 11.5,
+      "height_in": 4.25
+    },
+    {
+      "file": "02_neck.jpg",
+      "image_type": "Neck",
+      "width_in": 1.0,
+      "height_in": 2.25
+    }
+  ]
+}

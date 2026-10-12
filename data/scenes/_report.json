@@ -1,0 +1,1491 @@
+{
+ "model": "us.stability.stable-image-inpaint-v1:0",
+ "items": [
+  {
+   "id": "syn_malt_00_abv_wrong__scene0",
+   "base_item": "syn_malt_00_abv_wrong",
+   "container": "bottle",
+   "scene": "cooler",
+   "geometry": {
+    "half_angle": 35.51076741552126,
+    "bow": 0.08233399808327796,
+    "tilt": 0.6980975550410573
+   },
+   "label_box": [
+    501,
+    1282,
+    420,
+    397
+   ],
+   "label_pixels_identical_before_camera_effects": true,
+   "model_pixels_vs_label_mean_abs_diff": 7.6,
+   "final_vs_label_mean_abs_diff": 4.5,
+   "camera_effects": [
+    "vignette",
+    "grain"
+   ],
+   "brand_found": true,
+   "model_drawn_words": []
+  },
+  {
+   "id": "syn_malt_00_brand_extra_word__scene0",
+   "base_item": "syn_malt_00_brand_extra_word",
+   "container": "bottle",
+   "scene": "shelf",
+   "geometry": {
+    "half_angle": 32.12550293292918,
+    "bow": 0.06745709835191821,
+    "tilt": -1.2569564697600561
+   },
+   "label_box": [
+    569,
+    1302,
+    405,
+    377
+   ],
+   "label_pixels_identical_before_camera_effects": true,
+   "model_pixels_vs_label_mean_abs_diff": 9.4,
+   "final_vs_label_mean_abs_diff": 8.0,
+   "camera_effects": [
+    "vignette",
+    "glare",
+    "grain"
+   ],
+   "brand_found": true,
+   "model_drawn_words": []
+  },
+  {
+   "id": "syn_malt_00_none__scene0",
+   "base_item": "syn_malt_00_none",
+   "container": "bottle",
+   "scene": "table",
+   "geometry": {
+    "half_angle": 34.785677718716734,
+    "bow": 0.061733923333861615,
+    "tilt": 1.4656354605751156
+   },
+   "label_box": [
+    514,
+    1033,
+    414,
+    646
+   ],
+   "label_pixels_identical_before_camera_effects": true,
+   "model_pixels_vs_label_mean_abs_diff": 5.5,
+   "final_vs_label_mean_abs_diff": 19.1,
+   "camera_effects": [
+    "vignette",
+    "glare",
+    "blur0.9",
+    "grain"
+   ],
+   "brand_found": true,
+   "model_drawn_words": []
+  },
+  {
+   "id": "syn_malt_01_none__scene0",
+   "base_item": "syn_malt_01_none",
+   "container": "bottle",
+   "scene": "hand",
+   "geometry": {
+    "half_angle": 31.859527727754227,
+    "bow": 0.0955209603812312,
+    "tilt": -0.2866327436757119
+   },
+   "label_box": [
+    503,
+    1311,
+    393,
+    368
+   ],
+   "label_pixels_identical_before_camera_effects": true,
+   "model_pixels_vs_label_mean_abs_diff": 11.8,
+   "final_vs_label_mean_abs_diff": 11.3,
+   "camera_effects": [
+    "vignette",
+    "blur0.9",
+    "grain"
+   ],
+   "brand_found": true,
+   "model_drawn_words": []
+  },
+  {
+   "id": "syn_malt_01_warning_titlecase__scene0",
+   "base_item": "syn_malt_01_warning_titlecase",
+   "container": "bottle",
+   "scene": "cooler",
+   "geometry": {
+    "half_angle": 31.344177480882124,
+    "bow": 0.07227677115193085,
+    "tilt": -1.4119161893652208
+   },
+   "label_box": [
+    624,
+    1045,
+    410,
+    634
+   ],
+   "label_pixels_identical_before_camera_effects": true,
+   "model_pixels_vs_label_mean_abs_diff": 5.4,
+   "final_vs_label_mean_abs_diff": 2.9,
+   "camera_effects": [
+    "vignette",
+    "grain"
+   ],
+   "brand_found": true,
+   "model_drawn_words": []
+  },
+  {
+   "id": "syn_malt_03_net_wrong__scene0",
+   "base_item": "syn_malt_03_net_wrong",
+   "container": "bottle",
+   "scene": "shelf",
+   "geometry": {
+    "half_angle": 24.400598409901555,
+    "bow": 0.07370143958617818,
+    "tilt": -0.37895470989484004
+   },
+   "label_box": [
+    555,
+    1310,
+    405,
+    369
+   ],
+   "label_pixels_identical_before_camera_effects": true,
+   "model_pixels_vs_label_mean_abs_diff": 8.3,
+   "final_vs_label_mean_abs_diff": 14.8,
+   "camera_effects": [
+    "vignette",
+    "blur0.9",
+    "grain"
+   ],
+   "brand_found": true,
+   "model_drawn_words": []
+  },
+  {
+   "id": "syn_malt_03_none__scene0",
+   "base_item": "syn_malt_03_none",
+   "container": "bottle",
+   "scene": "shelf",
+   "geometry": {
+    "half_angle": 34.617389831012204,
+    "bow": 0.07214323461778163,
+    "tilt": 0.06151995265727095
+   },
+   "label_box": [
+    530,
+    1305,
+    395,
+    374
+   ],
+   "label_pixels_identical_before_camera_effects": true,
+   "model_pixels_vs_label_mean_abs_diff": 9.8,
+   "final_vs_label_mean_abs_diff": 17.1,
+   "camera_effects": [
+    "vignette",
+    "blur0.9",
+    "grain"
+   ],
+   "brand_found": true,
+   "model_drawn_words": []
+  },
+  {
+   "id": "syn_malt_04_brand_extra_word__scene0",
+   "base_item": "syn_malt_04_brand_extra_word",
+   "container": "bottle",
+   "scene": "bar",
+   "geometry": {
+    "half_angle": 31.455250252862918,
+    "bow": 0.05639643830041757,
+    "tilt": -0.5872848705655453
+   },
+   "label_box": [
+    512,
+    1014,
+    424,
+    665
+   ],
+   "label_pixels_identical_before_camera_effects": true,
+   "model_pixels_vs_label_mean_abs_diff": 3.4,
+   "final_vs_label_mean_abs_diff": 5.4,
+   "camera_effects": [
+    "vignette",
+    "blur0.9",
+    "grain"
+   ],
+   "brand_found": true,
+   "model_drawn_words": []
+  },
+  {
+   "id": "syn_malt_04_warning_too_small__scene0",
+   "base_item": "syn_malt_04_warning_too_small",
+   "container": "bottle",
+   "scene": "hand",
+   "geometry": {
+    "half_angle": 23.421524024268543,
+    "bow": 0.09976673689848777,
+    "tilt": 0.42645034514152136
+   },
+   "label_box": [
+    523,
+    1158,
+    440,
+    521
+   ],
+   "label_pixels_identical_before_camera_effects": true,
+   "model_pixels_vs_label_mean_abs_diff": 8.1,
+   "final_vs_label_mean_abs_diff": 10.6,
+   "camera_effects": [
+    "vignette",
+    "blur0.6",
+    "grain"
+   ],
+   "brand_found": true,
+   "model_drawn_words": []
+  },
+  {
+   "id": "syn_malt_06_abv_wrong__scene0",
+   "base_item": "syn_malt_06_abv_wrong",
+   "container": "bottle",
+   "scene": "shelf",
+   "geometry": {
+    "half_angle": 31.631597790951474,
+    "bow": 0.04705928402484355,
+    "tilt": -0.28912810944634004
+   },
+   "label_box": [
+    568,
+    1175,
+    418,
+    504
+   ],
+   "label_pixels_identical_before_camera_effects": true,
+   "model_pixels_vs_label_mean_abs_diff": 4.0,
+   "final_vs_label_mean_abs_diff": 4.6,
+   "camera_effects": [
+    "vignette",
+    "blur0.9",
+    "grain"
+   ],
+   "brand_found": true,
+   "model_drawn_words": []
+  },
+  {
+   "id": "syn_malt_06_none__scene0",
+   "base_item": "syn_malt_06_none",
+   "container": "bottle",
+   "scene": "cooler",
+   "geometry": {
+    "half_angle": 22.041948528859194,
+    "bow": 0.09130762823118012,
+    "tilt": -0.8818145502570374
+   },
+   "label_box": [
+    563,
+    1183,
+    422,
+    496
+   ],
+   "label_pixels_identical_before_camera_effects": true,
+   "model_pixels_vs_label_mean_abs_diff": 6.1,
+   "final_vs_label_mean_abs_diff": 3.8,
+   "camera_effects": [
+    "vignette",
+    "grain"
+   ],
+   "brand_found": true,
+   "model_drawn_words": []
+  },
+  {
+   "id": "syn_malt_06_warning_wording__scene0",
+   "base_item": "syn_malt_06_warning_wording",
+   "container": "bottle",
+   "scene": "cooler",
+   "geometry": {
+    "half_angle": 32.85636490053686,
+    "bow": 0.052459665631312866,
+    "tilt": -0.2927054806182241
+   },
+   "label_box": [
+    472,
+    1018,
+    416,
+    661
+   ],
+   "label_pixels_identical_before_camera_effects": true,
+   "model_pixels_vs_label_mean_abs_diff": 5.2,
+   "final_vs_label_mean_abs_diff": 4.7,
+   "camera_effects": [
+    "vignette",
+    "blur0.6",
+    "grain"
+   ],
+   "brand_found": true,
+   "model_drawn_words": [
+    "BEER"
+   ]
+  },
+  {
+   "id": "syn_malt_07_net_metric_only__scene0",
+   "base_item": "syn_malt_07_net_metric_only",
+   "container": "bottle",
+   "scene": "shelf",
+   "geometry": {
+    "half_angle": 31.875885151822985,
+    "bow": 0.09810095695464913,
+    "tilt": 0.4078344547327133
+   },
+   "label_box": [
+    641,
+    1309,
+    396,
+    370
+   ],
+   "label_pixels_identical_before_camera_effects": true,
+   "model_pixels_vs_label_mean_abs_diff": 11.0,
+   "final_vs_label_mean_abs_diff": 15.7,
+   "camera_effects": [
+    "vignette",
+    "glare",
+    "blur0.9",
+    "grain"
+   ],
+   "brand_found": true,
+   "model_drawn_words": []
+  },
+  {
+   "id": "syn_malt_09_abv_wrong__scene0",
+   "base_item": "syn_malt_09_abv_wrong",
+   "container": "bottle",
+   "scene": "bar",
+   "geometry": {
+    "half_angle": 24.117545320335505,
+    "bow": 0.04932423476646552,
+    "tilt": -0.0634828849502167
+   },
+   "label_box": [
+    575,
+    1217,
+    391,
+    462
+   ],
+   "label_pixels_identical_before_camera_effects": true,
+   "model_pixels_vs_label_mean_abs_diff": 10.9,
+   "final_vs_label_mean_abs_diff": 14.1,
+   "camera_effects": [
+    "vignette",
+    "blur0.9",
+    "grain"
+   ],
+   "brand_found": true,
+   "model_drawn_words": []
+  },
+  {
+   "id": "syn_malt_09_none__scene0",
+   "base_item": "syn_malt_09_none",
+   "container": "bottle",
+   "scene": "shelf",
+   "geometry": {
+    "half_angle": 34.10244402286044,
+    "bow": 0.05533533563612117,
+    "tilt": -1.2177233531775031
+   },
+   "label_box": [
+    557,
+    1159,
+    431,
+    520
+   ],
+   "label_pixels_identical_before_camera_effects": true,
+   "model_pixels_vs_label_mean_abs_diff": 4.8,
+   "final_vs_label_mean_abs_diff": 4.2,
+   "camera_effects": [
+    "vignette",
+    "glare",
+    "blur0.6",
+    "grain"
+   ],
+   "brand_found": true,
+   "model_drawn_words": []
+  },
+  {
+   "id": "syn_malt_10_brand_extra_word__scene0",
+   "base_item": "syn_malt_10_brand_extra_word",
+   "container": "bottle",
+   "scene": "shelf",
+   "geometry": {
+    "half_angle": 24.568179006952484,
+    "bow": 0.09608442442489752,
+    "tilt": -1.3425795244208856
+   },
+   "label_box": [
+    497,
+    1029,
+    428,
+    650
+   ],
+   "label_pixels_identical_before_camera_effects": true,
+   "model_pixels_vs_label_mean_abs_diff": 2.9,
+   "final_vs_label_mean_abs_diff": 2.8,
+   "camera_effects": [
+    "vignette",
+    "blur0.6",
+    "grain"
+   ],
+   "brand_found": true,
+   "model_drawn_words": []
+  },
+  {
+   "id": "syn_malt_10_none__scene0",
+   "base_item": "syn_malt_10_none",
+   "container": "bottle",
+   "scene": "cooler",
+   "geometry": {
+    "half_angle": 33.23079584573051,
+    "bow": 0.08193673345306193,
+    "tilt": 0.7397832635544215
+   },
+   "label_box": [
+    484,
+    1285,
+    420,
+    394
+   ],
+   "label_pixels_identical_before_camera_effects": true,
+   "model_pixels_vs_label_mean_abs_diff": 6.9,
+   "final_vs_label_mean_abs_diff": 2.7,
+   "camera_effects": [
+    "vignette",
+    "glare",
+    "grain"
+   ],
+   "brand_found": true,
+   "model_drawn_words": []
+  },
+  {
+   "id": "syn_malt_10_warning_too_small__scene0",
+   "base_item": "syn_malt_10_warning_too_small",
+   "container": "bottle",
+   "scene": "bar",
+   "geometry": {
+    "half_angle": 23.130630225882253,
+    "bow": 0.07042266925452623,
+    "tilt": 0.712870082714121
+   },
+   "label_box": [
+    617,
+    1220,
+    390,
+    459
+   ],
+   "label_pixels_identical_before_camera_effects": true,
+   "model_pixels_vs_label_mean_abs_diff": 10.1,
+   "final_vs_label_mean_abs_diff": 8.5,
+   "camera_effects": [
+    "vignette",
+    "glare",
+    "blur0.6",
+    "grain"
+   ],
+   "brand_found": true,
+   "model_drawn_words": []
+  },
+  {
+   "id": "syn_spirits_00_brand_case_only__scene0",
+   "base_item": "syn_spirits_00_brand_case_only",
+   "container": "bottle",
+   "scene": "bar",
+   "geometry": {
+    "half_angle": 22.05272686974353,
+    "bow": 0.0638207144899142,
+    "tilt": -1.2694618460887317
+   },
+   "label_box": [
+    510,
+    1050,
+    539,
+    629
+   ],
+   "label_pixels_identical_before_camera_effects": true,
+   "model_pixels_vs_label_mean_abs_diff": 6.9,
+   "final_vs_label_mean_abs_diff": 7.2,
+   "camera_effects": [
+    "vignette",
+    "glare",
+    "blur0.9",
+    "grain"
+   ],
+   "brand_found": true,
+   "model_drawn_words": []
+  },
+  {
+   "id": "syn_spirits_00_none__scene0",
+   "base_item": "syn_spirits_00_none",
+   "container": "bottle",
+   "scene": "cooler",
+   "geometry": {
+    "half_angle": 28.704025320948375,
+    "bow": 0.07535023722996591,
+    "tilt": -0.5861827869056842
+   },
+   "label_box": [
+    583,
+    1047,
+    529,
+    632
+   ],
+   "label_pixels_identical_before_camera_effects": true,
+   "model_pixels_vs_label_mean_abs_diff": 5.6,
+   "final_vs_label_mean_abs_diff": 12.1,
+   "camera_effects": [
+    "vignette",
+    "blur0.9",
+    "grain"
+   ],
+   "brand_found": true,
+   "model_drawn_words": [
+    "EBEG"
+   ]
+  },
+  {
+   "id": "syn_spirits_02_brand_extra_word__scene0",
+   "base_item": "syn_spirits_02_brand_extra_word",
+   "container": "bottle",
+   "scene": "cooler",
+   "geometry": {
+    "half_angle": 34.17773968479216,
+    "bow": 0.06534733055698685,
+    "tilt": 1.493306492186194
+   },
+   "label_box": [
+    626,
+    961,
+    461,
+    718
+   ],
+   "label_pixels_identical_before_camera_effects": true,
+   "model_pixels_vs_label_mean_abs_diff": 6.4,
+   "final_vs_label_mean_abs_diff": 7.3,
+   "camera_effects": [
+    "vignette",
+    "glare",
+    "blur0.6",
+    "grain"
+   ],
+   "brand_found": true,
+   "model_drawn_words": []
+  },
+  {
+   "id": "syn_spirits_02_net_wrong__scene0",
+   "base_item": "syn_spirits_02_net_wrong",
+   "container": "bottle",
+   "scene": "hand",
+   "geometry": {
+    "half_angle": 37.72169690048135,
+    "bow": 0.044888889742664445,
+    "tilt": 0.34513421577564407
+   },
+   "label_box": [
+    490,
+    1205,
+    500,
+    474
+   ],
+   "label_pixels_identical_before_camera_effects": true,
+   "model_pixels_vs_label_mean_abs_diff": 5.1,
+   "final_vs_label_mean_abs_diff": 5.7,
+   "camera_effects": [
+    "vignette",
+    "blur0.9",
+    "grain"
+   ],
+   "brand_found": true,
+   "model_drawn_words": []
+  },
+  {
+   "id": "syn_spirits_02_none__scene0",
+   "base_item": "syn_spirits_02_none",
+   "container": "bottle",
+   "scene": "hand",
+   "geometry": {
+    "half_angle": 32.97261822194677,
+    "bow": 0.06710872486279071,
+    "tilt": 0.5589619489042943
+   },
+   "label_box": [
+    462,
+    978,
+    443,
+    701
+   ],
+   "label_pixels_identical_before_camera_effects": true,
+   "model_pixels_vs_label_mean_abs_diff": 2.9,
+   "final_vs_label_mean_abs_diff": 2.7,
+   "camera_effects": [
+    "vignette",
+    "blur0.6",
+    "grain"
+   ],
+   "brand_found": true,
+   "model_drawn_words": []
+  },
+  {
+   "id": "syn_spirits_02_proof_wrong__scene0",
+   "base_item": "syn_spirits_02_proof_wrong",
+   "container": "bottle",
+   "scene": "shelf",
+   "geometry": {
+    "half_angle": 22.782481707828403,
+    "bow": 0.06908733060215669,
+    "tilt": 0.817770716996594
+   },
+   "label_box": [
+    606,
+    990,
+    451,
+    689
+   ],
+   "label_pixels_identical_before_camera_effects": true,
+   "model_pixels_vs_label_mean_abs_diff": 4.8,
+   "final_vs_label_mean_abs_diff": 5.6,
+   "camera_effects": [
+    "vignette",
+    "glare",
+    "grain"
+   ],
+   "brand_found": true,
+   "model_drawn_words": []
+  },
+  {
+   "id": "syn_spirits_04_abv_wrong__scene0",
+   "base_item": "syn_spirits_04_abv_wrong",
+   "container": "bottle",
+   "scene": "table",
+   "geometry": {
+    "half_angle": 28.123523443161492,
+    "bow": 0.07175482164058702,
+    "tilt": -0.7382495078272834
+   },
+   "label_box": [
+    461,
+    1240,
+    476,
+    439
+   ],
+   "label_pixels_identical_before_camera_effects": true,
+   "model_pixels_vs_label_mean_abs_diff": 7.6,
+   "final_vs_label_mean_abs_diff": 6.8,
+   "camera_effects": [
+    "vignette",
+    "grain"
+   ],
+   "brand_found": true,
+   "model_drawn_words": []
+  },
+  {
+   "id": "syn_spirits_05_abv_wrong__scene0",
+   "base_item": "syn_spirits_05_abv_wrong",
+   "container": "bottle",
+   "scene": "bar",
+   "geometry": {
+    "half_angle": 24.17778487209771,
+    "bow": 0.08148516043379224,
+    "tilt": -0.25713881820695184
+   },
+   "label_box": [
+    444,
+    1201,
+    525,
+    478
+   ],
+   "label_pixels_identical_before_camera_effects": true,
+   "model_pixels_vs_label_mean_abs_diff": 9.4,
+   "final_vs_label_mean_abs_diff": 11.9,
+   "camera_effects": [
+    "vignette",
+    "blur0.6",
+    "grain"
+   ],
+   "brand_found": true,
+   "model_drawn_words": []
+  },
+  {
+   "id": "syn_spirits_05_proof_wrong__scene0",
+   "base_item": "syn_spirits_05_proof_wrong",
+   "container": "bottle",
+   "scene": "hand",
+   "geometry": {
+    "half_angle": 24.774446741281928,
+    "bow": 0.055313616219218945,
+    "tilt": 1.2372102741262805
+   },
+   "label_box": [
+    557,
+    1067,
+    521,
+    612
+   ],
+   "label_pixels_identical_before_camera_effects": true,
+   "model_pixels_vs_label_mean_abs_diff": 4.1,
+   "final_vs_label_mean_abs_diff": 5.1,
+   "camera_effects": [
+    "vignette",
+    "blur0.9",
+    "grain"
+   ],
+   "brand_found": true,
+   "model_drawn_words": []
+  },
+  {
+   "id": "syn_spirits_09_none__scene0",
+   "base_item": "syn_spirits_09_none",
+   "container": "bottle",
+   "scene": "hand",
+   "geometry": {
+    "half_angle": 33.165933488728434,
+    "bow": 0.08837609320800292,
+    "tilt": 0.11883590579920011
+   },
+   "label_box": [
+    546,
+    916,
+    477,
+    763
+   ],
+   "label_pixels_identical_before_camera_effects": true,
+   "model_pixels_vs_label_mean_abs_diff": 5.9,
+   "final_vs_label_mean_abs_diff": 7.1,
+   "camera_effects": [
+    "vignette",
+    "glare",
+    "blur0.6",
+    "grain"
+   ],
+   "brand_found": true,
+   "model_drawn_words": []
+  },
+  {
+   "id": "syn_spirits_09_warning_titlecase__scene0",
+   "base_item": "syn_spirits_09_warning_titlecase",
+   "container": "bottle",
+   "scene": "table",
+   "geometry": {
+    "half_angle": 37.21199658932615,
+    "bow": 0.08110614195490864,
+    "tilt": 0.009293667613962331
+   },
+   "label_box": [
+    535,
+    936,
+    458,
+    743
+   ],
+   "label_pixels_identical_before_camera_effects": true,
+   "model_pixels_vs_label_mean_abs_diff": 7.8,
+   "final_vs_label_mean_abs_diff": 5.8,
+   "camera_effects": [
+    "vignette",
+    "grain"
+   ],
+   "brand_found": true,
+   "model_drawn_words": []
+  },
+  {
+   "id": "syn_spirits_09_warning_wording__scene0",
+   "base_item": "syn_spirits_09_warning_wording",
+   "container": "bottle",
+   "scene": "table",
+   "geometry": {
+    "half_angle": 35.63321671320087,
+    "bow": 0.06524017870331864,
+    "tilt": 0.8032925244776776
+   },
+   "label_box": [
+    591,
+    1210,
+    497,
+    469
+   ],
+   "label_pixels_identical_before_camera_effects": true,
+   "model_pixels_vs_label_mean_abs_diff": 7.0,
+   "final_vs_label_mean_abs_diff": 13.5,
+   "camera_effects": [
+    "vignette",
+    "blur0.6",
+    "grain"
+   ],
+   "brand_found": true,
+   "model_drawn_words": []
+  },
+  {
+   "id": "syn_spirits_10_abv_wrong__scene0",
+   "base_item": "syn_spirits_10_abv_wrong",
+   "container": "bottle",
+   "scene": "table",
+   "geometry": {
+    "half_angle": 27.38729428499041,
+    "bow": 0.06324463521961604,
+    "tilt": 0.18213060489922128
+   },
+   "label_box": [
+    574,
+    1225,
+    494,
+    454
+   ],
+   "label_pixels_identical_before_camera_effects": true,
+   "model_pixels_vs_label_mean_abs_diff": 5.9,
+   "final_vs_label_mean_abs_diff": 5.2,
+   "camera_effects": [
+    "vignette",
+    "blur0.9",
+    "grain"
+   ],
+   "brand_found": true,
+   "model_drawn_words": []
+  },
+  {
+   "id": "syn_spirits_10_class_wrong__scene0",
+   "base_item": "syn_spirits_10_class_wrong",
+   "container": "bottle",
+   "scene": "cooler",
+   "geometry": {
+    "half_angle": 28.278793099456635,
+    "bow": 0.058236641360506616,
+    "tilt": -1.0128700562013158
+   },
+   "label_box": [
+    502,
+    1243,
+    474,
+    436
+   ],
+   "label_pixels_identical_before_camera_effects": true,
+   "model_pixels_vs_label_mean_abs_diff": 5.5,
+   "final_vs_label_mean_abs_diff": 13.5,
+   "camera_effects": [
+    "vignette",
+    "grain"
+   ],
+   "brand_found": true,
+   "model_drawn_words": [
+    "GAGIS"
+   ]
+  },
+  {
+   "id": "syn_spirits_10_none__scene0",
+   "base_item": "syn_spirits_10_none",
+   "container": "bottle",
+   "scene": "cooler",
+   "geometry": {
+    "half_angle": 35.85645714453837,
+    "bow": 0.06523931989544549,
+    "tilt": 0.9780768561136384
+   },
+   "label_box": [
+    526,
+    954,
+    458,
+    725
+   ],
+   "label_pixels_identical_before_camera_effects": true,
+   "model_pixels_vs_label_mean_abs_diff": 4.5,
+   "final_vs_label_mean_abs_diff": 7.3,
+   "camera_effects": [
+    "vignette",
+    "grain"
+   ],
+   "brand_found": true,
+   "model_drawn_words": []
+  },
+  {
+   "id": "syn_spirits_10_warning_too_small__scene0",
+   "base_item": "syn_spirits_10_warning_too_small",
+   "container": "bottle",
+   "scene": "table",
+   "geometry": {
+    "half_angle": 32.73837208383409,
+    "bow": 0.07532140738192886,
+    "tilt": -1.0393100075430963
+   },
+   "label_box": [
+    584,
+    966,
+    456,
+    713
+   ],
+   "label_pixels_identical_before_camera_effects": true,
+   "model_pixels_vs_label_mean_abs_diff": 3.3,
+   "final_vs_label_mean_abs_diff": 4.1,
+   "camera_effects": [
+    "vignette",
+    "blur0.6",
+    "grain"
+   ],
+   "brand_found": true,
+   "model_drawn_words": []
+  },
+  {
+   "id": "syn_spirits_11_none__scene0",
+   "base_item": "syn_spirits_11_none",
+   "container": "bottle",
+   "scene": "hand",
+   "geometry": {
+    "half_angle": 36.678513035229415,
+    "bow": 0.08464104333672957,
+    "tilt": -1.0075081576340494
+   },
+   "label_box": [
+    619,
+    922,
+    476,
+    757
+   ],
+   "label_pixels_identical_before_camera_effects": true,
+   "model_pixels_vs_label_mean_abs_diff": 5.8,
+   "final_vs_label_mean_abs_diff": 9.2,
+   "camera_effects": [
+    "vignette",
+    "glare",
+    "grain"
+   ],
+   "brand_found": true,
+   "model_drawn_words": []
+  },
+  {
+   "id": "syn_spirits_11_warning_titlecase__scene0",
+   "base_item": "syn_spirits_11_warning_titlecase",
+   "container": "bottle",
+   "scene": "cooler",
+   "geometry": {
+    "half_angle": 24.17332101319112,
+    "bow": 0.0481014700109851,
+    "tilt": -0.8264118688369119
+   },
+   "label_box": [
+    553,
+    1223,
+    503,
+    456
+   ],
+   "label_pixels_identical_before_camera_effects": true,
+   "model_pixels_vs_label_mean_abs_diff": 3.3,
+   "final_vs_label_mean_abs_diff": 4.6,
+   "camera_effects": [
+    "vignette",
+    "blur0.9",
+    "grain"
+   ],
+   "brand_found": true,
+   "model_drawn_words": []
+  },
+  {
+   "id": "syn_wine_01_brand_case_only__scene0",
+   "base_item": "syn_wine_01_brand_case_only",
+   "container": "bottle",
+   "scene": "hand",
+   "geometry": {
+    "half_angle": 26.956826538689597,
+    "bow": 0.048520919079484984,
+    "tilt": 1.4573199515194837
+   },
+   "label_box": [
+    444,
+    1092,
+    498,
+    587
+   ],
+   "label_pixels_identical_before_camera_effects": true,
+   "model_pixels_vs_label_mean_abs_diff": 3.4,
+   "final_vs_label_mean_abs_diff": 5.7,
+   "camera_effects": [
+    "vignette",
+    "blur0.9",
+    "grain"
+   ],
+   "brand_found": true,
+   "model_drawn_words": []
+  },
+  {
+   "id": "syn_wine_01_brand_extra_word__scene0",
+   "base_item": "syn_wine_01_brand_extra_word",
+   "container": "bottle",
+   "scene": "shelf",
+   "geometry": {
+    "half_angle": 23.701239371348848,
+    "bow": 0.04664508121474952,
+    "tilt": 0.9198972107608951
+   },
+   "label_box": [
+    471,
+    989,
+    453,
+    690
+   ],
+   "label_pixels_identical_before_camera_effects": true,
+   "model_pixels_vs_label_mean_abs_diff": 3.2,
+   "final_vs_label_mean_abs_diff": 8.5,
+   "camera_effects": [
+    "vignette",
+    "glare",
+    "grain"
+   ],
+   "brand_found": true,
+   "model_drawn_words": [
+    "AALNL"
+   ]
+  },
+  {
+   "id": "syn_wine_01_none__scene0",
+   "base_item": "syn_wine_01_none",
+   "container": "bottle",
+   "scene": "hand",
+   "geometry": {
+    "half_angle": 24.219779634972532,
+    "bow": 0.07188385241845945,
+    "tilt": 0.14867273195821618
+   },
+   "label_box": [
+    550,
+    1062,
+    521,
+    617
+   ],
+   "label_pixels_identical_before_camera_effects": true,
+   "model_pixels_vs_label_mean_abs_diff": 7.7,
+   "final_vs_label_mean_abs_diff": 9.8,
+   "camera_effects": [
+    "vignette",
+    "blur0.6",
+    "grain"
+   ],
+   "brand_found": true,
+   "model_drawn_words": []
+  },
+  {
+   "id": "syn_wine_02_net_wrong__scene0",
+   "base_item": "syn_wine_02_net_wrong",
+   "container": "bottle",
+   "scene": "cooler",
+   "geometry": {
+    "half_angle": 24.753153138567058,
+    "bow": 0.07517311353331932,
+    "tilt": -1.391502098454536
+   },
+   "label_box": [
+    546,
+    976,
+    463,
+    703
+   ],
+   "label_pixels_identical_before_camera_effects": true,
+   "model_pixels_vs_label_mean_abs_diff": 6.0,
+   "final_vs_label_mean_abs_diff": 8.8,
+   "camera_effects": [
+    "vignette",
+    "grain"
+   ],
+   "brand_found": true,
+   "model_drawn_words": []
+  },
+  {
+   "id": "syn_wine_02_warning_wording__scene0",
+   "base_item": "syn_wine_02_warning_wording",
+   "container": "bottle",
+   "scene": "bar",
+   "geometry": {
+    "half_angle": 25.125111694308096,
+    "bow": 0.06600727037819377,
+    "tilt": -1.0668933528836568
+   },
+   "label_box": [
+    446,
+    1241,
+    480,
+    438
+   ],
+   "label_pixels_identical_before_camera_effects": true,
+   "model_pixels_vs_label_mean_abs_diff": 9.2,
+   "final_vs_label_mean_abs_diff": 10.9,
+   "camera_effects": [
+    "vignette",
+    "glare",
+    "grain"
+   ],
+   "brand_found": true,
+   "model_drawn_words": []
+  },
+  {
+   "id": "syn_wine_03_brand_extra_word__scene0",
+   "base_item": "syn_wine_03_brand_extra_word",
+   "container": "bottle",
+   "scene": "shelf",
+   "geometry": {
+    "half_angle": 30.526513029869797,
+    "bow": 0.09409228159368269,
+    "tilt": 1.0664531515687878
+   },
+   "label_box": [
+    477,
+    1081,
+    500,
+    598
+   ],
+   "label_pixels_identical_before_camera_effects": true,
+   "model_pixels_vs_label_mean_abs_diff": 3.0,
+   "final_vs_label_mean_abs_diff": 5.6,
+   "camera_effects": [
+    "vignette",
+    "glare",
+    "blur0.9",
+    "grain"
+   ],
+   "brand_found": true,
+   "model_drawn_words": []
+  },
+  {
+   "id": "syn_wine_04_abv_wrong__scene0",
+   "base_item": "syn_wine_04_abv_wrong",
+   "container": "bottle",
+   "scene": "table",
+   "geometry": {
+    "half_angle": 27.353368783869193,
+    "bow": 0.04089399954389516,
+    "tilt": 0.7334123754673652
+   },
+   "label_box": [
+    615,
+    953,
+    471,
+    726
+   ],
+   "label_pixels_identical_before_camera_effects": true,
+   "model_pixels_vs_label_mean_abs_diff": 7.5,
+   "final_vs_label_mean_abs_diff": 7.9,
+   "camera_effects": [
+    "vignette",
+    "blur0.9",
+    "grain"
+   ],
+   "brand_found": true,
+   "model_drawn_words": []
+  },
+  {
+   "id": "syn_wine_04_warning_heading_not_bold__scene0",
+   "base_item": "syn_wine_04_warning_heading_not_bold",
+   "container": "bottle",
+   "scene": "shelf",
+   "geometry": {
+    "half_angle": 35.033045761700386,
+    "bow": 0.06510933810609033,
+    "tilt": 0.980228993349348
+   },
+   "label_box": [
+    549,
+    1117,
+    462,
+    562
+   ],
+   "label_pixels_identical_before_camera_effects": true,
+   "model_pixels_vs_label_mean_abs_diff": 5.9,
+   "final_vs_label_mean_abs_diff": 9.9,
+   "camera_effects": [
+    "vignette",
+    "glare",
+    "grain"
+   ],
+   "brand_found": true,
+   "model_drawn_words": []
+  },
+  {
+   "id": "syn_wine_05_brand_case_only__scene0",
+   "base_item": "syn_wine_05_brand_case_only",
+   "container": "bottle",
+   "scene": "table",
+   "geometry": {
+    "half_angle": 25.807226506758603,
+    "bow": 0.05616357644341709,
+    "tilt": 1.2056142380328976
+   },
+   "label_box": [
+    515,
+    972,
+    464,
+    707
+   ],
+   "label_pixels_identical_before_camera_effects": true,
+   "model_pixels_vs_label_mean_abs_diff": 7.0,
+   "final_vs_label_mean_abs_diff": 6.7,
+   "camera_effects": [
+    "vignette",
+    "grain"
+   ],
+   "brand_found": true,
+   "model_drawn_words": []
+  },
+  {
+   "id": "syn_wine_05_net_wrong__scene0",
+   "base_item": "syn_wine_05_net_wrong",
+   "container": "bottle",
+   "scene": "table",
+   "geometry": {
+    "half_angle": 24.787140330595967,
+    "bow": 0.06615414620216759,
+    "tilt": 1.1390591701938826
+   },
+   "label_box": [
+    509,
+    1068,
+    519,
+    611
+   ],
+   "label_pixels_identical_before_camera_effects": true,
+   "model_pixels_vs_label_mean_abs_diff": 2.6,
+   "final_vs_label_mean_abs_diff": 3.4,
+   "camera_effects": [
+    "vignette",
+    "grain"
+   ],
+   "brand_found": true,
+   "model_drawn_words": []
+  },
+  {
+   "id": "syn_wine_06_brand_extra_word__scene0",
+   "base_item": "syn_wine_06_brand_extra_word",
+   "container": "bottle",
+   "scene": "bar",
+   "geometry": {
+    "half_angle": 33.30920422369908,
+    "bow": 0.06500258048941215,
+    "tilt": 0.2557858783581832
+   },
+   "label_box": [
+    604,
+    949,
+    458,
+    730
+   ],
+   "label_pixels_identical_before_camera_effects": true,
+   "model_pixels_vs_label_mean_abs_diff": 7.5,
+   "final_vs_label_mean_abs_diff": 9.5,
+   "camera_effects": [
+    "vignette",
+    "glare",
+    "blur0.9",
+    "grain"
+   ],
+   "brand_found": true,
+   "model_drawn_words": []
+  },
+  {
+   "id": "syn_wine_06_none__scene0",
+   "base_item": "syn_wine_06_none",
+   "container": "bottle",
+   "scene": "table",
+   "geometry": {
+    "half_angle": 29.9223415100914,
+    "bow": 0.06641182252057712,
+    "tilt": -1.263903957163139
+   },
+   "label_box": [
+    576,
+    1082,
+    502,
+    597
+   ],
+   "label_pixels_identical_before_camera_effects": true,
+   "model_pixels_vs_label_mean_abs_diff": 7.5,
+   "final_vs_label_mean_abs_diff": 9.6,
+   "camera_effects": [
+    "vignette",
+    "grain"
+   ],
+   "brand_found": true,
+   "model_drawn_words": []
+  },
+  {
+   "id": "syn_wine_06_warning_heading_not_bold__scene0",
+   "base_item": "syn_wine_06_warning_heading_not_bold",
+   "container": "bottle",
+   "scene": "shelf",
+   "geometry": {
+    "half_angle": 32.55245561203889,
+    "bow": 0.09073514571089625,
+    "tilt": -0.2966060824543775
+   },
+   "label_box": [
+    491,
+    1118,
+    461,
+    561
+   ],
+   "label_pixels_identical_before_camera_effects": true,
+   "model_pixels_vs_label_mean_abs_diff": 4.4,
+   "final_vs_label_mean_abs_diff": 4.0,
+   "camera_effects": [
+    "vignette",
+    "glare",
+    "grain"
+   ],
+   "brand_found": true,
+   "model_drawn_words": []
+  },
+  {
+   "id": "syn_wine_07_brand_extra_word__scene0",
+   "base_item": "syn_wine_07_brand_extra_word",
+   "container": "bottle",
+   "scene": "shelf",
+   "geometry": {
+    "half_angle": 28.788096328940128,
+    "bow": 0.09050653166757183,
+    "tilt": -1.3435636144331347
+   },
+   "label_box": [
+    623,
+    953,
+    473,
+    726
+   ],
+   "label_pixels_identical_before_camera_effects": true,
+   "model_pixels_vs_label_mean_abs_diff": 3.9,
+   "final_vs_label_mean_abs_diff": 10.7,
+   "camera_effects": [
+    "vignette",
+    "glare",
+    "blur0.9",
+    "grain"
+   ],
+   "brand_found": true,
+   "model_drawn_words": []
+  },
+  {
+   "id": "syn_wine_07_none__scene0",
+   "base_item": "syn_wine_07_none",
+   "container": "bottle",
+   "scene": "bar",
+   "geometry": {
+    "half_angle": 37.6144663350684,
+    "bow": 0.09862967114445198,
+    "tilt": -1.4638538360158009
+   },
+   "label_box": [
+    554,
+    1052,
+    511,
+    627
+   ],
+   "label_pixels_identical_before_camera_effects": true,
+   "model_pixels_vs_label_mean_abs_diff": 3.9,
+   "final_vs_label_mean_abs_diff": 3.8,
+   "camera_effects": [
+    "vignette",
+    "blur0.6",
+    "grain"
+   ],
+   "brand_found": true,
+   "model_drawn_words": []
+  },
+  {
+   "id": "syn_wine_11_brand_case_only__scene0",
+   "base_item": "syn_wine_11_brand_case_only",
+   "container": "bottle",
+   "scene": "table",
+   "geometry": {
+    "half_angle": 32.02365126408457,
+    "bow": 0.06199697621879582,
+    "tilt": -1.2358097365660878
+   },
+   "label_box": [
+    461,
+    1238,
+    474,
+    441
+   ],
+   "label_pixels_identical_before_camera_effects": true,
+   "model_pixels_vs_label_mean_abs_diff": 3.9,
+   "final_vs_label_mean_abs_diff": 4.6,
+   "camera_effects": [
+    "vignette",
+    "blur0.9",
+    "grain"
+   ],
+   "brand_found": true,
+   "model_drawn_words": []
+  },
+  {
+   "id": "syn_wine_11_net_wrong__scene0",
+   "base_item": "syn_wine_11_net_wrong",
+   "container": "bottle",
+   "scene": "bar",
+   "geometry": {
+    "half_angle": 30.49264015603915,
+    "bow": 0.08727215435308264,
+    "tilt": -0.9830840277258973
+   },
+   "label_box": [
+    489,
+    1243,
+    470,
+    436
+   ],
+   "label_pixels_identical_before_camera_effects": true,
+   "model_pixels_vs_label_mean_abs_diff": 10.1,
+   "final_vs_label_mean_abs_diff": 10.1,
+   "camera_effects": [
+    "vignette",
+    "blur0.6",
+    "grain"
+   ],
+   "brand_found": true,
+   "model_drawn_words": []
+  },
+  {
+   "id": "syn_wine_11_warning_too_small__scene0",
+   "base_item": "syn_wine_11_warning_too_small",
+   "container": "bottle",
+   "scene": "hand",
+   "geometry": {
+    "half_angle": 24.564702605043202,
+    "bow": 0.0916413484931885,
+    "tilt": 0.6053969908084422
+   },
+   "label_box": [
+    560,
+    988,
+    449,
+    691
+   ],
+   "label_pixels_identical_before_camera_effects": true,
+   "model_pixels_vs_label_mean_abs_diff": 8.3,
+   "final_vs_label_mean_abs_diff": 6.6,
+   "camera_effects": [
+    "vignette",
+    "blur0.6",
+    "grain"
+   ],
+   "brand_found": true,
+   "model_drawn_words": []
+  }
+ ],
+ "dropped": [],
+ "errors": [],
+ "rerolled": {
+  "syn_spirits_02_brand_extra_word__scene0": 1,
+  "syn_spirits_02_net_wrong__scene0": 1,
+  "syn_malt_00_abv_wrong__scene0": 1,
+  "syn_malt_01_none__scene0": 1,
+  "syn_malt_03_net_wrong__scene0": 1,
+  "syn_malt_03_none__scene0": 1,
+  "syn_malt_10_none__scene0": 1,
+  "syn_malt_07_net_metric_only__scene0": 1,
+  "syn_malt_06_warning_wording__scene0": 1,
+  "syn_wine_01_brand_case_only__scene0": 1
+ },
+ "calls_this_run": 0,
+ "paid_calls_all_runs": 77,
+ "paid_calls_note": "70 outputs cached in out/scenes_raw (incl. superseded layouts and 10 re-rolls) + 7 early layout trials",
+ "est_cost_usd_all_runs": [
+  3.08,
+  6.16
+ ]
+}

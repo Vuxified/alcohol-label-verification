@@ -1,0 +1,29 @@
+{
+  "ttb_id": "25128001000584",
+  "status": "APPROVED",
+  "serial_no": "255826",
+  "class_type_code": "DESSERT /PORT/SHERRY/(COOKING) WINE",
+  "origin_code": "SPAIN",
+  "brand_name": "ABADIA DE SAN QUIRCE RISERVA",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "06/13/2025",
+  "applicant": "GA-I-21156 | Atlanta Improvement Company | 3134 MARJAN DR | Doraville,\u00a0GA\u00a030340",
+  "source": "imported",
+  "product_type": "wine",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.png",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.4,
+      "height_in": 4.3
+    },
+    {
+      "file": "02_back.png",
+      "image_type": "Back",
+      "width_in": 3.15,
+      "height_in": 2.75
+    }
+  ]
+}

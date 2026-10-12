@@ -1,0 +1,34 @@
+{
+  "id": "25122001000541",
+  "beverage_type": "spirits",
+  "brand_name": "Three Wives Distillery",
+  "class_type": "Corn Whiskey with Natural Flavor",
+  "abv": 30,
+  "abv_text": "ALC. 30% by vol",
+  "proof": 60,
+  "net_contents_text": "750ML",
+  "net_contents_ml": 750,
+  "name_address_text": "DISTILLED AND BOTTLED BY: Three Wives Distillery 927 Barley Lane, Winchester VA, 22602",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "02_back.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "script brand 'Three Wives' on a banner with small 'Distillery' below, inside a round logo with curved text",
+    "'VIRGINIA MAPLE WHISKEY' is the most prominent line and could be read as class/type; the class statement is the small 'Corn Whiskey with Natural Flavor'",
+    "net contents, ABV and proof on one line separated by bullets",
+    "white text on dark wood texture (front), dark text on light wood (back)",
+    "'BARCODE' placeholder box"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); not reviewed by the owner"
+}

@@ -1,0 +1,35 @@
+{
+  "id": "25272001000707",
+  "beverage_type": "spirits",
+  "brand_name": "CHERRY RIVER",
+  "class_type": "RUM WITH NATURAL FLAVORS, ARTIFICIAL COLORS, AND FD&C YELLOW #5",
+  "abv": 7,
+  "abv_text": "7% alc./vol.",
+  "proof": null,
+  "net_contents_text": "355 mL",
+  "net_contents_ml": 355,
+  "name_address_text": "PRODUCED BY : DISTILLERIE CHERRY RIVER, 120 RUE DES PINS, MAGOG, QUÉBEC, J1X 2H9. IMPORTED BY: MIDDLETON WHITE SELECTIONS OAKLAND PARK, FL 33311",
+  "country_of_origin_text": "PRODUCT OF CANADA",
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "vertical"
+  },
+  "hard_cases": [
+    "can artwork shown flat (two front panels)",
+    "decorative condensed brand font",
+    "warning, producer, importer and distributor lines rotated 90 degrees in tight condensed type on the side panel",
+    "white and light blue text on black",
+    "fanciful 'TIKI RUM PUNCH' and 'READY-TO-DRINK COCKTAIL' near the class/type",
+    "also a 'DISTRIBUTED BY:' line (left out of name_address_text)"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); not reviewed by the owner"
+}

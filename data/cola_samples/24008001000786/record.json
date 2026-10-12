@@ -1,0 +1,29 @@
+{
+  "ttb_id": "24008001000786",
+  "status": "APPROVED",
+  "serial_no": "24005L",
+  "class_type_code": "OTHER IMPORTED WHISKY FB",
+  "origin_code": "JAPAN",
+  "brand_name": "YAMATO",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/22/2024",
+  "applicant": "GA-I-21200 | AIKO IMPORTERS, INC. | 225 HD ROBINSON BLVD | Pendergrass,\u00a0GA\u00a030567",
+  "source": "imported",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 1.9,
+      "height_in": 2.4
+    },
+    {
+      "file": "02_strip.jpg",
+      "image_type": "Strip",
+      "width_in": 0.7,
+      "height_in": 1.5
+    }
+  ]
+}

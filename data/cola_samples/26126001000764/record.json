@@ -1,0 +1,35 @@
+{
+  "ttb_id": "26126001000764",
+  "status": "APPROVED",
+  "serial_no": "260506",
+  "class_type_code": "WHISKY SPECIALTIES",
+  "origin_code": "OHIO",
+  "brand_name": "NORTHERN LIBERTIES WHISKEY CO.",
+  "fanciful_name": "CELLAR SERIES: CIGAR BLEND",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "08/28/2026",
+  "applicant": "DSP-OH-20035 | OTR Distillers, OTR Distillers, LLC | 111 W MCMICKEN AVE BLDG 1A | Cincinnati,\u00a0OH\u00a045202",
+  "source": "domestic",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.png",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 2.95,
+      "height_in": 4.79
+    },
+    {
+      "file": "02_other.png",
+      "image_type": "Other",
+      "width_in": 2.82,
+      "height_in": 3.47
+    },
+    {
+      "file": "03_back.png",
+      "image_type": "Back",
+      "width_in": 2.82,
+      "height_in": 3.47
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "ttb_id": "25069001000255",
+  "status": "APPROVED",
+  "serial_no": "252309",
+  "class_type_code": "STRAIGHT BOURBON WHISKY",
+  "origin_code": "PENNSYLVANIA",
+  "brand_name": "RESURGENT",
+  "fanciful_name": "LLOYD WHISKEY BAR",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "04/09/2025",
+  "applicant": "DSP-PA-20034 | Botanery Barn Distilling, Brandywine Branch Distillers, LLC | 350 WARWICK RD | Elverson,\u00a0PA\u00a019520",
+  "source": "domestic",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 8.22,
+      "height_in": 3.5
+    },
+    {
+      "file": "02_strip.jpg",
+      "image_type": "Strip",
+      "width_in": 8.22,
+      "height_in": 1.0
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "ttb_id": "24004001000752",
+  "status": "APPROVED",
+  "serial_no": "24CSOF",
+  "class_type_code": "SPECIALTIES & PROPRIETARIES",
+  "origin_code": "WISCONSIN",
+  "brand_name": "CENTRAL STANDARD",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/12/2024",
+  "applicant": "DSP-WI-20013 | Central Standard LLC, Central Standard LLC | 2330 W CLYBOURN ST | Milwaukee,\u00a0WI\u00a053233",
+  "source": "domestic",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 8.12,
+      "height_in": 3.5
+    }
+  ]
+}

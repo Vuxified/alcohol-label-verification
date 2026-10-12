@@ -1,0 +1,35 @@
+{
+  "id": "26048001000951",
+  "beverage_type": "wine",
+  "brand_name": "MEIERSTONE VINEYARDS",
+  "class_type": "TEMPRANILLO",
+  "abv": 14.8,
+  "abv_text": "ALC. 14.8% BY VOL.",
+  "proof": null,
+  "net_contents_text": "750 ML",
+  "net_contents_ml": 750,
+  "name_address_text": "Produced and Bottled By Meierstone Vineyards Stonewall, TX",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "02_back.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "widely letter-spaced brand 'M E I E R S T O N E  V I N E Y A R D S'",
+    "back label white text on black, with blue underline artefacts on the story text",
+    "grey low-contrast varietal on front",
+    "justified warning with uneven word spacing",
+    "ABV and net contents only on back",
+    "near-twin of 26048001000950 (Tannat 14.7%)"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); not reviewed by the owner"
+}

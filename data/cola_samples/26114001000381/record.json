@@ -1,0 +1,29 @@
+{
+  "ttb_id": "26114001000381",
+  "status": "APPROVED",
+  "serial_no": "26105W",
+  "class_type_code": "AMERICAN SINGLE MALT WHISKEY",
+  "origin_code": "KENTUCKY",
+  "brand_name": "10TH STREET",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "05/26/2026",
+  "applicant": "DSP-KY-20075 | BLUEGRASS BOTTLING, Bluegrass Bottling LLC | 1065 HIGHWAY 78 RD | Stanford,\u00a0KY\u00a040484",
+  "source": "domestic",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.png",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 5.0,
+      "height_in": 5.0
+    },
+    {
+      "file": "02_back.png",
+      "image_type": "Back",
+      "width_in": 5.0,
+      "height_in": 5.0
+    }
+  ]
+}

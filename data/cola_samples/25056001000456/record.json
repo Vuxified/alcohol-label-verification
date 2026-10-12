@@ -1,0 +1,23 @@
+{
+  "ttb_id": "25056001000456",
+  "status": "APPROVED",
+  "serial_no": "25MUSS",
+  "class_type_code": "TABLE FLAVORED WINE",
+  "origin_code": "GEORGIA",
+  "brand_name": "WATKINSVILLE WINE",
+  "fanciful_name": "SPRING FRUIT",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "04/22/2025",
+  "applicant": "BWN-GA-21120 | Watkinsville Wine, Watkinsville Wine LLC | 3190 FLAT ROCK RD | Watkinsville,\u00a0GA\u00a030677",
+  "source": "domestic",
+  "product_type": "wine",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.5,
+      "height_in": 4.0
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "ttb_id": "25107001000879",
+  "status": "APPROVED",
+  "serial_no": "254175",
+  "class_type_code": "ROSE WINE",
+  "origin_code": "TEXAS",
+  "brand_name": "RED ROAD WINES LLC",
+  "fanciful_name": "LAS",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "06/13/2025",
+  "applicant": "BWN-TX-21842 | Red Road Wines, Red Road Wines LLC | 105 W FRONT ST | Naples,\u00a0TX\u00a075568",
+  "source": "domestic",
+  "product_type": "wine",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 5.5,
+      "height_in": 3.5
+    }
+  ]
+}

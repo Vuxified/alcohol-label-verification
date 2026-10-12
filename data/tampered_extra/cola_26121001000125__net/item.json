@@ -1,0 +1,53 @@
+{
+  "id": "cola_26121001000125__net",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 6.0,
+      "height_in": 4.0
+    }
+  ],
+  "source": {
+    "type": "tampered",
+    "license": "TTB Public COLA Registry image (public record), with one change planted for testing by tools/make_tampered.py",
+    "ttb_id": "26121001000125",
+    "edited_images": [
+      "01_brand_front_or_keg_collar.jpg"
+    ]
+  },
+  "application": {
+    "beverage_type": "wine",
+    "brand_name": "CASA LARGA",
+    "class_type": "WHITE WINE",
+    "abv": 10.5,
+    "proof": null,
+    "net_contents": "750 ML",
+    "source": "domestic",
+    "country_of_origin": null,
+    "name_address": "GROWN, PRODUCED AND BOTTLED BY CASA LARGA VINEYARDS, INC. FAIRPORT, NEW YORK",
+    "label_width_in": 6.0
+  },
+  "printed": {
+    "brand_name": "CASA LARGA",
+    "class_type": "WHITE WINE",
+    "abv": 10.5,
+    "proof": null,
+    "net_contents": "720 ML",
+    "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "warning_heading_bold": true,
+    "warning_cap_mm": null
+  },
+  "expected": {
+    "overall": "fail",
+    "findings": [
+      "NET_CONTENTS_MISMATCH"
+    ]
+  },
+  "provenance": {
+    "base_id": "cola_26121001000125",
+    "change": "net",
+    "from": "750 ML",
+    "to": "720 ML"
+  }
+}

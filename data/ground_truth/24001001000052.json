@@ -1,0 +1,34 @@
+{
+  "id": "24001001000052",
+  "beverage_type": "spirits",
+  "brand_name": "BARN DOG CRAFT DISTILLING",
+  "class_type": "IMMATURE BRANDY",
+  "abv": 40,
+  "abv_text": "40% Alc By Vol",
+  "proof": 80,
+  "net_contents_text": "750 ML",
+  "net_contents_ml": 750,
+  "name_address_text": "DISTILLED AND BOTTLED BY BARN DOG CRAFT DISTILLING 1851 Four Rod Road East Aurora, New York 14052",
+  "country_of_origin_text": "USA",
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "unclear",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "distressed/worn western display font for brand, fanciful name and class",
+    "fanciful name 'SENECA' is the largest text; brand is the distillery name at top",
+    "warning set entirely in heavy condensed caps, heading weight close to body",
+    "'LIMITED RELEASE' could be mistaken for the class",
+    "single front image only; all mandatory info on one label"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

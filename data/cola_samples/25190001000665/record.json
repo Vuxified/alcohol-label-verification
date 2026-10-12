@@ -1,0 +1,29 @@
+{
+  "ttb_id": "25190001000665",
+  "status": "APPROVED",
+  "serial_no": "250001",
+  "class_type_code": "TABLE RED WINE",
+  "origin_code": "SPAIN",
+  "brand_name": "GAELA FINCAS",
+  "fanciful_name": "SATVA MENCIAHEROIC VITICULTUREVARIETAL WINE",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "09/18/2025",
+  "applicant": "TX-I-21914 | Loga Imports LLC | 16426 MOUNT HOPE DR | Cypress,\u00a0TX\u00a077433",
+  "source": "imported",
+  "product_type": "wine",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.png",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.54,
+      "height_in": 3.54
+    },
+    {
+      "file": "02_back.png",
+      "image_type": "Back",
+      "width_in": 2.36,
+      "height_in": 3.0
+    }
+  ]
+}

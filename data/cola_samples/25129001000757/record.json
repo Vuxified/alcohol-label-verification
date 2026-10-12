@@ -1,0 +1,23 @@
+{
+  "ttb_id": "25129001000757",
+  "status": "APPROVED",
+  "serial_no": "250019",
+  "class_type_code": "ALE",
+  "origin_code": "TEXAS",
+  "brand_name": "CHILTON GOSE",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "06/13/2025",
+  "applicant": "BR-TX-20277 | Two Doc's Brewing Co., 2 Docs Brewing Co., LLC | 502 TEXAS AVE | Lubbock,\u00a0TX\u00a079401",
+  "source": "domestic",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 9.0,
+      "height_in": 4.1
+    }
+  ]
+}

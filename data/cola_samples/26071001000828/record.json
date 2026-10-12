@@ -1,0 +1,29 @@
+{
+  "ttb_id": "26071001000828",
+  "status": "APPROVED",
+  "serial_no": "260001",
+  "class_type_code": "VODKA SPECIALTIES",
+  "origin_code": "NEVADA",
+  "brand_name": "WYLAND",
+  "fanciful_name": "BING CHERRY VODKA",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "05/20/2026",
+  "applicant": "DSP-NV-15002 | NLV TEQUILA BOTTLING LLC | 730 W CHEYENNE AVE SUITE 80 | NORTH LAS VEGAS,\u00a0NV\u00a089030",
+  "source": "domestic",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 5.0,
+      "height_in": 9.0
+    },
+    {
+      "file": "02_back.png",
+      "image_type": "Back",
+      "width_in": 5.0,
+      "height_in": 9.0
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "24002001000322",
+  "beverage_type": "wine",
+  "brand_name": "KARASU",
+  "class_type": "SAKE",
+  "abv": 15,
+  "abv_text": "15% ALC by volume",
+  "proof": null,
+  "net_contents_text": "Net Cont. 720ml",
+  "net_contents_ml": 720,
+  "name_address_text": "Imported by WINE COUNTRY INTERNATIONAL INC. DBA 1620 W Oakland Park Blvd Suite 404 Oakland Park, FL 33311",
+  "country_of_origin_text": "PRODUCT OF JAPAN",
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "vertical"
+  },
+  "hard_cases": [
+    "wrap label: warning and importer rotated 90 degrees on the right panel; ABV, net contents and country rotated the opposite way on the left panel",
+    "importer line reads 'WINE COUNTRY INTERNATIONAL INC. DBA' with no DBA name after it (registry DBA is WINE TWIST)",
+    "brand 'KARASU' in a font with a crossbar-less A (reads like 'KARΛSU'); kanji 鳥 on the front",
+    "class 'SAKE' under the brand with 'GINJO' grade above",
+    "light blue text on dark navy, distressed red box around the warning",
+    "'Polishing Rate: 50%' next to the ABV could be mistaken for alcohol content"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

@@ -1,0 +1,35 @@
+{
+  "id": "24008001000708",
+  "beverage_type": "spirits",
+  "brand_name": "CAMPORO",
+  "class_type": "TEQUILA",
+  "abv": 40,
+  "abv_text": "40% ALC. VOL.",
+  "proof": 80,
+  "net_contents_text": "750ml",
+  "net_contents_ml": 750,
+  "name_address_text": "IMPORTED BY: International Sea Foods Plus LLC DBA Tequilas USA Vancouver, WA 98662",
+  "country_of_origin_text": "HECHO EN MÉXICO",
+  "warning": {
+    "present": true,
+    "image_file": "02_back.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": false,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "MISPRINTED WARNING: 'BECAUSE OF RISK OF BIRTH DEFECTS' - the word 'THE' is missing",
+    "distressed-texture brand type",
+    "grey text on cream",
+    "country statement only in Spanish ('HECHO EN MÉXICO')",
+    "importer name differs in form from registry ('International Sea Foods Plus LLC DBA Tequilas USA')",
+    "strip label repeats the brand in stacked/rotated letters"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

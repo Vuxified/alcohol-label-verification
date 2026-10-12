@@ -1,0 +1,23 @@
+{
+  "ttb_id": "25272001000707",
+  "status": "APPROVED",
+  "serial_no": "25CRPT",
+  "class_type_code": "RUM SPECIALTIES",
+  "origin_code": "CANADA",
+  "brand_name": "CHERRY RIVER",
+  "fanciful_name": "TIKI RUM PUNCH",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "12/23/2025",
+  "applicant": "FL-I-15882 | WINE TWIST, WINE COUNTRY INTERNATIONAL INC. | 1620 W OAKLAND PARK BLVD SUITE 404 | OAKLAND PARK,\u00a0FL\u00a033311",
+  "source": "imported",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 8.0,
+      "height_in": 7.0
+    }
+  ]
+}

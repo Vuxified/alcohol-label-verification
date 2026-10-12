@@ -1,0 +1,36 @@
+{
+  "id": "25129001000757",
+  "beverage_type": "malt",
+  "brand_name": "Chilton GOSE",
+  "class_type": "SOUR ALE WITH NOTES OF SALT AND LEMON",
+  "abv": 4,
+  "abv_text": "4% ALC./VOL.",
+  "proof": null,
+  "net_contents_text": "FL 12 OZ",
+  "net_contents_ml": 354.88,
+  "name_address_text": "TWO DOCS BREWING CO. 502 TEXAS AVENUE LUBBOCK, TEXAS 79401",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCO-HOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "brand 'Chilton' in yellow outlined script over 'GOSE' in huge block letters (the registry brand is the product name; the brewery is TWO DOCS BREWING CO.)",
+    "net contents split around a yellow circle: 'FL (12) OZ'",
+    "'ALC./VOL.' tiny under a large '4%'",
+    "class statement starts 'CRISP, SOUR ALE ...' in yellow on a black band",
+    "address has no 'brewed by' wording; brewery name only in logos",
+    "warning hyphenated across lines (ALCO-HOLIC)",
+    "can wrap repeated twice in one image"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); not reviewed by the owner"
+}

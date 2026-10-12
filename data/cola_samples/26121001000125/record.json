@@ -1,0 +1,23 @@
+{
+  "ttb_id": "26121001000125",
+  "status": "APPROVED",
+  "serial_no": "26FL02",
+  "class_type_code": "TABLE WHITE WINE",
+  "origin_code": "NEW YORK",
+  "brand_name": "CASA LARGA",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "06/17/2026",
+  "applicant": "BW-NY-657 | CASA LARGA VINEYARDS, INC. | 2287 TURK HILL RD | FAIRPORT,\u00a0NY\u00a014450",
+  "source": "domestic",
+  "product_type": "wine",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 6.0,
+      "height_in": 4.0
+    }
+  ]
+}

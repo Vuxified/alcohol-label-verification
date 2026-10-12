@@ -1,0 +1,35 @@
+{
+  "id": "26140001000454",
+  "beverage_type": "malt",
+  "brand_name": "DAS BIER",
+  "class_type": "German Style Lager Beer",
+  "abv": 5,
+  "abv_text": "5% ALC/VOL",
+  "proof": null,
+  "net_contents_text": "12 FL. OZ. (354mL)",
+  "net_contents_ml": 354,
+  "name_address_text": "Brewed and Canned for Das Kiebitz Bier Intl. LLC, Longwood, FL , by Islamorada Brewery & Distillery, Fort Pierce, FL.",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.png",
+    "text_as_printed": "GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "vertical"
+  },
+  "hard_cases": [
+    "brand 'DAS BIER' split above and below a round 'Kiebitz' logo",
+    "warning and name/address printed vertically in condensed type",
+    "second ABV statement in three languages ('Alk. 5% - alc. 5% by vol. - 5% alc./vol.')",
+    "net contents also as '354 mL | 0,35 l | 35cl | 12 fl.oz' (comma decimal)",
+    "class/type in script on curved banner, repeated as 'GERMAN STYLE LAGER BEER'",
+    "German ingredient text; 'PROST!' and 'Helles' fanciful name"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); not reviewed by the owner"
+}

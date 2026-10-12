@@ -1,0 +1,57 @@
+{
+  "id": "cola_24110001000159__warning_delete__scene0",
+  "images": [
+    {
+      "file": "scene_1.jpg",
+      "image_type": "Brand (front) or keg collar"
+    },
+    {
+      "file": "scene_2.jpg",
+      "image_type": "Back"
+    }
+  ],
+  "source": {
+    "type": "real label scene (final test)",
+    "license": "public COLA registry label artwork; scene generated for this project"
+  },
+  "application": {
+    "beverage_type": "spirits",
+    "brand_name": "JAMESON",
+    "class_type": "IRISH WHISKEY",
+    "abv": 40,
+    "proof": null,
+    "net_contents": "750ml",
+    "source": "imported",
+    "country_of_origin": "PRODUCT OF MIDLETON DISTILLERY, MIDLETON, CO. CORK, IRELAND.",
+    "name_address": "IMPORTED BY JOHN JAMESON IMPORT COMPANY, NEW YORK, NY.",
+    "label_width_in": 4.5
+  },
+  "printed": {
+    "brand_name": "JAMESON",
+    "class_type": "IRISH WHISKEY",
+    "abv": 40,
+    "proof": null,
+    "net_contents": "750ml",
+    "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "warning_heading_bold": true,
+    "warning_cap_mm": null
+  },
+  "expected": {
+    "overall": "fail",
+    "findings": [
+      "WARNING_TEXT_ALTERED"
+    ]
+  },
+  "provenance": {
+    "base_item": "cola_24110001000159__warning_delete",
+    "model": "us.stability.stable-image-inpaint-v1:0",
+    "prompt": [
+      "realistic phone photo of a single clear glass vodka bottle standing on a rustic kitchen table by a window, soft daylight, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+      "realistic phone photo of a single clear glass vodka bottle standing on a rustic kitchen table by a window, soft daylight, the whole bottle visible, paper label on the bottle seen from the back, sharp focus on the label, shallow depth of field"
+    ],
+    "seed": [
+      3111627972,
+      824565067
+    ]
+  }
+}

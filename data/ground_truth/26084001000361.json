@@ -1,0 +1,36 @@
+{
+  "id": "26084001000361",
+  "beverage_type": "wine",
+  "brand_name": "LAIETÀ",
+  "class_type": "SPARKLING WINE",
+  "abv": 12,
+  "abv_text": "Alc.12% by Vol.",
+  "proof": null,
+  "net_contents_text": "750ml.",
+  "net_contents_ml": 750,
+  "name_address_text": "PRODUCED BY FAMILIA PUJOL-BUSQUETS. TIANA, SPAIN",
+  "country_of_origin_text": "PRODUCT OF SPAIN",
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.png",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "brand printed 'LAIETÀ' with grave accent; registry brand 'LAIETA GRAN RESERVA' (GRAN RESERVA is a separate aging line below)",
+    "image 01 (filed as brand/front) is actually the back/info label carrying the warning; 03 is the decorative front",
+    "'CAVA' appears large on several panels; the class line 'SPARKLING WINE / BOTTLE FERMENTED' is small condensed type",
+    "importer only on separate strip 02 (San Juan, Puerto Rico)",
+    "neck strip 04 is a photo of a glossy gold D.O. Cava seal with '75cl' and Spanish text",
+    "warning in faint, blurry condensed grey type; '(1)' and '(2)' lighter than body",
+    "'Alc.12% by Vol.' with no space after 'Alc.'"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

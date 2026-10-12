@@ -1,0 +1,53 @@
+{
+  "id": "cola_24054001000213__brand_word",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 5.94,
+      "height_in": 4.72
+    }
+  ],
+  "source": {
+    "type": "tampered",
+    "license": "TTB Public COLA Registry image (public record), with one change planted for testing by tools/make_tampered.py",
+    "ttb_id": "24054001000213",
+    "edited_images": [
+      "01_brand_front_or_keg_collar.jpg"
+    ]
+  },
+  "application": {
+    "beverage_type": "malt",
+    "brand_name": "Heineken SILVER",
+    "class_type": "LAGER BEER",
+    "abv": 4,
+    "proof": null,
+    "net_contents": "CONT. 13.2 U.S. GALLONS BEER",
+    "source": "imported",
+    "country_of_origin": "PRODUCT OF HOLLAND.",
+    "name_address": "BREWED AND KEGGED BY HEINEKEN BROUWERIJEN B.V., AMSTERDAM, HOLLAND. IMPORTED BY HEINEKEN USA, WHITE PLAINS, N.Y.",
+    "label_width_in": 5.94
+  },
+  "printed": {
+    "brand_name": "Heineken GOLDEN",
+    "class_type": "LAGER BEER",
+    "abv": 4,
+    "proof": null,
+    "net_contents": "CONT. 13.2 U.S. GALLONS BEER",
+    "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "warning_heading_bold": true,
+    "warning_cap_mm": null
+  },
+  "expected": {
+    "overall": "check",
+    "findings": [
+      "BRAND_NAME_MISMATCH"
+    ]
+  },
+  "provenance": {
+    "base_id": "cola_24054001000213",
+    "change": "brand_word",
+    "from": "Heineken SILVER",
+    "to": "Heineken GOLDEN"
+  }
+}

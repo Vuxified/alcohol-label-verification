@@ -1,0 +1,34 @@
+{
+  "id": "24170001000708",
+  "beverage_type": "malt",
+  "brand_name": "ST. IDES",
+  "class_type": "MALT LIQUOR",
+  "abv": 8.5,
+  "abv_text": "8.5% alc./vol.",
+  "proof": null,
+  "net_contents_text": "16 FLUID OUNCES (473ml) ONE PINT",
+  "net_contents_ml": 473,
+  "name_address_text": "ST. IDES BREWING CO., LTD., MEMPHIS, TN",
+  "country_of_origin_text": "USA",
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "vertical"
+  },
+  "hard_cases": [
+    "stylized brand: period drawn as a small diamond and the 'I' of IDES replaced by a red/white/blue zigzag; tick over the E looks like an accent",
+    "class line 'HIGH GRAVITY MALT LIQUOR' (HIGH GRAVITY is a descriptor above MALT LIQUOR)",
+    "warning, net contents and bottler line rotated 90 degrees in a narrow strip, light grey on black",
+    "no 'brewed by' wording before the name/address",
+    "label applicant is Blues City Brewery but label names St. Ides Brewing Co., Ltd."
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

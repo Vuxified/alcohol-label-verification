@@ -1,0 +1,29 @@
+{
+  "ttb_id": "25211001000050",
+  "status": "APPROVED",
+  "serial_no": "25T002",
+  "class_type_code": "OTHER SPECIALTIES & PROPRIETARIES",
+  "origin_code": "MEXICO",
+  "brand_name": "QUETZAL F5",
+  "fanciful_name": "TAMARINDO",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "09/19/2025",
+  "applicant": "FL-I-22299 | GL TRADING SOLUTIONS LLC, GL TRADING SOLUTIONS, LLC | 66 W FLAGLER ST 9TH FLOOR | Miami,\u00a0FL\u00a033130",
+  "source": "imported",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.png",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.4,
+      "height_in": 5.9
+    },
+    {
+      "file": "02_back.png",
+      "image_type": "Back",
+      "width_in": 3.4,
+      "height_in": 5.9
+    }
+  ]
+}

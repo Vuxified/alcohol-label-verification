@@ -1,0 +1,36 @@
+{
+  "id": "26008001000604",
+  "beverage_type": "malt",
+  "brand_name": "Beach Ball Brewing",
+  "class_type": "American Lager",
+  "abv": 5.1,
+  "abv_text": "5.1% ABV",
+  "proof": null,
+  "net_contents_text": "NET CONTENTS: [ ] 15.5 U.S. Gallons [ ] ____ U.S. Gallons",
+  "net_contents_ml": null,
+  "name_address_text": "Beach Ball Brewing 936 Waldron Rd. #D Corpus Christi, TX 78418",
+  "country_of_origin_text": "USA",
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1)ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "photo of a generic stock keg collar (KegCollar.com) with brand, address, fanciful name, class and ABV handwritten in blue ink",
+    "net contents checkboxes (15.5 U.S. Gallons / blank ____ U.S. Gallons) left unchecked and blank, so net_contents_ml null",
+    "fanciful name 'Nauti' handwritten above class 'American Lager'",
+    "no 'brewed by' wording; brewery name doubles as brand",
+    "no space between '(1)' and 'ACCORDING' in warning",
+    "date ring (months and 1-31) around the rim",
+    "white warning text on black band, curved layout"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

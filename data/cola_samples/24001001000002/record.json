@@ -1,0 +1,29 @@
+{
+  "ttb_id": "24001001000002",
+  "status": "APPROVED",
+  "serial_no": "240002",
+  "class_type_code": "TABLE RED WINE",
+  "origin_code": "FRANCE",
+  "brand_name": "DOMAINE JOURDAN",
+  "fanciful_name": "VARESNES",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/02/2024",
+  "applicant": "DC-I-418 | Vintage '59 Imports LLC | 2800 JENNIFER ST , NW | WASHINGTON,\u00a0DC\u00a020015",
+  "source": "imported",
+  "product_type": "wine",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.2,
+      "height_in": 3.7
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 4.7,
+      "height_in": 3.6
+    }
+  ]
+}

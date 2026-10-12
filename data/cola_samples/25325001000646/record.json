@@ -1,0 +1,23 @@
+{
+  "ttb_id": "25325001000646",
+  "status": "APPROVED",
+  "serial_no": "252SHR",
+  "class_type_code": "OTHER SPECIALTIES & PROPRIETARIES",
+  "origin_code": "AUSTRALIA",
+  "brand_name": "2SHOT COWBOY",
+  "fanciful_name": "RASPBERRY AND CREAM",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "02/05/2026",
+  "applicant": "MI-I-21105 | Benchmark Beverage Company, LLC | 31690 GLENDALE ST | Livonia,\u00a0MI\u00a048150",
+  "source": "imported",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 19.13,
+      "height_in": 3.78
+    }
+  ]
+}

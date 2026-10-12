@@ -1,0 +1,29 @@
+{
+  "ttb_id": "26029001000054",
+  "status": "APPROVED",
+  "serial_no": "26ABRA",
+  "class_type_code": "VERMOUTH/MIXED TYPES",
+  "origin_code": "ITALY",
+  "brand_name": "MANTICE",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "03/17/2026",
+  "applicant": "CT-I-21108 | Hootananny Wines, Anna Winona LLC | 55 LIBERTY ST | Madison,\u00a0CT\u00a006443",
+  "source": "imported",
+  "product_type": "wine",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 2.5,
+      "height_in": 3.5
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 3.0,
+      "height_in": 3.5
+    }
+  ]
+}

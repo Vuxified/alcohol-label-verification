@@ -1,0 +1,73 @@
+{
+  "id": "cola_25056001000852__net",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.png",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 2.02,
+      "height_in": 7.24
+    },
+    {
+      "file": "02_back.png",
+      "image_type": "Back",
+      "width_in": 2.02,
+      "height_in": 7.24
+    },
+    {
+      "file": "03_other.png",
+      "image_type": "Other",
+      "width_in": 2.02,
+      "height_in": 7.24
+    },
+    {
+      "file": "04_other.png",
+      "image_type": "Other",
+      "width_in": 2.02,
+      "height_in": 7.24
+    }
+  ],
+  "source": {
+    "type": "tampered",
+    "license": "TTB Public COLA Registry image (public record), with one change planted for testing by tools/make_tampered.py",
+    "ttb_id": "25056001000852",
+    "edited_images": [
+      "01_brand_front_or_keg_collar.png",
+      "02_back.png",
+      "04_other.png"
+    ]
+  },
+  "application": {
+    "beverage_type": "wine",
+    "brand_name": "TATTOO U",
+    "class_type": "SEMILLON (55%) SAUVIGNON BLANC (45%)",
+    "abv": 12.5,
+    "proof": null,
+    "net_contents": "3 L",
+    "source": "imported",
+    "country_of_origin": "PRODUCT OF AUSTRALIA",
+    "name_address": "Produced by: Blue Hills Management, Adelaide, SA, Australia Imported by: American Spirits Exchange, Bridgeport, PA",
+    "label_width_in": 2.02
+  },
+  "printed": {
+    "brand_name": "TATTOO U",
+    "class_type": "SEMILLON (55%) SAUVIGNON BLANC (45%)",
+    "abv": 12.5,
+    "proof": null,
+    "net_contents": "1 L",
+    "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "warning_heading_bold": true,
+    "warning_cap_mm": null
+  },
+  "expected": {
+    "overall": "check",
+    "findings": [
+      "NET_CONTENTS_MISMATCH"
+    ]
+  },
+  "provenance": {
+    "base_id": "cola_25056001000852",
+    "change": "net",
+    "from": "3 L",
+    "to": "1 L"
+  }
+}

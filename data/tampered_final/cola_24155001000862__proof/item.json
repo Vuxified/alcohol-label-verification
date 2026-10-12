@@ -1,0 +1,59 @@
+{
+  "id": "cola_24155001000862__proof",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 6.62,
+      "height_in": 4.56
+    },
+    {
+      "file": "02_other.png",
+      "image_type": "Other",
+      "width_in": 3.98,
+      "height_in": 1.97
+    }
+  ],
+  "source": {
+    "type": "tampered",
+    "license": "TTB Public COLA Registry image (public record), with one change planted for testing by tools/make_tampered.py",
+    "ttb_id": "24155001000862",
+    "edited_images": [
+      "01_brand_front_or_keg_collar.jpg"
+    ]
+  },
+  "application": {
+    "beverage_type": "spirits",
+    "brand_name": "JIM BEAM",
+    "class_type": "KENTUCKY STRAIGHT BOURBON WHISKEY",
+    "abv": 40,
+    "proof": 80,
+    "net_contents": "80/750 mL",
+    "source": "domestic",
+    "country_of_origin": null,
+    "name_address": "DISTILLED AND BOTTLED BY JAMES B. BEAM DISTILLING CO. CLERMONT · FRANKFORT · KY",
+    "label_width_in": 6.62
+  },
+  "printed": {
+    "brand_name": "JIM BEAM",
+    "class_type": "KENTUCKY STRAIGHT BOURBON WHISKEY",
+    "abv": 40,
+    "proof": 84.0,
+    "net_contents": "80/750 mL",
+    "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "warning_heading_bold": true,
+    "warning_cap_mm": null
+  },
+  "expected": {
+    "overall": "fail",
+    "findings": [
+      "PROOF_MISMATCH"
+    ]
+  },
+  "provenance": {
+    "base_id": "cola_24155001000862",
+    "change": "proof",
+    "from": "80 PROOF",
+    "to": "84 PROOF"
+  }
+}

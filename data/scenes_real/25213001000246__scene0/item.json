@@ -1,0 +1,58 @@
+{
+  "id": "25213001000246__scene0",
+  "images": [
+    {
+      "file": "scene_1.jpg",
+      "image_type": "Brand (front) or keg collar (left part)"
+    },
+    {
+      "file": "scene_2.jpg",
+      "image_type": "Brand (front) or keg collar (right part)"
+    }
+  ],
+  "source": {
+    "type": "real label scene",
+    "license": "public COLA registry label artwork; scene generated for this project"
+  },
+  "application": {
+    "beverage_type": "spirits",
+    "brand_name": "UPSTATE COCKTAILS",
+    "class_type": null,
+    "abv": 12,
+    "proof": null,
+    "net_contents": "200 ML",
+    "source": "domestic",
+    "country_of_origin": null,
+    "name_address": "PRODUCED AND CANNED BY SAUVAGE BEVERAGES CHARLOTTEVILLE, NY",
+    "label_width_in": 7.15
+  },
+  "printed": {
+    "brand_name": "UPSTATE COCKTAILS",
+    "class_type": null,
+    "abv": 12,
+    "proof": null,
+    "net_contents": "200 ML",
+    "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "warning_heading_bold": "yes",
+    "warning_orientation": "vertical",
+    "warning_image": "01_brand_front_or_keg_collar.jpg"
+  },
+  "expected": {
+    "overall": "approved",
+    "findings": [],
+    "warning_misprinted": false,
+    "warning_present": true
+  },
+  "provenance": {
+    "base_item": "cola_25213001000246",
+    "model": "us.stability.stable-image-inpaint-v1:0",
+    "prompt": [
+      "realistic phone photo of a single clear glass whiskey bottle with amber whiskey inside standing on a dark wooden bar counter in a dimly lit cocktail bar, warm bokeh lights in the background, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+      "realistic phone photo of a single glass spirits bottle standing on a dark wooden bar counter in a dimly lit cocktail bar, warm bokeh lights in the background, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field"
+    ],
+    "seed": [
+      1908570205,
+      851126157
+    ]
+  }
+}

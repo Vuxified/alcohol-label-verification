@@ -1,0 +1,23 @@
+{
+  "ttb_id": "24008001000677",
+  "status": "APPROVED",
+  "serial_no": "24TRIK",
+  "class_type_code": "BEER",
+  "origin_code": "MOLDOVA",
+  "brand_name": "LITRA BREWING COMPANY",
+  "fanciful_name": "LITRA TRIPEL BELGIAN STYLE",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/10/2024",
+  "applicant": "MA-I-21077 | Wines of Moldova USA, Vin Distributors LLC | 175 CIRCUIT AVE STE A | West Springfield,\u00a0MA\u00a001089",
+  "source": "imported",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 6.0,
+      "height_in": 4.0
+    }
+  ]
+}

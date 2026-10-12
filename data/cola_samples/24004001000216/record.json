@@ -1,0 +1,23 @@
+{
+  "ttb_id": "24004001000216",
+  "status": "APPROVED",
+  "serial_no": "240001",
+  "class_type_code": "BEER",
+  "origin_code": "GERMANY",
+  "brand_name": "BITBURGER",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/10/2024",
+  "applicant": "SC-I-558 | TOTAL BEVERAGE SOLUTION, VINO.COM, L.L.C. | 421 WANDO PARK BLVD SUITE 200 | MT PLEASANT,\u00a0SC\u00a029464",
+  "source": "imported",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.png",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 12.49,
+      "height_in": 12.24
+    }
+  ]
+}

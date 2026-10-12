@@ -1,0 +1,23 @@
+{
+  "ttb_id": "26028001000710",
+  "status": "APPROVED",
+  "serial_no": "26HLLS",
+  "class_type_code": "BEER",
+  "origin_code": "ALABAMA",
+  "brand_name": "TRIM TAB BREWING CO.",
+  "fanciful_name": "HAUS BOAT",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/29/2026",
+  "applicant": "BR-AL-20010 | Trim Tab Brewing Co. LLC | 2721 5TH AVE S | Birmingham,\u00a0AL\u00a035203",
+  "source": "domestic",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.png",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 5.0,
+      "height_in": 5.0
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "id": "24008001000927",
+  "beverage_type": "spirits",
+  "brand_name": "AMNA",
+  "class_type": "TEQUILA",
+  "abv": 40,
+  "abv_text": "40% Alc. /Vol.",
+  "proof": null,
+  "net_contents_text": "CONT. NET. 700mL",
+  "net_contents_ml": 700,
+  "name_address_text": "IMPORTED BY: ANNA SPIRITS LLC LOS ANGELES, CALIFORNIA.",
+  "country_of_origin_text": "MADE IN MEXICO",
+  "warning": {
+    "present": true,
+    "image_file": "02_back.png",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "script brand 'Amna'",
+    "ABV line overlaps the dashed dieline at the bottom of the front",
+    "curved back label; warning in condensed grey-background text",
+    "visible gap inside 'BECAUSE' ('B ECAUSE') on the back; letters are all present",
+    "importer name misspelled on label ('AMNA SPIRTS LLC')",
+    "'MADE IN MEXICO' printed vertically beside barcode",
+    "'BLANCO' and '100% DE AGAVE' near the class",
+    "dimension marks (62 mm, 88.9 mm, 10.3 CM, 2.21 cm) on the proofs"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

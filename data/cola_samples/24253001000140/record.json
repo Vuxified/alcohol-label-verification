@@ -1,0 +1,23 @@
+{
+  "ttb_id": "24253001000140",
+  "status": "APPROVED",
+  "serial_no": "240041",
+  "class_type_code": "MALT LIQUOR",
+  "origin_code": "LOUISIANA",
+  "brand_name": "AGILE BREWING",
+  "fanciful_name": "USA",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "09/11/2024",
+  "applicant": "BR-LA-20063 | Agile Brewing, Agile Brewing, LLC | 14141 AIRLINE HWY STE H J K | Baton Rouge,\u00a0LA\u00a070817",
+  "source": "domestic",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 7.0,
+      "height_in": 7.0
+    }
+  ]
+}

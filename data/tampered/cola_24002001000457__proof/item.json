@@ -1,0 +1,60 @@
+{
+  "id": "cola_24002001000457__proof",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 5.48,
+      "height_in": 3.38
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 2.04,
+      "height_in": 3.24
+    }
+  ],
+  "source": {
+    "type": "tampered",
+    "license": "TTB Public COLA Registry image (public record), with one change planted for testing by tools/make_tampered.py",
+    "ttb_id": "24002001000457",
+    "edited_images": [
+      "01_brand_front_or_keg_collar.jpg",
+      "02_back.jpg"
+    ]
+  },
+  "application": {
+    "beverage_type": "spirits",
+    "brand_name": "JACK DANIEL'S",
+    "class_type": "TENNESSEE WHISKEY",
+    "abv": 48.5,
+    "proof": 97,
+    "net_contents": "700mL",
+    "source": "domestic",
+    "country_of_origin": null,
+    "name_address": "DISTILLED AND BOTTLED BY JACK DANIEL DISTILLERY LYNCHBURG, TENNESSEE, USA",
+    "label_width_in": 5.48
+  },
+  "printed": {
+    "brand_name": "JACK DANIEL'S",
+    "class_type": "TENNESSEE WHISKEY",
+    "abv": 48.5,
+    "proof": 99.0,
+    "net_contents": "700mL",
+    "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "warning_heading_bold": true,
+    "warning_cap_mm": null
+  },
+  "expected": {
+    "overall": "fail",
+    "findings": [
+      "PROOF_MISMATCH"
+    ]
+  },
+  "provenance": {
+    "base_id": "cola_24002001000457",
+    "change": "proof",
+    "from": "97 PROOF",
+    "to": "99 PROOF"
+  }
+}

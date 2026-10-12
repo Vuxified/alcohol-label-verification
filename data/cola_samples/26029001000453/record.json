@@ -1,0 +1,23 @@
+{
+  "ttb_id": "26029001000453",
+  "status": "APPROVED",
+  "serial_no": "260015",
+  "class_type_code": "BEER",
+  "origin_code": "TEXAS",
+  "brand_name": "ISLA PANTERA",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/30/2026",
+  "applicant": "BR-TX-20063 | Wahoo Brewing, Panther Island Brewing, Inc. | 501 N MAIN ST | Fort Worth,\u00a0TX\u00a076164",
+  "source": "domestic",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.png",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 8.0,
+      "height_in": 4.0
+    }
+  ]
+}

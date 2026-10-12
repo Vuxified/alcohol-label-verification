@@ -1,0 +1,34 @@
+{
+  "id": "25202001000584",
+  "beverage_type": "wine",
+  "brand_name": "HEIWA SHUZOU",
+  "class_type": "SAKE WITH NATURAL FLAVOR",
+  "abv": 11,
+  "abv_text": "11% ALC by VOL",
+  "proof": null,
+  "net_contents_text": "330ml",
+  "net_contents_ml": 330,
+  "name_address_text": "PRODUCED & BOTTLED BY HEIWA SHUZOU IMPORTED BY SAKE SUKI, BRIDGEPORT, PA",
+  "country_of_origin_text": "PRODUCT OF JAPAN",
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1)ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2)CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "registry brand 'HEIWA SHUZOU' printed only in the producer line (and lowercase 'heiwa shuzou.' in small serif on front); headline is 'HEIWA \"KID\" FUSION'",
+    "front dominated by red Japanese calligraphy and grey 'KID'",
+    "no space after '(1)' and '(2)' in warning",
+    "condensed text in 'BEVERAGES IMPAIRS YOUR ABILITY'",
+    "second image is a Japanese 'Keep Refrigerated' sticker"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); not reviewed by the owner"
+}

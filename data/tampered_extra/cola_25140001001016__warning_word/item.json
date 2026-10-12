@@ -1,0 +1,59 @@
+{
+  "id": "cola_25140001001016__warning_word",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.png",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.54,
+      "height_in": 1.97
+    },
+    {
+      "file": "02_back.png",
+      "image_type": "Back",
+      "width_in": 4.33,
+      "height_in": 4.33
+    }
+  ],
+  "source": {
+    "type": "tampered",
+    "license": "TTB Public COLA Registry image (public record), with one change planted for testing by tools/make_tampered.py",
+    "ttb_id": "25140001001016",
+    "edited_images": [
+      "01_brand_front_or_keg_collar.png"
+    ]
+  },
+  "application": {
+    "beverage_type": "wine",
+    "brand_name": "COLOMBAIA",
+    "class_type": "RED ITALIAN WINE",
+    "abv": 13.5,
+    "proof": null,
+    "net_contents": "750 ml.",
+    "source": "imported",
+    "country_of_origin": "Product of Italy",
+    "name_address": "Grown produced and bottled by COLOMBAIA Imported by FINAL PORT IMPORTS Alpharetta GA 30004",
+    "label_width_in": 3.54
+  },
+  "printed": {
+    "brand_name": "COLOMBAIA",
+    "class_type": "RED ITALIAN WINE",
+    "abv": 13.5,
+    "proof": null,
+    "net_contents": "750 ml.",
+    "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "warning_heading_bold": true,
+    "warning_cap_mm": null
+  },
+  "expected": {
+    "overall": "fail",
+    "findings": [
+      "WARNING_TEXT_ALTERED"
+    ]
+  },
+  "provenance": {
+    "base_id": "cola_25140001001016",
+    "change": "warning_word",
+    "from": "may",
+    "to": "can"
+  }
+}

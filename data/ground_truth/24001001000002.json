@@ -1,0 +1,35 @@
+{
+  "id": "24001001000002",
+  "beverage_type": "wine",
+  "brand_name": "DOMAINE JOURDAN",
+  "class_type": "Appellation Chinon Controlee",
+  "abv": 13,
+  "abv_text": "ALCOHOL 13 % BY VOLUME",
+  "proof": null,
+  "net_contents_text": "750ML",
+  "net_contents_ml": 750,
+  "name_address_text": "IMPORTED BY VINTAGE ’59 IMPORTS LLC WASHINGTON, DC 20015 ESTATE BOTTLED BY DOMAINE JOURDAN 37500 CRAVANT",
+  "country_of_origin_text": "PRODUCT OF FRANCE",
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "image files swapped: 01 (filed as brand/front) is the back label with all mandatory text; 02 (filed as back) is the front",
+    "appellation 'CHINON' is the largest text on the front, more prominent than the brand 'DOMAINE JOURDAN'",
+    "class/type combined with country on one line ('PRODUCT OF FRANCE; RED WINE')",
+    "old-style (text) figures in '750ML', '13 %' and '37500'; space before % in ABV",
+    "'Varesnes' vineyard name and 2021 vintage on the front",
+    "warning in condensed font, justified"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

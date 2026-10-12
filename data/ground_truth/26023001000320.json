@@ -1,0 +1,36 @@
+{
+  "id": "26023001000320",
+  "beverage_type": "malt",
+  "brand_name": "Giro Splendido",
+  "class_type": "ITALIAN STYLE PILSNER",
+  "abv": 5.2,
+  "abv_text": "5.2% ALC./VOL.",
+  "proof": null,
+  "net_contents_text": "NET CONTENTS: 1/2 BBL (15.5 GALLONS)",
+  "net_contents_ml": 58673.88,
+  "name_address_text": "BREWED AND PACKAGED BY THE LEOPARD MARK BREWING CO. NORTHGLENN, CO",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": false,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "MISPRINTED WARNING: '(2) CONSUMPTION OF ALCHOLIC BEVERAGES' (missing O in ALCOHOLIC) - must not be read as a match",
+    "round keg collar; bottler line curved around the rim",
+    "script display brand 'Giro Splendido' with TM mark",
+    "class/type 'ITALIAN STYLE PILSNER' in small italic slanted type (registry fanciful name says 'ITALIAN PILZNER')",
+    "white text on bright blue",
+    "net contents in barrels and gallons only (15.5 gal = 58673.88 mL)",
+    "low-resolution image (648 px)"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

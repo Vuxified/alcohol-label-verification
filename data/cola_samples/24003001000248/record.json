@@ -1,0 +1,29 @@
+{
+  "ttb_id": "24003001000248",
+  "status": "APPROVED",
+  "serial_no": "240103",
+  "class_type_code": "OTHER LIQUEUR (CREME OR CREAMS)",
+  "origin_code": "NORTH CAROLINA",
+  "brand_name": "MIDNIGHT MOON",
+  "fanciful_name": "MOONSHAKE PEANUT BUTTER CUP",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/05/2024",
+  "applicant": "DSP-NC-22 | PIEDMONT DISTILLERS, INC. | 3960 US HIGHWAY 220 | MADISON,\u00a0NC\u00a027025",
+  "source": "domestic",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 11.5,
+      "height_in": 5.6
+    },
+    {
+      "file": "02_strip.jpg",
+      "image_type": "Strip",
+      "width_in": 0.5,
+      "height_in": 3.15
+    }
+  ]
+}

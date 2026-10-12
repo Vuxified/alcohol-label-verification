@@ -1,0 +1,58 @@
+{
+  "id": "25120001000682__scene0",
+  "images": [
+    {
+      "file": "scene_1.jpg",
+      "image_type": "Brand (front) or keg collar (left part)"
+    },
+    {
+      "file": "scene_2.jpg",
+      "image_type": "Brand (front) or keg collar (right part)"
+    }
+  ],
+  "source": {
+    "type": "real label scene",
+    "license": "public COLA registry label artwork; scene generated for this project"
+  },
+  "application": {
+    "beverage_type": "wine",
+    "brand_name": "VALKYRIE'S KISS MEADERY",
+    "class_type": "MEAD with APPLES",
+    "abv": 12,
+    "proof": null,
+    "net_contents": "750 ML",
+    "source": "domestic",
+    "country_of_origin": null,
+    "name_address": "MADE AND BOTTLED BY VALKYRIE'S KISS MEADERY, LLC 6500 STATE HWY 46 WEST, NEW BRAUNFELS TEXAS 78132",
+    "label_width_in": 8.5
+  },
+  "printed": {
+    "brand_name": "VALKYRIE'S KISS MEADERY",
+    "class_type": "MEAD with APPLES",
+    "abv": 12,
+    "proof": null,
+    "net_contents": "750 ML",
+    "warning_text": "GOVERNMENTWARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "warning_heading_bold": "yes",
+    "warning_orientation": "horizontal",
+    "warning_image": "01_brand_front_or_keg_collar.jpg"
+  },
+  "expected": {
+    "overall": "approved",
+    "findings": [],
+    "warning_misprinted": false,
+    "warning_present": true
+  },
+  "provenance": {
+    "base_item": "cola_25120001000682",
+    "model": "us.stability.stable-image-inpaint-v1:0",
+    "prompt": [
+      "realistic phone photo of a single clear glass white wine bottle held in a person's hand in front of a kitchen, photographed with a phone, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+      "realistic phone photo of a single dark glass red wine bottle standing on a wire shelf inside an open beverage cooler in a convenience store, cold white light, other bottles behind it, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field"
+    ],
+    "seed": [
+      194728314,
+      1342020052
+    ]
+  }
+}

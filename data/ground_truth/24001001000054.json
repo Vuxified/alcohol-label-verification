@@ -1,0 +1,36 @@
+{
+  "id": "24001001000054",
+  "beverage_type": "spirits",
+  "brand_name": "Crafted Spirits by Arkadius",
+  "class_type": "Malińwka",
+  "abv": 30,
+  "abv_text": "30% ALC. BY VOL.",
+  "proof": null,
+  "net_contents_text": "VOL. 750 ML",
+  "net_contents_ml": 750,
+  "name_address_text": "MANUFACTURED BY: INDIANA NATURAL INFUSIONS LLC, LOWELL, IN 46356",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "02_back.jpg",
+    "text_as_printed": "GOVERNMENT WARNING : (1)ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGE DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2)CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": false,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "warning misprint: 'ALCOHOLIC BEVERAGE' (missing S) in part (1)",
+    "space before colon ('WARNING :') and no space after '(1)' / '(2)'",
+    "fully justified monospace warning with very wide gaps",
+    "script brand and fanciful name 'Malinówka' (accented ó)",
+    "Polish text 'Produkowana Lokalnie Tradycyjną Metodą'",
+    "net contents written 'VOL. 750 ML'",
+    "small back label with registration dots in corners"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

@@ -1,0 +1,29 @@
+{
+  "ttb_id": "26128001000624",
+  "status": "APPROVED",
+  "serial_no": "260016",
+  "class_type_code": "HONEY BASED TABLE WINE",
+  "origin_code": "SOUTH DAKOTA",
+  "brand_name": "PANACEA MEADERY",
+  "fanciful_name": "SEMI-HOLLOW",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "06/17/2026",
+  "applicant": "BWN-SD-15024 | PANACEA MEADERY, PANACEA MEADERY, LLC | 804 W CHEROKEE | SIOUX FALLS,\u00a0SD\u00a057104",
+  "source": "domestic",
+  "product_type": "wine",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.png",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 7.0,
+      "height_in": 5.0
+    },
+    {
+      "file": "02_other.jpg",
+      "image_type": "Other",
+      "width_in": 8.0,
+      "height_in": 4.0
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "ttb_id": "25212001000725",
+  "status": "APPROVED",
+  "serial_no": "250070",
+  "class_type_code": "HONEY BASED TABLE WINE",
+  "origin_code": "OHIO",
+  "brand_name": "CRAFTED BY MEADS OF MIDGARD MEADERY",
+  "fanciful_name": "HONEY-BLACKBERRY WINE WITH NATURAL FLAVORS",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "09/18/2025",
+  "applicant": "BWN-OH-21376 | Meads of Midgard, Meads of Midgard LLC | 1037 N MAIN ST BLDG | Bowling Green,\u00a0OH\u00a043402",
+  "source": "domestic",
+  "product_type": "wine",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 4.0,
+      "height_in": 4.0
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 4.0,
+      "height_in": 4.0
+    }
+  ]
+}

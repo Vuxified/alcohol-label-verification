@@ -1,0 +1,52 @@
+{
+  "id": "25121001000520__scene0",
+  "images": [
+    {
+      "file": "scene_1.jpg",
+      "image_type": "Brand (front) or keg collar"
+    }
+  ],
+  "source": {
+    "type": "real label scene",
+    "license": "public COLA registry label artwork; scene generated for this project"
+  },
+  "application": {
+    "beverage_type": "wine",
+    "brand_name": "Great Lakes Bay Distillery LLC",
+    "class_type": "Dry Moscato",
+    "abv": 14,
+    "proof": null,
+    "net_contents": "750mL",
+    "source": "domestic",
+    "country_of_origin": null,
+    "name_address": "Produced & Bottled by Great Lakes Bay Distillery LLC Sterling, MI",
+    "label_width_in": 3.5
+  },
+  "printed": {
+    "brand_name": "Great Lakes Bay Distillery LLC",
+    "class_type": "Dry Moscato",
+    "abv": 14,
+    "proof": null,
+    "net_contents": "750mL",
+    "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "warning_heading_bold": "yes",
+    "warning_orientation": "horizontal",
+    "warning_image": "01_brand_front_or_keg_collar.jpg"
+  },
+  "expected": {
+    "overall": "approved",
+    "findings": [],
+    "warning_misprinted": false,
+    "warning_present": true
+  },
+  "provenance": {
+    "base_item": "cola_25121001000520",
+    "model": "us.stability.stable-image-inpaint-v1:0",
+    "prompt": [
+      "realistic phone photo of a single dark glass red wine bottle held in a person's hand in front of a kitchen, photographed with a phone, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field"
+    ],
+    "seed": [
+      3722560897
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "id": "25231001000857",
+  "beverage_type": "spirits",
+  "brand_name": "SHINE of the MOON",
+  "class_type": "Straight Bourbon Whiskey With Sugar",
+  "abv": 21,
+  "abv_text": "21 % Alc by Vol",
+  "proof": 42,
+  "net_contents_text": "750ml",
+  "net_contents_ml": 750,
+  "name_address_text": "Bottled by AI Bottling LLC Clinton, MO for Daniel's BBQ",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "yes",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "decorative swash brand inside a crescent-moon logo ('SHINE of the MOON')",
+    "white brush-script class/type, ABV and bottler line on bright pink wood texture",
+    "ABV, proof and net contents on one brush-script line ('21 % Alc by Vol (42 proof) 750ml')",
+    "space between '21' and '%'",
+    "fanciful 'Sweet & Smooth' and 'BBQ Edition' badges",
+    "white warning text with dark outline over textured background"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); not reviewed by the owner"
+}

@@ -1,0 +1,70 @@
+{
+  "id": "26169001000019__scene0",
+  "images": [
+    {
+      "file": "scene_1.jpg",
+      "image_type": "Brand (front) or keg collar (left part)"
+    },
+    {
+      "file": "scene_2.jpg",
+      "image_type": "Brand (front) or keg collar (right part)"
+    },
+    {
+      "file": "scene_3.jpg",
+      "image_type": "Neck (left part)"
+    },
+    {
+      "file": "scene_4.jpg",
+      "image_type": "Neck (right part)"
+    }
+  ],
+  "source": {
+    "type": "real label scene",
+    "license": "public COLA registry label artwork; scene generated for this project"
+  },
+  "application": {
+    "beverage_type": "spirits",
+    "brand_name": "PUTNAM",
+    "class_type": "OLD FASHIONED",
+    "abv": 35,
+    "proof": 70,
+    "net_contents": "750ml",
+    "source": "domestic",
+    "country_of_origin": null,
+    "name_address": "PRODUCED AND BOTTLED BY EKS VENTURES, INC. D/B/A BOSTON HARBOR DISTILLERY 12R ERICSSON STREET BOSTON MASSACHUSETTS 02122",
+    "label_width_in": 11.5
+  },
+  "printed": {
+    "brand_name": "PUTNAM",
+    "class_type": "OLD FASHIONED",
+    "abv": 35,
+    "proof": 70,
+    "net_contents": "750ml",
+    "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "warning_heading_bold": "unclear",
+    "warning_orientation": "horizontal",
+    "warning_image": "01_brand_front_or_keg_collar.jpg"
+  },
+  "expected": {
+    "overall": "approved",
+    "findings": [],
+    "warning_misprinted": false,
+    "warning_present": true
+  },
+  "provenance": {
+    "base_item": "cola_26169001000019",
+    "model": "us.stability.stable-image-inpaint-v1:0",
+    "prompt": [
+      "realistic phone photo of a single clear glass whiskey bottle with amber whiskey inside held in a person's hand in front of a kitchen, photographed with a phone, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+      "realistic phone photo of a single clear glass vodka bottle standing on a liquor store shelf, other plain bottles blurred around it, bright store lighting, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+      "realistic phone photo of a single glass spirits bottle standing on a rustic kitchen table by a window, soft daylight, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+      "realistic phone photo of a single glass spirits bottle standing on a dark wooden bar counter in a dimly lit cocktail bar, warm bokeh lights in the background, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field"
+    ],
+    "seed": [
+      1268482403,
+      3579439413,
+      3716115245,
+      2054776025
+    ]
+  }
+}

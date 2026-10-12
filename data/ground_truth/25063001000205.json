@@ -1,0 +1,35 @@
+{
+  "id": "25063001000205",
+  "beverage_type": "spirits",
+  "brand_name": "ŻUBRÓWKA",
+  "class_type": "BISON GRASS FLAVORED VODKA",
+  "abv": 40,
+  "abv_text": "Bottled at 40% Alcohol by volume",
+  "proof": null,
+  "net_contents_text": "1 L",
+  "net_contents_ml": 1000,
+  "name_address_text": "Imported by: The Brand Collective, Miami, FL Produced by: CEDC International Sp. Z o.o. ul. Kowanowska 48, 64-600 Oborniki, Poland Branch Polmos Białystok",
+  "country_of_origin_text": "PRODUCT OF POLAND",
+  "warning": {
+    "present": true,
+    "image_file": "02_back.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "brand with Polish letters and a stylized slashed O ('ŻUBRØWKA' logo), registry spells it ZUBROWKA",
+    "ABV split over three lines in thin gold condensed type on green ('Bottled at' / '40%' / 'Alcohol by volume')",
+    "front net contents in thin gold type on green",
+    "printer's guide lines (blue/pink) cross the text on both images",
+    "second brand mark 'ŻU' on back",
+    "front shows '1 L', back '1L'"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); not reviewed by the owner"
+}

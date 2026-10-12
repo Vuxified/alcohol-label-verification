@@ -1,0 +1,53 @@
+{
+  "id": "cola_25071001000110__brand_word",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 7.09,
+      "height_in": 2.82
+    }
+  ],
+  "source": {
+    "type": "tampered",
+    "license": "TTB Public COLA Registry image (public record), with one change planted for testing by tools/make_tampered.py",
+    "ttb_id": "25071001000110",
+    "edited_images": [
+      "01_brand_front_or_keg_collar.jpg"
+    ]
+  },
+  "application": {
+    "beverage_type": "malt",
+    "brand_name": "STELLA ARTOIS",
+    "class_type": "BEER",
+    "abv": 5,
+    "proof": null,
+    "net_contents": "1.59 GALLONS (6L)",
+    "source": "domestic",
+    "country_of_origin": null,
+    "name_address": "STELLA ARTOIS, ST. LOUIS, MO, BREWED IN THE U.S.A.",
+    "label_width_in": 7.09
+  },
+  "printed": {
+    "brand_name": "STELLA AURORA",
+    "class_type": "BEER",
+    "abv": 5,
+    "proof": null,
+    "net_contents": "1.59 GALLONS (6L)",
+    "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "warning_heading_bold": true,
+    "warning_cap_mm": null
+  },
+  "expected": {
+    "overall": "check",
+    "findings": [
+      "BRAND_NAME_MISMATCH"
+    ]
+  },
+  "provenance": {
+    "base_id": "cola_25071001000110",
+    "change": "brand_word",
+    "from": "STELLA ARTOIS",
+    "to": "STELLA AURORA"
+  }
+}

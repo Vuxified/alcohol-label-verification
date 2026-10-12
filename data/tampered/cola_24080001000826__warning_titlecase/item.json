@@ -1,0 +1,59 @@
+{
+  "id": "cola_24080001000826__warning_titlecase",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.46,
+      "height_in": 5.7
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 3.15,
+      "height_in": 4.8
+    }
+  ],
+  "source": {
+    "type": "tampered",
+    "license": "TTB Public COLA Registry image (public record), with one change planted for testing by tools/make_tampered.py",
+    "ttb_id": "24080001000826",
+    "edited_images": [
+      "02_back.jpg"
+    ]
+  },
+  "application": {
+    "beverage_type": "wine",
+    "brand_name": "19 Crimes.",
+    "class_type": "CABERNET SAUVIGNON",
+    "abv": 13.5,
+    "proof": null,
+    "net_contents": "750 ML",
+    "source": "imported",
+    "country_of_origin": "WINE OF AUSTRALIA",
+    "name_address": "IMPORTED AND BOTTLED BY TWE IMPORTS, SONOMA, CA",
+    "label_width_in": 3.46
+  },
+  "printed": {
+    "brand_name": "19 Crimes.",
+    "class_type": "CABERNET SAUVIGNON",
+    "abv": 13.5,
+    "proof": null,
+    "net_contents": "750 ML",
+    "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "warning_heading_bold": true,
+    "warning_cap_mm": null
+  },
+  "expected": {
+    "overall": "fail",
+    "findings": [
+      "WARNING_NOT_CAPS"
+    ]
+  },
+  "provenance": {
+    "base_id": "cola_24080001000826",
+    "change": "warning_titlecase",
+    "from": "GOVERNMENT WARNING",
+    "to": "Government Warning"
+  }
+}

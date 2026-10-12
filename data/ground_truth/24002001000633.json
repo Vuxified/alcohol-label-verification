@@ -1,0 +1,35 @@
+{
+  "id": "24002001000633",
+  "beverage_type": "spirits",
+  "brand_name": "Papá Pedro",
+  "class_type": "Rum with Artificial Flavor, Artificial Color and FD&C Yellow #5",
+  "abv": 21,
+  "abv_text": "ALC. 21% BY VOL.",
+  "proof": 42,
+  "net_contents_text": "750 ML",
+  "net_contents_ml": 750,
+  "name_address_text": "DISTILLED AND BOTTLED BY PAPÁ PEDRO, INC. MARICAO, PUERTO RICO",
+  "country_of_origin_text": "MADE IN PUERTO RICO",
+  "warning": {
+    "present": true,
+    "image_file": "02_back.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY OF DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": false,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "warning misprint: 'YOUR ABILITY OF DRIVE' instead of 'YOUR ABILITY TO DRIVE'",
+    "brand in gold script with accent ('Papá Pedro'); registry brand is 'PAPA PEDRO' without accent",
+    "fanciful name 'Maricao' in faint script over a textured map",
+    "class/type statement in small condensed type at the bottom of the front",
+    "white text on dark background; Spanish and English marketing copy on back",
+    "'MADE IN PUERTO RICO' on front and 'HECHO EN PUERTO RICO' seal on back (domestic product)"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

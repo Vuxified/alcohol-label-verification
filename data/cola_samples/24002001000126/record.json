@@ -1,0 +1,23 @@
+{
+  "ttb_id": "24002001000126",
+  "status": "APPROVED",
+  "serial_no": "240001",
+  "class_type_code": "ALE",
+  "origin_code": "NORTH CAROLINA",
+  "brand_name": "CAUGHT ADRIFT",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/04/2024",
+  "applicant": "BR-NC-21549 | 760 Craft Works, LLC | 100 GILEAD RD | Huntersville,\u00a0NC\u00a028078",
+  "source": "domestic",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.png",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 7.0,
+      "height_in": 7.0
+    }
+  ]
+}

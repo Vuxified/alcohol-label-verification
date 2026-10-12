@@ -1,0 +1,36 @@
+{
+  "id": "25230001000505",
+  "beverage_type": "malt",
+  "brand_name": "HOP VALLEY BREWING CO.",
+  "class_type": "HAZY INDIA PALE ALE",
+  "abv": 7,
+  "abv_text": "7% ALC./VOL.",
+  "proof": null,
+  "net_contents_text": "1 PT, 3.2 FL. OZ.",
+  "net_contents_ml": 567.81,
+  "name_address_text": "HOP VALLEY BREWING CO.® PORTLAND, OREGON",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "vertical"
+  },
+  "hard_cases": [
+    "brand in a shield logo ('HOP VALLEY Brewing Co.' with a hop for the O); fanciful 'BANDON DUNES GHOST TREE' dominates",
+    "white text on dark charcoal",
+    "warning and address rotated 90 degrees on the side panel",
+    "class/type given two ways: 'HAZY IPA' (large) and 'HAZY INDIA PALE ALE' (small)",
+    "net contents given two ways: '19.2 FLUID OUNCES' and '1 PT, 3.2 FL. OZ.'",
+    "no 'brewed by' phrase before the name and address",
+    "can artwork shown flat (two front panels)"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); not reviewed by the owner"
+}

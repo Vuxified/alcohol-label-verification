@@ -1,0 +1,29 @@
+{
+  "ttb_id": "26062001000676",
+  "status": "APPROVED",
+  "serial_no": "260307",
+  "class_type_code": "VODKA SPECIALTIES",
+  "origin_code": "POLAND",
+  "brand_name": "SOPLICA",
+  "fanciful_name": "APRICOT",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "05/04/2026",
+  "applicant": "IL-I-1022 | CRACOVIA BRANDS, INC. | 10103 PACIFIC AVE | FRANKLIN PARK,\u00a0IL\u00a060131",
+  "source": "imported",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.42,
+      "height_in": 5.42
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 2.56,
+      "height_in": 1.67
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "ttb_id": "26098001000512",
+  "status": "APPROVED",
+  "serial_no": "264826",
+  "class_type_code": "WHISKY SPECIALTIES",
+  "origin_code": "WISCONSIN",
+  "brand_name": "STEEZY",
+  "fanciful_name": "GREEN TEA",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "05/26/2026",
+  "applicant": "DSP-WI-20002 | Artys, Arty's Inc. Partnership | 18 6TH ST | Clintonville,\u00a0WI\u00a054929",
+  "source": "domestic",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 7.0,
+      "height_in": 9.0
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 7.0,
+      "height_in": 9.0
+    }
+  ]
+}

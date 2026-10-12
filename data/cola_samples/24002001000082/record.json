@@ -1,0 +1,23 @@
+{
+  "ttb_id": "24002001000082",
+  "status": "APPROVED",
+  "serial_no": "240002",
+  "class_type_code": "ALE",
+  "origin_code": "ALABAMA",
+  "brand_name": "CAHABA BREWING CO",
+  "fanciful_name": "TROPICAL SOUR BERLINER WEISSE ALE",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/04/2024",
+  "applicant": "BR-AL-20001 | CAHABA BREWING COMPANY, LLC | 4500 5TH AVE S BLDG C | BIRMINGHAM,\u00a0AL\u00a035222",
+  "source": "domestic",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 5.5,
+      "height_in": 5.5
+    }
+  ]
+}

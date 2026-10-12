@@ -1,0 +1,53 @@
+{
+  "id": "cola_25344001000685__warning_titlecase",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 5.04,
+      "height_in": 2.95
+    }
+  ],
+  "source": {
+    "type": "tampered",
+    "license": "TTB Public COLA Registry image (public record), with one change planted for testing by tools/make_tampered.py",
+    "ttb_id": "25344001000685",
+    "edited_images": [
+      "01_brand_front_or_keg_collar.jpg"
+    ]
+  },
+  "application": {
+    "beverage_type": "malt",
+    "brand_name": "Bruder",
+    "class_type": "PLUM FLAVORED BEER",
+    "abv": 10.7,
+    "proof": null,
+    "net_contents": "11.2 FL OZ (330 mL)",
+    "source": "imported",
+    "country_of_origin": "PRODUCT OF COLOMBIA",
+    "name_address": "PRODUCED BY: COMPAÑÍA CERVECERA BRUDER DE COLOMBIA S.A.S. CRA. 13 NO. 3 - 66 SUR TUNJA, BOYACÁ IMPORTED BY: MGL IMPORT & EXPORT, INC. MEDLEY, FL 33178",
+    "label_width_in": 5.04
+  },
+  "printed": {
+    "brand_name": "Bruder",
+    "class_type": "PLUM FLAVORED BEER",
+    "abv": 10.7,
+    "proof": null,
+    "net_contents": "11.2 FL OZ (330 mL)",
+    "warning_text": "GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.",
+    "warning_heading_bold": true,
+    "warning_cap_mm": null
+  },
+  "expected": {
+    "overall": "fail",
+    "findings": [
+      "WARNING_NOT_CAPS"
+    ]
+  },
+  "provenance": {
+    "base_id": "cola_25344001000685",
+    "change": "warning_titlecase",
+    "from": "GOVERNMENT WARNING",
+    "to": "Government Warning"
+  }
+}

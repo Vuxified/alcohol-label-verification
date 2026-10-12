@@ -1,0 +1,23 @@
+{
+  "ttb_id": "24002001000089",
+  "status": "APPROVED",
+  "serial_no": "240714",
+  "class_type_code": "ALE",
+  "origin_code": "VERMONT",
+  "brand_name": "ECHOES",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/04/2024",
+  "applicant": "BR-VT-21053 | Foam Brewers LLC | 10516 ROUTE 116 | Hinesburg,\u00a0VT\u00a005461",
+  "source": "domestic",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.png",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 8.8,
+      "height_in": 4.48
+    }
+  ]
+}

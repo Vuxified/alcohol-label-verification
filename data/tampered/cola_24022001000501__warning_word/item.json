@@ -1,0 +1,71 @@
+{
+  "id": "cola_24022001000501__warning_word",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.1,
+      "height_in": 3.31
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 2.36,
+      "height_in": 4.14
+    },
+    {
+      "file": "03_neck.jpg",
+      "image_type": "Neck",
+      "width_in": 3.4,
+      "height_in": 5.71
+    },
+    {
+      "file": "04_other.jpg",
+      "image_type": "Other",
+      "width_in": 1.98,
+      "height_in": 1.98
+    }
+  ],
+  "source": {
+    "type": "tampered",
+    "license": "TTB Public COLA Registry image (public record), with one change planted for testing by tools/make_tampered.py",
+    "ttb_id": "24022001000501",
+    "edited_images": [
+      "02_back.jpg"
+    ]
+  },
+  "application": {
+    "beverage_type": "spirits",
+    "brand_name": "GREY GOOSE",
+    "class_type": "VODKA",
+    "abv": 40,
+    "proof": null,
+    "net_contents": "700 ml",
+    "source": "imported",
+    "country_of_origin": "DISTILLED & BOTTLED IN FRANCE",
+    "name_address": "IMPORTED BY GREY GOOSE IMPORTING COMPANY, CORAL GABLES, FL. BOTTLED BY BMP, 11 ROUTE DU LAUBARET, 16130 GENSAC-LA-PALLUE, FRANCE.",
+    "label_width_in": 3.1
+  },
+  "printed": {
+    "brand_name": "GREY GOOSE",
+    "class_type": "VODKA",
+    "abv": 40,
+    "proof": null,
+    "net_contents": "700 ml",
+    "warning_text": "GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.",
+    "warning_heading_bold": true,
+    "warning_cap_mm": null
+  },
+  "expected": {
+    "overall": "fail",
+    "findings": [
+      "WARNING_TEXT_ALTERED"
+    ]
+  },
+  "provenance": {
+    "base_id": "cola_24022001000501",
+    "change": "warning_word",
+    "from": "should",
+    "to": "must"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "ttb_id": "24002001000146",
+  "status": "APPROVED",
+  "serial_no": "24DIS3",
+  "class_type_code": "JAMICAN RUM GOLD USB",
+  "origin_code": "JAMAICA",
+  "brand_name": "DOWN ISLAND SPIRITS JAMAICA",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/17/2024",
+  "applicant": "DSP-FL-20134 | Indian River Distillery, Vero Beach Distilling LLC | 3308 AVIATION BLVD | Vero Beach,\u00a0FL\u00a032960",
+  "source": "imported",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.png",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 2.25,
+      "height_in": 5.0
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 2.25,
+      "height_in": 5.0
+    }
+  ]
+}

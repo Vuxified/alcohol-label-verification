@@ -1,0 +1,23 @@
+{
+  "ttb_id": "25120001000682",
+  "status": "APPROVED",
+  "serial_no": "252002",
+  "class_type_code": "HONEY BASED TABLE WINE",
+  "origin_code": "TEXAS",
+  "brand_name": "VALKYRIE'S KISS MEADERY",
+  "fanciful_name": "APPLE KISS CYSER",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "07/10/2025",
+  "applicant": "BWN-TX-21775 | VALKYRIE'S KISS MEADERY & FREYJA'S VENUE, VALKYRIE'S KISS MEADERY & FREYJA'S VENUE LLC | 6500 STATE HWY 46 W, BUILDING 4 STE 403 | New Braunfels,\u00a0TX\u00a078132",
+  "source": "domestic",
+  "product_type": "wine",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 8.5,
+      "height_in": 4.04
+    }
+  ]
+}

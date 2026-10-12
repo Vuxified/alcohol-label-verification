@@ -1,0 +1,36 @@
+{
+  "id": "25325001000646",
+  "beverage_type": "spirits",
+  "brand_name": "2SHOT COWBOY",
+  "class_type": "ALCOHOL WITH NATURAL FLAVORS AND CERTIFIED COLOR + ALCOHOL WITH NATURAL FLAVORS AND CARAMEL COLOR",
+  "abv": 20,
+  "abv_text": "20% ALC/VOL",
+  "proof": null,
+  "net_contents_text": "4x25 ML | 100ML TOTAL",
+  "net_contents_ml": 100,
+  "name_address_text": "Imported By: Benchmark Beverage Co. Livonia, MI 48150",
+  "country_of_origin_text": "PRODUCT OF AUSTRALIA",
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "vertical"
+  },
+  "hard_cases": [
+    "flat die-line artwork of a 4-pack carton with dimension annotations (486, 95.89) in blue",
+    "all text rotated 90 degrees; brand panels in several orientations",
+    "brand is a logo: large '2' beside 'SHOT' over 'COWBOY'",
+    "net contents as multipack '4x25 ML | 100ML TOTAL'; side panels also say '12.5 ML CREAM ... 12.5 ML RASPBERRY ...'",
+    "class/type is a two-part statement of composition joined by '+'",
+    "light text on olive green, condensed warning type",
+    "importer address in small caps"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); not reviewed by the owner"
+}

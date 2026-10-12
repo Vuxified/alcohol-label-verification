@@ -1,0 +1,1484 @@
+{
+ "kept": [
+  {
+   "id": "cola_23333001000905__net",
+   "base": "23333001000905",
+   "change": "net",
+   "type": "spirits",
+   "from": "700 mL",
+   "to": "710 mL",
+   "expected": {
+    "overall": "fail",
+    "findings": [
+     "NET_CONTENTS_MISMATCH"
+    ]
+   },
+   "app_overall": "not run (final test)",
+   "app_fields": {},
+   "edited": [
+    "02_brand_front_or_keg_collar.jpg"
+   ]
+  },
+  {
+   "id": "cola_23333001000905__warning_delete",
+   "base": "23333001000905",
+   "change": "warning_delete",
+   "type": "spirits",
+   "from": "health",
+   "to": "",
+   "expected": {
+    "overall": "fail",
+    "findings": [
+     "WARNING_TEXT_ALTERED"
+    ]
+   },
+   "app_overall": "not run (final test)",
+   "app_fields": {},
+   "edited": [
+    "03_back.jpg"
+   ]
+  },
+  {
+   "id": "cola_23333001000905__warning_titlecase",
+   "base": "23333001000905",
+   "change": "warning_titlecase",
+   "type": "spirits",
+   "from": "GOVERNMENT WARNING",
+   "to": "Government Warning",
+   "expected": {
+    "overall": "fail",
+    "findings": [
+     "WARNING_NOT_CAPS"
+    ]
+   },
+   "app_overall": "not run (final test)",
+   "app_fields": {},
+   "edited": [
+    "03_back.jpg"
+   ]
+  },
+  {
+   "id": "cola_23333001000905__warning_word",
+   "base": "23333001000905",
+   "change": "warning_word",
+   "type": "spirits",
+   "from": "should",
+   "to": "must",
+   "expected": {
+    "overall": "fail",
+    "findings": [
+     "WARNING_TEXT_ALTERED"
+    ]
+   },
+   "app_overall": "not run (final test)",
+   "app_fields": {},
+   "edited": [
+    "03_back.jpg"
+   ]
+  },
+  {
+   "id": "cola_23354001000381__warning_titlecase",
+   "base": "23354001000381",
+   "change": "warning_titlecase",
+   "type": "malt",
+   "from": "GOVERNMENT WARNING",
+   "to": "Government Warning",
+   "expected": {
+    "overall": "fail",
+    "findings": [
+     "WARNING_NOT_CAPS"
+    ]
+   },
+   "app_overall": "not run (final test)",
+   "app_fields": {},
+   "edited": [
+    "01_brand_front_or_keg_collar.jpg"
+   ]
+  },
+  {
+   "id": "cola_24009001000244__net",
+   "base": "24009001000244",
+   "change": "net",
+   "type": "spirits",
+   "from": "750ML",
+   "to": "720ML",
+   "expected": {
+    "overall": "fail",
+    "findings": [
+     "NET_CONTENTS_MISMATCH"
+    ]
+   },
+   "app_overall": "not run (final test)",
+   "app_fields": {},
+   "edited": [
+    "04_back.jpg"
+   ]
+  },
+  {
+   "id": "cola_24009001000244__proof",
+   "base": "24009001000244",
+   "change": "proof",
+   "type": "spirits",
+   "from": "90 PROOF",
+   "to": "94 PROOF",
+   "expected": {
+    "overall": "fail",
+    "findings": [
+     "PROOF_MISMATCH"
+    ]
+   },
+   "app_overall": "not run (final test)",
+   "app_fields": {},
+   "edited": [
+    "04_back.jpg"
+   ]
+  },
+  {
+   "id": "cola_24009001000244__warning_delete",
+   "base": "24009001000244",
+   "change": "warning_delete",
+   "type": "spirits",
+   "from": "not",
+   "to": "",
+   "expected": {
+    "overall": "fail",
+    "findings": [
+     "WARNING_TEXT_ALTERED"
+    ]
+   },
+   "app_overall": "not run (final test)",
+   "app_fields": {},
+   "edited": [
+    "04_back.jpg"
+   ]
+  },
+  {
+   "id": "cola_24009001000244__warning_titlecase",
+   "base": "24009001000244",
+   "change": "warning_titlecase",
+   "type": "spirits",
+   "from": "GOVERNMENT WARNING",
+   "to": "Government Warning",
+   "expected": {
+    "overall": "fail",
+    "findings": [
+     "WARNING_NOT_CAPS"
+    ]
+   },
+   "app_overall": "not run (final test)",
+   "app_fields": {},
+   "edited": [
+    "04_back.jpg"
+   ]
+  },
+  {
+   "id": "cola_24009001000244__warning_word",
+   "base": "24009001000244",
+   "change": "warning_word",
+   "type": "spirits",
+   "from": "should",
+   "to": "must",
+   "expected": {
+    "overall": "fail",
+    "findings": [
+     "WARNING_TEXT_ALTERED"
+    ]
+   },
+   "app_overall": "not run (final test)",
+   "app_fields": {},
+   "edited": [
+    "04_back.jpg"
+   ]
+  },
+  {
+   "id": "cola_24012001000381__abv",
+   "base": "24012001000381",
+   "change": "abv",
+   "type": "spirits",
+   "from": "45% ALC./VOL.",
+   "to": "44% ALC./VOL.",
+   "expected": {
+    "overall": "fail",
+    "findings": [
+     "ABV_MISMATCH"
+    ]
+   },
+   "app_overall": "not run (final test)",
+   "app_fields": {},
+   "edited": [
+    "01_brand_front_or_keg_collar.jpg"
+   ]
+  },
+  {
+   "id": "cola_24022001000902__abv",
+   "base": "24022001000902",
+   "change": "abv",
+   "type": "wine",
+   "from": "ALC 14.5% BY VOL.",
+   "to": "ALC 15.5% BY VOL.",
+   "expected": {
+    "overall": "fail",
+    "findings": [
+     "ABV_MISMATCH"
+    ]
+   },
+   "app_overall": "not run (final test)",
+   "app_fields": {},
+   "edited": [
+    "01_brand_front_or_keg_collar.jpg"
+   ]
+  },
+  {
+   "id": "cola_24022001000902__warning_word",
+   "base": "24022001000902",
+   "change": "warning_word",
+   "type": "wine",
+   "from": "may",
+   "to": "can",
+   "expected": {
+    "overall": "fail",
+    "findings": [
+     "WARNING_TEXT_ALTERED"
+    ]
+   },
+   "app_overall": "not run (final test)",
+   "app_fields": {},
+   "edited": [
+    "01_brand_front_or_keg_collar.jpg"
+   ]
+  },
+  {
+   "id": "cola_24022001000904__abv",
+   "base": "24022001000904",
+   "change": "abv",
+   "type": "wine",
+   "from": "ALC 14.0% BY VOL.",
+   "to": "ALC 13.0% BY VOL.",
+   "expected": {
+    "overall": "fail",
+    "findings": [
+     "ABV_MISMATCH"
+    ]
+   },
+   "app_overall": "not run (final test)",
+   "app_fields": {},
+   "edited": [
+    "01_brand_front_or_keg_collar.jpg"
+   ]
+  },
+  {
+   "id": "cola_24022001000904__warning_word",
+   "base": "24022001000904",
+   "change": "warning_word",
+   "type": "wine",
+   "from": "should",
+   "to": "must",
+   "expected": {
+    "overall": "fail",
+    "findings": [
+     "WARNING_TEXT_ALTERED"
+    ]
+   },
+   "app_overall": "not run (final test)",
+   "app_fields": {},
+   "edited": [
+    "01_brand_front_or_keg_collar.jpg"
+   ]
+  },
+  {
+   "id": "cola_24030001000320__net",
+   "base": "24030001000320",
+   "change": "net",
+   "type": "malt",
+   "from": "12 FL. OZ.",
+   "to": "16 FL. OZ.",
+   "expected": {
+    "overall": "fail",
+    "findings": [
+     "NET_CONTENTS_MISMATCH"
+    ]
+   },
+   "app_overall": "not run (final test)",
+   "app_fields": {},
+   "edited": [
+    "01_brand_front_or_keg_collar.jpg"
+   ]
+  },
+  {
+   "id": "cola_24050001000660__net",
+   "base": "24050001000660",
+   "change": "net",
+   "type": "spirits",
+   "from": "750ml",
+   "to": "720ml",
+   "expected": {
+    "overall": "fail",
+    "findings": [
+     "NET_CONTENTS_MISMATCH"
+    ]
+   },
+   "app_overall": "not run (final test)",
+   "app_fields": {},
+   "edited": [
+    "02_back.jpg"
+   ]
+  },
+  {
+   "id": "cola_24072001000642__warning_delete",
+   "base": "24072001000642",
+   "change": "warning_delete",
+   "type": "spirits",
+   "from": "birth",
+   "to": "",
+   "expected": {
+    "overall": "fail",
+    "findings": [
+     "WARNING_TEXT_ALTERED"
+    ]
+   },
+   "app_overall": "not run (final test)",
+   "app_fields": {},
+   "edited": [
+    "02_back.jpg"
+   ]
+  },
+  {
+   "id": "cola_24072001000642__warning_word",
+   "base": "24072001000642",
+   "change": "warning_word",
+   "type": "spirits",
+   "from": "should",
+   "to": "must",
+   "expected": {
+    "overall": "fail",
+    "findings": [
+     "WARNING_TEXT_ALTERED"
+    ]
+   },
+   "app_overall": "not run (final test)",
+   "app_fields": {},
+   "edited": [
+    "02_back.jpg"
+   ]
+  },
+  {
+   "id": "cola_24078001000871__abv",
+   "base": "24078001000871",
+   "change": "abv",
+   "type": "wine",
+   "from": "ALC 12% BY VOL",
+   "to": "ALC 11% BY VOL",
+   "expected": {
+    "overall": "fail",
+    "findings": [
+     "ABV_MISMATCH"
+    ]
+   },
+   "app_overall": "not run (final test)",
+   "app_fields": {},
+   "edited": [
+    "01_brand_front_or_keg_collar.png",
+    "03_other.jpg"
+   ]
+  },
+  {
+   "id": "cola_24078001000871__warning_delete",
+   "base": "24078001000871",
+   "change": "warning_delete",
+   "type": "wine",
+   "from": "alcoholic",
+   "to": "",
+   "expected": {
+    "overall": "fail",
+    "findings": [
+     "WARNING_TEXT_ALTERED"
+    ]
+   },
+   "app_overall": "not run (final test)",
+   "app_fields": {},
+   "edited": [
+    "01_brand_front_or_keg_collar.png"
+   ]
+  },
+  {
+   "id": "cola_24096001000861__warning_delete",
+   "base": "24096001000861",
+   "change": "warning_delete",
+   "type": "wine",
+   "from": "not",
+   "to": "",
+   "expected": {
+    "overall": "fail",
+    "findings": [
+     "WARNING_TEXT_ALTERED"
+    ]
+   },
+   "app_overall": "not run (final test)",
+   "app_fields": {},
+   "edited": [
+    "01_brand_front_or_keg_collar.jpg"
+   ]
+  },
+  {
+   "id": "cola_24096001000861__warning_titlecase",
+   "base": "24096001000861",
+   "change": "warning_titlecase",
+   "type": "wine",
+   "from": "GOVERNMENT WARNING",
+   "to": "Government Warning",
+   "expected": {
+    "overall": "fail",
+    "findings": [
+     "WARNING_NOT_CAPS"
+    ]
+   },
+   "app_overall": "not run (final test)",
+   "app_fields": {},
+   "edited": [
+    "01_brand_front_or_keg_collar.jpg"
+   ]
+  },
+  {
+   "id": "cola_24096001000861__warning_word",
+   "base": "24096001000861",
+   "change": "warning_word",
+   "type": "wine",
+   "from": "may",
+   "to": "can",
+   "expected": {
+    "overall": "fail",
+    "findings": [
+     "WARNING_TEXT_ALTERED"
+    ]
+   },
+   "app_overall": "not run (final test)",
+   "app_fields": {},
+   "edited": [
+    "01_brand_front_or_keg_collar.jpg"
+   ]
+  },
+  {
+   "id": "cola_24110001000159__net",
+   "base": "24110001000159",
+   "change": "net",
+   "type": "spirits",
+   "from": "750ml",
+   "to": "720ml",
+   "expected": {
+    "overall": "fail",
+    "findings": [
+     "NET_CONTENTS_MISMATCH"
+    ]
+   },
+   "app_overall": "not run (final test)",
+   "app_fields": {},
+   "edited": [
+    "01_brand_front_or_keg_collar.jpg",
+    "02_back.jpg"
+   ]
+  },
+  {
+   "id": "cola_24110001000159__warning_delete",
+   "base": "24110001000159",
+   "change": "warning_delete",
+   "type": "spirits",
+   "from": "health",
+   "to": "",
+   "expected": {
+    "overall": "fail",
+    "findings": [
+     "WARNING_TEXT_ALTERED"
+    ]
+   },
+   "app_overall": "not run (final test)",
+   "app_fields": {},
+   "edited": [
+    "02_back.jpg"
+   ]
+  },
+  {
+   "id": "cola_24110001000178__abv",
+   "base": "24110001000178",
+   "change": "abv",
+   "type": "wine",
+   "from": "ALC. 13.9% BY VOL.",
+   "to": "ALC. 12.9% BY VOL.",
+   "expected": {
+    "overall": "fail",
+    "findings": [
+     "ABV_MISMATCH"
+    ]
+   },
+   "app_overall": "not run (final test)",
+   "app_fields": {},
+   "edited": [
+    "01_brand_front_or_keg_collar.jpg"
+   ]
+  },
+  {
+   "id": "cola_24110001000178__net",
+   "base": "24110001000178",
+   "change": "net",
+   "type": "wine",
+   "from": "750mL",
+   "to": "720mL",
+   "expected": {
+    "overall": "fail",
+    "findings": [
+     "NET_CONTENTS_MISMATCH"
+    ]
+   },
+   "app_overall": "not run (final test)",
+   "app_fields": {},
+   "edited": [
+    "01_brand_front_or_keg_collar.jpg"
+   ]
+  },
+  {
+   "id": "cola_24110001000178__warning_delete",
+   "base": "24110001000178",
+   "change": "warning_delete",
+   "type": "wine",
+   "from": "birth",
+   "to": "",
+   "expected": {
+    "overall": "fail",
+    "findings": [
+     "WARNING_TEXT_ALTERED"
+    ]
+   },
+   "app_overall": "not run (final test)",
+   "app_fields": {},
+   "edited": [
+    "01_brand_front_or_keg_collar.jpg"
+   ]
+  },
+  {
+   "id": "cola_24110001000178__warning_titlecase",
+   "base": "24110001000178",
+   "change": "warning_titlecase",
+   "type": "wine",
+   "from": "GOVERNMENT WARNING",
+   "to": "Government Warning",
+   "expected": {
+    "overall": "fail",
+    "findings": [
+     "WARNING_NOT_CAPS"
+    ]
+   },
+   "app_overall": "not run (final test)",
+   "app_fields": {},
+   "edited": [
+    "01_brand_front_or_keg_collar.jpg"
+   ]
+  },
+  {
+   "id": "cola_24110001000178__warning_word",
+   "base": "24110001000178",
+   "change": "warning_word",
+   "type": "wine",
+   "from": "impairs",
+   "to": "affects",
+   "expected": {
+    "overall": "fail",
+    "findings": [
+     "WARNING_TEXT_ALTERED"
+    ]
+   },
+   "app_overall": "not run (final test)",
+   "app_fields": {},
+   "edited": [
+    "01_brand_front_or_keg_collar.jpg"
+   ]
+  },
+  {
+   "id": "cola_24155001000862__abv",
+   "base": "24155001000862",
+   "change": "abv",
+   "type": "spirits",
+   "from": "40% ALC/VOL (80 PROOF)",
+   "to": "41% ALC/VOL (80 PROOF)",
+   "expected": {
+    "overall": "fail",
+    "findings": [
+     "ABV_MISMATCH",
+     "PROOF_MISMATCH"
+    ]
+   },
+   "app_overall": "not run (final test)",
+   "app_fields": {},
+   "edited": [
+    "01_brand_front_or_keg_collar.jpg"
+   ]
+  },
+  {
+   "id": "cola_24155001000862__proof",
+   "base": "24155001000862",
+   "change": "proof",
+   "type": "spirits",
+   "from": "80 PROOF",
+   "to": "84 PROOF",
+   "expected": {
+    "overall": "fail",
+    "findings": [
+     "PROOF_MISMATCH"
+    ]
+   },
+   "app_overall": "not run (final test)",
+   "app_fields": {},
+   "edited": [
+    "01_brand_front_or_keg_collar.jpg"
+   ]
+  },
+  {
+   "id": "cola_24155001000862__warning_delete",
+   "base": "24155001000862",
+   "change": "warning_delete",
+   "type": "spirits",
+   "from": "health",
+   "to": "",
+   "expected": {
+    "overall": "fail",
+    "findings": [
+     "WARNING_TEXT_ALTERED"
+    ]
+   },
+   "app_overall": "not run (final test)",
+   "app_fields": {},
+   "edited": [
+    "01_brand_front_or_keg_collar.jpg"
+   ]
+  },
+  {
+   "id": "cola_24155001000862__warning_word",
+   "base": "24155001000862",
+   "change": "warning_word",
+   "type": "spirits",
+   "from": "impairs",
+   "to": "affects",
+   "expected": {
+    "overall": "fail",
+    "findings": [
+     "WARNING_TEXT_ALTERED"
+    ]
+   },
+   "app_overall": "not run (final test)",
+   "app_fields": {},
+   "edited": [
+    "01_brand_front_or_keg_collar.jpg"
+   ]
+  },
+  {
+   "id": "cola_24208001000178__abv",
+   "base": "24208001000178",
+   "change": "abv",
+   "type": "wine",
+   "from": "ALC. 12.5% BY VOL.",
+   "to": "ALC. 11.5% BY VOL.",
+   "expected": {
+    "overall": "fail",
+    "findings": [
+     "ABV_MISMATCH"
+    ]
+   },
+   "app_overall": "not run (final test)",
+   "app_fields": {},
+   "edited": [
+    "01_brand_front_or_keg_collar.jpg"
+   ]
+  },
+  {
+   "id": "cola_24208001000178__net",
+   "base": "24208001000178",
+   "change": "net",
+   "type": "wine",
+   "from": "1.5 L",
+   "to": "1.0 L",
+   "expected": {
+    "overall": "check",
+    "findings": [
+     "NET_CONTENTS_MISMATCH"
+    ]
+   },
+   "app_overall": "not run (final test)",
+   "app_fields": {},
+   "edited": [
+    "01_brand_front_or_keg_collar.jpg"
+   ]
+  },
+  {
+   "id": "cola_24208001000178__warning_delete",
+   "base": "24208001000178",
+   "change": "warning_delete",
+   "type": "wine",
+   "from": "birth",
+   "to": "",
+   "expected": {
+    "overall": "fail",
+    "findings": [
+     "WARNING_TEXT_ALTERED"
+    ]
+   },
+   "app_overall": "not run (final test)",
+   "app_fields": {},
+   "edited": [
+    "01_brand_front_or_keg_collar.jpg"
+   ]
+  },
+  {
+   "id": "cola_24208001000178__warning_titlecase",
+   "base": "24208001000178",
+   "change": "warning_titlecase",
+   "type": "wine",
+   "from": "GOVERNMENT WARNING",
+   "to": "Government Warning",
+   "expected": {
+    "overall": "fail",
+    "findings": [
+     "WARNING_NOT_CAPS"
+    ]
+   },
+   "app_overall": "not run (final test)",
+   "app_fields": {},
+   "edited": [
+    "01_brand_front_or_keg_collar.jpg"
+   ]
+  },
+  {
+   "id": "cola_24208001000178__warning_word",
+   "base": "24208001000178",
+   "change": "warning_word",
+   "type": "wine",
+   "from": "may",
+   "to": "can",
+   "expected": {
+    "overall": "fail",
+    "findings": [
+     "WARNING_TEXT_ALTERED"
+    ]
+   },
+   "app_overall": "not run (final test)",
+   "app_fields": {},
+   "edited": [
+    "01_brand_front_or_keg_collar.jpg"
+   ]
+  },
+  {
+   "id": "cola_24304001000648__warning_titlecase",
+   "base": "24304001000648",
+   "change": "warning_titlecase",
+   "type": "malt",
+   "from": "GOVERNMENT WARNING",
+   "to": "Government Warning",
+   "expected": {
+    "overall": "fail",
+    "findings": [
+     "WARNING_NOT_CAPS"
+    ]
+   },
+   "app_overall": "not run (final test)",
+   "app_fields": {},
+   "edited": [
+    "01_brand_front_or_keg_collar.jpg"
+   ]
+  },
+  {
+   "id": "cola_25055001000896__abv",
+   "base": "25055001000896",
+   "change": "abv",
+   "type": "wine",
+   "from": "ALC. 11.5% BY VOL.",
+   "to": "ALC. 10.5% BY VOL.",
+   "expected": {
+    "overall": "fail",
+    "findings": [
+     "ABV_MISMATCH"
+    ]
+   },
+   "app_overall": "not run (final test)",
+   "app_fields": {},
+   "edited": [
+    "02_back.jpg"
+   ]
+  },
+  {
+   "id": "cola_25169001000935__net",
+   "base": "25169001000935",
+   "change": "net",
+   "type": "spirits",
+   "from": "100 mL",
+   "to": "200 mL",
+   "expected": {
+    "overall": "fail",
+    "findings": [
+     "NET_CONTENTS_MISMATCH"
+    ]
+   },
+   "app_overall": "not run (final test)",
+   "app_fields": {},
+   "edited": [
+    "02_back.jpg"
+   ]
+  },
+  {
+   "id": "cola_25169001000935__proof",
+   "base": "25169001000935",
+   "change": "proof",
+   "type": "spirits",
+   "from": "80 PROOF",
+   "to": "81 PROOF",
+   "expected": {
+    "overall": "fail",
+    "findings": [
+     "PROOF_MISMATCH"
+    ]
+   },
+   "app_overall": "not run (final test)",
+   "app_fields": {},
+   "edited": [
+    "02_back.jpg"
+   ]
+  },
+  {
+   "id": "cola_25169001000935__warning_delete",
+   "base": "25169001000935",
+   "change": "warning_delete",
+   "type": "spirits",
+   "from": "birth",
+   "to": "",
+   "expected": {
+    "overall": "fail",
+    "findings": [
+     "WARNING_TEXT_ALTERED"
+    ]
+   },
+   "app_overall": "not run (final test)",
+   "app_fields": {},
+   "edited": [
+    "02_back.jpg"
+   ]
+  },
+  {
+   "id": "cola_25169001000935__warning_word",
+   "base": "25169001000935",
+   "change": "warning_word",
+   "type": "spirits",
+   "from": "should",
+   "to": "must",
+   "expected": {
+    "overall": "fail",
+    "findings": [
+     "WARNING_TEXT_ALTERED"
+    ]
+   },
+   "app_overall": "not run (final test)",
+   "app_fields": {},
+   "edited": [
+    "02_back.jpg"
+   ]
+  }
+ ],
+ "dropped_unreadable": [
+  {
+   "id": "cola_23354001000381__warning_word",
+   "base": "23354001000381",
+   "change": "warning_word",
+   "type": "malt",
+   "from": "impairs",
+   "to": "affects",
+   "expected": {
+    "overall": "fail",
+    "findings": [
+     "WARNING_TEXT_ALTERED"
+    ]
+   },
+   "app_overall": "not run (final test)",
+   "app_fields": {},
+   "edited": [
+    "01_brand_front_or_keg_collar.jpg"
+   ],
+   "why": "\"beverages affects your\" is not read"
+  },
+  {
+   "id": "cola_24030001000320__brand_word",
+   "base": "24030001000320",
+   "change": "brand_word",
+   "type": "malt",
+   "from": "Michelob Golden LIGHT",
+   "to": "Michelob Golden LITE",
+   "expected": {
+    "overall": "check",
+    "findings": [
+     "BRAND_NAME_NEAR_MATCH"
+    ]
+   },
+   "app_overall": "not run (final test)",
+   "app_fields": {},
+   "edited": [
+    "01_brand_front_or_keg_collar.jpg"
+   ],
+   "why": "the new brand name is not read"
+  },
+  {
+   "id": "cola_24050001000660__brand_word",
+   "base": "24050001000660",
+   "change": "brand_word",
+   "type": "spirits",
+   "from": "Four Roses",
+   "to": "Four Ravens",
+   "expected": {
+    "overall": "check",
+    "findings": [
+     "BRAND_NAME_MISMATCH"
+    ]
+   },
+   "app_overall": "not run (final test)",
+   "app_fields": {},
+   "edited": [
+    "02_back.jpg"
+   ],
+   "why": "the original brand name is still read on the label"
+  },
+  {
+   "id": "cola_24072001000642__net",
+   "base": "24072001000642",
+   "change": "net",
+   "type": "spirits",
+   "from": "50ml",
+   "to": "52ml",
+   "expected": {
+    "overall": "check",
+    "findings": [
+     "NET_CONTENTS_MISMATCH"
+    ]
+   },
+   "app_overall": "not run (final test)",
+   "app_fields": {},
+   "edited": [
+    "01_brand_front_or_keg_collar.jpg"
+   ],
+   "why": "the new net contents are not read"
+  },
+  {
+   "id": "cola_24096001000861__net",
+   "base": "24096001000861",
+   "change": "net",
+   "type": "wine",
+   "from": "750ML",
+   "to": "720ML",
+   "expected": {
+    "overall": "fail",
+    "findings": [
+     "NET_CONTENTS_MISMATCH"
+    ]
+   },
+   "app_overall": "not run (final test)",
+   "app_fields": {},
+   "edited": [
+    "01_brand_front_or_keg_collar.jpg"
+   ],
+   "why": "the new net contents are not read"
+  },
+  {
+   "id": "cola_24110001000159__abv",
+   "base": "24110001000159",
+   "change": "abv",
+   "type": "spirits",
+   "from": "40% ALC./VOL.",
+   "to": "41% ALC./VOL.",
+   "expected": {
+    "overall": "fail",
+    "findings": [
+     "ABV_MISMATCH"
+    ]
+   },
+   "app_overall": "not run (final test)",
+   "app_fields": {},
+   "edited": [
+    "01_brand_front_or_keg_collar.jpg"
+   ],
+   "why": "the new alcohol content is not read"
+  },
+  {
+   "id": "cola_24155001000862__brand_word",
+   "base": "24155001000862",
+   "change": "brand_word",
+   "type": "spirits",
+   "from": "JIM BEAM",
+   "to": "JIM BEAR",
+   "expected": {
+    "overall": "check",
+    "findings": [
+     "BRAND_NAME_NEAR_MATCH"
+    ]
+   },
+   "app_overall": "not run (final test)",
+   "app_fields": {},
+   "edited": [
+    "01_brand_front_or_keg_collar.jpg"
+   ],
+   "why": "the new brand name is not read"
+  }
+ ],
+ "skipped": [
+  {
+   "id": "cola_23333001000905__abv",
+   "why": "glyphs and letters do not line up"
+  },
+  {
+   "id": "cola_23333001000905__proof",
+   "why": "the reader did not find \"90\" next to proof"
+  },
+  {
+   "id": "cola_23333001000905__brand_number",
+   "why": "no number in the brand name"
+  },
+  {
+   "id": "cola_23333001000905__brand_word",
+   "why": "no brand word found by the reader that has a swap"
+  },
+  {
+   "id": "cola_23354001000381__proof",
+   "why": "no proof on this label"
+  },
+  {
+   "id": "cola_23354001000381__net",
+   "why": "the reader did not find \"1\" next to a unit"
+  },
+  {
+   "id": "cola_23354001000381__brand_number",
+   "why": "no number in the brand name"
+  },
+  {
+   "id": "cola_23354001000381__brand_word",
+   "why": "one-word brand"
+  },
+  {
+   "id": "cola_24008001000455__abv",
+   "why": "no alcohol content to change"
+  },
+  {
+   "id": "cola_24008001000455__proof",
+   "why": "no proof on this label"
+  },
+  {
+   "id": "cola_24008001000455__net",
+   "why": "the reader did not find \"12\" next to a unit"
+  },
+  {
+   "id": "cola_24008001000455__warning_word",
+   "why": "the warning words to change were not found by the reader"
+  },
+  {
+   "id": "cola_24008001000455__warning_delete",
+   "why": "the warning words to delete were not found by the reader"
+  },
+  {
+   "id": "cola_24008001000455__warning_titlecase",
+   "why": "the warning heading was not found by the reader"
+  },
+  {
+   "id": "cola_24008001000455__brand_number",
+   "why": "no number in the brand name"
+  },
+  {
+   "id": "cola_24008001000455__brand_word",
+   "why": "one-word brand"
+  },
+  {
+   "id": "cola_24009001000244__abv",
+   "why": "no font close enough to the label's"
+  },
+  {
+   "id": "cola_24009001000244__brand_number",
+   "why": "no number in the brand name"
+  },
+  {
+   "id": "cola_24009001000244__brand_word",
+   "why": "no brand word found by the reader that has a swap"
+  },
+  {
+   "id": "cola_24012001000381__proof",
+   "why": "no proof on this label"
+  },
+  {
+   "id": "cola_24012001000381__net",
+   "why": "the reader did not find \"1\" next to a unit"
+  },
+  {
+   "id": "cola_24012001000381__warning_word",
+   "why": "the warning words to change were not found by the reader"
+  },
+  {
+   "id": "cola_24012001000381__warning_delete",
+   "why": "the warning words to delete were not found by the reader"
+  },
+  {
+   "id": "cola_24012001000381__warning_titlecase",
+   "why": "the warning heading was not found by the reader"
+  },
+  {
+   "id": "cola_24012001000381__brand_number",
+   "why": "no number in the brand name"
+  },
+  {
+   "id": "cola_24012001000381__brand_word",
+   "why": "no brand word found by the reader that has a swap"
+  },
+  {
+   "id": "cola_24022001000902__proof",
+   "why": "no proof on this label"
+  },
+  {
+   "id": "cola_24022001000902__net",
+   "why": "net contents with several numbers"
+  },
+  {
+   "id": "cola_24022001000902__brand_number",
+   "why": "no number in the brand name"
+  },
+  {
+   "id": "cola_24022001000902__brand_word",
+   "why": "no brand word found by the reader that has a swap"
+  },
+  {
+   "id": "cola_24022001000904__proof",
+   "why": "no proof on this label"
+  },
+  {
+   "id": "cola_24022001000904__net",
+   "why": "net contents with several numbers"
+  },
+  {
+   "id": "cola_24022001000904__warning_delete",
+   "why": "word ink not found"
+  },
+  {
+   "id": "cola_24022001000904__brand_number",
+   "why": "no number in the brand name"
+  },
+  {
+   "id": "cola_24022001000904__brand_word",
+   "why": "one-word brand"
+  },
+  {
+   "id": "cola_24030001000320__abv",
+   "why": "the reader did not find \"4.1\" next to %/alc/vol"
+  },
+  {
+   "id": "cola_24030001000320__proof",
+   "why": "no proof on this label"
+  },
+  {
+   "id": "cola_24030001000320__warning_word",
+   "why": "the warning words to change were not found by the reader"
+  },
+  {
+   "id": "cola_24030001000320__warning_delete",
+   "why": "the warning words to delete were not found by the reader"
+  },
+  {
+   "id": "cola_24030001000320__warning_titlecase",
+   "why": "the warning heading was not found by the reader"
+  },
+  {
+   "id": "cola_24030001000320__brand_number",
+   "why": "no number in the brand name"
+  },
+  {
+   "id": "cola_24050001000660__abv",
+   "why": "the reader did not find \"57.1\" next to %/alc/vol"
+  },
+  {
+   "id": "cola_24050001000660__proof",
+   "why": "no proof on this label"
+  },
+  {
+   "id": "cola_24050001000660__warning_word",
+   "why": "the warning words to change were not found by the reader"
+  },
+  {
+   "id": "cola_24050001000660__warning_delete",
+   "why": "the warning words to delete were not found by the reader"
+  },
+  {
+   "id": "cola_24050001000660__warning_titlecase",
+   "why": "the warning heading was not found by the reader"
+  },
+  {
+   "id": "cola_24050001000660__brand_number",
+   "why": "no number in the brand name"
+  },
+  {
+   "id": "cola_24072001000642__abv",
+   "why": "glyph is not a single digit"
+  },
+  {
+   "id": "cola_24072001000642__proof",
+   "why": "glyph is not a single digit"
+  },
+  {
+   "id": "cola_24072001000642__warning_titlecase",
+   "why": "the warning heading was not found by the reader"
+  },
+  {
+   "id": "cola_24072001000642__brand_number",
+   "why": "no number in the brand name"
+  },
+  {
+   "id": "cola_24072001000642__brand_word",
+   "why": "no brand word found by the reader that has a swap"
+  },
+  {
+   "id": "cola_24078001000871__proof",
+   "why": "no proof on this label"
+  },
+  {
+   "id": "cola_24078001000871__net",
+   "why": "net contents with several numbers"
+  },
+  {
+   "id": "cola_24078001000871__warning_titlecase",
+   "why": "next word not found"
+  },
+  {
+   "id": "cola_24078001000871__brand_number",
+   "why": "no number in the brand name"
+  },
+  {
+   "id": "cola_24078001000871__brand_word",
+   "why": "no brand word found by the reader that has a swap"
+  },
+  {
+   "id": "cola_24096001000861__abv",
+   "why": "glyph is not a single digit"
+  },
+  {
+   "id": "cola_24096001000861__proof",
+   "why": "no proof on this label"
+  },
+  {
+   "id": "cola_24096001000861__brand_number",
+   "why": "no number in the brand name"
+  },
+  {
+   "id": "cola_24096001000861__brand_word",
+   "why": "no brand word found by the reader that has a swap"
+  },
+  {
+   "id": "cola_24110001000159__proof",
+   "why": "no proof on this label"
+  },
+  {
+   "id": "cola_24110001000159__warning_titlecase",
+   "why": "no font close enough to the label's"
+  },
+  {
+   "id": "cola_24110001000159__brand_number",
+   "why": "no number in the brand name"
+  },
+  {
+   "id": "cola_24110001000159__brand_word",
+   "why": "one-word brand"
+  },
+  {
+   "id": "cola_24110001000178__proof",
+   "why": "no proof on this label"
+  },
+  {
+   "id": "cola_24110001000178__brand_number",
+   "why": "no number in the brand name"
+  },
+  {
+   "id": "cola_24110001000178__brand_word",
+   "why": "one-word brand"
+  },
+  {
+   "id": "cola_24145001000557__abv",
+   "why": "the reader did not find \"4.4\" next to %/alc/vol"
+  },
+  {
+   "id": "cola_24145001000557__proof",
+   "why": "no proof on this label"
+  },
+  {
+   "id": "cola_24145001000557__net",
+   "why": "net contents with several numbers"
+  },
+  {
+   "id": "cola_24145001000557__warning_word",
+   "why": "the warning words to change were not found by the reader"
+  },
+  {
+   "id": "cola_24145001000557__warning_delete",
+   "why": "the warning words to delete were not found by the reader"
+  },
+  {
+   "id": "cola_24145001000557__warning_titlecase",
+   "why": "the warning heading was not found by the reader"
+  },
+  {
+   "id": "cola_24145001000557__brand_number",
+   "why": "no number in the brand name"
+  },
+  {
+   "id": "cola_24145001000557__brand_word",
+   "why": "no brand word found by the reader that has a swap"
+  },
+  {
+   "id": "cola_24145001000559__abv",
+   "why": "the reader did not find \"5.4\" next to %/alc/vol"
+  },
+  {
+   "id": "cola_24145001000559__proof",
+   "why": "no proof on this label"
+  },
+  {
+   "id": "cola_24145001000559__net",
+   "why": "net contents with several numbers"
+  },
+  {
+   "id": "cola_24145001000559__warning_word",
+   "why": "the warning words to change were not found by the reader"
+  },
+  {
+   "id": "cola_24145001000559__warning_delete",
+   "why": "the warning words to delete were not found by the reader"
+  },
+  {
+   "id": "cola_24145001000559__warning_titlecase",
+   "why": "the warning heading was not found by the reader"
+  },
+  {
+   "id": "cola_24145001000559__brand_number",
+   "why": "no number in the brand name"
+  },
+  {
+   "id": "cola_24145001000559__brand_word",
+   "why": "no brand word found by the reader that has a swap"
+  },
+  {
+   "id": "cola_24155001000862__net",
+   "why": "the reader did not find \"80\" next to a unit"
+  },
+  {
+   "id": "cola_24155001000862__warning_titlecase",
+   "why": "the warning heading was not found by the reader"
+  },
+  {
+   "id": "cola_24155001000862__brand_number",
+   "why": "no number in the brand name"
+  },
+  {
+   "id": "cola_24208001000178__proof",
+   "why": "no proof on this label"
+  },
+  {
+   "id": "cola_24208001000178__brand_number",
+   "why": "no number in the brand name"
+  },
+  {
+   "id": "cola_24304001000568__abv",
+   "why": "the reader did not find \"8.2\" next to %/alc/vol"
+  },
+  {
+   "id": "cola_24304001000568__proof",
+   "why": "no proof on this label"
+  },
+  {
+   "id": "cola_24304001000568__net",
+   "why": "the reader did not find \"1\" next to a unit"
+  },
+  {
+   "id": "cola_24304001000568__warning_word",
+   "why": "the warning words to change were not found by the reader"
+  },
+  {
+   "id": "cola_24304001000568__warning_delete",
+   "why": "the warning words to delete were not found by the reader"
+  },
+  {
+   "id": "cola_24304001000568__warning_titlecase",
+   "why": "the warning heading was not found by the reader"
+  },
+  {
+   "id": "cola_24304001000568__brand_number",
+   "why": "no number in the brand name"
+  },
+  {
+   "id": "cola_24304001000568__brand_word",
+   "why": "no brand word found by the reader that has a swap"
+  },
+  {
+   "id": "cola_24304001000648__abv",
+   "why": "glyph is not a single digit"
+  },
+  {
+   "id": "cola_24304001000648__proof",
+   "why": "no proof on this label"
+  },
+  {
+   "id": "cola_24304001000648__net",
+   "why": "the reader did not find \"15.5\" next to a unit"
+  },
+  {
+   "id": "cola_24304001000648__brand_number",
+   "why": "no number in the brand name"
+  },
+  {
+   "id": "cola_24304001000648__brand_word",
+   "why": "no brand word found by the reader that has a swap"
+  },
+  {
+   "id": "cola_25055001000896__proof",
+   "why": "no proof on this label"
+  },
+  {
+   "id": "cola_25055001000896__net",
+   "why": "no font close enough to the label's"
+  },
+  {
+   "id": "cola_25055001000896__warning_word",
+   "why": "no font close enough to the label's"
+  },
+  {
+   "id": "cola_25055001000896__warning_titlecase",
+   "why": "no font close enough to the label's"
+  },
+  {
+   "id": "cola_25055001000896__brand_number",
+   "why": "no number in the brand name"
+  },
+  {
+   "id": "cola_25055001000896__brand_word",
+   "why": "one-word brand"
+  },
+  {
+   "id": "cola_25169001000935__abv",
+   "why": "no font close enough to the label's"
+  },
+  {
+   "id": "cola_25169001000935__brand_number",
+   "why": "no number in the brand name"
+  },
+  {
+   "id": "cola_25169001000935__brand_word",
+   "why": "no brand word found by the reader that has a swap"
+  }
+ ],
+ "made_but_left_out_for_balance": [],
+ "rejected_on_review": {
+  "cola_23354001000381__abv": "the second alcohol statement lost its decimal point (38% beside 3.8%)",
+  "cola_23354001000381__warning_delete": "the BREWERY logo was pasted over the warning",
+  "cola_24022001000902__warning_titlecase": "WOMEN on the next line became WEN",
+  "cola_24022001000904__warning_titlecase": "WOMEN SHOULD NOT on the next line was smeared",
+  "cola_24110001000159__warning_word": "the new word sits in a visible grey box",
+  "cola_24208001000178__brand_word": "the rest of the line (S.p.A.) was smeared",
+  "cola_25055001000896__warning_delete": "IMPAIRS YOUR ABILITY on the next line was smeared",
+  "cola_25169001000935__warning_titlecase": "only WARNING was re-cased (GOVERNMENT stayed in capitals)",
+  "cola_24078001000871__warning_word": "the new word is in visibly smaller letters",
+  "cola_24304001000648__warning_word": "the new word is visibly heavier than the line",
+  "cola_24304001000648__warning_delete": "a grey smudge is left where the word was",
+  "cola_24022001000902__warning_delete": "a grey box is left after the closed-up line"
+ }
+}

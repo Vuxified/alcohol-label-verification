@@ -1,0 +1,65 @@
+{
+  "id": "cola_26209001000785__warning_titlecase",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.png",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 2.51,
+      "height_in": 3.19
+    },
+    {
+      "file": "02_brand_front_or_keg_collar.png",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 2.24,
+      "height_in": 1.28
+    },
+    {
+      "file": "03_back.png",
+      "image_type": "Back",
+      "width_in": 1.77,
+      "height_in": 2.6
+    }
+  ],
+  "source": {
+    "type": "tampered",
+    "license": "TTB Public COLA Registry image (public record), with one change planted for testing by tools/make_tampered.py",
+    "ttb_id": "26209001000785",
+    "edited_images": [
+      "03_back.png"
+    ]
+  },
+  "application": {
+    "beverage_type": "spirits",
+    "brand_name": "MOTEADO",
+    "class_type": "MEZCAL ARTESANAL",
+    "abv": 48,
+    "proof": null,
+    "net_contents": "750 ml",
+    "source": "imported",
+    "country_of_origin": "HECHO EN MÉXICO",
+    "name_address": "Bottled by: Productos Michoacanos de Calidad S. de R.L de C.V. Camino Real # 7, C.P. 58414, Coeneo, Michoacán, México. RFC: PMC170626K54 Imported by: Monarka Spirits LLC; Oakland, CA",
+    "label_width_in": 2.51
+  },
+  "printed": {
+    "brand_name": "MOTEADO",
+    "class_type": "MEZCAL ARTESANAL",
+    "abv": 48,
+    "proof": null,
+    "net_contents": "750 ml",
+    "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "warning_heading_bold": false,
+    "warning_cap_mm": null
+  },
+  "expected": {
+    "overall": "fail",
+    "findings": [
+      "WARNING_NOT_CAPS"
+    ]
+  },
+  "provenance": {
+    "base_id": "cola_26209001000785",
+    "change": "warning_titlecase",
+    "from": "GOVERNMENT WARNING",
+    "to": "Government Warning"
+  }
+}

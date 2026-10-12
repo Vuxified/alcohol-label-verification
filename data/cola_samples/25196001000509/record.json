@@ -1,0 +1,29 @@
+{
+  "ttb_id": "25196001000509",
+  "status": "APPROVED",
+  "serial_no": "25PCVK",
+  "class_type_code": "VODKA 80-89 PROOF",
+  "origin_code": "CALIFORNIA",
+  "brand_name": "PACIFIC COAST",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "09/18/2025",
+  "applicant": "DSP-CA-20146 | Pacific Coast Spirits, Hammond & Co, LLC | 404 S COAST HWY | Oceanside,\u00a0CA\u00a092054",
+  "source": "domestic",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.5,
+      "height_in": 5.0
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 3.5,
+      "height_in": 5.0
+    }
+  ]
+}

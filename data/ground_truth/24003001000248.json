@@ -1,0 +1,37 @@
+{
+  "id": "24003001000248",
+  "beverage_type": "spirits",
+  "brand_name": "MIDNIGHT MOON",
+  "class_type": "MOONSHINE CREAM LIQUEUR",
+  "abv": 17,
+  "abv_text": "17% ALC/VOL",
+  "proof": null,
+  "net_contents_text": "750ML",
+  "net_contents_ml": 750,
+  "name_address_text": "PRODUCED AND BOTTLED BY Piedmont Distillers Inc. MADISON, NORTH CAROLINA",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "brand 'MIDNIGHT MOON' set on an arch around a milkshake graphic; 'Moonshake' script and 'PEANUT BUTTER CUP' are fanciful names",
+    "class/type 'MOONSHINE CREAM LIQUEUR' in tiny stacked type beside an arrow",
+    "very small warning text in condensed font on a checkered background",
+    "ABV and net contents in small condensed type below the main panel",
+    "no proof statement",
+    "'REFRIGERATE AFTER OPENIING' misspelling in the nearby care text (not in the warning)",
+    "'U.S.A. BORN' badge text is not a country-of-origin statement",
+    "strip label (02) shows only 'PEANUT BUTTER CUP'"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

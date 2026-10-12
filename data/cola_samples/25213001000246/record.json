@@ -1,0 +1,23 @@
+{
+  "ttb_id": "25213001000246",
+  "status": "APPROVED",
+  "serial_no": "251002",
+  "class_type_code": "VODKA SPECIALTIES",
+  "origin_code": "NEW YORK",
+  "brand_name": "UPSTATE COCKTAILS",
+  "fanciful_name": "ESPRESSO MARTINI",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "09/18/2025",
+  "applicant": "DSP-NY-21090 | Sauvage Beverages LLC | 102-116 BINDERY LN | Charloteville,\u00a0NY\u00a012036",
+  "source": "domestic",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 7.15,
+      "height_in": 3.85
+    }
+  ]
+}

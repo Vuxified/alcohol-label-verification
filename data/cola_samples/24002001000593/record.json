@@ -1,0 +1,35 @@
+{
+  "ttb_id": "24002001000593",
+  "status": "APPROVED",
+  "serial_no": "240001",
+  "class_type_code": "OTHER GIN",
+  "origin_code": "GEORGIA",
+  "brand_name": "ASTRAEUS",
+  "fanciful_name": "DESERT",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/09/2024",
+  "applicant": "DSP-GA-20038 | Distillery of Modern Art, DOMA Ventures, Inc. | 2197 IRVINDALE DR | Chamblee,\u00a0GA\u00a030341",
+  "source": "domestic",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.png",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 4.88,
+      "height_in": 6.49
+    },
+    {
+      "file": "02_neck.png",
+      "image_type": "Neck",
+      "width_in": 4.88,
+      "height_in": 0.76
+    },
+    {
+      "file": "03_back.png",
+      "image_type": "Back",
+      "width_in": 2.12,
+      "height_in": 5.19
+    }
+  ]
+}

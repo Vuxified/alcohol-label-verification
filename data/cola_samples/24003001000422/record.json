@@ -1,0 +1,29 @@
+{
+  "ttb_id": "24003001000422",
+  "status": "APPROVED",
+  "serial_no": "24STHI",
+  "class_type_code": "TABLE FLAVORED WINE",
+  "origin_code": "PENNSYLVANIA",
+  "brand_name": "FOLINO ESTATE WINERY",
+  "fanciful_name": "SANGRIA DI FIORI",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/03/2024",
+  "applicant": "BWN-PA-21059 | Folino Estate Winery, FOLINO ESTATE, LLC | 340 OLD RT 22 | Kutztown,\u00a0PA\u00a019530",
+  "source": "domestic",
+  "product_type": "wine",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 2.0,
+      "height_in": 5.5
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 3.63,
+      "height_in": 4.91
+    }
+  ]
+}

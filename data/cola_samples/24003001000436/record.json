@@ -1,0 +1,29 @@
+{
+  "ttb_id": "24003001000436",
+  "status": "APPROVED",
+  "serial_no": "240026",
+  "class_type_code": "CORDIALS (HERBS & SEEDS)",
+  "origin_code": "CONNECTICUT",
+  "brand_name": "VERITABLE DISTILLERY",
+  "fanciful_name": "MONT-BLANC",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/18/2024",
+  "applicant": "DSP-CT-21038 | Veritable Distillery, Veritable Distillery, LLC | 34 TAUGWONK SPUR RD UNIT 7 & 8 | Stonington,\u00a0CT\u00a006378",
+  "source": "domestic",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 2.0,
+      "height_in": 5.5
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 2.0,
+      "height_in": 5.5
+    }
+  ]
+}

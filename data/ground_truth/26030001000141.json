@@ -1,0 +1,35 @@
+{
+  "id": "26030001000141",
+  "beverage_type": "malt",
+  "brand_name": "SUNSTEAD",
+  "class_type": "LAGER",
+  "abv": 6.5,
+  "abv_text": "6.5% ALC. BY VOL.",
+  "proof": null,
+  "net_contents_text": "1 PINT",
+  "net_contents_ml": 473.18,
+  "name_address_text": "RESPECTFULLY BREWED AND CANNED BY OLD NATION BREWING CO., WILLIAMSTON, MI",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "vertical"
+  },
+  "hard_cases": [
+    "can wrap; warning printed vertically in tiny cream text on green",
+    "no spaces around '(2)' ('DEFECTS.(2)CONSUMPTION')",
+    "deposit state list printed right next to the warning",
+    "'GERMAN-STYLE MAIBOCK' curved under brand; 'LAGER' in the ABV/IBU/net line",
+    "brand 'SUNSTEAD' in arched outline display font; brewery 'OLD NATION BREWING CO.' more prominent",
+    "bottler statement printed vertically"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

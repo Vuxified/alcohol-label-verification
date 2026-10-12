@@ -1,0 +1,29 @@
+{
+  "ttb_id": "25202001000584",
+  "status": "APPROVED",
+  "serial_no": "250043",
+  "class_type_code": "SAKE - IMPORTED FLAVORED",
+  "origin_code": "JAPAN",
+  "brand_name": "HEIWA SHUZOU",
+  "fanciful_name": "KID FUSION",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "09/18/2025",
+  "applicant": "PA-I-21011 | American Spirits Exchange Limited, Redemption Spirits LLC | 408 E 4TH ST STE 209 | Bridgeport,\u00a0PA\u00a019405",
+  "source": "imported",
+  "product_type": "wine",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 5.12,
+      "height_in": 3.03
+    },
+    {
+      "file": "02_other.png",
+      "image_type": "Other",
+      "width_in": 1.58,
+      "height_in": 1.01
+    }
+  ]
+}

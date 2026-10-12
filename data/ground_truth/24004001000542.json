@@ -1,0 +1,35 @@
+{
+  "id": "24004001000542",
+  "beverage_type": "malt",
+  "brand_name": "Premium A Le Coq",
+  "class_type": "Pale Lager",
+  "abv": 4.7,
+  "abv_text": "4.7% ALC/VOL",
+  "proof": null,
+  "net_contents_text": "5.28 GAL",
+  "net_contents_ml": 19986.97,
+  "name_address_text": "PRODUCED AND PACKAGED BY A. Le Coq, Tartu, Estonia Imported by Lime Ventures, Concord CA",
+  "country_of_origin_text": "PRODUCT OF Estonia",
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK  OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "plain text-only keg label",
+    "fanciful 'Premium' printed larger than the brand 'A Le Coq'",
+    "brand case differs from registry (A Le Coq vs A LE COQ); bottler line spells 'A. Le Coq'",
+    "ABV and net contents on one line ('4.7% ALC/VOL 5.28 GAL')",
+    "net contents in gallons only",
+    "double space between 'RISK' and 'OF' in the warning"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

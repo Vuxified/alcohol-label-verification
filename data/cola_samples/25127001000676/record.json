@@ -1,0 +1,29 @@
+{
+  "ttb_id": "25127001000676",
+  "status": "APPROVED",
+  "serial_no": "250002",
+  "class_type_code": "VODKA 80-89 PROOF",
+  "origin_code": "COLORADO",
+  "brand_name": "DUNE VALLEY DISTILLERY",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "06/13/2025",
+  "applicant": "DSP-CO-20116 | Dune Valley Distillery, A. Carbone and Company LLC | 5301 TERRY ST | Mosca,\u00a0CO\u00a081146",
+  "source": "domestic",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.25,
+      "height_in": 4.25
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 3.25,
+      "height_in": 4.25
+    }
+  ]
+}

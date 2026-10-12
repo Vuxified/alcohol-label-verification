@@ -1,0 +1,23 @@
+{
+  "ttb_id": "24003001000392",
+  "status": "APPROVED",
+  "serial_no": "24GNAR",
+  "class_type_code": "STOUT",
+  "origin_code": "PENNSYLVANIA",
+  "brand_name": "LOGYARD BREWING",
+  "fanciful_name": "SHRED THE GNAR",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/05/2024",
+  "applicant": "BR-PA-20303 | Logyard Brewing, Logyard Brewing, LLC | 20 WETMORE AVE | Kane,\u00a0PA\u00a016735",
+  "source": "domestic",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 7.75,
+      "height_in": 4.88
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "ttb_id": "24002001000265",
+  "status": "APPROVED",
+  "serial_no": "240012",
+  "class_type_code": "PORTER",
+  "origin_code": "PENNSYLVANIA",
+  "brand_name": "EVER GRAIN BREWING CO.",
+  "fanciful_name": "BALTIC PORTER",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/04/2024",
+  "applicant": "BR-PA-20149 | Ever Grain Brewing Co., Wild Rabbit Brewing Co., LLC | 4444 CARLISLE PIKE STE C | Camp Hill,\u00a0PA\u00a017011",
+  "source": "domestic",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 5.0,
+      "height_in": 5.0
+    }
+  ]
+}

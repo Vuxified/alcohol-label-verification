@@ -1,0 +1,23 @@
+{
+  "ttb_id": "25133001000272",
+  "status": "APPROVED",
+  "serial_no": "25DBVS",
+  "class_type_code": "DESSERT /PORT/SHERRY/(COOKING) WINE",
+  "origin_code": "AMERICAN",
+  "brand_name": "DEBEVINO WINERY",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "08/12/2025",
+  "applicant": "BWN-CT-21028 | Capital Winery, Musto Wine Grape Company, LLC | 185 MAXIM RD | Hartford,\u00a0CT\u00a006114",
+  "source": "domestic",
+  "product_type": "wine",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 7.0,
+      "height_in": 4.5
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "id": "24006001000067",
+  "beverage_type": "wine",
+  "brand_name": "VACCHIANO VINEYARDS",
+  "class_type": "CHARDONNAY",
+  "abv": 14,
+  "abv_text": "ALC BY VOL 14%",
+  "proof": null,
+  "net_contents_text": "750 ML",
+  "net_contents_ml": 750,
+  "name_address_text": "Produced and Bottled by VACCHIANO VINEYARDS Washington, Warren County, NJ USA",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "02_back.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "ABV split across a table: 'ALC BY VOL' header over '14%' value, between BATCH 001 and DATE 2023 cells",
+    "class shown as varietal 'CHARDONNAY' with appellation 'AMERICAN' (registry class TABLE WHITE WINE)",
+    "net contents only on back label",
+    "'FPO' placeholder over barcode",
+    "'ESTABLISHED 2004 NEW JERSEY' seal and winemaker signature on front"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

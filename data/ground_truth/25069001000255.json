@@ -1,0 +1,36 @@
+{
+  "id": "25069001000255",
+  "beverage_type": "spirits",
+  "brand_name": "RESURGENT",
+  "class_type": "STRAIGHT BOURBON WHISKEY",
+  "abv": 50,
+  "abv_text": "50% ALC/VOL",
+  "proof": 100,
+  "net_contents_text": "750ML",
+  "net_contents_ml": 750,
+  "name_address_text": "BOTTLED & AGED BY BOTANERY BARN DISTILLING ELVERSON, PA",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "02_strip.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "brand in large decorative slanted type with oversized first letter",
+    "class/type on a slanted baseline",
+    "ABV split: large '50%' with small 'ALC/VOL' underneath; proof '100' / 'PROOF' likewise",
+    "second business named prominently (LLOYD WHISKEY BAR, custom cask, with its own address) could be read as name/address",
+    "artwork dimension marks (8.2178\", 3.5\", 1\") around the label",
+    "warning only on the 1-inch strip label",
+    "also 'DISTILLED IN INDIANA' state of distillation"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); not reviewed by the owner"
+}

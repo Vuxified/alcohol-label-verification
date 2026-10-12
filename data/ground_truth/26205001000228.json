@@ -1,0 +1,35 @@
+{
+  "id": "26205001000228",
+  "beverage_type": "malt",
+  "brand_name": "Crazy Turtle",
+  "class_type": "HAZY INDIA PALE ALE",
+  "abv": 6.5,
+  "abv_text": "6.5% ALC/VOL",
+  "proof": null,
+  "net_contents_text": "16 FL OZ ONE PINT (473ML)",
+  "net_contents_ml": 473,
+  "name_address_text": "Brewed and Canned by Clearwater Brewing Company 1700 N. Fort Harrison Ave., Clearwater, FL",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) According to the Surgeon General, woman should not drink alcoholic beverages durring pregnancy because of the risks of birth defects. (2) Consumption of alcoholic beverages impairs your ability to operate machinery, and may cause health problems",
+    "matches_required_text": false,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "vertical"
+  },
+  "hard_cases": [
+    "TTB-approved label whose warning deviates from the legal text: 'woman' for 'women', 'durring', 'risks' for 'risk', 'drive a car or' missing, final period missing",
+    "warning printed vertically in tiny white type over a busy underwater photo",
+    "pixel/display fonts for brand, class, ABV and net contents",
+    "second ABV statement 'ABV 6.5' in description",
+    "net contents in US units with metric in parentheses",
+    "white text on dark busy background"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); not reviewed by the owner"
+}

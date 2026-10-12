@@ -1,0 +1,53 @@
+{
+  "id": "cola_24297001000680__warning_word",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 7.17,
+      "height_in": 5.93
+    }
+  ],
+  "source": {
+    "type": "tampered",
+    "license": "TTB Public COLA Registry image (public record), with one change planted for testing by tools/make_tampered.py",
+    "ttb_id": "24297001000680",
+    "edited_images": [
+      "01_brand_front_or_keg_collar.jpg"
+    ]
+  },
+  "application": {
+    "beverage_type": "malt",
+    "brand_name": "Corona Extra",
+    "class_type": "BEER",
+    "abv": 4.6,
+    "proof": null,
+    "net_contents": "12 FL. OZ.",
+    "source": "imported",
+    "country_of_origin": null,
+    "name_address": "BREWED AND CANNED BY CERVECERIA MODELO, NAVA, MEXICO IMPORTED BY CROWN IMPORTS, CHICAGO, IL",
+    "label_width_in": 7.17
+  },
+  "printed": {
+    "brand_name": "Corona Extra",
+    "class_type": "BEER",
+    "abv": 4.6,
+    "proof": null,
+    "net_contents": "12 FL. OZ.",
+    "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "warning_heading_bold": true,
+    "warning_cap_mm": null
+  },
+  "expected": {
+    "overall": "fail",
+    "findings": [
+      "WARNING_TEXT_ALTERED"
+    ]
+  },
+  "provenance": {
+    "base_id": "cola_24297001000680",
+    "change": "warning_word",
+    "from": "should",
+    "to": "must"
+  }
+}

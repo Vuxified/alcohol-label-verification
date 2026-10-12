@@ -1,0 +1,37 @@
+{
+  "id": "24002001000084",
+  "beverage_type": "malt",
+  "brand_name": "Tranquility",
+  "class_type": "DDH NEW ENGLAND DOUBLE INDIA PALE ALE",
+  "abv": 8,
+  "abv_text": "8% ALC/VOL",
+  "proof": null,
+  "net_contents_text": "1 PINT/16 FL.OZ",
+  "net_contents_ml": 473.18,
+  "name_address_text": "BREWED BY BRANCH AND BLADE BREWING COMPANY 17 BRADCO STREET KEENE, NH 03431",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.png",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "can wrap layout",
+    "brand in thin script ('Tranquility') and again small caps 'TRANQUILITY' top-left",
+    "class also abbreviated 'DDH NEIPA' top-right; registry class is ALE",
+    "light text on dark navy background",
+    "tiny justified warning with wide word gaps",
+    "brewery name 'BRANCH X BLADE BREWING CO.' vertical and dominant, could be taken as brand",
+    "name/address block printed vertically",
+    "barcode placeholder box with printer note"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

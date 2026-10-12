@@ -1,0 +1,65 @@
+{
+  "id": "cola_25020001000666__warning_delete",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.png",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.5,
+      "height_in": 2.3
+    },
+    {
+      "file": "02_neck.png",
+      "image_type": "Neck",
+      "width_in": 5.7,
+      "height_in": 2.6
+    },
+    {
+      "file": "03_strip.png",
+      "image_type": "Strip",
+      "width_in": 2.88,
+      "height_in": 1.25
+    }
+  ],
+  "source": {
+    "type": "tampered",
+    "license": "TTB Public COLA Registry image (public record), with one change planted for testing by tools/make_tampered.py",
+    "ttb_id": "25020001000666",
+    "edited_images": [
+      "03_strip.png"
+    ]
+  },
+  "application": {
+    "beverage_type": "wine",
+    "brand_name": "Santa Margherita",
+    "class_type": "SPARKLING WINE",
+    "abv": null,
+    "proof": null,
+    "net_contents": "CONTENTS 750ML",
+    "source": "imported",
+    "country_of_origin": "PRODUCT OF ITALY",
+    "name_address": "IMPORTED BY: ADVENTURES IN WINE DALY CITY, CA",
+    "label_width_in": 3.5
+  },
+  "printed": {
+    "brand_name": "Santa Margherita",
+    "class_type": "SPARKLING WINE",
+    "abv": null,
+    "proof": null,
+    "net_contents": "CONTENTS 750ML",
+    "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "warning_heading_bold": true,
+    "warning_cap_mm": null
+  },
+  "expected": {
+    "overall": "fail",
+    "findings": [
+      "WARNING_TEXT_ALTERED"
+    ]
+  },
+  "provenance": {
+    "base_id": "cola_25020001000666",
+    "change": "warning_delete",
+    "from": "alcoholic",
+    "to": ""
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "ttb_id": "26196001000791",
+  "status": "APPROVED",
+  "serial_no": "260705",
+  "class_type_code": "TABLE WHITE WINE",
+  "origin_code": "CALIFORNIA",
+  "brand_name": "SKIN CONTACT",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "08/28/2026",
+  "applicant": "BWN-CA-24178 | Matt Crutchfield Wines, LLC | 6450 1ST ST UNIT DKL | Forestville,\u00a0CA\u00a095436",
+  "source": "domestic",
+  "product_type": "wine",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.png",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.75,
+      "height_in": 3.5
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 3.5,
+      "height_in": 3.75
+    }
+  ]
+}

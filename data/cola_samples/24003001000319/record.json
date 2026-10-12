@@ -1,0 +1,23 @@
+{
+  "ttb_id": "24003001000319",
+  "status": "APPROVED",
+  "serial_no": "240001",
+  "class_type_code": "BRANDY",
+  "origin_code": "WASHINGTON",
+  "brand_name": "VSOP AMERICAN BRANDY",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/10/2024",
+  "applicant": "DSP-WA-21101 | The Distillarium, JOSE MIGUEL PURO, LLC | 2305 INDUSTRY LN UNIT B & J | YAKIMA,\u00a0WA\u00a098901",
+  "source": "domestic",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 6.0,
+      "height_in": 2.5
+    }
+  ]
+}

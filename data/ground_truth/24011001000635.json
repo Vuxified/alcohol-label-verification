@@ -1,0 +1,36 @@
+{
+  "id": "24011001000635",
+  "beverage_type": "spirits",
+  "brand_name": "SHORTBARREL",
+  "class_type": "AMERICAN STRAIGHT WHISKEY FINISHED IN RUM BARRELS",
+  "abv": 66.5,
+  "abv_text": "66.5 % ALC/VOL",
+  "proof": 133,
+  "net_contents_text": "750 ML",
+  "net_contents_ml": 750,
+  "name_address_text": "SHORTBARREL BOURBON 6325 McDonouh Dr NW, Norcross, GA 30093",
+  "country_of_origin_text": "USA",
+  "warning": {
+    "present": true,
+    "image_file": "02_back.png",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "brand set diagonally on a black band with a barrel icon replacing the 'O' (SH[barrel]RTBARREL)",
+    "'AGED 9 YEARS' diagonal on red band",
+    "proof and ABV numbers in red, units in black, on one small line ('133 PROOF | 66.5 % ALC/VOL | 750 ML')",
+    "'CONSUMPTION' hyphenated across a line break (CONSUMP- / TION; dehyphenated in transcription)",
+    "warning over a faint grey botanical illustration",
+    "small-caps name/address in dark red; separate company address line (6325 McDonough Dr NW) above the bottler statement",
+    "neck strip splits brand into 'SHORT' and 'BARREL' with 'SINGLE BARREL SERIES'; tiny upside-down 'BOTTLED BY' on strip"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

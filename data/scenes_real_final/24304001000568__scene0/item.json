@@ -1,0 +1,58 @@
+{
+  "id": "24304001000568__scene0",
+  "images": [
+    {
+      "file": "scene_1.jpg",
+      "image_type": "Brand (front) or keg collar (left part)"
+    },
+    {
+      "file": "scene_2.jpg",
+      "image_type": "Brand (front) or keg collar (right part)"
+    }
+  ],
+  "source": {
+    "type": "real label scene (final test)",
+    "license": "public COLA registry label artwork; scene generated for this project"
+  },
+  "application": {
+    "beverage_type": "malt",
+    "brand_name": "DREKKER BREWING CO.",
+    "class_type": "ALE",
+    "abv": 8.2,
+    "proof": null,
+    "net_contents": "CONTENTS 1 PINT (16 FL. OZ)",
+    "source": "domestic",
+    "country_of_origin": null,
+    "name_address": "BREWED AND PACKAGED BY DREKKER BREWING COMPANY, FARGO, ND",
+    "label_width_in": 8.0
+  },
+  "printed": {
+    "brand_name": "DREKKER BREWING CO.",
+    "class_type": "ALE",
+    "abv": 8.2,
+    "proof": null,
+    "net_contents": "CONTENTS 1 PINT (16 FL. OZ)",
+    "warning_text": "GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.",
+    "warning_heading_bold": "yes",
+    "warning_orientation": "vertical",
+    "warning_image": "01_brand_front_or_keg_collar.jpg"
+  },
+  "expected": {
+    "overall": "approved",
+    "findings": [],
+    "warning_misprinted": false,
+    "warning_present": true
+  },
+  "provenance": {
+    "base_item": "cola_24304001000568",
+    "model": "us.stability.stable-image-inpaint-v1:0",
+    "prompt": [
+      "realistic phone photo of a single aluminium drink can held in a person's hand in front of a kitchen, photographed with a phone, the can is already in the picture, sharp focus on the can, shallow depth of field",
+      "realistic phone photo of a single brown glass beer bottle held in a person's hand in front of a kitchen, photographed with a phone, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field"
+    ],
+    "seed": [
+      2930280207,
+      2941722809
+    ]
+  }
+}

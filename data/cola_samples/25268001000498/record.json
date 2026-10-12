@@ -1,0 +1,35 @@
+{
+  "ttb_id": "25268001000498",
+  "status": "APPROVED",
+  "serial_no": "250929",
+  "class_type_code": "SPANISH GRAPE BRANDY FB",
+  "origin_code": "SPAIN",
+  "brand_name": "CARLOS I",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "12/23/2025",
+  "applicant": "FL-I-15158 | MARKETING GLOBAL BRANDS CORP | 1015 PARK CENTRE BLVD SUITE #1 | MIAMI GARDENS,\u00a0FL\u00a033169",
+  "source": "imported",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.98,
+      "height_in": 2.8
+    },
+    {
+      "file": "02_neck.jpg",
+      "image_type": "Neck",
+      "width_in": 4.51,
+      "height_in": 0.78
+    },
+    {
+      "file": "03_back.jpg",
+      "image_type": "Back",
+      "width_in": 3.57,
+      "height_in": 2.69
+    }
+  ]
+}

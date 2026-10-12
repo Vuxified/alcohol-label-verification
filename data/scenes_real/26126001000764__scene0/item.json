@@ -1,0 +1,64 @@
+{
+  "id": "26126001000764__scene0",
+  "images": [
+    {
+      "file": "scene_1.jpg",
+      "image_type": "Brand (front) or keg collar"
+    },
+    {
+      "file": "scene_2.jpg",
+      "image_type": "Other"
+    },
+    {
+      "file": "scene_3.jpg",
+      "image_type": "Back"
+    }
+  ],
+  "source": {
+    "type": "real label scene",
+    "license": "public COLA registry label artwork; scene generated for this project"
+  },
+  "application": {
+    "beverage_type": "spirits",
+    "brand_name": "NORTHERN LIBERTIES WHISKEY Co",
+    "class_type": "STRAIGHT BOURBON WHISKEY FINISHED IN PORT WINE BARRLES WITH AMBURANA & OAK STAVES",
+    "abv": 55.5,
+    "proof": 111,
+    "net_contents": "750mL",
+    "source": "domestic",
+    "country_of_origin": null,
+    "name_address": "PRODUCED AND BOTTLED BY NORTHERN ROW 111 W. MCMICKEN AVE. CINCINNATI, OH",
+    "label_width_in": 2.95
+  },
+  "printed": {
+    "brand_name": "NORTHERN LIBERTIES WHISKEY Co",
+    "class_type": "STRAIGHT BOURBON WHISKEY FINISHED IN PORT WINE BARRLES WITH AMBURANA & OAK STAVES",
+    "abv": 55.5,
+    "proof": 111,
+    "net_contents": "750mL",
+    "warning_text": "GOVERNMENT WARNING: (1) According to the Surgeon general, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.",
+    "warning_heading_bold": "yes",
+    "warning_orientation": "horizontal",
+    "warning_image": "03_back.png"
+  },
+  "expected": {
+    "overall": "approved",
+    "findings": [],
+    "warning_misprinted": false,
+    "warning_present": true
+  },
+  "provenance": {
+    "base_item": "cola_26126001000764",
+    "model": "us.stability.stable-image-inpaint-v1:0",
+    "prompt": [
+      "realistic phone photo of a single clear glass whiskey bottle with amber whiskey inside held in a person's hand in front of a kitchen, photographed with a phone, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+      "realistic phone photo of a single clear glass whiskey bottle with amber whiskey inside standing on a rustic kitchen table by a window, soft daylight, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+      "realistic phone photo of a single clear glass whiskey bottle with amber whiskey inside standing on a rustic kitchen table by a window, soft daylight, the whole bottle visible, paper label on the bottle seen from the back, sharp focus on the label, shallow depth of field"
+    ],
+    "seed": [
+      1063671807,
+      1676688918,
+      345150645
+    ]
+  }
+}

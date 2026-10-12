@@ -1,0 +1,23 @@
+{
+  "ttb_id": "24002001000443",
+  "status": "APPROVED",
+  "serial_no": "24C014",
+  "class_type_code": "MALT LIQUOR",
+  "origin_code": "OREGON",
+  "brand_name": "HARDER DAY",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/04/2024",
+  "applicant": "BR-OR-21323 | Steeplejack Brewing Co, Harder Day Brewing Co. LLC | 2400 NE BROADWAY ST | Portland,\u00a0OR\u00a097232",
+  "source": "domestic",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 8.0,
+      "height_in": 7.0
+    }
+  ]
+}

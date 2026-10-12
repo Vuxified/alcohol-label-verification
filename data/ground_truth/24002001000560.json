@@ -1,0 +1,36 @@
+{
+  "id": "24002001000560",
+  "beverage_type": "wine",
+  "brand_name": "Tepache Sazón",
+  "class_type": "BEBIDA FERMENTADA",
+  "abv": 7,
+  "abv_text": "7% ALC. VOL.",
+  "proof": null,
+  "net_contents_text": "375ML",
+  "net_contents_ml": 375,
+  "name_address_text": "PRODUCED BY TEPACHERIA SAZÓN, SAN FRANCISCO NAYARIT IMPORTED BY BACK BAR PROJECT LLC SEATTLE WA",
+  "country_of_origin_text": "Hecho en México",
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.png",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE THIS MAY CAUSE BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "vertical"
+  },
+  "hard_cases": [
+    "printer's proof sheet with Spanish spec table (PROYECTO, ETIQUETA 375ml, PANTONE 169 C) above the label - '375ml' in the spec block is not the label text",
+    "decorative script brand 'Tepache Sazón' with accent",
+    "class statement only in script ('Pineapple and guava wine with hibiscus'); Spanish 'BEBIDA FERMENTADA' on front",
+    "warning printed vertically in tiny condensed type",
+    "country only in Spanish script ('Hecho en México')",
+    "ABV and net contents at the very bottom edge of the label",
+    "02 is a bottle-cap mockup ('TEPACHE Sazón GUAVA')"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

@@ -1,0 +1,35 @@
+{
+  "ttb_id": "24003001000501",
+  "status": "APPROVED",
+  "serial_no": "242618",
+  "class_type_code": "STOUT",
+  "origin_code": "UKRAINE",
+  "brand_name": "MYKHOLA MILK STOUT",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/05/2024",
+  "applicant": "NJ-I-15303 | DOYNA, LTD. | 801 E LINDEN AVE | LINDEN,\u00a0NJ\u00a007036",
+  "source": "imported",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.11,
+      "height_in": 3.54
+    },
+    {
+      "file": "02_neck.jpg",
+      "image_type": "Neck",
+      "width_in": 2.64,
+      "height_in": 1.39
+    },
+    {
+      "file": "03_back.jpg",
+      "image_type": "Back",
+      "width_in": 2.12,
+      "height_in": 2.87
+    }
+  ]
+}

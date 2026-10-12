@@ -1,0 +1,35 @@
+{
+  "id": "26030001000697",
+  "beverage_type": "wine",
+  "brand_name": "¡HOLA!",
+  "class_type": "SPARKLING GRAPE WINE WITH NATURAL FLAVORS AND BETA CAROTENE.",
+  "abv": 8.5,
+  "abv_text": "ALC 8.5% BY VOL",
+  "proof": null,
+  "net_contents_text": "750ML",
+  "net_contents_ml": 750,
+  "name_address_text": "BOTTLED FOR: BARCELONA BRANDS. S.L - RAMBLA DEL GARRAF. 48-60 - 08812 BARCELONA - SPAIN. IMPORTED BY: The Triton Collection, Roland, AR",
+  "country_of_origin_text": "PRODUCT OF SPAIN",
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "other"
+  },
+  "hard_cases": [
+    "curved (smile-shaped) label artwork; back panel text rotated about 70 degrees",
+    "brand '¡HOLA!' with inverted exclamation mark in distressed stencil type",
+    "tiny condensed grey back-panel print",
+    "ABV, net contents, 'WINE SPECIALTY' and country on one line 'ALC 8.5% BY VOL - 750ML - WINE SPECIALTY'",
+    "neck tag (02_neck.jpg) shows fanciful 'MEDITERRÁNEO SPARKLING SPRITZ ORANGE'",
+    "script 'Spritz' over oranges"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); not reviewed by the owner"
+}

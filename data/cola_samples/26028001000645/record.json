@@ -1,0 +1,23 @@
+{
+  "ttb_id": "26028001000645",
+  "status": "APPROVED",
+  "serial_no": "260002",
+  "class_type_code": "BEER",
+  "origin_code": "NORTH CAROLINA",
+  "brand_name": "JAPANESE LAGER",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/29/2026",
+  "applicant": "BR-NC-21194 | Divine Barrel Brewing, LLC | 3701 N DAVIDSON ST STE 203 | Charlotte,\u00a0NC\u00a028205",
+  "source": "domestic",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 8.0,
+      "height_in": 5.0
+    }
+  ]
+}

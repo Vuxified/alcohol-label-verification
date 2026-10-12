@@ -1,0 +1,23 @@
+{
+  "ttb_id": "26020001000048",
+  "status": "APPROVED",
+  "serial_no": "260014",
+  "class_type_code": "BEER",
+  "origin_code": "NORTH CAROLINA",
+  "brand_name": "SCHNUCKI",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "02/04/2026",
+  "applicant": "BR-NC-21650 | MOBA, Moba Brewing Company LLC | 9600 PLOOF RD SE UNIT 7 | Leland,\u00a0NC\u00a028451",
+  "source": "domestic",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 6.5,
+      "height_in": 6.5
+    }
+  ]
+}

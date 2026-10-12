@@ -1,0 +1,23 @@
+{
+  "ttb_id": "26050001000785",
+  "status": "APPROVED",
+  "serial_no": "260005",
+  "class_type_code": "OTHER SPECIALTIES & PROPRIETARIES",
+  "origin_code": "KENTUCKY",
+  "brand_name": "FIRST CALL",
+  "fanciful_name": "AMERICAN ROCKET POP",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "03/27/2026",
+  "applicant": "DSP-KY-20176 | IJW Whiskey Company, LLC | 1691 ZARING MILL RD BLDG RH1 PW1 BT | Shelbyville,\u00a0KY\u00a040065",
+  "source": "domestic",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.png",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 7.52,
+      "height_in": 4.29
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "id": "cola_24072001000642__warning_delete__scene0",
+  "images": [
+    {
+      "file": "scene_1.jpg",
+      "image_type": "Brand (front) or keg collar (left part)"
+    },
+    {
+      "file": "scene_2.jpg",
+      "image_type": "Brand (front) or keg collar (right part)"
+    },
+    {
+      "file": "scene_3.jpg",
+      "image_type": "Back"
+    }
+  ],
+  "source": {
+    "type": "real label scene (final test)",
+    "license": "public COLA registry label artwork; scene generated for this project"
+  },
+  "application": {
+    "beverage_type": "spirits",
+    "brand_name": "BUFFALO TRACE",
+    "class_type": "LIQUEUR",
+    "abv": 15,
+    "proof": 30,
+    "net_contents": "50ml",
+    "source": "domestic",
+    "country_of_origin": null,
+    "name_address": "BOTTLED BY BUFFALO TRACE DISTILLERY • FRANKFORT, KENTUCKY",
+    "label_width_in": 2.25
+  },
+  "printed": {
+    "brand_name": "BUFFALO TRACE",
+    "class_type": "LIQUEUR",
+    "abv": 15,
+    "proof": 30,
+    "net_contents": "50ml",
+    "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BE-CAUSE OF THE RISK OF BIRTH DEFECTS. (2) CON-SUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MA- CHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "warning_heading_bold": true,
+    "warning_cap_mm": null
+  },
+  "expected": {
+    "overall": "fail",
+    "findings": [
+      "WARNING_TEXT_ALTERED"
+    ]
+  },
+  "provenance": {
+    "base_item": "cola_24072001000642__warning_delete",
+    "model": "us.stability.stable-image-inpaint-v1:0",
+    "prompt": [
+      "realistic phone photo of a single glass spirits bottle standing on a dark wooden bar counter in a dimly lit cocktail bar, warm bokeh lights in the background, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+      "realistic phone photo of a single glass spirits bottle standing on a liquor store shelf, other plain bottles blurred around it, bright store lighting, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+      "realistic phone photo of a single clear glass whiskey bottle with amber whiskey inside standing on a wire shelf inside an open beverage cooler in a convenience store, cold white light, other bottles behind it, the whole bottle visible, paper label on the bottle seen from the back, sharp focus on the label, shallow depth of field"
+    ],
+    "seed": [
+      1762656258,
+      2094267890,
+      3169733930
+    ]
+  }
+}

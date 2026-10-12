@@ -1,0 +1,59 @@
+{
+  "id": "cola_25196001000509__abv",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.5,
+      "height_in": 5.0
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 3.5,
+      "height_in": 5.0
+    }
+  ],
+  "source": {
+    "type": "tampered",
+    "license": "TTB Public COLA Registry image (public record), with one change planted for testing by tools/make_tampered.py",
+    "ttb_id": "25196001000509",
+    "edited_images": [
+      "01_brand_front_or_keg_collar.jpg"
+    ]
+  },
+  "application": {
+    "beverage_type": "spirits",
+    "brand_name": "PACIFIC COAST",
+    "class_type": "VODKA",
+    "abv": 40,
+    "proof": null,
+    "net_contents": "750 ML",
+    "source": "domestic",
+    "country_of_origin": null,
+    "name_address": "Produced and Bottled by PACIFIC COAST SPIRITS Oceanside, California, USA",
+    "label_width_in": 3.5
+  },
+  "printed": {
+    "brand_name": "PACIFIC COAST",
+    "class_type": "VODKA",
+    "abv": 41.0,
+    "proof": null,
+    "net_contents": "750 ML",
+    "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "warning_heading_bold": true,
+    "warning_cap_mm": null
+  },
+  "expected": {
+    "overall": "fail",
+    "findings": [
+      "ABV_MISMATCH"
+    ]
+  },
+  "provenance": {
+    "base_id": "cola_25196001000509",
+    "change": "abv",
+    "from": "40% ALC/VOL",
+    "to": "41% ALC/VOL"
+  }
+}

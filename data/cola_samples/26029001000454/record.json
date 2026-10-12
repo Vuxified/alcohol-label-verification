@@ -1,0 +1,23 @@
+{
+  "ttb_id": "26029001000454",
+  "status": "APPROVED",
+  "serial_no": "26MAYA",
+  "class_type_code": "BEER",
+  "origin_code": "PENNSYLVANIA",
+  "brand_name": "MAYAN LAGER",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/30/2026",
+  "applicant": "BR-PA-20817 | Vibe Haus Indian Plates and Taps, Vibe Haus Brewery LLC | 402 SWEDESFORD RD | Berwyn,\u00a0PA\u00a019312",
+  "source": "domestic",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 6.0,
+      "height_in": 4.0
+    }
+  ]
+}

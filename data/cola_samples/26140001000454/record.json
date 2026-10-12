@@ -1,0 +1,23 @@
+{
+  "ttb_id": "26140001000454",
+  "status": "APPROVED",
+  "serial_no": "260008",
+  "class_type_code": "BEER",
+  "origin_code": "FLORIDA",
+  "brand_name": "DAS BIER",
+  "fanciful_name": "HELLES",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "06/17/2026",
+  "applicant": "BR-FL-21494 | ISLAMORADA BREWING COMPANY LLC, ISLAMORADA BREWING COMPANY LLC | 3200 ST. LUCIE BLVD | FORT PIERCE,\u00a0FL\u00a034946",
+  "source": "domestic",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.png",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 8.1,
+      "height_in": 4.4
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "id": "24001001000029",
+  "beverage_type": "wine",
+  "brand_name": "ELC Cellars",
+  "class_type": "Rosé of Syrah",
+  "abv": 12.6,
+  "abv_text": "Alcohol 12.6% by volume",
+  "proof": null,
+  "net_contents_text": "750 ML",
+  "net_contents_ml": 750,
+  "name_address_text": "Produced and Bottled by Edward Lynne Cellars Camano Island, WA",
+  "country_of_origin_text": "USA",
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "unclear",
+    "whole_warning_bold": "unclear",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "very low-resolution images (197x357 and 273x377 px)",
+    "image labelled 'front' carries the mandatory info; image labelled 'back' is the artwork label",
+    "brand shown as 'EDWARD LYNNE' arc over 'ELC CELLARS' monogram",
+    "warning heading not visibly heavier than the body at this resolution",
+    "'(1)' in warning hard to tell from '(I)'",
+    "appellation 'Yakima Valley, Washington' and vintage 2023"
+  ],
+  "unreadable_fields": [
+    "warning_text"
+  ],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

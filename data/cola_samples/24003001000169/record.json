@@ -1,0 +1,35 @@
+{
+  "ttb_id": "24003001000169",
+  "status": "APPROVED",
+  "serial_no": "240004",
+  "class_type_code": "OTHER GIN",
+  "origin_code": "CALIFORNIA",
+  "brand_name": "BARLEY & BOAR",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/09/2024",
+  "applicant": "DSP-CA-20429 | Barley and Boar Kitchen and Distillery, BU Brewing LLC | 5925 ENTRADA AVE | Atascadero,\u00a0CA\u00a093422",
+  "source": "domestic",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.75,
+      "height_in": 6.0
+    },
+    {
+      "file": "02_strip.jpg",
+      "image_type": "Strip",
+      "width_in": 3.75,
+      "height_in": 1.25
+    },
+    {
+      "file": "03_back.jpg",
+      "image_type": "Back",
+      "width_in": 3.0,
+      "height_in": 3.5
+    }
+  ]
+}

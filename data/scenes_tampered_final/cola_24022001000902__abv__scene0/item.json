@@ -1,0 +1,57 @@
+{
+  "id": "cola_24022001000902__abv__scene0",
+  "images": [
+    {
+      "file": "scene_1.jpg",
+      "image_type": "Brand (front) or keg collar"
+    },
+    {
+      "file": "scene_2.jpg",
+      "image_type": "Back"
+    }
+  ],
+  "source": {
+    "type": "real label scene (final test)",
+    "license": "public COLA registry label artwork; scene generated for this project"
+  },
+  "application": {
+    "beverage_type": "wine",
+    "brand_name": "JOSH CELLARS",
+    "class_type": "CABERNET SAUVIGNON",
+    "abv": 14.5,
+    "proof": null,
+    "net_contents": null,
+    "source": "domestic",
+    "country_of_origin": null,
+    "name_address": "BLENDED & BOTTLED BY JOSEPH CARR, HOPLAND, CA",
+    "label_width_in": 4.24
+  },
+  "printed": {
+    "brand_name": "JOSH CELLARS",
+    "class_type": "CABERNET SAUVIGNON",
+    "abv": 15.5,
+    "proof": null,
+    "net_contents": null,
+    "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "warning_heading_bold": true,
+    "warning_cap_mm": null
+  },
+  "expected": {
+    "overall": "fail",
+    "findings": [
+      "ABV_MISMATCH"
+    ]
+  },
+  "provenance": {
+    "base_item": "cola_24022001000902__abv",
+    "model": "us.stability.stable-image-inpaint-v1:0",
+    "prompt": [
+      "realistic phone photo of a single dark green glass wine bottle standing on a liquor store shelf, other plain bottles blurred around it, bright store lighting, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+      "realistic phone photo of a single clear glass white wine bottle standing on a dark wooden bar counter in a dimly lit cocktail bar, warm bokeh lights in the background, the whole bottle visible, paper label on the bottle seen from the back, sharp focus on the label, shallow depth of field"
+    ],
+    "seed": [
+      1906060898,
+      2393928898
+    ]
+  }
+}

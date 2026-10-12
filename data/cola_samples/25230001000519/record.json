@@ -1,0 +1,23 @@
+{
+  "ttb_id": "25230001000519",
+  "status": "APPROVED",
+  "serial_no": "251313",
+  "class_type_code": "ALE",
+  "origin_code": "OREGON",
+  "brand_name": "HOP VALLEY BREWING CO.",
+  "fanciful_name": "VIVA HOP VEGAS",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "09/18/2025",
+  "applicant": "BR-OR-21385 | Widmer Brothers Brewing Company, American Beverage Crafts, LLC | 929 N RUSSELL ST | Portland,\u00a0OR\u00a097227",
+  "source": "domestic",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 8.25,
+      "height_in": 4.5
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "id": "24001001000012",
+  "beverage_type": "malt",
+  "brand_name": "Mountain State Brewing Co.",
+  "class_type": "BORN & BREWED",
+  "abv": null,
+  "abv_text": "null",
+  "proof": null,
+  "net_contents_text": "5 US GALLONS",
+  "net_contents_ml": null,
+  "name_address_text": "1 NELSON BLVD | THOMAS, WV",
+  "country_of_origin_text": "USA",
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "keg collar (round label) with month/day date ring around rim",
+    "brand and class handwritten in pen ('Fasnacht Festive Ale') on a fill-in line",
+    "ABV blank: '____ % ALC/VOL' line left empty, so no ABV on label",
+    "multiple net contents checkboxes, two marked (5 and 15.5 US GALLONS), no single mL value",
+    "checkbox list of other house beers with their own ABVs could be mistaken for this product's ABV",
+    "white text on black band",
+    "second keg-pressure WARNINGS block could be confused with the government warning",
+    "no 'Brewed by' phrase; name comes from logo 'MOUNTAIN STATE BREWING CO.' and address line"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

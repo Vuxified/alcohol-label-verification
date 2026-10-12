@@ -1,0 +1,34 @@
+{
+  "id": "26029001000454",
+  "beverage_type": "malt",
+  "brand_name": "Vibe Haus",
+  "class_type": "MEXICAN STYLE LAGER",
+  "abv": 5,
+  "abv_text": "5.0% VOL. ALC.",
+  "proof": null,
+  "net_contents_text": "5.28GAL",
+  "net_contents_ml": 19986.97,
+  "name_address_text": "BREWED & KEGGED BY Vibe Haus BREWERY BERWYN, PA",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": false,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "warning heading has no colon ('GOVERNMENT WARNING' in a letter-spaced box), so it does not match the required text",
+    "brewery name 'Vibe Haus' in large display type above the brand",
+    "ABV and net contents in one small boxed line ('5.0% VOL. ALC. 5.28GAL')",
+    "net contents in gallons only, no space before 'GAL'",
+    "very large image (6600x5100)"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

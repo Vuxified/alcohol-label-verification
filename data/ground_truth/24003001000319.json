@@ -1,0 +1,34 @@
+{
+  "id": "24003001000319",
+  "beverage_type": "spirits",
+  "brand_name": "The Distillarium American Brandy",
+  "class_type": "Imperium Luxury Brandy",
+  "abv": 40,
+  "abv_text": "40% ALC/VOL",
+  "proof": null,
+  "net_contents_text": "375ML",
+  "net_contents_ml": 375,
+  "name_address_text": "DISTILLED AND BOTTLED BY THE DISTILLARIUM, YAKIMA, WA",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": false,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "yes",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "MISPRINTED WARNING: comma missing after 'MACHINERY' ('OPERATE MACHINERY AND MAY CAUSE')",
+    "registry brand 'VSOP AMERICAN BRANDY' is printed as 'V·S·O·P' over 'AMERICAN' over 'BRANDY'; 'THE DISTILLARIUM' is the largest name on the label",
+    "whole warning set in one bold condensed display face, orange on textured paper",
+    "ABV and net contents in one small line ('375ML | 40% ALC/VOL')",
+    "no proof stated"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

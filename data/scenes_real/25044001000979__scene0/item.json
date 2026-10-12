@@ -1,0 +1,58 @@
+{
+  "id": "25044001000979__scene0",
+  "images": [
+    {
+      "file": "scene_1.jpg",
+      "image_type": "Brand (front) or keg collar"
+    },
+    {
+      "file": "scene_2.jpg",
+      "image_type": "Back"
+    }
+  ],
+  "source": {
+    "type": "real label scene",
+    "license": "public COLA registry label artwork; scene generated for this project"
+  },
+  "application": {
+    "beverage_type": "wine",
+    "brand_name": "ANTICHE CANTINE MARCHESI DI SCUDERI",
+    "class_type": "WHITE WINE",
+    "abv": 14,
+    "proof": null,
+    "net_contents": "750 ml",
+    "source": "imported",
+    "country_of_origin": "PRODUCT OF ITALY",
+    "name_address": "PRODUCED AND BOTTLED BY: ANTICHE CANTINE MARCHESI DI SCUDERI SARL CONTRADA GUINNAZZI MIRABELLA ECLANO (AV) ITALY IMPORTED BY: GULFCOAST TRADE LCC 13848 LUNA DR NAPLES FL 34109",
+    "label_width_in": 3.11
+  },
+  "printed": {
+    "brand_name": "ANTICHE CANTINE MARCHESI DI SCUDERI",
+    "class_type": "WHITE WINE",
+    "abv": 14,
+    "proof": null,
+    "net_contents": "750 ml",
+    "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "warning_heading_bold": "yes",
+    "warning_orientation": "horizontal",
+    "warning_image": "01_brand_front_or_keg_collar.png"
+  },
+  "expected": {
+    "overall": "approved",
+    "findings": [],
+    "warning_misprinted": false,
+    "warning_present": true
+  },
+  "provenance": {
+    "base_item": "cola_25044001000979",
+    "model": "us.stability.stable-image-inpaint-v1:0",
+    "prompt": [
+      "realistic phone photo of a single dark green glass wine bottle standing on a wire shelf inside an open beverage cooler in a convenience store, cold white light, other bottles behind it, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+      "realistic phone photo of a single dark green glass wine bottle standing on a dark wooden bar counter in a dimly lit cocktail bar, warm bokeh lights in the background, the whole bottle visible, paper label on the bottle seen from the back, sharp focus on the label, shallow depth of field"
+    ],
+    "seed": [
+      1205479552,
+      1312774716
+    ]
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "id": "24145001000557__scene0",
+  "images": [
+    {
+      "file": "scene_1.jpg",
+      "image_type": "Brand (front) or keg collar"
+    }
+  ],
+  "source": {
+    "type": "real label scene (final test)",
+    "license": "public COLA registry label artwork; scene generated for this project"
+  },
+  "application": {
+    "beverage_type": "malt",
+    "brand_name": "Modelo Especial",
+    "class_type": "IMPORTED BEER",
+    "abv": 4.4,
+    "proof": null,
+    "net_contents": "24 FL. OZ. (710 ml) 1 PINT 8 FL. OZ.",
+    "source": "imported",
+    "country_of_origin": "BREWED IN MEXICO",
+    "name_address": "BREWED AND CANNED BY CERVECERIA MODELO, NAVA, MEXICO • IMPORTED BY CROWN IMPORTS, CHICAGO, IL",
+    "label_width_in": 9.0
+  },
+  "printed": {
+    "brand_name": "Modelo Especial",
+    "class_type": "IMPORTED BEER",
+    "abv": 4.4,
+    "proof": null,
+    "net_contents": "24 FL. OZ. (710 ml) 1 PINT 8 FL. OZ.",
+    "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "warning_heading_bold": "yes",
+    "warning_orientation": "vertical",
+    "warning_image": "01_brand_front_or_keg_collar.jpg"
+  },
+  "expected": {
+    "overall": "approved",
+    "findings": [],
+    "warning_misprinted": false,
+    "warning_present": true
+  },
+  "provenance": {
+    "base_item": "cola_24145001000557",
+    "model": "us.stability.stable-image-inpaint-v1:0",
+    "prompt": [
+      "realistic phone photo of a single aluminium drink can standing on a dark wooden bar counter in a dimly lit cocktail bar, warm bokeh lights in the background, the can is already in the picture, sharp focus on the can, shallow depth of field"
+    ],
+    "seed": [
+      1396668028
+    ]
+  }
+}

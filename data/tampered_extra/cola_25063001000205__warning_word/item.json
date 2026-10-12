@@ -1,0 +1,59 @@
+{
+  "id": "cola_25063001000205__warning_word",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 4.5,
+      "height_in": 6.0
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 6.0,
+      "height_in": 4.0
+    }
+  ],
+  "source": {
+    "type": "tampered",
+    "license": "TTB Public COLA Registry image (public record), with one change planted for testing by tools/make_tampered.py",
+    "ttb_id": "25063001000205",
+    "edited_images": [
+      "02_back.jpg"
+    ]
+  },
+  "application": {
+    "beverage_type": "spirits",
+    "brand_name": "ŻUBRÓWKA",
+    "class_type": "BISON GRASS FLAVORED VODKA",
+    "abv": 40,
+    "proof": null,
+    "net_contents": "1 L",
+    "source": "imported",
+    "country_of_origin": "PRODUCT OF POLAND",
+    "name_address": "Imported by: The Brand Collective, Miami, FL Produced by: CEDC International Sp. Z o.o. ul. Kowanowska 48, 64-600 Oborniki, Poland Branch Polmos Białystok",
+    "label_width_in": 4.5
+  },
+  "printed": {
+    "brand_name": "ŻUBRÓWKA",
+    "class_type": "BISON GRASS FLAVORED VODKA",
+    "abv": 40,
+    "proof": null,
+    "net_contents": "1 L",
+    "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "warning_heading_bold": true,
+    "warning_cap_mm": null
+  },
+  "expected": {
+    "overall": "fail",
+    "findings": [
+      "WARNING_TEXT_ALTERED"
+    ]
+  },
+  "provenance": {
+    "base_id": "cola_25063001000205",
+    "change": "warning_word",
+    "from": "should",
+    "to": "must"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "id": "cola_24093001000856__brand_word",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 4.92,
+      "height_in": 3.31
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 4.92,
+      "height_in": 3.31
+    }
+  ],
+  "source": {
+    "type": "tampered",
+    "license": "TTB Public COLA Registry image (public record), with one change planted for testing by tools/make_tampered.py",
+    "ttb_id": "24093001000856",
+    "edited_images": [
+      "01_brand_front_or_keg_collar.jpg"
+    ]
+  },
+  "application": {
+    "beverage_type": "wine",
+    "brand_name": "KIM CRAWFORD",
+    "class_type": "ROSÉ WINE",
+    "abv": 12.5,
+    "proof": null,
+    "net_contents": "750ML",
+    "source": "imported",
+    "country_of_origin": "PRODUCT OF FRANCE",
+    "name_address": "IMPORTED BY CONSTELLATION IMPORTS, RUTHERFORD, CA BOTTLED BY CONSTELLATION IMPORTS, ACAMPO, CA",
+    "label_width_in": 4.92
+  },
+  "printed": {
+    "brand_name": "KIM CRANFORD",
+    "class_type": "ROSÉ WINE",
+    "abv": 12.5,
+    "proof": null,
+    "net_contents": "750ML",
+    "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "warning_heading_bold": true,
+    "warning_cap_mm": null
+  },
+  "expected": {
+    "overall": "check",
+    "findings": [
+      "BRAND_NAME_NEAR_MATCH"
+    ]
+  },
+  "provenance": {
+    "base_id": "cola_24093001000856",
+    "change": "brand_word",
+    "from": "KIM CRAWFORD",
+    "to": "KIM CRANFORD"
+  }
+}

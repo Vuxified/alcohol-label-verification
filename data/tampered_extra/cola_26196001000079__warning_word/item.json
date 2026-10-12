@@ -1,0 +1,59 @@
+{
+  "id": "cola_26196001000079__warning_word",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.png",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 2.76,
+      "height_in": 1.65
+    },
+    {
+      "file": "02_back.png",
+      "image_type": "Back",
+      "width_in": 6.1,
+      "height_in": 3.54
+    }
+  ],
+  "source": {
+    "type": "tampered",
+    "license": "TTB Public COLA Registry image (public record), with one change planted for testing by tools/make_tampered.py",
+    "ttb_id": "26196001000079",
+    "edited_images": [
+      "01_brand_front_or_keg_collar.png"
+    ]
+  },
+  "application": {
+    "beverage_type": "wine",
+    "brand_name": "L’Orée",
+    "class_type": "WHITE WINE",
+    "abv": 13,
+    "proof": null,
+    "net_contents": "750mL",
+    "source": "imported",
+    "country_of_origin": "PRODUCT OF FRANCE",
+    "name_address": "Estate Bottled by EARL Vignoble Ponty in Fronsac (33126 France) IMPORTED BY BBR IMPORTS, HOUSTON TX 77098",
+    "label_width_in": 2.76
+  },
+  "printed": {
+    "brand_name": "L’Orée",
+    "class_type": "WHITE WINE",
+    "abv": 13,
+    "proof": null,
+    "net_contents": "750mL",
+    "warning_text": "GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.",
+    "warning_heading_bold": true,
+    "warning_cap_mm": null
+  },
+  "expected": {
+    "overall": "fail",
+    "findings": [
+      "WARNING_TEXT_ALTERED"
+    ]
+  },
+  "provenance": {
+    "base_id": "cola_26196001000079",
+    "change": "warning_word",
+    "from": "may",
+    "to": "can"
+  }
+}

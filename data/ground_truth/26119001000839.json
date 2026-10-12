@@ -1,0 +1,35 @@
+{
+  "id": "26119001000839",
+  "beverage_type": "wine",
+  "brand_name": "Le Anfore di Elena Casadei",
+  "class_type": "TREBBIANO",
+  "abv": 12,
+  "abv_text": "Alc. by 12% Vol.",
+  "proof": null,
+  "net_contents_text": "Net. Cont. 750 ml",
+  "net_contents_ml": 750,
+  "name_address_text": "Estate bottled by Castello del Trebbio S.A.A.S. Pontassieve (FI). Italia Imported by UVA VIVA IMPORTS, Brewster, NY",
+  "country_of_origin_text": "PRODUCT OF ITALY",
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DUR-ING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MA-CHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "registry brand 'LEANFORE ELENA CASADEI' printed as 'LE ANFORE' (gold logo) with a signature, and 'Le Anfore di Elena Casadei' on the right panel",
+    "class/type: varietal 'TREBBIANO' on front; 'DRY WHITE WINE' and 'Toscana Trebbiano' also printed",
+    "grey text on grey shaded panel",
+    "condensed warning with line-break hyphens (DUR-ING, MA-CHINERY)",
+    "wide wrap-around label in one image",
+    "country statement joined to class line ('DRY WHITE WINE - PRODUCT OF ITALY')"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); not reviewed by the owner"
+}

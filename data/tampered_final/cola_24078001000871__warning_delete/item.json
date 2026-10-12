@@ -1,0 +1,71 @@
+{
+  "id": "cola_24078001000871__warning_delete",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.png",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 4.5,
+      "height_in": 4.5
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 3.0,
+      "height_in": 6.0
+    },
+    {
+      "file": "03_other.jpg",
+      "image_type": "Other",
+      "width_in": 5.0,
+      "height_in": 6.0
+    },
+    {
+      "file": "04_other.jpg",
+      "image_type": "Other",
+      "width_in": 1.0,
+      "height_in": 6.0
+    }
+  ],
+  "source": {
+    "type": "tampered",
+    "license": "TTB Public COLA Registry image (public record), with one change planted for testing by tools/make_tampered.py",
+    "ttb_id": "24078001000871",
+    "edited_images": [
+      "01_brand_front_or_keg_collar.png"
+    ]
+  },
+  "application": {
+    "beverage_type": "wine",
+    "brand_name": "Wine Connoisseur",
+    "class_type": "ROSÉ WINE",
+    "abv": 12,
+    "proof": null,
+    "net_contents": "BOX CONTAINING 250ML (2 X 125ML WINE SACHETS)",
+    "source": "domestic",
+    "country_of_origin": null,
+    "name_address": "PRODUCED AND BOTTLED BY WINE CONNOISSEUR, SANTA ROSA, CA.",
+    "label_width_in": 4.5
+  },
+  "printed": {
+    "brand_name": "Wine Connoisseur",
+    "class_type": "ROSÉ WINE",
+    "abv": 12,
+    "proof": null,
+    "net_contents": "BOX CONTAINING 250ML (2 X 125ML WINE SACHETS)",
+    "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "warning_heading_bold": true,
+    "warning_cap_mm": null
+  },
+  "expected": {
+    "overall": "fail",
+    "findings": [
+      "WARNING_TEXT_ALTERED"
+    ]
+  },
+  "provenance": {
+    "base_id": "cola_24078001000871",
+    "change": "warning_delete",
+    "from": "alcoholic",
+    "to": ""
+  }
+}

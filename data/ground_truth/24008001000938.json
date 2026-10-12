@@ -1,0 +1,36 @@
+{
+  "id": "24008001000938",
+  "beverage_type": "spirits",
+  "brand_name": "ARBITRARIO",
+  "class_type": "Artisanal Mezcal Joven",
+  "abv": 42,
+  "abv_text": "42% Alc. Vol.",
+  "proof": 84,
+  "net_contents_text": "Net Cont. 750 ml",
+  "net_contents_ml": 750,
+  "name_address_text": "Imported by: Mexican Distillates Global Hardeeville, SC Produced and bottled by Arbitrario, Destilados Mexicanos SA de CV ADM 211217 JG2 Julian Adame 50, El Molino Cuajimalpa de Morelos, CDMX, C.P. 05240",
+  "country_of_origin_text": "PRODUCT OF MEXICO",
+  "warning": {
+    "present": true,
+    "image_file": "02_back.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "net contents and ABV/proof printed vertically along the left and right edges of the front",
+    "proof printed with a degree sign ('84° Proof')",
+    "'ESPADIN' (fanciful name) in large brush lettering competes with the class 'ARTISANAL MEZCAL'",
+    "back label mixes English, Spanish and Zapotec text",
+    "country of origin given twice ('PRODUCT OF MEXICO' / 'HECHO EN MEXICO')",
+    "heading in a different, condensed font from the warning body; justified with wide gaps",
+    "neck label (03) is a pattern only, no text"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

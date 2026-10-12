@@ -1,0 +1,65 @@
+{
+  "id": "cola_24100001000829__warning_titlecase",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 2.63,
+      "height_in": 3.44
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 3.31,
+      "height_in": 3.5
+    },
+    {
+      "file": "03_other.jpg",
+      "image_type": "Other",
+      "width_in": 1.0,
+      "height_in": 1.0
+    }
+  ],
+  "source": {
+    "type": "tampered",
+    "license": "TTB Public COLA Registry image (public record), with one change planted for testing by tools/make_tampered.py",
+    "ttb_id": "24100001000829",
+    "edited_images": [
+      "01_brand_front_or_keg_collar.jpg"
+    ]
+  },
+  "application": {
+    "beverage_type": "malt",
+    "brand_name": "Corona Extra",
+    "class_type": "BEER",
+    "abv": 4.5,
+    "proof": null,
+    "net_contents": "35.5 cl / 355 ml 12 FL. OZ.",
+    "source": "imported",
+    "country_of_origin": "Produced in Mexico",
+    "name_address": "Imported by: In Puerto Rico, BALLESTER HERMANOS, INC. SAN JUAN, P.R.",
+    "label_width_in": 2.63
+  },
+  "printed": {
+    "brand_name": "Corona Extra",
+    "class_type": "BEER",
+    "abv": 4.5,
+    "proof": null,
+    "net_contents": "35.5 cl / 355 ml 12 FL. OZ.",
+    "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "warning_heading_bold": true,
+    "warning_cap_mm": null
+  },
+  "expected": {
+    "overall": "fail",
+    "findings": [
+      "WARNING_NOT_CAPS"
+    ]
+  },
+  "provenance": {
+    "base_id": "cola_24100001000829",
+    "change": "warning_titlecase",
+    "from": "GOVERNMENT WARNING",
+    "to": "Government Warning"
+  }
+}

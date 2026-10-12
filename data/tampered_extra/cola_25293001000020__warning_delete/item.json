@@ -1,0 +1,59 @@
+{
+  "id": "cola_25293001000020__warning_delete",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.png",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 12.0,
+      "height_in": 4.4
+    },
+    {
+      "file": "02_back.png",
+      "image_type": "Back",
+      "width_in": 3.3,
+      "height_in": 4.2
+    }
+  ],
+  "source": {
+    "type": "tampered",
+    "license": "TTB Public COLA Registry image (public record), with one change planted for testing by tools/make_tampered.py",
+    "ttb_id": "25293001000020",
+    "edited_images": [
+      "02_back.png"
+    ]
+  },
+  "application": {
+    "beverage_type": "wine",
+    "brand_name": "Nereides collection",
+    "class_type": "Dry White Wine",
+    "abv": 13.2,
+    "proof": null,
+    "net_contents": "750 ml",
+    "source": "imported",
+    "country_of_origin": "WINE of GREECE",
+    "name_address": "Exclusively Imported by: Cava Spiliadis Collection Pawtucket, RI Produced and bottled by Nisyros Wines s.a. Nisyros 85303, Greece",
+    "label_width_in": 12.0
+  },
+  "printed": {
+    "brand_name": "Nereides collection",
+    "class_type": "Dry White Wine",
+    "abv": 13.2,
+    "proof": null,
+    "net_contents": "750 ml",
+    "warning_text": "GOVERMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.",
+    "warning_heading_bold": true,
+    "warning_cap_mm": null
+  },
+  "expected": {
+    "overall": "fail",
+    "findings": [
+      "WARNING_TEXT_ALTERED"
+    ]
+  },
+  "provenance": {
+    "base_id": "cola_25293001000020",
+    "change": "warning_delete",
+    "from": "health",
+    "to": ""
+  }
+}

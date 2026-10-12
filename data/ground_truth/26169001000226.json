@@ -1,0 +1,36 @@
+{
+  "id": "26169001000226",
+  "beverage_type": "wine",
+  "brand_name": "VINAKOPER",
+  "class_type": "Slovenian Rosé Wine",
+  "abv": 11.0,
+  "abv_text": "Alc. 11,0 % by vol.",
+  "proof": null,
+  "net_contents_text": "750 ml",
+  "net_contents_ml": 750,
+  "name_address_text": "Produced by Vinakoper d.o.o. - Koper, Slovenija Imported and distributed by: HISTRIA LLC - CARSON, CA USA",
+  "country_of_origin_text": "PRODUCT OF SLOVENIJA",
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "registry brand 'VINA KOPER' printed as one word 'VINAKOPER' (white logo on pink) and 'Vinakoper d.o.o.'",
+    "image files appear swapped (01 'brand front' is the back label, 02 'back' is the front)",
+    "busy floral background",
+    "comma decimal and space before % in ABV ('11,0 %')",
+    "country in Slovenian spelling ('SLOVENIJA')",
+    "class/type also as 'ROSÉ' (accented) headline and white script 'Rosé' on front",
+    "justified warning with wide word spacing"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); not reviewed by the owner"
+}

@@ -1,0 +1,59 @@
+{
+  "id": "cola_26114001000381__net",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.png",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 5.0,
+      "height_in": 5.0
+    },
+    {
+      "file": "02_back.png",
+      "image_type": "Back",
+      "width_in": 5.0,
+      "height_in": 5.0
+    }
+  ],
+  "source": {
+    "type": "tampered",
+    "license": "TTB Public COLA Registry image (public record), with one change planted for testing by tools/make_tampered.py",
+    "ttb_id": "26114001000381",
+    "edited_images": [
+      "01_brand_front_or_keg_collar.png"
+    ]
+  },
+  "application": {
+    "beverage_type": "spirits",
+    "brand_name": "10TH STREET",
+    "class_type": "American Single Malt Whisky",
+    "abv": 46,
+    "proof": null,
+    "net_contents": "50ML",
+    "source": "domestic",
+    "country_of_origin": null,
+    "name_address": "Bottled by: Bluegrass Bottling, Lancaster, Kentucky",
+    "label_width_in": 5.0
+  },
+  "printed": {
+    "brand_name": "10TH STREET",
+    "class_type": "American Single Malt Whisky",
+    "abv": 46,
+    "proof": null,
+    "net_contents": "52ML",
+    "warning_text": "GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.",
+    "warning_heading_bold": true,
+    "warning_cap_mm": null
+  },
+  "expected": {
+    "overall": "check",
+    "findings": [
+      "NET_CONTENTS_MISMATCH"
+    ]
+  },
+  "provenance": {
+    "base_id": "cola_26114001000381",
+    "change": "net",
+    "from": "50ML",
+    "to": "52ML"
+  }
+}

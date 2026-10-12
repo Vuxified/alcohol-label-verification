@@ -1,0 +1,35 @@
+{
+  "id": "24003001000169",
+  "beverage_type": "spirits",
+  "brand_name": "BARLEY & BOAR",
+  "class_type": "GIN",
+  "abv": 44,
+  "abv_text": "44% ALC. BY VOL.",
+  "proof": 88,
+  "net_contents_text": "750 ML",
+  "net_contents_ml": 750,
+  "name_address_text": "DISTILLED AND BOTTLED BY BARLEY & BOAR ATASCADERO, CA • USA",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "03_back.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "class 'GIN' in blackletter-style blue type inside a wreath, small relative to brand",
+    "ABV, net contents and proof only on a separate strip label ('750 ML | 88 PROOF' share a panel)",
+    "printer's proof frames with purple size captions ('3.75\"x6\" FRONT LABEL' etc.) around each image",
+    "name/address in blackletter-style font; 'HANDCRAFTED IN ATASCADERO, CA' on a curved ribbon",
+    "warning heading on its own line, body sentence case split into two paragraphs",
+    "'100% CORN NEUTRAL SPIRITS' commodity statement on back"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

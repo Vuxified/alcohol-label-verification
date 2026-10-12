@@ -1,0 +1,35 @@
+{
+  "id": "26082001000827",
+  "beverage_type": "spirits",
+  "brand_name": "BIG APPLE",
+  "class_type": "APPLE FLAVORED VODKA",
+  "abv": 35,
+  "abv_text": "35% Alc. by Vol.",
+  "proof": null,
+  "net_contents_text": "750ml",
+  "net_contents_ml": 750,
+  "name_address_text": "Produced and Bottled By Godhead Inc. Farmingdale NY 11735",
+  "country_of_origin_text": "MADE IN THE USA",
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery and may cause health problems.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "vertical"
+  },
+  "hard_cases": [
+    "warning rotated 90 degrees along the left edge, next to a rotated barcode",
+    "warning body in sentence case",
+    "gold-on-red embossed-style display brand on a ribbon",
+    "'MADE IN THE USA' only as part of a flag logo",
+    "no proof statement",
+    "marketing slogans ('NEW YORK'S FINEST', 'Nothing Artificial') near the class/type"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

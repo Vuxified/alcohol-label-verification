@@ -1,0 +1,35 @@
+{
+  "id": "24003001000718",
+  "beverage_type": "spirits",
+  "brand_name": "J.F. HADEN'S",
+  "class_type": "ESPRESSO LIQUEUR",
+  "abv": 20,
+  "abv_text": "ALCOHOL 20% BY VOLUME",
+  "proof": 40,
+  "net_contents_text": "750ML",
+  "net_contents_ml": 750,
+  "name_address_text": "PRODUCED & BOTTLED BY TROPICAL DISTILLERS IN MIAMI, FL",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "02_back.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "proof, net contents and ABV run together in one faint light-grey line ('40 PROOF-750ML-ALCOHOL 20% BY VOLUME')",
+    "class 'ESPRESSO LIQUEUR' on a banner; registry class is COFFEE (CAFE) LIQUEUR",
+    "brand with drop-shadow letters and tight periods ('J.F.')",
+    "'AMERICA'S CRAFT LIQUEUR COMPANY' slogan arched at top",
+    "bottler 'Tropical Distillers' differs from applicant name 'Tropical Distillery LLC'",
+    "cream warning text on brown, uneven letter spacing"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

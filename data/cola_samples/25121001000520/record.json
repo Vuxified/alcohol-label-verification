@@ -1,0 +1,23 @@
+{
+  "ttb_id": "25121001000520",
+  "status": "APPROVED",
+  "serial_no": "250014",
+  "class_type_code": "TABLE WHITE WINE",
+  "origin_code": "AMERICAN",
+  "brand_name": "GREAT LAKES BAY DISTILLERY LLC",
+  "fanciful_name": "DRY MOSCATO",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "06/13/2025",
+  "applicant": "BWN-MI-21563 | Great Lakes Bay Distillery LLC | 1985 N MELITA RD | Sterling,\u00a0MI\u00a048659",
+  "source": "domestic",
+  "product_type": "wine",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.5,
+      "height_in": 5.0
+    }
+  ]
+}

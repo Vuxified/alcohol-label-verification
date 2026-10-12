@@ -1,0 +1,59 @@
+{
+  "id": "cola_25169001000935__net",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 1.62,
+      "height_in": 2.5
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 1.62,
+      "height_in": 2.5
+    }
+  ],
+  "source": {
+    "type": "tampered",
+    "license": "TTB Public COLA Registry image (public record), with one change planted for testing by tools/make_tampered.py",
+    "ttb_id": "25169001000935",
+    "edited_images": [
+      "02_back.jpg"
+    ]
+  },
+  "application": {
+    "beverage_type": "spirits",
+    "brand_name": "Tito's Handmade",
+    "class_type": "VODKA",
+    "abv": 40,
+    "proof": 80,
+    "net_contents": "100 mL",
+    "source": "domestic",
+    "country_of_origin": null,
+    "name_address": "DISTILLED & BOTTLED BY FIFTH GENERATION, INC. AUSTIN, TX.",
+    "label_width_in": 1.62
+  },
+  "printed": {
+    "brand_name": "Tito's Handmade",
+    "class_type": "VODKA",
+    "abv": 40,
+    "proof": 80,
+    "net_contents": "200 mL",
+    "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "warning_heading_bold": true,
+    "warning_cap_mm": null
+  },
+  "expected": {
+    "overall": "fail",
+    "findings": [
+      "NET_CONTENTS_MISMATCH"
+    ]
+  },
+  "provenance": {
+    "base_id": "cola_25169001000935",
+    "change": "net",
+    "from": "100 mL",
+    "to": "200 mL"
+  }
+}

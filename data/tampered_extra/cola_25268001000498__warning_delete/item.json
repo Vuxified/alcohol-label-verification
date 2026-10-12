@@ -1,0 +1,65 @@
+{
+  "id": "cola_25268001000498__warning_delete",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.98,
+      "height_in": 2.8
+    },
+    {
+      "file": "02_neck.jpg",
+      "image_type": "Neck",
+      "width_in": 4.51,
+      "height_in": 0.78
+    },
+    {
+      "file": "03_back.jpg",
+      "image_type": "Back",
+      "width_in": 3.57,
+      "height_in": 2.69
+    }
+  ],
+  "source": {
+    "type": "tampered",
+    "license": "TTB Public COLA Registry image (public record), with one change planted for testing by tools/make_tampered.py",
+    "ttb_id": "25268001000498",
+    "edited_images": [
+      "03_back.jpg"
+    ]
+  },
+  "application": {
+    "beverage_type": "spirits",
+    "brand_name": "CARLOS·I",
+    "class_type": "BRANDY DE JEREZ",
+    "abv": 40.3,
+    "proof": null,
+    "net_contents": "700ml",
+    "source": "imported",
+    "country_of_origin": "PRODUCT OF SPAIN",
+    "name_address": "IMPORTED BY: MARKETING GLOBAL BRANDS CORP.,MIAMI GARDENS FL. PRODUCED AND BOTTLED BY BODEGAS OSBORNE S.A.U. C/ FERNÁN CABALLERO, 7- 11500 EL PUERTO DE SANTA MARÍA CÁDIZ - SPAIN - RE-197-CA",
+    "label_width_in": 3.98
+  },
+  "printed": {
+    "brand_name": "CARLOS·I",
+    "class_type": "BRANDY DE JEREZ",
+    "abv": 40.3,
+    "proof": null,
+    "net_contents": "700ml",
+    "warning_text": "GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.",
+    "warning_heading_bold": true,
+    "warning_cap_mm": null
+  },
+  "expected": {
+    "overall": "fail",
+    "findings": [
+      "WARNING_TEXT_ALTERED"
+    ]
+  },
+  "provenance": {
+    "base_id": "cola_25268001000498",
+    "change": "warning_delete",
+    "from": "health",
+    "to": ""
+  }
+}

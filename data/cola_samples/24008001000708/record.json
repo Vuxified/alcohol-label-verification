@@ -1,0 +1,35 @@
+{
+  "ttb_id": "24008001000708",
+  "status": "APPROVED",
+  "serial_no": "24CABL",
+  "class_type_code": "TEQUILA FB",
+  "origin_code": "MEXICO",
+  "brand_name": "CAMPORO",
+  "fanciful_name": "BLANCO",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/09/2024",
+  "applicant": "WA-I-21117 | Tequilas USA, International Seafoods Plus, LLC | 12308 NE 56TH ST UNIT 1607 | Vancouver,\u00a0WA\u00a098682",
+  "source": "imported",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.54,
+      "height_in": 3.35
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 3.54,
+      "height_in": 3.35
+    },
+    {
+      "file": "03_strip.png",
+      "image_type": "Strip",
+      "width_in": 6.7,
+      "height_in": 0.6
+    }
+  ]
+}

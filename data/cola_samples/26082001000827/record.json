@@ -1,0 +1,23 @@
+{
+  "ttb_id": "26082001000827",
+  "status": "APPROVED",
+  "serial_no": "263BAV",
+  "class_type_code": "VODKA - OTHER FLAVORED",
+  "origin_code": "NEW YORK",
+  "brand_name": "BIG APPLE",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "04/28/2026",
+  "applicant": "DSP-NY-21315 | Mars 11, Godhead Inc. | 59-4 CENTRAL AVE | Farmingdale,\u00a0NY\u00a011735",
+  "source": "domestic",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 6.0,
+      "height_in": 4.0
+    }
+  ]
+}

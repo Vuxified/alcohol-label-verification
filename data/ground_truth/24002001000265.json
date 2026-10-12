@@ -1,0 +1,36 @@
+{
+  "id": "24002001000265",
+  "beverage_type": "malt",
+  "brand_name": "EVER GRAIN BREWING CO.",
+  "class_type": "Baltic style Porter",
+  "abv": 9,
+  "abv_text": "9.0 % Alc. / Vol.",
+  "proof": null,
+  "net_contents_text": "[ ] 5.17 U.S. GALLONS [ ] 15.5 U.S. GALLONS",
+  "net_contents_ml": null,
+  "name_address_text": "BREWED AND PACKAGED BY EVER GRAIN BREWING COMPANY, 4444 CARLISLE PIKE, CAMP HILL, PA 17011",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "yes",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "round keg collar with month/day ring",
+    "net contents is a checkbox pair and neither box (5.17 / 15.5 U.S. GALLONS) is checked, so net_contents_ml is null",
+    "ABV number '9.0' in a box with '% Alc. / Vol.' on the line below",
+    "white bold condensed warning on orange band",
+    "keg 'WARNINGS:' block beside the government warning",
+    "bottler statement curved around the rim",
+    "cut-off printer text at the bottom-left edge"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

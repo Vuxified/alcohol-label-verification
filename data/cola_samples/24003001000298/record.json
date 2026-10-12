@@ -1,0 +1,23 @@
+{
+  "ttb_id": "24003001000298",
+  "status": "APPROVED",
+  "serial_no": "240015",
+  "class_type_code": "STOUT",
+  "origin_code": "NEW JERSEY",
+  "brand_name": "MR. DEMPSEY",
+  "fanciful_name": "OATMEAL STOUT",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "01/05/2024",
+  "applicant": "BR-NJ-21171 | Twin Lights, twin lights brewing llc | 4057 ASBURY AVE UNIT 15 | Tinton Falls,\u00a0NJ\u00a007753",
+  "source": "domestic",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.png",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 8.0,
+      "height_in": 5.0
+    }
+  ]
+}

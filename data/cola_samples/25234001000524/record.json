@@ -1,0 +1,23 @@
+{
+  "ttb_id": "25234001000524",
+  "status": "APPROVED",
+  "serial_no": "250017",
+  "class_type_code": "MALT BEVERAGES SPECIALITIES - FLAVORED",
+  "origin_code": "MARYLAND",
+  "brand_name": "FLYING FISH BREWING COMPANY",
+  "fanciful_name": "FRIED ICE CREAM STOUT",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "09/19/2025",
+  "applicant": "BR-MD-GUI-15000 | GUILFORD BREWING, LLC | 1611 GUILFORD | BALTIMORE,\u00a0MD\u00a021202",
+  "source": "domestic",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.png",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 7.0,
+      "height_in": 7.0
+    }
+  ]
+}

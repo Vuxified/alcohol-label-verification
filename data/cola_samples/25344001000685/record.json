@@ -1,0 +1,23 @@
+{
+  "ttb_id": "25344001000685",
+  "status": "APPROVED",
+  "serial_no": "250210",
+  "class_type_code": "MALT BEVERAGES SPECIALITIES",
+  "origin_code": "COLOMBIA",
+  "brand_name": "BRUDER",
+  "fanciful_name": "PLUM BRITISH ALE",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "02/05/2026",
+  "applicant": "FL-I-22428 | MGL IMPORT & EXPORT INC | 11700 NW 102ND RD STE 2 | Medley,\u00a0FL\u00a033178",
+  "source": "imported",
+  "product_type": "malt",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 5.04,
+      "height_in": 2.95
+    }
+  ]
+}

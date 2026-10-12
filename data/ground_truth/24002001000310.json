@@ -1,0 +1,35 @@
+{
+  "id": "24002001000310",
+  "beverage_type": "spirits",
+  "brand_name": "Wicked DOLPHIN",
+  "class_type": "Handcrafted Florida Rum infused with Locally Roasted Cold Brew Coffee and Natural Flavors",
+  "abv": 30,
+  "abv_text": "30% ALC/VOL.",
+  "proof": 60,
+  "net_contents_text": "1L",
+  "net_contents_ml": 1000,
+  "name_address_text": "Distilled and bottled by Cape Spirits, Inc. Cape Coral, Florida",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "02_back.png",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "yes",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "brand split across a distressed script 'Wicked' and serif 'DOLPHIN'",
+    "class/type is a statement of composition in small italic text ('Handcrafted Florida Rum infused with ... Natural Flavors'); 'COLD BREW COFFEE' on the ribbon is the fanciful name",
+    "ABV, proof and net contents stacked in small type at the bottom of the front",
+    "white text on dark grey textured background",
+    "whole warning set in bold condensed type",
+    "Florida state silhouette behind the back-label story text"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

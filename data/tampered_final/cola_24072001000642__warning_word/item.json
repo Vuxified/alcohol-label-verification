@@ -1,0 +1,59 @@
+{
+  "id": "cola_24072001000642__warning_word",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 2.25,
+      "height_in": 1.5
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 1.63,
+      "height_in": 1.51
+    }
+  ],
+  "source": {
+    "type": "tampered",
+    "license": "TTB Public COLA Registry image (public record), with one change planted for testing by tools/make_tampered.py",
+    "ttb_id": "24072001000642",
+    "edited_images": [
+      "02_back.jpg"
+    ]
+  },
+  "application": {
+    "beverage_type": "spirits",
+    "brand_name": "BUFFALO TRACE",
+    "class_type": "LIQUEUR",
+    "abv": 15,
+    "proof": 30,
+    "net_contents": "50ml",
+    "source": "domestic",
+    "country_of_origin": null,
+    "name_address": "BOTTLED BY BUFFALO TRACE DISTILLERY • FRANKFORT, KENTUCKY",
+    "label_width_in": 2.25
+  },
+  "printed": {
+    "brand_name": "BUFFALO TRACE",
+    "class_type": "LIQUEUR",
+    "abv": 15,
+    "proof": 30,
+    "net_contents": "50ml",
+    "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BE-CAUSE OF THE RISK OF BIRTH DEFECTS. (2) CON-SUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MA- CHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "warning_heading_bold": true,
+    "warning_cap_mm": null
+  },
+  "expected": {
+    "overall": "fail",
+    "findings": [
+      "WARNING_TEXT_ALTERED"
+    ]
+  },
+  "provenance": {
+    "base_id": "cola_24072001000642",
+    "change": "warning_word",
+    "from": "should",
+    "to": "must"
+  }
+}

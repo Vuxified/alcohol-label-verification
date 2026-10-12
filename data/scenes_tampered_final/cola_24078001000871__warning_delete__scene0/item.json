@@ -1,0 +1,69 @@
+{
+  "id": "cola_24078001000871__warning_delete__scene0",
+  "images": [
+    {
+      "file": "scene_1.jpg",
+      "image_type": "Brand (front) or keg collar"
+    },
+    {
+      "file": "scene_2.jpg",
+      "image_type": "Back"
+    },
+    {
+      "file": "scene_3.jpg",
+      "image_type": "Other"
+    },
+    {
+      "file": "scene_4.jpg",
+      "image_type": "Other"
+    }
+  ],
+  "source": {
+    "type": "real label scene (final test)",
+    "license": "public COLA registry label artwork; scene generated for this project"
+  },
+  "application": {
+    "beverage_type": "wine",
+    "brand_name": "Wine Connoisseur",
+    "class_type": "ROSÉ WINE",
+    "abv": 12,
+    "proof": null,
+    "net_contents": "BOX CONTAINING 250ML (2 X 125ML WINE SACHETS)",
+    "source": "domestic",
+    "country_of_origin": null,
+    "name_address": "PRODUCED AND BOTTLED BY WINE CONNOISSEUR, SANTA ROSA, CA.",
+    "label_width_in": 4.5
+  },
+  "printed": {
+    "brand_name": "Wine Connoisseur",
+    "class_type": "ROSÉ WINE",
+    "abv": 12,
+    "proof": null,
+    "net_contents": "BOX CONTAINING 250ML (2 X 125ML WINE SACHETS)",
+    "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "warning_heading_bold": true,
+    "warning_cap_mm": null
+  },
+  "expected": {
+    "overall": "fail",
+    "findings": [
+      "WARNING_TEXT_ALTERED"
+    ]
+  },
+  "provenance": {
+    "base_item": "cola_24078001000871__warning_delete",
+    "model": "us.stability.stable-image-inpaint-v1:0",
+    "prompt": [
+      "realistic phone photo of a single clear glass white wine bottle standing on a dark wooden bar counter in a dimly lit cocktail bar, warm bokeh lights in the background, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+      "realistic phone photo of a single dark glass red wine bottle standing on a liquor store shelf, other plain bottles blurred around it, bright store lighting, the whole bottle visible, paper label on the bottle seen from the back, sharp focus on the label, shallow depth of field",
+      "realistic phone photo of a single dark glass red wine bottle standing on a dark wooden bar counter in a dimly lit cocktail bar, warm bokeh lights in the background, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+      "realistic phone photo of a single clear glass white wine bottle standing on a wire shelf inside an open beverage cooler in a convenience store, cold white light, other bottles behind it, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field"
+    ],
+    "seed": [
+      2986718662,
+      2696469797,
+      1996251225,
+      72202537
+    ]
+  }
+}

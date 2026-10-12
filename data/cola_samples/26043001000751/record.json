@@ -1,0 +1,35 @@
+{
+  "ttb_id": "26043001000751",
+  "status": "APPROVED",
+  "serial_no": "260002",
+  "class_type_code": "WHISKY SPECIALTIES",
+  "origin_code": "TEXAS",
+  "brand_name": "STILL AUSTIN",
+  "fanciful_name": "DISTILLERY EXCLUSIVE",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "03/27/2026",
+  "applicant": "DSP-TX-20165 | Texas Spirits Bottling Company, Still Austin Distillery LLC | 17612 FM 969 | Manor,\u00a0TX\u00a078653",
+  "source": "domestic",
+  "product_type": "spirits",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 3.55,
+      "height_in": 5.55
+    },
+    {
+      "file": "02_neck.jpg",
+      "image_type": "Neck",
+      "width_in": 6.5,
+      "height_in": 0.92
+    },
+    {
+      "file": "03_back.jpg",
+      "image_type": "Back",
+      "width_in": 3.03,
+      "height_in": 3.94
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "id": "25234001000524",
+  "beverage_type": "malt",
+  "brand_name": "Flying Fish Brewing Company",
+  "class_type": "Imperial Stout Brewed With Vanilla Bean, Cacao Nibs and Cinnamon",
+  "abv": null,
+  "abv_text": null,
+  "proof": null,
+  "net_contents_text": "5.16 U.S. GALLONS",
+  "net_contents_ml": 19532.72,
+  "name_address_text": "Brewed and Canned by Flying Fish Brewing Company, Baltimore, MD and Under Special Agreement Pennsauken, NJ",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.png",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAG-ES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "keg collar (round) with curved month/day ring text",
+    "brand 'Flying Fish Brewing Company' printed in full only in the brewer line; logo ring reads 'FLYING FISH BREWING CO.' in curved text",
+    "stray placeholder text 'Enter paragraph text' overprints the warning at 'BEVERAG-ES'",
+    "font's digit 1 is a plain stroke, so '(1)' looks like '(I)'",
+    "net contents is a checkbox list: '5.16 U.S. GALLONS' checked, '15.5 U.S. GALLONS' unchecked",
+    "no alcohol content on the label",
+    "class/type in tiny serif under fanciful 'FRIED ICE CREAM STOUT'",
+    "US units only (gallons)"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); not reviewed by the owner"
+}

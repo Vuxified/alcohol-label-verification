@@ -1,0 +1,53 @@
+{
+  "id": "syn_malt_07_net_metric_only__scene0",
+  "images": [
+    {
+      "file": "scene.jpg",
+      "image_type": "Brand (front)"
+    },
+    {
+      "file": "back.png",
+      "image_type": "Back",
+      "width_in": 4.0,
+      "height_in": 2.03
+    }
+  ],
+  "source": {
+    "type": "synthetic scene",
+    "license": "generated for this project"
+  },
+  "application": {
+    "beverage_type": "malt",
+    "brand_name": "Stone's Tom",
+    "class_type": "Stout",
+    "abv": 5.0,
+    "proof": null,
+    "net_contents": "16 FL. OZ.",
+    "source": "domestic",
+    "country_of_origin": "United States",
+    "name_address": "Brewed and bottled by Stone's Brewing Co., Bardstown, KY",
+    "label_width_in": 4.0
+  },
+  "printed": {
+    "brand_name": "Stone's Tom",
+    "class_type": "Stout",
+    "abv": 5.0,
+    "proof": null,
+    "net_contents": "473 mL",
+    "warning_text": "GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.",
+    "warning_heading_bold": true,
+    "warning_cap_mm": 2.4
+  },
+  "expected": {
+    "overall": "check",
+    "findings": [
+      "NET_CONTENTS_UNITS"
+    ]
+  },
+  "provenance": {
+    "base_item": "syn_malt_07_net_metric_only",
+    "model": "us.stability.stable-image-inpaint-v1:0",
+    "prompt": "realistic phone photo of a single brown glass beer bottle standing on a liquor store shelf, other plain bottles blurred around it, bright store lighting, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field",
+    "seed": 312601467
+  }
+}

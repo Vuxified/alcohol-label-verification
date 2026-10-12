@@ -1,0 +1,52 @@
+{
+  "id": "24304001000648__scene0",
+  "images": [
+    {
+      "file": "scene_1.jpg",
+      "image_type": "Brand (front) or keg collar"
+    }
+  ],
+  "source": {
+    "type": "real label scene (final test)",
+    "license": "public COLA registry label artwork; scene generated for this project"
+  },
+  "application": {
+    "beverage_type": "malt",
+    "brand_name": "DREKKER BREWING COMPANY",
+    "class_type": "DOUBLE INDIA PALE ALE",
+    "abv": 8.2,
+    "proof": null,
+    "net_contents": "Net Contents: [X] 15.5 U.S. Gallons [ ] 5.16 U.S. Gallons",
+    "source": "domestic",
+    "country_of_origin": null,
+    "name_address": "BREWED AND KEGGED BY DREKKER BREWING COMPANY 1666 1st Avenue North Fargo, ND 58102",
+    "label_width_in": 7.0
+  },
+  "printed": {
+    "brand_name": "DREKKER BREWING COMPANY",
+    "class_type": "DOUBLE INDIA PALE ALE",
+    "abv": 8.2,
+    "proof": null,
+    "net_contents": "Net Contents: [X] 15.5 U.S. Gallons [ ] 5.16 U.S. Gallons",
+    "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "warning_heading_bold": "yes",
+    "warning_orientation": "horizontal",
+    "warning_image": "01_brand_front_or_keg_collar.jpg"
+  },
+  "expected": {
+    "overall": "approved",
+    "findings": [],
+    "warning_misprinted": false,
+    "warning_present": true
+  },
+  "provenance": {
+    "base_item": "cola_24304001000648",
+    "model": "us.stability.stable-image-inpaint-v1:0",
+    "prompt": [
+      "realistic phone photo of a single brown glass beer bottle standing on a dark wooden bar counter in a dimly lit cocktail bar, warm bokeh lights in the background, the whole bottle visible, paper label on the bottle, sharp focus on the label, shallow depth of field"
+    ],
+    "seed": [
+      728566283
+    ]
+  }
+}

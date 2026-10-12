@@ -1,0 +1,36 @@
+{
+  "id": "24010001000366",
+  "beverage_type": "spirits",
+  "brand_name": "NOMAD",
+  "class_type": "OUTLAND WHISKY",
+  "abv": 43.1,
+  "abv_text": "43.1% ALC./VOL.",
+  "proof": null,
+  "net_contents_text": "700 ML",
+  "net_contents_ml": 700,
+  "name_address_text": "IMPORTED BY: GONZALEZ BYASS USA. CHICAGO, ILLINOIS.",
+  "country_of_origin_text": "PRODUCT OF SPAIN",
+  "warning": {
+    "present": true,
+    "image_file": "03_back.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "other"
+  },
+  "hard_cases": [
+    "back label text set on a diagonal band (rotated about 8 degrees), including the warning",
+    "class split: 'OUTLAND WHISKY' (letter-spaced, mixed weight) on front/back and 'SINGLE MALT' on 02 neck/band; registry fanciful 'SINGLE MALT'",
+    "'BORN IN IRELAND' could be mistaken for country of origin; label states 'PRODUCT OF SPAIN'",
+    "outlined/inline display font for brand 'NOMAD'",
+    "light cream text on dark green, gold text on orange",
+    "700 mL (non-750) net contents",
+    "fully justified condensed warning with wide word gaps"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

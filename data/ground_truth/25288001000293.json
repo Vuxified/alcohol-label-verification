@@ -1,0 +1,36 @@
+{
+  "id": "25288001000293",
+  "beverage_type": "wine",
+  "brand_name": "VIN NOÉ",
+  "class_type": "Red Wine",
+  "abv": 11,
+  "abv_text": "11% Alc/Vol",
+  "proof": null,
+  "net_contents_text": "Net Content 750ML",
+  "net_contents_ml": 750,
+  "name_address_text": "IMPORTED BY Terrestrial Wine Co. – Manhasset, NY",
+  "country_of_origin_text": "Product of France",
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.png",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "horizontal"
+  },
+  "hard_cases": [
+    "accented brand 'VIN NOÉ' (registry 'VIN NOE'), also letter-spaced in the logo",
+    "ABV, net contents, class and country run together on bullet-separated lines",
+    "importer line set at an angle next to a circular 'TERRESTRIAL' logo",
+    "'IMPORTED BY' set on a slant",
+    "no producer/bottler line",
+    "second image is artwork only (pepper drawing), no text",
+    "condensed warning type"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); not reviewed by the owner"
+}

@@ -1,0 +1,59 @@
+{
+  "id": "cola_25232001000621__warning_word",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 2.75,
+      "height_in": 5.74
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 2.75,
+      "height_in": 4.33
+    }
+  ],
+  "source": {
+    "type": "tampered",
+    "license": "TTB Public COLA Registry image (public record), with one change planted for testing by tools/make_tampered.py",
+    "ttb_id": "25232001000621",
+    "edited_images": [
+      "02_back.jpg"
+    ]
+  },
+  "application": {
+    "beverage_type": "wine",
+    "brand_name": "PULENTA ESTATE",
+    "class_type": "MERLOT",
+    "abv": 14.5,
+    "proof": null,
+    "net_contents": "750 ML",
+    "source": "imported",
+    "country_of_origin": "PRODUCT OF ARGENTINA",
+    "name_address": "PRODUCED AND BOTTLED BY BODEGAS Y VIÑEDOS HUGO Y EDUARDO PULENTA S.A. EST. Nº B-72540. RUTA PROV. Nº 86 KM 6.8 AGRELO, LUJÁN DE CUYO, MENDOZA, ARGENTINA IMPORTED BY MEXCOR TEXAS LLC HOUSTON TX 77070",
+    "label_width_in": 2.75
+  },
+  "printed": {
+    "brand_name": "PULENTA ESTATE",
+    "class_type": "MERLOT",
+    "abv": 14.5,
+    "proof": null,
+    "net_contents": "750 ML",
+    "warning_text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "warning_heading_bold": true,
+    "warning_cap_mm": null
+  },
+  "expected": {
+    "overall": "fail",
+    "findings": [
+      "WARNING_TEXT_ALTERED"
+    ]
+  },
+  "provenance": {
+    "base_id": "cola_25232001000621",
+    "change": "warning_word",
+    "from": "impairs",
+    "to": "affects"
+  }
+}

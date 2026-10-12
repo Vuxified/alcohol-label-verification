@@ -1,0 +1,36 @@
+{
+  "id": "26127001001114",
+  "beverage_type": "spirits",
+  "brand_name": "BRENTFORD",
+  "class_type": "SPIRITS DISTILLED FROM GRAIN",
+  "abv": 57,
+  "abv_text": "57% ALC/VOL",
+  "proof": 114,
+  "net_contents_text": "750 ML",
+  "net_contents_ml": 750,
+  "name_address_text": "DISTILLED & BOTTLED BY BRENTFORD DISTILLERS, LLC - DECATUR, IL",
+  "country_of_origin_text": null,
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.jpg",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "vertical"
+  },
+  "hard_cases": [
+    "white text on black",
+    "decorative display font brand 'BRENTFORD' with 'Craft' script below",
+    "fanciful 'WHEATED MASH SPIRITS' larger than class",
+    "class printed in quotes ('\"SPIRITS DISTILLED FROM GRAIN\"') and again as 'DISTILLED FROM GRAIN'",
+    "proof and ABV in separate circles",
+    "warning printed vertically at right edge in condensed type",
+    "vertical story text on left edge"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); not reviewed by the owner"
+}

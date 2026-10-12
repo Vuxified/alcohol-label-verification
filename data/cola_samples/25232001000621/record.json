@@ -1,0 +1,29 @@
+{
+  "ttb_id": "25232001000621",
+  "status": "APPROVED",
+  "serial_no": "25PEME",
+  "class_type_code": "DESSERT /PORT/SHERRY/(COOKING) WINE",
+  "origin_code": "ARGENTINA",
+  "brand_name": "PULENTA ESTATE",
+  "fanciful_name": "",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "09/19/2025",
+  "applicant": "TX-I-21426 | Mexcor Texas, Mexcor Texas,LLC | 11177 COMPAQ CENTER WEST DR | Houston,\u00a0TX\u00a077070",
+  "source": "imported",
+  "product_type": "wine",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 2.75,
+      "height_in": 5.74
+    },
+    {
+      "file": "02_back.jpg",
+      "image_type": "Back",
+      "width_in": 2.75,
+      "height_in": 4.33
+    }
+  ]
+}

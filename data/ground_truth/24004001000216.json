@@ -1,0 +1,36 @@
+{
+  "id": "24004001000216",
+  "beverage_type": "malt",
+  "brand_name": "Bitburger",
+  "class_type": "Beer",
+  "abv": 4.8,
+  "abv_text": "Alc. 4.8% by vol.",
+  "proof": null,
+  "net_contents_text": "50 L e; NET CONTENT: 13.2 GAL",
+  "net_contents_ml": 50000,
+  "name_address_text": "PRODUITS DE BIERE, S.A. UN CONTROL DE QUALITE, 134, CALLEJON DE LA VIRGEN, X. MADRID, ESPANYA",
+  "country_of_origin_text": "PRODUITS DE BIERE, S.A. UN CONTROL DE QUALITE, 134, CALLEJON DE LA VIRGEN, X. MADRID, ESPANYA",
+  "warning": {
+    "present": true,
+    "image_file": "01_brand_front_or_keg_collar.png",
+    "text_as_printed": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+    "matches_required_text": true,
+    "heading_all_caps": true,
+    "heading_looks_bold": "yes",
+    "whole_warning_bold": "no",
+    "orientation": "other"
+  },
+  "hard_cases": [
+    "keg collar (round label) with text blocks rotated at different angles, some upside down",
+    "low-resolution image (646px) with tightly kerned, overlapping letters in the warning",
+    "class statement in six languages ('Bier · Beer · Bière · Birra · Cerveza · Cerveja')",
+    "two net contents forms: metric '50 L e' on front and '13.2 GAL' on the USA block",
+    "ABV printed in three languages, German/French with decimal comma (4,8%) and US block 'Alc. 4.8% by vol. · FL' (trailing 'FL' looks truncated)",
+    "multilingual ingredient and German producer text could be mistaken for the bottler statement",
+    "blackletter 'Bitburger' brand logo"
+  ],
+  "unreadable_fields": [],
+  "drafted_by": "ai_check",
+  "reviewed": true,
+  "reviewed_by": "AI-assisted image check (2026-10-09); reviewed by the owner against the images (2026-10-12)"
+}

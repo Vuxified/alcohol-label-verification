@@ -1,0 +1,23 @@
+{
+  "ttb_id": "25226001000401",
+  "status": "APPROVED",
+  "serial_no": "252569",
+  "class_type_code": "TABLE FLAVORED WINE",
+  "origin_code": "PENNSYLVANIA",
+  "brand_name": "LUCCHI FAMILY WINE CELLARS",
+  "fanciful_name": "CRAN APPLE",
+  "type_of_application": "LABEL APPROVAL",
+  "total_bottle_capacity": "",
+  "approval_date": "09/19/2025",
+  "applicant": "BWN-PA-21087 | Lucchi Family Cellars LLC | 1753 BEAUMONT AVE | Scranton,\u00a0PA\u00a018508",
+  "source": "domestic",
+  "product_type": "wine",
+  "images": [
+    {
+      "file": "01_brand_front_or_keg_collar.jpg",
+      "image_type": "Brand (front) or keg collar",
+      "width_in": 6.0,
+      "height_in": 4.0
+    }
+  ]
+}
