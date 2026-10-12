@@ -1,4 +1,4 @@
-"""The web app: check one label against its application (DESIGN.md §5). Run: uvicorn app.web.main:app
+"""The web app: check one label against its application. Run: uvicorn app.web.main:app
 
 Results are not kept: the results page is returned by the same request, with its pictures built in, so any copy of
 the app can answer (AWS Lambda runs several). On a laptop, images are posted with the form and read in memory.
@@ -144,7 +144,10 @@ def _uploaded(keys, names):
         if len(out) == MAX_IMAGES + 1:  # one more than allowed is enough to report "too many"; never fetch thousands
             break
         seen.add(key)
-        out.append((name, s3.get_object(Bucket=BUCKET, Key=key)["Body"].read()))
+        try:
+            out.append((name, s3.get_object(Bucket=BUCKET, Key=key)["Body"].read()))
+        except s3.exceptions.NoSuchKey:  # a link was asked for but nothing was uploaded: treated as no picture
+            continue
     return out
 
 

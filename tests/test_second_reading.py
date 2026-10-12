@@ -79,3 +79,27 @@ def test_crop_is_enlarged_for_the_second_reader():
     read = reader("5.5% ALC/VOL")
     confirm_differences([abv_fail()], [FRAME], WORDS, APP, read=read)
     assert read.seen and read.seen[0][0] >= 60  # small print is enlarged before Tesseract reads it
+
+
+# The same for a different number or product word in a text field: one misread ("12" read as "13") must not fail
+# a correct label, so the difference stands only when the second reader sees it too.
+WORDS_T = [[("KENTUCKY", 0.9, (10, 10, 120, 40)), ("STRAIGHT", 0.9, (130, 10, 240, 40)), ("RYE", 0.6, (250, 10, 300, 40)),
+            ("WHISKEY", 0.9, (310, 10, 420, 40)), ("AGED", 0.9, (10, 100, 80, 130)), ("13", 0.6, (90, 100, 120, 130)),
+            ("YEARS", 0.9, (130, 100, 210, 130))]]
+APP_T = Application("spirits", "Old Tom", class_type="Kentucky Straight Bourbon Whiskey", fanciful_name="Aged 12 Years")
+
+
+def test_a_different_number_in_a_name_needs_the_second_reader_too():
+    f = FieldResult("fanciful_name", Verdict.FAIL, 'Label shows "AGED 13 YEARS".', code="FANCIFUL_NAME_NUMBER_DIFFERS",
+                    found="AGED 13 YEARS")
+    assert confirm_differences([f], [FRAME], WORDS_T, APP_T, read=reader("AGED 13 YEARS"))[0].verdict == Verdict.FAIL
+    assert confirm_differences([f], [FRAME], WORDS_T, APP_T, read=reader("AGED 12 YEARS"))[0].verdict == Verdict.CHECK
+
+
+def test_a_different_product_word_needs_the_second_reader_too():
+    f = FieldResult("class_type", Verdict.FAIL, 'Label shows "KENTUCKY STRAIGHT RYE WHISKEY".',
+                    code="CLASS_TYPE_WORD_DIFFERS", found="KENTUCKY STRAIGHT RYE WHISKEY")
+    same = reader("KENTUCKY STRAIGHT RYE WHISKEY")
+    assert confirm_differences([f], [FRAME], WORDS_T, APP_T, read=same)[0].verdict == Verdict.FAIL
+    other = reader("KENTUCKY STRAIGHT BOURBON WHISKEY")
+    assert confirm_differences([f], [FRAME], WORDS_T, APP_T, read=other)[0].verdict == Verdict.CHECK

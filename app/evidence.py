@@ -1,4 +1,4 @@
-"""Where on the label each answer came from (DESIGN.md §2.2): a box on one picture, and a crop to show the agent.
+"""Where on the label each answer came from: a box on one picture, and a crop to show the agent.
 
 locate() searches the main reading's words of each picture for the run of consecutive words that best matches the
 text a rule reported ("found"), and returns the box around them. The warning's box is its paragraph (zoom.py).

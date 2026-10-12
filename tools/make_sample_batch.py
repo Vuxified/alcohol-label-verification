@@ -1,4 +1,4 @@
-"""Build app/web/static/sample-batch.zip: a small batch for trying the batch page (DESIGN.md §6.7).
+"""Build app/web/static/sample-batch.zip: a small batch for trying the batch page.
 
 20 generated labels from the practice (dev) split, about half correct and half with a known problem, plus 2 rows
 that are broken on purpose (an image missing from the ZIP, and a damaged image) to show that one bad row doesn't

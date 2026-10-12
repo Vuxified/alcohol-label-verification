@@ -1,4 +1,4 @@
-"""Run the whole app pipeline (reader + rules) over the practice (dev) labels and score it (DESIGN.md §3).
+"""Run the whole app pipeline (reader + rules) over the practice (dev) labels and score it.
 
 Items:
   cola  real TTB-approved labels. The application is built from the answer key (what the label says), so every

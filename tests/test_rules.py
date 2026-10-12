@@ -327,6 +327,21 @@ def test_shorter_class_across_a_line_break_says_what_the_label_shows():
     assert r.verdict == C and r.code == "CLASS_TYPE_EXTRA_WORDS" and r.found == "KENTUCKY STRAIGHT BOURBON WHISKEY"
 
 
+def test_grape_names_written_two_ways_are_not_a_different_product():
+    assert match_text("class_type", "Pinot Gris", ["PINOT GRIGIO"]).verdict == C
+    assert match_text("class_type", "Barossa Shiraz", ["BAROSSA SYRAH"]).verdict == C
+    assert match_text("class_type", "Moscato d'Asti", ["MUSCAT D'ASTI"]).verdict != F
+
+
+def test_importer_phrase_must_be_one_statement():
+    imp = Application("wine", "Rossi", source="imported", country_of_origin="Italy")
+    lines = ["ROSSI", "PRODUCT OF ITALY. IMPORTED FROM TUSCANY. BOTTLED BY ROSSI SRL"]
+    assert verify(imp, lines).get("importer").verdict == C
+    assert verify(imp, ["IMPORTED PREMIUM VODKA", "DISTILLED AND BOTTLED BY X"]).get("importer").verdict == C
+    assert verify(imp, ["Imported and bottled by Rossi USA, Miami, FL"]).get("importer").verdict == P
+    assert verify(imp, ["Sole importer: Rossi USA, Miami, FL"]).get("importer").verdict == P
+
+
 def test_a_clearly_different_type_word_does_not_match():  # owner decision, 2026-10-09
     r = match_text("class_type", "Kentucky Straight Rye Whiskey", ["KENTUCKY STRAIGHT BOURBON WHISKEY"])
     assert r.verdict == F and r.code == "CLASS_TYPE_WORD_DIFFERS"

@@ -1,7 +1,7 @@
 """Turn registry records fetched in a browser (out/ttb_fetch/b*.json) into practice labels.
 
 The TTB registry stopped answering the automated collector on 2026-10-09 while an ordinary browser still worked, so
-the records were fetched from a visible browser at one request every 4 s (see .planning/HANDOFF.md). Each record is
+the records were fetched from a visible browser at one request every 4 s. Each record is
 saved like the others (data/cola_samples/<ttb_id>/record.json + images), checked against the held-out set and the
 existing practice labels, and listed in data/splits/practice_extra2.json.
 

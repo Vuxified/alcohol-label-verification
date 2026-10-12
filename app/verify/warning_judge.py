@@ -17,7 +17,7 @@ Verdicts:
             required words on both sides intact, or two families read a title-case heading and none capitals;
   "check"   anything else not matching (a person should look);
   "none"    no reading contains the heading.
-Measured on dev (READER-OPTIONS.md): 36 of 39 approved warnings match, 0 false "nomatch", every planted
+Measured on dev: 36 of 39 approved warnings match, 0 false "nomatch", every planted
 alteration caught. A dropped required word shorter than 3 letters never counts toward "nomatch": readers glue
 short words to a neighbour ("DRIVEA CAR"), which once made two engines "agree" on a drop that was not there.
 """

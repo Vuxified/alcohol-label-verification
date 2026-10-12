@@ -1,7 +1,7 @@
 """The two reading engines: OnnxTR (docTR models on ONNX Runtime) and Tesseract. CPU only, no network.
 
 OnnxTR runs as a pool of predictors (one per concurrent image) with the dynamic-size text detector, so each
-image is detected at its own shape with a 768-px long side (READER-OPTIONS.md: 2.7x faster than the stock
+image is detected at its own shape with a 768-px long side (measured: 2.7x faster than the stock
 1024 x 1024 square, and more warning headings found). A word is (text, confidence, (x0, y0, x1, y1) in pixels
 of the image that was read).
 """

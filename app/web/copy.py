@@ -1,4 +1,4 @@
-"""Every word the agent reads on screen, in one place (DESIGN.md §5.3), so the wording can be reviewed at once."""
+"""Every word the agent reads on screen, in one place, so the wording can be reviewed at once."""
 
 import re
 

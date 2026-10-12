@@ -1,4 +1,4 @@
-"""Read every image of one application within the time limit (DESIGN.md §1, READER-OPTIONS.md).
+"""Read every image of one application within the time limit (docs/APPROACH.md).
 
 Order of work (each extra pass runs only when its trigger fires):
   1. Main read: every image in parallel, OnnxTR at a 768-px aspect-fit detector input.

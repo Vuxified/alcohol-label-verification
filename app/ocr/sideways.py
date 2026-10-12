@@ -1,4 +1,4 @@
-"""Turned pictures and sideways text (READER-OPTIONS.md, "Sideways and hard warnings" and "Turn-first").
+"""Turned pictures and sideways text.
 
 All decisions use the word boxes of the first read plus the crop-orientation classifier (about 0.1 s):
   - turn_of: is the whole picture turned? Tall boxes (height >= 2.5 x width) as the majority -> sideways, the

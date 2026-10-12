@@ -60,6 +60,8 @@ TYPE_WORDS = set("""bourbon rye wheat malt corn scotch vodka gin rum tequila mez
 liqueur cordial schnapps absinthe aquavit sake shochu soju baijiu cachaca seltzer cider perry mead champagne port sherry
 madeira vermouth cabernet merlot chardonnay pinot noir grigio gris sauvignon blanc riesling zinfandel syrah shiraz malbec
 moscato muscat tempranillo sangiovese chianti prosecco cava""".split())
+# The same grape under two names (Pinot Gris is Pinot Grigio): never a different product, at most Please check.
+_SAME_TYPE = {frozenset(p) for p in (("gris", "grigio"), ("syrah", "shiraz"), ("muscat", "moscato"))}
 # Digits a reader mixes up: one read as another is never assumed to be a real difference.
 _LOOKALIKE_DIGITS = {frozenset(p) for p in ("08", "17", "38", "56", "68", "14", "89", "58")}
 # For printed amounts (alcohol, size): the pairs readers actually swap in numerals, so "45%" vs "46%" still fails.
@@ -82,7 +84,8 @@ def _one_type_word_differs(want: str, got: str) -> bool:
     The other words must agree, so a lone "GIN" printed elsewhere never stands in for an unread "VODKA"."""
     a, b = want.split(), got.split()
     pairs = [(x, y) for x, y in zip(a, b) if x != y]
-    return len(a) == len(b) >= 2 and len(pairs) == 1 and pairs[0][0] in TYPE_WORDS and pairs[0][1] in TYPE_WORDS
+    return (len(a) == len(b) >= 2 and len(pairs) == 1 and pairs[0][0] in TYPE_WORDS and pairs[0][1] in TYPE_WORDS
+            and frozenset(pairs[0]) not in _SAME_TYPE)
 
 
 def match_text(field: str, expected: str, lines: list[str]) -> FieldResult:

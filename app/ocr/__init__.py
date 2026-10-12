@@ -1,1 +1,1 @@
-"""Label reader: OnnxTR + Tesseract, CPU only (DESIGN.md §1)."""
+"""Label reader: OnnxTR + Tesseract, CPU only."""

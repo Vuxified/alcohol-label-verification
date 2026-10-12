@@ -69,7 +69,9 @@ _SAME_COUNTRY = [{"italy", "italia"}, {"spain", "espana"}, {"germany", "deutschl
                  {"united kingdom", "great britain"}, {"united states", "usa", "united states of america"}]
 # "Imported by …", "Exclusively imported by …", "Importer: …" (27 CFR 4.35(b), 5.68, 7.68: "imported by" or a similar
 # phrase, then the importer's name and address).
-_IMPORTER = re.compile(r"\bimport(?:ed|er|ers)\b[\w\s,&/.]{0,40}?\b(?:by|for)\b|\bimporters?\s*:", re.I)
+# The phrase must be one statement: "Imported from Tuscany. Bottled by …" names no importer.
+_IMPORTER = re.compile(r"\bimport(?:ed|er|ers)\s+(?:(?:and|&)\s+[a-z]+\s+)?(?:exclusively\s+)?(?:by|for)\b"
+                       r"|\bimporters?\s*:", re.I)
 _IMPORTER_RULE = {"spirits": "5.68", "wine": "4.35", "malt": "7.68"}
 
 

@@ -3,7 +3,7 @@
 OnnxTR's db_mobilenet_v3_large graph has a fixed 1024 x 1024 input, so every label was squashed into a square
 mostly made of padding. Marking height and width as dynamic lets the reader size the input to the label's own
 shape (768 px on the long side), which measured 2.7x faster and found more warning headings
-(.planning/research/READER-OPTIONS.md). Only the input/output shape declarations change; the weights do not.
+(docs/APPROACH.md). Only the input/output shape declarations change; the weights do not.
 
 Usage: python tools/make_dynamic_det.py      -> app/models/db_mobilenet_v3_large_dyn.onnx
 Needs the `onnx` package (requirements-tools.txt); the app itself does not.

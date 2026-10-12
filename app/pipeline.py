@@ -1,4 +1,4 @@
-"""Check one application: read its label images, run the rules, and keep the evidence (DESIGN.md §2).
+"""Check one application: read its label images, run the rules, and keep the evidence.
 
 The rules in app/verify stay pure and take text lines. The warning is judged across every independent reading
 (warning_judge.py) instead of one joined text. Two safety rules from RULES.md §1 apply on top:
@@ -24,6 +24,7 @@ from app.verify import Application, FieldResult, Verdict, verify
 from app.verify.abv import check_abv
 from app.verify.model import SEVERITY
 from app.verify.net_contents import check_net_contents
+from app.verify.text import match_text
 from app.verify.presence import ON_LABEL
 from app.verify.verify import is_non_alcoholic
 from app.verify.warning_judge import judge_detail
@@ -105,12 +106,27 @@ def _second_reader(crop):
     return tesseract(crop, 7)
 
 
+def _again(f: FieldResult, app: Application, seen: str) -> FieldResult:
+    """The rule run again on the second reader's text of the same spot."""
+    if f.field == "abv":
+        return check_abv(app, [seen])
+    if f.field == "net_contents":
+        return check_net_contents(app, [seen])
+    return match_text(f.field, getattr(app, f.field), [seen])
+
+
+def _needs_second_reading(f: FieldResult) -> bool:
+    return f.verdict == Verdict.FAIL and (f.field in ("abv", "net_contents")
+                                          or (f.code or "").endswith(("_NUMBER_DIFFERS", "_WORD_DIFFERS")))
+
+
 def confirm_differences(fields, frames, frame_words, app: Application, read=_second_reader) -> list[FieldResult]:
-    """A different alcohol content or net contents stays "Does not match" only when Tesseract, reading the same spot
-    on its own, sees the same different number; otherwise "Please check" (one misread digit must not fail a label)."""
+    """A different alcohol content, net contents, or number or product word in a name or class stays "Does not match"
+    only when Tesseract, reading the same spot on its own, sees the same difference; otherwise "Please check" (one
+    misread digit or word must not fail a label)."""
     out = []
     for f in fields:
-        if f.verdict != Verdict.FAIL or f.field not in ("abv", "net_contents"):
+        if not _needs_second_reading(f):
             out.append(f)
             continue
         spot = locate(f.found, frame_words)
@@ -121,8 +137,9 @@ def confirm_differences(fields, frames, frame_words, app: Application, read=_sec
             crop = frames[k][max(0, int(y0 - 0.4 * h)):int(y1 + 0.4 * h), max(0, int(x0 - h)):int(x1 + h)]
             s = max(1.0, 64 / max(1, crop.shape[0]))  # small print enlarged, as Tesseract reads best near 30 px letters
             seen = read(cv2.resize(crop, None, fx=s, fy=s, interpolation=cv2.INTER_CUBIC)).strip()
-            again = (check_abv if f.field == "abv" else check_net_contents)(app, [seen])
-            if again.verdict == Verdict.FAIL and re.sub(r"\D", "", again.found or "") == re.sub(r"\D", "", f.found):
+            again = _again(f, app, seen)
+            if (again.verdict == Verdict.FAIL and again.code == f.code
+                    and re.sub(r"\D", "", again.found or "") == re.sub(r"\D", "", f.found)):
                 out.append(f)
                 continue
         why = (f'A second reading of that spot saw "{seen}", so the difference is not confirmed.' if seen

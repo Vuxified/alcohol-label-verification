@@ -1,4 +1,4 @@
-"""Zoom-in re-read of the Government Warning paragraph (READER-OPTIONS.md, "Zoom-in warning re-read").
+"""Zoom-in re-read of the Government Warning paragraph.
 
 The warning is the smallest text on most labels, so after the first read we find its paragraph, crop it from the
 full-resolution image, straighten it if it is tilted, and read it again larger:
