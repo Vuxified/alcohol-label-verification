@@ -55,7 +55,7 @@ Measured with `tools/evaluate.py` on the practice sets (the final-test set is ke
 
 | Practice set | Wrong answers | Mistakes caught | Items confirmed |
 |---|---|---|---|
-| 227 real TTB-approved labels (64 + 78 + 85, from the registry) | **0** "Does not match" | – | 77% / 75% / 71% |
+| 227 real TTB-approved labels (64 + 78 + 85, from the registry) | **0** "Does not match" | – | 76% / 75% / 71% |
 | 178 real approved labels with one planted change (alcohol, size, proof, a warning word, title-case heading, brand) | **0** changed items "Matches" | **178 of 178** flagged; 158 named exactly | 68% / 68% |
 | 96 generated labels, 64 with planted mistakes | **0** "Matches" on a mistake | **64 of 64** flagged; 61 named exactly | 93% |
 | 76 photo-style pictures of 35 real labels (angles, close-ups, cans) | **0** "Does not match" | – | 30% (photos are hard; most items say Please check) |
@@ -83,7 +83,7 @@ Measured with `tools/evaluate.py` on the practice sets (the final-test set is ke
 
 162 items the app had never seen: 28 real approved labels and 48 generated labels (32 with planted mistakes), frozen 2026-10-02. From the same 28 labels, frozen 2026-10-10: 46 with one planted change, 22 photo-style pictures (harder than practice: never straight-on, more glare, coloured light) and 18 photos with a planted change. Six real labels with a near-identical twin in practice were left out of the 2026-10-10 sets. `tools/evaluate.py --final` checks every file's checksum and runs only once. All of it is in `data/`.
 
-**After the final test** (it was not run again), a code review and hands-on testing led to these changes, each approved by a full practice run (live version ae44207):
+**After the final test** (it was not run again), a code review and hands-on testing led to these changes, each approved by a full practice run (live version 0e63194):
 - A different number or product word in a name or class needs the second reader before it is Does not match; Pinot Gris/Grigio, Syrah/Shiraz and Muscat/Moscato are not different products; the importer statement must be one phrase ("Imported by …"). Each can only turn an answer into Please check.
 - The type of product may be left blank and is then told from the label (the result says so); with pictures only, the brand is Please check for the agent to confirm.
 - Clearer wording on the form, and each batch row opens a side panel with its pictures and every item.
