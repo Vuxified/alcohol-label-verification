@@ -8,6 +8,8 @@ full-resolution image, straighten it if it is tilted, and read it again larger:
   3. The paragraph is re-found in that sharper reading, then a tight crop with capitals at 44 px is read by
      Tesseract twice in parallel: Otsu threshold, page mode 6; adaptive threshold, page mode 3.
   4. Before 2-3: if the crop is tilted by 1 degree or more (projection-profile search, about 25 ms), rotate it.
+  5. In the tight crop, a block of text printed beside the warning on its own lines (an address, a story in a
+     column next to it) is painted over first (beside_warning), so it is not read as words added to the warning.
 Region and word coordinates are pixels of the image they came from; `scale` maps them to the full-res image.
 """
 
@@ -16,7 +18,7 @@ import re
 import cv2
 import numpy as np
 
-from app.verify.warning_judge import close, norm
+from app.verify.warning_judge import REQ, close, norm
 
 HGAP = 1.5
 ANCHORS = ["surgeon", "pregnancy", "machinery", "consumption", "beverages", "alcoholic", "defects", "impairs",
@@ -109,6 +111,52 @@ def find_region(words):
     return _valid(words, (ux0, uy0, ux1, uy1), lh, head)
 
 
+COLUMN_GAP = 0.8  # line heights of clear space between the warning's words and a block beside it (a word space is less)
+_WARNING_WORDS = {w for w in REQ if len(w) >= 4}
+
+
+def _warning_like(tok):
+    return len(tok) >= 4 and any(close(w, tok) for w in _WARNING_WORDS)
+
+
+def beside_warning(words, region):
+    """Boxes (words' pixel coordinates) of text printed beside the warning on its own lines: an address or a story
+    in a column next to it. A word counts when warning words share its line with a clear gap between them (COLUMN_GAP)
+    and it doesn't look like a warning word; only a block of 3+ such words on 2+ lines is returned. A word added to
+    the warning sits a word space from its neighbours, so it is never among them."""
+    x0, y0, x1, y1, lh = region[:5]
+    inside = [(t, w[2]) for t, w in zip(_toks(words), words)
+              if x0 - 1 <= (w[2][0] + w[2][2]) / 2 <= x1 + 1 and y0 - 1 <= (w[2][1] + w[2][3]) / 2 <= y1 + 1]
+    warn = [b for t, b in inside if _warning_like(t)]
+    if len(warn) < 8:
+        return []
+    gap = COLUMN_GAP * lh
+
+    def same_line(a, b):
+        return min(a[3], b[3]) - max(a[1], b[1]) >= 0.5 * min(a[3] - a[1], b[3] - b[1])
+
+    def apart(a, b):  # horizontal space between two boxes (0 when they overlap)
+        return max(b[0] - a[2], a[0] - b[2], 0)
+
+    out = []
+    for t, b in inside:
+        if _warning_like(t):
+            continue
+        line = [w for _, w in inside if same_line(w, b)]
+        chain = [w for w in warn if same_line(w, b)]  # the warning on this line, grown through word spaces:
+        if not chain:                                 # "drive a car or" stays whole, short words and all
+            continue
+        grown = True
+        while grown:
+            more = [w for w in line if w not in chain and any(apart(w, c) < gap for c in chain)]
+            chain += more
+            grown = bool(more)
+        if b not in chain:
+            out.append(b)
+    rows = {round(((b[1] + b[3]) / 2) / (0.6 * lh)) for b in out}
+    return out if len(out) >= 3 and len(rows) >= 2 else []
+
+
 def binarize(rgb, how):
     g = cv2.cvtColor(rgb, cv2.COLOR_RGB2GRAY)
     if how.endswith("auto") and np.median(g) < 110:  # light text on dark: make it dark on light
@@ -164,11 +212,20 @@ def two_step(full, scale, region, onnx_read, tess_read):
     if r2:  # map generous-crop coordinates back to full resolution
         x0, y0, x1, y1, lh2, _ = r2
         tbox, lh_t = tight_box((gx + x0 / fg, gy + y0 / fg, gx + x1 / fg, gy + y1 / fg, lh2 / fg))
+        beside = beside_warning(o.words, r2)
     else:
         tbox, lh_t = tight_box(region, scale)
-    t, _, _ = crop_box(full, tbox, CAP_TIGHT / max(1.0, 0.7 * lh_t))
+        beside = []
+    t, ft, (tx, ty) = crop_box(full, tbox, CAP_TIGHT / max(1.0, 0.7 * lh_t))
     if t is None:
         return out
+    if beside:  # paint the side text over with the crop's background before Tesseract reads it
+        t = t.copy()
+        bg = np.median(t.reshape(-1, t.shape[2]) if t.ndim == 3 else t, axis=0).astype(t.dtype)
+        for b in beside:
+            X0, Y0 = int(((gx + b[0] / fg) - tx) * ft), int(((gy + b[1] / fg) - ty) * ft)
+            X1, Y1 = int(np.ceil(((gx + b[2] / fg) - tx) * ft)), int(np.ceil(((gy + b[3] / fg) - ty) * ft))
+            t[max(0, Y0):max(0, Y1), max(0, X0):max(0, X1)] = bg
     for how, psm in TESS_PAIRS:
         out[f"zoom-tess-{how}-psm{psm}"] = tess_read(binarize(t, how), psm)
     return out
