@@ -64,7 +64,7 @@ Measured with `tools/evaluate.py` on the practice sets (the final-test set is ke
 - Speed (laptop, 4 cores): typical 1.6–2.1 s, slowest 4.3 s per label (5.1 s for a photo).
 - Pictures only, on 142 approved labels: 0 Does not match; class found on 135, net contents 126, bottler 107, alcohol content 106 (+9 beer, where it is optional). Reading on upload showed alcohol right 103 times (wrong 3) and net contents right 115 (wrong 15); it does not guess the brand (usually a logo).
 - The new label rules (class minimums, bottled in bond, table wine, low/no-alcohol wording) said Please check on 0 of the 227 approved labels.
-- Measured 2026-10-13, run g11 ([`docs/evidence/practice_run.log`](docs/evidence/practice_run.log)); the same run is the one the safety gate approved for the live version. The answer keys of the 85 newest labels were drafted with AI assistance and reviewed by the author.
+- Measured 2026-10-13, run g12 ([`docs/evidence/practice_run.log`](docs/evidence/practice_run.log)); the same run is the one the safety gate approved for the live version. The answer keys of the 85 newest labels were drafted with AI assistance and reviewed by the author.
 
 **Final test (held-out labels, run once, 2026-10-12, on the live version ef13fdb):** numbers exactly as measured ([`docs/evidence/final_test.log`](docs/evidence/final_test.log)).
 
@@ -83,11 +83,12 @@ Measured with `tools/evaluate.py` on the practice sets (the final-test set is ke
 
 162 items the app had never seen: 28 real approved labels and 48 generated labels (32 with planted mistakes), frozen 2026-10-02. From the same 28 labels, frozen 2026-10-10: 46 with one planted change, 22 photo-style pictures (harder than practice: never straight-on, more glare, coloured light) and 18 photos with a planted change. Six real labels with a near-identical twin in practice were left out of the 2026-10-10 sets. `tools/evaluate.py --final` checks every file's checksum and runs only once. All of it is in `data/`.
 
-**After the final test** (it was not run again), a code review and hands-on testing led to these changes, each approved by a full practice run (live version 7bc2029):
+**After the final test** (it was not run again), a code review and hands-on testing led to these changes, each approved by a full practice run (live version fcd6ba5):
 - A different number or product word in a name or class needs the second reader before it is Does not match; Pinot Gris/Grigio, Syrah/Shiraz and Muscat/Moscato are not different products; the importer statement must be one phrase ("Imported by …"). Each can only turn an answer into Please check.
 - The type of product may be left blank and is then told from the label (the result says so); with pictures only, the brand is Please check for the agent to confirm.
 - Clearer wording on the form, and each batch row opens a side panel with its pictures and every item.
 - Text printed beside the warning in its own column is painted over before the warning is re-read, so it is no longer taken for words added to the warning (a word really added sits a word space from the warning's words and is never painted over).
+- "Hard tea" and "hard lemonade" are told as malt beverages. If no product type can be told from the label, the page says so as soon as the pictures are added and keeps them, instead of losing them on Check label.
 
 **How the answer key was made:** label values were drafted with AI tools and cross-checked by two independent vision models. The author reviewed every final-test label and the 85 newest practice labels by hand against their images; the other practice labels were checked against every image with AI assistance. Each answer sheet in `data/ground_truth/` records who reviewed it. In that review, the vision models' disagreements were almost always the models' own errors (invented addresses and container sizes), which is why the app never lets a model decide.
 
