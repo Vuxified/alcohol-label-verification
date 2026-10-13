@@ -35,6 +35,7 @@
     </div>
     {% endfor %}
     </div>
+    <p class="usa-error-message app-hidden" id="bev-missing" tabindex="-1">We couldn't tell the type of product from the label. Please choose it.</p>
   </fieldset>
 
   <fieldset class="app-step">
@@ -137,6 +138,16 @@
       var t0 = Date.now(); s.classList.remove('app-hidden'); b.disabled = true;
       return setInterval(function () { b.textContent = 'Checking… ' + ((Date.now() - t0) / 1000).toFixed(1) + ' s'; }, 100);
     }
+    // No type chosen and the reading of the pictures found none: say so here, before sending, so the pictures stay.
+    var bevMissing = document.getElementById('bev-missing'), noKind = false;
+    function needsKind(ev) {
+      if (!noKind || f.querySelector('input[name=beverage_type]:checked')) return false;
+      ev.preventDefault(); bevMissing.classList.remove('app-hidden'); bevMissing.focus();
+      return true;
+    }
+    f.addEventListener('change', function (ev) {
+      if (ev.target.name === 'beverage_type') bevMissing.classList.add('app-hidden');
+    });
     {% if upload_to_bucket %}
     // Each image goes straight to private storage (requests to the checker are capped at 6 MB). Uploading starts as
     // soon as the pictures are chosen, so it happens while the agent types; the form is then sent with only the keys.
@@ -158,6 +169,7 @@
     }
     input.addEventListener('change', function () { pending = uploadAll(); pending.catch(function () {}); });
     f.addEventListener('submit', async function (ev) {
+      if (needsKind(ev)) return;
       ev.preventDefault(); var timer = started();
       f.querySelectorAll('input[name=upload_keys], input[name=upload_names]').forEach(function (h) { h.remove(); });
       try {
@@ -177,7 +189,7 @@
       }
     });
     {% else %}
-    f.addEventListener('submit', started);
+    f.addEventListener('submit', function (ev) { if (!needsKind(ev)) started(); });
     {% endif %}
     // As soon as pictures are chosen, read them and show what the label says under each box. The boxes stay the
     // application's: the agent types those, so a label is never compared with its own reading.
@@ -193,7 +205,7 @@
       });
     }
     async function readLabel() {
-      var mine = ++reads; showSeen(null);
+      var mine = ++reads; showSeen(null); noKind = false; bevMissing.classList.add('app-hidden');
       if (!pictures.files.length) return;
       fillStatus.textContent = 'Reading the label…';
       var body = new FormData(), bev = f.querySelector('input[name=beverage_type]:checked');
@@ -214,6 +226,8 @@
           var pick = v[kv[0]] && document.getElementById(kv[1] + (kv[0] === 'source' ? v.source.charAt(0) : v[kv[0]]));
           if (pick && (!chosen || kv[0] === 'source')) pick.checked = true;
         });
+        noKind = !v.beverage_type;
+        if (noKind && !f.querySelector('input[name=beverage_type]:checked')) bevMissing.classList.remove('app-hidden');
         fillStatus.textContent = 'What we found on the label is shown under each box.';
       } catch (e) {
         if (mine !== reads) return;

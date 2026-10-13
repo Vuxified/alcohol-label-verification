@@ -95,6 +95,12 @@ def test_read_values_fills_the_form():
     assert read_values(WINE + ["PRODUCT OF ITALY"])["country_of_origin"] == "Italy"
 
 
+def test_hard_tea_and_lemonade_are_malt_beverages():
+    assert read_values(["HARD ICED TEA", "4% ALC./VOL."])["beverage_type"] == "malt"
+    assert read_values(["HARD LEMONADE"])["beverage_type"] == "malt" and read_values(["HARD TEA"])["beverage_type"] == "malt"
+    assert "beverage_type" not in read_values(["ICED TEA"])
+
+
 def test_read_values_leaves_out_what_it_did_not_find():
     v = read_values(["SOMETHING"])
     assert "abv" not in v and "net_contents" not in v and "beverage_type" not in v

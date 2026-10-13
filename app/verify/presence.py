@@ -30,7 +30,7 @@ CLASS_WORDS = {
             r"burgundy|meritage|claret",
     "malt": r"beer|ale|lager|stout|porter|pilsn?er|pils|ipa|bock|doppelbock|hefeweizen|weizen|weiss|witbier|wit|"
             r"saison|k[oö]lsch|gose|lambic|kriek|tripel|dubbel|quad|helles|m[aä]rzen|oktoberfest|dunkel|altbier|"
-            r"malt\s+(?:beverage|liquor)|hard\s+seltzer|shandy|radler",
+            r"malt\s+(?:beverage|liquor)|hard\s+seltzer|hard\s+(?:iced\s+)?tea|hard\s+lemonade|shandy|radler",
 }
 _CLASS = {k: re.compile(rf"\b(?:{v})\b", re.I) for k, v in CLASS_WORDS.items()}
 _BOTTLER = re.compile(r"\b(?:bottled|distilled|produced|imported|brewed|vinted|cellared|blended|made|packed|packaged|"
