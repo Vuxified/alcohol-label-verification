@@ -20,7 +20,7 @@ So the app answers each item with **Matches**, **Does not match** or **Please ch
 | Decision | Why | Not chosen, and why |
 |---|---|---|
 | **Verify, don't extract.** The app searches the label for what the application says. | The application already says what the label should show; searching for a known value is far more reliable than guessing which text is the brand. | Extracting every field and comparing afterwards: errors pile up (which line is the brand?), and a label can end up checked against itself. |
-| **The label is read on the app's own server** (OnnxTR models, with Tesseract as a second reader). | Works behind a firewall; the container was tested with networking switched off. No label leaves the server. | Cloud AI services: blocked by the firewall Marcus describes; 46 of the 71 public submissions we reviewed depend on one. |
+| **The label is read on the app's own server** (OnnxTR models, with Tesseract as a second reader). | Works behind a firewall; the container was tested with networking switched off. No label leaves the server. | Cloud AI services: blocked by the firewall Marcus describes. |
 | **Written rules decide, each citing 27 CFR.** AI is used to read the picture, never to decide. | The same label always gets the same answer, and each answer can be explained. In our tests a vision model accepted 12 deliberately altered warnings as correct, and models invented addresses and bottle sizes. | A retrieval-augmented or LLM "judge": inconsistent, can't run behind the firewall, and can "helpfully" correct the very text that must be checked word for word. |
 | **Three answers, chosen to be honest.** Not finding something is never Does not match. | A value may be in decorative lettering, on a curved can or on a side that wasn't photographed. Real approved labels must not be failed (**never stricter than TTB**). | Two answers (pass/fail): forces guesses either way. |
 | **A clearly read difference is Does not match**: a different number ("10 Year" vs "12 YEAR"), a different product-type word ("RYE" vs "BOURBON"), a different alcohol content or size. | The label must be identical to the approved application (27 CFR 5.22(a)); overstating age is prohibited (5.74(a)(2)). | Everything close as Please check: hides real violations among reading slips. Digits that readers confuse (0/8, 1/7, 5/6) and near spellings ("BOURBAN") stay Please check. |
@@ -32,8 +32,8 @@ So the app answers each item with **Matches**, **Does not match** or **Please ch
 | **Speed: two clocks.** Items are read within about 3 s; the warning gets until 5 s for its extra passes. | Meets the 5-second limit while giving small, sideways or curved warnings the extra reads they need. | Reading everything at the highest quality: 6–7 s on 4 cores. |
 | **Hosting: AWS Lambda with a container**, scaled to zero when idle; uploads go to private storage deleted after one day; results are not stored. | Costs nothing idle; the same container runs on Azure (Container Apps) or on a server inside the agency. Marcus: store nothing sensitive. | Always-on servers: cost; storing results: not needed for a prototype, and brings retention rules. |
 | **Results page**: one sentence says what needs attention; each such item shows "Application says" next to "Label shows" with the different words underlined, a close-up, and the reason; matching items fold away. | Readable in 5 seconds; the agent sees the evidence without hunting. Large type, works at 200% zoom and on a phone. | A table of every item: the one problem gets lost among the matches. |
-| **Batch runs from the browser**, a few applications at a time, each checked by its own copy of the checker. Pictures are paired with applications by the file names in the spreadsheet, or by being named after the application ("TTB-0001_front.jpg"). | No queue or database to run; 22 applications take about 10 s on AWS. | A server-side job queue: more to build and secure than a prototype needs. |
-| **Feedback stays with the agent.** (Planned) an "I disagree" note on any result goes into the printout and the results spreadsheet only. | Nothing stored on the server. In production a reviewer would turn confirmed feedback into rule fixes and new tests, never into automatic learning: one tired click must not teach the system to pass a real difference. | Clicks that retrain the system directly. |
+| **Batch runs from the browser**, a few applications at a time, each checked by its own copy of the checker. Pictures are paired with applications by the file names in the spreadsheet, by being named after the application ("TTB-0001_front.jpg"), or by reading them (brand, alcohol, net contents; only a clear match, never a guess). | No queue or database to run; 22 applications take about 10 s on AWS. | A server-side job queue: more to build and secure than a prototype needs. |
+| **Feedback stays with the agent.** An "I disagree" note on any result goes into the printout and the results spreadsheet only. | Nothing stored on the server. In production a reviewer would turn confirmed feedback into rule fixes and new tests, never into automatic learning: one tired click must not teach the system to pass a real difference. | Clicks that retrain the system directly. |
 
 ## Assumptions (where the brief leaves gaps)
 
@@ -62,8 +62,9 @@ So the app answers each item with **Matches**, **Does not match** or **Please ch
   How often that happens on a grader's own labels is unknown until they try.
 - **A misread that looks like a real difference**: digit misreads that keep the number plausible are guarded
   (only the end of a number read, "8%" for 4.8; look-alike digits, "1,8%" for 4.8), and a different alcohol content or
-  net contents now needs Tesseract to see the same different number. Before that rule, 1 of 262 real labels (a keg
-  read "115.5 U.S. Gallons" for 15.5) came back Does not match; in the 2026-10-09 run with it, 0 of 262.
+  net contents now needs Tesseract to see the same different number (since 2026-10-12, so does a different number or
+  product word in a name or class). Before that rule, one real approved label (a keg read "115.5 U.S. Gallons" for
+  15.5) came back Does not match; after it, none did.
 - **Open judgment calls**: whether a clearly different stated country ("PRODUCT OF CANADA" for Mexico) should be Does not
   match (today Please check), and whether a street address on the application must also be on the label (city and state
   are what § 5.66 requires; today Please check).
@@ -72,16 +73,16 @@ So the app answers each item with **Matches**, **Does not match** or **Please ch
 
 | Test | What it proves | Size |
 |---|---|---|
-| Rule tests (`tests/test_rules.py`) | Each rule in RULES.md, written before the code and mutation-checked | 74 |
+| Rule tests (`tests/test_rules.py`) | Each rule in RULES.md, written before the code and mutation-checked | 80 |
 | Edge cases (`tests/test_edge_cases.py`) | What an agent might type and what the reader might produce: spaces, missing letters, stray s, commas, apostrophes, dashes, accents, units, decimal commas, look-alike digits, contradicting readings | 657 |
 | Typed values (`tests/test_typed_values.py`) | "45% Alc", "45% AL", "45,0" all mean 45; proof and ranges are refused, not guessed | 35 |
-| Batch reading (`tests/test_batch_read.py`, in a browser) | Excel/Numbers exports, encodings, header spellings, ZIP layouts, file-name pairing, the label-height column | 53 |
-| Safety rules (`test_second_reading.py`, `test_warning_noise.py`, `test_word_pair.py`) | A different number needs a second reader; warning noise vs real inserted words; two word readers | 15 |
+| Batch reading (`tests/test_batch_read.py`, in a browser) | Excel/Numbers exports, encodings, header spellings, ZIP layouts, file-name pairing, pairing by reading, the label-height column | 61 |
+| Safety rules (`test_second_reading.py`, `test_warning_noise.py`, `test_word_pair.py`) | A different number or product word needs a second reader; warning noise vs real inserted words; two word readers | 17 |
 | Type size (`tests/test_type_size.py`) | Letter height measured on labels drawn at a known size; the three outcomes; the form | 28 |
-| Pictures only (`tests/test_picture_only.py`, `test_picture_only_web.py`) | Blank items looked for on the label; never Does not match; reading on upload on the real reader | 22 |
-| Label rules (`tests/test_label_rules.py`) | Class minimums, bottled in bond, table wine, low/no-alcohol wording, each with its section; liqueurs and mixed drinks skipped | 15 |
+| Pictures only (`tests/test_picture_only.py`, `test_picture_only_web.py`) | Blank items looked for on the label; never Does not match; reading on upload on the real reader; 20 MB pictures; a rule citation on every row | 25 |
+| Label rules (`tests/test_label_rules.py`) | Class minimums, bottled in bond, table wine, low/no-alcohol wording, each with its section; liqueurs and mixed drinks skipped | 16 |
 | Safety gate and no network (`tests/test_gate.py`, `tests/test_offline.py`) | The gate refuses a run of other code, a partial run, any wrong answer, an unflagged mistake, slow labels; the reader starts and checks a label with every network call failing | 11 |
-| Whole pipeline (`tools/evaluate.py`) | Every wrong "Does not match" on real approved labels and every planted mistake that slipped through; items confirmed; timing | 538 practice items (227 real labels, 180 tampered, 96 generated, 35 labels in photo scenes) |
+| Whole pipeline (`tools/evaluate.py`) | Every wrong "Does not match" on real approved labels and every planted mistake that slipped through; items confirmed; timing | 536 practice items (227 real labels, 178 tampered, 96 generated, 35 labels in photo scenes) |
 | Final test (`--final`) | The same, once, on labels kept apart from all tuning | 28 real + 48 generated + 86 built from the 28 (162 items), run once on 2026-10-12: 0 wrong answers, every planted mistake flagged (README) |
 
 ## Test data
@@ -93,8 +94,8 @@ So the app answers each item with **Matches**, **Does not match** or **Please ch
 | 312 photo-style copies of real labels (blur, glare, tilt, low light) and 808 rotated copies | Built; used to measure the reader, not yet in the regular scorecard |
 | 44 real bottle photos (Open Food Facts; 32 practice, 12 final test) | Collected; not yet in the regular scorecard |
 | 78 more real approved labels from the registry (collected 2026-10-04) | Built and used; answer key checked against the images with AI assistance |
-| 85 more real approved labels (40 beer, 27 spirits, 18 wine; one per brand and company), fetched 2026-10-09 | Built and used; answer keys await the owner's review |
-| 180 real approved labels with one planted change (alcohol, size, proof, a warning word changed or deleted, title-case heading, brand), in two sets (`tools/make_tampered.py`) | Built and used: no changed item came back Matches |
+| 85 more real approved labels (40 beer, 27 spirits, 18 wine; one per brand and company), fetched 2026-10-09 | Built and used; answer keys drafted with AI assistance and reviewed by the author |
+| 178 real approved labels with one planted change (alcohol, size, proof, a warning word changed or deleted, title-case heading, brand), in two sets (`tools/make_tampered.py`) | Built and used: no changed item came back Matches |
 | 76 photo-style pictures of 35 real labels (angles up to 45°, close-ups, cans), and 54 of generated labels; the label pixels are ours, only the scene is drawn by an image model (`tools/make_scenes.py`) | Built; the real-label set is used. Letting an image model draw the label itself rewrites its text, so those images can't be scored. |
 
 ## Reader training

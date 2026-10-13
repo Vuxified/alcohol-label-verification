@@ -5,7 +5,8 @@ A TTB agent uploads a label's images and types in what the application says. Wit
 **Try it:** https://3jirlgdkpcw55t54gz32ggdnbq0yfrjp.lambda-url.us-east-1.on.aws/
 - No files needed: press **Try a label that matches** or **Try a label with a problem**.
 - Batch: open **Check many labels**, download the sample batch (22 applications, 2 broken on purpose) and add it.
-- No application? Add pictures only and leave the details blank: the app looks for every statement the rules require (alcohol content, net contents, bottler, class, country for imports) and says **On the label** or **Please check**. As soon as pictures are added, the app reads them and shows what the label says under each box ("On the label: 45%"); the boxes stay for the application's values, so a label is never compared with its own reading.
+- No application? Add pictures and leave the boxes blank. The app looks for every required statement and says **On the label** or **Please check**.
+- As soon as pictures are added, what the label says is shown under each box ("On the label: 45%"); the boxes stay for the application's values, so a label is never compared with its own reading.
 - The first visit after a quiet period takes about 6 seconds while the checker starts.
 
 ---
@@ -13,9 +14,9 @@ A TTB agent uploads a label's images and types in what the application says. Wit
 ## A five-minute tour
 
 1. **Try a label with a problem.** The heading is "Government Warning" in title case: **Does not match**, with a close-up of the spot and the rule (27 CFR 16.22). Press **I disagree** to see how an agent records a different view; it prints with the page.
-2. **Your own label:** add the front and back pictures, and the app reads them at once: alcohol, net contents, class and bottler appear under their boxes, and the product type is chosen. Type the application's values (try alcohol 40 where the label says 45) and the brand, press **Check label**: alcohol content **Does not match**, everything else **Matches**.
+2. **Your own label:** add the front and back pictures, and the app reads them at once: alcohol, net contents, class and bottler appear under their boxes, and the product type is chosen (it is optional: left blank, it is told from the label). Type the application's values (try alcohol 40 where the label says 45) and the brand, press **Check label**: alcohol content **Does not match**, everything else **Matches**.
 3. **Pictures only:** the same pictures with every box blank. The app looks for each statement the rules require and says **On the label** or **Please check**; it never says Does not match without an application to compare.
-4. **Batch:** on **Check many labels**, add the sample batch (22 applications, 2 broken on purpose). Rows that need attention come first; download the results spreadsheet. Pictures that aren't named after an application are read and paired by what they say; anything unclear is listed for you.
+4. **Batch:** on **Check many labels**, add the sample batch (22 applications, 2 broken on purpose). Rows that need attention come first; select any row to see its pictures and every item checked; download the results spreadsheet. Pictures that aren't named after an application are read and paired by what they say; anything unclear is listed for you.
 5. **Why trust it:** [`docs/RULES.md`](docs/RULES.md) lists every rule with its citation, and what a picture cannot settle. No version goes live unless a full practice run of that exact code has **0 wrong answers** (see Deployment).
 
 ---
@@ -63,9 +64,9 @@ Measured with `tools/evaluate.py` on the practice sets (the final-test set is ke
 - Speed (laptop, 4 cores): typical 1.6–2.1 s, slowest 4.3 s per label (5.1 s for a photo).
 - Pictures only, on 142 approved labels: 0 Does not match; class found on 135, net contents 126, bottler 107, alcohol content 106 (+9 beer, where it is optional). Reading on upload showed alcohol right 103 times (wrong 3) and net contents right 115 (wrong 15); it does not guess the brand (usually a logo).
 - The new label rules (class minimums, bottled in bond, table wine, low/no-alcohol wording) said Please check on 0 of the 227 approved labels.
-- Measured 2026-10-12 (`out/eval_g8_country.log`, not committed); the same run is the one the safety gate approved for the live version. The answer keys of the 85 newest labels were drafted with AI assistance and reviewed by the author.
+- Measured 2026-10-13 ([`docs/evidence/practice_run.log`](docs/evidence/practice_run.log)); the same run is the one the safety gate approved for the live version. The answer keys of the 85 newest labels were drafted with AI assistance and reviewed by the author.
 
-**Final test (held-out labels, run once, 2026-10-12, on the live version ef13fdb):** numbers exactly as measured (`out/eval_final.log`, not committed).
+**Final test (held-out labels, run once, 2026-10-12, on the live version ef13fdb):** numbers exactly as measured ([`docs/evidence/final_test.log`](docs/evidence/final_test.log)).
 
 | Final-test set | Wrong answers | Mistakes caught | Items confirmed |
 |---|---|---|---|
@@ -80,9 +81,14 @@ Measured with `tools/evaluate.py` on the practice sets (the final-test set is ke
 - Speed: typical 0.7–2.6 s, slowest 4.5 s per label (a photo).
 - The harder photos (never straight-on, glare, coloured light) are where the app is weakest: it stays safe (no wrong answers) but leaves most items to the agent.
 
-It has 162 items the app was never run on before: 28 real approved labels and 48 generated labels, 32 of them with planted mistakes (frozen Oct 2), plus, built from those same 28 labels on Oct 10 and frozen the same way: 46 with one planted change, 22 photo-style pictures (harder than the practice photos: never straight-on, more glare, coloured light) and 18 photo-style pictures with a planted change. The six real labels with a near-identical twin in practice were left out of the Oct 10 sets. `tools/evaluate.py --final` checks every file against its frozen checksum and runs only once.
+162 items the app had never seen: 28 real approved labels and 48 generated labels (32 with planted mistakes), frozen 2026-10-02. From the same 28 labels, frozen 2026-10-10: 46 with one planted change, 22 photo-style pictures (harder than practice: never straight-on, more glare, coloured light) and 18 photos with a planted change. Six real labels with a near-identical twin in practice were left out of the 2026-10-10 sets. `tools/evaluate.py --final` checks every file's checksum and runs only once. All of it is in `data/`.
 
-**How the answer key was made:** label values were drafted with AI tools and cross-checked by two independent vision models. The author reviewed every final-test label by hand against its images; the practice labels were checked against every image with AI assistance. Each answer sheet in `data/ground_truth/` records who reviewed it. In that review, the vision models' disagreements were almost always the models' own errors (invented addresses and container sizes), which is why the app never lets a model decide.
+**After the final test** (it was not run again), a code review and hands-on testing led to these changes, each approved by a full practice run (live version ae44207):
+- A different number or product word in a name or class needs the second reader before it is Does not match; Pinot Gris/Grigio, Syrah/Shiraz and Muscat/Moscato are not different products; the importer statement must be one phrase ("Imported by …"). Each can only turn an answer into Please check.
+- The type of product may be left blank and is then told from the label (the result says so); with pictures only, the brand is Please check for the agent to confirm.
+- Clearer wording on the form, and each batch row opens a side panel with its pictures and every item.
+
+**How the answer key was made:** label values were drafted with AI tools and cross-checked by two independent vision models. The author reviewed every final-test label and the 85 newest practice labels by hand against their images; the other practice labels were checked against every image with AI assistance. Each answer sheet in `data/ground_truth/` records who reviewed it. In that review, the vision models' disagreements were almost always the models' own errors (invented addresses and container sizes), which is why the app never lets a model decide.
 
 ## Running it yourself
 
@@ -90,7 +96,7 @@ It has 162 items the app was never run on before: 28 real approved labels and 48
 python3.12 -m venv .venv
 .venv/bin/pip install -r requirements.txt onnx
 .venv/bin/python tools/make_dynamic_det.py         # one-time: fetch the reading models, make the detector size-flexible
-.venv/bin/pytest                                   # 1,129 tests
+.venv/bin/pytest                                   # 1,141 tests
 .venv/bin/uvicorn app.web.main:app --port 8000     # open http://localhost:8000
 ```
 
@@ -121,7 +127,7 @@ docker run --rm -p 8080:8080 label-check           # open http://localhost:8080
 - **No COLA integration** (out of scope per the brief); the agent types the application values, or supplies them in the batch spreadsheet.
 - **Bold heading** is measured (stroke thickness) when the warning is large and straight enough; **type size** is measured when the label height is given, and only answers when the picture settles it (most approved labels print right at the minimum, so it often says "not confirmed"). Both are advisory: TTB states it does not review type size.
 - **"I disagree"** on every result (single page and batch): a reason and a note, shown with the results, printed, and in the batch spreadsheet (`agent_note`). Nothing is stored on the server. In production these notes would go to a reviewer, who turns each real miss into a rule fix with a test, or a reading lesson for the next reader training, released only through the safety gate.
-- **Public prototype:** no login. Cost is capped by limiting the checker to 12 copies running at once, plus a budget alert.
+- **Public prototype:** no login. Cost is capped by limiting the checker to 12 copies running at once, plus a budget alert; anyone can upload pictures, which are deleted after one day.
 
 ## Repository map
 

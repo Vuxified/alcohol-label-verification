@@ -1,6 +1,6 @@
 # Verification Rules
 
-> Three rules were relaxed after testing against real TTB-approved labels. The evidence is in [FINDINGS.md](FINDINGS.md).
+> Three rules were changed to Please check after testing against real TTB-approved labels; the evidence is in [FINDINGS.md](FINDINGS.md).
 
 This document is the rulebook the app follows: what it checks, how strictly, and the federal regulation behind each rule. Every rule in `app/verify/` maps to a section here, and every section has tests.
 
@@ -40,7 +40,9 @@ Before comparing, both sides are normalized:
   3/8, 5/6, 6/8, 1/4, 8/9, 5/8) stay Please check, so "10" vs "12" fails but "10" vs "18" asks a person. Every variant
   is a case in `tests/test_edge_cases.py`.
 
-After normalization the label must show **the same text** to match. Close is not the same: in a long name one character can be "10 Year" vs "12 Year", so anything merely similar is **Please check**, showing what was read (changed 2026-10-08 after an independent code review found that a 95% similarity score let one wrong character through). The exception is a **clearly read different number**: when every word is the same and the only difference is one whole number read as another ("10" vs "12"), the result is **Does not match** (owner decision 2026-10-09). The label must be identical to the approved application (§ 5.22(a)), and when the number is an age, stating more than the real age is prohibited (§ 5.74(a)(2)). Anything less clear ("1O" with a letter O, or a different word as well) stays Please check. In the **class/type** only, one product-type word read in place of another ("RYE" for "BOURBON", "RUM" for "GIN", from a fixed list of class/type words) is also **Does not match**: it is a different product, not a reading slip. A near spelling ("BOURBAN") or a word outside the list stays Please check, and brand names never fail on a different word, because decorative lettering can be read as any word.
+After normalization the label must show **the same text** to match. Close is not the same: in a long name one character can be "10 Year" vs "12 Year", so anything merely similar is **Please check**, showing what was read (changed 2026-10-08 after an independent code review found that a 95% similarity score let one wrong character through).
+
+**Exception: a clearly read different number.** The exception is a **clearly read different number**: when every word is the same and the only difference is one whole number read as another ("10" vs "12"), the result is **Does not match** (owner decision 2026-10-09). The label must be identical to the approved application (§ 5.22(a)), and when the number is an age, stating more than the real age is prohibited (§ 5.74(a)(2)). Anything less clear ("1O" with a letter O, or a different word as well) stays Please check. In the **class/type** only, one product-type word read in place of another ("RYE" for "BOURBON", "RUM" for "GIN", from a fixed list of class/type words) is also **Does not match**: it is a different product, not a reading slip. A near spelling ("BOURBAN") or a word outside the list stays Please check, and brand names never fail on a different word, because decorative lettering can be read as any word. The same grape under two names (Pinot Gris and Pinot Grigio, Syrah and Shiraz, Muscat and Moscato) is never a different product. Like alcohol content and net contents, a different number or product word stays **Does not match** only when a second, independent reader sees the same difference at that spot; otherwise it is Please check (one misread digit must not fail a real label).
 
 | After normalization | Verdict |
 |---|---|
@@ -70,7 +72,7 @@ Plus a **word rule**: if the value only appears inside a longer line, the result
 
 **Class/type code vs. class/type on the label:** the TTB registry's "Class/Type Code" (e.g. OTHER STRAIGHT WHISKY) is a filing category, not the wording the label must carry (e.g. KENTUCKY STRAIGHT MALT WHISKEY). They are never compared word for word; the label wording is checked against the application's class/type statement.
 
-**Name and address:** every word of the application's statement must appear on the label to match, and each part of it (split at commas, bars, sentence ends and "by"/"for") must appear **together and in order**, with at most a few stray reader marks between words; the parts may come in any order ("BARDSTOWN, KY" above "OLD TOM DISTILLERY"). Any missing word (a different street or city, or text the reader missed) gives **Please check**, listing the missing words; all words present but scattered gives Please check too. Before 2026-10-09 words merely had to be "somewhere": planting a changed word into the statement of each approved label's readings, 4 in 10 came back Matches (always when the word was also in the logo); with the order rule about 1 in 10, mostly where the changed word is printed elsewhere as its own part (the winery name in the brand logo).
+**Name and address:** every word of the application's statement must appear on the label to match, and each part of it (split at commas, bars, sentence ends and "by"/"for") must appear **together and in order**, with at most a few stray reader marks between words; the parts may come in any order ("BARDSTOWN, KY" above "OLD TOM DISTILLERY"). Any missing word (a different street or city, or text the reader missed) gives **Please check**, listing the missing words; all words present but scattered gives Please check too. (Measured by planting a changed word into each approved label's reading: before this order rule, 4 in 10 came back Matches; now about 1 in 10, mostly where the changed word also stands alone elsewhere on the label, such as a winery name in the logo.)
 
 **Country of origin (imports):** checks for the country named on the application, e.g. "Product of Ireland." Not found gives Please check (TTB has approved imports whose country appears only in the importer's address or on the container). The country's own-language name counts as the same country (Italia = Italy, España = Spain, Deutschland = Germany), but Scotland, England and Wales are not taken as the United Kingdom: that is for a person. A label that also names another country ("Product of Mexico" and "Bottled in Spain") gives Please check.
 
@@ -160,9 +162,9 @@ Required on every alcohol beverage of 0.5% alcohol by volume or more, for all th
 ### 5.2 Capital letters (§ 16.22(a)(2))
 "GOVERNMENT WARNING" must be in capital letters. This is checked on the **raw** OCR text, before any normalization, so "Government Warning" in title case is caught. The app requires at least 90% of the heading's letters to read as capitals, so one ambiguous glyph doesn't cause a false fail, and shows the crop.
 
-### 5.3 Advisory checks (Pass or Please check only, never Does not match)
+### 5.3 Advisory checks (Matches or Please check only, never Does not match)
 
-**Bold heading (§ 16.22(a)(2)):** "GOVERNMENT WARNING" must be bold, and the rest may not be. The app compares the stroke thickness of the heading to the rest of the statement. Clearly heavier (at least 1.2 times as thick, set on the practice labels: regular headings measured 0.98–1.18, bold ones 1.46–2.31) → Pass. Otherwise → Please check. Too small, sideways or curved to measure → not checked. If the readings disagree on whether the heading is in capitals, the capitals check is Please check. It never fails the bold check, because:
+**Bold heading (§ 16.22(a)(2)):** "GOVERNMENT WARNING" must be bold, and the rest may not be. The app compares the stroke thickness of the heading to the rest of the statement. Clearly heavier (at least 1.2 times as thick, set on the practice labels: regular headings measured 0.98–1.18, bold ones 1.46–2.31) → Matches. Otherwise → Please check. Too small, sideways or curved to measure → not checked. If the readings disagree on whether the heading is in capitals, the capitals check is Please check. It never fails the bold check, because:
 - OCR engines can't report bold reliably.
 - TTB has approved labels where the *entire* warning is set in heavy type (for example, a Jack Daniel's back label in our test set, TTB ID 24002001000457).
 
@@ -189,13 +191,7 @@ This stays advisory because TTB itself states on every approved COLA:
 
 ## 6. Image quality
 
-Before trusting a reading, the app checks each image and returns **every** problem together, so the agent can request one better image instead of several:
-- **Blurry:** low sharpness score.
-- **Glare:** too much of the label is washed out, or glare covers the warning.
-- **Too small to read:** letters under about 8 pixels tall.
-- **Low confidence:** the reader is unsure of too many words in a required field.
-
-Any of these produce **Please check — please request a clearer image**, with the reason. This replaces today's "can't read it, reject it" step with a specific, instant explanation.
+When an item already says Please check, the app says which picture is probably why: one that is small (longest side under 600 pixels), looks blurry, or shows no writing at all. These are hints, never verdicts; a clear label is never flagged for its pictures.
 
 Handled automatically: phone rotation (EXIF), white or gold text on dark backgrounds (the app reads both normal and inverted versions), and sideways text (e.g. a vertical warning on a can).
 
@@ -207,6 +203,7 @@ With the brand left blank, nothing is compared. The app instead looks for each s
 
 | Item | On the label | Please check | Not checked |
 |---|---|---|---|
+| Brand name | | always: required on the label, but usually a logo the reader can't pick out, so a person confirms it (the app never guesses which text is the brand) | |
 | Class or type | a class or type word (bourbon, vodka, Cabernet Sauvignon, red wine, ale, lager…) | none found | |
 | Alcohol content | one alcohol content | spirits without one (§ 5.65); wine without one and without "table wine"/"light wine" (§ 4.36); two different values | beer without one (§ 7.65: optional federally) |
 | Net contents | a size, standard for the product | none found; wine or spirits size that is not a standard fill (§ 4.72, § 5.203) | |
@@ -214,9 +211,11 @@ With the brand left blank, nothing is compared. The app instead looks for each s
 | Country of origin (imports) | "Product of …", "Made in …", "Imported from …" a country | none found | |
 | Importer statement (imports) | "Imported by …", "Importer: …" | none found | |
 
+**Type of product** may be left blank (form or batch spreadsheet): it is then told from the label's class words ("Bourbon", "Cabernet", "Lager"), and the result says so. If the label doesn't make it clear, the agent is asked to choose. Federal label rules cover three kinds of product (27 CFR parts 4, 5 and 7); cider, mead and fruit wine of 7% or more are wine, malt-based hard seltzer is a malt beverage.
+
 "On the label" is shown instead of "Matches": the statement is there, but nothing was compared with an application. **Never Does not match** in this mode. The warning, proof and type-size rules work as usual (type size uses the net contents found on the label).
 
-The same findings are shown under each box of the form as soon as pictures are added ("On the label: 45%"). They are never put in the boxes: those hold the application's values, so a label is never compared with its own reading. Measured on 142 approved labels against the answer key: alcohol content filled right 103 times, wrong 3; net contents right 115, wrong 15; bottler line right 88, wrong 19; class line right 91, wrong 44. The brand is not filled in: it is usually a logo, and the largest line read was the brand only 24 times.
+The same findings are shown under each box of the form as soon as pictures are added ("On the label: 45%"). They are never put in the boxes: those hold the application's values, so a label is never compared with its own reading. Measured on 142 approved labels against the answer key: alcohol content read right 103 times, wrong 3; net contents right 115, wrong 15; bottler line right 88, wrong 19; class line right 91, wrong 44. The brand is not shown: it is usually a logo, and the largest line read was the brand only 24 times.
 
 Pictures only on the same 142 approved labels: 0 Does not match; found on the label: class 135, net contents 126, bottler 107, alcohol content 106 (9 more are beer, where it is optional); the rest Please check.
 
@@ -273,10 +272,10 @@ These need human judgment or are outside a prototype's scope; the app doesn't pr
   - Wine at 13% with "table wine" and no alcohol content → Matches.
   - Malt with metric-only net contents → Please check.
   - Deliberately breaking any rule must make a test fail.
-- **Real labels:** about 90 approved labels from TTB's Public COLA Registry (30 each of spirits, wine, and malt beverages, domestic and imported), plus about 44 real bottle photos from Open Food Facts (CC BY-SA).
-- **Labels that should fail:** synthetic labels with known answers, covering 10 failure types (wrong alcohol content, wrong net contents, brand mismatch, class/type mismatch, missing warning, title-case warning, non-bold heading, altered warning wording, warning hard to read, type too small).
-- **Photo conditions:** copies of real labels with added glare, blur, tilt and bottle curvature.
-- **Honest scoring:** the data is split into a development set (used while building) and a held-out set, frozen with a checksum before tuning and run once at the end. The README reports what that run measured: a confusion matrix, the **false-Pass rate** (the number that matters most), per-field precision and recall, and latency on the deployed server.
+- **Real labels:** 255 approved labels from TTB's Public COLA Registry (227 practice, 28 final test), plus 44 bottle photos from Open Food Facts (CC BY-SA).
+- **Labels that should fail:** generated labels with known answers, and real labels with one planted change (alcohol content, net contents, proof, a warning word, title-case heading, brand).
+- **Photo conditions:** photo-style pictures of real labels (angles, glare, coloured light, close-ups, cans).
+- **Honest scoring:** a held-out set, frozen with a checksum and run once. The README reports wrong answers (the number that matters most), mistakes caught, items confirmed and speed.
 - **Target on real approved labels: zero "Does not match" results.** They were approved by TTB, so a fail there is our bug.
 
 ---

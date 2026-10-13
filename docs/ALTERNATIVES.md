@@ -23,4 +23,4 @@ Tools and techniques that are popular for reading labels and documents, what we 
 | **PP-OCR (PaddleOCR)** | Excluded by this project's model-provenance policy. OnnxTR (docTR models) plus Tesseract were chosen after measuring speed and accuracy on the practice labels. |
 | **Structured-output libraries and LLM tracing** (instructor, Langfuse) | They serve apps that call language models at run time; this app doesn't. The answer-key drafting tool validates the models' structured output before saving it. |
 | **Prompt evaluation frameworks** (promptfoo) | Designed for testing prompts; there are no prompts in the app. `tools/evaluate.py` plays the same role for this pipeline. |
-| **Automatic label-error detection** (cleanlab) | Needs a trained classifier's probabilities over many examples; with 92 real labels, every disagreement was reviewed directly instead. |
+| **Automatic label-error detection** (cleanlab) | Needs a trained classifier's probabilities over many examples; with 255 real labels, every disagreement was reviewed directly instead. |

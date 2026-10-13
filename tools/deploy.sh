@@ -2,7 +2,7 @@
 # Ship the committed version to the live site. Every step must pass or nothing changes:
 #   1. all tests (including the no-internet test, tests/test_offline.py);
 #   2. the safety gate (tools/gate.py): a full practice run of this exact code with 0 wrong answers either way;
-#   3. build the container on an arm64 builder (git archive HEAD: only committed files);
+#   3. build the container on an arm64 builder (git archive HEAD: only committed files the Dockerfile uses);
 #   4. start it with networking switched off and check both sample labels give the right answer;
 #   5. only then point the Lambda at the new image, and check the live site.
 # Needs: AWS CLI logged in; BUILDER=user@host of an arm64 machine with Docker; BUILDER_KEY=its ssh key.
@@ -21,7 +21,9 @@ echo "--- 2. safety gate"
 $PY tools/gate.py "$@"
 
 echo "--- 3. build $TAG"
-git archive HEAD | b 'rm -rf ctx && mkdir ctx && tar -x -C ctx'
+# Only what the Dockerfile copies: the test data in the repo is large and not part of the app.
+git archive HEAD -- Dockerfile .dockerignore requirements.txt app tools/make_dynamic_det.py \
+  data/synthetic/syn_spirits_00_none data/synthetic/syn_malt_01_warning_titlecase | b 'rm -rf ctx && mkdir ctx && tar -x -C ctx'
 aws ecr get-login-password --region $REGION | b "docker login --username AWS --password-stdin ${REPO%%/*} >/dev/null 2>&1"
 b "cd ctx && docker build --provenance=false -t $REPO:$TAG . > ../build.log 2>&1" || { b "tail -20 build.log"; exit 1; }
 
