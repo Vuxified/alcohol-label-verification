@@ -90,7 +90,7 @@ var BatchRead = (function () {
     Object.keys(COLUMNS).forEach(function (c) {
       col[c] = COLUMNS[c].filter(function (name) { return have.indexOf(name) >= 0; })[0];
     });
-    ['application_id', 'beverage_type', 'brand_name'].forEach(function (c) {
+    ['application_id', 'brand_name'].forEach(function (c) {  // beverage_type may be left out: told from the label
       if (!col[c]) problems.push('The spreadsheet has no "' + c + '" column.');
     });
     if (problems.length) return { fatal: problems };
@@ -104,7 +104,7 @@ var BatchRead = (function () {
       else if (seen[id]) bad.push('application_id "' + id + '" is used twice');
       seen[id] = true;
       var bev = BEV[get(r, 'beverage_type').toLowerCase()];
-      if (!bev) bad.push('beverage_type "' + get(r, 'beverage_type') + '" should be spirits, wine or malt');
+      if (!bev && get(r, 'beverage_type')) bad.push('beverage_type "' + get(r, 'beverage_type') + '" should be spirits, wine or malt');
       if (!get(r, 'brand_name')) bad.push('no brand_name');
       var abv = get(r, 'abv');               // the server reads "45", "45%" or "45% Alc./Vol."
       if (abv && !/\d/.test(abv)) bad.push('alcohol content "' + abv + '" has no number');

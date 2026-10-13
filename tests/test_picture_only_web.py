@@ -42,14 +42,24 @@ def test_fill_in_needs_pictures(client):
 def test_check_with_pictures_only(client):
     page = client.post("/check", data={"beverage_type": "spirits"}, files=files())
     assert page.status_code == 200
-    assert "Every required statement we looked for is on the label" in page.text
+    assert "One item needs your attention: the brand name." in page.text
     assert page.text.count("On the label") >= 4  # class, alcohol, net contents, bottler: found, not "Matches"
     assert "Does not match" not in page.text
 
 
-def test_beverage_type_is_still_needed_to_check(client):
-    page = client.post("/check", data={}, files=files())
-    assert page.status_code == 400
+def test_type_of_product_is_told_from_the_label(client):
+    page = client.post("/check", data={}, files=files())  # nothing chosen: the gin label says it's spirits
+    assert page.status_code == 200 and "Type of product: distilled spirits, told from the label." in page.text
+    assert 'section-5.65"' in page.text  # spirits rules (and citations) were used
+
+
+def test_type_of_product_asked_for_when_the_label_does_not_show_it(client):
+    from PIL import Image
+    import io
+    blank = io.BytesIO()
+    Image.new("RGB", (800, 600), "white").save(blank, "PNG")
+    page = client.post("/check", data={}, files=[("images", ("blank.png", blank.getvalue(), "image/png"))])
+    assert page.status_code == 400 and "couldn&#39;t tell the type of product" in page.text
 
 
 def test_stylesheet_link_changes_with_the_file(client):

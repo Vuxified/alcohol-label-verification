@@ -25,8 +25,11 @@ def verify(app: Application, lines: list[str]) -> Report:
     report = Report()
     kind = app.beverage_type
     alone = not app.brand_name  # picture only: blank items are looked for on the label (presence.py), not skipped
+    # Pictures only: the brand must be on the label too (27 CFR 4.32, 5.63, 7.63), but it is usually a logo the reader
+    # can't pick out reliably, so a person confirms it rather than the app guessing which text is the brand.
     report.fields.append(match_text("brand_name", app.brand_name, lines) if app.brand_name else FieldResult(
-        "brand_name", Verdict.NOT_APPLICABLE, "Not given on the application, so not compared."))
+        "brand_name", Verdict.CHECK, "The brand name must be on the label. Brands are usually logos we can't read "
+        "reliably, so please confirm it on the pictures, or type it in to compare.", code="BRAND_NOT_GIVEN"))
     if app.fanciful_name:
         report.fields.append(match_text("fanciful_name", app.fanciful_name, lines))
     if app.class_type:

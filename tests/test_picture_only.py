@@ -24,8 +24,10 @@ def test_blank_items_found_on_the_label():
     assert "BOTTLED BY" in r["name_address"].found
 
 
-def test_blank_brand_is_not_checked():
-    assert run("spirits", SPIRITS)["brand_name"].verdict == Verdict.NOT_APPLICABLE
+def test_blank_brand_is_for_a_person_to_confirm():
+    # Required on the label, but usually a logo: Please check, never a guess at which text is the brand.
+    brand = run("spirits", SPIRITS)["brand_name"]
+    assert brand.verdict == Verdict.CHECK and brand.code == "BRAND_NOT_GIVEN" and brand.found is None
 
 
 def test_nothing_is_ever_does_not_match_without_application_values():

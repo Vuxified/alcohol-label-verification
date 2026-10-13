@@ -37,6 +37,7 @@ a:hover { color: var(--accent-hover); text-decoration-thickness: 2px; }
 .app-hidden { display: none !important; }
 .app-small { font-size: .95rem; color: var(--ink-3); margin: .35rem 0 0; }
 .app-fill { font-size: .95rem; color: var(--ink-2); margin: .75rem 0 .25rem; padding: .6rem .85rem; background: var(--wash); border-radius: 4px; }
+.app-optional { font-family: var(--font); font-size: .8rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--ink-3); margin-left: .5rem; vertical-align: middle; }
 .app-seen { font-size: .95rem; color: var(--ink-3); margin: .35rem 0 0; animation: app-fade .3s ease-out both; }
 .app-seen b { color: var(--ink); font-weight: 600; margin-left: .25rem; }
 .app-ico { width: 1em; height: 1em; flex: none; vertical-align: -.14em; }
@@ -260,6 +261,25 @@ td .app-disagree summary { font-size: .85rem; }
 .app-intro-note p { margin: 0; }
 .app-progress { width: 100%; height: .6rem; accent-color: var(--accent); border-radius: 999px; }
 .app-table { width: 100%; border-collapse: collapse; background: var(--card); }
+.app-batch-split { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.5rem; align-items: start; }
+.app-batch-table tbody tr[data-view] { cursor: pointer; }
+.app-batch-table tbody tr[data-view]:hover { background: var(--wash); }
+.app-batch-table tbody tr.is-selected { background: var(--wash); box-shadow: inset 3px 0 0 var(--accent); }
+.app-detail { background: var(--card); border-left: 1px solid var(--rule); padding: 1.25rem 1.5rem 2rem; position: fixed; top: 0; right: 0; bottom: 0; width: min(36rem, 100vw); overflow: auto; z-index: 50; box-shadow: -12px 0 32px rgba(29, 26, 22, .14); animation: app-slide .25s var(--ease) both; }
+@keyframes app-slide { from { transform: translateX(2rem); opacity: 0; } }
+.app-detail__head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
+.app-detail__head h2 { font-family: var(--serif); font-size: 1.25rem; margin: 0; overflow-wrap: anywhere; }
+.app-detail__item { border-top: 1px solid var(--rule-2); padding: .75rem 0; }
+.app-detail__name { display: flex; justify-content: space-between; align-items: center; gap: .75rem; }
+.app-detail__pair { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: .15rem .75rem; margin: .4rem 0 0; font-size: .95rem; }
+.app-detail__pair dt { color: var(--ink-3); }
+.app-detail__pair dd { margin: 0; overflow-wrap: anywhere; }
+.app-detail__pics-title { font-family: var(--serif); font-size: 1.05rem; margin: .75rem 0 .5rem; }
+.app-detail__pics + .app-detail__pics-title { margin-top: 1.25rem; }
+.app-detail__pics { display: grid; grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr)); gap: .75rem; }
+.app-detail__pics figure { margin: 0; }
+.app-detail__pics img { width: 100%; height: auto; border: 1px solid var(--rule); border-radius: 3px; background: #fff; }
+.app-detail__pics figcaption { font-size: .8rem; color: var(--ink-3); overflow-wrap: anywhere; }
 .app-table thead th { text-align: left; font-size: .75rem; font-weight: 650; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); padding: .9rem .9rem .7rem; border-bottom: 1px solid var(--rule); }
 .app-table td, .app-table tbody th { padding: .8rem .9rem; vertical-align: top; border-bottom: 1px solid var(--rule-2); font-size: 1rem; text-align: left; }
 .app-table tbody th { font-weight: 600; white-space: nowrap; }

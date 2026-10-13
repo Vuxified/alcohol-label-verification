@@ -2,7 +2,7 @@
 {% block content %}
 <p class="app-kicker">Check one label</p>
 <h1>Does the label match its application?</h1>
-<p class="app-lede">Add the label pictures and copy a few details from the application. In a few seconds you'll see what the application says next to what the label shows, with anything that needs a closer look listed first. No application yet? Leave the details blank and we check that the label shows everything the rules require.</p>
+<p class="app-lede">Add the label pictures and press Check label. Filling in the application's details is optional: with them, we compare each item with the label; without them, we check that the label has everything the rules require.</p>
 
 {% if errors %}
 <div class="usa-alert usa-alert--error" role="alert" id="errors" tabindex="-1">
@@ -24,11 +24,12 @@
   </fieldset>
 
   <fieldset class="app-step">
-    <legend><span class="app-step__num" aria-hidden="true">2</span>Type of product</legend>
+    <legend><span class="app-step__num" aria-hidden="true">2</span>Type of product <span class="app-optional">optional</span></legend>
+    <p class="usa-hint">We can tell it from the label. Federal label rules cover these three kinds; every product is one of them: cider, mead and fruit wine (7% or more) are wine, malt-based hard seltzer is a malt beverage, and cocktails made with spirits are distilled spirits.</p>
     <div class="app-choices">
     {% for value, label in copy.BEVERAGES.items() %}
     <div class="usa-radio">
-      <input class="usa-radio__input usa-radio__input--tile" id="bev-{{ value }}" type="radio" name="beverage_type" value="{{ value }}" required
+      <input class="usa-radio__input usa-radio__input--tile" id="bev-{{ value }}" type="radio" name="beverage_type" value="{{ value }}"
              {% if form.beverage_type == value %}checked{% endif %}>
       <label class="usa-radio__label" for="bev-{{ value }}">{{ label }}</label>
     </div>
@@ -37,9 +38,9 @@
   </fieldset>
 
   <fieldset class="app-step">
-    <legend><span class="app-step__num" aria-hidden="true">3</span>From the application</legend>
-    <p class="usa-hint">Copy these as they appear on the application; blank items are not compared. Leave the brand blank to check the pictures alone: we then look for each statement the rules require.</p>
-    <p class="app-fill" id="fill-status" role="status">When you add pictures, we read them right away and show what the label says under each box. Type what the application says; the label's reading is never used in its place.</p>
+    <legend><span class="app-step__num" aria-hidden="true">3</span>From the application <span class="app-optional">optional</span></legend>
+    <p class="usa-hint">Fill in what the application says and we compare it with the label. Leave everything blank to just check that the label has what the rules require.</p>
+    <p class="app-fill" id="fill-status" role="status">After you add pictures, what we find on the label appears under each box.</p>
     <div class="app-fields">
       <div class="app-wide">
         <label class="usa-label" for="brand_name">Brand name</label>
@@ -65,7 +66,7 @@
       </div>
       <div>
         <label class="usa-label" for="label_height">Label height in inches (optional)</label>
-        <span class="usa-hint" id="height-hint">Of the label with the health warning, from the application's Actual Dimensions. Lets us check the warning's type size.</span>
+        <span class="usa-hint" id="height-hint">Of the label with the health warning, from the application. Needed to check the warning's type size: a picture alone can't show real size.</span>
         <input class="usa-input" id="label_height" name="label_height" inputmode="decimal" aria-describedby="height-hint" value="{{ form.label_height or '' }}">
       </div>
       <div class="app-wide">
@@ -206,17 +207,17 @@
         {% endif %}
         var r = await fetch('/api/read', { method: 'POST', body: body }), v = await r.json();
         if (mine !== reads) return;  // other pictures were chosen meanwhile
-        if (!r.ok) throw new Error(v.error === 'busy' || v.error === 'starting' ? 'The checker is busy, so the label was not read ahead. You can still check it.' : v.error);
+        if (!r.ok) throw new Error(v.error === 'busy' || v.error === 'starting' ? 'We couldn\'t read the label just now. You can still press Check label.' : v.error);
         showSeen(v);
         [['beverage_type', 'bev-'], ['source', 'src-']].forEach(function (kv) {
           var chosen = f.querySelector('input[name=' + kv[0] + ']:checked');
           var pick = v[kv[0]] && document.getElementById(kv[1] + (kv[0] === 'source' ? v.source.charAt(0) : v[kv[0]]));
           if (pick && (!chosen || kv[0] === 'source')) pick.checked = true;
         });
-        fillStatus.textContent = 'Read from the label: shown under each box. Type what the application says in the boxes, then check.';
+        fillStatus.textContent = 'What we found on the label is shown under each box.';
       } catch (e) {
         if (mine !== reads) return;
-        fillStatus.textContent = e.message && !/fetch|upload/i.test(e.message) ? e.message : 'The label could not be read ahead. You can still check it.';
+        fillStatus.textContent = e.message && !/fetch|upload/i.test(e.message) ? e.message : 'We couldn\'t read the label just now. You can still press Check label.';
       }
     }
     pictures.addEventListener('change', readLabel);

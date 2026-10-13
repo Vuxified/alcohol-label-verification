@@ -26,7 +26,7 @@ from starlette.concurrency import run_in_threadpool
 
 from app.evidence import crop_png, locate, locate_warning
 from app.ocr.reader import Reader
-from app.pipeline import check_application
+from app.pipeline import UnknownProduct, check_application
 from app.typesize import parse_label_height
 from app.verify import Application, Verdict
 from app.verify.abv import parse_typed_abv
@@ -172,7 +172,7 @@ async def _read_request(data):
         if problem:
             errors.append(problem)
         images.append((name, b))
-    if form["beverage_type"] not in copy.BEVERAGES:
+    if form["beverage_type"] and form["beverage_type"] not in copy.BEVERAGES:  # blank: told from the label
         errors.append(copy.ERRORS["beverage"])
     if form["net_contents"] and form["beverage_type"] in copy.BEVERAGES \
             and parse_typed_net(form["net_contents"], form["beverage_type"]) is None:
@@ -216,9 +216,14 @@ async def check(request: Request):
             names = [n for n, _ in images]
             return _render_form(request, form, errors + ([f"Please add your images again: {', '.join(names)}."]
                                                          if names else []), 400)
-    res = await _run(_application(form), images)
+    try:
+        res = await _run(_application(form), images)
+    except UnknownProduct:
+        return _render_form(request, form, [copy.ERRORS["beverage"], "Please add your images again: "
+                                            + ", ".join(n for n, _ in images) + "."], 400)
     if res is None:
         return HTMLResponse(f"<p>{copy.ERRORS['busy']}</p>", status_code=503)
+    form["beverage_type"] = res.application.beverage_type
     res.form = form
     return await run_in_threadpool(_results_page, request, res)
 
@@ -231,11 +236,14 @@ async def api_check(request: Request):
     form, images, errors = await _read_request(await request.form())
     if errors:
         return JSONResponse({"error": " ".join(errors)}, status_code=400)
-    res = await _run(_application(form), images)
+    try:
+        res = await _run(_application(form), images)
+    except UnknownProduct:
+        return JSONResponse({"error": copy.ERRORS["beverage"]}, status_code=400)
     if res is None:
         return JSONResponse({"error": "busy"}, status_code=503)
     return {"overall": res.overall.value, "seconds": res.seconds, "notes": res.notes,
-            "fields": [{"field": f.field, "verdict": f.verdict.value, "code": f.code, "reason": f.reason}
+            "fields": [{"field": f.field, "verdict": f.verdict.value, "code": f.code, "reason": f.reason, "found": f.found}
                        for f in res.fields]}
 
 

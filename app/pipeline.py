@@ -25,7 +25,7 @@ from app.verify.abv import check_abv
 from app.verify.model import SEVERITY
 from app.verify.net_contents import check_net_contents
 from app.verify.text import match_text
-from app.verify.presence import ON_LABEL
+from app.verify.presence import ON_LABEL, guess_kind
 from app.verify.verify import is_non_alcoholic
 from app.verify.warning_judge import judge_detail
 
@@ -46,10 +46,18 @@ class CheckResult:
         return max((f.verdict for f in self.fields), key=SEVERITY.__getitem__, default=Verdict.PASS)
 
 
+def guessed_name(kind: str) -> str:
+    return {"spirits": "distilled spirits", "wine": "wine", "malt": "beer or malt beverage"}[kind]
+
+
+class UnknownProduct(Exception):
+    """The type of product was left blank and the label doesn't show clearly which it is."""
+
+
 def _others_ok(app: Application):
     """Trigger for the whole-label passes: brand, alcohol and net contents all matched."""
     def ok(lines):
-        report = verify(app, lines)
+        report = verify(app if app.beverage_type else replace(app, beverage_type=guess_kind(lines) or "spirits"), lines)
         return all(f.verdict in (Verdict.PASS, Verdict.NOT_APPLICABLE)
                    for f in report.fields if f.field in OTHER_FIELDS)
     return ok
@@ -151,6 +159,12 @@ def confirm_differences(fields, frames, frame_words, app: Application, read=_sec
 def check_application(reader: Reader, app: Application, images: list[tuple[str, bytes]]) -> CheckResult:
     t0 = time.perf_counter()
     reading = reader.read(images, fields_ok=_others_ok(app))
+    guessed = None
+    if not app.beverage_type:  # left blank: told by the label's class words ("Bourbon", "Cabernet", "Lager")
+        guessed = guess_kind(reading.lines())
+        if guessed is None:
+            raise UnknownProduct
+        app = replace(app, beverage_type=guessed)
     report = verify(app, reading.lines())
     fields = confirm_differences([f for f in report.fields if not f.field.startswith("warning")],
                                  reading.frames, reading.frame_words, app)
@@ -163,7 +177,7 @@ def check_application(reader: Reader, app: Application, images: list[tuple[str, 
             net = next((f.found for f in fields if f.field == "net_contents" and f.code == ON_LABEL), None)
             fields.append(size_field(reading.frames, reading.frame_words,
                                      replace(app, net_contents=net) if net and not app.net_contents else app))
-    notes = []
+    notes = [f"Type of product: {guessed_name(guessed)}, told from the label."] if guessed else []
     if any(t.startswith(("tesseract", "inverted")) for t in reading.dropped):
         fields = [FieldResult(f.field, Verdict.CHECK, f.reason + " Part of the label was not read in time; please check.",
                               code=f.code, found=f.found)

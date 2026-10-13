@@ -34,7 +34,7 @@
   <p class="app-verdict-line__main"><span class="app-dot app-dot--{{ 'fail' if fails else 'check' }}" aria-hidden="true"></span>{{ attention|length }} items need your attention.</p>
   <p class="app-verdict-line__sub">{% for f in attention %}{{ name.get(f.field, f.field) if loop.first else name.get(f.field, f.field) | lower }}{{ ", " if loop.revindex > 2 else " and " if loop.revindex == 2 }}{% endfor %}.{% if passes %} The other {{ passes }} {{ others }}.{% endif %}</p>
   {% endif %}
-  {% if alone %}<p class="app-note">Pictures only: no brand was given, so nothing was compared. We looked for each statement the rules require. To compare with an application, type its details on the form.</p>{% endif %}
+  {% if alone %}<p class="app-note">No application details were given, so nothing was compared: we checked that the label has what the rules require.</p>{% endif %}
   {% for note in res.notes %}<p class="app-note">{{ note }}</p>{% endfor %}
 </div>
 

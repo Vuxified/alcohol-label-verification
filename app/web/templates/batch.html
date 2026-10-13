@@ -42,7 +42,7 @@
       <thead><tr><th scope="col">Column</th><th scope="col">Needed?</th><th scope="col">Example</th></tr></thead>
       <tbody>
         <tr><td><code>application_id</code></td><td>Yes, unique</td><td>TTB-0001</td></tr>
-        <tr><td><code>beverage_type</code></td><td>Yes</td><td>spirits, wine, or malt (beer is accepted)</td></tr>
+        <tr><td><code>beverage_type</code></td><td>No (told from the label when blank)</td><td>spirits, wine, or malt (beer is accepted)</td></tr>
         <tr><td><code>brand_name</code></td><td>Yes</td><td>Old Tom Distillery</td></tr>
         <tr><td><code>class_type</code>, <code>abv</code>, <code>net_contents</code>, <code>name_address</code>, <code>fanciful_name</code></td><td>No</td><td>Kentucky Straight Bourbon Whiskey · 45 · 750 mL</td></tr>
         <tr><td><code>source</code>, <code>country_of_origin</code></td><td>No</td><td>imported · Mexico (source defaults to domestic)</td></tr>
@@ -80,10 +80,14 @@
     <div class="usa-radio"><input class="usa-radio__input" type="radio" name="show" id="show-attn" value="attn" checked><label class="usa-radio__label" for="show-attn">Needs attention</label></div>
     <div class="usa-radio"><input class="usa-radio__input" type="radio" name="show" id="show-all" value="all"><label class="usa-radio__label" for="show-all">All</label></div>
   </fieldset>
-  <table class="app-table app-batch-table">
-    <thead><tr><th scope="col">Application</th><th scope="col">Result</th><th scope="col">Why</th></tr></thead>
-    <tbody id="rows"></tbody>
-  </table>
+  <p class="app-small">Select an application to see its pictures and every item checked.</p>
+  <div class="app-batch-split" id="split">
+    <table class="app-table app-batch-table">
+      <thead><tr><th scope="col">Application</th><th scope="col">Result</th><th scope="col">Why</th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+    <aside class="app-detail app-hidden" id="detail" aria-labelledby="detail-title"></aside>
+  </div>
   <dialog id="note-dialog" class="app-dialog" aria-labelledby="note-title">
     <form method="dialog">
       <h2 id="note-title">I disagree</h2>
@@ -122,7 +126,7 @@
   var PARALLEL = BUCKET ? 6 : 2;              // on AWS each request gets its own copy of the checker
   var MAX_ROWS = 500, MAX_IMAGES = 6, MAX_MB = 20;
   var VERDICT = {{ copy.VERDICT | tojson }}, FIELD_NAMES = {{ copy.FIELD_NAMES | tojson }};
-  var WORD = { fail: 'Does not match', check: 'Please check', pass: 'Matches', 'n/a': 'Not applicable', error: 'Error' };
+  var WORD = { fail: 'Does not match', check: 'Please check', pass: 'Matches', 'n/a': 'Not checked', error: 'Error' };
   var ORDER = { fail: 0, check: 1, error: 2, pass: 3 };
   var $ = function (id) { return document.getElementById(id); };
   var ico = function (v) { return VERDICT[v] ? '<svg class="app-ico" aria-hidden="true"><use href="#' + VERDICT[v][0] + '"/></svg>' : ''; };
@@ -268,7 +272,7 @@
     var all = document.querySelector('input[name=show]:checked').value === 'all';
     var rows = sorted().filter(function (x) { return all || x.overall !== 'pass'; });
     $('rows').innerHTML = rows.map(function (x) {
-      return '<tr class="is-' + x.overall + '"><th scope="row" data-label="Application">' + esc(x.id) + '</th><td data-label="Result"><span class="app-verdict app-verdict--' + x.overall + '">' + ico(x.overall) + esc(WORD[x.overall] || 'Error') +
+      return '<tr class="is-' + x.overall + (String(x.row) === String(selected) ? ' is-selected' : '') + '" data-view="' + x.row + '"><th scope="row" data-label="Application"><button class="app-linkbutton app-view" type="button" data-view="' + x.row + '">' + esc(x.id) + '</button></th><td data-label="Result"><span class="app-verdict app-verdict--' + x.overall + '">' + ico(x.overall) + esc(WORD[x.overall] || 'Error') +
         '</span></td><td data-label="Why">' + esc(x.reasons || 'Every item checked matches.') +
         (x.note ? '<p class="app-disagree__saved">You disagree: ' + esc(x.note) + '</p>' : '') +
         '<button class="app-linkbutton app-note-btn" type="button" data-row="' + x.row + '">' + (x.note ? 'Edit note' : 'I disagree') + '</button></td></tr>';
@@ -286,10 +290,54 @@
 
   document.querySelectorAll('input[name=show]').forEach(function (r) { r.addEventListener('change', render); });
 
+  // One application in full: its pictures (from the ZIP, in this page only) and every item, problems first.
+  var selected = null, urls = [];
+  var APP_FIELD = { brand_name: 1, fanciful_name: 1, class_type: 1, abv: 1, net_contents: 1, name_address: 1, country_of_origin: 1 };
+  var FIELD_ORDER = { fail: 0, check: 1, pass: 2, 'n/a': 3 };
+  async function showDetail(row) {
+    var x = results.filter(function (r) { return String(r.row) === String(row); })[0]; if (!x) return;
+    selected = row; render();
+    urls.forEach(function (u) { URL.revokeObjectURL(u); }); urls = [];
+    var form = (x.job && x.job.form) || {}, d = $('detail');
+    var items = (x.fields || []).slice().sort(function (a, b) { return FIELD_ORDER[a.verdict] - FIELD_ORDER[b.verdict]; });
+    d.innerHTML = '<div class="app-detail__head"><h2 id="detail-title">' + esc(x.id) + '</h2><button class="app-linkbutton" type="button" id="detail-close">Close</button></div>' +
+      '<p><span class="app-verdict app-verdict--' + x.overall + '">' + ico(x.overall) + esc(WORD[x.overall] || 'Error') + '</span>' +
+      (x.seconds ? ' <span class="app-small">checked in ' + Number(x.seconds).toFixed(1) + ' s</span>' : '') + '</p>' +
+      (x.error ? '<p>' + esc(x.error) + '</p>' : '') +
+      '<h3 class="app-detail__pics-title">Pictures</h3><div class="app-detail__pics" id="detail-pics"></div>' +
+      '<h3 class="app-detail__pics-title">Every item checked</h3>' +
+      items.map(function (f) {
+        var word = f.code === 'ON_LABEL' ? 'On the label' : (WORD[f.verdict] || f.verdict);
+        var pair = APP_FIELD[f.field] ? '<dl class="app-detail__pair"><dt>Application</dt><dd>' + esc(form[f.field] || 'Not given') + '</dd><dt>Label</dt><dd>' + esc(f.found || '–') + '</dd></dl>' : '';
+        return '<div class="app-detail__item is-' + f.verdict.replace('/', '') + '"><div class="app-detail__name"><strong>' + esc(FIELD_NAMES[f.field] || f.field) + '</strong>' +
+          '<span class="app-verdict app-verdict--' + f.verdict.replace('/', '') + '">' + ico(f.verdict) + esc(word) + '</span></div>' + pair +
+          (f.verdict === 'pass' && pair ? '' : '<p class="app-small">' + esc(f.reason) + '</p>') + '</div>';
+      }).join('');
+    show('detail', true);
+    $('detail-close').addEventListener('click', function () { selected = null; show('detail', false); render(); });
+    var files = (x.job && x.job.files) || [];
+    for (var i = 0; i < files.length; i++) {
+      try {
+        var url = URL.createObjectURL(await files[i].entry.async('blob')); urls.push(url);
+        var fig = document.createElement('figure'), img = document.createElement('img'), cap = document.createElement('figcaption');
+        img.src = url; img.alt = 'Picture ' + (i + 1) + ' of ' + x.id; cap.textContent = files[i].name;
+        var link = document.createElement('a'); link.href = url; link.target = '_blank'; link.rel = 'noopener';
+        link.title = 'Open full size'; link.append(img);
+        fig.append(link, cap); $('detail-pics').append(fig);
+      } catch (e) { /* a picture the ZIP can't give back is simply not shown */ }
+    }
+    d.scrollTop = 0; $('detail-close').focus();
+  }
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && selected !== null) { selected = null; show('detail', false); render(); }
+  });
+
   // "I disagree" on a row: a reason and a note, kept with the results (shown, printed, and in the spreadsheet).
   var noteFor = null, dlg = $('note-dialog');
   $('rows').addEventListener('click', function (e) {
-    var btn = e.target.closest('.app-note-btn'); if (!btn) return;
+    var btn = e.target.closest('.app-note-btn');
+    if (!btn) { var v = e.target.closest('[data-view]'); if (v) showDetail(v.dataset.view); return; }
     noteFor = results.filter(function (x) { return String(x.row) === btn.dataset.row; })[0];
     dlg.querySelectorAll('input[name=why]').forEach(function (r) { r.checked = noteFor.why === r.value; });
     $('note-text').value = noteFor.noteText || '';
@@ -309,7 +357,7 @@
     $('run-title').textContent = 'Batch: ' + zipName;
     started = Date.now(); results = [];
     jobs.filter(function (j) { return j.error; }).forEach(function (j) {
-      results.push({ row: j.row, id: j.id, overall: 'error', reasons: j.error, fields: [], seconds: '', images: 0, error: j.error, at: new Date().toISOString() });
+      results.push({ row: j.row, id: j.id, overall: 'error', reasons: j.error, fields: [], seconds: '', images: 0, error: j.error, at: new Date().toISOString(), job: j });
     });
     var queue = jobs.filter(function (j) { return !j.error; });
     render();
@@ -319,7 +367,7 @@
         var res = await checkOne(job);
         var how = job.pairedBy === 'reading the label' ? 'Pictures paired by reading the label (' + job.files.map(function (f) { return f.name; }).join(', ') + '); please confirm they belong to this application. ' : '';
         results.push({ row: job.row, id: job.id, overall: res.error ? 'error' : res.overall, reasons: how + reasonsOf(res), paired: job.pairedBy,
-                       fields: res.fields || [], seconds: res.seconds || '', images: job.files.length, error: res.error || '', at: new Date().toISOString() });
+                       fields: res.fields || [], seconds: res.seconds || '', images: job.files.length, error: res.error || '', at: new Date().toISOString(), job: job });
         render();
       }
     }

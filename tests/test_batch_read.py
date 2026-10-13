@@ -256,3 +256,8 @@ def test_bottler_name_from_the_spreadsheet_pairs(page):
     csv = "application_id,beverage_type,brand_name,name_address\nA1,spirits,Old Tom,\"Bottled by Lantern Distilling Co., Louisville, KY\"\nA2,wine,Red Hill,\n"
     r = pair(page, csv, ["IMG_9.jpg"], {"img_9.jpg": {"text": "DISTILLED AND BOTTLED BY LANTERN DISTILLING CO LOUISVILLE KY"}})
     assert r["jobs"][0]["files"] == ["IMG_9.jpg"]
+
+
+def test_beverage_type_may_be_left_out(page):
+    r = read(page, "application_id,brand_name\nA1,Old Tom\n", ["A1_front.jpg"])
+    assert not r.get("fatal") and r["jobs"][0]["form"]["beverage_type"] == "" and not r["jobs"][0].get("error")

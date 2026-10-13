@@ -31,7 +31,7 @@ class Application:
     label_height_in: float | None = None  # the warning label's real height, for the type-size check
 
     def __post_init__(self):
-        if self.beverage_type not in BEVERAGE_TYPES:
+        if self.beverage_type not in BEVERAGE_TYPES + ("",):  # "": not given; the pipeline tells it from the label
             raise ValueError(f"beverage_type must be one of {BEVERAGE_TYPES}")
 
 

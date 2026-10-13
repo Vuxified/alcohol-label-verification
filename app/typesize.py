@@ -86,11 +86,12 @@ def heading_height(frames, frame_words):
 def size_field(frames, frame_words, app: Application) -> FieldResult:
     if not app.label_height_in:
         return FieldResult("warning_size", Verdict.NOT_APPLICABLE,
-                           "Type size not checked: give the label's height to check it.")
+                           "Not checked: type the label's height in inches in the \"Label height\" box to check the warning's type "
+                           "size (a picture alone can't show real size).")
     ml = parse_typed_net(app.net_contents, app.beverage_type) if app.net_contents else None
     if not ml:
         return FieldResult("warning_size", Verdict.NOT_APPLICABLE,
-                           "Type size not checked: the minimum depends on the net contents, which were not given.")
+                           "Not checked: the minimum type size depends on the container size; fill in Net contents to check it.")
     m = heading_height(frames, frame_words)
     if m is None:
         return FieldResult("warning_size", Verdict.NOT_APPLICABLE,
