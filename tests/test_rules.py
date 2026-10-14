@@ -37,6 +37,11 @@ def test_brand_matching(expected, label, verdict):
     assert match_text("brand_name", expected, ["Some other line", label]).verdict == verdict
 
 
+def test_brand_beside_company_words_is_not_matches_when_another_version_is_printed():
+    lines = ["THE WOODFORD RESERVE DISTILLERY", "WOODFORD RESERVA"]
+    assert match_text("brand_name", "Woodford Reserve", lines).verdict == C
+
+
 def test_brand_with_space_dropped_by_reader_matches():  # "FourRoses" read for "Four Roses" (TTB 24207001000388)
     assert match_text("brand_name", "Four Roses", ["FourRoses"]).verdict == P
 

@@ -24,7 +24,7 @@ from app.verify import Application, FieldResult, Verdict, verify
 from app.verify.abv import check_abv
 from app.verify.model import SEVERITY
 from app.verify.net_contents import check_net_contents
-from app.verify.text import match_text
+from app.verify.text import match_text, other_version
 from app.verify.presence import ON_LABEL, guess_kind
 from app.verify.verify import is_non_alcoholic
 from app.verify.warning_judge import judge_detail
@@ -140,7 +140,8 @@ def _read_spot(found, frames, frame_words, read) -> str | None:
     return read(cv2.resize(crop, None, fx=s, fy=s, interpolation=cv2.INTER_CUBIC)).strip()
 
 
-def confirm_differences(fields, frames, frame_words, app: Application, read=_second_reader) -> list[FieldResult]:
+def confirm_differences(fields, frames, frame_words, app: Application, read=_second_reader,
+                        lines=()) -> list[FieldResult]:
     """A different alcohol content, net contents, or number or product word in a name or class stays "Does not match"
     only when Tesseract, reading the same spot on its own, sees the same difference; otherwise "Please check" (one
     misread digit or word must not fail a label). A brand read as close but not the same ("TWISTED TEq") is Matches
@@ -150,8 +151,12 @@ def confirm_differences(fields, frames, frame_words, app: Application, read=_sec
         if f.field == "brand_name" and f.code == "BRAND_NAME_NEAR_MATCH":
             seen = _read_spot(f.found, frames, frame_words, read)
             again = match_text(f.field, app.brand_name, [seen]) if seen else None
+            other = other_version(app.brand_name, lines, skip=f.found)
+            if again and again.verdict == Verdict.PASS and other:
+                f = FieldResult(f.field, Verdict.CHECK, f'A second reading of that spot shows "{seen}", but the label '
+                                f'also shows "{other}". Please look.', code=f.code, found=f.found)
             out.append(FieldResult(f.field, Verdict.PASS, f'A second reading of that spot shows "{seen}".', found=seen)
-                       if again and again.verdict == Verdict.PASS else f)
+                       if again and again.verdict == Verdict.PASS and not other else f)
             continue
         if not _needs_second_reading(f):
             out.append(f)
@@ -180,7 +185,7 @@ def check_application(reader: Reader, app: Application, images: list[tuple[str, 
         app = replace(app, beverage_type=guessed)
     report = verify(app, reading.lines())
     fields = confirm_differences([f for f in report.fields if not f.field.startswith("warning")],
-                                 reading.frames, reading.frame_words, app)
+                                 reading.frames, reading.frame_words, app, lines=reading.lines())
     if is_non_alcoholic(app, reading.lines()):
         fields += [f for f in report.fields if f.field.startswith("warning")]  # not required below 0.5% alcohol
     else:

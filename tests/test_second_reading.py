@@ -119,3 +119,12 @@ def test_brand_read_close_stays_please_check_when_the_second_reader_differs_too(
     for seen in ("CRAZY TURTIE", "CRAZY TURTLE RESERVE", ""):
         [f] = confirm_differences([brand_near()], [FRAME], WORDS, APP, read=reader(seen))
         assert f.verdict == Verdict.CHECK and f.code == "BRAND_NAME_NEAR_MATCH"
+
+
+def test_brand_close_stays_please_check_when_the_label_also_shows_another_version():
+    # TTB 23353001000444 with "WOODFORD RESERVA" planted on the back: the front's logo, re-read, says RESERVE
+    near = FieldResult("brand_name", Verdict.CHECK, "close", code="BRAND_NAME_NEAR_MATCH", found="CRAZY")
+    app = Application("malt", "Crazy Turtle")
+    [f] = confirm_differences([near], [FRAME], WORDS, app, read=reader("CRAZY TURTLE"),
+                              lines=["CRAZY", "", "CRAZY TURTIE ALE"])
+    assert f.verdict == Verdict.CHECK and "CRAZY TURTIE ALE" in f.reason

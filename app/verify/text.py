@@ -110,6 +110,23 @@ def _brand_beside(want: str, line: str) -> bool:
     return False
 
 
+def other_version(expected: str, lines: list[str], skip: str = "") -> str | None:
+    """A line showing a version of the brand that is close but not the same ("WOODFORD RESERVA" printed on the back
+    while the front reads "WOODFORD RESERVE"): then the brand is never Matches. Lines that are part of `skip`, the
+    reading being confirmed, are left out."""
+    want = normalize(expected)
+    n = len(want.split())
+    for ln in lines:
+        if not ln.strip() or ln.strip() in skip:
+            continue
+        words = normalize(ln).split()
+        for i in range(len(words) - n + 1):
+            got = " ".join(words[i:i + n])
+            if got.replace(" ", "") != want.replace(" ", "") and fuzz.ratio(want, got) >= CHECK_SCORE:
+                return ln
+    return None
+
+
 def match_text(field: str, expected: str, lines: list[str]) -> FieldResult:
     """Find `expected` in the label lines.
 
@@ -138,7 +155,7 @@ def match_text(field: str, expected: str, lines: list[str]) -> FieldResult:
                            'in decorative lettering the reader could not read; please look at the label.',
                            code=f"{field.upper()}_EXTRA_WORDS", found=contained)
     beside = field == "brand_name" and next((ln for ln in lines if _brand_beside(want, ln)), None)
-    if beside:
+    if beside and not other_version(expected, lines):
         return FieldResult(field, Verdict.PASS, f'Label shows "{beside}", which has "{expected}" in it.', found=beside)
     if contained:
         return FieldResult(field, Verdict.CHECK,
