@@ -10,7 +10,7 @@ not suggested: it is usually a logo, and on 142 approved labels the largest line
 
 import re
 
-from .abv import _TABLE_WINE, find_abv
+from .abv import _TABLE_WINE, AbvReading, find_abv, find_proof
 from .model import FieldResult, Verdict
 from .net_contents import MALT_SIZES_ML, SPIRITS_FILLS, WINE_FILLS, find_amounts
 
@@ -37,15 +37,41 @@ _BOTTLER = re.compile(r"\b(?:bottled|distilled|produced|imported|brewed|vinted|c
                       r"canned|manufactured|prepared|crafted|aged|finished|rectified|fermented|grown)\b"
                       r"[\w\s,&/.]{0,40}?\b(?:by|for)\b", re.I)
 COUNTRIES = ("Argentina", "Australia", "Austria", "Barbados", "Belgium", "Brazil", "Bulgaria", "Canada", "Chile",
-             "China", "Colombia", "Croatia", "Cuba", "Czech Republic", "Denmark", "Dominican Republic", "England",
+             "China", "Colombia", "Croatia", "Great Britain", "Cuba", "Czech Republic", "Denmark", "Dominican Republic", "England",
              "Estonia", "Finland", "France", "Georgia", "Germany", "Greece", "Guatemala", "Guyana", "Haiti", "Hungary",
              "Iceland", "India", "Ireland", "Israel", "Italy", "Jamaica", "Japan", "Korea", "Latvia", "Lebanon",
-             "Lithuania", "Mexico", "Moldova", "Netherlands", "Holland", "New Zealand", "Nicaragua", "Northern Ireland",
+             "Lithuania", "Mexico", "Moldova", "Netherlands", "Holland", "New Zealand", "Nicaragua", "Nigeria", "Northern Ireland",
              "Norway", "Panama", "Peru", "Philippines", "Poland", "Portugal", "Puerto Rico", "Romania", "Russia",
              "Scotland", "Serbia", "Slovakia", "Slovenia", "South Africa", "Spain", "Sweden", "Switzerland", "Taiwan",
              "Thailand", "Trinidad", "Turkey", "Ukraine", "United Kingdom", "Uruguay", "Venezuela", "Vietnam", "Wales")
-_COUNTRY = re.compile(r"\b(?:product|produce|made|distilled|brewed|bottled|imported|produced)\s+(?:of|in|from)\s+"
-                      r"(?:the\s+)?(" + "|".join(c.replace(" ", r"\s+") for c in COUNTRIES) + r")\b", re.I)
+# "Product of Italy", "Wine of Australia", and the same in Spanish and French ("Hecho en México", "Produit de France").
+_COUNTRY = re.compile(r"\b(?:product|produce|made|distilled|brewed|bottled|imported|produced|wine|hecho|producto|produit)"
+                      r"\s+(?:of|in|from|en|de|du)\s+(?:the\s+)?("
+                      + "|".join(c.replace(" ", r"\s+").replace("Mexico", "M[eé]xico") for c in COUNTRIES) + r")\b", re.I)
+
+
+# Lines that name a type in passing, not the designation: a sentence ("this beer is"), a company ("GIN DISTILLERS").
+_NOT_DESIGNATION = re.compile(r"\b(?:is|are|was|this|our|we|you|your|its|has|have|from\s+the|notes\s+of|pairs?|"
+                              r"llc|inc|co|company|cellars|distillers|distillery|brewery|winery|vineyards)\b", re.I)
+_DESIGNATION_WORDS = re.compile(r"\b(?:straight|blended|bottled\s+in\s+bond|single|small\s+batch|kentucky|tennessee|"
+                                r"india|pale|imperial|double|hazy|red|white|dry|sparkling|flavou?red|distilled|"
+                                r"natural|with|and|style|reserve|aged|grain|malt|corn|rye|wheat|light)\b", re.I)
+
+
+def _class_line(lines, kind):
+    """The class or type designation: a short line with the kind's type word, the one with the most designation
+    words ("KENTUCKY STRAIGHT BOURBON WHISKEY" over "TOASTED BOURBON"); never a sentence, a company or the bottler."""
+    best, score = None, None
+    for i, line in enumerate(lines):
+        if not _CLASS[kind].search(line) or _NOT_DESIGNATION.search(line) or _BOTTLER.search(line):
+            continue
+        words = line.split()
+        if len(words) > 8:
+            continue
+        s = (len(_CLASS[kind].findall(line)) + len(_DESIGNATION_WORDS.findall(line)), -i)
+        if score is None or s > score:
+            best, score = line.strip(), s
+    return best
 
 
 def _found(field, text, why):
@@ -67,7 +93,7 @@ def _line(lines, pattern):
 
 
 def class_present(kind, lines):
-    line, _ = _line(lines, _CLASS[kind])
+    line = _class_line(lines, kind) or _line(lines, _CLASS[kind])[0]
     if line:
         return _found("class_type", line, "a class or type")
     return FieldResult("class_type", Verdict.CHECK,
@@ -84,8 +110,33 @@ def _abv_values(lines):
     return distinct
 
 
-def abv_present(kind, lines):
+# "13.5% Ale./Vol.", "7%akc/vel", "ALC30% byvol": alcohol wording the reader got slightly wrong. Used only when no
+# clear statement was read, and only for a value this kind of product can have.
+_LOOSE_ABV = re.compile(r"(?<![\d.,])(\d{1,2}(?:[.,]\d{1,2})?)\s*%{1,2}\s*\W{0,2}\s*(?:a[l1|][ceo](?![a-z])|a[uk]c|by\s*vol)"
+                        r"|\ba[l1|][ce]\W{0,2}(\d{1,2}(?:[.,]\d{1,2})?)\s*%", re.I)
+_PLAUSIBLE = {"malt": 16, "wine": 24, "spirits": 95}
+
+
+def label_abv(kind, lines) -> list[AbvReading]:
+    """The alcohol contents the label states. Two different ones are settled by the proof when it agrees with
+    exactly one ("53.5% ALC./VOL." and a misread "3.5% ALC." beside "107 PROOF")."""
     values = _abv_values(lines)
+    text = " ".join(lines)
+    if len(values) > 1:
+        agree = [v for v in values if any(abs(p / 2 - v.value) < 0.15 for p in find_proof(text))]
+        return agree if len(agree) == 1 else values
+    if values:
+        return values
+    loose = {}
+    for m in _LOOSE_ABV.finditer(text):
+        value = float((m.group(1) or m.group(2)).replace(",", "."))
+        if 0 < value <= _PLAUSIBLE.get(kind, 95):
+            loose.setdefault(value, AbvReading(value, m.group(0).strip()))
+    return list(loose.values()) if len(loose) == 1 else []
+
+
+def abv_present(kind, lines):
+    values = label_abv(kind, lines)
     if len(values) > 1:
         return FieldResult("abv", Verdict.CHECK, f'The label shows two different alcohol contents: "{values[0].text}" '
                            f'and "{values[1].text}". Please check.', code="ABV_CONFLICT", found=values[0].text)
@@ -112,7 +163,11 @@ def _sizes(kind, lines):
     text = " ".join(lines)
     amounts = sorted(find_amounts(text), key=lambda a: text.find(a.text))
     allowed = FILLS.get(kind) or MALT_SIZES_ML
-    return sorted(amounts, key=lambda a: not any(abs(a.ml - f) <= max(1.0, f * 0.01) for f in allowed))
+    # A bare "L" after a number is often a stray letter ("2024 L", "1829 L"): a whole number of liters over 60 is
+    # dropped, and liters come after amounts in mL or ounces, which a reader rarely makes up.
+    amounts = [a for a in amounts if not (re.fullmatch(r"\d+\s*l", a.text, re.I) and a.ml > 60000)]
+    return sorted(amounts, key=lambda a: (not any(abs(a.ml - f) <= max(1.0, f * 0.01) for f in allowed),
+                                          bool(re.fullmatch(r"[\d.,]+\s*l\.?", a.text, re.I))))
 
 
 def net_present(kind, lines):
@@ -147,26 +202,47 @@ def country_present(lines):
                        "(19 CFR 134.11). It may be on the container. Please check.", code="COUNTRY_NOT_FOUND")
 
 
+# When no class word decides it, what else every label of that kind carries: who made it and how ("Brewed by",
+# "Distillery", "Vinted"), proof (spirits only), "contains sulfites" (wine), a vintage year beside a wine region.
+_CLUES = {k: re.compile(rf"\b(?:{v})", re.I) for k, v in {
+    "spirits": r"distill|proof\b|spirits?\b|liquor\b|agave|single\s+malt|barrel\s+aged|cask|aged\s+\d+\s+years",
+    "wine": r"vinted|vintner|winery|wines?\b|vineyards?|cellars?\b|estate\s+bottled|contains\s+sulfites|sulfites|"
+            r"grapes?|appellation|ava\b|varietal|sangria",
+    "malt": r"brew|brewing|brewery|hops?\b|hopped|barley|malt\b|ibu\b|keg\b|barrel\s+\(?bbl|1/2\s*bbl|on\s+tap",
+}.items()}
+
+
 def guess_kind(lines):
-    """spirits / wine / malt when the label's class words point clearly to one, else None."""
+    """spirits / wine / malt when the label's class words point clearly to one (or, with none, its other words do),
+    else None."""
     text = " ".join(lines)
+    clues = {k: len(p.findall(text)) for k, p in _CLUES.items()}
+    # Over 24% alcohol is never wine (27 CFR 4.21) nor beer: spirits, when the label says anything of spirits
+    # ("Whisky finished in sherry casks" has more wine words than spirits words).
+    values = _abv_values(lines)  # every reading over 24%: "48 %alc" beside "4.8 % alc./vol." is a misread lager
+    if values and all(v.value > 24 for v in values) and (clues["spirits"] or _CLASS["spirits"].search(text)):
+        return "spirits"
     hits = {k: len(p.findall(text)) for k, p in _CLASS.items()}
-    best = max(hits, key=hits.get)
-    return best if hits[best] and sorted(hits.values())[-2] < hits[best] else None
+    top = max(hits.values())
+    tied = [k for k, n in hits.items() if n == top] if top else list(hits)
+    if len(tied) == 1:
+        return tied[0]
+    best = max(tied, key=clues.get)  # class words tie (or there are none): the other words decide, among the tied
+    return best if clues[best] and sorted(clues[k] for k in tied)[-2] < clues[best] else None
 
 
 def read_values(lines, kind=None) -> dict:
     """Suggested form values read from the label (only the ones found). The agent confirms every one."""
     kind = kind or guess_kind(lines)
     out = {"beverage_type": kind} if kind else {}
-    values = _abv_values(lines)
+    values = label_abv(kind, lines)
     if len(values) == 1:
         out["abv"] = f"{values[0].value:g}"
     sizes = _sizes(kind, lines)
     if sizes:
         out["net_contents"] = sizes[0].text
     if kind:
-        line, _ = _line(lines, _CLASS[kind])
+        line = _class_line(lines, kind) or _line(lines, _CLASS[kind])[0]
         if line:
             out["class_type"] = line
     line, m = _line(lines, _BOTTLER)
@@ -174,7 +250,7 @@ def read_values(lines, kind=None) -> dict:
         out["name_address"] = line[m.start():].strip()
     line, m = _line(lines, _COUNTRY)
     if line:
-        name = re.sub(r"\s+", " ", m.group(1)).lower()
+        name = re.sub(r"\s+", " ", m.group(1)).lower().replace("é", "e")
         out["country_of_origin"] = next(c for c in COUNTRIES if c.lower() == name)
         out["source"] = "imported"
     return {k: v for k, v in out.items() if v}

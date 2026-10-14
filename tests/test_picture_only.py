@@ -115,3 +115,38 @@ def test_with_a_brand_typed_blank_items_stay_not_checked():
 def test_an_address_split_after_a_comma_is_joined():
     v = read_values(["BOTTLED BY LANTERN CO., LOUISVILLE,", "KY", "750 ML"])
     assert v["name_address"] == "BOTTLED BY LANTERN CO., LOUISVILLE, KY"
+
+
+def test_product_type_from_other_words_when_no_type_word():
+    from app.verify.presence import guess_kind
+    assert guess_kind(["BREWED AND CANNED BY HEIST BREWERY"]) == "malt"
+    assert guess_kind(["ESTATE BOTTLED", "CONTAINS SULFITES"]) == "wine"
+    assert guess_kind(["DISTILLED BY DUNE VALLEY DISTILLERY", "90 PROOF"]) == "spirits"
+
+
+def test_over_24_percent_with_a_spirits_word_is_spirits():  # Outland Whisky, "finished in sherry casks" (TTB 24010001000366)
+    from app.verify.presence import guess_kind
+    assert guess_kind(["W HISKY FINISHED IN SHERRY CASKS", "SINGLE MALT", "43.1% ALC./VOL."]) == "spirits"
+    # a lager's "4.8%" also read as "48 %alc" stays a lager
+    assert guess_kind(["LAGER BEER", "4.8 % alc./vol.", "48 %alc", "NEUTRAL SPIRITS"]) == "malt"
+
+
+def test_class_words_tied_are_settled_by_the_other_words():  # sangria: "wine" twice, "Ale/Vol" read as "ale" twice
+    from app.verify.presence import guess_kind
+    assert guess_kind(["Red wine with natural flavors", "12% Ale/Vol", "wine", "12% Ale", "WINERY", "CONTAINS SULFITES"]) == "wine"
+
+
+def test_alcohol_with_misread_wording_and_settled_by_proof():
+    assert read_values(["South Eastern Australia 13.5% Ale./Vol.", "RED WINE"])["abv"] == "13.5"
+    assert read_values(["107 PROOF", "53.5%ALC./VOL.", "3.5% ALC.", "BOURBON"])["abv"] == "53.5"
+    assert "abv" not in read_values(["LAGER", "47% auc"])  # 47% is no beer's alcohol: a misread, not shown
+
+
+def test_class_is_the_designation_not_a_sentence_or_company():
+    v = read_values(["This bourbon is aged in new oak", "KENTUCKY STRAIGHT BOURBON WHISKEY", "TOASTED BOURBON"])
+    assert v["class_type"] == "KENTUCKY STRAIGHT BOURBON WHISKEY"
+
+
+def test_country_in_other_wordings():
+    assert read_values(["WINE OF AUSTRALIA", "SHIRAZ"])["country_of_origin"] == "Australia"
+    assert read_values(["HECHO EN MÉXICO", "TEQUILA"])["country_of_origin"] == "Mexico"

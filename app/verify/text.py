@@ -88,6 +88,28 @@ def _one_type_word_differs(want: str, got: str) -> bool:
             and frozenset(pairs[0]) not in _SAME_TYPE)
 
 
+# Words printed around a brand that are not part of it: the company ("BULLEIT DISTILLING CO.", "THE WOODFORD RESERVE
+# DISTILLERY") and amounts ("40% ALC/VOL", "750 ML"). Any other word beside it ("Iron Anchor Reserve") may make a
+# different brand, so a person decides; so does a number beside a brand that has one ("10 YEAR OLD 12").
+_AROUND_BRAND = set("""the distillery distilleries distillers distilling brewing brewery breweries brewers brewhouse
+company co inc llc ltd corp winery wines vineyards vineyard cellars meadery cidery spirits sa sas srl spa gmbh www com
+alc vol abv proof ml l oz fl""".split())
+
+
+def _brand_beside(want: str, line: str) -> bool:
+    """The brand's exact words in a part of the line (split at | , : ; ( ) and " - ") whose other words are all company
+    words or amounts."""
+    if _BOTTLER.search(line):  # the bottler line names the company, not the brand as printed
+        return False
+    for part in re.split(r"[|,:;()•·]|\s-\s", line):
+        got = normalize(part)
+        m = re.search(rf"(?<!\S){re.escape(want)}(?!\S)", got)
+        if m and all(w in _AROUND_BRAND or (any(c.isdigit() for c in w) and not re.search(r"\d", want))
+                     for w in (got[:m.start()] + " " + got[m.end():]).split()):
+            return True
+    return False
+
+
 def match_text(field: str, expected: str, lines: list[str]) -> FieldResult:
     """Find `expected` in the label lines.
 
@@ -115,6 +137,9 @@ def match_text(field: str, expected: str, lines: list[str]) -> FieldResult:
                            f'"{expected}" was found only in the bottler line ("{contained}"). The brand itself may be '
                            'in decorative lettering the reader could not read; please look at the label.',
                            code=f"{field.upper()}_EXTRA_WORDS", found=contained)
+    beside = field == "brand_name" and next((ln for ln in lines if _brand_beside(want, ln)), None)
+    if beside:
+        return FieldResult(field, Verdict.PASS, f'Label shows "{beside}", which has "{expected}" in it.', found=beside)
     if contained:
         return FieldResult(field, Verdict.CHECK,
                            f'Label shows "{contained}", which adds words to "{expected}".',

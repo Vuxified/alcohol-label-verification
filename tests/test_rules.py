@@ -25,6 +25,13 @@ def spirits(**kw):
     ("Stone's Throw", "Stone Throw", C),            # possessive dropped: near match
     ("Copper Hollow", "Juniper Ridge", C),          # not found: the brand may be decorative type the reader missed
     ("Bacardi", "BACARDÍ", P),                      # accents ignored
+    ("Woodford Reserve", "THE WOODFORD RESERVE DISTILLERY", P),  # company words around the brand
+    ("Bulleit", "BULLEIT DISTILLING CO.", P),
+    ("Crown Royal", "CROWN ROYAL| 40 ALC/VOL (80", P),  # an amount beside it, split off
+    ("L'Orée", "L'Orée 2025", P),                   # a number (vintage) beside it
+    ("Caught Adrift India Pale Ale", "BEER: Caught Adrift India Pale Ale", P),
+    ("Iron Anchor", "Iron Anchor Reserve", C),      # a name word beside it: may be another brand
+    ("Logyard", "LOGYARD BREWING KANE, PA", C),     # a place beside it: a person decides
 ])
 def test_brand_matching(expected, label, verdict):
     assert match_text("brand_name", expected, ["Some other line", label]).verdict == verdict

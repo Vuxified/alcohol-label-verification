@@ -103,3 +103,19 @@ def test_a_different_product_word_needs_the_second_reader_too():
     assert confirm_differences([f], [FRAME], WORDS_T, APP_T, read=same)[0].verdict == Verdict.FAIL
     other = reader("KENTUCKY STRAIGHT BOURBON WHISKEY")
     assert confirm_differences([f], [FRAME], WORDS_T, APP_T, read=other)[0].verdict == Verdict.CHECK
+
+
+def brand_near():
+    return FieldResult("brand_name", Verdict.CHECK, 'Label shows "CRAZY", which is close to "Crazy Turtle" but not the same.',
+                       code="BRAND_NAME_NEAR_MATCH", found="CRAZY")
+
+
+def test_brand_read_close_is_matches_when_the_second_reader_sees_it_exactly():
+    [f] = confirm_differences([brand_near()], [FRAME], WORDS, APP, read=reader("CRAZY TURTLE"))
+    assert f.verdict == Verdict.PASS and "CRAZY TURTLE" in f.reason
+
+
+def test_brand_read_close_stays_please_check_when_the_second_reader_differs_too():
+    for seen in ("CRAZY TURTIE", "CRAZY TURTLE RESERVE", ""):
+        [f] = confirm_differences([brand_near()], [FRAME], WORDS, APP, read=reader(seen))
+        assert f.verdict == Verdict.CHECK and f.code == "BRAND_NAME_NEAR_MATCH"

@@ -128,23 +128,36 @@ def _needs_second_reading(f: FieldResult) -> bool:
                                           or (f.code or "").endswith(("_NUMBER_DIFFERS", "_WORD_DIFFERS")))
 
 
+def _read_spot(found, frames, frame_words, read) -> str | None:
+    """The second reader's text of the spot where `found` was read; None if the spot is not found."""
+    spot = locate(found, frame_words)
+    if not spot:
+        return None
+    k, (x0, y0, x1, y1) = spot
+    h = y1 - y0
+    crop = frames[k][max(0, int(y0 - 0.4 * h)):int(y1 + 0.4 * h), max(0, int(x0 - h)):int(x1 + h)]
+    s = max(1.0, 64 / max(1, crop.shape[0]))  # small print enlarged, as Tesseract reads best near 30 px letters
+    return read(cv2.resize(crop, None, fx=s, fy=s, interpolation=cv2.INTER_CUBIC)).strip()
+
+
 def confirm_differences(fields, frames, frame_words, app: Application, read=_second_reader) -> list[FieldResult]:
     """A different alcohol content, net contents, or number or product word in a name or class stays "Does not match"
     only when Tesseract, reading the same spot on its own, sees the same difference; otherwise "Please check" (one
-    misread digit or word must not fail a label)."""
+    misread digit or word must not fail a label). A brand read as close but not the same ("TWISTED TEq") is Matches
+    when Tesseract, reading that spot on its own, sees it exactly."""
     out = []
     for f in fields:
+        if f.field == "brand_name" and f.code == "BRAND_NAME_NEAR_MATCH":
+            seen = _read_spot(f.found, frames, frame_words, read)
+            again = match_text(f.field, app.brand_name, [seen]) if seen else None
+            out.append(FieldResult(f.field, Verdict.PASS, f'A second reading of that spot shows "{seen}".', found=seen)
+                       if again and again.verdict == Verdict.PASS else f)
+            continue
         if not _needs_second_reading(f):
             out.append(f)
             continue
-        spot = locate(f.found, frame_words)
-        seen = ""
-        if spot:
-            k, (x0, y0, x1, y1) = spot
-            h = y1 - y0
-            crop = frames[k][max(0, int(y0 - 0.4 * h)):int(y1 + 0.4 * h), max(0, int(x0 - h)):int(x1 + h)]
-            s = max(1.0, 64 / max(1, crop.shape[0]))  # small print enlarged, as Tesseract reads best near 30 px letters
-            seen = read(cv2.resize(crop, None, fx=s, fy=s, interpolation=cv2.INTER_CUBIC)).strip()
+        seen = _read_spot(f.found, frames, frame_words, read)
+        if seen is not None:
             again = _again(f, app, seen)
             if (again.verdict == Verdict.FAIL and again.code == f.code
                     and re.sub(r"\D", "", again.found or "") == re.sub(r"\D", "", f.found)):
@@ -185,6 +198,9 @@ def check_application(reader: Reader, app: Application, images: list[tuple[str, 
                   for f in fields]
         if any(f.verdict == Verdict.CHECK for f in fields):  # only worth saying when something wasn't confirmed
             notes.append("Some extra reading passes ran out of time; anything not found is marked Please check.")
+    if len(images) == 1 and any((f.code or "").endswith(("NOT_FOUND", "MISSING")) for f in fields):
+        notes.append("Only one picture was added. Net contents, alcohol content and the \"Bottled by\" line are often "
+                     "on the back or neck: add those pictures too.")
     if any(f.verdict == Verdict.CHECK for f in fields):  # a hint about the pictures, only when something is unsure
         hint = quality_note(reading.pictures, reading.frame_words)
         if hint:
