@@ -14,7 +14,7 @@ A TTB agent uploads a label's images and types in what the application says. Wit
 ## A five-minute tour
 
 1. **Try a label with a problem.** The heading is "Government Warning" in title case: **Does not match**, with a close-up of the spot and the rule (27 CFR 16.22). Press **I disagree** to see how an agent records a different view; it prints with the page.
-2. **Your own label:** add the front and back pictures, and the app reads them at once: alcohol, net contents, class and bottler appear under their boxes, and the product type is chosen (it is optional: left blank, it is told from the label). Type the application's values (try alcohol 40 where the label says 45) and the brand, press **Check label**: alcohol content **Does not match**, everything else **Matches**.
+2. **Your own label:** add the front and back pictures, and the app reads them at once: brand, alcohol, net contents, class and bottler appear under their boxes, and the product type is chosen (it is optional: left blank, it is told from the label). Type the application's values (try alcohol 40 where the label says 45) and the brand, press **Check label**: alcohol content **Does not match**, everything else **Matches**.
 3. **Pictures only:** the same pictures with every box blank. The app looks for each statement the rules require and says **On the label** or **Please check**; it never says Does not match without an application to compare.
 4. **Batch:** on **Check many labels**, add the sample batch (22 applications, 2 broken on purpose). Rows that need attention come first; select any row to see its pictures and every item checked; download the results spreadsheet. Pictures that aren't named after an application are read and paired by what they say; anything unclear is listed for you.
 5. **Why trust it:** [`docs/RULES.md`](docs/RULES.md) lists every rule with its citation, and what a picture cannot settle. No version goes live unless a full practice run of that exact code has **0 wrong answers** (see Deployment).
@@ -24,7 +24,7 @@ A TTB agent uploads a label's images and types in what the application says. Wit
 ## How it works, in one minute
 
 1. **Verify, don't extract.** The application already says what the label should contain, so the app searches the label for those values instead of guessing what the label means.
-2. **Reading the label:** local text recognition (OnnxTR, with Tesseract as an independent second reader). Every word is read by two word readers, the stock one and one fine-tuned on label words, and the more confident reading is kept ([how it was trained and measured](docs/APPROACH.md#reader-training)). Nothing is sent to an outside AI service, so it can run behind an agency firewall: the container was tested with networking switched off.
+2. **Reading the label:** local text recognition (OnnxTR, with Tesseract as an independent second reader). Every word is read by two word readers, the stock one and one fine-tuned on label words, and the more confident reading is kept ([how it was trained and measured](docs/APPROACH.md#reader-training)). One exception, only when no brand is typed: the brand is usually a logo the text reader can't read, so the pictures are sent to an AI vision model on AWS (Amazon Nova Pro, through Bedrock, in the same AWS account) to read it. Everything else stays local, and the app works behind an agency firewall: the container was tested with networking switched off, and then the brand simply says Please check.
 3. **Deciding:** small, tested rules in plain code (`app/verify/`), each citing its regulation in [`docs/RULES.md`](docs/RULES.md). No AI model decides a verdict.
 4. **Three answers, chosen to be honest:**
    - **Matches:** obviously the same ("STONE'S THROW" vs "Stone's Throw").
@@ -45,7 +45,7 @@ A TTB agent uploads a label's images and types in what the application says. Wit
 | Health warning | Part 16: word for word, "GOVERNMENT WARNING" in capitals; sideways, tiny and wrapped text handled |
 | Warning type size | § 16.22: measured when the label height is given (form field or batch column `label_height`); advisory |
 | Label rules | Minimum alcohol for the class (vodka, whisky, gin, brandy, rum, tequila 40%; flavored 30%; §§ 5.142–5.151), bottled in bond = 100 proof (§ 5.88), "table wine" only at 14% or less (§ 4.21), "low alcohol", "non-alcoholic", "alcohol free" wording on beer (§ 7.65); Please check with the rule quoted |
-| Pictures only | With no brand given: each required statement looked for on the label (§§ 4.32, 5.63, 7.63); "On the label" or Please check, never Does not match |
+| Pictures only | With no brand given: each required statement looked for on the label (§§ 4.32, 5.63, 7.63); "On the label" or Please check, never Does not match. The brand is read by AI and marked "read by AI; check the spelling" |
 
 Also: the fanciful name (like the brand), the "GOVERNMENT WARNING" heading in bold (measured, advisory). Not checked by design: whether sulfite, color-additive or age statements are needed (they depend on facts a picture cannot show), characters per inch. The full rule inventory, checked or not and why, is in [`docs/RULES.md`](docs/RULES.md) §6b.
 
@@ -62,7 +62,7 @@ Measured with `tools/evaluate.py` on the practice sets (the final-test set is ke
 
 - Health warning confirmed word for word on approved labels: 51 of 64, 63 of 78, 57 of 85. One approved label really prints the warning differently from 27 CFR 16.21 (`docs/FINDINGS.md`); it is reported apart.
 - Speed (laptop, 4 cores): typical 1.6–2.1 s, slowest 4.3 s per label (5.1 s for a photo).
-- Pictures only, on 142 approved labels: 0 Does not match; class found on 135, net contents 126, bottler 107, alcohol content 106 (+9 beer, where it is optional). Reading on upload showed alcohol right 103 times (wrong 3) and net contents right 115 (wrong 15); it does not guess the brand (usually a logo).
+- Pictures only, on 142 approved labels: 0 Does not match; class found on 135, net contents 126, bottler 107, alcohol content 106 (+9 beer, where it is optional). Reading on upload showed alcohol right 103 times (wrong 3) and net contents right 115 (wrong 15); the brand, read by Amazon Nova Pro on all 227 approved labels, was exact on 142, right or close on 188 ("CORONADO" for CORONADO BREWING CO.), and another name on 39, mostly the product's own name ("WEEKEND VIBES"); the local text reader found it on 95 at best. About 2 seconds, while the text is read.
 - The new label rules (class minimums, bottled in bond, table wine, low/no-alcohol wording) said Please check on 0 of the 227 approved labels.
 - Measured 2026-10-14, run g14 ([`docs/evidence/practice_run.log`](docs/evidence/practice_run.log)); the same run is the one the safety gate approved for the live version. The answer keys of the 85 newest labels were drafted with AI assistance and reviewed by the author.
 
@@ -83,9 +83,9 @@ Measured with `tools/evaluate.py` on the practice sets (the final-test set is ke
 
 162 items the app had never seen: 28 real approved labels and 48 generated labels (32 with planted mistakes), frozen 2026-10-02. From the same 28 labels, frozen 2026-10-10: 46 with one planted change, 22 photo-style pictures (harder than practice: never straight-on, more glare, coloured light) and 18 photos with a planted change. Six real labels with a near-identical twin in practice were left out of the 2026-10-10 sets. `tools/evaluate.py --final` checks every file's checksum and runs only once. All of it is in `data/`.
 
-**After the final test** (it was not run again), a code review and hands-on testing led to these changes, each approved by a full practice run (live version f5e5928):
+**After the final test** (it was not run again), a code review and hands-on testing led to these changes, each approved by a full practice run (live version d44e6b3):
 - A different number or product word in a name or class needs the second reader before it is Does not match; Pinot Gris/Grigio, Syrah/Shiraz and Muscat/Moscato are not different products; the importer statement must be one phrase ("Imported by …"). Each can only turn an answer into Please check.
-- The type of product may be left blank and is then told from the label (the result says so); with pictures only, the brand is Please check for the agent to confirm.
+- The type of product may be left blank and is then told from the label (the result says so); with pictures only, the brand is read by AI and shown for the agent to confirm (never used to call a typed brand Matches).
 - Clearer wording on the form, and each batch row opens a side panel with its pictures and every item.
 - Text printed beside the warning in its own column is painted over before the warning is re-read, so it is no longer taken for words added to the warning (a word really added sits a word space from the warning's words and is never painted over).
 - "Hard tea" and "hard lemonade" are told as malt beverages. If no product type can be told from the label, the page says so as soon as the pictures are added and keeps them, instead of losing them on Check label.
