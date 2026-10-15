@@ -14,6 +14,7 @@ from dataclasses import dataclass, field, replace
 
 import cv2
 
+from app import brand_ai
 from app.evidence import locate
 from app.ocr.engine import tesseract
 from app.ocr.reader import ApplicationReading, Reader
@@ -174,8 +175,13 @@ def confirm_differences(fields, frames, frame_words, app: Application, read=_sec
     return out
 
 
+BRAND_READ = ('Not given on the application. Read from the pictures by AI: "{brand}". Brands are often logos, so please '
+              "check the spelling, or type the brand in to compare.")
+
+
 def check_application(reader: Reader, app: Application, images: list[tuple[str, bytes]]) -> CheckResult:
     t0 = time.perf_counter()
+    brand = brand_ai.start(images) if not app.brand_name else None  # read by AI meanwhile; see brand_ai.py
     reading = reader.read(images, fields_ok=_others_ok(app))
     guessed = None
     if not app.beverage_type:  # left blank: told by the label's class words ("Bourbon", "Cabernet", "Lager")
@@ -184,6 +190,10 @@ def check_application(reader: Reader, app: Application, images: list[tuple[str, 
             raise UnknownProduct
         app = replace(app, beverage_type=guessed)
     report = verify(app, reading.lines())
+    seen = brand.result(timeout=15) if brand else None
+    if seen:
+        report.fields = [FieldResult("brand_name", Verdict.PASS, BRAND_READ.format(brand=seen), code=ON_LABEL, found=seen)
+                         if f.code == "BRAND_NOT_GIVEN" else f for f in report.fields]
     fields = confirm_differences([f for f in report.fields if not f.field.startswith("warning")],
                                  reading.frames, reading.frame_words, app, lines=reading.lines())
     if is_non_alcoholic(app, reading.lines()):

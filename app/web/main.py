@@ -26,6 +26,7 @@ from starlette.concurrency import run_in_threadpool
 
 from app.evidence import crop_png, locate, locate_warning
 from app.ocr.reader import Reader
+from app import brand_ai
 from app.pipeline import UnknownProduct, check_application
 from app.typesize import parse_label_height
 from app.verify import Application, Verdict
@@ -260,11 +261,15 @@ async def api_read(request: Request):
     if not slots.acquire(blocking=False):
         return JSONResponse({"error": "busy"}, status_code=503)
     try:
+        brand = brand_ai.start(images)
         reading = await run_in_threadpool(state["reader"].read, images)
     finally:
         slots.release()
     kind = form["beverage_type"] if form["beverage_type"] in copy.BEVERAGES else None
     values = read_values(reading.lines(), kind)
+    seen = await run_in_threadpool(brand.result, 15)
+    if seen:
+        values["brand_name"] = seen
     text = " ".join(reading.lines())[:4000]  # the batch page pairs leftover pictures by what they say
     return values | {"text": text}
 

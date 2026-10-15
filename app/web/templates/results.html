@@ -80,7 +80,7 @@
           <tr {% if f.field in ev %}data-pick="{{ f.field }}" tabindex="0"{% endif %}>
             <th scope="row">{{ name.get(f.field, f.field) }}{{ cite(f) }}</th>
             <td class="app-col-app">{{ asked.get(f.field) or "Not given" }}</td>
-            <td>{{ f.found if f.found and not f.field.startswith("warning") else f.reason }}</td>
+            <td>{{ f.found if f.found and not f.field.startswith("warning") else f.reason }}{% if f.field == "brand_name" and f.code == ON_LABEL %} <span class="usa-hint">(read by AI; check the spelling)</span>{% endif %}</td>
             <td class="app-r">{{ tag(f.verdict.value, f.code) }}{{ disagree(f) }}</td>
           </tr>
         {% endfor %}

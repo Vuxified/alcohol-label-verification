@@ -46,6 +46,7 @@
       <div class="app-wide">
         <label class="usa-label" for="brand_name">Brand name</label>
         <input class="usa-input" id="brand_name" name="brand_name" value="{{ form.brand_name or '' }}">
+        <p class="app-seen app-hidden" id="seen-brand_name"></p>
       </div>
       <div class="app-wide">
         <label class="usa-label" for="class_type">Class or type</label>
@@ -194,12 +195,12 @@
     // As soon as pictures are chosen, read them and show what the label says under each box. The boxes stay the
     // application's: the agent types those, so a label is never compared with its own reading.
     var fillStatus = document.getElementById('fill-status'), pictures = document.getElementById('images'), reads = 0;
-    var READ = ['class_type', 'abv', 'net_contents', 'name_address', 'country_of_origin'];
+    var READ = ['brand_name', 'class_type', 'abv', 'net_contents', 'name_address', 'country_of_origin'];
     function showSeen(v) {
       READ.forEach(function (k) {
         var p = document.getElementById('seen-' + k);
-        p.textContent = ''; p.classList.toggle('app-hidden', !v);
-        if (!v) return;
+        p.textContent = ''; p.classList.toggle('app-hidden', !v || (k === 'brand_name' && !v[k]));  // a logo, not missing
+        if (!v || (k === 'brand_name' && !v[k])) return;
         p.append(v[k] ? 'On the label: ' : 'Not found on the label');
         if (v[k]) { var b = document.createElement('b'); b.textContent = v[k] + (k === 'abv' ? '%' : ''); p.append(b); }
       });

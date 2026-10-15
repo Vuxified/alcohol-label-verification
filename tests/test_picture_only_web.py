@@ -95,3 +95,35 @@ def test_rule_follows_the_product_type():
     assert copy.rule("warning_caps", "wine") == "16.22"
     assert copy.rule("abv_minimum", "spirits", "45% meets the 40% minimum for gin (27 CFR 5.144).") == "5.144"
     assert copy.rule("abv_minimum", "spirits", "no citation here") is None
+
+
+def test_brand_read_by_ai_is_shown_on_the_label(client, monkeypatch):
+    # Nothing typed: the AI reading is shown as what the label says ("On the label"), never "Matches".
+    from app import brand_ai
+    monkeypatch.setattr(brand_ai, "read_brand", lambda images: "OLD LANTERN")
+    assert client.post("/api/read", files=files()).json()["brand_name"] == "OLD LANTERN"
+    page = client.post("/check", data={"beverage_type": "spirits"}, files=files())
+    assert "OLD LANTERN" in page.text and "(read by AI; check the spelling)" in page.text
+    assert "Every required statement we looked for is on the label." in page.text
+
+
+def test_brand_typed_is_never_given_to_the_ai(client, monkeypatch):
+    from app import brand_ai
+    called = []
+    monkeypatch.setattr(brand_ai, "read_brand", lambda images: called.append(1) or "SOMETHING ELSE")
+    client.post("/check", data={"beverage_type": "spirits", "brand_name": "Old Lantern"}, files=files())
+    assert not called
+
+
+def test_ai_not_reachable_leaves_the_brand_to_check(client, monkeypatch):
+    # Off (no LABEL_BRAND_MODEL) or failing (firewall, timeout): as before, the agent confirms the brand.
+    from app import brand_ai
+    monkeypatch.setattr(brand_ai, "MODEL", "us.amazon.nova-pro-v1:0")
+    monkeypatch.setenv("AWS_ACCESS_KEY_ID", "x"); monkeypatch.setenv("AWS_SECRET_ACCESS_KEY", "x")
+    monkeypatch.setenv("AWS_ENDPOINT_URL_BEDROCK_RUNTIME", "http://127.0.0.1:9")
+    assert brand_ai.read_brand(files_bytes()) is None
+    assert "brand_name" not in client.post("/api/read", files=files()).json()
+
+
+def files_bytes():
+    return [(n, (SAMPLE / n).read_bytes()) for n in ("front.png",)]
