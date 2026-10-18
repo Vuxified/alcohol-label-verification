@@ -201,8 +201,10 @@
         var p = document.getElementById('seen-' + k);
         p.textContent = ''; p.classList.toggle('app-hidden', !v || (k === 'brand_name' && !v[k]));  // a logo, not missing
         if (!v || (k === 'brand_name' && !v[k])) return;
-        p.append(v[k] ? 'On the label: ' : 'Not found on the label');
+        p.append(k === 'brand_name' ? 'Read by AI: ' : v[k] ? 'On the label: ' : 'Not found on the label');
         if (v[k]) { var b = document.createElement('b'); b.textContent = v[k] + (k === 'abv' ? '%' : ''); p.append(b); }
+        if (k === 'brand_name') p.append(v.brand_confirmed ? ' (found in the label text; check it is the brand)'
+                                                           : ' (not found in the label text, so it may be wrong; check it)');
       });
     }
     async function readLabel() {

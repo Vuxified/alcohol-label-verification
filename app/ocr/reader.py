@@ -23,7 +23,7 @@ from dataclasses import dataclass, field
 import numpy as np
 from PIL import Image, ImageOps
 
-from app.verify.warning_judge import judge
+from app.verify.warning_judge import judge, norm, tokenize
 
 from . import sideways, zoom
 from .engine import OnnxEngine, Text, tesseract
@@ -79,6 +79,17 @@ class ApplicationReading:
 
     def warning_readings(self):
         return [(r.family, r.text) for r in self.readings]
+
+    def warning_side(self):
+        """Words printed beside the warning, found by position in the readings that have word boxes, and the zoom-in
+        Tesseract readings (warning_judge.judge_detail's `side`)."""
+        words = set()
+        for r in self.readings:
+            reg = zoom.find_region(r.words) if r.words else None
+            if reg:
+                boxes = zoom.beside_warning(r.words, reg) + zoom.outside_column(r.words, reg)
+                words |= {norm(t) for w in r.words if w[2] in boxes for t in tokenize(w[0])}
+        return words, [r.text for r in self.readings if r.family == "tess" and "zoom-tess" in r.tag]
 
 
 def _good_words(t: Text) -> int:

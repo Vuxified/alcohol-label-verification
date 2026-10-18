@@ -80,3 +80,18 @@ def test_side_text_that_looks_like_the_warning_is_kept():
 def test_no_warning_found_means_nothing_painted():
     words = side_column(0)
     assert beside_warning(words, region(words)) == []
+
+
+def test_a_word_beside_a_warning_line_is_outside_its_column():
+    # The real El Juego de Pelota label: "Authentic" printed right of a warning line, read into it as an added word.
+    from app.ocr.zoom import outside_column
+    w = paragraph()
+    right = max(b[2] for _, _, b in w)
+    side = [("Authentic", 0.9, (right + 40, 30, right + 140, 30 + LH))]
+    assert outside_column(w + side, region(w)) == [side[0][2]]
+
+
+def test_a_word_added_to_the_warning_is_never_outside_its_column():
+    from app.ocr.zoom import outside_column
+    w = paragraph(extra_line_end=1)  # CHEERS at a line end, a word space after the warning's last word on that line
+    assert outside_column(w, region(w)) == []

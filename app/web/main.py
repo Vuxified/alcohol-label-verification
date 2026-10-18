@@ -27,7 +27,7 @@ from starlette.concurrency import run_in_threadpool
 from app.evidence import crop_png, locate, locate_warning
 from app.ocr.reader import Reader
 from app import brand_ai
-from app.pipeline import UnknownProduct, check_application
+from app.pipeline import UnknownProduct, ai_brand, check_application
 from app.typesize import parse_label_height
 from app.verify import Application, Verdict
 from app.verify.abv import parse_typed_abv
@@ -270,6 +270,7 @@ async def api_read(request: Request):
     seen = await run_in_threadpool(brand.result, 15)
     if seen:
         values["brand_name"] = seen
+        values["brand_confirmed"] = ai_brand(seen, reading.lines()).code == ON_LABEL  # the text reader found it too
     text = " ".join(reading.lines())[:4000]  # the batch page pairs leftover pictures by what they say
     return values | {"text": text}
 

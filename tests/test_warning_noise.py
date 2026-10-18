@@ -35,3 +35,23 @@ def test_the_clean_readings_must_cover_the_spot():
 
 def test_dismissed_noise_is_not_reported():
     assert judge_detail([("onnx", W), ("tess", NOISY), ("onnx", W)])["extra"] == []
+
+
+SIDE = W.replace("DRIVE A CAR", "DRIVE AUTHENTIC A CAR").replace("SHOULD NOT", "SHOULD LIQUID NOT")
+
+
+def test_side_text_read_into_the_warning_is_dismissed_when_the_zoom_in_readings_show_the_spot_clean():
+    # Words beside the warning (by position) that both zoom-in Tesseract readings, side text painted over, don't show.
+    readings = [("onnx", SIDE), ("tess", SIDE), ("tess", W), ("tess", W)]
+    assert judge_detail(readings)["extra"] == ["authentic", "liquid"]
+    assert judge_detail(readings, ({"authentic", "liquid"}, [W, W]))["extra"] == []
+
+
+def test_side_text_stays_when_a_zoom_in_reading_shows_it_too():
+    readings = [("onnx", SIDE), ("tess", SIDE)]
+    assert judge_detail(readings, ({"authentic", "liquid"}, [SIDE, W]))["extra"] == ["authentic", "liquid"]
+
+
+def test_an_added_word_not_beside_the_warning_is_never_dismissed():
+    readings = [("onnx", ADDED), ("tess", ADDED)]
+    assert judge_detail(readings, ({"authentic"}, [W, W]))["extra"] != []

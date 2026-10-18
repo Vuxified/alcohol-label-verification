@@ -119,6 +119,23 @@ def _warning_like(tok):
     return len(tok) >= 4 and any(close(w, tok) for w in _WARNING_WORDS)
 
 
+def _same_line(a, b):
+    return min(a[3], b[3]) - max(a[1], b[1]) >= 0.5 * min(a[3] - a[1], b[3] - b[1])
+
+
+def outside_column(words, region):
+    """Boxes of words on the warning's lines but wholly left or right of every warning word, a clear gap away: text
+    printed beside the warning ("7.5% ALC/VOL" left of its last line), however few words. A word added to the warning
+    is printed among the warning's own words, so it is never outside them."""
+    y0, y1, lh = region[1], region[3], region[4]
+    inside = [w for w in words if y0 - 1 <= (w[2][1] + w[2][3]) / 2 <= y1 + 1]
+    warn = [w[2] for t, w in zip(_toks(inside), inside) if _warning_like(t)]
+    if len(warn) < 8:
+        return []
+    left, right = min(b[0] for b in warn) - COLUMN_GAP * lh, max(b[2] for b in warn) + COLUMN_GAP * lh
+    return [w[2] for w in inside if (w[2][2] < left or w[2][0] > right) and any(_same_line(w[2], b) for b in warn)]
+
+
 def beside_warning(words, region):
     """Boxes (words' pixel coordinates) of text printed beside the warning on its own lines: an address or a story
     in a column next to it. A word counts when warning words share its line with a clear gap between them (COLUMN_GAP)
@@ -131,9 +148,7 @@ def beside_warning(words, region):
     if len(warn) < 8:
         return []
     gap = COLUMN_GAP * lh
-
-    def same_line(a, b):
-        return min(a[3], b[3]) - max(a[1], b[1]) >= 0.5 * min(a[3] - a[1], b[3] - b[1])
+    same_line = _same_line
 
     def apart(a, b):  # horizontal space between two boxes (0 when they overlap)
         return max(b[0] - a[2], a[0] - b[2], 0)

@@ -196,10 +196,13 @@ def slot_evidence(al, i):
     return None
 
 
-def judge_detail(readings):
+def judge_detail(readings, side=None):
     """readings: list of (family, text). -> dict with the evidence behind the verdict:
     found (heading in any reading), missing (required words no reading has), words_strong (two families show the
-    same different / missing word), caps (per-reading heading-in-capitals flags), caps_strong."""
+    same different / missing word), caps (per-reading heading-in-capitals flags), caps_strong.
+    side: (words printed beside the warning, by position in a reading with word boxes; the texts of the zoom-in
+    Tesseract readings, whose tight crop has that text cut away or painted over). An added word that is one of those
+    side words, where two zoom-in Tesseract readings show that spot clean, was read across from the next column."""
     readings = [(f, t) for f, t in readings if t]
     pairs = [(f, align(t)) for f, t in readings]
     pairs = [(f, a) for f, a in pairs if a is not None]
@@ -219,6 +222,10 @@ def judge_detail(readings):
     clean = [clean_gaps(a) for _, a in pairs]
     extra = {x for x in set().union(*seen)
              if sum(x in e for e in seen) > 1 or sum(x[0] in c for c in clean) < 2}
+    if side:
+        words, tight = side
+        tight_clean = [clean_gaps(a) for a in map(align, tight) if a is not None]
+        extra = {x for x in extra if x[1] not in words or sum(x[0] in c for c in tight_clean) < 2}
     capf = [(f, heading_caps(t)) for f, t in readings]
     caps = [c for _, c in capf if c is not None]
     caps_strong = bool(caps) and not any(caps) and len({f for f, c in capf if c is False}) >= 2

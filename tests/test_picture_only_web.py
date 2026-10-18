@@ -98,13 +98,26 @@ def test_rule_follows_the_product_type():
 
 
 def test_brand_read_by_ai_is_shown_on_the_label(client, monkeypatch):
-    # Nothing typed: the AI reading is shown as what the label says ("On the label"), never "Matches".
+    # Nothing typed: the AI reading, also found by the text reader, is "On the label", never "Matches".
     from app import brand_ai
-    monkeypatch.setattr(brand_ai, "read_brand", lambda images: "OLD LANTERN")
-    assert client.post("/api/read", files=files()).json()["brand_name"] == "OLD LANTERN"
+    monkeypatch.setattr(brand_ai, "read_brand", lambda images: "LANTERN OLD")
+    v = client.post("/api/read", files=files()).json()
+    assert v["brand_name"] == "LANTERN OLD" and v["brand_confirmed"] is True
     page = client.post("/check", data={"beverage_type": "spirits"}, files=files())
-    assert "OLD LANTERN" in page.text and "(read by AI; check the spelling)" in page.text
+    assert "LANTERN OLD" in page.text and "(read by AI and found in the label text; check it is the brand)" in page.text
     assert "Every required statement we looked for is on the label." in page.text
+
+
+def test_brand_read_by_ai_but_not_on_the_label_is_please_check(client, monkeypatch):
+    # The AI can be wrong (it named another brand on 39 of 227 approved labels): when the text reader doesn't
+    # find its brand on the label, it is shown as an unconfirmed guess for the agent to check, not "On the label".
+    from app import brand_ai
+    monkeypatch.setattr(brand_ai, "read_brand", lambda images: "OLD LANTERN")  # the label says LANTERN OLD
+    assert client.post("/api/read", files=files()).json()["brand_confirmed"] is False
+    page = client.post("/check", data={"beverage_type": "spirits"}, files=files())
+    assert "One item needs your attention: the brand name." in page.text
+    assert "Read by AI (not confirmed)" in page.text and "OLD LANTERN" in page.text
+    assert "(read by AI and found in the label text; check it is the brand)" not in page.text and "Does not match" not in page.text
 
 
 def test_brand_typed_is_never_given_to_the_ai(client, monkeypatch):

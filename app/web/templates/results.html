@@ -50,7 +50,7 @@
       <dl class="app-pair">
         <div><dt>Application says</dt>
           {% if d %}<dd>{{ words(d[0]) }}</dd>{% elif asked.get(f.field) %}<dd>{{ asked[f.field] }}</dd>{% else %}<dd class="app-pair__empty">Not given</dd>{% endif %}</div>
-        <div><dt>Label shows</dt>
+        <div><dt>{{ "Read by AI (not confirmed)" if f.code == "BRAND_AI_UNCONFIRMED" else "Label shows" }}</dt>
           {% if d %}<dd>{{ words(d[1]) }}</dd>{% elif f.found %}<dd>{{ f.found }}</dd>{% else %}<dd class="app-pair__empty">Not found on the pictures</dd>{% endif %}</div>
       </dl>
       {% endif %}
@@ -80,7 +80,7 @@
           <tr {% if f.field in ev %}data-pick="{{ f.field }}" tabindex="0"{% endif %}>
             <th scope="row">{{ name.get(f.field, f.field) }}{{ cite(f) }}</th>
             <td class="app-col-app">{{ asked.get(f.field) or "Not given" }}</td>
-            <td>{{ f.found if f.found and not f.field.startswith("warning") else f.reason }}{% if f.field == "brand_name" and f.code == ON_LABEL %} <span class="usa-hint">(read by AI; check the spelling)</span>{% endif %}</td>
+            <td>{{ f.found if f.found and not f.field.startswith("warning") else f.reason }}{% if f.field == "brand_name" and f.code == ON_LABEL %} <span class="usa-hint">(read by AI and found in the label text; check it is the brand)</span>{% endif %}</td>
             <td class="app-r">{{ tag(f.verdict.value, f.code) }}{{ disagree(f) }}</td>
           </tr>
         {% endfor %}

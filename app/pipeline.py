@@ -71,7 +71,7 @@ def _words(words: list[str], show: int = 6) -> str:
 
 
 def warning_fields(reading: ApplicationReading) -> list[FieldResult]:
-    d = judge_detail(reading.warning_readings())
+    d = judge_detail(reading.warning_readings(), reading.warning_side())
     if not d["found"]:
         hints = any(ANCHORS.search(r.text) for r in reading.readings)
         late = any(t.startswith(("zoom", "sideways", "flip")) for t in reading.dropped)
@@ -175,8 +175,21 @@ def confirm_differences(fields, frames, frame_words, app: Application, read=_sec
     return out
 
 
-BRAND_READ = ('Not given on the application. Read from the pictures by AI: "{brand}". Brands are often logos, so please '
-              "check the spelling, or type the brand in to compare.")
+BRAND_READ = ('Not given on the application. Read from the pictures by AI: "{brand}", and the text reader found those words '
+              "on the label too. Please check that it is the brand (not another name on the label), or type the brand in "
+              "to compare.")
+BRAND_GUESS = ('Not given on the application. Read from the pictures by AI: "{brand}", but the text reader did not find it '
+               "on the label (brands are often logos), so it may be wrong. Please check it on the pictures, or type the "
+               "brand in to compare.")
+
+
+def ai_brand(seen: str, lines: list[str]) -> FieldResult:
+    """The AI's brand is "On the label" only when the text reader also finds it by the brand rules (two readers
+    agree); otherwise it is a guess the agent checks."""
+    if match_text("brand_name", seen, lines).verdict == Verdict.PASS:
+        return FieldResult("brand_name", Verdict.PASS, BRAND_READ.format(brand=seen), code=ON_LABEL, found=seen)
+    return FieldResult("brand_name", Verdict.CHECK, BRAND_GUESS.format(brand=seen), code="BRAND_AI_UNCONFIRMED",
+                       found=seen)
 
 
 def check_application(reader: Reader, app: Application, images: list[tuple[str, bytes]]) -> CheckResult:
@@ -192,8 +205,7 @@ def check_application(reader: Reader, app: Application, images: list[tuple[str, 
     report = verify(app, reading.lines())
     seen = brand.result(timeout=15) if brand else None
     if seen:
-        report.fields = [FieldResult("brand_name", Verdict.PASS, BRAND_READ.format(brand=seen), code=ON_LABEL, found=seen)
-                         if f.code == "BRAND_NOT_GIVEN" else f for f in report.fields]
+        report.fields = [ai_brand(seen, reading.lines()) if f.code == "BRAND_NOT_GIVEN" else f for f in report.fields]
     fields = confirm_differences([f for f in report.fields if not f.field.startswith("warning")],
                                  reading.frames, reading.frame_words, app, lines=reading.lines())
     if is_non_alcoholic(app, reading.lines()):
