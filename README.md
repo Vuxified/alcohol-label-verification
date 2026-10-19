@@ -47,6 +47,18 @@ flowchart LR
 6. **Other approaches** (cloud AI models, AI upscaling, bottle-photo flattening, other OCR engines) I considered; what I tried and why I adopted each or not is in [`docs/ALTERNATIVES.md`](docs/ALTERNATIVES.md).
 7. **Why it is built this way**, the assumptions where the brief leaves gaps (for example, the application details are typed in or come from a spreadsheet, standing in for COLA), the open unknowns and the test data: [`docs/APPROACH.md`](docs/APPROACH.md).
 
+## Tools used
+
+| Part | Tools | Why I chose them |
+|---|---|---|
+| Reading the label | OnnxTR 0.9 on ONNX Runtime, plus a word reader I fine-tuned on label words; Tesseract as an independent second reader; OpenCV and Pillow for image work | Runs on CPU inside the container with no internet, fast enough for 5 seconds; two different engines give a real second opinion |
+| Rules and matching | Plain Python 3.12; RapidFuzz for tolerant text comparison | Every verdict can be traced to a line of code and a regulation; no model decides |
+| Web app | FastAPI, Jinja templates, U.S. Web Design System (self-hosted) | Server-rendered pages that work without heavy JavaScript; the government's own design system for accessibility and a familiar look |
+| Hosting | Docker, AWS Lambda (container, arm64) with the Lambda Web Adapter, S3 for uploads | $0 when idle, about $0.0005 per label; the same container runs anywhere Docker does |
+| Brand read with nothing typed (optional) | Amazon Nova Pro on Bedrock, through boto3 | Reads logo brands the text reader can't; switches off behind a firewall |
+| Testing | pytest (1,178 tests), my own scoring and safety-gate scripts (`tools/evaluate.py`, `tools/gate.py`) | A deploy is blocked unless a full practice run has 0 wrong answers |
+| Building it | AI coding tools, with every rule, number and claim checked by me against the code, the regulations or a measurement | Speed, with my own review |
+
 ## What it checks
 
 | Item | Rule (27 CFR) |
