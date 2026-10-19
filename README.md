@@ -125,6 +125,45 @@ docker run --rm -p 8080:8080 label-check           # open http://localhost:8080
 - A batch runs from the browser, which sends several applications at a time; each is checked by its own copy of the checker.
 - The same container runs anywhere Docker does. Azure equivalents: Container Apps or Functions (container), Blob Storage with a lifecycle rule.
 
+## If this were built inside TTB
+
+This is a prototype built from the outside, without access to TTB's systems or data. Here is what would change with that access.
+
+**Why AWS for the prototype.** The point of a prototype is to find out quickly and cheaply whether the idea works before investing in it. AWS was the fastest way to put a working app in front of reviewers: $0 while idle, about $0.0005 per label, deployed in minutes. It is not where this would run in production. The app is one container that runs anywhere Docker does, so the production version would run in the cloud the agency already uses and has approved (for example Azure Government or AWS GovCloud, both FedRAMP High), or on agency servers.
+
+**Reading everything automatically, including the brand.** Today, with pictures only and nothing typed, the app fills in every box itself except the brand: the product type, class, alcohol, net contents, bottler and the full warning, all read inside the container with no internet. The brand is the hard one. Reading the words is not the problem; telling which of the label's words is the brand ("OLD LANTERN" and not "Small Batch" or "Since 1892") takes understanding of the whole label. So the prototype also sends the pictures to an AI vision model (Amazon Nova Pro). That is an extra on top. Behind an agency firewall it switches off and the brand says Please check; everything else works the same. Inside TTB, the brand would be read automatically in one of these ways:
+1. **The same AI step inside the agency's approved cloud.** Then it is no longer outside the firewall, and nothing else changes.
+2. **An open-weight vision model running on agency servers,** so no picture leaves the agency.
+3. **TTB's own label database as a brand list.** TTB holds every brand it has ever approved, and the applicant's own past approvals. A brand already on file is recognized at once, and a new brand falls back to 1 or 2. (From outside, the only route to that data is the public registry website, which can't be copied politely, so the prototype doesn't do this.)
+4. **No typing at all:** pulling the application values straight from COLA, so the agent never types them (out of scope for this brief).
+
+In every case the agent still confirms. The AI fills in boxes; it never decides a verdict.
+
+**Better test data.** The prototype was tested on 227 real approved labels from the public registry, the same labels with one planted change each, and 96 generated labels with known mistakes. Inside TTB:
+- Use the full history of approved *and rejected* applications as truth data, with the reason for each rejection.
+- Generate many more realistic labels with planted mistakes, have agents check that they look right, and label them.
+- Keep a final-test set apart that no one tunes against, as the prototype does.
+
+**Learning from past decisions.** Connect the app to a searchable library of TTB's past work: similar labels already approved or rejected, and why; the warning wordings and layouts that are commonly seen; TTB rulings and guidance. With each result, the agent would see "labels like this were handled like this", with links. This is reference material for the agent, never an automatic decision.
+
+**Getting better over time.** Every "I disagree" note becomes a lesson:
+1. A reviewer sorts the notes.
+2. Each real miss becomes a rule fix with a test, or new examples for the next reader training.
+3. An improvement agent could draft those fixes automatically from the notes.
+4. A person approves each fix, and nothing ships unless it passes the same safety gate as today: 0 wrong answers on every practice set.
+
+**Enterprise needs.** These would be added before production:
+- Sign-in through agency single sign-on (PIV/CAC).
+- An audit log of who checked what and when, with records kept as the agency's rules require.
+- Section 508 accessibility review.
+- Monitoring, an authority to operate (ATO) for the system, and load testing at TTB's real volumes.
+
+**What we don't know from outside.** These answers would shape the production design (more in [`docs/APPROACH.md`](docs/APPROACH.md)):
+- Which cloud and AI services TTB has approved.
+- What access the app could have to COLA data.
+- Real daily volumes.
+- Which boxes agents most want filled in for them.
+
 ## Limitations and trade-offs
 
 - **Script logos and curved text** often can't be read; the brand or class/type then says Please check rather than guessing.
