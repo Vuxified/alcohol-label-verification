@@ -94,7 +94,7 @@ So the app answers each item with **Matches**, **Does not match** or **Please ch
 | 312 photo-style copies of real labels (blur, glare, tilt, low light) and 808 rotated copies | Built; used to measure the reader, not yet in the regular scorecard |
 | 44 real bottle photos (Open Food Facts; 32 practice, 12 final test) | Collected; not yet in the regular scorecard |
 | 78 more real approved labels from the registry (collected 2026-10-04) | Built and used; answer key checked against the images with AI assistance |
-| 85 more real approved labels (40 beer, 27 spirits, 18 wine; one per brand and company), fetched 2026-10-09 | Built and used; answer keys drafted with AI assistance and reviewed by the author |
+| 85 more real approved labels (40 beer, 27 spirits, 18 wine; one per brand and company), fetched 2026-10-09 | Built and used; answer keys drafted with AI assistance and reviewed by me |
 | 178 real approved labels with one planted change (alcohol, size, proof, a warning word changed or deleted, title-case heading, brand), in two sets (`tools/make_tampered.py`) | Built and used: no changed item came back Matches |
 | 76 photo-style pictures of 35 real labels (angles up to 45°, close-ups, cans), and 54 of generated labels; the label pixels are ours, only the scene is drawn by an image model (`tools/make_scenes.py`) | Built; the real-label set is used. Letting an image model draw the label itself rewrites its text, so those images can't be scored. |
 

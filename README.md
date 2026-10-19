@@ -31,7 +31,7 @@ A TTB agent uploads a label's images and types in what the application says. Wit
    - **Does not match:** a different value read clearly and confirmed by a second, independent reading (label 45%, application 40%; "may" changed to "can" in the warning).
    - **Please check:** anything the app can't be sure of, with what it found. *Not finding something is never "Does not match"*: it may be in script lettering, on a curved can, or on a side that wasn't photographed.
 5. **Never stricter than TTB.** Real approved labels must not come back "Does not match". Where TTB approves labels that stretch a rule (a missing period in the warning, metric-only beer with a qualification), the app says Please check. Evidence: [`docs/FINDINGS.md`](docs/FINDINGS.md).
-6. **Other approaches** (cloud AI models, AI upscaling, bottle-photo flattening, other OCR engines) were considered; what was tried and why each was or wasn't adopted is in [`docs/ALTERNATIVES.md`](docs/ALTERNATIVES.md).
+6. **Other approaches** (cloud AI models, AI upscaling, bottle-photo flattening, other OCR engines) I considered; what I tried and why I adopted each or not is in [`docs/ALTERNATIVES.md`](docs/ALTERNATIVES.md).
 7. **Why it is built this way**, the assumptions where the brief leaves gaps (for example, the application details are typed in or come from a spreadsheet, standing in for COLA), the open unknowns and the test data: [`docs/APPROACH.md`](docs/APPROACH.md).
 
 ## What it checks
@@ -51,7 +51,7 @@ Also: the fanciful name (like the brand), the "GOVERNMENT WARNING" heading in bo
 
 ## Results so far (practice labels)
 
-Measured with `tools/evaluate.py` on the practice sets (the final-test set is kept apart and run once). Three numbers matter: **wrong answers** (must be 0), **mistakes caught**, and **items confirmed automatically** (the rest are Please check, for the agent).
+I measured these with `tools/evaluate.py` on the practice sets (I kept the final-test set apart and ran it once). Three numbers matter: **wrong answers** (must be 0), **mistakes caught**, and **items confirmed automatically** (the rest are Please check, for the agent).
 
 | Practice set | Wrong answers | Mistakes caught | Items confirmed |
 |---|---|---|---|
@@ -64,7 +64,7 @@ Measured with `tools/evaluate.py` on the practice sets (the final-test set is ke
 - Speed (laptop, 4 cores): typical 1.6–2.1 s, slowest 4.3 s per label (5.1 s for a photo).
 - Pictures only, on 142 approved labels: 0 Does not match; class found on 135, net contents 126, bottler 107, alcohol content 106 (+9 beer, where it is optional). Reading on upload showed alcohol right 103 times (wrong 3) and net contents right 115 (wrong 15); the brand, read by Amazon Nova Pro on all 227 approved labels, was exact on 142, right or close on 188 ("CORONADO" for CORONADO BREWING CO.), and another name on 39, mostly the product's own name ("WEEKEND VIBES"); the local text reader found it on 95 at best. About 2 seconds, while the text is read.
 - The new label rules (class minimums, bottled in bond, table wine, low/no-alcohol wording) said Please check on 0 of the 227 approved labels.
-- Measured 2026-10-14, run g14 ([`docs/evidence/practice_run.log`](docs/evidence/practice_run.log)); the same run is the one the safety gate approved for the live version. The answer keys of the 85 newest labels were drafted with AI assistance and reviewed by the author.
+- Measured 2026-10-14, run g14 ([`docs/evidence/practice_run.log`](docs/evidence/practice_run.log)); the same run is the one the safety gate approved for the live version. The answer keys of the 85 newest labels were drafted with AI assistance and I reviewed them.
 
 **Final test (held-out labels, run once, 2026-10-12, on the live version ef13fdb):** numbers exactly as measured ([`docs/evidence/final_test.log`](docs/evidence/final_test.log)).
 
@@ -83,7 +83,7 @@ Measured with `tools/evaluate.py` on the practice sets (the final-test set is ke
 
 162 items the app had never seen: 28 real approved labels and 48 generated labels (32 with planted mistakes), frozen 2026-10-02. From the same 28 labels, frozen 2026-10-10: 46 with one planted change, 22 photo-style pictures (harder than practice: never straight-on, more glare, coloured light) and 18 photos with a planted change. Six real labels with a near-identical twin in practice were left out of the 2026-10-10 sets. `tools/evaluate.py --final` checks every file's checksum and runs only once. All of it is in `data/`.
 
-**After the final test** (it was not run again), a code review and hands-on testing led to these changes, each approved by a full practice run (live version ce956b7; see the last item for its run):
+**After the final test** (it was not run again), my code review and hands-on testing led to these changes, each approved by a full practice run (live version ce956b7; see the last item for its run):
 - A different number or product word in a name or class needs the second reader before it is Does not match; Pinot Gris/Grigio, Syrah/Shiraz and Muscat/Moscato are not different products; the importer statement must be one phrase ("Imported by …"). Each can only turn an answer into Please check.
 - The type of product may be left blank and is then told from the label (the result says so); with pictures only, the brand is read by AI and shown for the agent to confirm (never used to call a typed brand Matches).
 - Clearer wording on the form, and each batch row opens a side panel with its pictures and every item.
@@ -93,7 +93,7 @@ Measured with `tools/evaluate.py` on the practice sets (the final-test set is ke
 - A typed brand is Matches when the label prints it with company words or an amount beside it ("BULLEIT DISTILLING CO.", "CROWN ROYAL 40% ALC/VOL"), or when the second reader sees a misread brand exactly at that spot; never when the label also shows a close but different version of it. Brand Matches on the approved labels: 128 of 227, up from 119.
 - The brand read by AI (nothing typed) can be wrong, so it is "On the label" only when the local text reader also finds those words on the label; otherwise it is Please check and the agent decides. On the 227 approved labels: 119 "On the label" (101 right or close; 18 another name that is printed on the label, such as the product's own name, hence "check it is the brand"), 108 Please check (81 of them right: logos the text reader can't read). A word printed beside the warning's lines, with both zoom-in readings clean at that spot, is no longer taken for an added word (1 approved label fixed). Practice run g16 (2026-10-18, [`docs/evidence/practice_run_g16.log`](docs/evidence/practice_run_g16.log)): 0 wrong Does not match, 0 wrong Matches, every planted mistake flagged. Its timing check was not met because the laptop running it was in Low Power Mode (every set ran about twice as slow as on 2026-10-15, including the generated labels the change does not touch); speed was measured on the live site instead: 2.5 to 5.1 seconds of checking for 12 approved labels with nothing typed (the 5.1 s labels hit the warning's 5-second reading deadline).
 
-**How the answer key was made:** label values were drafted with AI tools and cross-checked by two independent vision models. The author reviewed every final-test label and the 85 newest practice labels by hand against their images; the other practice labels were checked against every image with AI assistance. Each answer sheet in `data/ground_truth/` records who reviewed it. In that review, the vision models' disagreements were almost always the models' own errors (invented addresses and container sizes), which is why the app never lets a model decide.
+**How I made the answer key:** I drafted label values with AI tools and cross-checked by two independent vision models. I reviewed every final-test label and the 85 newest practice labels by hand against their images; I checked the other practice labels against every image with AI assistance. Each answer sheet in `data/ground_truth/` records who reviewed it. In that review, the vision models' disagreements were almost always the models' own errors (invented addresses and container sizes), which is why I never let a model decide in the app.
 
 ## Running it yourself
 
@@ -127,38 +127,50 @@ docker run --rm -p 8080:8080 label-check           # open http://localhost:8080
 
 ## If this were built inside TTB
 
-This is a prototype built from the outside, without access to TTB's systems or data. Here is what would change with that access.
+I built this prototype from the outside, without access to TTB's systems or data. Here is what I would change with that access.
 
-**Why AWS for the prototype.** The point of a prototype is to find out quickly and cheaply whether the idea works before investing in it. AWS was the fastest way to put a working app in front of reviewers: $0 while idle, about $0.0005 per label, deployed in minutes. It is not where this would run in production. The app is one container that runs anywhere Docker does, so the production version would run in the cloud the agency already uses and has approved (for example Azure Government or AWS GovCloud, both FedRAMP High), or on agency servers.
+**Why I used AWS for the prototype.** I treat a prototype as a way to find out quickly and cheaply whether an idea works before anyone invests in it. AWS was the fastest way for me to put a working app in front of reviewers: $0 while idle, about $0.0005 per label, deployed in minutes. It is not where I would run this in production. The app is one container that runs anywhere Docker does, so I would run the production version in the cloud the agency already uses and has approved (for example Azure Government or AWS GovCloud, both FedRAMP High), or on agency servers.
 
-**Reading everything automatically, including the brand.** Today, with pictures only and nothing typed, the app fills in every box itself except the brand: the product type, class, alcohol, net contents, bottler and the full warning, all read inside the container with no internet. The brand is the hard one. Reading the words is not the problem; telling which of the label's words is the brand ("OLD LANTERN" and not "Small Batch" or "Since 1892") takes understanding of the whole label. So the prototype also sends the pictures to an AI vision model (Amazon Nova Pro). That is an extra on top. Behind an agency firewall it switches off and the brand says Please check; everything else works the same. Inside TTB, the brand would be read automatically in one of these ways:
+**Reading everything automatically, including the brand.** Today, with pictures only and nothing typed, the app fills in every box itself except the brand: the product type, class, alcohol, net contents, bottler and the full warning, all read inside the container with no internet. The brand is the hard one. Reading the words is not the problem; telling which of the label's words is the brand ("OLD LANTERN" and not "Small Batch" or "Since 1892") takes understanding of the whole label. So I also had the app send the pictures to an AI vision model (Amazon Nova Pro). I added that as an extra on top. Behind an agency firewall it switches off and the brand says Please check; everything else works the same. Inside TTB, I would have the brand read automatically in one of these ways:
 1. **The same AI step inside the agency's approved cloud.** Then it is no longer outside the firewall, and nothing else changes.
 2. **An open-weight vision model running on agency servers,** so no picture leaves the agency.
-3. **TTB's own label database as a brand list.** TTB holds every brand it has ever approved, and the applicant's own past approvals. A brand already on file is recognized at once, and a new brand falls back to 1 or 2. (From outside, the only route to that data is the public registry website, which can't be copied politely, so the prototype doesn't do this.)
+3. **TTB's own label database as a brand list.** TTB holds every brand it has ever approved, and the applicant's own past approvals. A brand already on file is recognized at once, and a new brand falls back to 1 or 2. (From outside, the only route to that data is the public registry website, which can't be copied politely, so I didn't do this.)
 4. **No typing at all:** pulling the application values straight from COLA, so the agent never types them (out of scope for this brief).
 
 In every case the agent still confirms. The AI fills in boxes; it never decides a verdict.
 
-**Better test data.** The prototype was tested on 227 real approved labels from the public registry, the same labels with one planted change each, and 96 generated labels with known mistakes. Inside TTB:
+**Better test data.** I tested the prototype on 227 real approved labels from the public registry, the same labels with one planted change each, and 96 generated labels with known mistakes. Inside TTB, I would:
 - Use the full history of approved *and rejected* applications as truth data, with the reason for each rejection.
 - Generate many more realistic labels with planted mistakes, have agents check that they look right, and label them.
-- Keep a final-test set apart that no one tunes against, as the prototype does.
+- Keep a final-test set apart that no one tunes against, as I did here.
 
-**Learning from past decisions.** Connect the app to a searchable library of TTB's past work: similar labels already approved or rejected, and why; the warning wordings and layouts that are commonly seen; TTB rulings and guidance. With each result, the agent would see "labels like this were handled like this", with links. This is reference material for the agent, never an automatic decision.
+**Learning from past decisions.** I would connect the app to a searchable library of TTB's past work: similar labels already approved or rejected, and why; the warning wordings and layouts that are commonly seen; TTB rulings and guidance. With each result, the agent would see "labels like this were handled like this", with links. This is reference material for the agent, never an automatic decision.
 
-**Getting better over time.** Every "I disagree" note becomes a lesson:
+**Getting better over time.** I would turn every "I disagree" note into a lesson:
 1. A reviewer sorts the notes.
 2. Each real miss becomes a rule fix with a test, or new examples for the next reader training.
 3. An improvement agent could draft those fixes automatically from the notes.
 4. A person approves each fix, and nothing ships unless it passes the same safety gate as today: 0 wrong answers on every practice set.
 
-**Enterprise needs.** These would be added before production:
+**Running at TTB's scale.** TTB reviews about 150,000 applications a year with 47 agents, and importers send 200–300 at once in peak season. The computing is cheap: 150,000 checks at about $0.0005 each comes to about $75 a year. The design is what has to change. These are the changes I would make, drawing on how enterprise document-processing systems are built and on federal AI guidance:
+1. **Check each application when it arrives, not when an agent opens it.** The result is stored with the application ID and the version submitted, so the agent opens a finished check. A peak-season dump waits in a queue instead of slowing anyone down, and the 5-second limit only matters for re-checks. The checking code (`app/pipeline.py`) already takes an application in and gives a result out, so it moves behind a queue as is.
+2. **Batches that run on the server.** Today a batch runs from the agent's browser tab and stops if the tab closes. In production a batch is a job: a queue (Azure Service Bus or Amazon SQS) feeding copies of the same container, a progress page, and results kept until exported. This is the pattern Amazon publishes for document processing with human review ([AWS](https://aws.amazon.com/blogs/machine-learning/processing-pdf-documents-with-a-human-loop-using-amazon-textract-and-amazon-augmented-ai)). Single checks and batches get separate capacity, so one importer's 300 labels never make an agent wait.
+3. **Never read the same picture twice.** Importers reuse artwork: the same back label on hundreds of products, and resubmissions that change one line. I would store each picture's reading under a fingerprint of its file. A repeat costs only the rules, a few milliseconds. A shared back label is reported once ("this warning is confirmed for 212 labels"). For a resubmission, the agent sees only the words that changed since the last version; the app already highlights differing words.
+4. **A quiet trial before anyone relies on it.** For a few weeks the app checks every real application without showing agents, and its answers are compared with the agents' decisions. Every "Matches" on an application an agent rejected counts as a wrong answer, measured on TTB's real labels rather than mine. Federal guidance for high-impact AI asks for exactly this: testing in real-world conditions, an impact assessment and ongoing monitoring, even when a person makes the final decision ([OMB M-25-21](https://www.whitehouse.gov/wp-content/uploads/2025/02/M-25-21-Accelerating-Federal-Use-of-AI-through-Innovation-Governance-and-Public-Trust.pdf)). It is the same scoring my safety gate already uses.
+5. **A weekly health check without storing labels.** I would log only each answer's code, the version and the time, never the pictures or the text, and chart how often each item says Please check or Does not match. A sudden jump means something changed (a new can format, a reader problem) and shows up before agents notice. This is the "measure" part of the [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework).
+6. **Set the bar per item, from TTB's own data.** Today an uncertain reading goes to the agent when the two readers disagree. With real volumes, I would set the cut-off separately for each item and product type, choosing it on agent-checked applications so that a stated share of real errors is always caught. I would set it again whenever the reader changes. Enterprise document tools set their review cut-offs per field in this way ([Amazon A2I](https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-get-started-console.html)).
+7. **A third reader inside the agency's cloud.** A word-for-word text service in the approved cloud (Azure AI Document Intelligence has an Azure Government version) would act as one more confirming reader. It would settle more of the items that now say Please check (about a quarter), and still no AI would decide a verdict. Switched off, the app behaves as it does today.
+8. **Let applicants check before they submit.** The same check, offered in COLAs Online, would let an applicant fix a title-case "Government Warning" before an agent ever sees it. Fewer corrections sent back and forth means less agent time; that is the biggest saving available. It is safe because the app never says Matches on a problem it can see, and it lists what it cannot check.
+9. **Use what COLA already knows.** Every COLA record gives each label's real size, so the type-size check (27 CFR 16.22) would run on every application without anyone typing the label height.
+10. **Track which version of the rules decided.** Every result would record the version of the rules and the date of the regulation text it used. A scheduled test would compare the warning text and other values in the code with the current eCFR, so a change in the regulations fails a test instead of going unnoticed.
+
+**Enterprise needs.** I would add these before production:
 - Sign-in through agency single sign-on (PIV/CAC).
 - An audit log of who checked what and when, with records kept as the agency's rules require.
 - Section 508 accessibility review.
 - Monitoring, an authority to operate (ATO) for the system, and load testing at TTB's real volumes.
 
-**What we don't know from outside.** These answers would shape the production design (more in [`docs/APPROACH.md`](docs/APPROACH.md)):
+**What I don't know from outside.** These answers would shape my production design (more in [`docs/APPROACH.md`](docs/APPROACH.md)):
 - Which cloud and AI services TTB has approved.
 - What access the app could have to COLA data.
 - Real daily volumes.
@@ -185,4 +197,4 @@ In every case the agent still confirms. The AI fills in boxes; it never decides 
 | `data/` | Real approved labels (TTB Public COLA Registry), generated labels with known mistakes, answer key, frozen practice/final split |
 | `tools/` | Data collection, label generator, answer-key review screen, evaluation, sample batch, word-reader training |
 
-Built with the help of AI coding tools; every rule, number and claim here was checked against the code, the regulations or a measurement.
+I built this with the help of AI coding tools; I checked every rule, number and claim here against the code, the regulations or a measurement.
