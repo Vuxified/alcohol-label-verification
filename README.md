@@ -23,6 +23,19 @@ A TTB agent uploads a label's images and types in what the application says. Wit
 
 ## How it works, in one minute
 
+```mermaid
+flowchart LR
+  A[Agent's browser] -->|pictures| S[(Private S3 bucket<br/>deleted after 1 day)]
+  A -->|application values| L
+  S --> L
+  subgraph L[One container on AWS Lambda, works with no internet]
+    R[Reader: OnnxTR + Tesseract<br/>sideways passes, zoom on the warning] --> V[Rules: app/verify/<br/>one per 27 CFR section]
+    V --> G[Safety rules: app/pipeline.py<br/>Does not match needs a second reading]
+  end
+  G -->|Matches / Does not match / Please check<br/>with the spot on the label and the rule| A
+  L -.->|only when no brand is typed; off behind a firewall| N[Amazon Nova Pro<br/>brand read]
+```
+
 1. **Verify, don't extract.** The application already says what the label should contain, so the app searches the label for those values instead of guessing what the label means.
 2. **Reading the label:** local text recognition (OnnxTR, with Tesseract as an independent second reader). Every word is read by two word readers, the stock one and one fine-tuned on label words, and the more confident reading is kept ([how it was trained and measured](docs/APPROACH.md#reader-training)). One exception, only when no brand is typed: the brand is usually a logo the text reader can't read, so the pictures are sent to an AI vision model on AWS (Amazon Nova Pro, through Bedrock, in the same AWS account) to read it. Everything else stays local, and the app works behind an agency firewall: the container was tested with networking switched off, and then the brand simply says Please check.
 3. **Deciding:** small, tested rules in plain code (`app/verify/`), each citing its regulation in [`docs/RULES.md`](docs/RULES.md). No AI model decides a verdict.
@@ -48,6 +61,20 @@ A TTB agent uploads a label's images and types in what the application says. Wit
 | Pictures only | With no brand given: each required statement looked for on the label (§§ 4.32, 5.63, 7.63); "On the label" or Please check, never Does not match. The brand is read by AI: "On the label" only when the text reader also finds those words on the label (marked "read by AI and found in the label text; check it is the brand"), otherwise Please check ("Read by AI (not confirmed)") |
 
 Also: the fanciful name (like the brand), the "GOVERNMENT WARNING" heading in bold (measured, advisory). Not checked by design: whether sulfite, color-additive or age statements are needed (they depend on facts a picture cannot show), characters per inch. The full rule inventory, checked or not and why, is in [`docs/RULES.md`](docs/RULES.md) §6b.
+
+## How I tested it
+
+I treated a wrong answer as the one failure that matters: a false "Matches" lets a bad label through, and a false "Does not match" on a good label wastes an agent's time and trust. So the tests are built in layers, and each layer has to pass before the next one runs:
+
+| Layer | What it proves | Where |
+|---|---|---|
+| 1,178 automated tests | Each rule against its regulation, the edge cases found on real labels (sideways warnings, misread numbers, text beside the warning), the web pages, batch pairing, and a test that switches the network off and checks a label | `tests/` |
+| Practice sets with an answer key | 227 real approved labels, 178 of them with one planted change, 96 generated labels with known mistakes, 76 photo-style pictures; scored for wrong answers, mistakes caught and items confirmed | `tools/evaluate.py`, `data/` |
+| Safety gate before every deploy | A full practice run of the exact code being shipped: 0 wrong "Does not match", 0 wrong "Matches", every planted mistake flagged, 95% within 5 seconds | `tools/gate.py`, `tools/deploy.sh` |
+| Offline container check | The built container, with networking switched off, must get both sample labels right | `tools/deploy.sh` |
+| Held-out final test | 162 items kept apart and never tuned on, locked by checksum, run once on the live version | `tools/evaluate.py --final` |
+
+The answer key is itself tested: I drafted values with AI tools, cross-checked them with two independent vision models and reviewed the disagreements and the final-test labels by hand. Most disagreements were the models' own mistakes, which is why no model decides a verdict in the app.
 
 ## Results so far (practice labels)
 
@@ -101,7 +128,7 @@ I measured these with `tools/evaluate.py` on the practice sets (I kept the final
 python3.12 -m venv .venv
 .venv/bin/pip install -r requirements.txt onnx
 .venv/bin/python tools/make_dynamic_det.py         # one-time: fetch the reading models, make the detector size-flexible
-.venv/bin/pytest                                   # 1,141 tests
+.venv/bin/pytest                                   # 1,178 tests
 .venv/bin/uvicorn app.web.main:app --port 8000     # open http://localhost:8000
 ```
 
