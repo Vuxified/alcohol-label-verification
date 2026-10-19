@@ -160,7 +160,7 @@ docker run --rm -p 8080:8080 label-check           # open http://localhost:8080
 4. only then is the live site switched, and checked again.
 
 - **AWS Lambda** (container image, arm64, 10 GB / 6 vCPU) behind a function URL; it costs nothing while idle and about $0.0005 per label checked.
-- **Uploads** go from the browser straight to a private S3 bucket (Lambda requests are capped at 6 MB) and are **deleted automatically after one day**. Results are not stored: they are returned with the page.
+- **Uploads** go from the browser straight to a private S3 bucket (Lambda requests are capped at 6 MB) and are **deleted automatically after one day**. Results are not stored: they are returned with the page. The bucket is only part of the AWS hosting: run anywhere else (a laptop, agency servers), the pictures go straight to the container with the request and nothing is stored outside it; that is how the no-internet check runs.
 - A batch runs from the browser, which sends several applications at a time; each is checked by its own copy of the checker.
 - The same container runs anywhere Docker does. Azure equivalents: Container Apps or Functions (container), Blob Storage with a lifecycle rule.
 
